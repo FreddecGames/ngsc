@@ -4,13 +4,13 @@
         <template v-slot:titleBar>
         
             <div class="col-auto text-end">
-                <img class="me-1" :src="require(`../assets/icons/conquest.png`)" width="12" height="12" :alt="$t('statue')" />
+                <img class="me-1" :src="require(`../assets/icons/conquest.png`).default" width="12" height="12" :alt="$t('statue')" />
                 <span class="text-light">{{ conquered }}</span>
                 <small class="text-normal ms-1">/{{ stars }}</small>
             </div>
             
             <div class="col-auto text-end">
-                <img class="me-1" :src="require(`../assets/icons/statue.png`)" width="12" height="12" :alt="$t('statue')" />
+                <img class="me-1" :src="require(`../assets/icons/statue.png`).default" width="12" height="12" :alt="$t('statue')" />
                 <span class="text-light">{{ statues }}</span>
                 <small class="text-normal ms-1">/{{ stars }}</small>
             </div>

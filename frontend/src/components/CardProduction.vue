@@ -10,7 +10,7 @@
                     <small v-if="storageUnlocked && storegable" class="text-normal ms-1">/<item-storage :itemId="itemId" /></small>
                 </div>
                 <div v-if="storageUnlocked && storegable" class="col-auto">
-                    <button type="button" class="btn small" :class="{ 'active':activePane == paneId, 'disabled':can != 0 }" @click="upgrade({ id:itemId, count:1 })">
+                    <button type="button" class="btn btn-primary small" :class="{ 'disabled':can != 0 }" @click="upgrade({ id:itemId, count:1 })">
                         <i class="fas fa-fw fa-arrow-alt-circle-up"></i>
                     </button>
                 </div>

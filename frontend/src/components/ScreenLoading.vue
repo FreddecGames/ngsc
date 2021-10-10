@@ -1,6 +1,6 @@
 <template>
     <div id="loading">
-        <img :src="require(`../assets/whiteLogo.png`)" alt="Logo" width="64" height="64" class="d-inline-block align-text-top">
+        <img :src="require(`../assets/whiteLogo.png`).default" alt="Logo" width="64" height="64" class="d-inline-block align-text-top">
         <h5 class="text-light">NG Space Company</h5>
         <span id="loading-flicker" class="mt-3">{{ $t('screen-loading-text') }}</span>
     </div>

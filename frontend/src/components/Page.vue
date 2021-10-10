@@ -24,7 +24,7 @@
                                     <input type="hidden" name="hosted_button_id" value="7XYD7SJFKQ8M4">
                                     <button type="submit" class="btn btn-primary" style="width: 85px">
                                         <div class="row gx-2 align-items-center">
-                                            <div class="col-auto d-flex align-items-center"><img :src="require('../assets/icons/paypal.png')" width="16" height="16" /></div>
+                                            <div class="col-auto d-flex align-items-center"><img src="../assets/icons/paypal.png" width="16" height="16" /></div>
                                             <div class="col-auto">Paypal</div>
                                         </div>
                                     </button>
@@ -39,7 +39,7 @@
                                 <div class="d-flex justify-content-end">
                                     <a href="https://www.patreon.com/bePatron?u=61283131" class="btn btn-primary" style="width: 85px" target="_blank">
                                         <div class="row gx-2 align-items-center">
-                                            <div class="col-auto d-flex align-items-center"><img :src="require('../assets/icons/patreon.png')" width="16" height="16" /></div>
+                                            <div class="col-auto d-flex align-items-center"><img src="../assets/icons/patreon.png" width="16" height="16" /></div>
                                             <div class="col-auto">Patreon</div>
                                         </div>
                                     </a>
@@ -54,7 +54,7 @@
                                 <div class="d-flex justify-content-end">
                                     <a href="https://ko-fi.com/freddec" class="btn btn-primary" style="width: 85px" target="_blank">
                                         <div class="row gx-2 align-items-center">
-                                            <div class="col-auto d-flex align-items-center"><img :src="require('../assets/icons/kofi.svg')" width="16" height="16" /></div>
+                                            <div class="col-auto d-flex align-items-center"><img src="../assets/icons/kofi.svg" width="16" height="16" /></div>
                                             <div class="col-auto">Ko-fi</div>
                                         </div>
                                     </a>
@@ -77,9 +77,9 @@
                                 <div class="col-6">
                                     <div class="small">{{ $t('statsTotal') }}</div>
                                     <div class="text-light">
-                                        <img class="me-1" :src="require(`../assets/icons/conquest.png`)" width="12" height="12" :alt="$t('statue')" />
+                                        <img class="me-1" :src="require(`../assets/icons/conquest.png`).default" width="12" height="12" :alt="$t('statue')" />
                                         <span class="text-light me-3">{{ statsTotalConquests }}</span>
-                                        <img class="me-1" :src="require(`../assets/icons/statue.png`)" width="12" height="12" :alt="$t('statue')" />
+                                        <img class="me-1" :src="require(`../assets/icons/statue.png`).default" width="12" height="12" :alt="$t('statue')" />
                                         <span class="text-light">{{ statsTotalStatues }}</span>
                                     </div>
                                 </div>
@@ -219,13 +219,13 @@
                             <div class="row g-2 justify-content-end">
                                 <div class="col-auto">
                                     <a class="btn btn-primary" href="https://discord.gg/3UkgeeT9CV" target="_blank">
-                                        <img :src="require('../assets/icons/discord.png')" width="16" height="16" alt="Discord" />
+                                        <img src="../assets/icons/discord.png" width="16" height="16" alt="Discord" />
                                         <span class="ms-2">Discord</span>
                                     </a>
                                 </div>
                                 <div class="col-auto">
                                     <button type="button" class="btn btn-primary" @click="setActivePane('donatingPane');">
-                                        <img :src="require('../assets/icons/donating.png')" width="16" height="16" :alt="$t('menu-item-donating')" />
+                                        <img src="../assets/icons/donating.png" width="16" height="16" :alt="$t('menu-item-donating')" />
                                         <span class="ms-2">{{ $t('menu-item-donating') }}</span>
                                     </button>
                                 </div>
@@ -258,7 +258,7 @@
                             <div class="row g-2 justify-content-end">
                                 <div class="col-auto">
                                     <a class="btn btn-primary" href="https://github.com/ExileNG/NGSpaceCompany" target="_blank">
-                                        <img :src="require('../assets/icons/github.png')" width="16" height="16" alt="Github" />
+                                        <img src="../assets/icons/github.png" width="16" height="16" alt="Github" />
                                         <span class="ms-2">Github</span>
                                     </a>
                                 </div>
@@ -352,7 +352,7 @@
                         
                         <div class="col">
                             <div class="d-flex align-items-center">
-                                <img class="me-1" :src="require(`../assets/icons/statue.png`)" width="12" height="12" :alt="$t('statue')" />
+                                <img class="me-1" :src="require(`../assets/icons/statue.png`).default" width="12" height="12" :alt="$t('statue')" />
                                 <small>150</small>
                             </div>
                             <line-progress itemId="statue" count="150" />
@@ -756,6 +756,7 @@
                         <line-consumption resId="plasma" itemId="meteoriteT3" level="T3" res="meteorite" />
                         <line-consumption resId="plasma" itemId="meteoriteT4" level="T4" res="meteorite" />
                         <line-consumption resId="plasma" itemId="carbonT4" level="T4" res="carbon" />
+                        <line-consumption resId="plasma" itemId="antimatterT1" level="T1" res="antimatter" />
                     </template>
                     <template v-slot:producers>
                         <line-production resId="plasma" itemId="plasmaT1" level="T1" />
@@ -777,6 +778,8 @@
                 <card-production id="carbonProdCard" name="carbon" icon="carbon.png" itemId="carbon">
                     <template v-slot:consumers>
                         <line-consumption resId="carbon" itemId="energyT2" level="T2" res="energy" />
+                        <line-consumption resId="carbon" itemId="fuelT1" level="T1" res="fuel" />
+                        <line-consumption resId="carbon" itemId="fuelT2" level="T2" res="fuel" />
                     </template>
                     <template v-slot:producers>
                         <line-production resId="carbon" itemId="carbonT1" level="T1" />
@@ -815,6 +818,8 @@
                 </card-production>
                 <card-production id="oilProdCard" name="oil" icon="oil.png" itemId="oil">
                     <template v-slot:consumers>
+                        <line-consumption resId="oil" itemId="fuelT1" level="T1" res="fuel" />
+                        <line-consumption resId="oil" itemId="fuelT2" level="T2" res="fuel" />
                     </template>
                     <template v-slot:producers>
                         <line-production resId="oil" itemId="oilT1" level="T1" />
@@ -875,6 +880,7 @@
                 </card-production>
                 <card-production id="uraniumProdCard" name="uranium" icon="uranium.png" itemId="uranium">
                     <template v-slot:consumers>
+                        <line-consumption resId="uranium" itemId="energyT4" level="T4" res="energy" />
                     </template>
                     <template v-slot:producers>
                         <line-production resId="uranium" itemId="uraniumT1" level="T1" />
@@ -886,6 +892,7 @@
                 </card-production>
                 <card-production id="lavaProdCard" name="lava" icon="lava.png" itemId="lava">
                     <template v-slot:consumers>
+                        <line-consumption resId="lava" itemId="energyT5" level="T5" res="energy" />
                         <line-consumption resId="lava" itemId="carbonT3" level="T3" res="carbon" />
                     </template>
                     <template v-slot:producers>
@@ -909,6 +916,8 @@
                 </card-production>
                 <card-production id="methaneProdCard" name="methane" icon="methane.png" itemId="methane">
                     <template v-slot:consumers>
+                        <line-consumption resId="methane" itemId="energyT3" level="T3" res="energy" />
+                        <line-consumption resId="methane" itemId="fuelT3" level="T3" res="fuel" />
                     </template>
                     <template v-slot:producers>
                         <line-production resId="methane" itemId="methaneT1" level="T1" />
@@ -953,6 +962,10 @@
                 </card-production>
                 <card-production id="hydrogenProdCard" name="hydrogen" icon="hydrogen.png" itemId="hydrogen">
                     <template v-slot:consumers>
+                        <line-consumption resId="hydrogen" itemId="energyT6" level="T6" res="energy" />
+                        <line-consumption resId="hydrogen" itemId="plasmaT1" level="T1" res="plasma" />
+                        <line-consumption resId="hydrogen" itemId="plasmaT3" level="T3" res="plasma" />
+                        <line-consumption resId="hydrogen" itemId="plasmaT4" level="T4" res="plasma" />
                     </template>
                     <template v-slot:producers>
                         <line-production resId="hydrogen" itemId="hydrogenT1" level="T1" />
@@ -964,6 +977,10 @@
                 </card-production>
                 <card-production id="heliumProdCard" name="helium" icon="helium.png" itemId="helium">
                     <template v-slot:consumers>
+                        <line-consumption resId="helium" itemId="energyT6" level="T6" res="energy" />
+                        <line-consumption resId="methane" itemId="plasmaT2" level="T2" res="plasma" />
+                        <line-consumption resId="methane" itemId="plasmaT3" level="T3" res="plasma" />
+                        <line-consumption resId="methane" itemId="plasmaT4" level="T4" res="plasma" />
                     </template>
                     <template v-slot:producers>
                         <line-production resId="helium" itemId="heliumT1" level="T1" />
@@ -975,6 +992,7 @@
                 </card-production>
                 <card-production id="iceProdCard" name="ice" icon="ice.png" itemId="ice">
                     <template v-slot:consumers>
+                        <line-consumption resId="ice" itemId="antimatterT1" level="T1" res="antimatter" />
                     </template>
                     <template v-slot:producers>
                         <line-production resId="ice" itemId="iceT1" level="T1" />

@@ -4,7 +4,7 @@
         <button v-if="cost.id != 'segment' && cost.id != 'dysonT3' && cost.id != 'conquest'" type="button" class="w-100" @click="setActivePane(cost.id + 'Pane');">
             <div class="row g-1 small">
                 <div class="col d-flex align-items-center">
-                    <img class="me-1" :src="require(`../assets/icons/${cost.id}.png`)" width="12" height="12" :alt="$t(cost.id)" />
+                    <img class="me-1" :src="require(`../assets/icons/${cost.id}.png`).default" width="12" height="12" :alt="$t(cost.id)" />
                     <span :class="{ 'text-danger': storage && cost.count > storage }"><format-number :value="cost.count" /></span>
                 </div>
                 <div v-if="storage" class="col-auto">
@@ -17,7 +17,7 @@
         <div v-if="cost.id == 'segment' || cost.id == 'dysonT3' || cost.id == 'conquest'">
             <div class="row g-1 small">
                 <div class="col d-flex align-items-center">
-                    <img class="me-1" :src="require(`../assets/icons/${cost.id}.png`)" width="12" height="12" :alt="$t(cost.id)" />
+                    <img class="me-1" :src="require(`../assets/icons/${cost.id}.png`).default" width="12" height="12" :alt="$t(cost.id)" />
                     <span :class="{ 'text-danger': storage && cost.count > storage }"><format-number :value="cost.count" /></span>
                 </div>
                 <div v-if="storage" class="col-auto">

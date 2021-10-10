@@ -8,7 +8,7 @@
                         
                         <div class="col-auto position-relative">
                             <span class="badge bg-danger text-light position-absolute">BETA Testing</span>
-                            <img :src="require(`../assets/whiteLogo.png`)" alt="Logo" width="32" height="32" class="align-bottom" />
+                            <img src="../assets/whiteLogo.png" alt="Logo" width="32" height="32" class="align-bottom" />
                         </div>
                         
                         <div class="col text-truncate">
@@ -53,14 +53,14 @@
                 
                 <div class="d-none d-lg-block col-auto">
                     <a class="btn" href="https://discord.gg/3UkgeeT9CV" target="_blank">
-                        <img :src="require('../assets/icons/discord.png')" width="16" height="16" alt="Discord" />
+                        <img src="../assets/icons/discord.png" width="16" height="16" alt="Discord" />
                         <span class="ms-2 d-none d-lg-inline">Discord</span>
                     </a>
                 </div>
                 
                 <div v-for="item in menuItems" :key="item.id" class="d-none d-lg-block col-auto">
                     <button type="button" class="btn" @click="setActivePane(item.paneId);">
-                        <img :src="require(`../assets/icons/${item.icon}`)" width="16" height="16" :alt="item.name" />
+                        <img :src="require(`@/assets/icons/${item.icon}`).default" width="16" height="16" :alt="item.name" />
                         <span class="ms-2 d-none d-lg-inline">{{ $t(item.name) }}</span>
                     </button>
                 </div>
@@ -75,14 +75,14 @@
                         
                         <li>
                             <a class="dropdown-item" href="https://discord.gg/3UkgeeT9CV" target="_blank">
-                                <img class="me-2" :src="require('../assets/icons/discord.png')" width="16" height="16" alt="Discord" />
+                                <img class="me-2" src="../assets/icons/discord.png" width="16" height="16" alt="Discord" />
                                 <span>Discord</span>
                             </a>
                         </li>
                         
                         <li v-for="item in menuItems" :key="item.id">
                             <button type="button" class="dropdown-item" @click="setSidebarOpen(false); setActivePane(item.paneId);">
-                                <img class="me-2" :src="require(`../assets/icons/${item.icon}`)" width="16" height="16" :alt="item.name" />
+                                <img class="me-2" :src="require(`@/assets/icons/${item.icon}`).default" width="16" height="16" :alt="item.name" />
                                 <span>{{ $t(item.name) }}</span>
                             </button>
                         </li>

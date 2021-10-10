@@ -8,7 +8,7 @@
                 </div>
                 
                 <div class="col text-center">
-                    <img class="me-1" :src="require(`../assets/icons/${icon}`)" width="24" height="24" :alt="$t(name)" />
+                    <img class="me-1" :src="require(`../assets/icons/${icon}`).default" width="24" height="24" :alt="$t(name)" />
                 </div>
                 
                 <div v-if="count < 1" class="col">
@@ -16,7 +16,7 @@
                         <div class="w-100 row gx-1 align-items-center justify-content-center">
                         
                             <div class="col-auto d-flex align-items-center">
-                                <img class="me-1" :src="require(`../assets/icons/ultrite.png`)" width="12" height="12" :alt="$t('darkmatter')" />
+                                <img class="me-1" :src="require(`../assets/icons/ultrite.png`).default" width="12" height="12" :alt="$t('darkmatter')" />
                                 10
                             </div>
                             

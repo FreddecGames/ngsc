@@ -9,7 +9,7 @@
                         <div class="row gx-1 align-items-center justify-content-center">
                         
                             <div class="col-auto d-flex align-items-center">
-                                <img class="me-1" :src="require(`../assets/icons/${source.id}.png`)" width="12" height="12" :alt="$t(source.id)" />
+                                <img class="me-1" :src="require(`../assets/icons/${source.id}.png`).default" width="12" height="12" :alt="$t(source.id)" />
                                 <format-number :value="source.count" />
                             </div>
                             
@@ -18,7 +18,7 @@
                             </div>
                             
                             <div class="col-auto d-flex align-items-center">
-                                <img class="me-1" :src="require(`../assets/icons/${itemId}.png`)" width="12" height="12" :alt="$t(itemId)" />
+                                <img class="me-1" :src="require(`../assets/icons/${itemId}.png`).default" width="12" height="12" :alt="$t(itemId)" />
                                 <format-number :value="amount" />
                             </div>
                             

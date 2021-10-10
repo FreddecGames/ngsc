@@ -12,7 +12,7 @@
                     </div>
                     
                     <div class="col-auto d-flex align-items-center">
-                        <img :src="require(`../assets/icons/${icon}`)" width="19" height="19" :alt="name" />
+                        <img :src="require(`../assets/icons/${icon}`).default" width="19" height="19" :alt="name" />
                     </div>
                     
                     <div class="col text-truncate">

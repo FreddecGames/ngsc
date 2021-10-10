@@ -8,11 +8,11 @@
             </div>
             
             <div v-if="status == 'conquered' || status == 'statued'" class="col-auto">
-                <img class="me-1" :src="require(`../assets/icons/conquest.png`)" width="12" height="12" :alt="$t('statue')" />
+                <img class="me-1" :src="require(`../assets/icons/conquest.png`).default" width="12" height="12" :alt="$t('statue')" />
             </div>
         
             <div v-if="status == 'statued'" class="col-auto">
-                <img class="me-1" :src="require(`../assets/icons/statue.png`)" width="12" height="12" :alt="$t('statue')" />
+                <img class="me-1" :src="require(`../assets/icons/statue.png`).default" width="12" height="12" :alt="$t('statue')" />
             </div>
             
         </template>
@@ -40,7 +40,7 @@
                     </div>
                     
                     <div v-for="res in resources" :key="res" class="col-auto">
-                        <img class="me-1" :src="require(`../assets/icons/${res}.png`)" width="12" height="12" :alt="$t(res)" />
+                        <img class="me-1" :src="require(`../assets/icons/${res}.png`).default" width="12" height="12" :alt="$t(res)" />
                         <small v-if="!donor" class="text-success">+25%</small>
                         <small v-if="donor" class="text-donor">+50%</small>
                     </div>
@@ -110,7 +110,7 @@
                 
                     <div class="col-auto">
                         <button type="button" class="btn btn-primary d-flex align-items-center" :class="{ 'disabled text-danger':can != 0 }" @click="conquer(itemId)">
-                            <img class="me-1" :src="require(`../assets/icons/conquest.png`)" width="12" height="12" :alt="$t('conquest')" />
+                            <img class="me-1" :src="require(`../assets/icons/conquest.png`).default" width="12" height="12" :alt="$t('conquest')" />
                             <span v-if="can == 0">{{ $t('button-conquer') }}</span>
                             <span v-if="can == -1">{{ $t('not-enough-ship') }}</span>
                             <span v-if="[-2, -3, -4].includes(can)">{{ $t('error') }}</span>

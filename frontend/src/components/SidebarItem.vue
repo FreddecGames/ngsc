@@ -10,7 +10,7 @@
                 <div class="row g-2 w-100">
                 
                     <div class="col d-flex align-items-center">
-                        <img class="me-2" :src="require(`../assets/icons/${icon}`)" width="16" height="16" :alt="name" />
+                        <img class="me-2" :src="require(`../assets/icons/${icon}`).default" width="16" height="16" :alt="name" />
                         <span>{{ $t(name) }}</span>
                     </div>
                     

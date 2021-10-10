@@ -8,7 +8,7 @@
                     <div class="col">
                         <button class="w-100 text-start d-flex align-items-center" :class="{ 'collapsed':initCollapsed }" data-bs-toggle="collapse" :data-bs-target="'#' + id" :aria-expanded="initCollapsed" :aria-controls="id" @click="toggleCollapsed(id)">
                             <i class="text-steelblue card-toggler fas fa-fw fa-chevron-down me-1"></i>
-                            <img v-if="icon" class="me-2" :src="require(`../assets/icons/${icon}`)" width="12" height="12" :alt="$t(name)" />
+                            <img v-if="icon" class="me-2" :src="require(`../assets/icons/${icon}`).default" width="12" height="12" :alt="$t(name)" />
                             <span class="text-uppercase text-steelblue">{{ $t(name) }}</span>
                         </button>
                     </div>

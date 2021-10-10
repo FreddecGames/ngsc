@@ -6,7 +6,7 @@
                 <div class="row g-2 align-items-center">
                 
                     <div class="col d-flex align-items-center">
-                        <img class="me-1" :src="require(`../assets/icons/${icon}`)" width="12" height="12" :alt="$t(name)" />
+                        <img class="me-1" :src="require(`../assets/icons/${icon}`).default" width="12" height="12" :alt="$t(name)" />
                         <span class="text-uppercase text-steelblue">{{ $t(name) }}</span>
                     </div>
                     

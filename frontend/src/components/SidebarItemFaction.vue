@@ -3,12 +3,12 @@
         <template v-slot:extra>
         
             <div class="col-auto text-end small">
-                <img class="me-1" :src="require(`../assets/icons/conquest.png`)" width="12" height="12" :alt="$t('statue')" />
+                <img class="me-1" :src="require(`../assets/icons/conquest.png`).default" width="12" height="12" :alt="$t('statue')" />
                 <span class="text-light">{{ currentStar }}</span>
             </div>
             
             <div class="col-auto text-end small">
-                <img class="me-1" :src="require(`../assets/icons/statue.png`)" width="12" height="12" :alt="$t('statue')" />
+                <img class="me-1" :src="require(`../assets/icons/statue.png`).default" width="12" height="12" :alt="$t('statue')" />
                 <span class="text-light">{{ currentStatue }}</span>
             </div>
             

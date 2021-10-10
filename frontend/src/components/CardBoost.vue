@@ -4,7 +4,7 @@
             <div class="row row-cols-1 g-2">
     
                 <div class="col text-center">
-                    <img class="me-1" :src="require(`../assets/icons/${icon}`)" width="12" height="12" :alt="$t(name)" />
+                    <img class="me-1" :src="require(`../assets/icons/${icon}`).default" width="12" height="12" :alt="$t(name)" />
                     <span class="text-uppercase text-steelblue">{{ $t(name) }}</span>
                 </div>
                 
@@ -17,7 +17,7 @@
                         <div class="w-100 row gx-1 align-items-center justify-content-center">
                         
                             <div class="col-auto d-flex align-items-center">
-                                <img class="me-1" :src="require(`../assets/icons/darkmatter.png`)" width="12" height="12" :alt="$t('darkmatter')" />
+                                <img class="me-1" :src="require(`../assets/icons/darkmatter.png`).default" width="12" height="12" :alt="$t('darkmatter')" />
                                 1
                             </div>
                             
