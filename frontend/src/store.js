@@ -2687,7 +2687,7 @@ export const store = createStore({
             if (!('costs' in item.gain)) return null
             
             let costs = JSON.parse(JSON.stringify(item.gain.costs))
-            costs.forEach(cost => { cost.count = cost.count * count })
+            costs.forEach(cost => { cost.count = Math.floor(cost.count * count) })
             
             return costs
         },
@@ -2721,7 +2721,7 @@ export const store = createStore({
             let item = state.items[id]
 
             let costs = JSON.parse(JSON.stringify(item.conversion.costs))
-            costs.forEach(cost => { cost.count = cost.count * count })
+            costs.forEach(cost => { Math.floor(cost.count = cost.count * count) })
             
             return costs
         },
@@ -2764,7 +2764,7 @@ export const store = createStore({
             if (!('costs' in item.storage)) return null
             
             let costs = JSON.parse(JSON.stringify(item.storage.costs))
-            costs.forEach(cost => { cost.count = cost.count * Math.pow(cost.coeff, item.upgrade + count - 1) })
+            costs.forEach(cost => { cost.count = Math.floor(cost.count * Math.pow(cost.coeff, item.upgrade + count - 1)) })
 
             return costs
         },
@@ -2823,11 +2823,11 @@ export const store = createStore({
             let costs = JSON.parse(JSON.stringify(item.build.costs))
             costs.forEach(cost => {
                 cost.base = cost.count
-                cost.count = cost.base * cost.mod * Math.pow(cost.coeff, item.count)
+                cost.count = Math.floor(cost.base * cost.mod * Math.pow(cost.coeff, item.count))
             })
             
             for (let n = 1; n < count; n++)
-                costs.forEach(cost => { cost.count += cost.base * cost.mod * Math.pow(cost.coeff, item.count + n) })
+                costs.forEach(cost => { cost.count += Math.floor(cost.base * cost.mod * Math.pow(cost.coeff, item.count + n)) })
             
             return costs
         },

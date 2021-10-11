@@ -52,7 +52,7 @@
                                     <small>{{ $t('donatingCardText5') }}</small>
                                 </div>
                                 <div class="d-flex justify-content-end">
-                                    <a href="https://ko-fi.com/freddec" class="btn btn-primary" style="width: 85px" target="_blank">
+                                    <a href="https://ko-fi.com/freddecgames" class="btn btn-primary" style="width: 85px" target="_blank">
                                         <div class="row gx-2 align-items-center">
                                             <div class="col-auto d-flex align-items-center"><img src="../assets/icons/kofi.svg" width="16" height="16" /></div>
                                             <div class="col-auto">Ko-fi</div>
@@ -211,12 +211,18 @@
                                     <small class="me-2">{{ $t('infoCardText2') }}</small>
                                     <a class="small" href="https://sparticle999.github.io/spacecompany" target="_blank">https://sparticle999.github.io/spacecompany</a>
                                 </div>
-                                <div class="col"><small class="text-light">{{ $t('infoCardText3') }}</small></div>
-                                <div class="col"><small class="text-light">{{ $t('infoCardText4') }}</small></div>
+                                <div class="col"><h6 class="text-light">{{ $t('infoCardText3') }}</h6></div>
+                                <div class="col"><h6 class="text-light">{{ $t('infoCardText4') }}</h6></div>
                             </div>
                         </div>
                         <div class="col">
                             <div class="row g-2 justify-content-end">
+                                <div class="col-auto">
+                                    <a class="btn btn-primary" href="https://freddecgames.com" target="_blank">
+                                        <img src="../assets/freddec.png" width="16" height="16" class="rounded" alt="Discord" />
+										<span class="ms-2">Freddec Games</span>
+                                    </a>
+                                </div>
                                 <div class="col-auto">
                                     <a class="btn btn-primary" href="https://discord.gg/3UkgeeT9CV" target="_blank">
                                         <img src="../assets/icons/discord.png" width="16" height="16" alt="Discord" />
@@ -257,7 +263,7 @@
                         <div class="col">
                             <div class="row g-2 justify-content-end">
                                 <div class="col-auto">
-                                    <a class="btn btn-primary" href="https://github.com/ExileNG/NGSpaceCompany" target="_blank">
+                                    <a class="btn btn-primary" href="https://github.com/FreddecGames/ngsc" target="_blank">
                                         <img src="../assets/icons/github.png" width="16" height="16" alt="Github" />
                                         <span class="ms-2">Github</span>
                                     </a>
