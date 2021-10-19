@@ -723,85 +723,85 @@ var base = {
         inputs:[{ id:'plasma', count:100 }, { id:'ice', count:12000 }],
     },
     /*------------------------------------------------------------------------*/
-    techPlasmaT2: { max:1, build:{ counts:[1], costs:[{ id:'science', count:1000, coeff:1.0 }] }, unlocks:['plasmaT2', 'achPlasmaT2'], hides:['techPlasmaT2Card'] },
-    techMeteoriteT2: { max:1, build:{ counts:[1], costs:[{ id:'science', count:1000, coeff:1.0 }] }, unlocks:['meteoriteT2', 'achMeteoriteT2'], hides:['techMeteoriteT2Card'] },
-    techCarbonT2: { max:1, build:{ counts:[1], costs:[{ id:'science', count:1000, coeff:1.0 }] }, unlocks:['carbonT2', 'achCarbonT2'], hides:['techCarbonT2Card'] },
-    techScienceT2: { max:1, build:{ counts:[1], costs:[{ id:'science', count:1000, coeff:1.0 }] }, unlocks:['scienceT2', 'achScienceT2'], hides:['techScienceT2Card'] },
-    techOilT2: { max:1, build:{ counts:[1], costs:[{ id:'science', count:1000, coeff:1.0 }] }, unlocks:['oilT2', 'achOilT2'], hides:['techOilT2Card'] },
-    techFuelT2: { max:1, build:{ counts:[1], costs:[{ id:'science', count:1000, coeff:1.0 }] }, unlocks:['fuelT2', 'achFuelT2'], hides:['techFuelT2Card'] },
-    techMetalT2: { max:1, build:{ counts:[1], costs:[{ id:'science', count:1000, coeff:1.0 }] }, unlocks:['metalT2', 'achMetalT2'], hides:['techMetalT2Card'] },
-    techGemT2: { max:1, build:{ counts:[1], costs:[{ id:'science', count:1000, coeff:1.0 }] }, unlocks:['gemT2', 'achGemT2'], hides:['techGemT2Card'] },
-    techWoodT2: { max:1, build:{ counts:[1], costs:[{ id:'science', count:1000, coeff:1.0 }] }, unlocks:['woodT2', 'achWoodT2'], hides:['techWoodT2Card'] },
-    techSiliconT2: { max:1, build:{ counts:[1], costs:[{ id:'science', count:1000, coeff:1.0 }] }, unlocks:['siliconT2', 'achSiliconT2'], hides:['techSiliconT2Card'] },
-    techUraniumT2: { max:1, build:{ counts:[1], costs:[{ id:'science', count:1000, coeff:1.0 }] }, unlocks:['uraniumT2', 'achUraniumT2'], hides:['techUraniumT2Card'] },
-    techLavaT2: { max:1, build:{ counts:[1], costs:[{ id:'science', count:1000, coeff:1.0 }] }, unlocks:['lavaT2', 'achLavaT2'], hides:['techLavaT2Card'] },
-    techLunariteT2: { max:1, build:{ counts:[1], costs:[{ id:'science', count:1000, coeff:1.0 }] }, unlocks:['lunariteT2', 'achLunariteT2'], hides:['techLunariteT2Card'] },
-    techMethaneT2: { max:1, build:{ counts:[1], costs:[{ id:'science', count:1000, coeff:1.0 }] }, unlocks:['methaneT2', 'achMethaneT2'], hides:['techMethaneT2Card'] },
-    techTitaniumT2: { max:1, build:{ counts:[1], costs:[{ id:'science', count:1000, coeff:1.0 }] }, unlocks:['titaniumT2', 'achTitaniumT2'], hides:['techTitaniumT2Card'] },
-    techGoldT2: { max:1, build:{ counts:[1], costs:[{ id:'science', count:1000, coeff:1.0 }] }, unlocks:['goldT2', 'achGoldT2'], hides:['techGoldT2Card'] },
-    techSilverT2: { max:1, build:{ counts:[1], costs:[{ id:'science', count:1000, coeff:1.0 }] }, unlocks:['silverT2', 'achSilverT2'], hides:['techSilverT2Card'] },
-    techHydrogenT2: { max:1, build:{ counts:[1], costs:[{ id:'science', count:1000, coeff:1.0 }] }, unlocks:['hydrogenT2', 'achHydrogenT2'], hides:['techHydrogenT2Card'] },
-    techHeliumT2: { max:1, build:{ counts:[1], costs:[{ id:'science', count:1000, coeff:1.0 }] }, unlocks:['heliumT2', 'achHeliumT2'], hides:['techHeliumT2Card'] },
-    techIceT2: { max:1, build:{ counts:[1], costs:[{ id:'science', count:1000, coeff:1.0 }] }, unlocks:['iceT2', 'achIceT2'], hides:['techIceT2Card'] },
+    techPlasmaT2: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:1000, coeff:1.0 }] }, unlocks:['plasmaT2', 'achPlasmaT2'], hides:['techPlasmaT2Card'] },
+    techMeteoriteT2: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:1000, coeff:1.0 }] }, unlocks:['meteoriteT2', 'achMeteoriteT2'], hides:['techMeteoriteT2Card'] },
+    techCarbonT2: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:1000, coeff:1.0 }] }, unlocks:['carbonT2', 'achCarbonT2'], hides:['techCarbonT2Card'] },
+    techScienceT2: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:1000, coeff:1.0 }] }, unlocks:['scienceT2', 'achScienceT2'], hides:['techScienceT2Card'] },
+    techOilT2: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:1000, coeff:1.0 }] }, unlocks:['oilT2', 'achOilT2'], hides:['techOilT2Card'] },
+    techFuelT2: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:1000, coeff:1.0 }] }, unlocks:['fuelT2', 'achFuelT2'], hides:['techFuelT2Card'] },
+    techMetalT2: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:1000, coeff:1.0 }] }, unlocks:['metalT2', 'achMetalT2'], hides:['techMetalT2Card'] },
+    techGemT2: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:1000, coeff:1.0 }] }, unlocks:['gemT2', 'achGemT2'], hides:['techGemT2Card'] },
+    techWoodT2: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:1000, coeff:1.0 }] }, unlocks:['woodT2', 'achWoodT2'], hides:['techWoodT2Card'] },
+    techSiliconT2: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:1000, coeff:1.0 }] }, unlocks:['siliconT2', 'achSiliconT2'], hides:['techSiliconT2Card'] },
+    techUraniumT2: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:1000, coeff:1.0 }] }, unlocks:['uraniumT2', 'achUraniumT2'], hides:['techUraniumT2Card'] },
+    techLavaT2: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:1000, coeff:1.0 }] }, unlocks:['lavaT2', 'achLavaT2'], hides:['techLavaT2Card'] },
+    techLunariteT2: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:1000, coeff:1.0 }] }, unlocks:['lunariteT2', 'achLunariteT2'], hides:['techLunariteT2Card'] },
+    techMethaneT2: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:1000, coeff:1.0 }] }, unlocks:['methaneT2', 'achMethaneT2'], hides:['techMethaneT2Card'] },
+    techTitaniumT2: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:1000, coeff:1.0 }] }, unlocks:['titaniumT2', 'achTitaniumT2'], hides:['techTitaniumT2Card'] },
+    techGoldT2: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:1000, coeff:1.0 }] }, unlocks:['goldT2', 'achGoldT2'], hides:['techGoldT2Card'] },
+    techSilverT2: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:1000, coeff:1.0 }] }, unlocks:['silverT2', 'achSilverT2'], hides:['techSilverT2Card'] },
+    techHydrogenT2: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:1000, coeff:1.0 }] }, unlocks:['hydrogenT2', 'achHydrogenT2'], hides:['techHydrogenT2Card'] },
+    techHeliumT2: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:1000, coeff:1.0 }] }, unlocks:['heliumT2', 'achHeliumT2'], hides:['techHeliumT2Card'] },
+    techIceT2: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:1000, coeff:1.0 }] }, unlocks:['iceT2', 'achIceT2'], hides:['techIceT2Card'] },
     /*------------------------------------------------------------------------*/
-    techPlasmaT3: { max:1, build:{ counts:[1], costs:[{ id:'science', count:5000, coeff:1.0 }] }, unlocks:['plasmaT3', 'achPlasmaT3'], hides:['techPlasmaT3Card'] },
-    techMeteoriteT3: { max:1, build:{ counts:[1], costs:[{ id:'science', count:5000, coeff:1.0 }] }, unlocks:['meteoriteT3', 'achMeteoriteT3'], hides:['techMeteoriteT3Card'] },
-    techCarbonT3: { max:1, build:{ counts:[1], costs:[{ id:'science', count:5000, coeff:1.0 }] }, unlocks:['carbonT3', 'achCarbonT3'], hides:['techCarbonT3Card'] },
-    techScienceT3: { max:1, build:{ counts:[1], costs:[{ id:'science', count:5000, coeff:1.0 }] }, unlocks:['scienceT3', 'achScienceT3'], hides:['techScienceT3Card'] },
-    techOilT3: { max:1, build:{ counts:[1], costs:[{ id:'science', count:5000, coeff:1.0 }] }, unlocks:['oilT3', 'achOilT3'], hides:['techOilT3Card'] },
-    techFuelT3: { max:1, build:{ counts:[1], costs:[{ id:'science', count:5000, coeff:1.0 }] }, unlocks:['fuelT3', 'achFuelT3'], hides:['techFuelT3Card'] },
-    techMetalT3: { max:1, build:{ counts:[1], costs:[{ id:'science', count:5000, coeff:1.0 }] }, unlocks:['metalT3', 'achMetalT3'], hides:['techMetalT3Card'] },
-    techGemT3: { max:1, build:{ counts:[1], costs:[{ id:'science', count:5000, coeff:1.0 }] }, unlocks:['gemT3', 'achGemT3'], hides:['techGemT3Card'] },
-    techWoodT3: { max:1, build:{ counts:[1], costs:[{ id:'science', count:5000, coeff:1.0 }] }, unlocks:['woodT3', 'achWoodT3'], hides:['techWoodT3Card'] },
-    techSiliconT3: { max:1, build:{ counts:[1], costs:[{ id:'science', count:5000, coeff:1.0 }] }, unlocks:['siliconT3', 'achSiliconT3'], hides:['techSiliconT3Card'] },
-    techUraniumT3: { max:1, build:{ counts:[1], costs:[{ id:'science', count:5000, coeff:1.0 }] }, unlocks:['uraniumT3', 'achUraniumT3'], hides:['techUraniumT3Card'] },
-    techLavaT3: { max:1, build:{ counts:[1], costs:[{ id:'science', count:5000, coeff:1.0 }] }, unlocks:['lavaT3', 'achLavaT3'], hides:['techLavaT3Card'] },
-    techLunariteT3: { max:1, build:{ counts:[1], costs:[{ id:'science', count:5000, coeff:1.0 }] }, unlocks:['lunariteT3', 'achLunariteT3'], hides:['techLunariteT3Card'] },
-    techMethaneT3: { max:1, build:{ counts:[1], costs:[{ id:'science', count:5000, coeff:1.0 }] }, unlocks:['methaneT3', 'achMethaneT3'], hides:['techMethaneT3Card'] },
-    techTitaniumT3: { max:1, build:{ counts:[1], costs:[{ id:'science', count:5000, coeff:1.0 }] }, unlocks:['titaniumT3', 'achTitaniumT3'], hides:['techTitaniumT3Card'] },
-    techGoldT3: { max:1, build:{ counts:[1], costs:[{ id:'science', count:5000, coeff:1.0 }] }, unlocks:['goldT3', 'achGoldT3'], hides:['techGoldT3Card'] },
-    techSilverT3: { max:1, build:{ counts:[1], costs:[{ id:'science', count:5000, coeff:1.0 }] }, unlocks:['silverT3', 'achSilverT3'], hides:['techSilverT3Card'] },
-    techHydrogenT3: { max:1, build:{ counts:[1], costs:[{ id:'science', count:5000, coeff:1.0 }] }, unlocks:['hydrogenT3', 'achHydrogenT3'], hides:['techHydrogenT3Card'] },
-    techHeliumT3: { max:1, build:{ counts:[1], costs:[{ id:'science', count:5000, coeff:1.0 }] }, unlocks:['heliumT3', 'achHeliumT3'], hides:['techHeliumT3Card'] },
-    techIceT3: { max:1, build:{ counts:[1], costs:[{ id:'science', count:5000, coeff:1.0 }] }, unlocks:['iceT3', 'achIceT3'], hides:['techIceT3Card'] },
+    techPlasmaT3: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:5000, coeff:1.0 }] }, unlocks:['plasmaT3', 'achPlasmaT3'], hides:['techPlasmaT3Card'] },
+    techMeteoriteT3: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:5000, coeff:1.0 }] }, unlocks:['meteoriteT3', 'achMeteoriteT3'], hides:['techMeteoriteT3Card'] },
+    techCarbonT3: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:5000, coeff:1.0 }] }, unlocks:['carbonT3', 'achCarbonT3'], hides:['techCarbonT3Card'] },
+    techScienceT3: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:5000, coeff:1.0 }] }, unlocks:['scienceT3', 'achScienceT3'], hides:['techScienceT3Card'] },
+    techOilT3: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:5000, coeff:1.0 }] }, unlocks:['oilT3', 'achOilT3'], hides:['techOilT3Card'] },
+    techFuelT3: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:5000, coeff:1.0 }] }, unlocks:['fuelT3', 'achFuelT3'], hides:['techFuelT3Card'] },
+    techMetalT3: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:5000, coeff:1.0 }] }, unlocks:['metalT3', 'achMetalT3'], hides:['techMetalT3Card'] },
+    techGemT3: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:5000, coeff:1.0 }] }, unlocks:['gemT3', 'achGemT3'], hides:['techGemT3Card'] },
+    techWoodT3: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:5000, coeff:1.0 }] }, unlocks:['woodT3', 'achWoodT3'], hides:['techWoodT3Card'] },
+    techSiliconT3: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:5000, coeff:1.0 }] }, unlocks:['siliconT3', 'achSiliconT3'], hides:['techSiliconT3Card'] },
+    techUraniumT3: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:5000, coeff:1.0 }] }, unlocks:['uraniumT3', 'achUraniumT3'], hides:['techUraniumT3Card'] },
+    techLavaT3: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:5000, coeff:1.0 }] }, unlocks:['lavaT3', 'achLavaT3'], hides:['techLavaT3Card'] },
+    techLunariteT3: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:5000, coeff:1.0 }] }, unlocks:['lunariteT3', 'achLunariteT3'], hides:['techLunariteT3Card'] },
+    techMethaneT3: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:5000, coeff:1.0 }] }, unlocks:['methaneT3', 'achMethaneT3'], hides:['techMethaneT3Card'] },
+    techTitaniumT3: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:5000, coeff:1.0 }] }, unlocks:['titaniumT3', 'achTitaniumT3'], hides:['techTitaniumT3Card'] },
+    techGoldT3: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:5000, coeff:1.0 }] }, unlocks:['goldT3', 'achGoldT3'], hides:['techGoldT3Card'] },
+    techSilverT3: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:5000, coeff:1.0 }] }, unlocks:['silverT3', 'achSilverT3'], hides:['techSilverT3Card'] },
+    techHydrogenT3: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:5000, coeff:1.0 }] }, unlocks:['hydrogenT3', 'achHydrogenT3'], hides:['techHydrogenT3Card'] },
+    techHeliumT3: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:5000, coeff:1.0 }] }, unlocks:['heliumT3', 'achHeliumT3'], hides:['techHeliumT3Card'] },
+    techIceT3: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:5000, coeff:1.0 }] }, unlocks:['iceT3', 'achIceT3'], hides:['techIceT3Card'] },
     /*------------------------------------------------------------------------*/
-    techPlasmaT4: { max:1, build:{ counts:[1], costs:[{ id:'science', count:25000, coeff:1.0 }] }, unlocks:['plasmaT4', 'achPlasmaT4'], hides:['techPlasmaT4Card'] },
-    techMeteoriteT4: { max:1, build:{ counts:[1], costs:[{ id:'science', count:25000, coeff:1.0 }] }, unlocks:['meteoriteT4', 'achMeteoriteT4'], hides:['techMeteoriteT4Card'] },
-    techCarbonT4: { max:1, build:{ counts:[1], costs:[{ id:'science', count:25000, coeff:1.0 }] }, unlocks:['carbonT4', 'achCarbonT4'], hides:['techCarbonT4Card'] },
-    techScienceT4: { max:1, build:{ counts:[1], costs:[{ id:'science', count:25000, coeff:1.0 }] }, unlocks:['scienceT4', 'achScienceT4'], hides:['techScienceT4Card'] },
-    techOilT4: { max:1, build:{ counts:[1], costs:[{ id:'science', count:25000, coeff:1.0 }] }, unlocks:['oilT4', 'achOilT4'], hides:['techOilT4Card'] },
-    techMetalT4: { max:1, build:{ counts:[1], costs:[{ id:'science', count:25000, coeff:1.0 }] }, unlocks:['metalT4', 'achMetalT4'], hides:['techMetalT4Card'] },
-    techGemT4: { max:1, build:{ counts:[1], costs:[{ id:'science', count:25000, coeff:1.0 }] }, unlocks:['gemT4', 'achGemT4'], hides:['techGemT4Card'] },
-    techWoodT4: { max:1, build:{ counts:[1], costs:[{ id:'science', count:25000, coeff:1.0 }] }, unlocks:['woodT4', 'achWoodT4'], hides:['techWoodT4Card'] },
-    techSiliconT4: { max:1, build:{ counts:[1], costs:[{ id:'science', count:25000, coeff:1.0 }] }, unlocks:['siliconT4', 'achSiliconT4'], hides:['techSiliconT4Card'] },
-    techUraniumT4: { max:1, build:{ counts:[1], costs:[{ id:'science', count:25000, coeff:1.0 }] }, unlocks:['uraniumT4', 'achUraniumT4'], hides:['techUraniumT4Card'] },
-    techLavaT4: { max:1, build:{ counts:[1], costs:[{ id:'science', count:25000, coeff:1.0 }] }, unlocks:['lavaT4', 'achLavaT4'], hides:['techLavaT4Card'] },
-    techLunariteT4: { max:1, build:{ counts:[1], costs:[{ id:'science', count:25000, coeff:1.0 }] }, unlocks:['lunariteT4', 'achLunariteT4'], hides:['techLunariteT4Card'] },
-    techMethaneT4: { max:1, build:{ counts:[1], costs:[{ id:'science', count:25000, coeff:1.0 }] }, unlocks:['methaneT4', 'achMethaneT4'], hides:['techMethaneT4Card'] },
-    techTitaniumT4: { max:1, build:{ counts:[1], costs:[{ id:'science', count:25000, coeff:1.0 }] }, unlocks:['titaniumT4', 'achTitaniumT4'], hides:['techTitaniumT4Card'] },
-    techGoldT4: { max:1, build:{ counts:[1], costs:[{ id:'science', count:25000, coeff:1.0 }] }, unlocks:['goldT4', 'achGoldT4'], hides:['techGoldT4Card'] },
-    techSilverT4: { max:1, build:{ counts:[1], costs:[{ id:'science', count:25000, coeff:1.0 }] }, unlocks:['silverT4', 'achSilverT4'], hides:['techSilverT4Card'] },
-    techHydrogenT4: { max:1, build:{ counts:[1], costs:[{ id:'science', count:25000, coeff:1.0 }] }, unlocks:['hydrogenT4', 'achHydrogenT4'], hides:['techHydrogenT4Card'] },
-    techHeliumT4: { max:1, build:{ counts:[1], costs:[{ id:'science', count:25000, coeff:1.0 }] }, unlocks:['heliumT4', 'achHeliumT4'], hides:['techHeliumT4Card'] },
-    techIceT4: { max:1, build:{ counts:[1], costs:[{ id:'science', count:25000, coeff:1.0 }] }, unlocks:['iceT4', 'achIceT4'], hides:['techIceT4Card'] },
+    techPlasmaT4: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:25000, coeff:1.0 }] }, unlocks:['plasmaT4', 'achPlasmaT4'], hides:['techPlasmaT4Card'] },
+    techMeteoriteT4: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:25000, coeff:1.0 }] }, unlocks:['meteoriteT4', 'achMeteoriteT4'], hides:['techMeteoriteT4Card'] },
+    techCarbonT4: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:25000, coeff:1.0 }] }, unlocks:['carbonT4', 'achCarbonT4'], hides:['techCarbonT4Card'] },
+    techScienceT4: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:25000, coeff:1.0 }] }, unlocks:['scienceT4', 'achScienceT4'], hides:['techScienceT4Card'] },
+    techOilT4: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:25000, coeff:1.0 }] }, unlocks:['oilT4', 'achOilT4'], hides:['techOilT4Card'] },
+    techMetalT4: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:25000, coeff:1.0 }] }, unlocks:['metalT4', 'achMetalT4'], hides:['techMetalT4Card'] },
+    techGemT4: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:25000, coeff:1.0 }] }, unlocks:['gemT4', 'achGemT4'], hides:['techGemT4Card'] },
+    techWoodT4: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:25000, coeff:1.0 }] }, unlocks:['woodT4', 'achWoodT4'], hides:['techWoodT4Card'] },
+    techSiliconT4: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:25000, coeff:1.0 }] }, unlocks:['siliconT4', 'achSiliconT4'], hides:['techSiliconT4Card'] },
+    techUraniumT4: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:25000, coeff:1.0 }] }, unlocks:['uraniumT4', 'achUraniumT4'], hides:['techUraniumT4Card'] },
+    techLavaT4: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:25000, coeff:1.0 }] }, unlocks:['lavaT4', 'achLavaT4'], hides:['techLavaT4Card'] },
+    techLunariteT4: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:25000, coeff:1.0 }] }, unlocks:['lunariteT4', 'achLunariteT4'], hides:['techLunariteT4Card'] },
+    techMethaneT4: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:25000, coeff:1.0 }] }, unlocks:['methaneT4', 'achMethaneT4'], hides:['techMethaneT4Card'] },
+    techTitaniumT4: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:25000, coeff:1.0 }] }, unlocks:['titaniumT4', 'achTitaniumT4'], hides:['techTitaniumT4Card'] },
+    techGoldT4: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:25000, coeff:1.0 }] }, unlocks:['goldT4', 'achGoldT4'], hides:['techGoldT4Card'] },
+    techSilverT4: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:25000, coeff:1.0 }] }, unlocks:['silverT4', 'achSilverT4'], hides:['techSilverT4Card'] },
+    techHydrogenT4: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:25000, coeff:1.0 }] }, unlocks:['hydrogenT4', 'achHydrogenT4'], hides:['techHydrogenT4Card'] },
+    techHeliumT4: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:25000, coeff:1.0 }] }, unlocks:['heliumT4', 'achHeliumT4'], hides:['techHeliumT4Card'] },
+    techIceT4: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:25000, coeff:1.0 }] }, unlocks:['iceT4', 'achIceT4'], hides:['techIceT4Card'] },
     /*------------------------------------------------------------------------*/
-    techCarbonT5: { max:1, build:{ counts:[1], costs:[{ id:'science', count:125000, coeff:1.0 }] }, unlocks:['carbonT5', 'achCarbonT5'], hides:['techCarbonT5Card'] },
-    techScienceT5: { max:1, build:{ counts:[1], costs:[{ id:'science', count:125000, coeff:1.0 }] }, unlocks:['scienceT5', 'achScienceT5'], hides:['techScienceT5Card'] },
-    techOilT5: { max:1, build:{ counts:[1], costs:[{ id:'science', count:125000, coeff:1.0 }] }, unlocks:['oilT5', 'achOilT5'], hides:['techOilT5Card'] },
-    techMetalT5: { max:1, build:{ counts:[1], costs:[{ id:'science', count:125000, coeff:1.0 }] }, unlocks:['metalT5', 'achMetalT5'], hides:['techMetalT5Card'] },
-    techGemT5: { max:1, build:{ counts:[1], costs:[{ id:'science', count:125000, coeff:1.0 }] }, unlocks:['gemT5', 'achGemT5'], hides:['techGemT5Card'] },
-    techWoodT5: { max:1, build:{ counts:[1], costs:[{ id:'science', count:125000, coeff:1.0 }] }, unlocks:['woodT5', 'achWoodT5'], hides:['techWoodT5Card'] },
-    techSiliconT5: { max:1, build:{ counts:[1], costs:[{ id:'science', count:125000, coeff:1.0 }] }, unlocks:['siliconT5', 'achSiliconT5'], hides:['techSiliconT5Card'] },
-    techUraniumT5: { max:1, build:{ counts:[1], costs:[{ id:'science', count:125000, coeff:1.0 }] }, unlocks:['uraniumT5', 'achUraniumT5'], hides:['techUraniumT5Card'] },
-    techLavaT5: { max:1, build:{ counts:[1], costs:[{ id:'science', count:125000, coeff:1.0 }] }, unlocks:['lavaT5', 'achLavaT5'], hides:['techLavaT5Card'] },
-    techLunariteT5: { max:1, build:{ counts:[1], costs:[{ id:'science', count:125000, coeff:1.0 }] }, unlocks:['lunariteT5', 'achLunariteT5'], hides:['techLunariteT5Card'] },
-    techMethaneT5: { max:1, build:{ counts:[1], costs:[{ id:'science', count:125000, coeff:1.0 }] }, unlocks:['methaneT5', 'achMethaneT5'], hides:['techMethaneT5Card'] },
-    techTitaniumT5: { max:1, build:{ counts:[1], costs:[{ id:'science', count:125000, coeff:1.0 }] }, unlocks:['titaniumT5', 'achTitaniumT5'], hides:['techTitaniumT5Card'] },
-    techGoldT5: { max:1, build:{ counts:[1], costs:[{ id:'science', count:125000, coeff:1.0 }] }, unlocks:['goldT5', 'achGoldT5'], hides:['techGoldT5Card'] },
-    techSilverT5: { max:1, build:{ counts:[1], costs:[{ id:'science', count:125000, coeff:1.0 }] }, unlocks:['silverT5', 'achSilverT5'], hides:['techSilverT5Card'] },
-    techHydrogenT5: { max:1, build:{ counts:[1], costs:[{ id:'science', count:125000, coeff:1.0 }] }, unlocks:['hydrogenT5', 'achHydrogenT5'], hides:['techHydrogenT5Card'] },
-    techHeliumT5: { max:1, build:{ counts:[1], costs:[{ id:'science', count:125000, coeff:1.0 }] }, unlocks:['heliumT5', 'achHeliumT5'], hides:['techHeliumT5Card'] },
-    techIceT5: { max:1, build:{ counts:[1], costs:[{ id:'science', count:125000, coeff:1.0 }] }, unlocks:['iceT5', 'achIceT5'], hides:['techIceT5Card'] },
+    techCarbonT5: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:125000, coeff:1.0 }] }, unlocks:['carbonT5', 'achCarbonT5'], hides:['techCarbonT5Card'] },
+    techScienceT5: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:125000, coeff:1.0 }] }, unlocks:['scienceT5', 'achScienceT5'], hides:['techScienceT5Card'] },
+    techOilT5: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:125000, coeff:1.0 }] }, unlocks:['oilT5', 'achOilT5'], hides:['techOilT5Card'] },
+    techMetalT5: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:125000, coeff:1.0 }] }, unlocks:['metalT5', 'achMetalT5'], hides:['techMetalT5Card'] },
+    techGemT5: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:125000, coeff:1.0 }] }, unlocks:['gemT5', 'achGemT5'], hides:['techGemT5Card'] },
+    techWoodT5: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:125000, coeff:1.0 }] }, unlocks:['woodT5', 'achWoodT5'], hides:['techWoodT5Card'] },
+    techSiliconT5: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:125000, coeff:1.0 }] }, unlocks:['siliconT5', 'achSiliconT5'], hides:['techSiliconT5Card'] },
+    techUraniumT5: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:125000, coeff:1.0 }] }, unlocks:['uraniumT5', 'achUraniumT5'], hides:['techUraniumT5Card'] },
+    techLavaT5: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:125000, coeff:1.0 }] }, unlocks:['lavaT5', 'achLavaT5'], hides:['techLavaT5Card'] },
+    techLunariteT5: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:125000, coeff:1.0 }] }, unlocks:['lunariteT5', 'achLunariteT5'], hides:['techLunariteT5Card'] },
+    techMethaneT5: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:125000, coeff:1.0 }] }, unlocks:['methaneT5', 'achMethaneT5'], hides:['techMethaneT5Card'] },
+    techTitaniumT5: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:125000, coeff:1.0 }] }, unlocks:['titaniumT5', 'achTitaniumT5'], hides:['techTitaniumT5Card'] },
+    techGoldT5: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:125000, coeff:1.0 }] }, unlocks:['goldT5', 'achGoldT5'], hides:['techGoldT5Card'] },
+    techSilverT5: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:125000, coeff:1.0 }] }, unlocks:['silverT5', 'achSilverT5'], hides:['techSilverT5Card'] },
+    techHydrogenT5: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:125000, coeff:1.0 }] }, unlocks:['hydrogenT5', 'achHydrogenT5'], hides:['techHydrogenT5Card'] },
+    techHeliumT5: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:125000, coeff:1.0 }] }, unlocks:['heliumT5', 'achHeliumT5'], hides:['techHeliumT5Card'] },
+    techIceT5: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:125000, coeff:1.0 }] }, unlocks:['iceT5', 'achIceT5'], hides:['techIceT5Card'] },
     /*------------------------------------------------------------------------*/
     segment: {
         max: 250,
@@ -1733,7 +1733,7 @@ var base = {
     },
     /*------------------------------------------------------------------------*/                                                                                        
     missionFirst: {
-        max:1, collapses:['missionFirstCard'],
+        max:1, maxBuildCount:1, collapses:['missionFirstCard'],
         build:{ counts:[1], costs:[{ id:'metal', count:10, coeff:1 }, { id:'wood', count:10, coeff:1 }, { id:'gem', count:10, coeff:1 }] },
         unlocks: [
             'science', 'achScience',
@@ -1746,7 +1746,7 @@ var base = {
         ],
     },
     missionStorage: {
-        max:1, collapses:['missionStorageCard'],
+        max:1, maxBuildCount:1, collapses:['missionStorageCard'],
         build:{ counts:[1], costs:[{ id:'science', count:5, coeff:1 }] },
         unlocks: [
             'missionSolarPanel', 'missionOil',
@@ -1756,7 +1756,7 @@ var base = {
         ],
     },
     missionSolarPanel: {
-        max:1, collapses:['missionSolarPanelCard'],
+        max:1, maxBuildCount:1, collapses:['missionSolarPanelCard'],
         build:{ counts:[1], costs:[{ id:'science', count:20, coeff:1 }] },
         unlocks: [
             'energy', 'achEnergy', 'energyT1', 'achEnergyT1',
@@ -1767,7 +1767,7 @@ var base = {
         ],
     },
     missionEnergy: {
-        max:1, collapses:['missionEnergyCard'],
+        max:1, maxBuildCount:1, collapses:['missionEnergyCard'],
         build:{ counts:[1], costs:[{ id:'science', count:20, coeff:1 }] },
         unlocks: [
             'carbon', 'achCarbon',
@@ -1779,7 +1779,7 @@ var base = {
         ],
     },
     missionOil: {
-        max:1, collapses:['missionOilCard'],
+        max:1, maxBuildCount:1, collapses:['missionOilCard'],
         build:{ counts:[1], costs:[{ id:'science', count:30, coeff:1 }] },
         unlocks: [
             'oil', 'achOil',
@@ -1789,7 +1789,7 @@ var base = {
         ],
     },
     missionTier2: {
-        max:1, collapses:['missionTier2Card'],
+        max:1, maxBuildCount:1, collapses:['missionTier2Card'],
         build:{ counts:[1], costs:[{ id:'science', count:100, coeff:1 }] },
         unlocks: [
             'techPlasmaT2', 'techMeteoriteT2', 'techCarbonT2', 'techScienceT2', 'techOilT2', 'techFuelT2', 'techMetalT2', 'techGemT2', 'techWoodT2', 'techSiliconT2', 'techUraniumT2', 'techLavaT2', 'techLunariteT2', 'techMethaneT2', 'techTitaniumT2', 'techGoldT2', 'techSilverT2', 'techHydrogenT2', 'techHeliumT2', 'techIceT2',
@@ -1800,14 +1800,14 @@ var base = {
         ],
     },
     missionDestruction: {
-        max:1, collapses:['missionDestructionCard'],
+        max:1, maxBuildCount:1, collapses:['missionDestructionCard'],
         build:{ counts:[1], costs:[{ id:'science', count:500, coeff:1 }] },
         notifs: [
             'carbonPane', 'fuelPane', 'sciencePane', 'oilPane', 'metalPane', 'gemPane', 'woodPane',
         ],
     },
     missionFuel: {
-        max:1, collapses:['missionFuelCard'],
+        max:1, maxBuildCount:1, collapses:['missionFuelCard'],
         build:{ counts:[1], costs:[{ id:'science', count:500, coeff:1 }] },
         unlocks: [
             'fuel', 'achFuel',
@@ -1820,14 +1820,14 @@ var base = {
     },
     /*------------------------------------------------------------------------*/                                                                                        
     missionRocket1: {
-        max:1, collapses:['missionRocket1Card'],
+        max:1, maxBuildCount:1, collapses:['missionRocket1Card'],
         build:{ counts:[1], costs:[{ id:'metal', count:1200, coeff:1 }, { id:'gem', count:900, coeff:1 }, { id:'oil', count:1000, coeff:1 }] },
         unlocks: [
             'missionRocket2',
         ],
     },
     missionRocket2: {
-        max:1, collapses:['missionRocket2Card'],
+        max:1, maxBuildCount:1, collapses:['missionRocket2Card'],
         build:{ counts:[1], costs:[{ id:'fuel', count:20, coeff:1 }] },
         unlocks: [
             'missionMoon', 'missionMercury', 'missionVenus', 'missionMars', 'missionAsteroid',
@@ -1838,7 +1838,7 @@ var base = {
     },
     /*------------------------------------------------------------------------*/
     missionMoon: {
-        max:1, collapses:['missionMoonCard'],
+        max:1, maxBuildCount:1, collapses:['missionMoonCard'],
         build:{ counts:[1], costs:[{ id:'fuel', count:25, coeff:1 }] },
         unlocks: [
             'lunarite', 'achLunarite'
@@ -1848,11 +1848,11 @@ var base = {
         ],
     },
     missionMercury: {
-        max:1, collapses:['missionMercuryCard'],
+        max:1, maxBuildCount:1, collapses:['missionMercuryCard'],
         build:{ counts:[1] },
     },
     missionVenus: {
-        max:1, collapses:['missionVenusCard'],
+        max:1, maxBuildCount:1, collapses:['missionVenusCard'],
         build:{ counts:[1], costs:[{ id:'fuel', count:100, coeff:1 }] },
         unlocks: [
             'methane', 'achMethane',
@@ -1863,7 +1863,7 @@ var base = {
         ],
     },
     missionMars: {
-        max:1, collapses:['missionMarsCard'],
+        max:1, maxBuildCount:1, collapses:['missionMarsCard'],
         build:{ counts:[1], costs:[{ id:'fuel', count:75, coeff:1 }] },
         unlocks: [
             'silicon', 'achSilicon',
@@ -1874,7 +1874,7 @@ var base = {
         ],
     },
     missionAsteroid: {
-        max:1, collapses:['missionAsteroidCard'],
+        max:1, maxBuildCount:1, collapses:['missionAsteroidCard'],
         build:{ counts:[1], costs:[{ id:'fuel', count:400, coeff:1 }] },
         unlocks: [
             'gold', 'achGold',
@@ -1887,7 +1887,7 @@ var base = {
         ],
     },
     missionWonderStation: {
-        max:1, collapses:['missionWonderStationCard'],
+        max:1, maxBuildCount:1, collapses:['missionWonderStationCard'],
         build:{ counts:[1], costs:[{ id:'fuel', count:500, coeff:1 }] },
         unlocks: [
             'missionWonderStation2',
@@ -1898,7 +1898,7 @@ var base = {
     },
     /*------------------------------------------------------------------------*/
     missionJupiter: {
-        max:1, collapses:['missionJupiterCard'],
+        max:1, maxBuildCount:1, collapses:['missionJupiterCard'],
         build:{ counts:[1], costs:[{ id:'fuel', count:1000, coeff:1 }] },
         unlocks: [
             'hydrogen', 'achHydrogen',
@@ -1908,7 +1908,7 @@ var base = {
         ],
     },
     missionSaturn: {
-        max:1, collapses:['missionSaturnCard'],
+        max:1, maxBuildCount:1, collapses:['missionSaturnCard'],
         build:{ counts:[1], costs:[{ id:'fuel', count:2000, coeff:1 }] },
         unlocks: [
             'helium', 'achHelium',
@@ -1919,15 +1919,15 @@ var base = {
         ],
     },
     missionUranus: {
-        max:1, collapses:['missionUranusCard'],
+        max:1, maxBuildCount:1, collapses:['missionUranusCard'],
         build:{ counts:[1] },
     },
     missionNeptune: {
-        max:1, collapses:['missionNeptuneCard'],
+        max:1, maxBuildCount:1, collapses:['missionNeptuneCard'],
         build:{ counts:[1] },
     },
     missionPluto: {
-        max:1, collapses:['missionPlutoCard'],
+        max:1, maxBuildCount:1, collapses:['missionPlutoCard'],
         build:{ counts:[1], costs:[{ id:'fuel', count:4000, coeff:1 }] },
         unlocks: [
             'ice', 'achIce',
@@ -1938,14 +1938,14 @@ var base = {
         ],
     },
     missionKuiper: {
-        max:1, collapses:['missionKuiperCard'],
+        max:1, maxBuildCount:1, collapses:['missionKuiperCard'],
         build:{ counts:[1], costs:[{ id:'fuel', count:6000, coeff:1 }] },
         unlocks: [
             'missionSolCenter',
         ],
     },
     missionSolCenter: {
-        max:1, collapses:['missionSolCenterCard'],
+        max:1, maxBuildCount:1, collapses:['missionSolCenterCard'],
         build:{ counts:[1], costs:[{ id:'fuel', count:7000, coeff:1 }] },
         unlocks: [
             'missionPlasma',
@@ -1956,14 +1956,14 @@ var base = {
     },
     /*------------------------------------------------------------------------*/
     missionWonderStation2: {
-        max:1, collapses:['missionWonderStation2Card'],
+        max:1, maxBuildCount:1, collapses:['missionWonderStation2Card'],
         build:{ counts:[1] },
         unlocks: [
             'missionWonderPrecious', 'missionWonderTechnological',
         ],
     },
     missionWonderPrecious: {
-        max:1, collapses:['missionWonderPreciousCard'],
+        max:1, maxBuildCount:1, collapses:['missionWonderPreciousCard'],
         build:{ counts:[1], costs:[{ id:'gem', count:40000 }, { id:'silver', count:27500 }, { id:'gold', count:15000 }] },
         unlocks: [
             'uranium', 'achUranium',
@@ -1976,7 +1976,7 @@ var base = {
         ],
     },
     missionWonderTechnological: {
-        max:1, collapses:['missionWonderTechnologicalCard'],
+        max:1, maxBuildCount:1, collapses:['missionWonderTechnologicalCard'],
         build:{ counts:[1], costs:[{ id:'silicon', count:80000 }, { id:'gold', count:48000 }, { id:'gem', count:100000 }] },
         unlocks: [
             'techPlasmaT3', 'techMeteoriteT3', 'techCarbonT3', 'techScienceT3', 'techOilT3', 'techFuelT3', 'techMetalT3', 'techGemT3', 'techWoodT3', 'techSiliconT3', 'techUraniumT3', 'techLavaT3', 'techLunariteT3', 'techMethaneT3', 'techTitaniumT3', 'techGoldT3', 'techSilverT3', 'techHydrogenT3', 'techHeliumT3', 'techIceT3',
@@ -1986,7 +1986,7 @@ var base = {
         ],
     },
     missionWonderEnergetic: {
-        max:1, collapses:['missionWonderEnergeticCard'],
+        max:1, maxBuildCount:1, collapses:['missionWonderEnergeticCard'],
         build:{ counts:[1], costs:[{ id:'wood', count:40000 }, { id:'carbon', count:20000 }, { id:'uranium', count:700 }] },
         unlocks: [
             'lava', 'achLava',
@@ -1997,7 +1997,7 @@ var base = {
         ],
     },
     missionWonderMeteorite: {
-        max:1, collapses:['missionWonderMeteoriteCard'],
+        max:1, maxBuildCount:1, collapses:['missionWonderMeteoriteCard'],
         build:{ counts:[1], costs:[{ id:'meteorite', count:10000 }, { id:'ice', count:2000000 }, { id:'silicon', count:4000000 }] },
         unlocks: [
             'techPlasmaT4', 'techMeteoriteT4', 'techCarbonT4', 'techScienceT4', 'techOilT4', 'techMetalT4', 'techGemT4', 'techWoodT4', 'techSiliconT4', 'techUraniumT4', 'techLavaT4', 'techLunariteT4', 'techMethaneT4', 'techTitaniumT4', 'techGoldT4', 'techSilverT4', 'techHydrogenT4', 'techHeliumT4', 'techIceT4',
@@ -2008,7 +2008,7 @@ var base = {
     },
     /*------------------------------------------------------------------------*/
     missionPlasma: {
-        max:1, collapses:['missionPlasmaCard'],
+        max:1, maxBuildCount:1, collapses:['missionPlasmaCard'],
         build:{ counts:[1], costs:[{ id:'hydrogen', count:1500 }, { id:'oil', count:1500 }, { id:'wood', count:1500 }] },
         unlocks: [
             'plasma', 'achPlasma',
@@ -2019,14 +2019,14 @@ var base = {
         ],
     },
     missionEmc: {
-        max:1, collapses:['missionEmcCard'],
+        max:1, maxBuildCount:1, collapses:['missionEmcCard'],
         build:{ counts:[1], costs:[{ id:'energy', count:75000  }, { id:'plasma', count:100 }] },
         notifs: [
             'emcPane',
         ],
     },
     missionMeteorite: {
-        max:1, collapses:['missionMeteoriteCard'],
+        max:1, maxBuildCount:1, collapses:['missionMeteoriteCard'],
         build:{ counts:[1], costs:[{ id:'energy', count:85000  }, { id:'plasma', count:1000 }] },
         unlocks: [
             'meteorite', 'achMeteorite',
@@ -2038,7 +2038,7 @@ var base = {
         ],
     },
     missionDyson: {
-        max:1, collapses:['missionDysonCard'],
+        max:1, maxBuildCount:1, collapses:['missionDysonCard'],
         build:{ counts:[1], costs:[{ id:'energy', count:100000 }, { id:'plasma', count:10000 }] },
         unlocks: [
             'segment', 'dysonT1', 'dysonT2', 'dysonT3',
@@ -2051,7 +2051,7 @@ var base = {
     },
     /*------------------------------------------------------------------------*/
     missionRebirth: {
-        max:1, collapses:['missionRebirthCard'],
+        max:1, maxBuildCount:1, collapses:['missionRebirthCard'],
         build:{ counts:[1] },
         unlocks: [
             'darkmatter', 'rebirth',
@@ -2063,7 +2063,7 @@ var base = {
         ],
     },
     missionRebirth2: {
-        max:1, collapses:['missionRebirth2Card'],
+        max:1, maxBuildCount:1, collapses:['missionRebirth2Card'],
         build:{ counts:[1], costs:[{ id:'dysonT3', count:1 }, { id:'darkmatter', count:100 }] },
         unlocks: [
             'missionWonderComm', 'missionWonderAntimatter',
@@ -2074,7 +2074,7 @@ var base = {
     },
     /*------------------------------------------------------------------------*/
     missionWonderComm: {
-        max:1, collapses:['missionWonderCommCard'],
+        max:1, maxBuildCount:1, collapses:['missionWonderCommCard'],
         build:{ counts:[1], costs:[{ id:'gold', count:6000000 }, { id:'silicon',  count:10000000 }, { id:'ice', count:6000000  }] },
         unlocks: [
             'radarT1', 'radarT2',
@@ -2084,7 +2084,7 @@ var base = {
         ],
     },
     missionWonderAntimatter: {
-        max:1, collapses:['missionWonderAntimatterCard'],
+        max:1, maxBuildCount:1, collapses:['missionWonderAntimatterCard'],
         build:{ counts:[1], costs:[{ id:'uranium', count:6000000 }, { id:'lava', count:10000000 }, { id:'oil', count:8000000  }] },
         unlocks: [
             'antimatter', 'achAntimatter',
@@ -2095,14 +2095,14 @@ var base = {
         ],
     },
     missionWonderPortal: {
-        max:1, collapses:['missionWonderPortalCard'],
+        max:1, maxBuildCount:1, collapses:['missionWonderPortalCard'],
         build:{ counts:[1], costs:[{ id:'meteorite', count:500000  }, { id:'helium', count:8000000  }, { id:'silicon', count:6000000  }] },
         unlocks: [
             'missionWonderStargate',
         ],
     },
     missionWonderStargate: {
-        max:1, collapses:['missionWonderStargateCard'],
+        max:1, maxBuildCount:1, collapses:['missionWonderStargateCard'],
         build:{ counts:[1], costs:[{ id:'plasma', count:500000 }, { id:'silicon', count:920000000 }, { id:'meteorite', count:17000000 }] },
         unlocks: [
             'missionSpaceship', 'missionShield', 'missionEngine', 'missionAero',
@@ -2115,7 +2115,7 @@ var base = {
     shield: { }, engine: { }, aero: { },
     /*------------------------------------------------------------------------*/
     missionSpaceship: {
-        max:1, collapses:['missionSpaceshipCard'],
+        max:1, maxBuildCount:1, collapses:['missionSpaceshipCard'],
         build:{ counts:[1], costs:[{ id:'shield', count:50, coeff:1.0 }, { id:'engine', count:25, coeff:1.0 }, { id:'aero', count:15, coeff:1.0 }] },
         unlocks: [
             'shipT1', 'shipT2', 'shipT3', 'shipT4', 'shipT5',
@@ -2145,7 +2145,7 @@ var base = {
     },
     /*------------------------------------------------------------------------*/
     missionEnlighten: {
-        max:1, collapses:['missionEnlightenCard'],
+        max:1, maxBuildCount:1, collapses:['missionEnlightenCard'],
         build:{ counts:[1] },
         unlocks: [
             'ultrite', 'enlighten',
@@ -2158,7 +2158,7 @@ var base = {
     },
     /*------------------------------------------------------------------------*/
     missionOverlord: {
-        max:1, collapses:['missionOverlordCard'],
+        max:1, maxBuildCount:1, collapses:['missionOverlordCard'],
         build:{ counts:[1], costs:[{ id:'statue', count:150, coeff:1 }] },
     },
     /*------------------------------------------------------------------------*/
@@ -2481,7 +2481,7 @@ export const store = createStore({
     state() {
         return {
             
-            maxFps: 60,
+            maxFps: 30,
             
             lastFrameTimeMs: null,
             lastConversionTimeMs: null,
@@ -2541,11 +2541,14 @@ export const store = createStore({
         getTimeSinceLastEnlighten: (state) => { return (new Date().getTime() - state.statsLastEnlighten) / 1000 },
         
         getAchievementMax: (state) => {
+		
             let count = 0
             state.achievements.forEach(item => { if (item.unlocked == true) count += item.brackets.length })
             return count
         },
+		
         getAchievementCount: (state) => {
+
             let count = 0
             state.achievements.forEach(item => { count += item.count })
             return count
@@ -2559,6 +2562,7 @@ export const store = createStore({
         getItemDistance: (state) => (id) => { return state.items[id].distance },
         
         getItemRange: (state) => (id) => {
+
             if (!('range' in state.items[id])) return null
             return state.items[id].range
         },
@@ -2625,6 +2629,7 @@ export const store = createStore({
         },
         
         getRawProduction: (state) => (id) => {
+
             let rawProduction = 0
             state.producers.forEach(item => {
                 item.outputs.forEach(output => {
@@ -2635,6 +2640,7 @@ export const store = createStore({
         },
         
         getItemProduction: (state) => (id, outputId) => {
+
             let production = 0
             let item = state.items[id]
             item.outputs.forEach(output => {
@@ -2644,6 +2650,7 @@ export const store = createStore({
         },
         
         getRawConsumption: (state) => (id) => {
+
             let rawConsumption = 0
             state.producers.forEach(item => {
                 if ('inputs' in item) {
@@ -2656,6 +2663,7 @@ export const store = createStore({
         },
         
         getItemConsumption: (state) => (id, inputId) => {
+
             let consumption = 0
             let item = state.items[id]
             if ('inputs' in item) {
@@ -2667,6 +2675,7 @@ export const store = createStore({
         },
         
         hasConsumptionIssue: (state, getters) => {
+
             let result = false
             state.resources.forEach(item => {
                 let consumption = getters.getRawConsumption(item.id)
@@ -2692,7 +2701,7 @@ export const store = createStore({
             return costs
         },
         
-        canGain: (state, getters) => (id, count) => { 
+        canGain: (state, getters) => (id, count) => {
             
             let item = state.items[id]
             if (item.unlocked == false) return -2
@@ -2833,16 +2842,17 @@ export const store = createStore({
         },
         
         canBuild: (state, getters) => (id, count) => {
-            
+			
             let item = state.items[id]
             if (item.unlocked == false) return -3
             if (!('build' in item)) return -4
             if (!('costs' in item.build)) return -5
             if (item.max && item.count >= item.max) return -6
             if (item.count > 1 && item.max && item.count + count > item.max) return -7
-            
+			if (state.items[id].maxBuildCount && state.items[id].maxBuildCount <= count) return 0
+			
             let can = 0
-
+			
             let costs = getters.getBuildCosts(id, count)
             costs.forEach(cost => {
                 if (state.items[cost.id].count - cost.count < 0) {
@@ -4018,6 +4028,47 @@ export const store = createStore({
                     if (item.progress >= 100) item.count += 1
                 }
             })
+			
+			/* Max build count */
+			
+			let buildings = [
+			
+                'energyT1', 'energyT2', 'energyT3', 'energyT4', 'energyT5', 'energyT6',
+                'plasmaT1', 'plasmaT2', 'plasmaT3', 'plasmaT4',
+                'meteoriteT1', 'meteoriteT2', 'meteoriteT3', 'meteoriteT4',
+                'carbonT1', 'carbonT2', 'carbonT3', 'carbonT4', 'carbonT5',
+                'oilT1', 'oilT2', 'oilT3', 'oilT4', 'oilT5',
+                'metalT1', 'metalT2', 'metalT3', 'metalT4', 'metalT5',
+                'gemT1', 'gemT2', 'gemT3', 'gemT4', 'gemT5',
+                'woodT1', 'woodT2', 'woodT3', 'woodT4', 'woodT5',
+                'siliconT1', 'siliconT2', 'siliconT3', 'siliconT4', 'siliconT5',
+                'uraniumT1', 'uraniumT2', 'uraniumT3', 'uraniumT4', 'uraniumT5',
+                'lavaT1', 'lavaT2', 'lavaT3', 'lavaT4', 'lavaT5',
+                'lunariteT1', 'lunariteT2', 'lunariteT3', 'lunariteT4', 'lunariteT5',
+                'methaneT1', 'methaneT2', 'methaneT3', 'methaneT4', 'methaneT5',
+                'titaniumT1', 'titaniumT2', 'titaniumT3', 'titaniumT4', 'titaniumT5',
+                'goldT1', 'goldT2', 'goldT3', 'goldT4', 'goldT5',
+                'silverT1', 'silverT2', 'silverT3', 'silverT4', 'silverT5',
+                'hydrogenT1', 'hydrogenT2', 'hydrogenT3', 'hydrogenT4', 'hydrogenT5',
+                'heliumT1', 'heliumT2', 'heliumT3', 'heliumT4', 'heliumT5',
+                'iceT1', 'iceT2', 'iceT3', 'iceT4', 'iceT5',
+                'scienceT1', 'scienceT2', 'scienceT3', 'scienceT4', 'scienceT5',
+                'fuelT1', 'fuelT2', 'fuelT3',
+                'antimatterT1',
+                
+                'radarT1', 'radarT2',
+                
+                'shipT1', 'shipT2', 'shipT3', 'shipT4', 'shipT5',
+                
+                'segment', 'dysonT1', 'dysonT2', 'dysonT3',
+				
+				'missionShield', 'missionEngine', 'missionAero',
+			]
+			buildings.forEach(id => {
+				
+				let max = getters.getBuildMaxCount(id)
+				if (!state.items[id].maxBuildCount || state.items[id].maxBuildCount != max) state.items[id].maxBuildCount = max
+			})
         },
         
         /*--------------------------------------------------------------------*/
