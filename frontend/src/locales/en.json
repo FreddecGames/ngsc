@@ -604,7 +604,8 @@
     "statue": "Statue",
     
     "missionFirst": "Starting",
-    "missionFirst-desc1": "First things to do are to manually gain Metal, Wood and Gem to build your first T1 machines to automate resource production. By doing that you will unlock Science. Building science machine will allow you to research technologies to unlock more content.",
+    "missionFirst-desc1": "Welcome! Your mission is to mine resources to build machines to explore universe and conquer stars.",
+    "missionFirst-desc2": "First things to do are to manually gain Metal, Wood and Gem to build your first T1 machines to automate resource production. By doing that you will unlock Science. Building science machine will allow you to research technologies to unlock more content.",
     "missionStorage": "Storage Upgrades",
     "missionStorage-desc1": "This will allow you to build storage upgrades to increase the maximum on the amount of resource you can have at once.",
     "missionSolarPanel": "Solar Panels",
@@ -1031,5 +1032,9 @@
     "statsLastEnlighten": "Time since last Enlighten",
     "statsTotalRebirths": "Total Rebirths",
     "statsTotalEnlightens": "Total Enlightens",
-    "statsTotal": "All Time Totals"
+    "statsTotal": "All Time Totals",
+	
+	"mobileText1": "This device is not supported by web version",
+	"mobileText2": "Please download app",
+	"mobileText3": "In case of any problem, please contact Freddec on "
 }

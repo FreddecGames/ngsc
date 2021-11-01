@@ -16,8 +16,8 @@
     
     .sidebar-block:last-child {
         flex-shrink: inherit;
-        margin-bottom: 52px;
-        padding-bottom: 32px;
+        margin-bottom: 42px;
+        padding-bottom: 1rem;
     }
 </style>
 

@@ -243,7 +243,7 @@
                     <template v-slot:col-1>
                         <div class="col">
                             <small class="me-2">{{ $t('lastestVersion') }}</small>
-                            <small class="text-light">v2.0.0</small>
+                            <small class="text-light">v2.0.0 - 2021-11-01</small>
                             <ul class="small mt-2 mb-0">
                                 <li>NEW: look'n feel has been refactored</li>
                                 <li>NEW: some mecanisms have been changed</li>
@@ -275,7 +275,7 @@
             </page-pane>
             
             <page-pane id="earthPane" name="sidebar-item-earth" icon="earth.png">
-                <card-building id="missionFirstCard" name="missionFirst" :descs="[ 'missionFirst-desc1' ]" itemId="missionFirst" btnText="button-next" />
+                <card-building id="missionFirstCard" name="missionFirst" :descs="[ 'missionFirst-desc1', 'missionFirst-desc2' ]" itemId="missionFirst" btnText="button-next" />
                 <card-building id="missionStorageCard" name="missionStorage" :descs="[ 'missionStorage-desc1' ]" itemId="missionStorage" btnText="button-research" />
                 <card-building id="missionSolarPanelCard" name="missionSolarPanel" :descs="[ 'missionSolarPanel-desc1' ]" itemId="missionSolarPanel" btnText="button-research" />
                 <card-building id="missionEnergyCard" name="missionEnergy" :descs="[ 'missionEnergy-desc1' ]" itemId="missionEnergy" btnText="button-research" />

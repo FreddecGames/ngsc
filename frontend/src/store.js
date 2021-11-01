@@ -2849,7 +2849,6 @@ export const store = createStore({
             if (!('costs' in item.build)) return -5
             if (item.max && item.count >= item.max) return -6
             if (item.count > 1 && item.max && item.count + count > item.max) return -7
-			if (state.items[id].maxBuildCount && state.items[id].maxBuildCount <= count) return 0
 			
             let can = 0
 			
@@ -3089,7 +3088,7 @@ export const store = createStore({
             
             state.activeTab = 'missionsPane'
             state.activePane = 'earthPane'
-            state.sidebarOpen = true
+            state.sidebarOpen = false
             
             state.autoConversionId = null
             state.autoStorageId = null
@@ -3737,10 +3736,11 @@ export const store = createStore({
                     state.companyName = loadeddata.companyName || 'NG Space Company'
                     state.autoSaveDelay = loadeddata.autoSaveDelay || 30000
                     
-                    state.activeTab = loadeddata.activeTab || 'resourcesPane'
-                    state.activePane = loadeddata.activePane || 'plasmaPane'
-                    state.sidebarOpen = loadeddata.sidebarOpen || true
-                    
+                    state.activeTab = loadeddata.activeTab || 'missionsPane'
+                    state.activePane = loadeddata.activePane || 'earthPane'
+					
+					if (loadeddata.sidebarOpen) state.sidebarOpen = loadeddata.sidebarOpen
+					
                     state.lastFrameTimeMs = loadeddata.lastFrameTimeMs || currentTime
                     state.lastConversionTimeMs = loadeddata.lastConversionTimeMs || currentTime
                     state.lastUpgradeTimeMs = loadeddata.lastUpgradeTimeMs || currentTime
@@ -3924,7 +3924,7 @@ export const store = createStore({
             let delay = currentTimeMs - state.lastFrameTimeMs
             if (delay < stepDuration) return
             
-            //delay /= 1000
+            delay /= 1000
             state.lastFrameTimeMs = currentTimeMs
             
             /* Resource production */

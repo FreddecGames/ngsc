@@ -7,7 +7,6 @@
                     <div class="row gx-2 align-items-center">
                         
                         <div class="col-auto position-relative">
-                            <span class="badge bg-danger text-light position-absolute">BETA Testing</span>
                             <img src="../assets/whiteLogo.png" alt="Logo" width="32" height="32" class="align-bottom" />
                         </div>
                         
@@ -18,7 +17,7 @@
                     </div>
                 </div>
                 
-                <div class="col-auto mt-1 mt-lg-0">
+                <!-- div class="col-auto mt-1 mt-lg-0">
                     <button id="dropdownLanguage" class="btn" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Language">
                         
                         <span v-if="locale == 'en'">
@@ -49,7 +48,7 @@
                         </li>
                         
                     </ul>
-                </div>
+                </div -->
                 
                 <div class="d-none d-lg-block col-auto">
                     <a class="btn" href="https://discord.gg/3UkgeeT9CV" target="_blank">

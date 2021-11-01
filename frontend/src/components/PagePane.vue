@@ -46,7 +46,7 @@
     @media (min-width: 768px) { .titleBar { padding-left: 320px; } }
     
     .content {
-        position: fixed; top: 106px; bottom: 32px; left: 0; z-index: 5;
+        position: fixed; top: 106px; bottom: .5rem; left: 0; z-index: 5;
         width: 100%;
     }
     @media (min-width: 768px) { .content { padding-left: 320px; } }
