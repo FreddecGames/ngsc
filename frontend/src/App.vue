@@ -1,9 +1,9 @@
 <template>
     
-    <screen-loading v-if="isMobile() == false && gameLoaded == false" />
-    <screen-game v-if="isMobile() == false && gameLoaded == true" />
+    <screen-loading v-if="(isMobile == false || app == 'android') && gameLoaded == false" />
+    <screen-game v-if="(isMobile == false || app == 'android') && gameLoaded == true" />
 
-    <screen-mobile v-if="isMobile() == true" />
+    <screen-mobile v-if="isMobile == true && app != 'android'" />
 	
 </template>
 
@@ -24,6 +24,9 @@ export default {
     data() {
         return {
             
+            app: null,
+            isMobile: false,
+            
             gameLoaded: false,
 
             timeSinceAutoSave: 0,
@@ -35,38 +38,39 @@ export default {
     },
     created() {
         
+        let uri = window.location.search.substring(1)
+        let params = new URLSearchParams(uri)
+        this.app = params.get('app')
+        
+        let txt = navigator.userAgent || navigator.vendor || window.opera
+        if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(txt))
+            this.isMobile = true
+            
         this.gameLoaded = false
         
-        const self = this
-        setTimeout(() => {
+        if ((this.isMobile == true && this.app == 'android') || this.isMobile == false) {
         
-            self.init()
-            self.load()
+            const self = this
+            setTimeout(() => {
             
-            self.$i18n.locale = self.locale
-            
-            self.mainLoop()
-            
-            self.mainInterval = setInterval(() => { self.mainLoop() }, 100)
-            self.autoSaveInterval = setInterval(() => { self.autoSave() }, 1000)
-            
-            self.gameLoaded = true
-        }, 1000)
+                self.init()
+                self.load()
+                
+                self.$i18n.locale = self.locale
+                
+                self.mainLoop()
+                
+                self.mainInterval = setInterval(() => { self.mainLoop() }, 100)
+                self.autoSaveInterval = setInterval(() => { self.autoSave() }, 1000)
+                
+                self.gameLoaded = true
+            }, 1000)
+        }
     },
     methods: {
     
         ...mapActions([ 'init', 'load', 'save', 'mainLoop', ]),
         
-        
-        isMobile: function() {
-            
-            let txt = navigator.userAgent || navigator.vendor || window.opera
-            if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(txt))
-				return true
-            else
-				return false
-		},
-		
         autoSave() {
             
             let timeLeft = this.autoSaveDelay - this.timeSinceAutoSave
