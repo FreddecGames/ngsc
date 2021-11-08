@@ -1,11 +1,11 @@
 <template>
     <div v-if="count < max" class="col">
-    
-        <div class="row gy-2 gx-3 justify-content-end" :class="{ 'row-cols-1':costs.length <= 1, 'row-cols-2':costs.length == 2, 'row-cols-3':costs.length >= 3 }">
+        
+        <div v-if="costs" class="row gy-2 gx-3 justify-content-end" :class="{ 'row-cols-1':costs.length <= 1, 'row-cols-2':costs.length == 2, 'row-cols-3':costs.length >= 3 }">
             <line-cost v-for="cost in costs" :key="cost" :cost="cost" />
         </div>
 
-        <div v-if="outputs" class="pt-2">
+        <div v-if="outputs" class="pt-3">
             <div class="row g-1">
                 <div class="col">
                     <small class="text-muted">{{ $t('value-production') }}</small>
@@ -18,7 +18,7 @@
             </div>
         </div>
         
-        <div v-if="inputs" class="pt-2">
+        <div v-if="inputs" class="pt-1">
             <div class="row g-1">
                 <div class="col">
                     <small class="text-muted">{{ $t('value-consumption') }}</small>
@@ -55,7 +55,7 @@
             </div>
         </div>
         
-        <div class="pt-2 row g-2 align-items-center justify-content-end">
+        <div class="pt-3 row g-2 align-items-center justify-content-end">
         
             <div v-if="counts.length > 1" class="col">
                 <div class="row g-1">

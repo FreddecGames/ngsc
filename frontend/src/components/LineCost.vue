@@ -5,10 +5,10 @@
             <div class="row g-1 small">
                 <div class="col d-flex align-items-center">
                     <img class="me-1" :src="require(`../assets/icons/${cost.id}.png`).default" width="12" height="12" :alt="$t(cost.id)" />
-                    <span :class="{ 'text-danger': storage && cost.count > storage }"><format-number :value="cost.count" /></span>
+                    <small :class="{ 'text-danger': storage && cost.count > storage }"><format-number :value="cost.count" /></small>
                 </div>
                 <div v-if="storage" class="col-auto">
-                    <timer-count :itemId="cost.id" :count="cost.count" />
+                    <small><timer-count :itemId="cost.id" :count="cost.count" /></small>
                 </div>
             </div>
             <line-progress :itemId="cost.id" :count="cost.count" />

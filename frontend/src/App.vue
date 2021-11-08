@@ -59,8 +59,11 @@ export default {
                 self.$i18n.locale = self.locale
                 
                 self.mainLoop()
+                self.updateLoop()
                 
                 self.mainInterval = setInterval(() => { self.mainLoop() }, 100)
+                self.updateInterval = setInterval(() => { self.updateLoop() }, 1000)
+                
                 self.autoSaveInterval = setInterval(() => { self.autoSave() }, 1000)
                 
                 self.gameLoaded = true
@@ -69,7 +72,7 @@ export default {
     },
     methods: {
     
-        ...mapActions([ 'init', 'load', 'save', 'mainLoop', ]),
+        ...mapActions([ 'init', 'load', 'save', 'mainLoop', 'updateLoop', ]),
         
         autoSave() {
             
@@ -86,6 +89,7 @@ export default {
     beforeUnmount() {
 
         clearInterval(this.mainInterval)
+        clearInterval(this.updateInterval)
         clearInterval(this.autoSaveInterval)
     },
 }

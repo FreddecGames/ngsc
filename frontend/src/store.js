@@ -2,6 +2,27 @@ import { createStore } from 'vuex'
 
 import LZString from 'lz-string'
 
+function arrayCompare(array1, array2) {
+
+    if (!array1 || !array2)
+        return false;
+
+    if (array1.length != array2.length)
+        return false;
+
+    for (let i=0, l=array1.length; i < l; i++) {
+
+        if (array1[i] instanceof Array && array2[i] instanceof Array) {
+            if (!arrayCompare(array1[i], array2[i]))
+                return false;       
+        }           
+        else if (array1[i] != array2[i]) { 
+            return false;   
+        }
+    }
+    return true;
+}
+
 var base = {
     
     /*------------------------------------------------------------------------*/
@@ -2799,78 +2820,34 @@ export const store = createStore({
         },
         
         getBuildCounts: (state) => (id) => { return state.items[id].build.counts },
-        
-        getBuildMaxCount: (state) => (id) => {
-            
-            let item = state.items[id]
-            if (!('costs' in item.build)) return 1
-            
-            let costs = JSON.parse(JSON.stringify(item.build.costs))
-            costs.forEach(cost => {
-                cost.base = cost.count
-                cost.count = cost.base * cost.mod * Math.pow(cost.coeff, item.count)
-            })
-            
-            let result = 1000000
-            costs.forEach(cost => {
-                
-                if (result == 0) return
-                
-                let max = Math.floor(Math.log(((state.items[cost.id].count * (cost.coeff - 1)) / cost.count) + 1) / Math.log(cost.coeff))
-                if (!max) max = 0
-                if (max < result) { result = max }
-            })
-            
-            return result
-        },
+        getBuildMaxCount: (state) => (id) => { return state.items[id].maxBuildCount },
         
         getBuildCosts: (state) => (id, count) => {
             
-            let item = state.items[id]
-            if (!('costs' in item.build)) return false
-
-            let costs = JSON.parse(JSON.stringify(item.build.costs))
-            costs.forEach(cost => {
-                cost.base = cost.count
-                cost.count = Math.floor(cost.base * cost.mod * Math.pow(cost.coeff, item.count))
-            })
+            var ret = null
             
-            for (let n = 1; n < count; n++)
-                costs.forEach(cost => { cost.count += Math.floor(cost.base * cost.mod * Math.pow(cost.coeff, item.count + n)) })
+            if (count == 1) ret = state.items[id].costs[0]
+            else if (count == 5) ret = state.items[id].costs[1]
+            else if (count == 25) ret = state.items[id].costs[2]
+            else if (count == 100) ret = state.items[id].costs[3]
+            else ret = state.items[id].costs[4]
             
-            return costs
+            if (ret != undefined) return ret
+            else return null
         },
         
-        canBuild: (state, getters) => (id, count) => {
-			
-            let item = state.items[id]
-            if (item.unlocked == false) return -3
-            if (!('build' in item)) return -4
-            if (!('costs' in item.build)) return -5
-            if (item.max && item.count >= item.max) return -6
-            if (item.count > 1 && item.max && item.count + count > item.max) return -7
-			
-            let can = 0
-			
-            let costs = getters.getBuildCosts(id, count)
-            costs.forEach(cost => {
-                if (state.items[cost.id].count - cost.count < 0) {
-                    can = -1
-                    return
-                }
-            })
+        canBuild: (state) => (id, count) => {			
             
-            let inputs = getters.getItemInputs(id, count)
-            if (inputs) {
-                inputs.forEach(input => {
-                    if (getters.getItemProd(input.id) - input.count < 0) {
-                        can = -2
-                        return
-                    }
-                })
-            }
+            var ret = null
             
-            return can
+            if (count == 1) ret = state.items[id].canBuild[0]
+            else if (count == 5) ret = state.items[id].canBuild[1]
+            else if (count == 25) ret = state.items[id].canBuild[2]
+            else if (count == 100) ret = state.items[id].canBuild[3]
+            else ret = state.items[id].canBuild[4]
+            
+            if (ret != undefined) return ret
+            else return null
         },
         
         isDestroyable: (state) => (id) => {
@@ -3128,7 +3105,13 @@ export const store = createStore({
                     
                     if ('inputs' in item) item.inputs.forEach(input => { input.mod = 1.0 })
                     
-                    if ('build' in item && 'costs' in item.build) item.build.costs.forEach(cost => { cost.mod = 1.0 })
+                    if ('build' in item && 'costs' in item.build) {
+                        
+                        item.costs = []
+                        item.canBuild = []
+                        
+                        item.build.costs.forEach(cost => { cost.mod = 1.0 })
+                    }
                     
                     if ('brackets' in item) {
                         item.progress = 0
@@ -3337,7 +3320,7 @@ export const store = createStore({
                 if (!text) return console.warn('Load failed')
                 loadeddata = JSON.parse(text)
                 
-                if (loadeddata.version) {
+                if (loadeddata.version || loadeddata.versionNumber) {
                     
                     state.locale = loadeddata.locale || 'en'
                     state.companyName = loadeddata.companyName || 'NG Space Company'
@@ -3351,12 +3334,12 @@ export const store = createStore({
                     
                     state.collapsed = loadeddata.collapsed || []
                     
-                    state.statsStartDate = loadeddata.stats.startDate || currentTime
-                    state.statsLastRebirth = loadeddata.stats.lastRebirthDate || currentTime
-                    state.statsLastEnlighten = loadeddata.stats.lastEnlightenDate || currentTime
-                    state.statsTotalRebirths = loadeddata.stats.rebirthCount || 0
-                    state.statsTotalEnlightens = loadeddata.stats.enlightenCount || 0
-                    state.statsTotalConquests = loadeddata.stats.starOwned.allTime || 0
+                    state.statsStartDate = (loadeddata.stats && loadeddata.stats.startDate) || currentTime
+                    state.statsLastRebirth = (loadeddata.stats && loadeddata.stats.lastRebirthDate) || currentTime
+                    state.statsLastEnlighten = (loadeddata.stats && loadeddata.stats.lastEnlightenDate) || currentTime
+                    state.statsTotalRebirths = (loadeddata.stats && loadeddata.stats.rebirthCount) || 0
+                    state.statsTotalEnlightens = (loadeddata.stats && loadeddata.stats.enlightenCount) || 0
+                    state.statsTotalConquests = (loadeddata.stats && loadeddata.stats.starOwned.allTime) || 0
                     
                     let ids = [
                         
@@ -3773,6 +3756,16 @@ export const store = createStore({
                     dispatch('onLoad')
                 }
             }
+            
+            for (let i in state.items) {
+                let item = state.items[i]
+                
+                if ('build' in item && 'costs' in item.build) {
+                    
+                    dispatch('updateBuildingCosts', item.id)
+                    dispatch('updateCanBuild', item.id)
+                }
+            }
         },
         
         loadV1Item({ state }, payload) {
@@ -3917,11 +3910,11 @@ export const store = createStore({
         /*--------------------------------------------------------------------*/
         mainLoop({ state, getters }) {
             
-            let currentTimeMs = new Date().getTime()
+            var currentTimeMs = new Date().getTime()
             
-            let stepDuration = 1000 / state.maxFps
+            var stepDuration = 1000 / state.maxFps
             
-            let delay = currentTimeMs - state.lastFrameTimeMs
+            var delay = currentTimeMs - state.lastFrameTimeMs
             if (delay < stepDuration) return
             
             delay /= 1000
@@ -3929,21 +3922,31 @@ export const store = createStore({
             
             /* Resource production */
             
-            let temp = {}
+            var temp = {}, i, j, item, can, costs
             state.resources.forEach(item => { temp[item.id] = { prod:0, count:item.count } })
             
-            state.producers.forEach(item => {
-            
+            for (i = 0; i < state.producers.length; i++) {
+                item = state.producers[i]
+                
                 if ('inputs' in item)
-                    item.inputs.forEach(input => { temp[input.id].prod -= input.count * input.mod * item.count })
+                    for (j = 0; j < item.inputs.length; j++) {
+                        var input = item.inputs[j]
 
-                item.outputs.forEach(output => { temp[output.id].prod += output.count * output.mod * item.count })
-            })
+                        temp[input.id].prod -= input.count * input.mod * item.count
+                    }
+                
+                for (j = 0; j < item.outputs.length; j++) {
+                    var output = item.outputs[j]
+                    
+                    temp[output.id].prod += output.count * output.mod * item.count
+                }
+            }
             
-            state.resources.forEach(item => {
+            for (i = 0; i < state.resources.length; i++) {
+                item = state.resources[i]
                 
                 temp[item.id].count = Math.max(temp[item.id].count + temp[item.id].prod * delay, 0)
-            })
+            }
             
             /* Automatic conversion */
             
@@ -3953,13 +3956,13 @@ export const store = createStore({
                 delay /= 1000
                 state.lastConversionTimeMs = currentTimeMs
                 
-                for (let i = 0; i < Math.floor(delay); i++) {
+                for (i = 0; i < Math.floor(delay); i++) {
                     
-                    let count = getters.getConvertionMaxCount(state.autoConversionId)
+                    var count = getters.getConvertionMaxCount(state.autoConversionId)
                     
-                    let can = true
+                    can = true
         
-                    let costs = getters.getConvertionCosts(state.autoConversionId, count)
+                    costs = getters.getConvertionCosts(state.autoConversionId, count)
                     costs.forEach(cost => {
                         if (temp[cost.id].count - cost.count < 0) {
                             can = false
@@ -3969,7 +3972,7 @@ export const store = createStore({
                     
                     if (can && count > 0) {
                         
-                        let item = state.items[state.autoConversionId]
+                        item = state.items[state.autoConversionId]
                         temp[item.id].count += count
                         
                         costs.forEach(cost => { temp[cost.id].count -= cost.count })
@@ -3986,11 +3989,11 @@ export const store = createStore({
                 delay /= 1000
                 state.lastUpgradeTimeMs = currentTimeMs
                 
-                for (let i = 0; i < Math.floor(delay); i++) {
+                for (i = 0; i < Math.floor(delay); i++) {
                     
-                    let can = true
+                    can = true
         
-                    let costs = getters.getUpgradeCosts(state.autoStorageId, 1)
+                    costs = getters.getUpgradeCosts(state.autoStorageId, 1)
                     costs.forEach(cost => {
                         if (temp[cost.id].count - cost.count < 0) {
                             can = false
@@ -4000,10 +4003,10 @@ export const store = createStore({
 
                     if (can) {
                         
-                        let item = state.items[state.autoStorageId]
+                        item = state.items[state.autoStorageId]
                         item.upgrade += 1
                         
-                        let costs = getters.getUpgradeCosts(state.autoStorageId, 1)
+                        costs = getters.getUpgradeCosts(state.autoStorageId, 1)
                         costs.forEach(cost => { temp[cost.id].count -= cost.count })
                     }
                     else break
@@ -4012,63 +4015,175 @@ export const store = createStore({
             
             /* Resource storage limitation */
             
-            state.resources.forEach(item => {
+            for (i = 0; i < state.resources.length; i++) {
+                item = state.resources[i]
                 
                 if ('storage' in item) temp[item.id].count = Math.min(temp[item.id].count, getters.getItemStorage(item.id))
                 if (temp[item.id].count != item.count) item.count = temp[item.id].count
-            })
+            }
             
             /* Achievements checking */
             
-            state.achievements.forEach(item => {
+            for (i = 0; i < state.achievements.length; i++) {
+                item = state.achievements[i]
+                
                 if (item.unlocked && item.count < item.brackets.length) {
                 
-                    let limit = item.brackets[item.count]
+                    var limit = item.brackets[item.count]
                     item.progress = 100 * state.items[item.data].count / limit
                     if (item.progress >= 100) item.count += 1
                 }
+            }
+        },
+        
+        /*--------------------------------------------------------------------*/
+        computeMaxBuildCount({ state }, id) {
+            
+            let item = state.items[id]
+            if (!('costs' in item.build)) return 1
+            
+            let costs = JSON.parse(JSON.stringify(item.build.costs))
+            costs.forEach(cost => {
+                cost.base = cost.count
+                cost.count = cost.base * cost.mod * Math.pow(cost.coeff, item.count)
             })
-			
-			/* Max build count */
-			
-			let buildings = [
-			
-                'energyT1', 'energyT2', 'energyT3', 'energyT4', 'energyT5', 'energyT6',
-                'plasmaT1', 'plasmaT2', 'plasmaT3', 'plasmaT4',
-                'meteoriteT1', 'meteoriteT2', 'meteoriteT3', 'meteoriteT4',
-                'carbonT1', 'carbonT2', 'carbonT3', 'carbonT4', 'carbonT5',
-                'oilT1', 'oilT2', 'oilT3', 'oilT4', 'oilT5',
-                'metalT1', 'metalT2', 'metalT3', 'metalT4', 'metalT5',
-                'gemT1', 'gemT2', 'gemT3', 'gemT4', 'gemT5',
-                'woodT1', 'woodT2', 'woodT3', 'woodT4', 'woodT5',
-                'siliconT1', 'siliconT2', 'siliconT3', 'siliconT4', 'siliconT5',
-                'uraniumT1', 'uraniumT2', 'uraniumT3', 'uraniumT4', 'uraniumT5',
-                'lavaT1', 'lavaT2', 'lavaT3', 'lavaT4', 'lavaT5',
-                'lunariteT1', 'lunariteT2', 'lunariteT3', 'lunariteT4', 'lunariteT5',
-                'methaneT1', 'methaneT2', 'methaneT3', 'methaneT4', 'methaneT5',
-                'titaniumT1', 'titaniumT2', 'titaniumT3', 'titaniumT4', 'titaniumT5',
-                'goldT1', 'goldT2', 'goldT3', 'goldT4', 'goldT5',
-                'silverT1', 'silverT2', 'silverT3', 'silverT4', 'silverT5',
-                'hydrogenT1', 'hydrogenT2', 'hydrogenT3', 'hydrogenT4', 'hydrogenT5',
-                'heliumT1', 'heliumT2', 'heliumT3', 'heliumT4', 'heliumT5',
-                'iceT1', 'iceT2', 'iceT3', 'iceT4', 'iceT5',
-                'scienceT1', 'scienceT2', 'scienceT3', 'scienceT4', 'scienceT5',
-                'fuelT1', 'fuelT2', 'fuelT3',
-                'antimatterT1',
+            
+            let result = 1000000
+            costs.forEach(cost => {
                 
-                'radarT1', 'radarT2',
+                if (result == 0) return
                 
-                'shipT1', 'shipT2', 'shipT3', 'shipT4', 'shipT5',
+                let max = Math.floor(Math.log(((state.items[cost.id].count * (cost.coeff - 1)) / cost.count) + 1) / Math.log(cost.coeff))
+                if (!max) max = 0
+                if (max < result) { result = max }
+            })
+            
+            return result
+        },
+        
+        computeBuildCosts({ state }, payload) {
+            
+            let id = payload.id
+            let count = payload.count
+            
+            let item = state.items[id]
+            if (!('costs' in item.build)) return null
+
+            let costs = JSON.parse(JSON.stringify(item.build.costs))
+            costs.forEach(cost => {
+                cost.base = cost.count
+                cost.count = Math.floor(cost.base * cost.mod * Math.pow(cost.coeff, item.count))
+            })
+            
+            for (let n = 1; n < count; n++)
+                costs.forEach(cost => { cost.count += Math.floor(cost.base * cost.mod * Math.pow(cost.coeff, item.count + n)) })
+            
+            return costs
+        },
+        
+        computeCanBuild({ state, getters }, payload) {
+            
+            let id = payload.id
+            let count = payload.count
+			
+            let item = state.items[id]
+            if (!('build' in item)) return -4
+            if (!('costs' in item.build)) return -5
+            if (item.max && item.count >= item.max) return -6
+            if (item.count > 1 && item.max && item.count + count > item.max) return -7
+			
+            let can = 0
+			
+            let costs = JSON.parse(JSON.stringify(getters.getBuildCosts(id, count)))
+            if (costs)
+                costs.forEach(cost => {
+                    if (state.items[cost.id].count - cost.count < 0) {
+                        can = -1
+                        return
+                    }
+                })
+            costs = null
+            
+            let inputs = JSON.parse(JSON.stringify(getters.getItemInputs(id, count)))
+            if (can == 0 && inputs) {
+                inputs.forEach(input => {
+                    if (getters.getItemProd(input.id) - input.count < 0) {
+                        can = -2
+                        return
+                    }
+                })
+            }
+            inputs = null
+            
+            return can
+        },
+        
+        updateLoop({ state, dispatch }) {
+            
+            for (let i in state.items) {
+                let item = state.items[i]
                 
-                'segment', 'dysonT1', 'dysonT2', 'dysonT3',
-				
-				'missionShield', 'missionEngine', 'missionAero',
-			]
-			buildings.forEach(id => {
-				
-				let max = getters.getBuildMaxCount(id)
-				if (!state.items[id].maxBuildCount || state.items[id].maxBuildCount != max) state.items[id].maxBuildCount = max
-			})
+                if ('build' in item && 'costs' in item.build) {
+                    
+                    dispatch('updateMaxBuildCount', item.id)
+                    dispatch('updateCanBuild', item.id)
+                }
+            }
+        },
+        
+        updateMaxBuildCount({ state, dispatch }, id) {
+            
+            dispatch('computeMaxBuildCount', id).then(max => {
+                if (!state.items[id].maxBuildCount || state.items[id].maxBuildCount != max) {
+                    
+                    state.items[id].maxBuildCount = max
+                    
+                    dispatch('updateBuildingCosts', id)
+                }
+            })
+        },
+        
+        updateBuildingCosts({ state, dispatch }, id) {
+            
+            dispatch('computeBuildCosts', { id:id, count:1 }).then(costs => {
+                if (arrayCompare(costs, state.items[id].costs[0]) == false) state.items[id].costs[0] = JSON.parse(JSON.stringify(costs))
+                costs = null
+            })
+            dispatch('computeBuildCosts', { id:id, count:5 }).then(costs => {
+                if (arrayCompare(costs, state.items[id].costs[1]) == false) state.items[id].costs[1] = JSON.parse(JSON.stringify(costs))
+                costs = null
+            })
+            dispatch('computeBuildCosts', { id:id, count:25 }).then(costs => {
+                if (arrayCompare(costs, state.items[id].costs[2]) == false) state.items[id].costs[2] = JSON.parse(JSON.stringify(costs))
+                costs = null
+            })
+            dispatch('computeBuildCosts', { id:id, count:100 }).then(costs => {
+                if (arrayCompare(costs, state.items[id].costs[3]) == false) state.items[id].costs[3] = JSON.parse(JSON.stringify(costs))
+                costs = null
+            })
+            dispatch('computeBuildCosts', { id:id, count:state.items[id].maxBuildCount }).then(costs => {
+                if (arrayCompare(costs, state.items[id].costs[4]) == false) state.items[id].costs[4] = JSON.parse(JSON.stringify(costs))
+                costs = null
+            })
+        },
+        
+        updateCanBuild({ state, dispatch }, id) {
+
+            dispatch('computeCanBuild', { id:id, count:1 }).then(can => {
+                if (can != state.items[id].canBuild[0]) state.items[id].canBuild[0] = can
+            })
+            dispatch('computeCanBuild', { id:id, count:5 }).then(can => {
+                if (can != state.items[id].canBuild[1]) state.items[id].canBuild[1] = can
+            })
+            dispatch('computeCanBuild', { id:id, count:25 }).then(can => {
+                if (can != state.items[id].canBuild[2]) state.items[id].canBuild[2] = can
+            })
+            dispatch('computeCanBuild', { id:id, count:100 }).then(can => {
+                if (can != state.items[id].canBuild[3]) state.items[id].canBuild[3] = can
+            })
+            dispatch('computeCanBuild', { id:id, count:state.items[id].maxBuildCount }).then(can => {
+                if (can != state.items[id].canBuild[4]) state.items[id].canBuild[4] = can
+            })
         },
         
         /*--------------------------------------------------------------------*/
@@ -4123,7 +4238,7 @@ export const store = createStore({
         },
 
         /*--------------------------------------------------------------------*/
-        build({ state, getters }, payload) {
+        build({ state, getters, dispatch }, payload) {
             
             let can = getters.canBuild(payload.id, payload.count)
             if (can == 0 || can == -5) {
@@ -4159,17 +4274,31 @@ export const store = createStore({
                 }
                 
                 if ('onBuild' in item) item.onBuild(state)
+                
+                dispatch('updateMaxBuildCount', payload.id)                
+                dispatch('updateBuildingCosts', payload.id)
+                dispatch('updateCanBuild', payload.id)
             }
         },
         
-        destroy({ state, getters }, payload) {
+        destroy({ state, getters, dispatch }, payload) {
             
             let can = getters.canDestroy(payload.id, payload.count)
             if (can) {
                 
                 let item = state.items[payload.id]
                 item.count -= payload.count
+                
+                dispatch('updateMaxBuildCount', payload.id)                
+                dispatch('updateBuildingCosts', payload.id)
+                dispatch('updateCanBuild', payload.id)
             }
+        },
+        
+        meet({ state }) {
+            
+            var item = state.items['missionOverlord']
+            item.count = 1
         },
         
         /*--------------------------------------------------------------------*/

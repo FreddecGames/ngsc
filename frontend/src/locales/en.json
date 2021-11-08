@@ -126,7 +126,7 @@
     "button-manualSave": "Manual Save",
     
     "energy": "Energy",
-    "energyUpgrade-desc1": "Multiply by 10 your Energy storage size",
+    "energyUpgrade-desc1": "Double your Energy storage size",
     "energyT1": "Solar Panel",
     "energyT1-desc1": "Gains Energy slowly from the sun without using any resources.",
     "energyT2": "Carbon Engine",
@@ -143,7 +143,7 @@
     "plasma": "Plasma",
     "plasmaGain-desc1": "Manually gain Plasma from Energy and Hydrogen",
     "plasmaConvert-desc1": "Convert Energy into Plasma",
-    "plasmaUpgrade-desc1": "Multiply by 10 your Plasma storage size",
+    "plasmaUpgrade-desc1": "Double your Plasma storage size",
     "plasmaT1": "Super-Heater",
     "plasmaT1-desc1": "The Super-Heater throws electricity at Hydrogen to turn it into a plasmatic substance.",
     "techPlasmaT2": "Plasma Tier 2 Machine",
@@ -249,7 +249,7 @@
     "oilT5-desc1": "Much better than the 8000 version, this fossilator reverses the fossil fuel cycle. Instead of burning, it creates them from carbon in the air.",
     
     "fuel": "Fuel",
-    "fuelUpgrade-desc1": "Multiply by 1.25 your Fuel storage size",
+    "fuelUpgrade-desc1": "Double your Fuel storage size",
     "fuelT1": "Chemical Plant",
     "fuelT1-desc1": "Chemical plants are used to make rocket fuel automatically.",
     "techFuelT2": "Fuel Tier 2 Machine",

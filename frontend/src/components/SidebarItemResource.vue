@@ -3,12 +3,12 @@
         <template v-slot:extra>
             
             <div class="col-auto text-end small">
-                <item-prod :itemId="itemId" />
+                <small><item-prod :itemId="itemId" /></small>
                 <small class="text-normal ms-1">/s</small>
             </div>
             
-            <div class="col-auto text-end small" style="width:100px;">
-                <item-count :itemId="itemId" />
+            <div class="col-auto text-end small" style="width:90px;">
+                <small><item-count :itemId="itemId" /></small>
                 <small v-if="storageUnlocked && storegable" class="text-normal ms-1">/<item-storage :itemId="itemId" /></small>
             </div>
             

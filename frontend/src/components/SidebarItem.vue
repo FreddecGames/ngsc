@@ -9,9 +9,9 @@
             <button type="button" class="btn pe-0 w-100" :class="{ 'active':activePane == paneId }" data-bs-toggle="tab" :data-bs-target="'#' + paneId" role="tab" :aria-controls="paneId" @click="setSidebarOpen(false); setActivePane(paneId); unNotified(paneId);">
                 <div class="row g-2 w-100">
                 
-                    <div class="col d-flex align-items-center">
+                    <div class="col text-truncate d-flex align-items-center">
                         <img class="me-2" :src="require(`../assets/icons/${icon}`).default" width="16" height="16" :alt="name" />
-                        <span>{{ $t(name) }}</span>
+                        <span class="text-truncate">{{ $t(name) }}</span>
                     </div>
                     
                     <slot name="extra" />

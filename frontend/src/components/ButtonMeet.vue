@@ -1,6 +1,6 @@
 <template>
 
-    <button type="button" class="btn btn-primary" :class="{ 'disabled':!can }" @click="meetModal.show()">
+    <button type="button" class="btn btn-primary" :class="{ 'disabled':!can }" @click="meet(); meetModal.show()">
         {{ $t('button-meet') }}
     </button>
     
@@ -9,7 +9,7 @@
 <script>
 import { Modal } from 'bootstrap'
 
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
     created() {
@@ -25,6 +25,10 @@ export default {
         ...mapGetters([ 'getItemCount' ]),
         
         can: function() { return this.getItemCount('statue') >= 150 },
+    },
+    methods: {
+    
+        ...mapActions([ 'meet' ]),
     },
     beforeUnmount() {
     

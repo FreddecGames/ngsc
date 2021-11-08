@@ -5,7 +5,7 @@ html, body, #app {
 }
 
 body {
-    color: #b6c2cb; font-family: 'Inter', sans-serif; font-size: .75rem;
+    color: #b6c2cb; font-family: 'Inter', sans-serif; font-size: .85rem;
     background: #15191f;
     background-size: cover; background-image: linear-gradient(rgba(0, 0, 0, .65), rgba(0, 0, 0, .65)), url(bk.jpg); background-position: center;
 }
@@ -141,7 +141,7 @@ body {
 }
 
 button {
-    color: #b6c2cb; font-size: .75rem;
+    color: #b6c2cb; font-size: .85rem;
     background: transparent;
     border: 0;
     padding: 0;
@@ -154,8 +154,8 @@ button:focus, button:hover {
 
 .btn {
     display: flex; align-items: center;
-    color: #b6c2cb; font-size: .7rem;
-    padding: .35rem .45rem;
+    color: #b6c2cb; font-size: .85rem;
+    padding: .5rem .5rem;
     border-radius: .5rem;
 }
 

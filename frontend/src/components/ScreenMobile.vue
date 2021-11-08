@@ -10,7 +10,7 @@
 							<p class="text-danger">{{ $t('mobileText1') }}</p>
 							<p class="h6 text-light">{{ $t('mobileText2') }}</p>
 							<div class="text-center">
-								<a href="">
+								<a href="https://play.google.com/store/apps/details?id=com.freddecgames.ngsc" target="_blank">
 									<img :src="require(`../assets/playstore.png`).default" alt="Get it on Google Play" width="256">
 								</a>
 							</div>
