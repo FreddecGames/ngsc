@@ -243,21 +243,22 @@
                     <template v-slot:col-1>
                         <div class="col">
                             <small class="me-2">{{ $t('lastestVersion') }}</small>
-                            <small class="text-light">v2.0.0 - 2021-11-01</small>
+                            <small class="text-light">v2.0.1 - 2021-11-08</small>
                             <ul class="small mt-2 mb-0">
-                                <li>NEW: look'n feel has been refactored</li>
-                                <li>NEW: some mecanisms have been changed</li>
-                                <li>NEW: a better game :)</li>
+                                <li>CHANGE: Enlarge buttons and get font UI bigger</li>
+                                <li>FIX: typos on Energy, Plasma and Fuel storage upgrade descriptions</li>
+                                <li>FIX: mission completed when you meet the Overlord</li>
                             </ul>
                         </div>
                     </template>
                     <template v-slot:col-2>
                         <div class="col">
                             <small class="me-2">{{ $t('previousVersion') }}</small>
-                            <small class="text-light">v1.35.1 - 2021-09-06</small>
+                            <small class="text-light">v2.0.0 - 2021-11-01</small>
                             <ul class="small mt-2 mb-0">
-                                <li>FIX: now all stars have different resource bonuses</li>
-                                <li>FIX: now all statue costs are aligned on resource bonuses</li>
+                                <li>NEW: look'n feel has been refactored</li>
+                                <li>NEW: some mecanisms have been changed</li>
+                                <li>NEW: a better game :)</li>
                             </ul>
                         </div>
                         <div class="col">
