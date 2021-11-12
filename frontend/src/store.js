@@ -1090,7 +1090,7 @@ var base = {
         statue:[{ id:'titanium', count:1000000000000 }, { id:'meteorite', count:1000000000000 }],
     },
     star175902: {
-        distance:17.98, resources:['hydrogen', 'wood'], stats:{ 'power':1247, 'defense':589, 'speed':9 },
+        distance:17.98, resources:['hydrogen', 'wood'], stats:{ 'power':1247, 'defense':589, 'speed':9 }, donor:true,
         explore:[{ id:'antimatter', count:179800 }],
         statue:[{ id:'hydrogen', count:1000000000000 }, { id:'wood', count:1000000000000 }],
     },
