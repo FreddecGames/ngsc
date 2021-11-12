@@ -6,12 +6,12 @@
                 <span class="badge">T{{ level }}</span>
             </div>
             
-            <div v-if="max > 1" class="col-auto">
+            <div v-if="!max || max > 1" class="col-auto">
                 <small class="me-1">x</small>
                 <item-count :itemId="itemId" />
             </div>
             
-            <div v-if="count >= max" class="col-auto">
+            <div v-if="max && count >= max" class="col-auto">
                 <small class="text-uppercase text-success">{{ $t('done') }}</small>
             </div>
             

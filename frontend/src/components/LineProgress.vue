@@ -5,15 +5,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-
 export default {
-    props: [ 'itemId', 'count' ],
-    computed: {
-    
-        ...mapGetters([ 'getItemCount' ]),
-        
-        progress: function() { return Math.min(100, ((this.getItemCount(this.itemId) / this.count) * 100).toFixed()) },
-    },
+    props: [ 'count', 'progress' ],
 }
 </script>

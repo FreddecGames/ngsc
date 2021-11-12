@@ -22,7 +22,7 @@
                                 <form class="d-flex justify-content-end" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
                                     <input type="hidden" name="cmd" value="_s-xclick">
                                     <input type="hidden" name="hosted_button_id" value="7XYD7SJFKQ8M4">
-                                    <button type="submit" class="btn btn-primary" style="width: 85px">
+                                    <button type="submit" class="btn btn-primary" style="width: 95px">
                                         <div class="row gx-2 align-items-center">
                                             <div class="col-auto d-flex align-items-center"><img src="../assets/icons/paypal.png" width="16" height="16" /></div>
                                             <div class="col-auto">Paypal</div>
@@ -37,7 +37,7 @@
                                     <small>{{ $t('donatingCardText4') }}</small>
                                 </div>
                                 <div class="d-flex justify-content-end">
-                                    <a href="https://www.patreon.com/bePatron?u=61283131" class="btn btn-primary" style="width: 85px" target="_blank">
+                                    <a href="https://www.patreon.com/bePatron?u=61283131" class="btn btn-primary" style="width: 95px" target="_blank">
                                         <div class="row gx-2 align-items-center">
                                             <div class="col-auto d-flex align-items-center"><img src="../assets/icons/patreon.png" width="16" height="16" /></div>
                                             <div class="col-auto">Patreon</div>
@@ -52,7 +52,7 @@
                                     <small>{{ $t('donatingCardText5') }}</small>
                                 </div>
                                 <div class="d-flex justify-content-end">
-                                    <a href="https://ko-fi.com/freddecgames" class="btn btn-primary" style="width: 85px" target="_blank">
+                                    <a href="https://ko-fi.com/freddecgames" class="btn btn-primary" style="width: 95px" target="_blank">
                                         <div class="row gx-2 align-items-center">
                                             <div class="col-auto d-flex align-items-center"><img src="../assets/icons/kofi.svg" width="16" height="16" /></div>
                                             <div class="col-auto">Ko-fi</div>
@@ -243,22 +243,22 @@
                     <template v-slot:col-1>
                         <div class="col">
                             <small class="me-2">{{ $t('lastestVersion') }}</small>
-                            <small class="text-light">v2.0.1 - 2021-11-08</small>
+                            <small class="text-light">v2.0.2 - 2021-11-12</small>
                             <ul class="small mt-2 mb-0">
-                                <li>CHANGE: Enlarge buttons and get font UI bigger</li>
-                                <li>FIX: typos on Energy, Plasma and Fuel storage upgrade descriptions</li>
-                                <li>FIX: mission completed when you meet the Overlord</li>
+                                <li>CHANGE: Performance and memory improvements</li>
+                                <li>CHANGE: Removed max limit on Dyson Segment</li>
+                                <li>FIX: Missions without cost could be done</li>
                             </ul>
                         </div>
                     </template>
                     <template v-slot:col-2>
                         <div class="col">
                             <small class="me-2">{{ $t('previousVersion') }}</small>
-                            <small class="text-light">v2.0.0 - 2021-11-01</small>
+                            <small class="text-light">v2.0.1 - 2021-11-08</small>
                             <ul class="small mt-2 mb-0">
-                                <li>NEW: look'n feel has been refactored</li>
-                                <li>NEW: some mecanisms have been changed</li>
-                                <li>NEW: a better game :)</li>
+                                <li>CHANGE: Enlarge buttons and get font UI bigger</li>
+                                <li>FIX: typos on Energy, Plasma and Fuel storage upgrade descriptions</li>
+                                <li>FIX: mission completed when you meet the Overlord</li>
                             </ul>
                         </div>
                         <div class="col">

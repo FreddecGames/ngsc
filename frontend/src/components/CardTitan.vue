@@ -12,11 +12,11 @@
                 </div>
                 
                 <div v-if="count < 1" class="col">
-                    <button type="button" class="w-100 btn btn-primary" :class="{ 'disabled':ulCount < 10 }" @click="build({ id:itemId, count:1 })">
+                    <button type="button" class="w-100 btn btn-primary px-1" :class="{ 'disabled':ulCount < 10 }" @click="build({ id:itemId, count:1 })">
                         <div class="w-100 row gx-1 align-items-center justify-content-center">
                         
                             <div class="col-auto d-flex align-items-center">
-                                <img class="me-1" :src="require(`../assets/icons/ultrite.png`).default" width="12" height="12" :alt="$t('darkmatter')" />
+                                <img :src="require(`../assets/icons/ultrite.png`).default" width="12" height="12" :alt="$t('darkmatter')" />
                                 10
                             </div>
                             

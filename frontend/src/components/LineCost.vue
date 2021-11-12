@@ -7,11 +7,11 @@
                     <img class="me-1" :src="require(`../assets/icons/${cost.id}.png`).default" width="12" height="12" :alt="$t(cost.id)" />
                     <small :class="{ 'text-danger': storage && cost.count > storage }"><format-number :value="cost.count" /></small>
                 </div>
-                <div v-if="storage" class="col-auto">
-                    <small><timer-count :itemId="cost.id" :count="cost.count" /></small>
+                <div class="col-auto" :class="{ 'd-none': !storage}">
+                    <small><timer-count :count="cost.timer" /></small>
                 </div>
             </div>
-            <line-progress :itemId="cost.id" :count="cost.count" />
+            <line-progress :progress="cost.progress" :count="cost.count" />
         </button>
         
         <div v-if="cost.id == 'segment' || cost.id == 'dysonT3' || cost.id == 'conquest'">
@@ -20,14 +20,14 @@
                     <img class="me-1" :src="require(`../assets/icons/${cost.id}.png`).default" width="12" height="12" :alt="$t(cost.id)" />
                     <span :class="{ 'text-danger': storage && cost.count > storage }"><format-number :value="cost.count" /></span>
                 </div>
-                <div v-if="storage" class="col-auto">
-                    <timer-count :itemId="cost.id" :count="cost.count" />
+                <div :class="{ 'd-none': !storage}">
+                    <timer-count :count="cost.timer" />
                 </div>
-                <div v-if="!storage && count >= cost.count" class="col-auto">
+                <div class="col-auto" :class="{ 'd-none': count < cost.count}">
                     <i class="text-success fas fa-fw fa-check"></i>
                 </div>
             </div>
-            <line-progress :itemId="cost.id" :count="cost.count" />
+            <line-progress :progress="cost.progress" :count="cost.count" />
         </div>
         
     </div>

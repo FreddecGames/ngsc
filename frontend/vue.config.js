@@ -1,5 +1,5 @@
 module.exports = {
     devServer: {
-        allowedHosts: "localhost",
+        allowedHosts: [ 'localhost' ],
     },
 }

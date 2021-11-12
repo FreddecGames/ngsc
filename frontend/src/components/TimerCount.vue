@@ -10,14 +10,14 @@
 import { mapGetters } from 'vuex'
 
 export default {
-    props: [ 'itemId', 'count' ],
+    props: [ 'count' ],
     computed: {
     
         ...mapGetters([ 'getTimer' ]),
         
         value: function() {
-        
-            let val = this.getTimer(this.itemId, this.count)
+            
+            let val = this.count
             
             if (val > 0 && val < (3600 * 24 * 2)) {
             

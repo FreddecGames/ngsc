@@ -2,23 +2,25 @@ import { createStore } from 'vuex'
 
 import LZString from 'lz-string'
 
-function arrayCompare(array1, array2) {
-
-    if (!array1 || !array2)
+function costCompare(cost1, cost2) {
+    
+    if (!cost1 || !cost2) {
         return false;
-
-    if (array1.length != array2.length)
+    }
+    
+    if (cost1.length != cost2.length) {
         return false;
+    }
+    
+    for (let i = 0, l = cost1.length; i < l; i++) {
 
-    for (let i=0, l=array1.length; i < l; i++) {
-
-        if (array1[i] instanceof Array && array2[i] instanceof Array) {
-            if (!arrayCompare(array1[i], array2[i]))
-                return false;       
-        }           
-        else if (array1[i] != array2[i]) { 
-            return false;   
-        }
+        if (cost1[i].id != cost2[i].id) return false
+        if (cost1[i].count != cost2[i].count) return false
+        if (cost1[i].coeff != cost2[i].coeff) return false
+        if (cost1[i].mod != cost2[i].mod) return false
+        if (cost1[i].base != cost2[i].base) return false
+        if (cost1[i].progress != cost2[i].progress) return false
+        if (cost1[i].timer != cost2[i].timer) return false
     }
     return true;
 }
@@ -28,6 +30,7 @@ var base = {
     /*------------------------------------------------------------------------*/
     energy: {
         storage:{ count:50, coeff:2, costs:[{ id:'energy', count:50, coeff:2 }] },
+        prod:0,
     },
     energyT1: {
         destroyable:true,
@@ -68,6 +71,7 @@ var base = {
     plasma: {
         gain:{ counts:[1], costs:[{ id:'energy', count:1000 }, { id:'hydrogen', count:10 }] },
         storage:{ count:50, coeff:2, costs:[{ id:'plasma', count:50, coeff:2 }] },
+        prod:0,
     },
     plasmaT1: {
         destroyable:true,
@@ -98,6 +102,7 @@ var base = {
         gain:{ counts:[1], costs:[{ id:'plasma', count:3 }] },
         storage:{ count:50, coeff:2, costs:[{ id:'meteorite', count:50, coeff:2 }] },
         conversion:{ costs:[{ id:'plasma', count:3 }] },
+        prod:0,
     },
     meteoriteT1: {
         destroyable:true,
@@ -128,6 +133,7 @@ var base = {
         gain:{ counts:[1], costs:[{ id:'wood', count:2 }] },
         storage:{ count:50, coeff:2, costs:[{ id:'carbon', count:50, coeff:2 }, { id:'metal', count:20, coeff:2 }] },
         conversion:{ costs:[{ id:'energy', count:2 }] },
+        prod:0,
     },
     carbonT1: {
         destroyable:true,
@@ -164,6 +170,7 @@ var base = {
         gain:{ counts:[1] },
         storage:{ count:50, coeff:2, costs:[{ id:'oil', count:50, coeff:2 }, { id:'metal', count:20, coeff:2 }] },
         conversion:{ costs:[{ id:'energy', count:3 }] },
+        prod:0,
     },
     oilT1: {
         destroyable:true,
@@ -199,6 +206,7 @@ var base = {
         gain:{ counts:[1] },
         storage:{ count:50, coeff:2, costs:[{ id:'metal', count:50, coeff:2 }] },
         conversion:{ costs:[{ id:'energy', count:1 }] },
+        prod:0,
     },
     metalT1: {
         destroyable:true,
@@ -234,6 +242,7 @@ var base = {
         gain:{ counts:[1] },
         storage:{ count:50, coeff:2, costs:[{ id:'gem', count:50, coeff:2 }, { id:'metal', count:20, coeff:2 }] },
         conversion:{ costs:[{ id:'energy', count:3 }] },
+        prod:0,
     },
     gemT1: {
         destroyable:true,
@@ -269,6 +278,7 @@ var base = {
         gain:{ counts:[1] },
         storage:{ count:50, coeff:2, costs:[{ id:'wood', count:50, coeff:2 }, { id:'metal', count:20, coeff:2 }] },
         conversion:{ costs:[{ id:'energy', count:1 }] },
+        prod:0,
     },
     woodT1: {
         destroyable:true,
@@ -304,6 +314,7 @@ var base = {
         gain:{ counts:[1] },
         storage:{ count:50, coeff:2, costs:[{ id:'silicon', count:50, coeff:2 }, { id:'lunarite', count:20, coeff:2 }] },
         conversion:{ costs:[{ id:'energy', count:23 }] },
+        prod:0,
     },
     siliconT1: {
         destroyable:true,
@@ -339,6 +350,7 @@ var base = {
         gain:{ counts:[1] },
         storage:{ count:50, coeff:2, costs:[{ id:'uranium', count:50, coeff:2 }, { id:'lunarite', count:20, coeff:2 }] },
         conversion:{ costs:[{ id:'energy', count:37 }] },
+        prod:0,
     },
     uraniumT1: {
         destroyable:true,
@@ -374,6 +386,7 @@ var base = {
         gain:{ counts:[1] },
         storage:{ count:50, coeff:2, costs:[{ id:'lava', count:50, coeff:2 }, { id:'lunarite', count:20, coeff:2 }] },
         conversion:{ costs:[{ id:'energy', count:42 }] },
+        prod:0,
     },
     lavaT1: {
         destroyable:true,
@@ -409,6 +422,7 @@ var base = {
         gain:{ counts:[1] },
         storage:{ count:50, coeff:2, costs:[{ id:'lunarite', count:50, coeff:2 }, { id:'metal', count:400, coeff:2 }] },
         conversion:{ costs:[{ id:'energy', count:15 }] },
+        prod:0,
     },
     lunariteT1: {
         destroyable:true,
@@ -444,6 +458,7 @@ var base = {
         gain:{ counts:[1] },
         storage:{ count:50, coeff:2, costs:[{ id:'methane', count:50, coeff:2 }, { id:'lunarite', count:20, coeff:2 }] },
         conversion:{ costs:[{ id:'energy', count:12 }] },
+        prod:0,
     },
     methaneT1: {
         destroyable:true,
@@ -479,6 +494,7 @@ var base = {
         gain:{ counts:[1] },
         storage:{ count:50, coeff:2, costs:[{ id:'titanium', count:50, coeff:2 }, { id:'lunarite', count:20, coeff:2 }] },
         conversion:{ costs:[{ id:'energy', count:17 }] },
+        prod:0,
     },
     titaniumT1: {
         destroyable:true,
@@ -514,6 +530,7 @@ var base = {
         gain:{ counts:[1] },
         storage:{ count:50, coeff:2, costs:[{ id:'gold', count:50, coeff:2 }, { id:'lunarite', count:20, coeff:2 }] },
         conversion:{ costs:[{ id:'energy', count:14 }] },
+        prod:0,
     },
     goldT1: {
         destroyable:true,
@@ -549,6 +566,7 @@ var base = {
         gain:{ counts:[1] },
         storage:{ count:50, coeff:2, costs:[{ id:'silver', count:50, coeff:2 }, { id:'lunarite', count:20, coeff:2 }] },
         conversion:{ costs:[{ id:'energy', count:16 }] },
+        prod:0,
     },
     silverT1: {
         destroyable:true,
@@ -584,6 +602,7 @@ var base = {
         gain:{ counts:[1] },
         storage:{ count:50, coeff:2, costs:[{ id:'hydrogen', count:50, coeff:2 }, { id:'lunarite', count:20, coeff:2 }] },
         conversion:{ costs:[{ id:'energy', count:33 }] },
+        prod:0,
     },
     hydrogenT1: {
         destroyable:true,
@@ -619,6 +638,7 @@ var base = {
         gain:{ counts:[1] },
         storage:{ count:50, coeff:2, costs:[{ id:'helium', count:50, coeff:2 }, { id:'lunarite', count:20, coeff:2 }] },
         conversion:{ costs:[{ id:'energy', count:39 }] },
+        prod:0,
     },
     heliumT1: {
         destroyable:true,
@@ -654,6 +674,7 @@ var base = {
         gain:{ counts:[1] },
         storage:{ count:50, coeff:2, costs:[{ id:'ice', count:50, coeff:2 }, { id:'lunarite', count:20, coeff:2 }] },
         conversion:{ costs:[{ id:'energy', count:44 }] },
+        prod:0,
     },
     iceT1: {
         destroyable:true,
@@ -685,7 +706,9 @@ var base = {
         inputs:[{ id:'energy', count:7397 }],
     },
     /*------------------------------------------------------------------------*/
-    science: { },
+    science: {
+        prod:0,
+    },
     scienceT1: {
         destroyable:true,
         build:{ counts:[1], multi:true, costs:[{ id:'metal', count:20, coeff:1.1 }, { id:'gem', count:15, coeff:1.1 }, { id:'wood', count:10, coeff:1.1 }] },
@@ -714,6 +737,7 @@ var base = {
     /*------------------------------------------------------------------------*/
     fuel: {
         storage:{ count:50, coeff:2, costs:[{ id:'fuel', count:50, coeff:2 }] },
+        prod:0,
     },
     fuelT1: {
         destroyable:true,
@@ -736,6 +760,7 @@ var base = {
     /*------------------------------------------------------------------------*/
     antimatter: {
         storage:{ count:100000, coeff:1 },
+        prod:0,
     },
     antimatterT1: {
         destroyable:true,
@@ -825,8 +850,8 @@ var base = {
     techIceT5: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:125000, coeff:1.0 }] }, unlocks:['iceT5', 'achIceT5'], hides:['techIceT5Card'] },
     /*------------------------------------------------------------------------*/
     segment: {
-        max: 250,
         build:{ counts:[1, 5, 25, 100], multi:true, costs:[{ id:'titanium', count:300000, coeff:1.02 }, { id:'gold', count:100000, coeff:1.02 }, { id:'silicon', count:200000, coeff:1.02 }, { id:'meteorite', count:1000, coeff:1.02 }, { id:'ice', count:100000, coeff:1.02 }] },
+        prod:0,
     },
     dysonT1: {
         build:{ counts:[1], multi:true, costs:[{ id:'segment', count:50, coeff:1.0 }, { id:'fuel', count:50000, coeff:1.0 }] },
@@ -841,7 +866,7 @@ var base = {
         outputs:[{ id:'energy', count:1000000 }],
     },
     /*------------------------------------------------------------------------*/
-    conquest: { }, statue: { }, darkmatter: { }, ultrite: { },
+    conquest: { prod:0, }, statue: { prod:0, }, darkmatter: { prod:0, }, ultrite: { prod:0, },
     /*------------------------------------------------------------------------*/
     star301: {
         distance:5.94, resources:['hydrogen', 'helium'], stats:{ 'power':52, 'defense':49, 'speed':6 },
@@ -1985,7 +2010,7 @@ var base = {
     },
     missionWonderPrecious: {
         max:1, maxBuildCount:1, collapses:['missionWonderPreciousCard'],
-        build:{ counts:[1], costs:[{ id:'gem', count:40000 }, { id:'silver', count:27500 }, { id:'gold', count:15000 }] },
+        build:{ counts:[1], costs:[{ id:'gem', count:40000, coeff:1 }, { id:'silver', count:27500, coeff:1 }, { id:'gold', count:15000, coeff:1 }] },
         unlocks: [
             'uranium', 'achUranium',
             'energyT4', 'achEnergyT4',
@@ -1998,7 +2023,7 @@ var base = {
     },
     missionWonderTechnological: {
         max:1, maxBuildCount:1, collapses:['missionWonderTechnologicalCard'],
-        build:{ counts:[1], costs:[{ id:'silicon', count:80000 }, { id:'gold', count:48000 }, { id:'gem', count:100000 }] },
+        build:{ counts:[1], costs:[{ id:'silicon', count:80000, coeff:1 }, { id:'gold', count:48000, coeff:1 }, { id:'gem', count:100000, coeff:1 }] },
         unlocks: [
             'techPlasmaT3', 'techMeteoriteT3', 'techCarbonT3', 'techScienceT3', 'techOilT3', 'techFuelT3', 'techMetalT3', 'techGemT3', 'techWoodT3', 'techSiliconT3', 'techUraniumT3', 'techLavaT3', 'techLunariteT3', 'techMethaneT3', 'techTitaniumT3', 'techGoldT3', 'techSilverT3', 'techHydrogenT3', 'techHeliumT3', 'techIceT3',
         ],
@@ -2008,7 +2033,7 @@ var base = {
     },
     missionWonderEnergetic: {
         max:1, maxBuildCount:1, collapses:['missionWonderEnergeticCard'],
-        build:{ counts:[1], costs:[{ id:'wood', count:40000 }, { id:'carbon', count:20000 }, { id:'uranium', count:700 }] },
+        build:{ counts:[1], costs:[{ id:'wood', count:40000, coeff:1 }, { id:'carbon', count:20000, coeff:1 }, { id:'uranium', count:700, coeff:1 }] },
         unlocks: [
             'lava', 'achLava',
             'energyT5', 'achEnergyT5',
@@ -2019,7 +2044,7 @@ var base = {
     },
     missionWonderMeteorite: {
         max:1, maxBuildCount:1, collapses:['missionWonderMeteoriteCard'],
-        build:{ counts:[1], costs:[{ id:'meteorite', count:10000 }, { id:'ice', count:2000000 }, { id:'silicon', count:4000000 }] },
+        build:{ counts:[1], costs:[{ id:'meteorite', count:10000, coeff:1 }, { id:'ice', count:2000000, coeff:1 }, { id:'silicon', count:4000000, coeff:1 }] },
         unlocks: [
             'techPlasmaT4', 'techMeteoriteT4', 'techCarbonT4', 'techScienceT4', 'techOilT4', 'techMetalT4', 'techGemT4', 'techWoodT4', 'techSiliconT4', 'techUraniumT4', 'techLavaT4', 'techLunariteT4', 'techMethaneT4', 'techTitaniumT4', 'techGoldT4', 'techSilverT4', 'techHydrogenT4', 'techHeliumT4', 'techIceT4',
         ],
@@ -2030,7 +2055,7 @@ var base = {
     /*------------------------------------------------------------------------*/
     missionPlasma: {
         max:1, maxBuildCount:1, collapses:['missionPlasmaCard'],
-        build:{ counts:[1], costs:[{ id:'hydrogen', count:1500 }, { id:'oil', count:1500 }, { id:'wood', count:1500 }] },
+        build:{ counts:[1], costs:[{ id:'hydrogen', count:1500, coeff:1 }, { id:'oil', count:1500, coeff:1 }, { id:'wood', count:1500, coeff:1 }] },
         unlocks: [
             'plasma', 'achPlasma',
             'missionEmc', 'missionMeteorite', 'missionDyson',
@@ -2041,14 +2066,14 @@ var base = {
     },
     missionEmc: {
         max:1, maxBuildCount:1, collapses:['missionEmcCard'],
-        build:{ counts:[1], costs:[{ id:'energy', count:75000  }, { id:'plasma', count:100 }] },
+        build:{ counts:[1], costs:[{ id:'energy', count:75000, coeff:1  }, { id:'plasma', count:100, coeff:1 }] },
         notifs: [
             'emcPane',
         ],
     },
     missionMeteorite: {
         max:1, maxBuildCount:1, collapses:['missionMeteoriteCard'],
-        build:{ counts:[1], costs:[{ id:'energy', count:85000  }, { id:'plasma', count:1000 }] },
+        build:{ counts:[1], costs:[{ id:'energy', count:85000, coeff:1  }, { id:'plasma', count:1000, coeff:1 }] },
         unlocks: [
             'meteorite', 'achMeteorite',
             'missionWonderMeteorite',
@@ -2060,7 +2085,7 @@ var base = {
     },
     missionDyson: {
         max:1, maxBuildCount:1, collapses:['missionDysonCard'],
-        build:{ counts:[1], costs:[{ id:'energy', count:100000 }, { id:'plasma', count:10000 }] },
+        build:{ counts:[1], costs:[{ id:'energy', count:100000, coeff:1 }, { id:'plasma', count:10000, coeff:1 }] },
         unlocks: [
             'segment', 'dysonT1', 'dysonT2', 'dysonT3',
             'missionRebirth',
@@ -2085,7 +2110,7 @@ var base = {
     },
     missionRebirth2: {
         max:1, maxBuildCount:1, collapses:['missionRebirth2Card'],
-        build:{ counts:[1], costs:[{ id:'dysonT3', count:1 }, { id:'darkmatter', count:100 }] },
+        build:{ counts:[1], costs:[{ id:'dysonT3', count:1, coeff:1 }, { id:'darkmatter', count:100, coeff:1 }] },
         unlocks: [
             'missionWonderComm', 'missionWonderAntimatter',
         ],
@@ -2096,7 +2121,7 @@ var base = {
     /*------------------------------------------------------------------------*/
     missionWonderComm: {
         max:1, maxBuildCount:1, collapses:['missionWonderCommCard'],
-        build:{ counts:[1], costs:[{ id:'gold', count:6000000 }, { id:'silicon',  count:10000000 }, { id:'ice', count:6000000  }] },
+        build:{ counts:[1], costs:[{ id:'gold', count:6000000, coeff:1 }, { id:'silicon',  count:10000000, coeff:1 }, { id:'ice', count:6000000, coeff:1  }] },
         unlocks: [
             'radarT1', 'radarT2',
         ],
@@ -2106,7 +2131,7 @@ var base = {
     },
     missionWonderAntimatter: {
         max:1, maxBuildCount:1, collapses:['missionWonderAntimatterCard'],
-        build:{ counts:[1], costs:[{ id:'uranium', count:6000000 }, { id:'lava', count:10000000 }, { id:'oil', count:8000000  }] },
+        build:{ counts:[1], costs:[{ id:'uranium', count:6000000, coeff:1 }, { id:'lava', count:10000000, coeff:1 }, { id:'oil', count:8000000, coeff:1  }] },
         unlocks: [
             'antimatter', 'achAntimatter',
             'missionWonderPortal',
@@ -2117,14 +2142,14 @@ var base = {
     },
     missionWonderPortal: {
         max:1, maxBuildCount:1, collapses:['missionWonderPortalCard'],
-        build:{ counts:[1], costs:[{ id:'meteorite', count:500000  }, { id:'helium', count:8000000  }, { id:'silicon', count:6000000  }] },
+        build:{ counts:[1], costs:[{ id:'meteorite', count:500000, coeff:1  }, { id:'helium', count:8000000, coeff:1  }, { id:'silicon', count:6000000, coeff:1  }] },
         unlocks: [
             'missionWonderStargate',
         ],
     },
     missionWonderStargate: {
         max:1, maxBuildCount:1, collapses:['missionWonderStargateCard'],
-        build:{ counts:[1], costs:[{ id:'plasma', count:500000 }, { id:'silicon', count:920000000 }, { id:'meteorite', count:17000000 }] },
+        build:{ counts:[1], costs:[{ id:'plasma', count:500000, coeff:1 }, { id:'silicon', count:920000000, coeff:1 }, { id:'meteorite', count:17000000, coeff:1 }] },
         unlocks: [
             'missionSpaceship', 'missionShield', 'missionEngine', 'missionAero',
         ],
@@ -2167,7 +2192,7 @@ var base = {
     /*------------------------------------------------------------------------*/
     missionEnlighten: {
         max:1, maxBuildCount:1, collapses:['missionEnlightenCard'],
-        build:{ counts:[1] },
+        build:{ counts:[1], costs:[{ id:'conquest', count:10, coeff:1 }] },
         unlocks: [
             'ultrite', 'enlighten',
             'ulUpgdStorage', 'ulUpgdSpeed', 'ulUpgdDefense', 'ulUpgdPower', 'ulUpgdAutoStorage',
@@ -2631,22 +2656,10 @@ export const store = createStore({
         
         getItemProd: (state) => (id) => {
             
-            let prod = 0
+            let item = state.items[id]
+            if (!('prod' in item)) { return 0 }
             
-            state.producers.forEach(item => {
-                
-                if ('inputs' in item) {
-                    item.inputs.forEach(input => {
-                        if (input.id == id) prod -= input.count * input.mod * item.count
-                    })
-                }
-                
-                item.outputs.forEach(output => {
-                    if (output.id == id) prod += output.count * output.mod * item.count
-                })
-            })
-            
-            return prod
+            return item.prod
         },
         
         getRawProduction: (state) => (id) => {
@@ -2826,6 +2839,8 @@ export const store = createStore({
             
             var ret = null
             
+            if (state.items[id].costs == undefined) return null
+            
             if (count == 1) ret = state.items[id].costs[0]
             else if (count == 5) ret = state.items[id].costs[1]
             else if (count == 25) ret = state.items[id].costs[2]
@@ -2839,6 +2854,8 @@ export const store = createStore({
         canBuild: (state) => (id, count) => {			
             
             var ret = null
+            
+            if (state.items[id].canBuild == undefined) return null
             
             if (count == 1) ret = state.items[id].canBuild[0]
             else if (count == 5) ret = state.items[id].canBuild[1]
@@ -3105,12 +3122,13 @@ export const store = createStore({
                     
                     if ('inputs' in item) item.inputs.forEach(input => { input.mod = 1.0 })
                     
-                    if ('build' in item && 'costs' in item.build) {
+                    if ('build' in item) {
                         
-                        item.costs = []
+                        item.costs = [[], [], [], [], []]                        
                         item.canBuild = []
                         
-                        item.build.costs.forEach(cost => { cost.mod = 1.0 })
+                        if ('costs' in item.build)
+                            item.build.costs.forEach(cost => { cost.mod = 1.0 })
                     }
                     
                     if ('brackets' in item) {
@@ -3760,11 +3778,18 @@ export const store = createStore({
             for (let i in state.items) {
                 let item = state.items[i]
                 
-                if ('build' in item && 'costs' in item.build) {
+                if ('build' in item) {
                     
                     dispatch('updateBuildingCosts', item.id)
                     dispatch('updateCanBuild', item.id)
                 }
+                
+            }
+        
+            for (let i in state.resources) {
+                let item = state.resources[i]
+                
+                dispatch('updateItemProd', item.id)
             }
         },
         
@@ -3907,6 +3932,40 @@ export const store = createStore({
             localStorage.setItem('ngsc', compressed)
         },
     
+        /*--------------------------------------------------------------------*/
+        computeItemProd({ state }, id) {
+            
+            var i, j, item, input, output, prod = 0
+            
+            for (i in state.producers) {
+                item = state.producers[i]
+                
+                if ('inputs' in item) {
+                    for (j in item.inputs) {
+                        input = item.inputs[j]
+                        
+                        if (input.id == id) prod -= input.count * input.mod * item.count
+                    }
+                }
+                
+                for (j in item.outputs) {
+                    output = item.outputs[j]
+                    
+                    if (output.id == id) prod += output.count * output.mod * item.count
+                }
+            }
+            
+            return prod
+        },
+        updateItemProd({ state, dispatch }, id) {
+            
+            dispatch('computeItemProd', id).then(prod => {
+                if (!state.items[id].prod || state.items[id].prod != prod) {
+                    
+                    state.items[id].prod = prod
+                }
+            })
+        },        
         /*--------------------------------------------------------------------*/
         mainLoop({ state, getters }) {
             
@@ -4061,13 +4120,13 @@ export const store = createStore({
             return result
         },
         
-        computeBuildCosts({ state }, payload) {
+        computeBuildCosts({ state, getters }, payload) {
             
             let id = payload.id
             let count = payload.count
             
             let item = state.items[id]
-            if (!('costs' in item.build)) return null
+            if (!('costs' in item.build)) return 0
 
             let costs = JSON.parse(JSON.stringify(item.build.costs))
             costs.forEach(cost => {
@@ -4077,6 +4136,11 @@ export const store = createStore({
             
             for (let n = 1; n < count; n++)
                 costs.forEach(cost => { cost.count += Math.floor(cost.base * cost.mod * Math.pow(cost.coeff, item.count + n)) })
+            
+            costs.forEach(cost => {
+                cost.progress = Math.min(100, ((state.items[cost.id].count / cost.count) * 100).toFixed())
+                cost.timer = getters.getTimer(cost.id, cost.count)
+            })
             
             return costs
         },
@@ -4088,7 +4152,7 @@ export const store = createStore({
 			
             let item = state.items[id]
             if (!('build' in item)) return -4
-            if (!('costs' in item.build)) return -5
+            if (!('costs' in item.build)) return 0
             if (item.max && item.count >= item.max) return -6
             if (item.count > 1 && item.max && item.count + count > item.max) return -7
 			
@@ -4126,6 +4190,7 @@ export const store = createStore({
                 if ('build' in item && 'costs' in item.build) {
                     
                     dispatch('updateMaxBuildCount', item.id)
+                    dispatch('updateBuildingCosts', item.id)
                     dispatch('updateCanBuild', item.id)
                 }
             }
@@ -4137,8 +4202,6 @@ export const store = createStore({
                 if (!state.items[id].maxBuildCount || state.items[id].maxBuildCount != max) {
                     
                     state.items[id].maxBuildCount = max
-                    
-                    dispatch('updateBuildingCosts', id)
                 }
             })
         },
@@ -4146,23 +4209,28 @@ export const store = createStore({
         updateBuildingCosts({ state, dispatch }, id) {
             
             dispatch('computeBuildCosts', { id:id, count:1 }).then(costs => {
-                if (arrayCompare(costs, state.items[id].costs[0]) == false) state.items[id].costs[0] = JSON.parse(JSON.stringify(costs))
+                let compare = costCompare(costs, state.items[id].costs[0])
+                if (compare == false) { state.items[id].costs[0] = JSON.parse(JSON.stringify(costs)) }
                 costs = null
             })
             dispatch('computeBuildCosts', { id:id, count:5 }).then(costs => {
-                if (arrayCompare(costs, state.items[id].costs[1]) == false) state.items[id].costs[1] = JSON.parse(JSON.stringify(costs))
+                let compare = costCompare(costs, state.items[id].costs[1])
+                if (compare == false) { state.items[id].costs[1] = JSON.parse(JSON.stringify(costs)) }
                 costs = null
             })
             dispatch('computeBuildCosts', { id:id, count:25 }).then(costs => {
-                if (arrayCompare(costs, state.items[id].costs[2]) == false) state.items[id].costs[2] = JSON.parse(JSON.stringify(costs))
+                let compare = costCompare(costs, state.items[id].costs[2])
+                if (compare == false) { state.items[id].costs[2] = JSON.parse(JSON.stringify(costs)) }
                 costs = null
             })
             dispatch('computeBuildCosts', { id:id, count:100 }).then(costs => {
-                if (arrayCompare(costs, state.items[id].costs[3]) == false) state.items[id].costs[3] = JSON.parse(JSON.stringify(costs))
+                let compare = costCompare(costs, state.items[id].costs[3])
+                if (compare == false) { state.items[id].costs[3] = JSON.parse(JSON.stringify(costs)) }
                 costs = null
             })
             dispatch('computeBuildCosts', { id:id, count:state.items[id].maxBuildCount }).then(costs => {
-                if (arrayCompare(costs, state.items[id].costs[4]) == false) state.items[id].costs[4] = JSON.parse(JSON.stringify(costs))
+                let compare = costCompare(costs, state.items[id].costs[4])
+                if (compare == false) { state.items[id].costs[4] = JSON.parse(JSON.stringify(costs)) }
                 costs = null
             })
         },
@@ -4278,6 +4346,20 @@ export const store = createStore({
                 dispatch('updateMaxBuildCount', payload.id)                
                 dispatch('updateBuildingCosts', payload.id)
                 dispatch('updateCanBuild', payload.id)
+                
+                if ('inputs' in item) {
+                    for (let j in item.inputs) {
+                        let input = item.inputs[j]
+                        dispatch('updateItemProd', input.id)
+                    }
+                }
+                
+                if ('outputs' in item) {
+                    for (let j in item.outputs) {
+                        let output = item.outputs[j]
+                        dispatch('updateItemProd', output.id)
+                    }
+                }
             }
         },
         
