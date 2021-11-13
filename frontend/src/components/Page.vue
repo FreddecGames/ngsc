@@ -243,22 +243,25 @@
                     <template v-slot:col-1>
                         <div class="col">
                             <small class="me-2">{{ $t('lastestVersion') }}</small>
-                            <small class="text-light">v2.0.2 - 2021-11-12</small>
+                            <small class="text-light">v2.1.0 - 2021-11-13</small>
                             <ul class="small mt-2 mb-0">
-                                <li>CHANGE: Performance and memory improvements</li>
-                                <li>CHANGE: Removed max limit on Dyson Segment</li>
-                                <li>FIX: Missions without cost could be done</li>
+                                <li>NEW: Bring back the "250 + Sphere", "100 + Swarm" and "50 + Ring" buttons</li>
+                                <li>NEW: Keep displaying production when a machine count is equal to his limit</li>
+                                <li>CHANGE: Minor UI improvements</li>
+                                <li>FIX: Upgrade storage timer</li>
+                                <li>FIX: Max build count not to increase more than building limit</li>
+                                <li>FIX: Building destruction update resource production</li>
                             </ul>
                         </div>
                     </template>
                     <template v-slot:col-2>
                         <div class="col">
                             <small class="me-2">{{ $t('previousVersion') }}</small>
-                            <small class="text-light">v2.0.1 - 2021-11-08</small>
+                            <small class="text-light">v2.0.2 - 2021-11-12</small>
                             <ul class="small mt-2 mb-0">
-                                <li>CHANGE: Enlarge buttons and get font UI bigger</li>
-                                <li>FIX: typos on Energy, Plasma and Fuel storage upgrade descriptions</li>
-                                <li>FIX: mission completed when you meet the Overlord</li>
+                                <li>CHANGE: Performance and memory improvements</li>
+                                <li>CHANGE: Removed max limit on Dyson Segment</li>
+                                <li>FIX: Missions without cost could be done</li>
                             </ul>
                         </div>
                         <div class="col">
@@ -1434,9 +1437,21 @@
             
             <page-pane id="dysonPane" name="sidebar-item-dyson" icon="dyson.png">
                 <card-building id="segmentCard" name="segment" :descs="[ 'segment-desc1' ]" icon="segment.png" itemId="segment" btnText="button-build" />
-                <card-building id="dysonT1Card" name="dysonT1" :descs="[ 'dysonT1-desc1' ]" itemId="dysonT1" btnText="button-build" />
-                <card-building id="dysonT2Card" name="dysonT2" :descs="[ 'dysonT2-desc1' ]" itemId="dysonT2" btnText="button-build" />
-                <card-building id="dysonT3Card" name="dysonT3" :descs="[ 'dysonT3-desc1' ]" icon="dysonT3.png" itemId="dysonT3" btnText="button-build" />
+                <card-building id="dysonT1Card" name="dysonT1" :descs="[ 'dysonT1-desc1' ]" itemId="dysonT1" btnText="button-build">
+                    <div class="col-auto">
+                        <button-build-segment itemId="dysonT1" count="50" priceFuel="50000" btnText="button-buildSegmentRing" />
+                    </div>
+                </card-building>
+                <card-building id="dysonT2Card" name="dysonT2" :descs="[ 'dysonT2-desc1' ]" itemId="dysonT2" btnText="button-build">
+                    <div class="col-auto">
+                        <button-build-segment itemId="dysonT2" count="100" priceFuel="250000" btnText="button-buildSegmentSwarm" />
+                    </div>
+                </card-building>
+                <card-building id="dysonT3Card" name="dysonT3" :descs="[ 'dysonT3-desc1' ]" icon="dysonT3.png" itemId="dysonT3" btnText="button-build">
+                    <div class="col-auto">
+                        <button-build-segment itemId="dysonT3" count="250" priceFuel="1000000" btnText="button-buildSegmentSphere" />
+                    </div>
+                </card-building>
             </page-pane>
             
             <page-pane id="darkmatterPane" name="sidebar-item-darkMatter" icon="darkmatter.png">
@@ -1460,7 +1475,7 @@
                                             <small class="text-muted">{{ $t('sidebar-item-achievements') }}</small>
                                         </div>
                                         <div class="col-auto">
-                                            <small class="text-normal">+{{ getDMAchievement }}</small>
+                                            <small class="text-normal">+<format-number :value="getDMAchievement" /></small>
                                         </div>
                                     </div>
                                 </div>
@@ -1471,7 +1486,7 @@
                                             <small class="text-muted">{{ $t('dysonT1') }}</small>
                                         </div>
                                         <div class="col-auto">
-                                            <small class="text-normal">+{{ getDMRing }}</small>
+                                            <small class="text-normal">+<format-number :value="getDMRing" /></small>
                                         </div>
                                     </div>
                                 </div>
@@ -1482,7 +1497,7 @@
                                             <small class="text-muted">{{ $t('dysonT2') }}</small>
                                         </div>
                                         <div class="col-auto">
-                                            <small class="text-normal">+{{ getDMSwarm }}</small>
+                                            <small class="text-normal">+<format-number :value="getDMSwarm" /></small>
                                         </div>
                                     </div>
                                 </div>
@@ -1493,7 +1508,7 @@
                                             <small class="text-muted">{{ $t('dysonT3') }}</small>
                                         </div>
                                         <div class="col-auto">
-                                            <small class="text-normal">+{{ getDMSphere }}</small>
+                                            <small class="text-normal">+<format-number :value="getDMSphere" /></small>
                                         </div>
                                     </div>
                                 </div>
@@ -1506,7 +1521,7 @@
                                     <small class="text-normal text-uppercase">{{ $t('total') }}</small>
                                 </div>
                                 <div class="col-auto">
-                                    <small class="text-success">+{{ getDMPotential }}</small>
+                                    <small class="text-success">+<format-number :value="getDMPotential" /></small>
                                 </div>
                             </div>
                         </div>
@@ -1776,6 +1791,7 @@
 import BlockDesc from './BlockDesc.vue'
 
 import ButtonMeet from './ButtonMeet.vue'
+import ButtonBuildSegment from './ButtonBuildSegment.vue'
 
 import Card from './Card.vue'
 import CardAchievement from './CardAchievement.vue'
@@ -1810,6 +1826,7 @@ export default {
         'block-desc': BlockDesc,
         
         'button-meet': ButtonMeet,
+        'button-build-segment': ButtonBuildSegment,
         
         'card': Card,
         'card-achievement': CardAchievement,

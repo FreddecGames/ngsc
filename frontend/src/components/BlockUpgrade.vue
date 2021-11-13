@@ -1,11 +1,11 @@
 <template>
     <div class="col">
     
-        <div class="row gy-2 gx-3 justify-content-end">
+        <div class="row gy-2 gx-3 justify-content-end" :class="{ 'row-cols-1':costs.length <= 1, 'row-cols-3':costs.length > 1 }">
             <line-cost v-for="cost in costs" :key="cost" :cost="cost" />
         </div>
         
-        <div class="pt-2">
+        <div class="pt-3">
             <div class="row align-items-center">
             
                 <div v-if="autoUnlocked" class="col-auto">
@@ -17,7 +17,7 @@
                 </div>
                 
                 <div class="col d-flex justify-content-end">
-                    <button-upgrade :itemId="itemId" :count="selectedCount" />
+                    <button-upgrade :itemId="itemId" />
                 </div>
                 
             </div>
@@ -40,12 +40,6 @@ export default {
         
         'line-cost': LineCost,
     },
-    data() {
-        return {
-        
-            selectedCount: 1,
-        }
-    },
     computed: {
         
         ...mapState([ 'autoStorageId' ]),
@@ -53,7 +47,7 @@ export default {
         ...mapGetters([ 'getUpgradeCoeff', 'getUpgradeCosts', 'getItemCount' ]),
         
         coeff: function() { return this.getUpgradeCoeff(this.itemId) },
-        costs: function() { return this.getUpgradeCosts(this.itemId, this.selectedCount) },
+        costs: function() { return this.getUpgradeCosts(this.itemId) },
         
         autoUnlocked: function() { return this.getItemCount('ulUpgdAutoStorage') >= 1 },
     },

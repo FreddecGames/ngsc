@@ -1,7 +1,7 @@
 <template>
-    <div v-if="!max || count < max" class="col">
+    <div class="col">
         
-        <div v-if="costs" class="row gy-2 gx-3 justify-content-end" :class="{ 'row-cols-1':costs.length <= 1, 'row-cols-2':costs.length == 2, 'row-cols-3':costs.length >= 3 }">
+        <div v-if="(!max || count < max) && costs" class="row gy-2 gx-3 justify-content-end" :class="{ 'row-cols-1':costs.length <= 1, 'row-cols-3':costs.length > 1 }">
             <line-cost v-for="cost in costs" :key="cost" :cost="cost" />
         </div>
 
@@ -55,9 +55,9 @@
             </div>
         </div>
         
-        <div class="pt-3 row g-2 align-items-center justify-content-end">
+        <div v-if="!max || count < max" class="pt-3 row g-2 align-items-center justify-content-end">
         
-            <div v-if="counts.length > 0" class="col">
+            <div v-if="counts.length > 1" class="col">
                 <div class="row g-1">
                     <div v-for="count in counts" :key="count" class="col-auto">
                         <input type="radio" class="btn-check" :id="'build-' + itemId + '-' + count" autocomplete="off" v-model="selectedCount" :value="count" />
@@ -72,6 +72,8 @@
                     </div>
                 </div>
             </div>
+            
+            <slot />
             
             <div class="col-auto">
                 <button-build :itemId="itemId" :count="selectedCount" :btnText="btnText" @click="onBuild()" />

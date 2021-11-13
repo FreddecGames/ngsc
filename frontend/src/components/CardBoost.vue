@@ -9,7 +9,7 @@
                 </div>
                 
                 <div class="col text-center">
-                    <span class="h5" :class="{ 'text-muted':count <= 0, 'text-success':count > 0 }">+{{ count }}%</span>
+                    <span class="h5" :class="{ 'text-muted':count <= 0, 'text-success':count > 0 }">+<format-number :value="count" />%</span>
                 </div>
                 
                 <div class="col">
@@ -39,10 +39,16 @@
 </template>
 
 <script>
+import FormatNumber from './FormatNumber.vue'
+
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
     props: [ 'name', 'icon', 'itemId' ],
+    components: {
+        
+        'format-number': FormatNumber,
+    },
     computed: {
     
         ...mapGetters([ 'getItemCount' ]),

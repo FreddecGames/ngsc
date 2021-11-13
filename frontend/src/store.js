@@ -854,15 +854,15 @@ var base = {
         prod:0,
     },
     dysonT1: {
-        build:{ counts:[1], multi:true, costs:[{ id:'segment', count:50, coeff:1.0 }, { id:'fuel', count:50000, coeff:1.0 }] },
+        build:{ counts:[1], costs:[{ id:'segment', count:50, coeff:1.0 }, { id:'fuel', count:50000, coeff:1.0 }] },
         outputs:[{ id:'energy', count:5000 }],
     },
     dysonT2: {
-        build:{ counts:[1], multi:true, costs:[{ id:'segment', count:100, coeff:1.0 }, { id:'fuel', count:250000, coeff:1.0 }] },
+        build:{ counts:[1], costs:[{ id:'segment', count:100, coeff:1.0 }, { id:'fuel', count:250000, coeff:1.0 }] },
         outputs:[{ id:'energy', count:25000 }],
     },
     dysonT3: {
-        build:{ counts:[1], multi:true, costs:[{ id:'segment', count:250, coeff:1.0 }, { id:'fuel', count:1000000, coeff:1.0 }] },
+        build:{ counts:[1], costs:[{ id:'segment', count:250, coeff:1.0 }, { id:'fuel', count:1000000, coeff:1.0 }] },
         outputs:[{ id:'energy', count:1000000 }],
     },
     /*------------------------------------------------------------------------*/
@@ -2580,7 +2580,16 @@ export const store = createStore({
         isCollapsed: (state) => (id) => { return state.collapsed.includes(id) },
         isNotified: (state) => (id) => { return state.notified.includes(id) },
         
-        isStoregable: (state) => (id) => { return 'storage' in state.items[id] },
+        isUpgradable: (state) => (id) => {
+            
+            if (id == 'antimatter') return false
+            return 'storage' in state.items[id]
+        },
+        
+        isStoregable: (state) => (id) => {
+            
+            return 'storage' in state.items[id]
+        },
         
         getTimeSinceStartDate: (state) => { return (new Date().getTime() - state.statsStartDate) / 1000 },
         getTimeSinceLastRebirth: (state) => { return (new Date().getTime() - state.statsLastRebirth) / 1000 },
@@ -2674,7 +2683,7 @@ export const store = createStore({
         },
         
         getItemProduction: (state) => (id, outputId) => {
-
+            
             let production = 0
             let item = state.items[id]
             item.outputs.forEach(output => {
@@ -2726,37 +2735,32 @@ export const store = createStore({
         
         getGainCosts: (state) => (id, count) => {
             
-            let item = state.items[id]
-            if (!('costs' in item.gain)) return null
+            var ret = null
             
-            let costs = JSON.parse(JSON.stringify(item.gain.costs))
-            costs.forEach(cost => { cost.count = Math.floor(cost.count * count) })
+            if (state.items[id].gainCosts == undefined) return null
             
-            return costs
+            if (count == 1) ret = state.items[id].gainCosts[0]
+            else if (count == 5) ret = state.items[id].gainCosts[1]
+            else if (count == 10) ret = state.items[id].gainCosts[2]
+            else if (count == 20) ret = state.items[id].gainCosts[3]
+            
+            if (ret != undefined) return ret
+            else return null
         },
         
-        canGain: (state, getters) => (id, count) => {
+        canGain: (state) => (id, count) => {
             
-            let item = state.items[id]
-            if (item.unlocked == false) return -2
-            if (!('gain' in item)) return -3
-            if (!(item.gain.counts.includes(count))) return -4
-            if (item.count >= getters.getItemStorage(id)) return -5
-            if (count > 1 && item.count + count > getters.getItemStorage(id)) return -6
+            var ret = null
             
-            let can = 0
-
-            if ('costs' in item.gain) {
-                let costs = getters.getGainCosts(id, count)
-                costs.forEach(cost => {
-                    if (state.items[cost.id].count - cost.count < 0) {
-                        can = -1
-                        return
-                    }
-                })
-            }
+            if (state.items[id].canGain == undefined) return null
             
-            return can
+            if (count == 1) ret = state.items[id].canGain[0]
+            else if (count == 5) ret = state.items[id].canGain[1]
+            else if (count == 10) ret = state.items[id].canGain[2]
+            else if (count == 20) ret = state.items[id].canGain[3]
+            
+            if (ret != undefined) return ret
+            else return null
         },
         
         getConvertionCosts: (state) => (id, count) => {
@@ -2801,39 +2805,47 @@ export const store = createStore({
         
         getUpgradeCoeff: (state) => (id) => { return state.items[id].storage.coeff },
         
-        getUpgradeCosts: (state) => (id, count) => {
+        getUpgradeCosts: (state) => (id) => {
             
-            let item = state.items[id]
-            if (!('costs' in item.storage)) return null
+            var ret = null
             
-            let costs = JSON.parse(JSON.stringify(item.storage.costs))
-            costs.forEach(cost => { cost.count = Math.floor(cost.count * Math.pow(cost.coeff, item.upgrade + count - 1)) })
-
-            return costs
+            if (state.items[id].upgradeCosts == undefined) return null
+            
+            ret = state.items[id].upgradeCosts
+            
+            if (ret != undefined) return ret
+            else return null
         },
         
-        canUpgrade: (state, getters) => (id, count) => {
+        canUpgrade: (state) => (id) => {
             
-            let item = state.items[id]
-            if (item.unlocked == false) return -2
-            if (!('storage' in item)) return -3
-            if (!('costs' in item.storage)) return -4
-
-            let can = 0
-
-            let costs = getters.getUpgradeCosts(id, count)
-            costs.forEach(cost => {
-                if (state.items[cost.id].count - cost.count < 0) {
-                    can = -1
-                    return
-                }
-            })
-
-            return can
+            var ret = null
+            
+            if (state.items[id].canUpgrade == undefined) return null
+            
+            ret = state.items[id].canUpgrade
+            
+            if (ret != undefined) return ret
+            else return null
         },
         
         getBuildCounts: (state) => (id) => { return state.items[id].build.counts },
         getBuildMaxCount: (state) => (id) => { return state.items[id].maxBuildCount },
+        
+        getBuildNextCount: (state) => (id) => {
+            
+            let item = state.items[id]
+            if (!('costs' in item.build)) return 1
+            
+            let count = item.count
+            if (count < 5) return 5
+            else if (count >= 5 && count < 25) return 25
+            else if (count >= 25 && count < 75) return 75
+            else if (count >= 75 && count < 150) return 150
+            else if (count >= 150 && count < 250) return 250
+            
+            return -1
+        },
         
         getBuildCosts: (state) => (id, count) => {
             
@@ -3110,12 +3122,17 @@ export const store = createStore({
                     item.count = 0
                     
                     if ('storage' in item || item.id == 'science') {
+                        
+                        item.upgradeCosts = []
+                        item.canUpgrade = []
+                        
                         item.upgrade = 0
+                        
                         state.resources.push(item)
                     }
                     
                     if ('outputs' in item) {
-                        item.max = 250
+                        if (item.id != 'dysonT1' && item.id != 'dysonT2' && item.id != 'dysonT3') item.max = 250
                         item.outputs.forEach(output => { output.mod = 1.0 })
                         state.producers.push(item)
                     }
@@ -3124,11 +3141,20 @@ export const store = createStore({
                     
                     if ('build' in item) {
                         
-                        item.costs = [[], [], [], [], []]                        
+                        item.costs = [[], [], [], [], []]
                         item.canBuild = []
                         
                         if ('costs' in item.build)
                             item.build.costs.forEach(cost => { cost.mod = 1.0 })
+                    }
+                    
+                    if ('gain' in item) {
+                        
+                        item.gainCosts = [[], [], [], [], []]
+                        item.canGain = []
+                        
+                        if ('costs' in item.gain)
+                            item.gain.costs.forEach(cost => { cost.mod = 1.0 })
                     }
                     
                     if ('brackets' in item) {
@@ -4052,7 +4078,7 @@ export const store = createStore({
                     
                     can = true
         
-                    costs = getters.getUpgradeCosts(state.autoStorageId, 1)
+                    costs = getters.getUpgradeCosts(state.autoStorageId)
                     costs.forEach(cost => {
                         if (temp[cost.id].count - cost.count < 0) {
                             can = false
@@ -4065,7 +4091,7 @@ export const store = createStore({
                         item = state.items[state.autoStorageId]
                         item.upgrade += 1
                         
-                        costs = getters.getUpgradeCosts(state.autoStorageId, 1)
+                        costs = getters.getUpgradeCosts(state.autoStorageId)
                         costs.forEach(cost => { temp[cost.id].count -= cost.count })
                     }
                     else break
@@ -4116,6 +4142,8 @@ export const store = createStore({
                 if (!max) max = 0
                 if (max < result) { result = max }
             })
+            
+            if (item.max && result + item.count > item.max) result = item.max - item.count
             
             return result
         },
@@ -4182,6 +4210,95 @@ export const store = createStore({
             return can
         },
         
+        computeGainCosts({ state, getters }, payload) {
+            
+            let id = payload.id
+            let count = payload.count
+            
+            let item = state.items[id]
+            if (!('costs' in item.gain)) return null
+            
+            let costs = JSON.parse(JSON.stringify(item.gain.costs))
+            costs.forEach(cost => { cost.count = Math.floor(cost.count * count) })
+            
+            costs.forEach(cost => {
+                cost.progress = Math.min(100, ((state.items[cost.id].count / cost.count) * 100).toFixed())
+                cost.timer = getters.getTimer(cost.id, cost.count)
+            })
+
+            return costs
+        },
+        
+        computeCanGain({ state, getters }, payload) {
+            
+            let id = payload.id
+            let count = payload.count
+            
+            let item = state.items[id]
+            if (item.unlocked == false) return -2
+            if (!('gain' in item)) return -3
+            
+            let max = getters.getItemStorage(id)
+            if (max && item.count >= max) return -6
+            if (item.count > 1 && max && item.count + count > max) return -7
+
+            if (!('costs' in item.gain)) return 0
+            
+            let can = 0
+
+            let costs = getters.getGainCosts(id)
+            if (costs) {
+                costs.forEach(cost => {
+                    if (state.items[cost.id].count - cost.count < 0) {
+                        can = -1
+                        return
+                    }
+                })
+            }
+
+            return can
+        },
+        
+        computeUpgradeCosts({ state, getters }, payload) {
+            
+            let id = payload.id
+            
+            let item = state.items[id]
+            if (!('costs' in item.storage)) return null
+            
+            let costs = JSON.parse(JSON.stringify(item.storage.costs))
+            costs.forEach(cost => { cost.count = Math.floor(cost.count * Math.pow(cost.coeff, item.upgrade)) })
+            
+            costs.forEach(cost => {
+                cost.progress = Math.min(100, ((state.items[cost.id].count / cost.count) * 100).toFixed())
+                cost.timer = getters.getTimer(cost.id, cost.count)
+            })
+
+            return costs
+        },
+        
+        computeCanUpgrade({ state, getters }, payload) {
+            
+            let id = payload.id
+            
+            let item = state.items[id]
+            if (item.unlocked == false) return -2
+            if (!('storage' in item)) return -3
+            if (!('costs' in item.storage)) return -4
+
+            let can = 0
+
+            let costs = getters.getUpgradeCosts(id)
+            costs.forEach(cost => {
+                if (state.items[cost.id].count - cost.count < 0) {
+                    can = -1
+                    return
+                }
+            })
+
+            return can
+        },
+        
         updateLoop({ state, dispatch }) {
             
             for (let i in state.items) {
@@ -4193,6 +4310,18 @@ export const store = createStore({
                     dispatch('updateBuildingCosts', item.id)
                     dispatch('updateCanBuild', item.id)
                 }
+                
+                if ('storage' in item && 'costs' in item.storage) {
+                    
+                    dispatch('updateUpgradeCosts', item.id)
+                    dispatch('updateCanUpgrade', item.id)
+                }
+                
+                if ('gain' in item) {
+                    
+                    dispatch('updateGainCosts', item.id)
+                    dispatch('updateCanGain', item.id)
+                }
             }
         },
         
@@ -4203,6 +4332,46 @@ export const store = createStore({
                     
                     state.items[id].maxBuildCount = max
                 }
+            })
+        },
+        
+        updateGainCosts({ state, dispatch }, id) {
+            
+            dispatch('computeGainCosts', { id:id, count:1 }).then(costs => {
+                let compare = costCompare(costs, state.items[id].gainCosts[0])
+                if (compare == false) { state.items[id].gainCosts[0] = JSON.parse(JSON.stringify(costs)) }
+                costs = null
+            })
+            dispatch('computeGainCosts', { id:id, count:5 }).then(costs => {
+                let compare = costCompare(costs, state.items[id].gainCosts[1])
+                if (compare == false) { state.items[id].gainCosts[1] = JSON.parse(JSON.stringify(costs)) }
+                costs = null
+            })
+            dispatch('computeGainCosts', { id:id, count:10 }).then(costs => {
+                let compare = costCompare(costs, state.items[id].gainCosts[2])
+                if (compare == false) { state.items[id].gainCosts[2] = JSON.parse(JSON.stringify(costs)) }
+                costs = null
+            })
+            dispatch('computeGainCosts', { id:id, count:20 }).then(costs => {
+                let compare = costCompare(costs, state.items[id].gainCosts[3])
+                if (compare == false) { state.items[id].gainCosts[3] = JSON.parse(JSON.stringify(costs)) }
+                costs = null
+            })
+        },
+        
+        updateCanGain({ state, dispatch }, id) {
+
+            dispatch('computeCanGain', { id:id, count:1 }).then(can => {
+                if (can != state.items[id].canGain[0]) state.items[id].canGain[0] = can
+            })
+            dispatch('computeCanGain', { id:id, count:5 }).then(can => {
+                if (can != state.items[id].canGain[1]) state.items[id].canGain[1] = can
+            })
+            dispatch('computeCanGain', { id:id, count:10 }).then(can => {
+                if (can != state.items[id].canGain[2]) state.items[id].canGain[2] = can
+            })
+            dispatch('computeCanGain', { id:id, count:20 }).then(can => {
+                if (can != state.items[id].canGain[3]) state.items[id].canGain[3] = can
             })
         },
         
@@ -4254,8 +4423,24 @@ export const store = createStore({
             })
         },
         
+        updateUpgradeCosts({ state, dispatch }, id) {
+            
+            dispatch('computeUpgradeCosts', { id:id }).then(costs => {
+                let compare = costCompare(costs, state.items[id].upgradeCosts)
+                if (compare == false) { state.items[id].upgradeCosts = JSON.parse(JSON.stringify(costs)) }
+                costs = null
+            })
+        },
+        
+        updateCanUpgrade({ state, dispatch }, id) {
+
+            dispatch('computeCanUpgrade', { id:id }).then(can => {
+                if (can != state.items[id].canUpgrade) state.items[id].canUpgrade = can
+            })
+        },
+        
         /*--------------------------------------------------------------------*/
-        gain({ state, getters }, payload) {
+        gain({ state, getters, dispatch }, payload) {
             
             let can = getters.canGain(payload.id, payload.count)
             if (can == 0) {
@@ -4270,6 +4455,9 @@ export const store = createStore({
                 
                 item.count += payload.count
                 item.count = Math.min(item.count, getters.getItemStorage(payload.id))
+                
+                dispatch('updateGainCosts', payload.id)
+                dispatch('updateCanGain', payload.id)
             }
         },
         
@@ -4288,20 +4476,23 @@ export const store = createStore({
             }
         },
         
-        upgrade({ state, getters }, payload) {
+        upgrade({ state, getters, dispatch }, payload) {
             
-            let can = getters.canUpgrade(payload.id, payload.count)
+            let can = getters.canUpgrade(payload.id)
             if (can == 0) {
                 
                 let item = state.items[payload.id]
                 
                 if ('costs' in item.storage) {
                     
-                    let costs = getters.getUpgradeCosts(payload.id, payload.count)
+                    let costs = getters.getUpgradeCosts(payload.id)
                     costs.forEach(cost => { state.items[cost.id].count -= cost.count; if (state.items[cost.id].count < 0) console.log(state.items[cost.id]) })
                 }
                 
-                item.upgrade += payload.count
+                item.upgrade += 1
+                
+                dispatch('updateUpgradeCosts', payload.id)
+                dispatch('updateCanUpgrade', payload.id)
             }
         },
 
@@ -4374,6 +4565,20 @@ export const store = createStore({
                 dispatch('updateMaxBuildCount', payload.id)                
                 dispatch('updateBuildingCosts', payload.id)
                 dispatch('updateCanBuild', payload.id)
+                
+                if ('inputs' in item) {
+                    for (let j in item.inputs) {
+                        let input = item.inputs[j]
+                        dispatch('updateItemProd', input.id)
+                    }
+                }
+                
+                if ('outputs' in item) {
+                    for (let j in item.outputs) {
+                        let output = item.outputs[j]
+                        dispatch('updateItemProd', output.id)
+                    }
+                }
             }
         },
         
@@ -4470,10 +4675,14 @@ export const store = createStore({
                 if ('upgrade' in item) item.upgrade = 0
                 if ('status' in item) item.status = 'new'
                 if ('progress' in item) item.progress = 0
+                if ('prod' in item) item.prod = 0
             })
+            
+            state.items['antimatter'].storage.count = 100000
             
             for (let i in state.items) {
                 let item = state.items[i]
+                
                 if ('status' in item) item.unlocked = false
             }
             

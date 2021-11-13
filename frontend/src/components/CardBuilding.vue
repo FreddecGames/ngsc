@@ -43,7 +43,9 @@
             
             <block-desc v-if="descs2" :descs="descs2" />
             
-            <block-build :itemId="itemId" :btnText="btnText" />
+            <block-build :itemId="itemId" :btnText="btnText">
+                <slot />
+            </block-build>
             
         </template>
     </card>

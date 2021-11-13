@@ -15,11 +15,11 @@
         </template>
         <template v-if="storageUnlocked" v-slot:buttons>
         
-            <button v-if="storegable" type="button" class="btn small" :class="{ 'active':activePane == paneId, 'disabled':can != 0 }" @click="upgrade({ id:itemId, count:1 })">
+            <button v-if="upgradable" type="button" class="btn small" :class="{ 'active':activePane == paneId, 'disabled':can != 0 }" @click="upgrade({ id:itemId, count:1 })">
                 <i class="fas fa-fw fa-arrow-alt-circle-up"></i>
             </button>
             
-            <button v-if="!storegable" class="btn small disabled" :class="{ 'active':activePane == paneId }" style="width:30px"></button>
+            <button v-if="!upgradable" class="btn small disabled" :class="{ 'active':activePane == paneId }" style="width:35px"></button>
 
         </template>
     </sidebar-item>
@@ -48,10 +48,11 @@ export default {
     
         ...mapState([ 'activePane' ]),
         
-        ...mapGetters([ 'isUnlocked', 'isStoregable', 'canUpgrade', 'getItemCount' ]),
+        ...mapGetters([ 'isUnlocked', 'isStoregable', 'canUpgrade', 'getItemCount', 'isUpgradable' ]),
         
         can: function() { return this.canUpgrade(this.itemId, 1) },
         unlocked: function() { return this.isUnlocked(this.itemId) },
+        upgradable: function() { return this.isUpgradable(this.itemId) },
         storegable: function() { return this.isStoregable(this.itemId) },
         storageUnlocked: function() { return this.getItemCount('missionStorage') >= 1 },
     },

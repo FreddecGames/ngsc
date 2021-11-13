@@ -3,32 +3,30 @@
     
         <button v-if="cost.id != 'segment' && cost.id != 'dysonT3' && cost.id != 'conquest'" type="button" class="w-100" @click="setActivePane(cost.id + 'Pane');">
             <div class="row g-1 small">
-                <div class="col d-flex align-items-center">
-                    <img class="me-1" :src="require(`../assets/icons/${cost.id}.png`).default" width="12" height="12" :alt="$t(cost.id)" />
+                <div class="col d-flex align-items-center lh-1">
+                    <img class="me-1" :src="require(`../assets/icons/${cost.id}.png`).default" width="10" height="10" :alt="$t(cost.id)" />
                     <small :class="{ 'text-danger': storage && cost.count > storage }"><format-number :value="cost.count" /></small>
                 </div>
-                <div class="col-auto" :class="{ 'd-none': !storage}">
+                <div class="col-auto d-flex" :class="{ 'd-none': !storage}">
                     <small><timer-count :count="cost.timer" /></small>
                 </div>
             </div>
             <line-progress :progress="cost.progress" :count="cost.count" />
         </button>
         
-        <div v-if="cost.id == 'segment' || cost.id == 'dysonT3' || cost.id == 'conquest'">
+        <button v-if="cost.id == 'segment' || cost.id == 'dysonT3' || cost.id == 'conquest'" type="button" class="w-100">
             <div class="row g-1 small">
-                <div class="col d-flex align-items-center">
-                    <img class="me-1" :src="require(`../assets/icons/${cost.id}.png`).default" width="12" height="12" :alt="$t(cost.id)" />
-                    <span :class="{ 'text-danger': storage && cost.count > storage }"><format-number :value="cost.count" /></span>
+                <div class="col d-flex align-items-center lh-1">
+                    <img class="me-1" :src="require(`../assets/icons/${cost.id}.png`).default" width="10" height="10" :alt="$t(cost.id)" />
+                    <small :class="{ 'text-danger': storage && cost.count > storage }"><format-number :value="cost.count" /></small>
                 </div>
-                <div :class="{ 'd-none': !storage}">
-                    <timer-count :count="cost.timer" />
-                </div>
-                <div class="col-auto" :class="{ 'd-none': count < cost.count}">
-                    <i class="text-success fas fa-fw fa-check"></i>
+                <div class="col-auto d-flex">
+                    <small :class="{ 'd-none': count < cost.count}"><i class="text-success fas fa-fw fa-check"></i></small>
+                    <small :class="{ 'd-none': count >= cost.count}"><span class="text-muted">---</span></small>
                 </div>
             </div>
             <line-progress :progress="cost.progress" :count="cost.count" />
-        </div>
+        </button>
         
     </div>
 </template>

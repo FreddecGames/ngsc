@@ -1,12 +1,12 @@
 <template>
     <div class="col">
-        <div class="row g-2 align-items-start">
+        <div class="row g-2 align-items-center">
     
             <div class="col">
                 <div class="row g-0 small">
                     
                     <div class="col-12">
-                        <div class="row gx-1 align-items-center justify-content-center">
+                        <div class="row gx-1 align-items-center justify-content-center small">
                         
                             <div class="col-auto d-flex align-items-center">
                                 <img class="me-1" :src="require(`../assets/icons/${source.id}.png`).default" width="12" height="12" :alt="$t(source.id)" />
@@ -14,7 +14,7 @@
                             </div>
                             
                             <div class="col-auto">
-                                <i class="fas fa-fw fa-long-arrow-alt-right"></i>
+                                <i class="fas fa-fw fa-long-arrow-alt-right text-muted"></i>
                             </div>
                             
                             <div class="col-auto d-flex align-items-center">
@@ -25,7 +25,7 @@
                         </div>
                     </div>
                 
-                    <div class="col-12">
+                    <div class="col-12" style="position:relative; top:-5px;">
                         <input type="range" class="form-range" min="1" :max="maxCount" step="1" v-model.number="amount" />
                     </div>
                     
@@ -47,7 +47,7 @@
                 <div class="form-check form-switch">
                     <input v-if="autoConversionId != itemId" class="form-check-input" type="checkbox" :id="'emcInterval-' + itemId" @click="setAutoConversionId(itemId)">
                     <input v-if="autoConversionId == itemId" class="form-check-input" type="checkbox" :id="'emcInterval-' + itemId" checked @click="setAutoConversionId(null)">
-                    <label class="form-check-label small" :for="'emcInterval-' + itemId">{{ $t('value-emc-automatic') }}</label>
+                    <label class="form-check-label small" :for="'emcInterval-' + itemId"><small>{{ $t('value-emc-automatic') }}</small></label>
                 </div>
             </div>
         </div>

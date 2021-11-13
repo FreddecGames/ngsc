@@ -13,14 +13,14 @@
             <block-desc :descs="descs" />
         
             <div class="col">
-                <div class="row g-1">
+                <div class="row gx-3">
                 
-                    <div class="col small">
+                    <div class="col-auto small">
                         <span>{{ $t('value-full-storage') }}</span>
                     </div>
                     
                     <div class="col-auto small">
-                        <timer-count :itemId="itemId" :count="storage" />
+                        <small><timer-count :count="timer" /></small>
                     </div>
                     
                 </div>
@@ -62,9 +62,9 @@ export default {
     },
     computed: {
     
-        ...mapGetters([ 'getItemStorage', 'getItemCount', 'isUnlocked' ]),
+        ...mapGetters([ 'getItemStorage', 'getItemCount', 'isUnlocked', 'getTimer' ]),
         
-        storage: function() { return this.getItemStorage(this.itemId) },
+        timer: function() { return this.getTimer(this.itemId, this.getItemStorage(this.itemId)) },
         
         unlocked: function() { return this.isUnlocked(this.itemId) },
         storageUnlocked: function() { return this.getItemCount('missionStorage') >= 1 },

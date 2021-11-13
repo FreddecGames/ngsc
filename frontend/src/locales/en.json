@@ -124,6 +124,9 @@
     "button-export": "Export",
     "button-reset": "Hard Reset",
     "button-manualSave": "Manual Save",
+    "button-buildSegmentRing": "50 + Ring",
+    "button-buildSegmentSwarm": "100 + Ring",
+    "button-buildSegmentSphere": "250 + Ring",
     
     "energy": "Energy",
     "energyUpgrade-desc1": "Double your Energy storage size",

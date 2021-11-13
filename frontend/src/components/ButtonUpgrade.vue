@@ -10,12 +10,12 @@
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
-    props: [ 'itemId', 'count' ],
+    props: [ 'itemId' ],
     computed: {
     
         ...mapGetters([ 'canUpgrade' ]),
         
-        can: function() { return this.canUpgrade(this.itemId, this.count) },
+        can: function() { return this.canUpgrade(this.itemId) },
     },
     methods: {
     

@@ -91,18 +91,18 @@
                 <sidebar-block>
                     <sidebar-header name="sidebar-header-dashboards" />
                     <sidebar-menu>
-                        <sidebar-item name="sidebar-item-consumption" icon="production.png" paneId="productionPane">
-                            <template v-slot:extra>
-                                <div v-if="hasConsumptionIssue" class="col-auto text-end small">
-                                    <i class="fas fa-fw fa-exclamation-triangle text-danger"></i>
-                                </div>
-                            </template>
-                        </sidebar-item>
                         <sidebar-item name="sidebar-item-achievements" icon="achievements.png" paneId="achievementsPane">
                             <template v-slot:extra>
                                 <div class="col-auto text-end small">
                                     <span class="text-light">{{ getAchievementCount }}</span>
                                     <small class="text-normal ms-1">/{{ getAchievementMax }}</small>
+                                </div>
+                            </template>
+                        </sidebar-item>
+                        <sidebar-item name="sidebar-item-consumption" icon="production.png" paneId="productionPane">
+                            <template v-slot:extra>
+                                <div v-if="hasConsumptionIssue" class="col-auto text-end small">
+                                    <i class="fas fa-fw fa-exclamation-triangle text-danger"></i>
                                 </div>
                             </template>
                         </sidebar-item>
@@ -159,19 +159,19 @@
                         <sidebar-item name="sidebar-item-dyson" icon="dyson.png" paneId="dysonPane">
                             <template v-slot:extra>
                                 <div class="col-auto text-end small">
-                                    <span class="text-light">{{ segments }}</span>
+                                    <span class="text-light"><format-number :value="segments" /></span>
                                     <small class="text-normal ms-1">Sg</small>
                                 </div>
                                 <div class="col-auto text-end small">
-                                    <span class="text-light">{{ rings }}</span>
+                                    <span class="text-light"><format-number :value="rings" /></span>
                                     <small class="text-normal ms-1">Rg</small>
                                 </div>
                                 <div class="col-auto text-end small">
-                                    <span class="text-light">{{ swarms }}</span>
+                                    <span class="text-light"><format-number :value="swarms" /></span>
                                     <small class="text-normal ms-1">Sw</small>
                                 </div>
                                 <div class="col-auto text-end small">
-                                    <span class="text-light">{{ spheres }}</span>
+                                    <span class="text-light"><format-number :value="spheres" /></span>
                                     <small class="text-normal ms-1">Sp</small>
                                 </div>
                             </template>
@@ -179,8 +179,8 @@
                         <sidebar-item name="sidebar-item-darkMatter" icon="darkmatter.png" paneId="darkmatterPane" :unlockerIds="[ 'darkmatter' ]">
                             <template v-slot:extra>
                                 <div class="col-auto text-end small">
-                                    <span class="text-light">{{ darkmatter }}</span>
-                                    <small class="text-normal ms-1">({{ getDMPotential }})</small>
+                                    <span class="text-light"><format-number :value="darkmatter" /></span>
+                                    <small class="text-normal ms-1">(<format-number :value="getDMPotential" />)</small>
                                 </div>
                             </template>
                         </sidebar-item>

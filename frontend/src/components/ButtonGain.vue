@@ -4,7 +4,7 @@
         <span v-if="can == -1">{{ $t('not-enough-resource') }}</span>
         <span v-if="[-2, -3, -4].includes(can)">{{ $t('error') }}</span>
         <span v-if="can == -5">{{ $t('full') }}</span>
-        <span v-if="can == -6">{{ $t('too-many') }}</span>
+        <span v-if="can == -6">{{ $t('full') }}</span>
     </button>
 </template>
 
