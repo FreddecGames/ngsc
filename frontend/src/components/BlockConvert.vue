@@ -75,12 +75,12 @@ export default {
         
         ...mapState([ 'autoConversionId' ]),
         
-        ...mapGetters([ 'getConvertionCosts', 'getConvertionMaxCount', 'canConvert', 'getItemCount' ]),
+        ...mapGetters([ 'conversion/cost', 'conversion/maxCount', 'conversion/can', 'getItemCount' ]),
         
-        source: function() { return this.getConvertionCosts(this.itemId, this.amount)[0] },
-        maxCount: function() { return this.getConvertionMaxCount(this.itemId) },
+        source: function() { return this['conversion/cost'](this.itemId, this.amount) },
+        maxCount: function() { return this['conversion/maxCount'](this.itemId) },
         
-        can: function() { return this.canConvert(this.itemId, this.amount) },
+        can: function() { return this['conversion/can'](this.itemId) },
         
         autoUnlocked: function() { return this.getItemCount('dmUpgdAutoEmc') >= 1 },
     },

@@ -1,8 +1,9 @@
 <template>
     <div v-if="unlocked" class="col small">
         <div class="row gx-3 align-items-center">
-            <div class="col">
+            <div class="col text-truncate">
                 <span class="badge text-uppercase text-center me-1">{{ $t(level) }}</span>
+                <small class="text-light me-1">x<format-number :value="count" /></small>
                 <span class="text-normal">{{ $t(itemId) }}</span>
             </div>
             <div class="col-auto">
@@ -31,9 +32,11 @@ export default {
     },
     computed: {
     
-        ...mapGetters([ 'canBuild', 'isUnlocked', 'getItemProduction' ]),
+        ...mapGetters([ 'canBuild', 'isUnlocked', 'getItemProduction', 'getItemCount' ]),
         
         can: function() { return this.canBuild(this.itemId, 1) },
+        
+        count: function() { return this.getItemCount(this.itemId) },
         
         unlocked: function() { return this.isUnlocked(this.itemId) },
         

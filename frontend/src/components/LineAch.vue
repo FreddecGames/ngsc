@@ -1,6 +1,6 @@
 <template>
     <div v-if="unlocked" class="col">
-        <div class="row g-1 align-items-center">
+        <div class="lh-1 row g-1 align-items-center">
         
             <div class="col-2">
                 <span v-if="name" class="badge text-uppercase w-100 text-center">{{ $t(name) }}</span>
@@ -9,13 +9,13 @@
             
             <div v-for="(bracket, index) in ach.brackets" :key="bracket" class="col-2">
                 <small class="text-uppercase">
-                    <span v-if="ach.count > index" class="text-success"><format-number :value="bracket" /></span>
-                    <span v-if="ach.count == index && ach.progress > 0" class="text-timer"><format-number :value="bracket" /></span>
-                    <span v-if="ach.count == index && ach.progress <= 0" class="text-muted"><format-number :value="bracket" /></span>
-                    <span v-if="ach.count < index && ach.progress <= 0" class="text-muted"><format-number :value="bracket" /></span>
-                    <span v-if="ach.count < index && ach.progress > 0" class="text-muted"><format-number :value="bracket" /></span>
+                    <small v-if="ach.count > index" class="text-success"><format-number :value="bracket" /></small>
+                    <small v-if="ach.count == index && ach.progress > 0" class="text-timer"><format-number :value="bracket" /></small>
+                    <small v-if="ach.count == index && ach.progress <= 0" class="text-muted"><format-number :value="bracket" /></small>
+                    <small v-if="ach.count < index && ach.progress <= 0" class="text-muted"><format-number :value="bracket" /></small>
+                    <small v-if="ach.count < index && ach.progress > 0" class="text-muted"><format-number :value="bracket" /></small>
                 </small>
-                <div class="progress" style="height:1px">
+                <div class="progress" style="margin-top:2px; height:1px">
                     <div v-if="ach.count > index" class="progress-bar bg-success" style="width:100%"></div>
                     <div v-if="ach.count == index" class="progress-bar bg-timer" :style="'width:' + ach.progress + '%'"></div>
                 </div>

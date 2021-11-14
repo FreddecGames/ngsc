@@ -243,6 +243,18 @@
                     <template v-slot:col-1>
                         <div class="col">
                             <small class="me-2">{{ $t('lastestVersion') }}</small>
+                            <small class="text-light">v2.2.0 - 2021-11-14</small>
+                            <ul class="small mt-2 mb-0">
+                                <li>NEW: Display machine count in "Production/Consumption" page</li>
+                                <li>CHANGE: Performance and memory improvements</li>
+                                <li>FIX: Astronomical Breakthrough costs</li>
+                                <li>FIX: consumption machine name</li>
+                            </ul>
+                        </div>
+                    </template>
+                    <template v-slot:col-2>
+                        <div class="col">
+                            <small class="me-2">{{ $t('previousVersion') }}</small>
                             <small class="text-light">v2.1.0 - 2021-11-13</small>
                             <ul class="small mt-2 mb-0">
                                 <li>NEW: Bring back the "250 + Sphere", "100 + Swarm" and "50 + Ring" buttons</li>
@@ -251,17 +263,6 @@
                                 <li>FIX: Upgrade storage timer</li>
                                 <li>FIX: Max build count not to increase more than building limit</li>
                                 <li>FIX: Building destruction update resource production</li>
-                            </ul>
-                        </div>
-                    </template>
-                    <template v-slot:col-2>
-                        <div class="col">
-                            <small class="me-2">{{ $t('previousVersion') }}</small>
-                            <small class="text-light">v2.0.2 - 2021-11-12</small>
-                            <ul class="small mt-2 mb-0">
-                                <li>CHANGE: Performance and memory improvements</li>
-                                <li>CHANGE: Removed max limit on Dyson Segment</li>
-                                <li>FIX: Missions without cost could be done</li>
                             </ul>
                         </div>
                         <div class="col">
@@ -1881,8 +1882,8 @@ export default {
         ultrite: function() { return this.getItemCount('ultrite') },
         darkmatter: function() { return this.getItemCount('darkmatter') },
         
-        rebirthCosts: function() { return this.getBuildCosts('rebirth', 1) },
-        enlightenCosts: function() { return this.getBuildCosts('enlighten', 1) },
+        rebirthCosts: function() { console.log('block build rebirth'); return this.getBuildCosts('rebirth', 1) },
+        enlightenCosts: function() { console.log('block build enlighten'); return this.getBuildCosts('enlighten', 1) },
         
         canRebirth: function() { return this.canBuild('rebirth', 1) },
         canEnlighten: function() { return this.canBuild('enlighten', 1) },

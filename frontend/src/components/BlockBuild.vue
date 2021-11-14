@@ -116,6 +116,7 @@ export default {
         max: function() { return this.getItemMax(this.itemId) },
         count: function() { return this.getItemCount(this.itemId) },
         counts: function() {
+        
             let result = []
             let temp = this.getBuildCounts(this.itemId)
             for (let i in temp) {

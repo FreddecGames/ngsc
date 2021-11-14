@@ -25,7 +25,7 @@ function costCompare(cost1, cost2) {
     return true;
 }
 
-var base = {
+const base = {
     
     /*------------------------------------------------------------------------*/
     energy: {
@@ -2350,7 +2350,7 @@ var base = {
         onBuild: function(state) { this.onLoad(state) },
     },
     radarT2: {
-        max:250, range:5, build:{ counts:[1], multi:true, costs:[{ id:'metal', count:60000000000, coeff:1.1 }, { id:'ice', count:60000000000, coeff:1.1 }, { id:'meteorite', count:60000000000, coeff:1.1 }] },
+        max:250, range:5, build:{ counts:[1], multi:true, costs:[{ id:'metal', count:60000000000, coeff:1.1 }, { id:'ice', count:6000000000, coeff:1.1 }, { id:'meteorite', count:60000000, coeff:1.1 }] },
         onLoad: function(state) {
             if (this.count >= 1) {
                 let range = (state.items['radarT1'].count * state.items['radarT1'].range) + (state.items['radarT2'].count * state.items['radarT2'].range)
@@ -2523,7 +2523,229 @@ var base = {
     titanAntimatter: { unlocked:true, max:1, build:{ counts:[1], costs:[{ id:'ultrite', count:10, coeff:1.0 }] }, modCost:{ id:'antimatter', mod:-0.9 }, },
 }
 
+const moduleConversion = {
+    namespaced: true,
+    state() {
+        return {
+            
+            ids: [
+                'meteorite', 'carbon', 'oil', 'metal', 'gem', 'wood', 'silicon',
+                'uranium', 'lava', 'lunarite', 'methane', 'titanium', 'gold', 'silver',
+                'hydrogen', 'helium', 'ice'
+            ],
+            
+            costs: {
+                meteorite: { id:'plasma', count:3  },
+                carbon:    { id:'energy', count:2  },
+                oil:       { id:'energy', count:3  },
+                metal:     { id:'energy', count:1  },
+                gem:       { id:'energy', count:3  },
+                wood:      { id:'energy', count:1  },
+                silicon:   { id:'energy', count:23 },
+                uranium:   { id:'energy', count:37 },
+                lava:      { id:'energy', count:42 },
+                lunarite:  { id:'energy', count:15 },
+                methane:   { id:'energy', count:12 },
+                titanium:  { id:'energy', count:17 },
+                gold:      { id:'energy', count:14 },
+                silver:    { id:'energy', count:16 },
+                hydrogen:  { id:'energy', count:33 },
+                helium:    { id:'energy', count:39 },
+                ice:       { id:'energy', count:44 },
+            },
+            
+            cans: {},
+            maxCounts: {},
+        }
+    },
+    getters: {
+        
+        cost: (state) => (id, count) => {
+            
+            let ret = JSON.parse(JSON.stringify(state.costs[id]))
+            ret.count = Math.floor(ret.count * count)
+            
+            return ret
+        },
+        
+        can: (state) => (id) => { return state.cans[id] },
+        maxCount: (state) => (id) => { return state.maxCounts[id] },
+    },
+    actions: {
+        
+        refresh({ state, rootState, rootGetters }) {
+            
+            state.ids.forEach(id => {
+                
+                let item = rootState.items[id]
+                let storage = rootGetters.getItemStorage(id)
+                
+                let maxCount = rootState.items[item.conversion.costs[0].id].count / item.conversion.costs[0].count
+                maxCount = Math.floor(Math.min(maxCount, storage - item.count))
+                
+                if (maxCount != state.maxCounts[id]) state.maxCounts[id] = maxCount
+                
+                let can = 0
+                if (item.count >= storage) can = -5
+                else if (maxCount <= 0) can = -1
+                
+                if (can != state.cans[id]) state.cans[id] = can
+            })
+        },
+    },
+}
+
+const moduleStatue = {
+    namespaced: true,
+    state() {
+        return {
+            
+            ids: [
+                'star301',    'star163901', 'star181901', 'star151801', 'star25401',  'star146301',
+                'star122601', 'star79501',  'star1501',   'star79901',  'star37601',  'star123401',
+                'star164301', 'star219102', 'star204702', 'star116901', 'star74001',  'star205102',
+                'star144001', 'star222301', 'star3901',   'star168301', 'star120901', 'star125301',
+                'star113101', 'star89101',  'star93901',  'star79201',  'star80501',  'star77301',
+                'star191701', 'star199702', 'star21001',  'star178302', 'star32201',  'star74801',
+
+                'star401',    'star25101',  'star207601', 'star223901', 'star121101', 'star136701',
+                'star166402', 'star95001',  'star175902', 'star56501',  'star167801', 'star103201',
+                'star113301', 'star199602', 'star157201', 'star222201', 'star6301',   'star214301',
+                'star40801',  'star207301', 'star169601', 'star157101', 'star178501', 'star208601',
+                'star78101',  'star123501', 'star85901',  'star18501',  'star199801', 'star141901',
+                'star5201',   'star223701', 'star166903', 'star32101',  'star77801',  'star205201',
+
+                'star201',    'star217101', 'star166701', 'star179501', 'star6501',   'star222401',
+                'star200001', 'star24201',  'star224202', 'star92801',  'star172701', 'star86401',
+                'star202902', 'star177001', 'star68301',  'star205001', 'star13401',  'star34201',
+                'star182101', 'star178401', 'star107601', 'star192101', 'star24001',  'star16601',
+                'star27501',  'star121601', 'star212102', 'star117501',
+
+                'star501',    'star130601', 'star158101', 'star224601', 'star58601',  'star10101',
+                'star194201', 'star1101',   'star72501',  'star210501', 'star189701', 'star175601',
+                'star206902', 'star133601', 'star135801', 'star39101',  'star107001', 'star105801',
+                'star224201', 'star205101', 'star162501', 'star4001',   'star141101', 'star180502',
+                'star208702', 'star85501',  'star217202', 'star180101', 'star13801',  'star37101',
+                'star42501',  'star80901',  'star215902', 'star190502', 'star99701',  'star176802',
+
+                'star701',    'star601',    'star80101',  'star213301', 'star13601',  'star51801',
+                'star35801',  'star216801', 'star224101', 'star114001', 'star15301',  'star69601',
+                'star148501', 'star155801', 'star185101', 'star175901', 'star203902', 'star204801',
+                'star211202', 'star100801', 'star124101', 'star139701', 'star50401',  'star159101',
+                'star148101', 'star157301', 'star72601',  'star224801', 'star71001',  'star207501',
+                'star168302', 'star128901', 'star68401',  'star30701',  'star193402', 'star84201',
+                'star76401',  'star32301',  'star191401', 'star118301', 'star166901', 'star62901',
+                'star21601',  'star63801',  'star187202',
+            ],
+            
+            cans: {},
+            costs: {},
+        }
+    },
+    getters: {
+        
+        can: (state) => (id) => { return state.cans[id] },
+        costs: (state) => (id) => { return state.costs[id] },
+    },
+    actions: {
+        
+        refresh({ state, rootState, rootGetters }) {
+            
+            state.ids.forEach(id => {
+                
+                let item = rootState.items[id]
+                if (item.status == 'conquered') {
+                
+                    let costs = JSON.parse(JSON.stringify(item.statue))                
+                    costs.forEach(cost => {
+                        cost.progress = Math.min(100, ((rootState.items[cost.id].count / cost.count) * 100).toFixed())
+                        cost.timer = rootGetters.getTimer(cost.id, cost.count)
+                    })
+                    
+                    let compare = costCompare(costs, state.costs[id])
+                    if (compare == false) { state.costs[id] = JSON.parse(JSON.stringify(costs)) }
+                    
+                    let can = 0
+                    costs.forEach(cost => {
+                        if (rootState.items[cost.id].count - cost.count < 0) {
+                            can = -1
+                        }
+                    })
+                    
+                    if (can != state.cans[id]) state.cans[id] = can
+                }
+            })
+        },
+    },
+}
+
+const moduleAchievement = {
+    namespaced: true,
+    state() {
+        return {
+            
+            ids: [
+                'achEnergy', 'achPlasma', 'achMeteorite', 'achCarbon', 'achScience',
+                'achOil', 'achFuel', 'achMetal', 'achGem', 'achWood', 'achSilicon',
+                'achUranium', 'achLava', 'achLunarite', 'achMethane', 'achTitanium',
+                'achGold', 'achSilver', 'achHydrogen', 'achHelium', 'achIce', 'achAntimatter',
+
+                'achEnergyT1', 'achEnergyT2', 'achEnergyT3', 'achEnergyT4', 'achEnergyT5', 'achEnergyT6',
+                'achPlasmaT1', 'achPlasmaT2', 'achPlasmaT3', 'achPlasmaT4',
+                'achMeteoriteT1', 'achMeteoriteT3', 'achMeteoriteT4',
+                'achCarbonT1', 'achCarbonT2', 'achCarbonT3', 'achCarbonT4', 'achCarbonT5',
+                'achScienceT1', 'achScienceT2', 'achScienceT3', 'achScienceT4', 'achScienceT5',
+                'achOilT1', 'achOilT2', 'achOilT3', 'achOilT4', 'achOilT5',
+                'achFuelT1', 'achFuelT2', 'achFuelT3',
+                'achMetalT1', 'achMetalT2', 'achMetalT3', 'achMetalT4', 'achMetalT5',
+                'achGemT1', 'achGemT2', 'achGemT3', 'achGemT4', 'achGemT5',
+                'achWoodT1', 'achWoodT2', 'achWoodT3', 'achWoodT4', 'achWoodT5',
+                'achSiliconT1', 'achSiliconT2', 'achSiliconT3', 'achSiliconT4', 'achSiliconT5',
+                'achUraniumT1', 'achUraniumT2', 'achUraniumT3', 'achUraniumT4', 'achUraniumT5',
+                'achLavaT1', 'achLavaT2', 'achLavaT3', 'achLavaT4', 'achLavaT5',
+                'achLunariteT1', 'achLunariteT2', 'achLunariteT3', 'achLunariteT4', 'achLunariteT5',
+                'achMethaneT1', 'achMethaneT2', 'achMethaneT3', 'achMethaneT4', 'achMethaneT5',
+                'achTitaniumT1', 'achTitaniumT2', 'achTitaniumT3', 'achTitaniumT4', 'achTitaniumT5',
+                'achGoldT1', 'achGoldT2', 'achGoldT3', 'achGoldT4', 'achGoldT5',
+                'achSilverT1', 'achSilverT2', 'achSilverT3', 'achSilverT4', 'achSilverT5',
+                'achHydrogenT1', 'achHydrogenT2', 'achHydrogenT3', 'achHydrogenT4', 'achHydrogenT5',
+                'achHeliumT1', 'achHeliumT2', 'achHeliumT3', 'achHeliumT4', 'achHeliumT5',
+                'achIceT1', 'achIceT2', 'achIceT3', 'achIceT4', 'achIceT5',
+                'achAntimatterT1',
+            ],
+        }
+    },
+    actions: {
+        
+        refresh({ state, rootState }) {
+            
+            state.ids.forEach(id => {
+                
+                let item = rootState.items[id]
+                if (item.unlocked && item.count < item.brackets.length) {
+                
+                    let limit = item.brackets[item.count]
+                    let progress = 100 * rootState.items[item.data].count / limit
+                    
+                    if (progress >= 100) {
+                        item.count += 1
+                        progress -= 100
+                    }
+                    
+                    if (progress != item.progress) item.progress = progress
+                }
+            })
+        },
+    },
+}
+
 export const store = createStore({
+    modules: {
+        
+        conversion: moduleConversion,
+        statue: moduleStatue,
+        achievement: moduleAchievement,
+    },
     state() {
         return {
             
@@ -2581,13 +2803,11 @@ export const store = createStore({
         isNotified: (state) => (id) => { return state.notified.includes(id) },
         
         isUpgradable: (state) => (id) => {
-            
             if (id == 'antimatter') return false
             return 'storage' in state.items[id]
         },
         
         isStoregable: (state) => (id) => {
-            
             return 'storage' in state.items[id]
         },
         
@@ -2595,15 +2815,13 @@ export const store = createStore({
         getTimeSinceLastRebirth: (state) => { return (new Date().getTime() - state.statsLastRebirth) / 1000 },
         getTimeSinceLastEnlighten: (state) => { return (new Date().getTime() - state.statsLastEnlighten) / 1000 },
         
-        getAchievementMax: (state) => {
-		
+        getAchievementMax: (state) => {            
             let count = 0
             state.achievements.forEach(item => { if (item.unlocked == true) count += item.brackets.length })
             return count
         },
 		
         getAchievementCount: (state) => {
-
             let count = 0
             state.achievements.forEach(item => { count += item.count })
             return count
@@ -2617,13 +2835,11 @@ export const store = createStore({
         getItemDistance: (state) => (id) => { return state.items[id].distance },
         
         getItemRange: (state) => (id) => {
-
             if (!('range' in state.items[id])) return null
             return state.items[id].range
         },
         
         getItemStats: (state) => (id, count) => {
-            
             if (!('stats' in state.items[id])) return null
             
             let stats = JSON.parse(JSON.stringify(state.items[id].stats))
@@ -2635,17 +2851,15 @@ export const store = createStore({
         },
         
         getItemInputs: (state) => (id, count) => {
-            
             if (!('inputs' in state.items[id])) return null
             
             let inputs = JSON.parse(JSON.stringify(state.items[id].inputs))
-            inputs.forEach(input => { input.count = input.count * input.mod * count })
+            inputs.forEach(input => { input.count *= input.mod * count })
             
             return inputs
         },
         
         getItemOutputs: (state) => (id, count) => {
-            
             if (!('outputs' in state.items[id])) return null
             
             let outputs = JSON.parse(JSON.stringify(state.items[id].outputs))
@@ -2655,7 +2869,6 @@ export const store = createStore({
         },
 
         getItemStorage: (state) => (id) => {
-            
             let item = state.items[id]
             if (!('storage' in item)) return 0
             
@@ -2664,7 +2877,6 @@ export const store = createStore({
         },
         
         getItemProd: (state) => (id) => {
-            
             let item = state.items[id]
             if (!('prod' in item)) { return 0 }
             
@@ -2672,7 +2884,6 @@ export const store = createStore({
         },
         
         getRawProduction: (state) => (id) => {
-
             let rawProduction = 0
             state.producers.forEach(item => {
                 item.outputs.forEach(output => {
@@ -2683,7 +2894,6 @@ export const store = createStore({
         },
         
         getItemProduction: (state) => (id, outputId) => {
-            
             let production = 0
             let item = state.items[id]
             item.outputs.forEach(output => {
@@ -2693,7 +2903,6 @@ export const store = createStore({
         },
         
         getRawConsumption: (state) => (id) => {
-
             let rawConsumption = 0
             state.producers.forEach(item => {
                 if ('inputs' in item) {
@@ -2706,7 +2915,6 @@ export const store = createStore({
         },
         
         getItemConsumption: (state) => (id, inputId) => {
-
             let consumption = 0
             let item = state.items[id]
             if ('inputs' in item) {
@@ -2718,7 +2926,6 @@ export const store = createStore({
         },
         
         hasConsumptionIssue: (state, getters) => {
-
             let result = false
             state.resources.forEach(item => {
                 let consumption = getters.getRawConsumption(item.id)
@@ -2734,7 +2941,6 @@ export const store = createStore({
         getGainCounts: (state) => (id) => { return state.items[id].gain.counts },
         
         getGainCosts: (state) => (id, count) => {
-            
             var ret = null
             
             if (state.items[id].gainCosts == undefined) return null
@@ -2749,7 +2955,6 @@ export const store = createStore({
         },
         
         canGain: (state) => (id, count) => {
-            
             var ret = null
             
             if (state.items[id].canGain == undefined) return null
@@ -2763,50 +2968,9 @@ export const store = createStore({
             else return null
         },
         
-        getConvertionCosts: (state) => (id, count) => {
-            
-            let item = state.items[id]
-
-            let costs = JSON.parse(JSON.stringify(item.conversion.costs))
-            costs.forEach(cost => { Math.floor(cost.count = cost.count * count) })
-            
-            return costs
-        },
-        
-        getConvertionMaxCount: (state, getters) => (id) => {
-            
-            let item = state.items[id]
-            let count = state.items[item.conversion.costs[0].id].count / item.conversion.costs[0].count
-            count = Math.min(count, getters.getItemStorage(id) - item.count)
-            
-            return Math.floor(count)
-        },
-        
-        canConvert: (state, getters) => (id, count) => {
-            
-            let item = state.items[id]
-            if (item.unlocked == false) return -2
-            if (!('conversion' in item)) return -3
-            if (count <= 0) return -4
-            if (item.count + count > getters.getItemStorage(id)) return -5
-            
-            let can = 0
-
-            let costs = getters.getConvertionCosts(id, count)
-            costs.forEach(cost => {
-                if (state.items[cost.id].count - cost.count < 0) {
-                    can = -1
-                    return
-                }
-            })
-            
-            return can
-        },
-        
         getUpgradeCoeff: (state) => (id) => { return state.items[id].storage.coeff },
         
         getUpgradeCosts: (state) => (id) => {
-            
             var ret = null
             
             if (state.items[id].upgradeCosts == undefined) return null
@@ -2818,7 +2982,6 @@ export const store = createStore({
         },
         
         canUpgrade: (state) => (id) => {
-            
             var ret = null
             
             if (state.items[id].canUpgrade == undefined) return null
@@ -2939,7 +3102,7 @@ export const store = createStore({
         
         getStarCount: (state) => (faction) => { return state.stars[faction].length },
         
-        getUnlockedStarCount: (state) => (faction) => { 
+        getUnlockedStarCount: (state) => (faction) => {
             let count = 0
             state.stars[faction].forEach(star => { if (star.unlocked == true) count += 1 })
             return count
@@ -2957,16 +3120,19 @@ export const store = createStore({
             return count
         },
         
-        getExploreCosts: (state) => (id) => {
-            
+        getExploreCosts: (state, getters) => (id) => {
             let item = state.items[id]
             if (!('explore' in item)) return null
 
+            item.explore.forEach(cost => {
+                cost.progress = Math.min(100, ((state.items[cost.id].count / cost.count) * 100).toFixed())
+                cost.timer = getters.getTimer(cost.id, cost.count)
+            })
+            
             return item.explore
         },
         
         canExplore: (state, getters) => (id) => {
-            
             let item = state.items[id]
             if (item.unlocked == false) return -2
             if (!('explore' in item)) return -3
@@ -2986,7 +3152,6 @@ export const store = createStore({
         },
         
         canConquer: (state, getters) => (id) => {
-            
             let item = state.items[id]
             if (item.unlocked == false) return -2
             if (!('explore' in item)) return -3
@@ -3002,34 +3167,6 @@ export const store = createStore({
         
         getStarResources: (state) => (id) => { return state.items[id].resources },
         
-        getStatueCosts: (state) => (id) => {
-            
-            let item = state.items[id]
-            if (!('statue' in item)) return null
-
-            return item.statue
-        },
-        
-        canStatue: (state, getters) => (id) => {
-            
-            let item = state.items[id]
-            if (item.unlocked == false) return -2
-            if (!('statue' in item)) return -3
-            if (item.status != 'conquered') return -4
-            
-            let can = 0
-
-            let costs = getters.getStatueCosts(id)
-            costs.forEach(cost => {
-                if (state.items[cost.id].count - cost.count < 0) {
-                    can = -1
-                    return
-                }
-            })
-            
-            return can
-        },
-        
         getDMAchievement: (state, getters) => { return getters.getAchievementCount * 1},
         getDMRing: (state) => { return state.items['dysonT1'].count * 1.5 },
         getDMSwarm: (state) => { return state.items['dysonT2'].count * 5 },
@@ -3039,6 +3176,7 @@ export const store = createStore({
         
         getDMUpgradesMax: (state) => { return state.dmUpgrades.length },
         getDMUpgradesCount: (state) => {
+            
             let count = 0
             state.dmUpgrades.forEach(item => { count += item.count })
             return count
@@ -3521,14 +3659,6 @@ export const store = createStore({
                     
                     ids.forEach(item => { dispatch('loadV1Upgrade', { loadeddata:loadeddata, oldId:item.oldId, newId:item.newId }) })
                     
-                    state.achievements.forEach(item => {
-                        if (item.unlocked && item.count < item.brackets.length) {
-                        
-                            let limit = item.brackets[item.count]
-                            item.progress = 100 * state.items[item.data].count / limit
-                        }
-                    })
-                    
                     if (state.items['metal'].upgrade > 0) {
                         
                         dispatch('loadItem', 'missionFirst')
@@ -3817,6 +3947,10 @@ export const store = createStore({
                 
                 dispatch('updateItemProd', item.id)
             }
+            
+            dispatch('conversion/refresh')
+            dispatch('statue/refresh')
+            dispatch('achievement/refresh')
         },
         
         loadV1Item({ state }, payload) {
@@ -4043,24 +4177,21 @@ export const store = createStore({
                 
                 for (i = 0; i < Math.floor(delay); i++) {
                     
-                    var count = getters.getConvertionMaxCount(state.autoConversionId)
+                    var count = getters['conversion/maxCount'](state.autoConversionId)
                     
                     can = true
         
-                    costs = getters.getConvertionCosts(state.autoConversionId, count)
-                    costs.forEach(cost => {
-                        if (temp[cost.id].count - cost.count < 0) {
-                            can = false
-                            return
-                        }
-                    })
+                    let cost = getters['conversion/cost'](state.autoConversionId, count)
+                    if (temp[cost.id].count - cost.count < 0) {
+                        can = false
+                    }
                     
                     if (can && count > 0) {
                         
                         item = state.items[state.autoConversionId]
                         temp[item.id].count += count
                         
-                        costs.forEach(cost => { temp[cost.id].count -= cost.count })
+                        temp[cost.id].count -= cost.count
                     }
                     else break
                 }
@@ -4105,20 +4236,7 @@ export const store = createStore({
                 
                 if ('storage' in item) temp[item.id].count = Math.min(temp[item.id].count, getters.getItemStorage(item.id))
                 if (temp[item.id].count != item.count) item.count = temp[item.id].count
-            }
-            
-            /* Achievements checking */
-            
-            for (i = 0; i < state.achievements.length; i++) {
-                item = state.achievements[i]
-                
-                if (item.unlocked && item.count < item.brackets.length) {
-                
-                    var limit = item.brackets[item.count]
-                    item.progress = 100 * state.items[item.data].count / limit
-                    if (item.progress >= 100) item.count += 1
-                }
-            }
+            }            
         },
         
         /*--------------------------------------------------------------------*/
@@ -4323,6 +4441,10 @@ export const store = createStore({
                     dispatch('updateCanGain', item.id)
                 }
             }
+            
+            dispatch('conversion/refresh')
+            dispatch('statue/refresh')
+            dispatch('achievement/refresh')
         },
         
         updateMaxBuildCount({ state, dispatch }, id) {
@@ -4463,12 +4585,12 @@ export const store = createStore({
         
         convert({ state, getters }, payload) {
             
-            let can = getters.canConvert(payload.id, payload.count)
+            let can = getters['conversion/can'](payload.id)
             if (can == 0) {
                 
                 let item = state.items[payload.id]
                 
-                let costs = getters.getConvertionCosts(payload.id, payload.count)
+                let costs = getters['conversion/costs'](payload.id, payload.count)
                 costs.forEach(cost => { state.items[cost.id].count -= cost.count })
                 
                 item.count += payload.count
@@ -4630,7 +4752,7 @@ export const store = createStore({
         
         statue({ state, getters }, payload) {
             
-            let can = getters.canStatue(payload)
+            let can = getters['statue/can'](payload)
             if (can == 0) {
                 
                 let item = state.items[payload]
@@ -4639,7 +4761,7 @@ export const store = createStore({
                 state.items['statue'].count += 1
                 state.statsTotalStatues += 1
                 
-                let costs = getters.getStatueCosts(payload)
+                let costs = getters['statue/costs'](payload)
                 costs.forEach(cost => { state.items[cost.id].count -= cost.count })
                 
                 let cardId = payload + 'Card'

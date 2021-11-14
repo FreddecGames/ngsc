@@ -1,9 +1,10 @@
 <template>
     <div v-if="unlocked && consumption > 0" class="col small">
         <div class="row gx-3 align-items-center">
-            <div class="col">
+            <div class="col text-truncate">
                 <span class="badge text-uppercase text-center me-1">{{ $t(level) }}</span>
-                <span class="text-normal">{{ $t(res) }}</span>
+                <small class="text-light me-1">x<format-number :value="count" /></small>
+                <span class="text-normal">{{ $t(itemId) }}</span>
             </div>
             <div class="col-auto">
                 <span class="text-warning">-<format-number :value="consumption" /></span>
@@ -31,9 +32,11 @@ export default {
     },
     computed: {
     
-        ...mapGetters([ 'canDestroy', 'isUnlocked', 'getItemConsumption' ]),
+        ...mapGetters([ 'canDestroy', 'isUnlocked', 'getItemConsumption', 'getItemCount' ]),
         
         can: function() { return this.canDestroy(this.itemId, 1) },
+        
+        count: function() { return this.getItemCount(this.itemId) },
         
         unlocked: function() { return this.isUnlocked(this.itemId) },
         

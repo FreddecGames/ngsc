@@ -14,9 +14,9 @@ export default {
     props: [ 'itemId' ],
     computed: {
     
-        ...mapGetters([ 'canStatue' ]),
+        ...mapGetters([ 'statue/can' ]),
         
-        can: function() { return this.canStatue(this.itemId) },
+        can: function() { return this['statue/can'](this.itemId) },
     },
     methods: {
     
