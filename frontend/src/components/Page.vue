@@ -243,26 +243,23 @@
                     <template v-slot:col-1>
                         <div class="col">
                             <small class="me-2">{{ $t('lastestVersion') }}</small>
-                            <small class="text-light">v2.2.0 - 2021-11-14</small>
+                            <small class="text-light">v2.2.1 - 2021-11-15</small>
                             <ul class="small mt-2 mb-0">
-                                <li>NEW: Display machine count in "Production/Consumption" page</li>
-                                <li>CHANGE: Performance and memory improvements</li>
-                                <li>FIX: Astronomical Breakthrough costs</li>
-                                <li>FIX: consumption machine name</li>
+                                <li>FIX: Rebirth</li>
+                                <li>FIX: resource production with old timestamp</li>
+                                <li>FIX: resource conversion</li>
                             </ul>
                         </div>
                     </template>
                     <template v-slot:col-2>
                         <div class="col">
                             <small class="me-2">{{ $t('previousVersion') }}</small>
-                            <small class="text-light">v2.1.0 - 2021-11-13</small>
+                            <small class="text-light">v2.2.0 - 2021-11-14</small>
                             <ul class="small mt-2 mb-0">
-                                <li>NEW: Bring back the "250 + Sphere", "100 + Swarm" and "50 + Ring" buttons</li>
-                                <li>NEW: Keep displaying production when a machine count is equal to his limit</li>
-                                <li>CHANGE: Minor UI improvements</li>
-                                <li>FIX: Upgrade storage timer</li>
-                                <li>FIX: Max build count not to increase more than building limit</li>
-                                <li>FIX: Building destruction update resource production</li>
+                                <li>NEW: Display machine count in "Production/Consumption" page</li>
+                                <li>CHANGE: Performance and memory improvements</li>
+                                <li>FIX: Astronomical Breakthrough costs</li>
+                                <li>FIX: consumption machine name</li>
                             </ul>
                         </div>
                         <div class="col">
@@ -1882,8 +1879,8 @@ export default {
         ultrite: function() { return this.getItemCount('ultrite') },
         darkmatter: function() { return this.getItemCount('darkmatter') },
         
-        rebirthCosts: function() { console.log('block build rebirth'); return this.getBuildCosts('rebirth', 1) },
-        enlightenCosts: function() { console.log('block build enlighten'); return this.getBuildCosts('enlighten', 1) },
+        rebirthCosts: function() { return this.getBuildCosts('rebirth', 1) },
+        enlightenCosts: function() { return this.getBuildCosts('enlighten', 1) },
         
         canRebirth: function() { return this.canBuild('rebirth', 1) },
         canEnlighten: function() { return this.canBuild('enlighten', 1) },

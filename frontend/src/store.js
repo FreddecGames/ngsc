@@ -2563,7 +2563,7 @@ const moduleConversion = {
         cost: (state) => (id, count) => {
             
             let ret = JSON.parse(JSON.stringify(state.costs[id]))
-            ret.count = Math.floor(ret.count * count)
+            console.log(count)
             
             return ret
         },
@@ -3929,28 +3929,7 @@ export const store = createStore({
                     
                     dispatch('onLoad')
                 }
-            }
-            
-            for (let i in state.items) {
-                let item = state.items[i]
-                
-                if ('build' in item) {
-                    
-                    dispatch('updateBuildingCosts', item.id)
-                    dispatch('updateCanBuild', item.id)
-                }
-                
-            }
-        
-            for (let i in state.resources) {
-                let item = state.resources[i]
-                
-                dispatch('updateItemProd', item.id)
-            }
-            
-            dispatch('conversion/refresh')
-            dispatch('statue/refresh')
-            dispatch('achievement/refresh')
+            }            
         },
         
         loadV1Item({ state }, payload) {
@@ -3992,7 +3971,7 @@ export const store = createStore({
             state.items[id].count = state.items[id].max
         },
         
-        onLoad({ state }) {
+        onLoad({ state, dispatch }) {
             
             for (let i in state.items) {
                 let item = state.items[i]
@@ -4035,7 +4014,23 @@ export const store = createStore({
                 }
                 
                 if (item.unlocked == true || item.count > 0) { if ('onLoad' in item) item.onLoad(state) }
+                
+                if ('build' in item) {
+                    
+                    dispatch('updateBuildingCosts', item.id)
+                    dispatch('updateCanBuild', item.id)
+                }
             }
+            
+            for (let i in state.resources) {
+                let item = state.resources[i]
+                
+                dispatch('updateItemProd', item.id)
+            }
+            
+            dispatch('conversion/refresh')
+            dispatch('statue/refresh')
+            dispatch('achievement/refresh')
         },
         
         save({ state }) {
@@ -4134,6 +4129,12 @@ export const store = createStore({
             var stepDuration = 1000 / state.maxFps
             
             var delay = currentTimeMs - state.lastFrameTimeMs
+            
+            if (delay <= 0) {
+                state.lastFrameTimeMs = currentTimeMs
+                return 
+            }
+            
             if (delay < stepDuration) return
             
             delay /= 1000
@@ -4590,8 +4591,8 @@ export const store = createStore({
                 
                 let item = state.items[payload.id]
                 
-                let costs = getters['conversion/costs'](payload.id, payload.count)
-                costs.forEach(cost => { state.items[cost.id].count -= cost.count })
+                let cost = getters['conversion/cost'](payload.id, payload.count)
+                state.items[cost.id].count -= cost.count
                 
                 item.count += payload.count
                 item.count = Math.min(item.count, getters.getItemStorage(payload.id))
