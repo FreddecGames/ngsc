@@ -2563,7 +2563,7 @@ const moduleConversion = {
         cost: (state) => (id, count) => {
             
             let ret = JSON.parse(JSON.stringify(state.costs[id]))
-            console.log(count)
+            ret.count = Math.floor(ret.count * count)
             
             return ret
         },
