@@ -1913,7 +1913,7 @@ const base = {
         build:{ counts:[1], costs:[{ id:'fuel', count:75, coeff:1 }] },
         unlocks: [
             'silicon', 'achSilicon', 'scienceBoostSilicon',
-            'titanium', 'achTitanium',
+            'titanium', 'achTitanium', 'scienceBoostTitanium',
         ],
         notifs: [
             'siliconPane', 'titaniumPane',
