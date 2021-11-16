@@ -55,6 +55,7 @@
     "sidebar-item-overlord": "The Overlord",
     "sidebar-item-consumption": "Production / Consumption",
     "sidebar-item-achievements": "Achievements",
+    "sidebar-item-technologies": "Technologies",
     "sidebar-item-emc": "Energy-Mass Conversion",
     "sidebar-item-radar": "Radar",
     "sidebar-item-ships": "Ships",
@@ -127,6 +128,7 @@
     "button-buildSegmentRing": "50 + Ring",
     "button-buildSegmentSwarm": "100 + Swarm",
     "button-buildSegmentSphere": "250 + Sphere",
+    "button-boostAll": "Boost All",
     
     "energy": "Energy",
     "energyUpgrade-desc1": "Double your Energy storage size",
@@ -1039,5 +1041,8 @@
 	
 	"mobileText1": "This device is not supported by web version",
 	"mobileText2": "Please download app",
-	"mobileText3": "In case of any problem, please contact Freddec on "
+	"mobileText3": "In case of any problem, please contact Freddec on ",
+    
+    "scienceBoostsCardTitle": "Science Boosts",
+    "technologiesCardTitle": "Technologies"
 }

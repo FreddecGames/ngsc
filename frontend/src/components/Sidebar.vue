@@ -106,6 +106,7 @@
                                 </div>
                             </template>
                         </sidebar-item>
+                        <sidebar-item v-if="scienceUnlocked" name="sidebar-item-technologies" icon="technologies.png" paneId="technologiesPane" />
                         <sidebar-item v-if="emcUnlocked" name="sidebar-item-emc" icon="emc.png" paneId="emcPane" />
                     </sidebar-menu>
                 </sidebar-block>
@@ -283,6 +284,7 @@ export default {
         
         emcUnlocked: function() { return this.getItemCount('missionEmc') >= 1 },
         dysonUnlocked: function() { return this.isUnlocked('segment') },
+        scienceUnlocked: function() { return this.isUnlocked('science') },
         interstellarUnlocked: function() { return this.isUnlocked('radarT1') || this.isUnlocked('shipT1') },
         
         segments: function() { return this.getItemCount('segment') },

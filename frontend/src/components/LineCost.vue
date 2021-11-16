@@ -7,7 +7,7 @@
                     <img class="me-1" :src="require(`../assets/icons/${cost.id}.png`).default" width="10" height="10" :alt="$t(cost.id)" />
                     <small :class="{ 'text-danger': storage && cost.count > storage }"><format-number :value="cost.count" /></small>
                 </div>
-                <div class="col-auto d-flex" :class="{ 'd-none': !storage}">
+                <div class="col-auto d-flex">
                     <small><timer-count :count="cost.timer" /></small>
                 </div>
             </div>

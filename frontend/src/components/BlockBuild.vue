@@ -58,17 +58,22 @@
         <div v-if="!max || count < max" class="pt-3 row g-2 align-items-center justify-content-end">
         
             <div v-if="counts.length > 1" class="col">
-                <div class="row g-1">
+                <div class="row g-0">
                     <div v-for="count in counts" :key="count" class="col-auto">
                         <input type="radio" class="btn-check" :id="'build-' + itemId + '-' + count" autocomplete="off" v-model="selectedCount" :value="count" />
-                        <label class="btn btn-badge" :for="'build-' + itemId + '-' + count">
+                        <label class="btn btn-badge px-1" :for="'build-' + itemId + '-' + count">
                             +{{ count }}
-                            <span v-if="count == maxCount" class="ms-1">(Max)</span>
+                            <small v-if="count == maxCount" class="ms-1">Max</small>
+                            <small v-if="count == nextCount" class="ms-1">Next</small>
                         </label>
+                    </div>
+                    <div v-if="nextCount > 0 && !counts.includes(nextCount)" class="col-auto">
+                        <input type="radio" class="btn-check" :id="'build-' + itemId + '-next'" autocomplete="off" v-model="selectedCount" :value="nextCount" />
+                        <label class="btn btn-badge px-1" :for="'build-' + itemId + '-next'">+{{ nextCount }} <small class="ms-1">Next</small></label>
                     </div>
                     <div v-if="maxCount > 0 && !counts.includes(maxCount)" class="col-auto">
                         <input type="radio" class="btn-check" :id="'build-' + itemId + '-max'" autocomplete="off" v-model="selectedCount" :value="maxCount" />
-                        <label class="btn btn-badge" :for="'build-' + itemId + '-max'">+{{ maxCount }} (Max)</label>
+                        <label class="btn btn-badge px-1" :for="'build-' + itemId + '-max'">+{{ maxCount }} <small class="ms-1">Max</small></label>
                     </div>
                 </div>
             </div>
@@ -111,7 +116,7 @@ export default {
     },
     computed: {
     
-        ...mapGetters([ 'getBuildCounts', 'getBuildMaxCount', 'getBuildCosts', 'getItemInputs', 'getItemOutputs', 'getItemStats', 'getItemMax', 'getItemCount' ]),
+        ...mapGetters([ 'getBuildCounts', 'getBuildMaxCount', 'getBuildCosts', 'getItemInputs', 'getItemOutputs', 'getItemStats', 'getItemMax', 'getItemCount', 'getBuildNextCount' ]),
         
         max: function() { return this.getItemMax(this.itemId) },
         count: function() { return this.getItemCount(this.itemId) },
@@ -132,6 +137,7 @@ export default {
         outputs: function() { return this.getItemOutputs(this.itemId, this.selectedCount) },
         
         maxCount: function() { return this.getBuildMaxCount(this.itemId) },
+        nextCount: function() { return this.getBuildNextCount(this.itemId) },
     },
     methods: {
     

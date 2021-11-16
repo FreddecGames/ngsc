@@ -34,36 +34,36 @@ const base = {
     },
     energyT1: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'metal', count:30, coeff:1.1 }, { id:'gem', count:35, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'metal', count:30, coeff:1.1 }, { id:'gem', count:35, coeff:1.1 }] },
         outputs:[{ id:'energy', count:1.5 }],
     },
     energyT2: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'metal', count:50, coeff:1.1 }, { id:'gem', count:25, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'metal', count:50, coeff:1.1 }, { id:'gem', count:25, coeff:1.1 }] },
         outputs:[{ id:'energy', count:2 }],
         inputs:[{ id:'carbon', count:1 }],
     },
     energyT3: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:110, coeff:1.1 }, { id:'titanium', count:90, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:110, coeff:1.1 }, { id:'titanium', count:90, coeff:1.1 }] },
         outputs:[{ id:'energy', count:23 }],
         inputs:[{ id:'methane', count:6 }],
     },
     energyT4: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:20000, coeff:1.1 }, { id:'titanium', count:10000, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:20000, coeff:1.1 }, { id:'titanium', count:10000, coeff:1.1 }] },
         outputs:[{ id:'energy', count:153 }],
         inputs:[{ id:'uranium', count:7 }],
     },
     energyT5: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:25000, coeff:1.1 }, { id:'gem', count:30000, coeff:1.1 }, { id:'silver', count:20000, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:25000, coeff:1.1 }, { id:'gem', count:30000, coeff:1.1 }, { id:'silver', count:20000, coeff:1.1 }] },
         outputs:[{ id:'energy', count:191 }],
         inputs:[{ id:'lava', count:11 }],
     },
     energyT6: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:30000, coeff:1.1 }, { id:'titanium', count:20000, coeff:1.1 }, { id:'silicon', count:15000, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:30000, coeff:1.1 }, { id:'titanium', count:20000, coeff:1.1 }, { id:'silicon', count:15000, coeff:1.1 }] },
         outputs:[{ id:'energy', count:273 }],
         inputs:[{ id:'hydrogen', count:10 }, { id:'helium', count:10 }],
     },
@@ -75,25 +75,25 @@ const base = {
     },
     plasmaT1: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:75000, coeff:1.1 }, { id:'gem', count:68000, coeff:1.1 }, { id:'silicon', count:59000, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:75000, coeff:1.1 }, { id:'gem', count:68000, coeff:1.1 }, { id:'silicon', count:59000, coeff:1.1 }] },
         outputs:[{ id:'plasma', count:1 }],
         inputs:[{ id:'energy', count:1000 }, { id:'hydrogen', count:10 }],
     },
     plasmaT2: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:810000, coeff:1.1 }, { id:'silicon', count:720000, coeff:1.1 }, { id:'meteorite', count:970, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:810000, coeff:1.1 }, { id:'silicon', count:720000, coeff:1.1 }, { id:'meteorite', count:970, coeff:1.1 }] },
         outputs:[{ id:'plasma', count:13 }],
         inputs:[{ id:'energy', count:8500 }, { id:'helium', count:85 }],
     },
     plasmaT3: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:6200000, coeff:1.1 }, { id:'silicon', count:5900000, coeff:1.1 }, { id:'meteorite', count:12100, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:6200000, coeff:1.1 }, { id:'silicon', count:5900000, coeff:1.1 }, { id:'meteorite', count:12100, coeff:1.1 }] },
         outputs:[{ id:'plasma', count:160 }],
         inputs:[{ id:'energy', count:71000 }, { id:'helium', count:750 }, { id:'hydrogen', count:650 }]
     },
     plasmaT4: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'carbon', count:51000000, coeff:1.1 }, { id:'silicon', count:44000000, coeff:1.1 }, { id:'meteorite', count:147000, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'carbon', count:51000000, coeff:1.1 }, { id:'silicon', count:44000000, coeff:1.1 }, { id:'meteorite', count:147000, coeff:1.1 }] },
         outputs:[{ id:'plasma', count:2000 }],
         inputs:[{ id:'energy', count:600000 }, { id:'helium', count:5800 }, { id:'hydrogen', count:6000 }],
     },
@@ -106,25 +106,25 @@ const base = {
     },
     meteoriteT1: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:100000, coeff:1.1 }, { id:'silicon', count:60000, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:100000, coeff:1.1 }, { id:'silicon', count:60000, coeff:1.1 }] },
         outputs:[{ id:'meteorite', count:1 }],
         inputs:[{ id:'plasma', count:3 }],
     },
     meteoriteT2: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:940000, coeff:1.1 }, { id:'uranium', count:490000, coeff:1.1 }, { id:'silicon', count:510000, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:940000, coeff:1.1 }, { id:'uranium', count:490000, coeff:1.1 }, { id:'silicon', count:510000, coeff:1.1 }] },
         outputs:[{ id:'meteorite', count:8 }],
         inputs:[{ id:'plasma', count:21 }],
     },
     meteoriteT3: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'silicon', count:3230000, coeff:1.1 }, { id:'silver', count:5890000, coeff:1.1 }, { id:'gem', count:8340000, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'silicon', count:3230000, coeff:1.1 }, { id:'silver', count:5890000, coeff:1.1 }, { id:'gem', count:8340000, coeff:1.1 }] },
         outputs:[{ id:'meteorite', count:72 }],
         inputs:[{ id:'plasma', count:111 }],
     },
     meteoriteT4: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:25800000, coeff:1.1 }, { id:'lava', count:19700000, coeff:1.1 }, { id:'gold', count:21900000, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:25800000, coeff:1.1 }, { id:'lava', count:19700000, coeff:1.1 }, { id:'gold', count:21900000, coeff:1.1 }] },
         outputs:[{ id:'meteorite', count:142 }],
         inputs:[{ id:'plasma', count:135 }],
     },
@@ -137,31 +137,31 @@ const base = {
     },
     carbonT1: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'metal', count:10, coeff:1.1 }, { id:'wood', count:5, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'metal', count:10, coeff:1.1 }, { id:'wood', count:5, coeff:1.1 }] },
         outputs:[{ id:'carbon', count:1 }],
         inputs:[{ id:'wood', count:2 }],
     },
     carbonT2: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'metal', count:80, coeff:1.1 }, { id:'wood', count:40, coeff:1.1 }, { id:'oil', count:100, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'metal', count:80, coeff:1.1 }, { id:'wood', count:40, coeff:1.1 }, { id:'oil', count:100, coeff:1.1 }] },
         outputs:[{ id:'carbon', count:4 }],
         inputs:[{ id:'energy', count:3 }, { id:'wood', count:6 }],
     },
     carbonT3: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:3500, coeff:1.1 }, { id:'gem', count:6200, coeff:1.1 }, { id:'silicon', count:3800, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:3500, coeff:1.1 }, { id:'gem', count:6200, coeff:1.1 }, { id:'silicon', count:3800, coeff:1.1 }] },
         outputs:[{ id:'carbon', count:53 }],
         inputs:[{ id:'energy', count:13 }, { id:'wood', count:56 }, { id:'lava', count:2 }], 
     },
     carbonT4: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:15800, coeff:1.1 }, { id:'lava', count:12500, coeff:1.1 }, { id:'meteorite', count:560, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:15800, coeff:1.1 }, { id:'lava', count:12500, coeff:1.1 }, { id:'meteorite', count:560, coeff:1.1 }] },
         outputs:[{ id:'carbon', count:210 }],
         inputs:[{ id:'energy', count:34 }, { id:'wood', count:148 }, { id:'plasma', count:1 }],
     },
     carbonT5: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'metal', count:133000, coeff:1.1 }, { id:'wood', count:189000, coeff:1.1 }, { id:'lava', count:160000, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'metal', count:133000, coeff:1.1 }, { id:'wood', count:189000, coeff:1.1 }, { id:'lava', count:160000, coeff:1.1 }] },
         outputs:[{ id:'carbon', count:2267 }],
         inputs:[{ id:'energy', count:187 }, { id:'wood', count:950 }],
     },
@@ -174,30 +174,30 @@ const base = {
     },
     oilT1: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'metal', count:60, coeff:1.1 }, { id:'gem', count:20, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'metal', count:60, coeff:1.1 }, { id:'gem', count:20, coeff:1.1 }] },
         outputs:[{ id:'oil', count:1 }],
     },
     oilT2: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'metal', count:250, coeff:1.1 }, { id:'gem', count:80, coeff:1.1 }, { id:'oil', count:50, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'metal', count:250, coeff:1.1 }, { id:'gem', count:80, coeff:1.1 }, { id:'oil', count:50, coeff:1.1 }] },
         outputs:[{ id:'oil', count:10 }],
         inputs:[{ id:'energy', count:4 }],
     },
     oilT3: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:2400, coeff:1.1 }, { id:'titanium', count:2700, coeff:1.1 }, { id:'silicon', count:3900, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:2400, coeff:1.1 }, { id:'titanium', count:2700, coeff:1.1 }, { id:'silicon', count:3900, coeff:1.1 }] },
         outputs:[{ id:'oil', count:127 }],
         inputs:[{ id:'energy', count:17 }],
     },
     oilT4: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:19400, coeff:1.1 }, { id:'titanium', count:16800, coeff:1.1 }, { id:'meteorite', count:760, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:19400, coeff:1.1 }, { id:'titanium', count:16800, coeff:1.1 }, { id:'meteorite', count:760, coeff:1.1 }] },
         outputs:[{ id:'oil', count:498 }],
         inputs:[{ id:'energy', count:44 }],
     },
     oilT5: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'uranium', count:110000, coeff:1.1 }, { id:'carbon', count:96000, coeff:1.1 }, { id:'lava', count:167000, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'uranium', count:110000, coeff:1.1 }, { id:'carbon', count:96000, coeff:1.1 }, { id:'lava', count:167000, coeff:1.1 }] },
         outputs:[{ id:'oil', count:4444 }],
         inputs:[{ id:'energy', count:258 }],
     },
@@ -210,30 +210,30 @@ const base = {
     },
     metalT1: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'metal', count:10, coeff:1.1 }, { id:'wood', count:5, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'metal', count:10, coeff:1.1 }, { id:'wood', count:5, coeff:1.1 }] },
         outputs:[{ id:'metal', count:1 }],
     },
     metalT2: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'metal', count:160, coeff:1.1 }, { id:'gem', count:60, coeff:1.1 }, { id:'oil', count:50, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'metal', count:160, coeff:1.1 }, { id:'gem', count:60, coeff:1.1 }, { id:'oil', count:50, coeff:1.1 }] },
         outputs:[{ id:'metal', count:8 }],
         inputs:[{ id:'energy', count:2 }],
     },
     metalT3: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:2800, coeff:1.1 }, { id:'gem', count:3400, coeff:1.1 }, { id:'silicon', count:4100, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:2800, coeff:1.1 }, { id:'gem', count:3400, coeff:1.1 }, { id:'silicon', count:4100, coeff:1.1 }] },
         outputs:[{ id:'metal', count:108 }],
         inputs:[{ id:'energy', count:9 }],
     },
     metalT4: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:29000, coeff:1.1 }, { id:'gold', count:18700, coeff:1.1 }, { id:'meteorite', count:900, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:29000, coeff:1.1 }, { id:'gold', count:18700, coeff:1.1 }, { id:'meteorite', count:900, coeff:1.1 }] },
         outputs:[{ id:'metal', count:427 }],
         inputs:[{ id:'energy', count:24 }],
     },
     metalT5: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'titanium', count:184000, coeff:1.1 }, { id:'gold', count:133000, coeff:1.1 }, { id:'oil', count:170000, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'titanium', count:184000, coeff:1.1 }, { id:'gold', count:133000, coeff:1.1 }, { id:'oil', count:170000, coeff:1.1 }] },
         outputs:[{ id:'metal', count:4768 }],
         inputs:[{ id:'energy', count:131 }],
     },
@@ -246,30 +246,30 @@ const base = {
     },
     gemT1: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'metal', count:15, coeff:1.1 }, { id:'gem', count:10, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'metal', count:15, coeff:1.1 }, { id:'gem', count:10, coeff:1.1 }] },
         outputs:[{ id:'gem', count:1 }],
     },
     gemT2: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'metal', count:120, coeff:1.1 }, { id:'gem', count:200, coeff:1.1 }, { id:'oil', count:60, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'metal', count:120, coeff:1.1 }, { id:'gem', count:200, coeff:1.1 }, { id:'oil', count:60, coeff:1.1 }] },
         outputs:[{ id:'gem', count:4 }],
         inputs:[{ id:'energy', count:2 }],
     },
     gemT3: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:3400, coeff:1.1 }, { id:'gem', count:8000, coeff:1.1 }, { id:'silicon', count:4500, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:3400, coeff:1.1 }, { id:'gem', count:8000, coeff:1.1 }, { id:'silicon', count:4500, coeff:1.1 }] },
         outputs:[{ id:'gem', count:89 }],
         inputs:[{ id:'energy', count:15 }],
     },
     gemT4: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:21000, coeff:1.1 }, { id:'gem', count:27000, coeff:1.1 }, { id:'meteorite', count:800, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:21000, coeff:1.1 }, { id:'gem', count:27000, coeff:1.1 }, { id:'meteorite', count:800, coeff:1.1 }] },
         outputs:[{ id:'gem', count:358 }],
         inputs:[{ id:'energy', count:40 }],
     },
     gemT5: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'uranium', count:181000, coeff:1.1 }, { id:'carbon', count:185000, coeff:1.1 }, { id:'meteorite', count:12500, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'uranium', count:181000, coeff:1.1 }, { id:'carbon', count:185000, coeff:1.1 }, { id:'meteorite', count:12500, coeff:1.1 }] },
         outputs:[{ id:'gem', count:3747 }],
         inputs:[{ id:'energy', count:260 }],
     },
@@ -282,30 +282,30 @@ const base = {
     },
     woodT1: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'metal', count:10, coeff:1.1 }, { id:'wood', count:5, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'metal', count:10, coeff:1.1 }, { id:'wood', count:5, coeff:1.1 }] },
         outputs:[{ id:'wood', count:1 }],
     },
     woodT2: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'metal', count:50, coeff:1.1 }, { id:'gem', count:90, coeff:1.1 }, { id:'oil', count:40, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'metal', count:50, coeff:1.1 }, { id:'gem', count:90, coeff:1.1 }, { id:'oil', count:40, coeff:1.1 }] },
         outputs:[{ id:'wood', count:6 }],
         inputs:[{ id:'energy', count:4 }],
     },
     woodT3: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:3000, coeff:1.1 }, { id:'titanium', count:2700, coeff:1.1 }, { id:'silicon', count:2500, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:3000, coeff:1.1 }, { id:'titanium', count:2700, coeff:1.1 }, { id:'silicon', count:2500, coeff:1.1 }] },
         outputs:[{ id:'wood', count:74 }],
         inputs:[{ id:'energy', count:16 }],
     },
     woodT4: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:16000, coeff:1.1 }, { id:'oil', count:31200, coeff:1.1 }, { id:'meteorite', count:490, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:16000, coeff:1.1 }, { id:'oil', count:31200, coeff:1.1 }, { id:'meteorite', count:490, coeff:1.1 }] },
         outputs:[{ id:'wood', count:297 }],
         inputs:[{ id:'energy', count:43 }],
     },
     woodT5: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'metal', count:122000, coeff:1.1 }, { id:'gem', count:151000, coeff:1.1 }, { id:'hydrogen', count:183000, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'metal', count:122000, coeff:1.1 }, { id:'gem', count:151000, coeff:1.1 }, { id:'hydrogen', count:183000, coeff:1.1 }] },
         outputs:[{ id:'wood', count:3278 }],
         inputs:[{ id:'energy', count:244 }],
     },
@@ -318,30 +318,30 @@ const base = {
     },
     siliconT1: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:150, coeff:1.1 }, { id:'titanium', count:30, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:150, coeff:1.1 }, { id:'titanium', count:30, coeff:1.1 }] },
         outputs:[{ id:'silicon', count:1 }],
     },
     siliconT2: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:500, coeff:1.1 }, { id:'gem', count:1200, coeff:1.1 }, { id:'oil', count:1600, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:500, coeff:1.1 }, { id:'gem', count:1200, coeff:1.1 }, { id:'oil', count:1600, coeff:1.1 }] },
         outputs:[{ id:'silicon', count:9 }],
         inputs:[{ id:'energy', count:18 }],
     },
     siliconT3: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:3000, coeff:1.1 }, { id:'gem', count:8300, coeff:1.1 }, { id:'silver', count:2400, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:3000, coeff:1.1 }, { id:'gem', count:8300, coeff:1.1 }, { id:'silver', count:2400, coeff:1.1 }] },
         outputs:[{ id:'silicon', count:40 }],
         inputs:[{ id:'energy', count:53 }],
     },
     siliconT4: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:20000, coeff:1.1 }, { id:'silicon', count:17700, coeff:1.1 }, { id:'meteorite', count:400, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:20000, coeff:1.1 }, { id:'silicon', count:17700, coeff:1.1 }, { id:'meteorite', count:400, coeff:1.1 }] },
         outputs:[{ id:'silicon', count:157 }],
         inputs:[{ id:'energy', count:138 }],
     },
     siliconT5: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'titanium', count:204000, coeff:1.1 }, { id:'wood', count:205000, coeff:1.1 }, { id:'meteorite', count:17800, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'titanium', count:204000, coeff:1.1 }, { id:'wood', count:205000, coeff:1.1 }, { id:'meteorite', count:17800, coeff:1.1 }] },
         outputs:[{ id:'silicon', count:1487 }],
         inputs:[{ id:'energy', count:746 }],
     },
@@ -354,30 +354,30 @@ const base = {
     },
     uraniumT1: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:4000, coeff:1.1 }, { id:'titanium', count:2000, coeff:1.1 }, { id:'gold', count:2000, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:4000, coeff:1.1 }, { id:'titanium', count:2000, coeff:1.1 }, { id:'gold', count:2000, coeff:1.1 }] },
         outputs:[{ id:'uranium', count:1 }],
     },
     uraniumT2: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:10000, coeff:1.1 }, { id:'uranium', count:80, coeff:1.1 }, { id:'oil', count:10000, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:10000, coeff:1.1 }, { id:'uranium', count:80, coeff:1.1 }, { id:'oil', count:10000, coeff:1.1 }] },
         outputs:[{ id:'uranium', count:9 }],
         inputs:[{ id:'energy', count:40 }],
     },
     uraniumT3: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:21700, coeff:1.1 }, { id:'titanium', count:23000, coeff:1.1 }, { id:'silicon', count:13500, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:21700, coeff:1.1 }, { id:'titanium', count:23000, coeff:1.1 }, { id:'silicon', count:13500, coeff:1.1 }] },
         outputs:[{ id:'uranium', count:61 }],
         inputs:[{ id:'energy', count:180 }],
     },
     uraniumT4: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:93100, coeff:1.1 }, { id:'methane', count:47000, coeff:1.1 }, { id:'meteorite', count:830, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:93100, coeff:1.1 }, { id:'methane', count:47000, coeff:1.1 }, { id:'meteorite', count:830, coeff:1.1 }] },
         outputs:[{ id:'uranium', count:235 }],
         inputs:[{ id:'energy', count:436 }],
     },
     uraniumT5: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'titanium', count:486000, coeff:1.1 }, { id:'silicon', count:266000, coeff:1.1 }, { id:'ice', count:364000, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'titanium', count:486000, coeff:1.1 }, { id:'silicon', count:266000, coeff:1.1 }, { id:'ice', count:364000, coeff:1.1 }] },
         outputs:[{ id:'uranium', count:2412 }],
         inputs:[{ id:'energy', count:2719 }],
     },
@@ -390,30 +390,30 @@ const base = {
     },
     lavaT1: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:4000, coeff:1.1 }, { id:'gem', count:7000, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:4000, coeff:1.1 }, { id:'gem', count:7000, coeff:1.1 }] },
         outputs:[{ id:'lava', count:1 }],
     },
     lavaT2: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:16000, coeff:1.1 }, { id:'titanium', count:14000, coeff:1.1 }, { id:'silicon', count:6000, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:16000, coeff:1.1 }, { id:'titanium', count:14000, coeff:1.1 }, { id:'silicon', count:6000, coeff:1.1 }] },
         outputs:[{ id:'lava', count:7 }],
         inputs:[{ id:'energy', count:58 }],
     },
     lavaT3: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:69000, coeff:1.1 }, { id:'titanium', count:57000, coeff:1.1 }, { id:'silicon', count:39000, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:69000, coeff:1.1 }, { id:'titanium', count:57000, coeff:1.1 }, { id:'silicon', count:39000, coeff:1.1 }] },
         outputs:[{ id:'lava', count:43 }],
         inputs:[{ id:'energy', count:237 }],
     },
     lavaT4: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:298000, coeff:1.1 }, { id:'gold', count:121000, coeff:1.1 }, { id:'meteorite', count:750, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:298000, coeff:1.1 }, { id:'gold', count:121000, coeff:1.1 }, { id:'meteorite', count:750, coeff:1.1 }] },
         outputs:[{ id:'lava', count:187 }],
         inputs:[{ id:'energy', count:689 }],
     },
     lavaT5: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:288000, coeff:1.1 }, { id:'gem', count:210000, coeff:1.1 }, { id:'ice', count:238000, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:288000, coeff:1.1 }, { id:'gem', count:210000, coeff:1.1 }, { id:'ice', count:238000, coeff:1.1 }] },
         outputs:[{ id:'lava', count:2103 }],
         inputs:[{ id:'energy', count:4142 }],
     },
@@ -426,30 +426,30 @@ const base = {
     },
     lunariteT1: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'gem', count:500, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'gem', count:500, coeff:1.1 }] },
         outputs:[{ id:'lunarite', count:1 }],
     },
     lunariteT2: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'metal', count:1000, coeff:1.1 }, { id:'gem', count:600, coeff:1.1 }, { id:'oil', count:400, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'metal', count:1000, coeff:1.1 }, { id:'gem', count:600, coeff:1.1 }, { id:'oil', count:400, coeff:1.1 }] },
         outputs:[{ id:'lunarite', count:10 }],
         inputs:[{ id:'energy', count:20 }],
     },
     lunariteT3: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:8000, coeff:1.1 }, { id:'gem', count:5000, coeff:1.1 }, { id:'silicon', count:3500, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:8000, coeff:1.1 }, { id:'gem', count:5000, coeff:1.1 }, { id:'silicon', count:3500, coeff:1.1 }] },
         outputs:[{ id:'lunarite', count:53 }],
         inputs:[{ id:'energy', count:70 }],
     },
     lunariteT4: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'titanium', count:45000, coeff:1.1 }, { id:'ice', count:37000, coeff:1.1 }, { id:'meteorite', count:500, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'titanium', count:45000, coeff:1.1 }, { id:'ice', count:37000, coeff:1.1 }, { id:'meteorite', count:500, coeff:1.1 }] },
         outputs:[{ id:'lunarite', count:207 }],
         inputs:[{ id:'energy', count:182 }],
     },
     lunariteT5: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'titanium', count:204000, coeff:1.1 }, { id:'gold', count:150000, coeff:1.1 }, { id:'methane', count:195000, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'titanium', count:204000, coeff:1.1 }, { id:'gold', count:150000, coeff:1.1 }, { id:'methane', count:195000, coeff:1.1 }] },
         outputs:[{ id:'lunarite', count:2122 }],
         inputs:[{ id:'energy', count:1216 }],
     },
@@ -462,30 +462,30 @@ const base = {
     },
     methaneT1: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:50, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:50, coeff:1.1 }] },
         outputs:[{ id:'methane', count:1 }],
     },
     methaneT2: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:100, coeff:1.1 }, { id:'gem', count:800, coeff:1.1 }, { id:'oil', count:600, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:100, coeff:1.1 }, { id:'gem', count:800, coeff:1.1 }, { id:'oil', count:600, coeff:1.1 }] },
         outputs:[{ id:'methane', count:8 }],
         inputs:[{ id:'energy', count:16 }],
     },
     methaneT3: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:10000, coeff:1.1 }, { id:'titanium', count:9000, coeff:1.1 }, { id:'silicon', count:4100, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:10000, coeff:1.1 }, { id:'titanium', count:9000, coeff:1.1 }, { id:'silicon', count:4100, coeff:1.1 }] },
         outputs:[{ id:'methane', count:37 }],
         inputs:[{ id:'energy', count:49 }],
     },
     methaneT4: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:52000, coeff:1.1 }, { id:'helium', count:47000, coeff:1.1 }, { id:'meteorite', count:390, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:52000, coeff:1.1 }, { id:'helium', count:47000, coeff:1.1 }, { id:'meteorite', count:390, coeff:1.1 }] },
         outputs:[{ id:'methane', count:149 }],
         inputs:[{ id:'energy', count:132 }],
     },
     methaneT5: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:140000, coeff:1.1 }, { id:'gold', count:202000, coeff:1.1 }, { id:'hydrogen', count:158000, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:140000, coeff:1.1 }, { id:'gold', count:202000, coeff:1.1 }, { id:'hydrogen', count:158000, coeff:1.1 }] },
         outputs:[{ id:'methane', count:1393 }],
         inputs:[{ id:'energy', count:899 }],
     },
@@ -498,30 +498,30 @@ const base = {
     },
     titaniumT1: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'gem', count:1000, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'gem', count:1000, coeff:1.1 }] },
         outputs:[{ id:'titanium', count:1 }],
     },
     titaniumT2: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:200, coeff:1.1 }, { id:'gem', count:800, coeff:1.1 }, { id:'oil', count:1000, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:200, coeff:1.1 }, { id:'gem', count:800, coeff:1.1 }, { id:'oil', count:1000, coeff:1.1 }] },
         outputs:[{ id:'titanium', count:9 }],
         inputs:[{ id:'energy', count:13 }],
     },
     titaniumT3: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:14000, coeff:1.1 }, { id:'gem', count:11000, coeff:1.1 }, { id:'silicon', count:5600, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:14000, coeff:1.1 }, { id:'gem', count:11000, coeff:1.1 }, { id:'silicon', count:5600, coeff:1.1 }] },
         outputs:[{ id:'titanium', count:49 }],
         inputs:[{ id:'energy', count:46 }],
     },
     titaniumT4: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:63000, coeff:1.1 }, { id:'gold', count:27000, coeff:1.1 }, { id:'meteorite', count:600, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:63000, coeff:1.1 }, { id:'gold', count:27000, coeff:1.1 }, { id:'meteorite', count:600, coeff:1.1 }] },
         outputs:[{ id:'titanium', count:197 }],
         inputs:[{ id:'energy', count:123 }],
     },
     titaniumT5: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'uranium', count:175000, coeff:1.1 }, { id:'wood', count:164000, coeff:1.1 }, { id:'helium', count:156000, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'uranium', count:175000, coeff:1.1 }, { id:'wood', count:164000, coeff:1.1 }, { id:'helium', count:156000, coeff:1.1 }] },
         outputs:[{ id:'titanium', count:2106 }],
         inputs:[{ id:'energy', count:690 }],
     },
@@ -534,30 +534,30 @@ const base = {
     },
     goldT1: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'gem', count:200, coeff:1.1 }, { id:'methane', count:50, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'gem', count:200, coeff:1.1 }, { id:'methane', count:50, coeff:1.1 }] },
         outputs:[{ id:'gold', count:1 }],
     },
     goldT2: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:500, coeff:1.1 }, { id:'gem', count:1500, coeff:1.1 }, { id:'oil', count:1000, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:500, coeff:1.1 }, { id:'gem', count:1500, coeff:1.1 }, { id:'oil', count:1000, coeff:1.1 }] },
         outputs:[{ id:'gold', count:8 }],
         inputs:[{ id:'energy', count:19 }],
     },
     goldT3: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:17000, coeff:1.1 }, { id:'silver', count:11500, coeff:1.1 }, { id:'silicon', count:8200, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:17000, coeff:1.1 }, { id:'silver', count:11500, coeff:1.1 }, { id:'silicon', count:8200, coeff:1.1 }] },
         outputs:[{ id:'gold', count:51 }],
         inputs:[{ id:'energy', count:81 }],
     },
     goldT4: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:61000, coeff:1.1 }, { id:'helium', count:15700, coeff:1.1 }, { id:'meteorite', count:600, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:61000, coeff:1.1 }, { id:'helium', count:15700, coeff:1.1 }, { id:'meteorite', count:600, coeff:1.1 }] },
         outputs:[{ id:'gold', count:211 }],
         inputs:[{ id:'energy', count:223 }],
     },
     goldT5: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'metal', count:208000, coeff:1.1 }, { id:'silver', count:167000, coeff:1.1 }, { id:'meteorite', count:18000, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'metal', count:208000, coeff:1.1 }, { id:'silver', count:167000, coeff:1.1 }, { id:'meteorite', count:18000, coeff:1.1 }] },
         outputs:[{ id:'gold', count:2422 }],
         inputs:[{ id:'energy', count:1324 }],
     },
@@ -570,30 +570,30 @@ const base = {
     },
     silverT1: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:100, coeff:1.1 }, { id:'titanium', count:20, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:100, coeff:1.1 }, { id:'titanium', count:20, coeff:1.1 }] },
         outputs:[{ id:'silver', count:1 }],
     },
     silverT2: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:350, coeff:1.1 }, { id:'gem', count:900, coeff:1.1 }, { id:'oil', count:1200, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:350, coeff:1.1 }, { id:'gem', count:900, coeff:1.1 }, { id:'oil', count:1200, coeff:1.1 }] },
         outputs:[{ id:'silver', count:13 }],
         inputs:[{ id:'energy', count:24 }],
     },
     silverT3: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:19500, coeff:1.1 }, { id:'silver', count:18200, coeff:1.1 }, { id:'silicon', count:11000, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:19500, coeff:1.1 }, { id:'silver', count:18200, coeff:1.1 }, { id:'silicon', count:11000, coeff:1.1 }] },
         outputs:[{ id:'silver', count:53 }],
         inputs:[{ id:'energy', count:65 }],
     },
     silverT4: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:85100, coeff:1.1 }, { id:'oil', count:93800, coeff:1.1 }, { id:'meteorite', count:520, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:85100, coeff:1.1 }, { id:'oil', count:93800, coeff:1.1 }, { id:'meteorite', count:520, coeff:1.1 }] },
         outputs:[{ id:'silver', count:208 }],
         inputs:[{ id:'energy', count:170 }],
     },
     silverT5: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'uranium', count:165000, coeff:1.1 }, { id:'gem', count:209000, coeff:1.1 }, { id:'methane', count:170000, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'uranium', count:165000, coeff:1.1 }, { id:'gem', count:209000, coeff:1.1 }, { id:'methane', count:170000, coeff:1.1 }] },
         outputs:[{ id:'silver', count:2261 }],
         inputs:[{ id:'energy', count:1008 }],
     },
@@ -606,30 +606,30 @@ const base = {
     },
     hydrogenT1: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:6000, coeff:1.1 }, { id:'titanium', count:4800, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:6000, coeff:1.1 }, { id:'titanium', count:4800, coeff:1.1 }] },
         outputs:[{ id:'hydrogen', count:1 }],
     },
     hydrogenT2: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:10800, coeff:1.1 }, { id:'titanium', count:9600, coeff:1.1 }, { id:'silicon', count:6600, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:10800, coeff:1.1 }, { id:'titanium', count:9600, coeff:1.1 }, { id:'silicon', count:6600, coeff:1.1 }] },
         outputs:[{ id:'hydrogen', count:5 }],
         inputs:[{ id:'energy', count:63 }],
     },
     hydrogenT3: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'silver', count:37200, coeff:1.1 }, { id:'gold', count:34200, coeff:1.1 }, { id:'silicon', count:25800, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'silver', count:37200, coeff:1.1 }, { id:'gold', count:34200, coeff:1.1 }, { id:'silicon', count:25800, coeff:1.1 }] },
         outputs:[{ id:'hydrogen', count:28 }],
         inputs:[{ id:'energy', count:234 }],
     },
     hydrogenT4: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:172000, coeff:1.1 }, { id:'methane', count:134000, coeff:1.1 }, { id:'meteorite', count:710, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:172000, coeff:1.1 }, { id:'methane', count:134000, coeff:1.1 }, { id:'meteorite', count:710, coeff:1.1 }] },
         outputs:[{ id:'hydrogen', count:113 }],
         inputs:[{ id:'energy', count:613 }],
     },
     hydrogenT5: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:250000, coeff:1.1 }, { id:'wood', count:184000, coeff:1.1 }, { id:'oil', count:146000, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:250000, coeff:1.1 }, { id:'wood', count:184000, coeff:1.1 }, { id:'oil', count:146000, coeff:1.1 }] },
         outputs:[{ id:'hydrogen', count:3562 }],
         inputs:[{ id:'energy', count:4581 }],
     },
@@ -642,30 +642,30 @@ const base = {
     },
     heliumT1: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:8400, coeff:1.1 }, { id:'titanium', count:6000, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:8400, coeff:1.1 }, { id:'titanium', count:6000, coeff:1.1 }] },
         outputs:[{ id:'helium', count:1 }],
     },
     heliumT2: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:12600, coeff:1.1 }, { id:'titanium', count:10200, coeff:1.1 }, { id:'silicon', count:8400, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:12600, coeff:1.1 }, { id:'titanium', count:10200, coeff:1.1 }, { id:'silicon', count:8400, coeff:1.1 }] },
         outputs:[{ id:'helium', count:11 }],
         inputs:[{ id:'energy', count:72 }],
     },
     heliumT3: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:63000, coeff:1.1 }, { id:'titanium', count:43800, coeff:1.1 }, { id:'silicon', count:35400, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:63000, coeff:1.1 }, { id:'titanium', count:43800, coeff:1.1 }, { id:'silicon', count:35400, coeff:1.1 }] },
         outputs:[{ id:'helium', count:57 }],
         inputs:[{ id:'energy', count:248 }],
     },
     heliumT4: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:255000, coeff:1.1 }, { id:'titanium', count:173000, coeff:1.1 }, { id:'meteorite', count:770, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:255000, coeff:1.1 }, { id:'titanium', count:173000, coeff:1.1 }, { id:'meteorite', count:770, coeff:1.1 }] },
         outputs:[{ id:'helium', count:232 }],
         inputs:[{ id:'energy', count:670 }],
     },
     heliumT5: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:171000, coeff:1.1 }, { id:'silicon', count:165000, coeff:1.1 }, { id:'meteorite', count:18600, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:171000, coeff:1.1 }, { id:'silicon', count:165000, coeff:1.1 }, { id:'meteorite', count:18600, coeff:1.1 }] },
         outputs:[{ id:'helium', count:2369 }],
         inputs:[{ id:'energy', count:4075 }],
     },
@@ -678,30 +678,30 @@ const base = {
     },
     iceT1: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:17800, coeff:1.1 }, { id:'gem', count:19300, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:17800, coeff:1.1 }, { id:'gem', count:19300, coeff:1.1 }] },
         outputs:[{ id:'ice', count:1 }],
     },
     iceT2: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:23900, coeff:1.1 }, { id:'titanium', count:21200, coeff:1.1 }, { id:'silicon', count:19600, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:23900, coeff:1.1 }, { id:'titanium', count:21200, coeff:1.1 }, { id:'silicon', count:19600, coeff:1.1 }] },
         outputs:[{ id:'ice', count:9 }],
         inputs:[{ id:'energy', count:83 }],
     },
     iceT3: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'lunarite', count:117000, coeff:1.1 }, { id:'titanium', count:86000, coeff:1.1 }, { id:'silicon', count:73000, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'lunarite', count:117000, coeff:1.1 }, { id:'titanium', count:86000, coeff:1.1 }, { id:'silicon', count:73000, coeff:1.1 }] },
         outputs:[{ id:'ice', count:65 }],
         inputs:[{ id:'energy', count:397 }],
     },
     iceT4: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'wood', count:379000, coeff:1.1 }, { id:'helium', count:14000, coeff:1.1 }, { id:'meteorite', count:1500, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'wood', count:379000, coeff:1.1 }, { id:'helium', count:14000, coeff:1.1 }, { id:'meteorite', count:1500, coeff:1.1 }] },
         outputs:[{ id:'ice', count:278 }],
         inputs:[{ id:'energy', count:1135 }],
     },
     iceT5: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'metal', count:210000, coeff:1.1 }, { id:'silver', count:188000, coeff:1.1 }, { id:'helium', count:205000, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'metal', count:210000, coeff:1.1 }, { id:'silver', count:188000, coeff:1.1 }, { id:'helium', count:205000, coeff:1.1 }] },
         outputs:[{ id:'ice', count:2973 }],
         inputs:[{ id:'energy', count:7397 }],
     },
@@ -711,27 +711,27 @@ const base = {
     },
     scienceT1: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'metal', count:20, coeff:1.1 }, { id:'gem', count:15, coeff:1.1 }, { id:'wood', count:10, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'metal', count:20, coeff:1.1 }, { id:'gem', count:15, coeff:1.1 }, { id:'wood', count:10, coeff:1.1 }] },
         outputs:[{ id:'science', count:0.1 }],
     },
     scienceT2: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'metal', count:1000, coeff:1.1 }, { id:'gem', count:200, coeff:1.1 }, { id:'wood', count:500, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'metal', count:1000, coeff:1.1 }, { id:'gem', count:200, coeff:1.1 }, { id:'wood', count:500, coeff:1.1 }] },
         outputs:[{ id:'science', count:1 }],
     },
     scienceT3: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'metal', count:17000, coeff:1.1 }, { id:'gem', count:4700, coeff:1.1 }, { id:'wood', count:9600, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'metal', count:17000, coeff:1.1 }, { id:'gem', count:4700, coeff:1.1 }, { id:'wood', count:9600, coeff:1.1 }] },
         outputs:[{ id:'science', count:10 }]
     },
     scienceT4: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'metal', count:610000, coeff:1.1 }, { id:'gem', count:370000, coeff:1.1 }, { id:'wood', count:926000, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'metal', count:610000, coeff:1.1 }, { id:'gem', count:370000, coeff:1.1 }, { id:'wood', count:926000, coeff:1.1 }] },
         outputs:[{ id:'science', count:100 }]
     },
     scienceT5: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'metal', count:12400000, coeff:1.1 }, { id:'gem', count:7300000, coeff:1.1 }, { id:'wood', count:15900000, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'metal', count:12400000, coeff:1.1 }, { id:'gem', count:7300000, coeff:1.1 }, { id:'wood', count:15900000, coeff:1.1 }] },
         outputs:[{ id:'science', count:1000 }],
     },
     /*------------------------------------------------------------------------*/
@@ -741,19 +741,19 @@ const base = {
     },
     fuelT1: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'metal', count:1000, coeff:1.1 }, { id:'gem', count:750, coeff:1.1 }, { id:'wood', count:500, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'metal', count:1000, coeff:1.1 }, { id:'gem', count:750, coeff:1.1 }, { id:'wood', count:500, coeff:1.1 }] },
         outputs:[{ id:'fuel', count:0.2 }],
         inputs:[{ id:'carbon', count:20 }, { id:'oil', count:20 }],
     },
     fuelT2: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'metal', count:12000, coeff:1.1 }, { id:'gem', count:8300, coeff:1.1 }, { id:'wood', count:6800, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'metal', count:12000, coeff:1.1 }, { id:'gem', count:8300, coeff:1.1 }, { id:'wood', count:6800, coeff:1.1 }] },
         outputs:[{ id:'fuel', count:1.5 }],
         inputs:[{ id:'carbon', count:100 }, { id:'oil', count:100 }],
     },
     fuelT3: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'titanium', count:140000, coeff:1.1 }, { id:'silicon', count:96300, coeff:1.1 }, { id:'gold', count:78600, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'titanium', count:140000, coeff:1.1 }, { id:'silicon', count:96300, coeff:1.1 }, { id:'gold', count:78600, coeff:1.1 }] },
         outputs:[{ id:'fuel', count:20 }],
         inputs:[{ id:'methane', count:520 }],
     },
@@ -764,7 +764,7 @@ const base = {
     },
     antimatterT1: {
         destroyable:true,
-        build:{ counts:[1], multi:true, costs:[{ id:'silver', count:163000000, coeff:1.1 }, { id:'oil', count:712000000, coeff:1.1 }, { id:'meteorite', count:12300000, coeff:1.1 }] },
+        build:{ counts:[1], multi:true, next:true, costs:[{ id:'silver', count:163000000, coeff:1.1 }, { id:'oil', count:712000000, coeff:1.1 }, { id:'meteorite', count:12300000, coeff:1.1 }] },
         outputs:[{ id:'antimatter', count:0.5 }],
         inputs:[{ id:'plasma', count:100 }, { id:'ice', count:12000 }],
     },
@@ -1782,7 +1782,7 @@ const base = {
         max:1, maxBuildCount:1, collapses:['missionFirstCard'],
         build:{ counts:[1], costs:[{ id:'metal', count:10, coeff:1 }, { id:'wood', count:10, coeff:1 }, { id:'gem', count:10, coeff:1 }] },
         unlocks: [
-            'science', 'achScience',
+            'science', 'achScience', 'scienceBoostScience',
             'plasmaT1', 'meteoriteT1', 'carbonT1', 'scienceT1', 'oilT1', 'fuelT1', 'metalT1', 'gemT1', 'woodT1', 'siliconT1', 'uraniumT1', 'lavaT1', 'lunariteT1', 'methaneT1', 'titaniumT1', 'goldT1', 'silverT1', 'hydrogenT1', 'heliumT1', 'iceT1', 'antimatterT1',
             'achPlasmaT1', 'achMeteoriteT1', 'achCarbonT1', 'achScienceT1', 'achOilT1', 'achFuelT1', 'achMetalT1', 'achGemT1', 'achWoodT1', 'achSiliconT1', 'achUraniumT1', 'achLavaT1', 'achLunariteT1', 'achMethaneT1', 'achTitaniumT1', 'achGoldT1', 'achSilverT1', 'achHydrogenT1', 'achHeliumT1', 'achIceT1', 'achAntimatterT1',
             'missionStorage',
@@ -1805,7 +1805,7 @@ const base = {
         max:1, maxBuildCount:1, collapses:['missionSolarPanelCard'],
         build:{ counts:[1], costs:[{ id:'science', count:20, coeff:1 }] },
         unlocks: [
-            'energy', 'achEnergy', 'energyT1', 'achEnergyT1',
+            'energy', 'achEnergy', 'energyT1', 'achEnergyT1', 'scienceBoostEnergy',
             'missionEnergy',
         ],
         notifs: [
@@ -1816,7 +1816,7 @@ const base = {
         max:1, maxBuildCount:1, collapses:['missionEnergyCard'],
         build:{ counts:[1], costs:[{ id:'science', count:20, coeff:1 }] },
         unlocks: [
-            'carbon', 'achCarbon',
+            'carbon', 'achCarbon', 'scienceBoostCarbon',
             'energyT2', 'achEnergyT2',
             'missionTier2',
         ],
@@ -1828,7 +1828,7 @@ const base = {
         max:1, maxBuildCount:1, collapses:['missionOilCard'],
         build:{ counts:[1], costs:[{ id:'science', count:30, coeff:1 }] },
         unlocks: [
-            'oil', 'achOil',
+            'oil', 'achOil', 'scienceBoostOil',
         ],
         notifs: [
             'oilPane',
@@ -1856,7 +1856,7 @@ const base = {
         max:1, maxBuildCount:1, collapses:['missionFuelCard'],
         build:{ counts:[1], costs:[{ id:'science', count:500, coeff:1 }] },
         unlocks: [
-            'fuel', 'achFuel',
+            'fuel', 'achFuel', 'scienceBoostFuel',
             'missionRocket1',
         ],
         notifs: [
@@ -1887,7 +1887,7 @@ const base = {
         max:1, maxBuildCount:1, collapses:['missionMoonCard'],
         build:{ counts:[1], costs:[{ id:'fuel', count:25, coeff:1 }] },
         unlocks: [
-            'lunarite', 'achLunarite'
+            'lunarite', 'achLunarite', 'scienceBoostLunarite',
         ],
         notifs: [
             'lunaritePane',
@@ -1901,7 +1901,7 @@ const base = {
         max:1, maxBuildCount:1, collapses:['missionVenusCard'],
         build:{ counts:[1], costs:[{ id:'fuel', count:100, coeff:1 }] },
         unlocks: [
-            'methane', 'achMethane',
+            'methane', 'achMethane', 'scienceBoostMethane',
             'energyT3', 'achEnergyT3'
         ],
         notifs: [
@@ -1912,7 +1912,7 @@ const base = {
         max:1, maxBuildCount:1, collapses:['missionMarsCard'],
         build:{ counts:[1], costs:[{ id:'fuel', count:75, coeff:1 }] },
         unlocks: [
-            'silicon', 'achSilicon',
+            'silicon', 'achSilicon', 'scienceBoostSilicon',
             'titanium', 'achTitanium',
         ],
         notifs: [
@@ -1923,8 +1923,8 @@ const base = {
         max:1, maxBuildCount:1, collapses:['missionAsteroidCard'],
         build:{ counts:[1], costs:[{ id:'fuel', count:400, coeff:1 }] },
         unlocks: [
-            'gold', 'achGold',
-            'silver', 'achSilver',
+            'gold', 'achGold', 'scienceBoostGold',
+            'silver', 'achSilver', 'scienceBoostSilver',
             'missionJupiter', 'missionSaturn', 'missionUranus', 'missionNeptune', 'missionPluto', 'missionWonderStation',
         ],
         notifs: [
@@ -1947,7 +1947,7 @@ const base = {
         max:1, maxBuildCount:1, collapses:['missionJupiterCard'],
         build:{ counts:[1], costs:[{ id:'fuel', count:1000, coeff:1 }] },
         unlocks: [
-            'hydrogen', 'achHydrogen',
+            'hydrogen', 'achHydrogen', 'scienceBoostHydrogen',
         ],
         notifs: [
             'hydrogenPane',
@@ -1957,7 +1957,7 @@ const base = {
         max:1, maxBuildCount:1, collapses:['missionSaturnCard'],
         build:{ counts:[1], costs:[{ id:'fuel', count:2000, coeff:1 }] },
         unlocks: [
-            'helium', 'achHelium',
+            'helium', 'achHelium', 'scienceBoostHelium',
             'energyT6', 'achEnergyT6'
         ],
         notifs: [
@@ -1976,7 +1976,7 @@ const base = {
         max:1, maxBuildCount:1, collapses:['missionPlutoCard'],
         build:{ counts:[1], costs:[{ id:'fuel', count:4000, coeff:1 }] },
         unlocks: [
-            'ice', 'achIce',
+            'ice', 'achIce', 'scienceBoostIce',
             'missionKuiper',
         ],
         notifs: [
@@ -2012,7 +2012,7 @@ const base = {
         max:1, maxBuildCount:1, collapses:['missionWonderPreciousCard'],
         build:{ counts:[1], costs:[{ id:'gem', count:40000, coeff:1 }, { id:'silver', count:27500, coeff:1 }, { id:'gold', count:15000, coeff:1 }] },
         unlocks: [
-            'uranium', 'achUranium',
+            'uranium', 'achUranium', 'scienceBoostUranium',
             'energyT4', 'achEnergyT4',
             'missionWonderEnergetic', 
         ],
@@ -2035,7 +2035,7 @@ const base = {
         max:1, maxBuildCount:1, collapses:['missionWonderEnergeticCard'],
         build:{ counts:[1], costs:[{ id:'wood', count:40000, coeff:1 }, { id:'carbon', count:20000, coeff:1 }, { id:'uranium', count:700, coeff:1 }] },
         unlocks: [
-            'lava', 'achLava',
+            'lava', 'achLava', 'scienceBoostLava',
             'energyT5', 'achEnergyT5',
         ],
         notifs: [
@@ -2057,7 +2057,7 @@ const base = {
         max:1, maxBuildCount:1, collapses:['missionPlasmaCard'],
         build:{ counts:[1], costs:[{ id:'hydrogen', count:1500, coeff:1 }, { id:'oil', count:1500, coeff:1 }, { id:'wood', count:1500, coeff:1 }] },
         unlocks: [
-            'plasma', 'achPlasma',
+            'plasma', 'achPlasma', 'scienceBoostPlasma',
             'missionEmc', 'missionMeteorite', 'missionDyson',
         ],
         notifs: [
@@ -2075,7 +2075,7 @@ const base = {
         max:1, maxBuildCount:1, collapses:['missionMeteoriteCard'],
         build:{ counts:[1], costs:[{ id:'energy', count:85000, coeff:1  }, { id:'plasma', count:1000, coeff:1 }] },
         unlocks: [
-            'meteorite', 'achMeteorite',
+            'meteorite', 'achMeteorite', 'scienceBoostMeteorite',
             'missionWonderMeteorite',
         ],
         notifs: [
@@ -2133,7 +2133,7 @@ const base = {
         max:1, maxBuildCount:1, collapses:['missionWonderAntimatterCard'],
         build:{ counts:[1], costs:[{ id:'uranium', count:6000000, coeff:1 }, { id:'lava', count:10000000, coeff:1 }, { id:'oil', count:8000000, coeff:1  }] },
         unlocks: [
-            'antimatter', 'achAntimatter',
+            'antimatter', 'achAntimatter', 'scienceBoostAntimatter',
             'missionWonderPortal',
         ],
         notifs: [
@@ -2462,6 +2462,29 @@ const base = {
     boostHelium: { unlocked:true, build:{ counts:[1], costs:[{ id:'darkmatter', count:1, coeff:1.0 }] }, modOutput:{ id:'helium', mod:0.01 }, },
     boostIce: { unlocked:true, build:{ counts:[1], costs:[{ id:'darkmatter', count:1, coeff:1.0 }] }, modOutput:{ id:'ice', mod:0.01 }, },
     boostAntimatter: { unlocked:true, build:{ counts:[1], costs:[{ id:'darkmatter', count:1, coeff:1.0 }] }, modOutput:{ id:'antimatter', mod:0.01 }, },
+    /*------------------------------------------------------------------------*/
+    scienceBoostEnergy:     { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:10000000, coeff:1.1 }] }, modOutput:{ id:'energy',     mod:0.01 }, },
+    scienceBoostPlasma:     { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:10000000, coeff:1.1 }] }, modOutput:{ id:'plasma',     mod:0.01 }, },
+    scienceBoostMeteorite:  { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:10000000, coeff:1.1 }] }, modOutput:{ id:'meteorite',  mod:0.01 }, },
+    scienceBoostCarbon:     { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:10000000, coeff:1.1 }] }, modOutput:{ id:'carbon',     mod:0.01 }, },
+    scienceBoostScience:    { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:10000000, coeff:1.1 }] }, modOutput:{ id:'science',    mod:0.01 }, },
+    scienceBoostOil:        { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:10000000, coeff:1.1 }] }, modOutput:{ id:'oil',        mod:0.01 }, },
+    scienceBoostFuel:       { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:10000000, coeff:1.1 }] }, modOutput:{ id:'fuel',       mod:0.01 }, },
+    scienceBoostMetal:      { unlocked:true,  build:{ counts:[1], costs:[{ id:'science', count:10000000, coeff:1.1 }] }, modOutput:{ id:'metal',      mod:0.01 }, },
+    scienceBoostGem:        { unlocked:true,  build:{ counts:[1], costs:[{ id:'science', count:10000000, coeff:1.1 }] }, modOutput:{ id:'gem',        mod:0.01 }, },
+    scienceBoostWood:       { unlocked:true,  build:{ counts:[1], costs:[{ id:'science', count:10000000, coeff:1.1 }] }, modOutput:{ id:'wood',       mod:0.01 }, },
+    scienceBoostSilicon:    { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:10000000, coeff:1.1 }] }, modOutput:{ id:'silicon',    mod:0.01 }, },
+    scienceBoostUranium:    { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:10000000, coeff:1.1 }] }, modOutput:{ id:'uranium',    mod:0.01 }, },
+    scienceBoostLava:       { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:10000000, coeff:1.1 }] }, modOutput:{ id:'lava',       mod:0.01 }, },
+    scienceBoostLunarite:   { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:10000000, coeff:1.1 }] }, modOutput:{ id:'lunarite',   mod:0.01 }, },
+    scienceBoostMethane:    { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:10000000, coeff:1.1 }] }, modOutput:{ id:'methane',    mod:0.01 }, },
+    scienceBoostTitanium:   { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:10000000, coeff:1.1 }] }, modOutput:{ id:'titanium',   mod:0.01 }, },
+    scienceBoostGold:       { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:10000000, coeff:1.1 }] }, modOutput:{ id:'gold',       mod:0.01 }, },
+    scienceBoostSilver:     { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:10000000, coeff:1.1 }] }, modOutput:{ id:'silver',     mod:0.01 }, },
+    scienceBoostHydrogen:   { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:10000000, coeff:1.1 }] }, modOutput:{ id:'hydrogen',   mod:0.01 }, },
+    scienceBoostHelium:     { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:10000000, coeff:1.1 }] }, modOutput:{ id:'helium',     mod:0.01 }, },
+    scienceBoostIce:        { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:10000000, coeff:1.1 }] }, modOutput:{ id:'ice',        mod:0.01 }, },
+    scienceBoostAntimatter: { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:10000000, coeff:1.1 }] }, modOutput:{ id:'antimatter', mod:0.01 }, },
     /*------------------------------------------------------------------------*/
     ulUpgdStorage: { max:1, collapses:['ulUpgdStorage'], build:{ counts:[1], costs:[{ id:'ultrite', count:21, coeff:1.0 }] },
         onLoad: function(state) {
@@ -2792,6 +2815,8 @@ export const store = createStore({
             statsTotalEnlightens: 0,
             statsTotalConquests: 0,
             statsTotalStatues: 0,
+            
+            dmBoostCount: 1,
         }
     },
     getters: {
@@ -2998,19 +3023,20 @@ export const store = createStore({
         getBuildNextCount: (state) => (id) => {
             
             let item = state.items[id]
-            if (!('costs' in item.build)) return 1
+            if (!('costs' in item.build)) return -1
+            if (!('next' in item.build)) return -1
             
             let count = item.count
-            if (count < 5) return 5
-            else if (count >= 5 && count < 25) return 25
-            else if (count >= 25 && count < 75) return 75
-            else if (count >= 75 && count < 150) return 150
-            else if (count >= 150 && count < 250) return 250
+            if (count < 5) return (5 - count)
+            else if (count >= 5 && count < 25) return (25 - count)
+            else if (count >= 25 && count < 75) return (75 - count)
+            else if (count >= 75 && count < 150) return (150 - count)
+            else if (count >= 150 && count < 250) return (250 - count)
             
             return -1
         },
         
-        getBuildCosts: (state) => (id, count) => {
+        getBuildCosts: (state, getters) => (id, count) => {
             
             var ret = null
             
@@ -3020,13 +3046,30 @@ export const store = createStore({
             else if (count == 5) ret = state.items[id].costs[1]
             else if (count == 25) ret = state.items[id].costs[2]
             else if (count == 100) ret = state.items[id].costs[3]
-            else ret = state.items[id].costs[4]
+            else if (count == getters.getBuildMaxCount(id)) ret = state.items[id].costs[4]
+            else if (count == getters.getBuildNextCount(id)) ret = state.items[id].costs[5]
+            else {
+                
+                ret = JSON.parse(JSON.stringify(state.items[id].build.costs))
+                ret.forEach(cost => {
+                    cost.base = cost.count
+                    cost.count = Math.floor(cost.base * cost.mod * Math.pow(cost.coeff, state.items[id].count))
+                })
+                
+                for (let n = 1; n < count; n++)
+                    ret.forEach(cost => { cost.count += Math.floor(cost.base * cost.mod * Math.pow(cost.coeff, state.items[id].count + n)) })
+                
+                ret.forEach(cost => {
+                    cost.progress = Math.min(100, ((state.items[cost.id].count / cost.count) * 100).toFixed())
+                    cost.timer = getters.getTimer(cost.id, cost.count)
+                })
+            }
             
             if (ret != undefined) return ret
             else return null
         },
         
-        canBuild: (state) => (id, count) => {			
+        canBuild: (state, getters) => (id, count) => {			
             
             var ret = null
             
@@ -3036,7 +3079,9 @@ export const store = createStore({
             else if (count == 5) ret = state.items[id].canBuild[1]
             else if (count == 25) ret = state.items[id].canBuild[2]
             else if (count == 100) ret = state.items[id].canBuild[3]
-            else ret = state.items[id].canBuild[4]
+            else if (count == getters.getBuildMaxCount(id)) ret = state.items[id].canBuild[4]
+            else if (count == getters.getBuildNextCount(id)) ret = state.items[id].canBuild[5]
+            else if (count <= getters.getBuildMaxCount(id)) ret = 0
             
             if (ret != undefined) return ret
             else return null
@@ -3216,6 +3261,8 @@ export const store = createStore({
         setAutoConversionId({ state }, payload) { state.autoConversionId = payload },
         setAutoStorageId({ state }, payload) { state.autoStorageId = payload },
         
+        setDmBoostCount({ state }, payload) { state.dmBoostCount = payload },
+        
         /*--------------------------------------------------------------------*/
         toggleCollapsed({ state }, payload) {
             if (state.collapsed.includes(payload)) state.collapsed.splice(state.collapsed.indexOf(payload), 1)
@@ -3358,28 +3405,28 @@ export const store = createStore({
             
             state.resetIds = [
                 
-                'energy', 'energyT1', 'energyT2', 'energyT3', 'energyT4', 'energyT5', 'energyT6',
-                'plasma', 'plasmaT1', 'plasmaT2', 'plasmaT3', 'plasmaT4',
-                'meteorite', 'meteoriteT1', 'meteoriteT2', 'meteoriteT3', 'meteoriteT4',
-                'carbon', 'carbonT1', 'carbonT2', 'carbonT3', 'carbonT4', 'carbonT5',
-                'oil', 'oilT1', 'oilT2', 'oilT3', 'oilT4', 'oilT5',
-                'metal', 'metalT1', 'metalT2', 'metalT3', 'metalT4', 'metalT5',
-                'gem', 'gemT1', 'gemT2', 'gemT3', 'gemT4', 'gemT5',
-                'wood', 'woodT1', 'woodT2', 'woodT3', 'woodT4', 'woodT5',
-                'silicon', 'siliconT1', 'siliconT2', 'siliconT3', 'siliconT4', 'siliconT5',
-                'uranium', 'uraniumT1', 'uraniumT2', 'uraniumT3', 'uraniumT4', 'uraniumT5',
-                'lava', 'lavaT1', 'lavaT2', 'lavaT3', 'lavaT4', 'lavaT5',
-                'lunarite', 'lunariteT1', 'lunariteT2', 'lunariteT3', 'lunariteT4', 'lunariteT5',
-                'methane', 'methaneT1', 'methaneT2', 'methaneT3', 'methaneT4', 'methaneT5',
-                'titanium', 'titaniumT1', 'titaniumT2', 'titaniumT3', 'titaniumT4', 'titaniumT5',
-                'gold', 'goldT1', 'goldT2', 'goldT3', 'goldT4', 'goldT5',
-                'silver', 'silverT1', 'silverT2', 'silverT3', 'silverT4', 'silverT5',
-                'hydrogen', 'hydrogenT1', 'hydrogenT2', 'hydrogenT3', 'hydrogenT4', 'hydrogenT5',
-                'helium', 'heliumT1', 'heliumT2', 'heliumT3', 'heliumT4', 'heliumT5',
-                'ice', 'iceT1', 'iceT2', 'iceT3', 'iceT4', 'iceT5',
-                'science', 'scienceT1', 'scienceT2', 'scienceT3', 'scienceT4', 'scienceT5',
-                'fuel', 'fuelT1', 'fuelT2', 'fuelT3',
-                'antimatter', 'antimatterT1',
+                'energy', 'energyT1', 'energyT2', 'energyT3', 'energyT4', 'energyT5', 'energyT6', 'scienceBoostEnergy',
+                'plasma', 'plasmaT1', 'plasmaT2', 'plasmaT3', 'plasmaT4', 'scienceBoostPlasma',
+                'meteorite', 'meteoriteT1', 'meteoriteT2', 'meteoriteT3', 'meteoriteT4', 'scienceBoostMeteorite',
+                'carbon', 'carbonT1', 'carbonT2', 'carbonT3', 'carbonT4', 'carbonT5', 'scienceBoostCarbon',
+                'oil', 'oilT1', 'oilT2', 'oilT3', 'oilT4', 'oilT5', 'scienceBoostOil',
+                'metal', 'metalT1', 'metalT2', 'metalT3', 'metalT4', 'metalT5', 'scienceBoostMetal',
+                'gem', 'gemT1', 'gemT2', 'gemT3', 'gemT4', 'gemT5', 'scienceBoostGem',
+                'wood', 'woodT1', 'woodT2', 'woodT3', 'woodT4', 'woodT5', 'scienceBoostWood',
+                'silicon', 'siliconT1', 'siliconT2', 'siliconT3', 'siliconT4', 'siliconT5', 'scienceBoostSilicon',
+                'uranium', 'uraniumT1', 'uraniumT2', 'uraniumT3', 'uraniumT4', 'uraniumT5', 'scienceBoostUranium',
+                'lava', 'lavaT1', 'lavaT2', 'lavaT3', 'lavaT4', 'lavaT5', 'scienceBoostLava',
+                'lunarite', 'lunariteT1', 'lunariteT2', 'lunariteT3', 'lunariteT4', 'lunariteT5', 'scienceBoostLunarite',
+                'methane', 'methaneT1', 'methaneT2', 'methaneT3', 'methaneT4', 'methaneT5', 'scienceBoostMethane',
+                'titanium', 'titaniumT1', 'titaniumT2', 'titaniumT3', 'titaniumT4', 'titaniumT5', 'scienceBoostTitanium',
+                'gold', 'goldT1', 'goldT2', 'goldT3', 'goldT4', 'goldT5', 'scienceBoostGold',
+                'silver', 'silverT1', 'silverT2', 'silverT3', 'silverT4', 'silverT5', 'scienceBoostSilver',
+                'hydrogen', 'hydrogenT1', 'hydrogenT2', 'hydrogenT3', 'hydrogenT4', 'hydrogenT5', 'scienceBoostHydrogen',
+                'helium', 'heliumT1', 'heliumT2', 'heliumT3', 'heliumT4', 'heliumT5', 'scienceBoostHelium',
+                'ice', 'iceT1', 'iceT2', 'iceT3', 'iceT4', 'iceT5', 'scienceBoostIce',
+                'science', 'scienceT1', 'scienceT2', 'scienceT3', 'scienceT4', 'scienceT5', 'scienceBoostScience',
+                'fuel', 'fuelT1', 'fuelT2', 'fuelT3', 'scienceBoostFuel',
+                'antimatter', 'antimatterT1', 'scienceBoostAntimatter',
                 
                 'achEnergy', 'achPlasma', 'achMeteorite', 'achCarbon', 'achScience', 'achOil',
                 'achFuel', 'achMetal', 'achGem', 'achWood', 'achSilicon', 'achUranium', 'achLava',
@@ -3984,7 +4031,7 @@ export const store = createStore({
                         for (let i in state.items) {
                             let it = state.items[i]
                             if ('outputs' in it)
-                                it.outputs.forEach(output => { if (output.id == item.modOutput.id) output.mod += item.count * item.modOutput.mod })
+                                it.outputs.forEach(output => { if (output.id == item.modOutput.id) { output.mod += item.count * item.modOutput.mod } })
                         }
                     }
                     
@@ -4498,7 +4545,7 @@ export const store = createStore({
             })
         },
         
-        updateBuildingCosts({ state, dispatch }, id) {
+        updateBuildingCosts({ state, getters, dispatch }, id) {
             
             dispatch('computeBuildCosts', { id:id, count:1 }).then(costs => {
                 let compare = costCompare(costs, state.items[id].costs[0])
@@ -4525,9 +4572,17 @@ export const store = createStore({
                 if (compare == false) { state.items[id].costs[4] = JSON.parse(JSON.stringify(costs)) }
                 costs = null
             })
+            
+            if ('next' in state.items[id].build) {
+                dispatch('computeBuildCosts', { id:id, count:getters.getBuildNextCount(id) }).then(costs => {
+                    let compare = costCompare(costs, state.items[id].costs[5])
+                    if (compare == false) { state.items[id].costs[5] = JSON.parse(JSON.stringify(costs)) }
+                    costs = null
+                })
+            }
         },
         
-        updateCanBuild({ state, dispatch }, id) {
+        updateCanBuild({ state, getters, dispatch }, id) {
 
             dispatch('computeCanBuild', { id:id, count:1 }).then(can => {
                 if (can != state.items[id].canBuild[0]) state.items[id].canBuild[0] = can
@@ -4544,6 +4599,12 @@ export const store = createStore({
             dispatch('computeCanBuild', { id:id, count:state.items[id].maxBuildCount }).then(can => {
                 if (can != state.items[id].canBuild[4]) state.items[id].canBuild[4] = can
             })
+
+            if ('next' in state.items[id].build) {
+                dispatch('computeCanBuild', { id:id, count:getters.getBuildNextCount(id) }).then(can => {
+                    if (can != state.items[id].canBuild[5]) state.items[id].canBuild[5] = can
+                })
+            }
         },
         
         updateUpgradeCosts({ state, dispatch }, id) {
@@ -4642,8 +4703,9 @@ export const store = createStore({
                     for (let i in state.items) {
                         let it = state.items[i]
                         if ('outputs' in it)
-                            it.outputs.forEach(output => { if (output.id == item.modOutput.id) output.mod += payload.count * item.modOutput.mod })
+                            it.outputs.forEach(output => { if (output.id == item.modOutput.id) { output.mod += payload.count * item.modOutput.mod } })
                     }
+                    dispatch('updateItemProd', item.modOutput.id)
                 }
                 
                 if ('modCost' in item) {
@@ -4709,6 +4771,25 @@ export const store = createStore({
             
             var item = state.items['missionOverlord']
             item.count = 1
+        },
+        
+        boost({ state, dispatch }, payload) {
+            
+            if (state.items['darkmatter'].count >= payload.count) {
+                
+                state.items['darkmatter'].count -= payload.count
+                
+                let item = state.items[payload.id]
+                item.count += payload.count
+                
+                for (let i in state.items) {
+                    let it = state.items[i]
+                    if ('outputs' in it)
+                        it.outputs.forEach(output => { if (output.id == item.modOutput.id) output.mod += payload.count * item.modOutput.mod })
+                }
+            
+                dispatch('updateItemProd', item.modOutput.id)
+            }
         },
         
         /*--------------------------------------------------------------------*/
@@ -4801,12 +4882,15 @@ export const store = createStore({
                 if ('prod' in item) item.prod = 0
             })
             
+            state.items['dysonT3'].max = 1
             state.items['antimatter'].storage.count = 100000
             
             for (let i in state.items) {
                 let item = state.items[i]
                 
                 if ('status' in item) item.unlocked = false
+                if ('outputs' in item) item.outputs.forEach(output => { output.mod = 1.0 })
+                if ('build' in item && 'costs' in item.build) item.build.costs.forEach(cost => { cost.mod = 1.0 })
             }
             
             dispatch('onLoad')

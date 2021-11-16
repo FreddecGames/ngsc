@@ -8,10 +8,10 @@
         <div class="row g-2 align-items-center">
         
             <div class="col">
-                <div v-if="counts.length > 1" class="row g-1">
+                <div v-if="counts.length > 1" class="row g-0">
                     <div v-for="count in counts" :key="count" class="col-auto">
                         <input type="radio" class="btn-check" :id="'gain-' + itemId + '-' + count" autocomplete="off" v-model="selectedCount" :value="count" />
-                        <label class="btn btn-badge" :for="'gain-' + itemId + '-' + count">+{{ count }}</label>
+                        <label class="btn btn-badge px-1" :for="'gain-' + itemId + '-' + count">+{{ count }}</label>
                     </div>
                 </div>
             </div>
