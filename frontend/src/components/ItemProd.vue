@@ -1,5 +1,6 @@
 <template>
-    <span v-if="count <= 0" class="text-normal"><format-number :value="count" /></span>
+    <span v-if="count < 0" class="text-danger">-<format-number :value="count" /></span>
+    <span v-if="count == 0" class="text-normal"><format-number :value="count" /></span>
     <span v-if="count > 0" class="text-success">+<format-number :value="count" /></span>
 </template>
 

@@ -29,7 +29,7 @@ const base = {
     
     /*------------------------------------------------------------------------*/
     energy: {
-        storage:{ count:50, coeff:2, costs:[{ id:'energy', count:50, coeff:2 }] },
+        storage:{ max:50, count:50, coeff:2, costs:[{ id:'energy', count:50, coeff:2 }] },
         prod:0,
     },
     energyT1: {
@@ -70,7 +70,7 @@ const base = {
     /*------------------------------------------------------------------------*/
     plasma: {
         gain:{ counts:[1], costs:[{ id:'energy', count:1000 }, { id:'hydrogen', count:10 }] },
-        storage:{ count:50, coeff:2, costs:[{ id:'plasma', count:50, coeff:2 }] },
+        storage:{ max:50, count:50, coeff:2, costs:[{ id:'plasma', count:50, coeff:2 }] },
         prod:0,
     },
     plasmaT1: {
@@ -100,7 +100,7 @@ const base = {
     /*------------------------------------------------------------------------*/
     meteorite: {
         gain:{ counts:[1], costs:[{ id:'plasma', count:3 }] },
-        storage:{ count:50, coeff:2, costs:[{ id:'meteorite', count:50, coeff:2 }] },
+        storage:{ max:50, count:50, coeff:2, costs:[{ id:'meteorite', count:50, coeff:2 }] },
         conversion:{ costs:[{ id:'plasma', count:3 }] },
         prod:0,
     },
@@ -131,7 +131,7 @@ const base = {
     /*------------------------------------------------------------------------*/
     carbon: {
         gain:{ counts:[1], costs:[{ id:'wood', count:2 }] },
-        storage:{ count:50, coeff:2, costs:[{ id:'carbon', count:50, coeff:2 }, { id:'metal', count:20, coeff:2 }] },
+        storage:{ max:50, count:50, coeff:2, costs:[{ id:'carbon', count:50, coeff:2 }, { id:'metal', count:20, coeff:2 }] },
         conversion:{ costs:[{ id:'energy', count:2 }] },
         prod:0,
     },
@@ -168,7 +168,7 @@ const base = {
     /*------------------------------------------------------------------------*/
     oil: {
         gain:{ counts:[1] },
-        storage:{ count:50, coeff:2, costs:[{ id:'oil', count:50, coeff:2 }, { id:'metal', count:20, coeff:2 }] },
+        storage:{ max:50, count:50, coeff:2, costs:[{ id:'oil', count:50, coeff:2 }, { id:'metal', count:20, coeff:2 }] },
         conversion:{ costs:[{ id:'energy', count:3 }] },
         prod:0,
     },
@@ -204,7 +204,7 @@ const base = {
     /*------------------------------------------------------------------------*/
     metal: {
         gain:{ counts:[1] },
-        storage:{ count:50, coeff:2, costs:[{ id:'metal', count:50, coeff:2 }] },
+        storage:{ max:50, count:50, coeff:2, costs:[{ id:'metal', count:50, coeff:2 }] },
         conversion:{ costs:[{ id:'energy', count:1 }] },
         prod:0,
     },
@@ -240,7 +240,7 @@ const base = {
     /*------------------------------------------------------------------------*/
     gem: {
         gain:{ counts:[1] },
-        storage:{ count:50, coeff:2, costs:[{ id:'gem', count:50, coeff:2 }, { id:'metal', count:20, coeff:2 }] },
+        storage:{ max:50, count:50, coeff:2, costs:[{ id:'gem', count:50, coeff:2 }, { id:'metal', count:20, coeff:2 }] },
         conversion:{ costs:[{ id:'energy', count:3 }] },
         prod:0,
     },
@@ -276,7 +276,7 @@ const base = {
     /*------------------------------------------------------------------------*/
     wood: {
         gain:{ counts:[1] },
-        storage:{ count:50, coeff:2, costs:[{ id:'wood', count:50, coeff:2 }, { id:'metal', count:20, coeff:2 }] },
+        storage:{ max:50, count:50, coeff:2, costs:[{ id:'wood', count:50, coeff:2 }, { id:'metal', count:20, coeff:2 }] },
         conversion:{ costs:[{ id:'energy', count:1 }] },
         prod:0,
     },
@@ -312,7 +312,7 @@ const base = {
     /*------------------------------------------------------------------------*/
     silicon: {
         gain:{ counts:[1] },
-        storage:{ count:50, coeff:2, costs:[{ id:'silicon', count:50, coeff:2 }, { id:'lunarite', count:20, coeff:2 }] },
+        storage:{ max:50, count:50, coeff:2, costs:[{ id:'silicon', count:50, coeff:2 }, { id:'lunarite', count:20, coeff:2 }] },
         conversion:{ costs:[{ id:'energy', count:23 }] },
         prod:0,
     },
@@ -348,7 +348,7 @@ const base = {
     /*------------------------------------------------------------------------*/
     uranium: {
         gain:{ counts:[1] },
-        storage:{ count:50, coeff:2, costs:[{ id:'uranium', count:50, coeff:2 }, { id:'lunarite', count:20, coeff:2 }] },
+        storage:{ max:50, count:50, coeff:2, costs:[{ id:'uranium', count:50, coeff:2 }, { id:'lunarite', count:20, coeff:2 }] },
         conversion:{ costs:[{ id:'energy', count:37 }] },
         prod:0,
     },
@@ -384,7 +384,7 @@ const base = {
     /*------------------------------------------------------------------------*/
     lava: {
         gain:{ counts:[1] },
-        storage:{ count:50, coeff:2, costs:[{ id:'lava', count:50, coeff:2 }, { id:'lunarite', count:20, coeff:2 }] },
+        storage:{ max:50, count:50, coeff:2, costs:[{ id:'lava', count:50, coeff:2 }, { id:'lunarite', count:20, coeff:2 }] },
         conversion:{ costs:[{ id:'energy', count:42 }] },
         prod:0,
     },
@@ -420,7 +420,7 @@ const base = {
     /*------------------------------------------------------------------------*/
     lunarite: {
         gain:{ counts:[1] },
-        storage:{ count:50, coeff:2, costs:[{ id:'lunarite', count:50, coeff:2 }, { id:'metal', count:400, coeff:2 }] },
+        storage:{ max:50, count:50, coeff:2, costs:[{ id:'lunarite', count:50, coeff:2 }, { id:'metal', count:400, coeff:2 }] },
         conversion:{ costs:[{ id:'energy', count:15 }] },
         prod:0,
     },
@@ -456,7 +456,7 @@ const base = {
     /*------------------------------------------------------------------------*/
     methane: {
         gain:{ counts:[1] },
-        storage:{ count:50, coeff:2, costs:[{ id:'methane', count:50, coeff:2 }, { id:'lunarite', count:20, coeff:2 }] },
+        storage:{ max:50, count:50, coeff:2, costs:[{ id:'methane', count:50, coeff:2 }, { id:'lunarite', count:20, coeff:2 }] },
         conversion:{ costs:[{ id:'energy', count:12 }] },
         prod:0,
     },
@@ -492,7 +492,7 @@ const base = {
     /*------------------------------------------------------------------------*/
     titanium: {
         gain:{ counts:[1] },
-        storage:{ count:50, coeff:2, costs:[{ id:'titanium', count:50, coeff:2 }, { id:'lunarite', count:20, coeff:2 }] },
+        storage:{ max:50, count:50, coeff:2, costs:[{ id:'titanium', count:50, coeff:2 }, { id:'lunarite', count:20, coeff:2 }] },
         conversion:{ costs:[{ id:'energy', count:17 }] },
         prod:0,
     },
@@ -528,7 +528,7 @@ const base = {
     /*------------------------------------------------------------------------*/
     gold: {
         gain:{ counts:[1] },
-        storage:{ count:50, coeff:2, costs:[{ id:'gold', count:50, coeff:2 }, { id:'lunarite', count:20, coeff:2 }] },
+        storage:{ max:50, count:50, coeff:2, costs:[{ id:'gold', count:50, coeff:2 }, { id:'lunarite', count:20, coeff:2 }] },
         conversion:{ costs:[{ id:'energy', count:14 }] },
         prod:0,
     },
@@ -564,7 +564,7 @@ const base = {
     /*------------------------------------------------------------------------*/
     silver: {
         gain:{ counts:[1] },
-        storage:{ count:50, coeff:2, costs:[{ id:'silver', count:50, coeff:2 }, { id:'lunarite', count:20, coeff:2 }] },
+        storage:{ max:50, count:50, coeff:2, costs:[{ id:'silver', count:50, coeff:2 }, { id:'lunarite', count:20, coeff:2 }] },
         conversion:{ costs:[{ id:'energy', count:16 }] },
         prod:0,
     },
@@ -600,7 +600,7 @@ const base = {
     /*------------------------------------------------------------------------*/
     hydrogen: {
         gain:{ counts:[1] },
-        storage:{ count:50, coeff:2, costs:[{ id:'hydrogen', count:50, coeff:2 }, { id:'lunarite', count:20, coeff:2 }] },
+        storage:{ max:50, count:50, coeff:2, costs:[{ id:'hydrogen', count:50, coeff:2 }, { id:'lunarite', count:20, coeff:2 }] },
         conversion:{ costs:[{ id:'energy', count:33 }] },
         prod:0,
     },
@@ -636,7 +636,7 @@ const base = {
     /*------------------------------------------------------------------------*/
     helium: {
         gain:{ counts:[1] },
-        storage:{ count:50, coeff:2, costs:[{ id:'helium', count:50, coeff:2 }, { id:'lunarite', count:20, coeff:2 }] },
+        storage:{ max:50, count:50, coeff:2, costs:[{ id:'helium', count:50, coeff:2 }, { id:'lunarite', count:20, coeff:2 }] },
         conversion:{ costs:[{ id:'energy', count:39 }] },
         prod:0,
     },
@@ -672,7 +672,7 @@ const base = {
     /*------------------------------------------------------------------------*/
     ice: {
         gain:{ counts:[1] },
-        storage:{ count:50, coeff:2, costs:[{ id:'ice', count:50, coeff:2 }, { id:'lunarite', count:20, coeff:2 }] },
+        storage:{ max:50, count:50, coeff:2, costs:[{ id:'ice', count:50, coeff:2 }, { id:'lunarite', count:20, coeff:2 }] },
         conversion:{ costs:[{ id:'energy', count:44 }] },
         prod:0,
     },
@@ -736,7 +736,7 @@ const base = {
     },
     /*------------------------------------------------------------------------*/
     fuel: {
-        storage:{ count:50, coeff:2, costs:[{ id:'fuel', count:50, coeff:2 }] },
+        storage:{ max:50, count:50, coeff:2, costs:[{ id:'fuel', count:50, coeff:2 }] },
         prod:0,
     },
     fuelT1: {
@@ -862,6 +862,7 @@ const base = {
         outputs:[{ id:'energy', count:25000 }],
     },
     dysonT3: {
+        max:1,
         build:{ counts:[1], costs:[{ id:'segment', count:250, coeff:1.0 }, { id:'fuel', count:1000000, coeff:1.0 }] },
         outputs:[{ id:'energy', count:1000000 }],
     },
@@ -1902,10 +1903,11 @@ const base = {
         build:{ counts:[1], costs:[{ id:'fuel', count:100, coeff:1 }] },
         unlocks: [
             'methane', 'achMethane', 'scienceBoostMethane',
+            'titanium', 'achTitanium', 'scienceBoostTitanium',
             'energyT3', 'achEnergyT3'
         ],
         notifs: [
-            'methanePane',
+            'methanePane', 'titaniumPane',
         ],
     },
     missionMars: {
@@ -1913,10 +1915,9 @@ const base = {
         build:{ counts:[1], costs:[{ id:'fuel', count:75, coeff:1 }] },
         unlocks: [
             'silicon', 'achSilicon', 'scienceBoostSilicon',
-            'titanium', 'achTitanium',
         ],
         notifs: [
-            'siliconPane', 'titaniumPane',
+            'siliconPane',
         ],
     },
     missionAsteroid: {
@@ -2464,26 +2465,26 @@ const base = {
     boostAntimatter: { unlocked:true, build:{ counts:[1], costs:[{ id:'darkmatter', count:1, coeff:1.0 }] }, modOutput:{ id:'antimatter', mod:0.01 }, },
     /*------------------------------------------------------------------------*/
     scienceBoostEnergy:     { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:10000000, coeff:1.1 }] }, modOutput:{ id:'energy',     mod:0.01 }, },
-    scienceBoostPlasma:     { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:10000000, coeff:1.1 }] }, modOutput:{ id:'plasma',     mod:0.01 }, },
-    scienceBoostMeteorite:  { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:10000000, coeff:1.1 }] }, modOutput:{ id:'meteorite',  mod:0.01 }, },
-    scienceBoostCarbon:     { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:10000000, coeff:1.1 }] }, modOutput:{ id:'carbon',     mod:0.01 }, },
+    scienceBoostPlasma:     { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'plasma',     mod:0.01 }, },
+    scienceBoostMeteorite:  { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'meteorite',  mod:0.01 }, },
+    scienceBoostCarbon:     { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'carbon',     mod:0.01 }, },
     scienceBoostScience:    { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:10000000, coeff:1.1 }] }, modOutput:{ id:'science',    mod:0.01 }, },
-    scienceBoostOil:        { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:10000000, coeff:1.1 }] }, modOutput:{ id:'oil',        mod:0.01 }, },
-    scienceBoostFuel:       { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:10000000, coeff:1.1 }] }, modOutput:{ id:'fuel',       mod:0.01 }, },
-    scienceBoostMetal:      { unlocked:true,  build:{ counts:[1], costs:[{ id:'science', count:10000000, coeff:1.1 }] }, modOutput:{ id:'metal',      mod:0.01 }, },
-    scienceBoostGem:        { unlocked:true,  build:{ counts:[1], costs:[{ id:'science', count:10000000, coeff:1.1 }] }, modOutput:{ id:'gem',        mod:0.01 }, },
-    scienceBoostWood:       { unlocked:true,  build:{ counts:[1], costs:[{ id:'science', count:10000000, coeff:1.1 }] }, modOutput:{ id:'wood',       mod:0.01 }, },
-    scienceBoostSilicon:    { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:10000000, coeff:1.1 }] }, modOutput:{ id:'silicon',    mod:0.01 }, },
-    scienceBoostUranium:    { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:10000000, coeff:1.1 }] }, modOutput:{ id:'uranium',    mod:0.01 }, },
-    scienceBoostLava:       { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:10000000, coeff:1.1 }] }, modOutput:{ id:'lava',       mod:0.01 }, },
-    scienceBoostLunarite:   { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:10000000, coeff:1.1 }] }, modOutput:{ id:'lunarite',   mod:0.01 }, },
-    scienceBoostMethane:    { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:10000000, coeff:1.1 }] }, modOutput:{ id:'methane',    mod:0.01 }, },
-    scienceBoostTitanium:   { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:10000000, coeff:1.1 }] }, modOutput:{ id:'titanium',   mod:0.01 }, },
-    scienceBoostGold:       { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:10000000, coeff:1.1 }] }, modOutput:{ id:'gold',       mod:0.01 }, },
-    scienceBoostSilver:     { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:10000000, coeff:1.1 }] }, modOutput:{ id:'silver',     mod:0.01 }, },
-    scienceBoostHydrogen:   { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:10000000, coeff:1.1 }] }, modOutput:{ id:'hydrogen',   mod:0.01 }, },
-    scienceBoostHelium:     { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:10000000, coeff:1.1 }] }, modOutput:{ id:'helium',     mod:0.01 }, },
-    scienceBoostIce:        { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:10000000, coeff:1.1 }] }, modOutput:{ id:'ice',        mod:0.01 }, },
+    scienceBoostOil:        { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'oil',        mod:0.01 }, },
+    scienceBoostFuel:       { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'fuel',       mod:0.01 }, },
+    scienceBoostMetal:      { unlocked:true,  build:{ counts:[1], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'metal',      mod:0.01 }, },
+    scienceBoostGem:        { unlocked:true,  build:{ counts:[1], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'gem',        mod:0.01 }, },
+    scienceBoostWood:       { unlocked:true,  build:{ counts:[1], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'wood',       mod:0.01 }, },
+    scienceBoostSilicon:    { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'silicon',    mod:0.01 }, },
+    scienceBoostUranium:    { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'uranium',    mod:0.01 }, },
+    scienceBoostLava:       { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'lava',       mod:0.01 }, },
+    scienceBoostLunarite:   { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'lunarite',   mod:0.01 }, },
+    scienceBoostMethane:    { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'methane',    mod:0.01 }, },
+    scienceBoostTitanium:   { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'titanium',   mod:0.01 }, },
+    scienceBoostGold:       { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'gold',       mod:0.01 }, },
+    scienceBoostSilver:     { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'silver',     mod:0.01 }, },
+    scienceBoostHydrogen:   { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'hydrogen',   mod:0.01 }, },
+    scienceBoostHelium:     { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'helium',     mod:0.01 }, },
+    scienceBoostIce:        { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'ice',        mod:0.01 }, },
     scienceBoostAntimatter: { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:10000000, coeff:1.1 }] }, modOutput:{ id:'antimatter', mod:0.01 }, },
     /*------------------------------------------------------------------------*/
     ulUpgdStorage: { max:1, collapses:['ulUpgdStorage'], build:{ counts:[1], costs:[{ id:'ultrite', count:21, coeff:1.0 }] },
@@ -4189,23 +4190,42 @@ export const store = createStore({
             
             /* Resource production */
             
-            var temp = {}, i, j, item, can, costs
+            var temp = {}, i, j, item, can, costs, input
             state.resources.forEach(item => { temp[item.id] = { prod:0, count:item.count } })
             
             for (i = 0; i < state.producers.length; i++) {
                 item = state.producers[i]
                 
-                if ('inputs' in item)
-                    for (j = 0; j < item.inputs.length; j++) {
-                        var input = item.inputs[j]
-
-                        temp[input.id].prod -= input.count * input.mod * item.count
-                    }
+                can = true
                 
-                for (j = 0; j < item.outputs.length; j++) {
-                    var output = item.outputs[j]
+                if ('inputs' in item) {
+                    for (j = 0; j < item.inputs.length; j++) {
+                        input = item.inputs[j]
+                        
+                        let consuming = input.count * input.mod * item.count * delay
+                        if (consuming > state.items[input.id].count) {
+                            
+                            can = false
+                            break
+                        }
+                    }
+                }
+                
+                if (can) {
                     
-                    temp[output.id].prod += output.count * output.mod * item.count
+                    if ('inputs' in item) {
+                        for (j = 0; j < item.inputs.length; j++) {
+                            input = item.inputs[j]
+
+                            temp[input.id].prod -= input.count * input.mod * item.count
+                        }
+                    }
+                    
+                    for (j = 0; j < item.outputs.length; j++) {
+                        var output = item.outputs[j]
+                        
+                        temp[output.id].prod += output.count * output.mod * item.count
+                    }
                 }
             }
             
@@ -4253,10 +4273,13 @@ export const store = createStore({
                 delay /= 1000
                 state.lastUpgradeTimeMs = currentTimeMs
                 
+                item = state.items[state.autoStorageId]
                 for (i = 0; i < Math.floor(delay); i++) {
                     
                     can = true
-        
+                    
+                    if (item.upgrade >= item.storage.max) can = false
+                    
                     costs = getters.getUpgradeCosts(state.autoStorageId)
                     costs.forEach(cost => {
                         if (temp[cost.id].count - cost.count < 0) {
@@ -4267,7 +4290,6 @@ export const store = createStore({
 
                     if (can) {
                         
-                        item = state.items[state.autoStorageId]
                         item.upgrade += 1
                         
                         costs = getters.getUpgradeCosts(state.autoStorageId)
@@ -4362,6 +4384,7 @@ export const store = createStore({
                 })
             costs = null
             
+            /*
             let inputs = JSON.parse(JSON.stringify(getters.getItemInputs(id, count)))
             if (can == 0 && inputs) {
                 inputs.forEach(input => {
@@ -4372,6 +4395,7 @@ export const store = createStore({
                 })
             }
             inputs = null
+            */
             
             return can
         },
@@ -4451,7 +4475,9 @@ export const store = createStore({
             if (item.unlocked == false) return -2
             if (!('storage' in item)) return -3
             if (!('costs' in item.storage)) return -4
-
+            
+            if (item.upgrade >= item.storage.max) return -6
+            
             let can = 0
 
             let costs = getters.getUpgradeCosts(id)

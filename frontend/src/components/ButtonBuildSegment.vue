@@ -11,10 +11,14 @@ export default {
     props: [ 'itemId', 'count', 'priceFuel', 'btnText' ],
     computed: {
     
-        ...mapGetters([ 'getItemCount', 'getBuildMaxCount' ]),
+        ...mapGetters([ 'getItemCount', 'getBuildMaxCount', 'getItemMax' ]),
         
         can: function() {
         
+            let max = this.getItemMax(this.itemId)
+            let count = this.getItemCount(this.itemId)
+            if (max && count >= max) return -6
+            
             let segmentCount = this.getItemCount('segment')
             let segmentMaxBuild = this.getBuildMaxCount('segment')
             if (!segmentMaxBuild) return -1

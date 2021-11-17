@@ -15,7 +15,7 @@
         </template>
         <template v-if="storageUnlocked" v-slot:buttons>
         
-            <button v-if="upgradable" type="button" class="btn small" :class="{ 'active':activePane == paneId, 'disabled':can != 0 }" @click="upgrade({ id:itemId, count:1 })">
+            <button v-if="upgradable" type="button" class="btn small" :class="{ 'active':activePane == paneId, 'disabled text-muted':can != 0 }" @click="upgrade({ id:itemId, count:1 })">
                 <i class="fas fa-fw fa-arrow-alt-circle-up"></i>
             </button>
             

@@ -9,7 +9,7 @@ export default {
     
         format: function() {
             
-            let num = parseFloat(this.value)
+            let num = parseFloat(Math.abs(this.value))
             if (num > 0 && num < 1) return num.toFixed(1)
             
             const lookup = [

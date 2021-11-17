@@ -243,6 +243,21 @@
                     <template v-slot:col-1>
                         <div class="col">
                             <small class="me-2">{{ $t('lastestVersion') }}</small>
+                            <small class="text-light">v2.4.0 - 2021-11-17</small>
+                            <ul class="small mt-2 mb-0">
+                                <li>NEW: Add Science prod and count into Technologies dashboard</li>
+                                <li>CHANGE: Now resource upgrade storage has max limit</li>
+                                <li>CHANGE: Now Titanium is unlocked with Venus</li>
+                                <li>CHANGE: Prices on science boosts</li>
+                                <li>CHANGE: Display max limit on each buildable</li>
+                                <li>FIX: Titanium science boost</li>
+                                <li>FIX: number formatting</li>
+                            </ul>
+                        </div>
+                    </template>
+                    <template v-slot:col-2>
+                        <div class="col">
+                            <small class="me-2">{{ $t('previousVersion') }}</small>
                             <small class="text-light">v2.3.0 - 2021-11-16</small>
                             <ul class="small mt-2 mb-0">
                                 <li>NEW: "Next" button to build machine to next achievement</li>
@@ -252,17 +267,6 @@
                                 <li>NEW: In "Technologies" dashboard, be able to convert science into resource production boost</li>
                                 <li>FIX: Dyson build buttons</li>
                                 <li>FIX: Rebirth modifiers</li>
-                            </ul>
-                        </div>
-                    </template>
-                    <template v-slot:col-2>
-                        <div class="col">
-                            <small class="me-2">{{ $t('previousVersion') }}</small>
-                            <small class="text-light">v2.2.1 - 2021-11-15</small>
-                            <ul class="small mt-2 mb-0">
-                                <li>FIX: Rebirth</li>
-                                <li>FIX: resource production with old timestamp</li>
-                                <li>FIX: resource conversion</li>
                             </ul>
                         </div>
                         <div class="col">
@@ -1188,6 +1192,14 @@
             </page-pane>
             
             <page-pane id="technologiesPane" name="sidebar-item-technologies" icon="technologies.png">
+                <template v-slot:titleBar>
+                    <div class="col-auto d-flex align-items-center">
+                        <img :src="require(`../assets/icons/science.png`).default" width="14" height="14" :alt="$t('science')" />
+                    </div>
+                    <div class="col-auto">
+                        <item-count itemId="science" />
+                    </div>
+                </template>
                 <card id="scienceBoostsCard" name="scienceBoostsCardTitle">
                     <template v-slot:col-1>
                         <div class="col">
@@ -1202,13 +1214,13 @@
                                 <line-science-boost itemId="scienceBoostMetal" icon="metal.png" name="metal" />
                                 <line-science-boost itemId="scienceBoostGem" icon="gem.png" name="gem" />
                                 <line-science-boost itemId="scienceBoostWood" icon="wood.png" name="wood" />
+                                <line-science-boost itemId="scienceBoostSilicon" icon="silicon.png" name="silicon" />
                             </div>
                         </div>
                     </template>
                     <template v-slot:col-2>
                         <div class="col">
                             <div class="row row-cols-1 g-2">
-                                <line-science-boost itemId="scienceBoostSilicon" icon="silicon.png" name="silicon" />
                                 <line-science-boost itemId="scienceBoostUranium" icon="uranium.png" name="uranium" />
                                 <line-science-boost itemId="scienceBoostLava" icon="lava.png" name="lava" />
                                 <line-science-boost itemId="scienceBoostLunarite" icon="lunarite.png" name="lunarite" />
@@ -1227,158 +1239,94 @@
                 <card id="technologiesCard" name="technologiesCardTitle" body="true">
                     <template v-slot:body>
                         <div class="col">
-                            <div class="row row-cols-1 g-1">
+                            <div class="row row-cols-2 gy-2 gx-3">
                                 <line-technology itemId="techPlasmaT2" level="T2" name="plasma" />
-                                <line-technology itemId="techPlasmaT3" level="T3" name="plasma" />
-                                <line-technology itemId="techPlasmaT4" level="T4" name="plasma" />
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="row row-cols-1 g-1">
                                 <line-technology itemId="techMeteoriteT2" level="T2" name="meteorite" />
-                                <line-technology itemId="techMeteoriteT3" level="T3" name="meteorite" />
-                                <line-technology itemId="techMeteoriteT4" level="T4" name="meteorite" />
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="row row-cols-1 g-1">
                                 <line-technology itemId="techCarbonT2" level="T2" name="carbon" />
-                                <line-technology itemId="techCarbonT3" level="T3" name="carbon" />
-                                <line-technology itemId="techCarbonT4" level="T4" name="carbon" />
-                                <line-technology itemId="techCarbonT5" level="T5" name="carbon" />
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="row row-cols-1 g-1">
                                 <line-technology itemId="techFuelT2" level="T2" name="fuel" />
-                                <line-technology itemId="techFuelT3" level="T3" name="fuel" />
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="row row-cols-1 g-1">
                                 <line-technology itemId="techScienceT2" level="T2" name="science" />
-                                <line-technology itemId="techScienceT3" level="T3" name="science" />
-                                <line-technology itemId="techScienceT4" level="T4" name="science" />
-                                <line-technology itemId="techScienceT5" level="T5" name="science" />
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="row row-cols-1 g-1">
                                 <line-technology itemId="techOilT2" level="T2" name="oil" />
-                                <line-technology itemId="techOilT3" level="T3" name="oil" />
-                                <line-technology itemId="techOilT4" level="T4" name="oil" />
-                                <line-technology itemId="techOilT5" level="T5" name="oil" />
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="row row-cols-1 g-1">
                                 <line-technology itemId="techMetalT2" level="T2" name="metal" />
-                                <line-technology itemId="techMetalT3" level="T3" name="metal" />
-                                <line-technology itemId="techMetalT4" level="T4" name="metal" />
-                                <line-technology itemId="techMetalT5" level="T5" name="metal" />
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="row row-cols-1 g-1">
                                 <line-technology itemId="techGemT2" level="T2" name="gem" />
-                                <line-technology itemId="techGemT3" level="T3" name="gem" />
-                                <line-technology itemId="techGemT4" level="T4" name="gem" />
-                                <line-technology itemId="techGemT5" level="T5" name="gem" />
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="row row-cols-1 g-1">
                                 <line-technology itemId="techWoodT2" level="T2" name="wood" />
-                                <line-technology itemId="techWoodT3" level="T3" name="wood" />
-                                <line-technology itemId="techWoodT4" level="T4" name="wood" />
-                                <line-technology itemId="techWoodT5" level="T5" name="wood" />
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="row row-cols-1 g-1">
                                 <line-technology itemId="techSiliconT2" level="T2" name="silicon" />
-                                <line-technology itemId="techSiliconT3" level="T3" name="silicon" />
-                                <line-technology itemId="techSiliconT4" level="T4" name="silicon" />
-                                <line-technology itemId="techSiliconT5" level="T5" name="silicon" />
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="row row-cols-1 g-1">
                                 <line-technology itemId="techUraniumT2" level="T2" name="uranium" />
-                                <line-technology itemId="techUraniumT3" level="T3" name="uranium" />
-                                <line-technology itemId="techUraniumT4" level="T4" name="uranium" />
-                                <line-technology itemId="techUraniumT5" level="T5" name="uranium" />
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="row row-cols-1 g-1">
                                 <line-technology itemId="techLavaT2" level="T2" name="lava" />
-                                <line-technology itemId="techLavaT3" level="T3" name="lava" />
-                                <line-technology itemId="techLavaT4" level="T4" name="lava" />
-                                <line-technology itemId="techLavaT5" level="T5" name="lava" />
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="row row-cols-1 g-1">
                                 <line-technology itemId="techLunariteT2" level="T2" name="lunarite" />
-                                <line-technology itemId="techLunariteT3" level="T3" name="lunarite" />
-                                <line-technology itemId="techLunariteT4" level="T4" name="lunarite" />
-                                <line-technology itemId="techLunariteT5" level="T5" name="lunarite" />
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="row row-cols-1 g-1">
                                 <line-technology itemId="techMethaneT2" level="T2" name="methane" />
-                                <line-technology itemId="techMethaneT3" level="T3" name="methane" />
-                                <line-technology itemId="techMethaneT4" level="T4" name="methane" />
-                                <line-technology itemId="techMethaneT5" level="T5" name="methane" />
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="row row-cols-1 g-1">
                                 <line-technology itemId="techTitaniumT2" level="T2" name="titanium" />
-                                <line-technology itemId="techTitaniumT3" level="T3" name="titanium" />
-                                <line-technology itemId="techTitaniumT4" level="T4" name="titanium" />
-                                <line-technology itemId="techTitaniumT4" level="T5" name="titanium" />
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="row row-cols-1 g-1">
                                 <line-technology itemId="techGoldT2" level="T2" name="gold" />
-                                <line-technology itemId="techGoldT3" level="T3" name="gold" />
-                                <line-technology itemId="techGoldT4" level="T4" name="gold" />
-                                <line-technology itemId="techGoldT5" level="T5" name="gold" />
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="row row-cols-1 g-1">
                                 <line-technology itemId="techSilverT2" level="T2" name="silver" />
-                                <line-technology itemId="techSilverT3" level="T3" name="silver" />
-                                <line-technology itemId="techSilverT4" level="T4" name="silver" />
-                                <line-technology itemId="techSilverT5" level="T5" name="silver" />
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="row row-cols-1 g-1">
                                 <line-technology itemId="techHydrogenT2" level="T2" name="hydrogen" />
-                                <line-technology itemId="techHydrogenT3" level="T3" name="hydrogen" />
-                                <line-technology itemId="techHydrogenT4" level="T4" name="hydrogen" />
-                                <line-technology itemId="techHydrogenT5" level="T5" name="hydrogen" />
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="row row-cols-1 g-1">
                                 <line-technology itemId="techHeliumT2" level="T2" name="helium" />
-                                <line-technology itemId="techHeliumT3" level="T3" name="helium" />
-                                <line-technology itemId="techHeliumT4" level="T4" name="helium" />
-                                <line-technology itemId="techHeliumT5" level="T5" name="helium" />
+                                <line-technology itemId="techIceT2" level="T2" name="ice" />
                             </div>
                         </div>
                         <div class="col">
-                            <div class="row row-cols-1 g-1">
-                                <line-technology itemId="techIceT2" level="T2" name="ice" />
+                            <div class="row row-cols-2 gy-2 gx-3">
+                                <line-technology itemId="techPlasmaT3" level="T3" name="plasma" />
+                                <line-technology itemId="techMeteoriteT3" level="T3" name="meteorite" />
+                                <line-technology itemId="techCarbonT3" level="T3" name="carbon" />
+                                <line-technology itemId="techFuelT3" level="T3" name="fuel" />
+                                <line-technology itemId="techScienceT3" level="T3" name="science" />
+                                <line-technology itemId="techOilT3" level="T3" name="oil" />
+                                <line-technology itemId="techMetalT3" level="T3" name="metal" />
+                                <line-technology itemId="techGemT3" level="T3" name="gem" />
+                                <line-technology itemId="techWoodT3" level="T3" name="wood" />
+                                <line-technology itemId="techSiliconT3" level="T3" name="silicon" />
+                                <line-technology itemId="techUraniumT3" level="T3" name="uranium" />
+                                <line-technology itemId="techLavaT3" level="T3" name="lava" />
+                                <line-technology itemId="techLunariteT3" level="T3" name="lunarite" />
+                                <line-technology itemId="techMethaneT3" level="T3" name="methane" />
+                                <line-technology itemId="techTitaniumT3" level="T3" name="titanium" />
+                                <line-technology itemId="techGoldT3" level="T3" name="gold" />
+                                <line-technology itemId="techSilverT3" level="T3" name="silver" />
+                                <line-technology itemId="techHydrogenT3" level="T3" name="hydrogen" />
+                                <line-technology itemId="techHeliumT3" level="T3" name="helium" />
                                 <line-technology itemId="techIceT3" level="T3" name="ice" />
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="row row-cols-2 gy-2 gx-3">
+                                <line-technology itemId="techPlasmaT4" level="T4" name="plasma" />
+                                <line-technology itemId="techCarbonT4" level="T4" name="carbon" />
+                                <line-technology itemId="techMeteoriteT4" level="T4" name="meteorite" />
+                                <line-technology itemId="techScienceT4" level="T4" name="science" />
+                                <line-technology itemId="techOilT4" level="T4" name="oil" />
+                                <line-technology itemId="techMetalT4" level="T4" name="metal" />
+                                <line-technology itemId="techGemT4" level="T4" name="gem" />
+                                <line-technology itemId="techWoodT4" level="T4" name="wood" />
+                                <line-technology itemId="techSiliconT4" level="T4" name="silicon" />
+                                <line-technology itemId="techUraniumT4" level="T4" name="uranium" />
+                                <line-technology itemId="techLavaT4" level="T4" name="lava" />
+                                <line-technology itemId="techLunariteT4" level="T4" name="lunarite" />
+                                <line-technology itemId="techMethaneT4" level="T4" name="methane" />
+                                <line-technology itemId="techTitaniumT4" level="T4" name="titanium" />
+                                <line-technology itemId="techGoldT4" level="T4" name="gold" />
+                                <line-technology itemId="techSilverT4" level="T4" name="silver" />
+                                <line-technology itemId="techHydrogenT4" level="T4" name="hydrogen" />
+                                <line-technology itemId="techHeliumT4" level="T4" name="helium" />
                                 <line-technology itemId="techIceT4" level="T4" name="ice" />
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="row row-cols-2 gy-2 gx-3">
+                                <line-technology itemId="techCarbonT5" level="T5" name="carbon" />
+                                <line-technology itemId="techScienceT5" level="T5" name="science" />
+                                <line-technology itemId="techOilT5" level="T5" name="oil" />
+                                <line-technology itemId="techMetalT5" level="T5" name="metal" />
+                                <line-technology itemId="techGemT5" level="T5" name="gem" />
+                                <line-technology itemId="techWoodT5" level="T5" name="wood" />
+                                <line-technology itemId="techSiliconT5" level="T5" name="silicon" />
+                                <line-technology itemId="techUraniumT5" level="T5" name="uranium" />
+                                <line-technology itemId="techLavaT5" level="T5" name="lava" />
+                                <line-technology itemId="techLunariteT5" level="T5" name="lunarite" />
+                                <line-technology itemId="techMethaneT5" level="T5" name="methane" />
+                                <line-technology itemId="techTitaniumT5" level="T5" name="titanium" />
+                                <line-technology itemId="techGoldT5" level="T5" name="gold" />
+                                <line-technology itemId="techSilverT5" level="T5" name="silver" />
+                                <line-technology itemId="techHydrogenT5" level="T5" name="hydrogen" />
+                                <line-technology itemId="techHeliumT5" level="T5" name="helium" />
                                 <line-technology itemId="techIceT5" level="T5" name="ice" />
                             </div>
                         </div>
@@ -2009,6 +1957,8 @@ import CardProduction from './CardProduction.vue'
 import FormatNumber from './FormatNumber.vue'
 import FormatTime from './FormatTime.vue'
 
+import ItemCount from './ItemCount.vue'
+
 import LineAch from './LineAch.vue'
 import LineCost from './LineCost.vue'
 import LineProgress from './LineProgress.vue'
@@ -2046,6 +1996,8 @@ export default {
         
         'format-number': FormatNumber,
         'format-time': FormatTime,
+        
+        'item-count': ItemCount,
         
         'line-ach': LineAch,
         'line-cost': LineCost,

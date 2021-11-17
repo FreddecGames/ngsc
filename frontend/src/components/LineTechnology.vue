@@ -3,26 +3,13 @@
         <div class="row align-items-center gx-2">
             <div class="col text-truncate">
                 <span class="badge text-uppercase text-center me-1">{{ $t(level) }}</span>
-                <small>{{ $t(name) }}</small>
+                <span>{{ $t(name) }}</span>
             </div>
             <div class="col-4">
                 <line-cost v-if="cost" :cost="cost" />
             </div>
             <div class="col-auto">
                 <button-build :itemId="itemId" count="1" btnText="button-research" class="lh-1" />
-            </div>
-        </div>
-    </div>
-    <div v-if="unlocked && done" class="col">
-        <div class="row align-items-center gx-2">
-            <div class="col text-truncate">
-                <span class="badge text-uppercase text-center me-1">{{ $t(level) }}</span>
-                <small>{{ $t(name) }}</small>
-            </div>
-            <div class="col-auto">
-                <button type="button" class="btn btn-primary disabled py-1 small">
-                    <i class="fas fa-fw fa-check text-success"></i>
-                </button>
             </div>
         </div>
     </div>

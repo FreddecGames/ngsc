@@ -6,9 +6,10 @@
                 <span class="badge">T{{ level }}</span>
             </div>
             
-            <div v-if="!max || max > 1" class="col-auto">
+            <div v-if="!max || (max && max > 1 && count < max)" class="col-auto">
                 <small class="me-1">x</small>
                 <item-count :itemId="itemId" />
+                <small v-if="max > 1" class="ms-1 text-normal">/{{ max }}</small>
             </div>
             
             <div v-if="max && count >= max" class="col-auto">

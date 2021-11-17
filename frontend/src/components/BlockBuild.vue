@@ -114,6 +114,10 @@ export default {
             selectedCount: 1,
         }
     },
+    created() {
+    
+        if (this.count >= this.max) this.selectedCount = this.max
+    },
     computed: {
     
         ...mapGetters([ 'getBuildCounts', 'getBuildMaxCount', 'getBuildCosts', 'getItemInputs', 'getItemOutputs', 'getItemStats', 'getItemMax', 'getItemCount', 'getBuildNextCount' ]),
