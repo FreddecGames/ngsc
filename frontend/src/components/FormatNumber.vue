@@ -25,6 +25,7 @@ export default {
             const rx = /\.0+$|(\.[0-9]*[1-9])0+$/
             
             let item = lookup.slice().reverse().find(function(item) { return num >= item.value })
+            if (this.value < 0) num *= -1
             return (item ? (num / item.value).toPrecision(4).replace(rx, '$1') + item.symbol : '0')
         }
     },
