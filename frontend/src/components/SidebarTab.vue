@@ -1,6 +1,6 @@
 <template>
     <li class="nav-item col" role="presentation">
-        <button class="nav-link" :class="{ 'active':activeTab == paneId }" data-bs-toggle="tab" :data-bs-target="'#' + paneId" type="button" role="tab" :aria-controls="paneId" @click="setActiveTab(paneId)">
+        <button class="nav-link px-0" :class="{ 'active':activeTab == paneId }" data-bs-toggle="tab" :data-bs-target="'#' + paneId" type="button" role="tab" :aria-controls="paneId" @click="setActiveTab(paneId)">
             <div class="h6 position-relative">
                 <i v-if="notified" class="small fas fa-fw fa-certificate text-success" style="position:absolute; top:-.25rem;"></i>
                 <i :class="'fas fa-fw fa-' + icon"></i>

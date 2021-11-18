@@ -2716,7 +2716,7 @@ const moduleAchievement = {
 
                 'achEnergyT1', 'achEnergyT2', 'achEnergyT3', 'achEnergyT4', 'achEnergyT5', 'achEnergyT6',
                 'achPlasmaT1', 'achPlasmaT2', 'achPlasmaT3', 'achPlasmaT4',
-                'achMeteoriteT1', 'achMeteoriteT3', 'achMeteoriteT4',
+                'achMeteoriteT1', 'achMeteoriteT2', 'achMeteoriteT3', 'achMeteoriteT4',
                 'achCarbonT1', 'achCarbonT2', 'achCarbonT3', 'achCarbonT4', 'achCarbonT5',
                 'achScienceT1', 'achScienceT2', 'achScienceT3', 'achScienceT4', 'achScienceT5',
                 'achOilT1', 'achOilT2', 'achOilT3', 'achOilT4', 'achOilT5',
