@@ -209,7 +209,7 @@
                                 <div class="col"><small>{{ $t('infoCardText1') }}</small></div>
                                 <div class="col">
                                     <small class="me-2">{{ $t('infoCardText2') }}</small>
-                                    <a class="small" href="https://sparticle999.github.io/spacecompany" target="_blank">https://sparticle999.github.io/spacecompany</a>
+                                    <a class="small" href="https://sparticle999.github.io/SpaceCompany/" target="_blank">https://sparticle999.github.io/SpaceCompany/</a>
                                 </div>
                                 <div class="col"><h6 class="text-light">{{ $t('infoCardText3') }}</h6></div>
                                 <div class="col"><h6 class="text-light">{{ $t('infoCardText4') }}</h6></div>
@@ -243,25 +243,22 @@
                     <template v-slot:col-1>
                         <div class="col">
                             <small class="me-2">{{ $t('lastestVersion') }}</small>
-                            <small class="text-light">v2.4.1 - 2021-11-18</small>
+                            <small class="text-light">v2.5.0 - 2021-11-19</small>
                             <ul class="small mt-2 mb-0">
-                                <li>FIX: minus sign in number formatting</li>
-                                <li>FIX: meteorite T2 achievement</li>
+                                <li>NEW: effectiveness factor on each machine</li>
+                                <li>CHANGE: resource production can't be negative thank to effectiveness factor</li>
+                                <li>FIX: offline gains thanks to effectiveness factor</li>
+                                <li>FIX: link to Sparticle's game</li>
                             </ul>
                         </div>
                     </template>
                     <template v-slot:col-2>
                         <div class="col">
                             <small class="me-2">{{ $t('previousVersion') }}</small>
-                            <small class="text-light">v2.4.0 - 2021-11-17</small>
+                            <small class="text-light">v2.4.1 - 2021-11-18</small>
                             <ul class="small mt-2 mb-0">
-                                <li>NEW: Add Science prod and count into Technologies dashboard</li>
-                                <li>CHANGE: Now resource upgrade storage has max limit</li>
-                                <li>CHANGE: Now Titanium is unlocked with Venus</li>
-                                <li>CHANGE: Prices on science boosts</li>
-                                <li>CHANGE: Display max limit on each buildable</li>
-                                <li>FIX: Titanium science boost</li>
-                                <li>FIX: number formatting</li>
+                                <li>FIX: minus sign in number formatting</li>
+                                <li>FIX: meteorite T2 achievement</li>
                             </ul>
                         </div>
                         <div class="col">

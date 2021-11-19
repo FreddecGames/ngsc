@@ -2859,6 +2859,7 @@ export const store = createStore({
         getItemUpgrade: (state) => (id) => { return state.items[id].upgrade },
         getItemStatus: (state) => (id) => { return state.items[id].status },
         getItemDistance: (state) => (id) => { return state.items[id].distance },
+        getItemEffectiveness: (state) => (id) => { return state.items[id].effectiveness },
         
         getItemRange: (state) => (id) => {
             if (!('range' in state.items[id])) return null
@@ -3097,23 +3098,15 @@ export const store = createStore({
             return true
         },
         
-        canDestroy: (state, getters) => (id, count) => {
+        canDestroy: (state) => (id, count) => {
             
             let item = state.items[id]
             if (item.unlocked == false) return false
             if (!('destroyable' in item)) return false
             if (item.count <= 0) return false
+            if ((item.count - count) < 0) return false
             
             let can = true
-            
-            item.outputs.forEach(output => {
-                
-                if (getters.getItemProd(output.id) - (output.count * output.mod * count) < 0) {
-                    can = false
-                    return
-                }
-            })
-            
             return can
         },
         
@@ -3320,6 +3313,7 @@ export const store = createStore({
                     if ('outputs' in item) {
                         if (item.id != 'dysonT1' && item.id != 'dysonT2' && item.id != 'dysonT3') item.max = 250
                         item.outputs.forEach(output => { output.mod = 1.0 })
+                        item.effectiveness = 1.0
                         state.producers.push(item)
                     }
                     
@@ -4147,14 +4141,18 @@ export const store = createStore({
                     for (j in item.inputs) {
                         input = item.inputs[j]
                         
-                        if (input.id == id) prod -= input.count * input.mod * item.count
+                        if (input.id == id) {
+                            prod -= (input.count * input.mod * item.count) / item.effectiveness
+                        }
                     }
                 }
                 
                 for (j in item.outputs) {
                     output = item.outputs[j]
                     
-                    if (output.id == id) prod += output.count * output.mod * item.count
+                    if (output.id == id) {
+                        prod += (output.count * output.mod * item.count) / item.effectiveness
+                    }
                 }
             }
             
@@ -4170,7 +4168,7 @@ export const store = createStore({
             })
         },        
         /*--------------------------------------------------------------------*/
-        mainLoop({ state, getters }) {
+        mainLoop({ state, getters, dispatch }) {
             
             var currentTimeMs = new Date().getTime()
             
@@ -4191,22 +4189,57 @@ export const store = createStore({
             /* Resource production */
             
             var temp = {}, i, j, item, can, costs, input
-            state.resources.forEach(item => { temp[item.id] = { prod:0, count:item.count } })
+            state.resources.forEach(item => { temp[item.id] = { prod:0, count:item.count, rawProduction:0, rawConsumption:0, coeff:1.0 } })
+            
+            for (i = 0; i < state.producers.length; i++) {
+                item = state.producers[i]
+                
+                if ('inputs' in item) {
+                    item.inputs.forEach(input => {
+                        temp[input.id].rawConsumption += input.count * input.mod * item.count
+                    })
+                }
+                
+                item.outputs.forEach(output => {
+                    temp[output.id].rawProduction += output.count * output.mod * item.count
+                })
+            }
+            
+            for (i = 0; i < state.resources.length; i++) {
+                item = state.resources[i]
+                
+                if (temp[item.id].rawConsumption > temp[item.id].rawProduction) temp[item.id].coeff = temp[item.id].rawConsumption / temp[item.id].rawProduction                
+            }
             
             for (i = 0; i < state.producers.length; i++) {
                 item = state.producers[i]
                 
                 can = true
                 
-                if ('inputs' in item) {
+                let coeff = 1.0
+                if (item.count > 0 && 'inputs' in item) {
                     for (j = 0; j < item.inputs.length; j++) {
                         input = item.inputs[j]
                         
-                        let consuming = input.count * input.mod * item.count * delay
-                        if (consuming > state.items[input.id].count) {
-                            
-                            can = false
-                            break
+                        if (temp[input.id].coeff > coeff) coeff = temp[input.id].coeff
+                    }
+                }
+                
+                if (item.effectiveness != coeff) {
+                    
+                    item.effectiveness = coeff
+                    
+                    if (item.count > 0 && 'inputs' in item) {
+                        for (j = 0; j < item.inputs.length; j++) {
+                            input = item.inputs[j]                            
+                            dispatch('updateItemProd', input.id)
+                        }
+                    }
+                    
+                    if (item.count > 0 && 'outputs' in item) {
+                        for (j = 0; j < item.outputs.length; j++) {
+                            output = item.outputs[j]                            
+                            dispatch('updateItemProd', output.id)
                         }
                     }
                 }
@@ -4217,14 +4250,14 @@ export const store = createStore({
                         for (j = 0; j < item.inputs.length; j++) {
                             input = item.inputs[j]
 
-                            temp[input.id].prod -= input.count * input.mod * item.count
+                            temp[input.id].prod -= (input.count * input.mod * item.count) / coeff
                         }
                     }
                     
                     for (j = 0; j < item.outputs.length; j++) {
                         var output = item.outputs[j]
                         
-                        temp[output.id].prod += output.count * output.mod * item.count
+                        temp[output.id].prod += (output.count * output.mod * item.count) / coeff
                     }
                 }
             }
@@ -4383,19 +4416,6 @@ export const store = createStore({
                     }
                 })
             costs = null
-            
-            /*
-            let inputs = JSON.parse(JSON.stringify(getters.getItemInputs(id, count)))
-            if (can == 0 && inputs) {
-                inputs.forEach(input => {
-                    if (getters.getItemProd(input.id) - input.count < 0) {
-                        can = -2
-                        return
-                    }
-                })
-            }
-            inputs = null
-            */
             
             return can
         },

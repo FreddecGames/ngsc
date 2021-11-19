@@ -31,6 +31,19 @@
             </div>
         </div>
         
+        <div v-if="outputs || inputs" class="pt-1">
+            <div class="row g-1">
+                <div class="col">
+                    <small class="text-muted">{{ $t('value-effectiveness') }}</small>
+                </div>
+                <div class="col-auto">
+                    <div class="row gx-3">
+                        <small :class="{ 'text-light':effectiveness <= 1, 'text-danger':effectiveness > 1 }">{{ Math.round(100 / effectiveness) }}%</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <div v-if="stats" class="pt-2">
             <div class="row g-1">
                 <div class="col">
@@ -120,7 +133,9 @@ export default {
     },
     computed: {
     
-        ...mapGetters([ 'getBuildCounts', 'getBuildMaxCount', 'getBuildCosts', 'getItemInputs', 'getItemOutputs', 'getItemStats', 'getItemMax', 'getItemCount', 'getBuildNextCount' ]),
+        ...mapGetters([ 'getBuildCounts', 'getBuildMaxCount', 'getBuildCosts', 'getItemInputs', 'getItemOutputs', 'getItemStats', 'getItemMax', 'getItemCount', 'getBuildNextCount', 'getItemEffectiveness' ]),
+        
+        effectiveness: function() { return this.getItemEffectiveness(this.itemId) },
         
         max: function() { return this.getItemMax(this.itemId) },
         count: function() { return this.getItemCount(this.itemId) },
