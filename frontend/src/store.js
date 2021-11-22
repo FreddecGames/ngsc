@@ -3019,7 +3019,11 @@ export const store = createStore({
             else return null
         },
         
-        getBuildCounts: (state) => (id) => { return state.items[id].build.counts },
+        getBuildCounts: (state) => (id) => {
+            if (id == 'segment') return [1, 10, 50, 100, 250]
+            return state.items[id].build.counts
+        },
+        
         getBuildMaxCount: (state) => (id) => { return state.items[id].maxBuildCount },
         
         getBuildNextCount: (state) => (id) => {
