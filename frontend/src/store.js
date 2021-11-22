@@ -850,7 +850,7 @@ const base = {
     techIceT5: { max:1, maxBuildCount:1, build:{ counts:[1], costs:[{ id:'science', count:125000, coeff:1.0 }] }, unlocks:['iceT5', 'achIceT5'], hides:['techIceT5Card'] },
     /*------------------------------------------------------------------------*/
     segment: {
-        build:{ counts:[1, 5, 25, 100], multi:true, costs:[{ id:'titanium', count:300000, coeff:1.02 }, { id:'gold', count:100000, coeff:1.02 }, { id:'silicon', count:200000, coeff:1.02 }, { id:'meteorite', count:1000, coeff:1.02 }, { id:'ice', count:100000, coeff:1.02 }] },
+        build:{ counts:[1, 10, 50, 100, 250], multi:true, costs:[{ id:'titanium', count:300000, coeff:1.02 }, { id:'gold', count:100000, coeff:1.02 }, { id:'silicon', count:200000, coeff:1.02 }, { id:'meteorite', count:1000, coeff:1.02 }, { id:'ice', count:100000, coeff:1.02 }] },
         prod:0,
     },
     dysonT1: {
@@ -3046,8 +3046,11 @@ export const store = createStore({
             
             if (count == 1) ret = state.items[id].costs[0]
             else if (count == 5) ret = state.items[id].costs[1]
+            else if (count == 10) ret = state.items[id].costs[6]
             else if (count == 25) ret = state.items[id].costs[2]
+            else if (count == 50) ret = state.items[id].costs[7]
             else if (count == 100) ret = state.items[id].costs[3]
+            else if (count == 250) ret = state.items[id].costs[8]
             else if (count == getters.getBuildMaxCount(id)) ret = state.items[id].costs[4]
             else if (count == getters.getBuildNextCount(id)) ret = state.items[id].costs[5]
             else {
@@ -3079,8 +3082,11 @@ export const store = createStore({
             
             if (count == 1) ret = state.items[id].canBuild[0]
             else if (count == 5) ret = state.items[id].canBuild[1]
+            else if (count == 10) ret = state.items[id].canBuild[6]
             else if (count == 25) ret = state.items[id].canBuild[2]
+            else if (count == 50) ret = state.items[id].canBuild[7]
             else if (count == 100) ret = state.items[id].canBuild[3]
+            else if (count == 250) ret = state.items[id].canBuild[8]
             else if (count == getters.getBuildMaxCount(id)) ret = state.items[id].canBuild[4]
             else if (count == getters.getBuildNextCount(id)) ret = state.items[id].canBuild[5]
             else if (count <= getters.getBuildMaxCount(id)) ret = 0
@@ -4320,7 +4326,10 @@ export const store = createStore({
                             return
                         }
                     })
-
+                    
+                    let storage = getters.getItemStorage(state.autoStorageId)
+                    if (item.count < storage) can = false
+                    
                     if (can) {
                         
                         item.upgrade += 1
@@ -4626,6 +4635,24 @@ export const store = createStore({
                     costs = null
                 })
             }
+            
+            if (state.items[id].id == 'segment') {
+                dispatch('computeBuildCosts', { id:id, count:10 }).then(costs => {
+                    let compare = costCompare(costs, state.items[id].costs[6])
+                    if (compare == false) { state.items[id].costs[6] = JSON.parse(JSON.stringify(costs)) }
+                    costs = null
+                })
+                dispatch('computeBuildCosts', { id:id, count:50 }).then(costs => {
+                    let compare = costCompare(costs, state.items[id].costs[7])
+                    if (compare == false) { state.items[id].costs[7] = JSON.parse(JSON.stringify(costs)) }
+                    costs = null
+                })
+                dispatch('computeBuildCosts', { id:id, count:250 }).then(costs => {
+                    let compare = costCompare(costs, state.items[id].costs[8])
+                    if (compare == false) { state.items[id].costs[8] = JSON.parse(JSON.stringify(costs)) }
+                    costs = null
+                })
+            }
         },
         
         updateCanBuild({ state, getters, dispatch }, id) {
@@ -4649,6 +4676,18 @@ export const store = createStore({
             if ('next' in state.items[id].build) {
                 dispatch('computeCanBuild', { id:id, count:getters.getBuildNextCount(id) }).then(can => {
                     if (can != state.items[id].canBuild[5]) state.items[id].canBuild[5] = can
+                })
+            }
+            
+            if (state.items[id].id == 'segment') {
+                dispatch('computeCanBuild', { id:id, count:10 }).then(can => {
+                    if (can != state.items[id].canBuild[6]) state.items[id].canBuild[6] = can
+                })
+                dispatch('computeCanBuild', { id:id, count:50 }).then(can => {
+                    if (can != state.items[id].canBuild[7]) state.items[id].canBuild[7] = can
+                })
+                dispatch('computeCanBuild', { id:id, count:250 }).then(can => {
+                    if (can != state.items[id].canBuild[8]) state.items[id].canBuild[8] = can
                 })
             }
         },
@@ -4691,7 +4730,7 @@ export const store = createStore({
             }
         },
         
-        convert({ state, getters }, payload) {
+        convert({ state, getters, dispatch }, payload) {
             
             let can = getters['conversion/can'](payload.id)
             if (can == 0) {
@@ -4703,6 +4742,8 @@ export const store = createStore({
                 
                 item.count += payload.count
                 item.count = Math.min(item.count, getters.getItemStorage(payload.id))
+                
+                dispatch('conversion/refresh')
             }
         },
         

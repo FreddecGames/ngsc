@@ -76,17 +76,15 @@
                         <input type="radio" class="btn-check" :id="'build-' + itemId + '-' + count" autocomplete="off" v-model="selectedCount" :value="count" />
                         <label class="btn btn-badge px-1" :for="'build-' + itemId + '-' + count">
                             +{{ count }}
-                            <small v-if="count == maxCount" class="ms-1">Max</small>
-                            <small v-if="count == nextCount" class="ms-1">Next</small>
                         </label>
                     </div>
-                    <div v-if="nextCount > 0 && !counts.includes(nextCount)" class="col-auto">
-                        <input type="radio" class="btn-check" :id="'build-' + itemId + '-next'" autocomplete="off" v-model="selectedCount" :value="nextCount" />
-                        <label class="btn btn-badge px-1" :for="'build-' + itemId + '-next'">+{{ nextCount }} <small class="ms-1">Next</small></label>
+                    <div v-if="nextCount >= 0" class="col-auto">
+                        <input type="radio" class="btn-check" :id="'build-' + itemId + '-next'" autocomplete="off" v-model="selectedCount" :value="'next'" />
+                        <label class="btn btn-badge px-1" :for="'build-' + itemId + '-next'">Next <small class="ms-1">+{{ nextCount }}</small></label>
                     </div>
-                    <div v-if="maxCount > 0 && !counts.includes(maxCount)" class="col-auto">
-                        <input type="radio" class="btn-check" :id="'build-' + itemId + '-max'" autocomplete="off" v-model="selectedCount" :value="maxCount" />
-                        <label class="btn btn-badge px-1" :for="'build-' + itemId + '-max'">+{{ maxCount }} <small class="ms-1">Max</small></label>
+                    <div v-if="maxCount >= 0" class="col-auto">
+                        <input type="radio" class="btn-check" :id="'build-' + itemId + '-max'" autocomplete="off" v-model="selectedCount" :value="'max'" />
+                        <label class="btn btn-badge px-1" :for="'build-' + itemId + '-max'">Max <small class="ms-1">+{{ maxCount }}</small></label>
                     </div>
                 </div>
             </div>
@@ -94,7 +92,7 @@
             <slot />
             
             <div class="col-auto">
-                <button-build :itemId="itemId" :count="selectedCount" :btnText="btnText" @click="onBuild()" />
+                <button-build :itemId="itemId" :count="realCount" :btnText="btnText" />
             </div>
             
         </div>
@@ -137,33 +135,25 @@ export default {
         
         effectiveness: function() { return this.getItemEffectiveness(this.itemId) },
         
-        max: function() { return this.getItemMax(this.itemId) },
-        count: function() { return this.getItemCount(this.itemId) },
-        counts: function() {
-        
-            let result = []
-            let temp = this.getBuildCounts(this.itemId)
-            for (let i in temp) {
-                let item = temp[i]
-                if (!this.max || this.count + item <= this.max) result.push(item)
-            }
-            return result
+        realCount: function() {
+            let count = 0
+            if (this.selectedCount == 'next') count = this.nextCount
+            else if (this.selectedCount == 'max') count = this.maxCount
+            else count = this.selectedCount
+            return count
         },
         
-        costs: function() { return this.getBuildCosts(this.itemId, this.selectedCount) },
-        stats: function() { return this.getItemStats(this.itemId, this.selectedCount) },
-        inputs: function() { return this.getItemInputs(this.itemId, this.selectedCount) },
-        outputs: function() { return this.getItemOutputs(this.itemId, this.selectedCount) },
+        max: function() { return this.getItemMax(this.itemId) },
+        count: function() { return this.getItemCount(this.itemId) },
+        counts: function() { return this.getBuildCounts(this.itemId) },
+        
+        costs: function() { return this.getBuildCosts(this.itemId, this.realCount) },        
+        stats: function() { return this.getItemStats(this.itemId, this.realCount) },
+        inputs: function() { return this.getItemInputs(this.itemId, this.realCount) },            
+        outputs: function() { return this.getItemOutputs(this.itemId, this.realCount) },
         
         maxCount: function() { return this.getBuildMaxCount(this.itemId) },
         nextCount: function() { return this.getBuildNextCount(this.itemId) },
-    },
-    methods: {
-    
-        onBuild: function() {
-            if (!this.counts.includes(this.selectedCount) && this.selectedCount != this.maxCount)
-                this.selectedCount = this.counts[0]
-        },
     },
 }
 </script>

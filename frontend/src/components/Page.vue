@@ -243,22 +243,26 @@
                     <template v-slot:col-1>
                         <div class="col">
                             <small class="me-2">{{ $t('lastestVersion') }}</small>
-                            <small class="text-light">v2.5.0 - 2021-11-19</small>
+                            <small class="text-light">v2.6.0 - 2021-11-22</small>
                             <ul class="small mt-2 mb-0">
-                                <li>NEW: effectiveness factor on each machine</li>
-                                <li>CHANGE: resource production can't be negative thank to effectiveness factor</li>
-                                <li>FIX: offline gains thanks to effectiveness factor</li>
-                                <li>FIX: link to Sparticle's game</li>
+                                <li>NEW:In raw Consumption section, see what resources that machine belongs to and link it to resource pane</li>
+                                <li>CHANGE: conversion range on resource max count percentage</li>
+                                <li>CHANGE: syson segments build buttons to +1, +10, +50, +100, +250, Max</li>
+                                <li>CHANGE: auto-storage is automatically upgrade when resource is full</li>
+                                <li>CHANGE: next and max buttons displaying and management</li>
+                                <li>FIX: double click on convert button</li>
                             </ul>
                         </div>
                     </template>
                     <template v-slot:col-2>
                         <div class="col">
                             <small class="me-2">{{ $t('previousVersion') }}</small>
-                            <small class="text-light">v2.4.1 - 2021-11-18</small>
+                            <small class="text-light">v2.5.0 - 2021-11-19</small>
                             <ul class="small mt-2 mb-0">
-                                <li>FIX: minus sign in number formatting</li>
-                                <li>FIX: meteorite T2 achievement</li>
+                                <li>NEW: effectiveness factor on each machine</li>
+                                <li>CHANGE: resource production can't be negative thank to effectiveness factor</li>
+                                <li>FIX: offline gains thanks to effectiveness factor</li>
+                                <li>FIX: link to Sparticle's game</li>
                             </ul>
                         </div>
                         <div class="col">

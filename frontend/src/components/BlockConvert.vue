@@ -26,14 +26,14 @@
                     </div>
                 
                     <div class="col-12" style="position:relative; top:-5px;">
-                        <input type="range" class="form-range" min="1" :max="maxCount" step="1" v-model.number="amount" />
+                        <input type="range" class="form-range" min="1" max="100" step="1" v-model.number="percentage" />
                     </div>
                     
                 </div>
             </div>
             <div class="col-auto">
                 <div class="mb-2">
-                    <button type="button" class="btn btn-primary" :class="{ 'disabled text-danger':can != 0 }" @click="convert({ id:itemId, count:amount }); amount = Math.min(amount, maxCount);">
+                    <button type="button" class="btn btn-primary" :class="{ 'disabled text-danger':can != 0 }" @click="convert({ id:itemId, count:amount });">
                         <span v-if="can == 0">{{ $t('button-convert') }}</span>
                         <span v-if="can == -1">{{ $t('not-enough-resource') }}</span>
                         <span v-if="[-2, -3, -4].includes(can)">{{ $t('error') }}</span>
@@ -68,7 +68,7 @@ export default {
     data() {
         return {
         
-            amount: 1,
+            percentage: 0,
         }
     },
     computed: {
@@ -77,6 +77,7 @@ export default {
         
         ...mapGetters([ 'conversion/cost', 'conversion/maxCount', 'conversion/can', 'getItemCount' ]),
         
+        amount: function() { return Math.floor((this.percentage / 100) * this.maxCount) },
         source: function() { return this['conversion/cost'](this.itemId, this.amount) },
         maxCount: function() { return this['conversion/maxCount'](this.itemId) },
         

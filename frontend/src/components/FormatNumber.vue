@@ -10,7 +10,7 @@ export default {
         format: function() {
             
             let num = parseFloat(Math.abs(this.value))
-            if (num > 0 && num < 1) return num.toFixed(1)
+            if (num > 0 && num < 1) return parseFloat(this.value).toFixed(1)
             
             const lookup = [
                 { value: 1, symbol: "" },
