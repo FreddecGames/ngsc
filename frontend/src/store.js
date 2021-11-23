@@ -3050,13 +3050,13 @@ export const store = createStore({
             
             if (count == 1) ret = state.items[id].costs[0]
             else if (count == 5) ret = state.items[id].costs[1]
-            else if (count == 10) ret = state.items[id].costs[6]
             else if (count == 25) ret = state.items[id].costs[2]
-            else if (count == 50) ret = state.items[id].costs[7]
             else if (count == 100) ret = state.items[id].costs[3]
-            else if (count == 250) ret = state.items[id].costs[8]
             else if (count == getters.getBuildMaxCount(id)) ret = state.items[id].costs[4]
             else if (count == getters.getBuildNextCount(id)) ret = state.items[id].costs[5]
+            else if (count == 10) ret = state.items[id].costs[6]
+            else if (count == 50) ret = state.items[id].costs[7]
+            else if (count == 250) ret = state.items[id].costs[8]
             else {
                 
                 ret = JSON.parse(JSON.stringify(state.items[id].build.costs))
@@ -3088,11 +3088,11 @@ export const store = createStore({
             else if (count == 5) ret = state.items[id].canBuild[1]
             else if (count == 10) ret = state.items[id].canBuild[6]
             else if (count == 25) ret = state.items[id].canBuild[2]
+            else if (count == getters.getBuildMaxCount(id)) ret = state.items[id].canBuild[4]
+            else if (count == getters.getBuildNextCount(id)) ret = state.items[id].canBuild[5]
             else if (count == 50) ret = state.items[id].canBuild[7]
             else if (count == 100) ret = state.items[id].canBuild[3]
             else if (count == 250) ret = state.items[id].canBuild[8]
-            else if (count == getters.getBuildMaxCount(id)) ret = state.items[id].canBuild[4]
-            else if (count == getters.getBuildNextCount(id)) ret = state.items[id].canBuild[5]
             else if (count <= getters.getBuildMaxCount(id)) ret = 0
             
             if (ret != undefined) return ret
@@ -4657,6 +4657,14 @@ export const store = createStore({
                     costs = null
                 })
             }
+
+            if (['missionShield', 'missionEngine', 'missionAero'].includes(id)) {
+                dispatch('computeBuildCosts', { id:id, count:10 }).then(costs => {
+                    let compare = costCompare(costs, state.items[id].costs[6])
+                    if (compare == false) { state.items[id].costs[6] = JSON.parse(JSON.stringify(costs)) }
+                    costs = null
+                })
+            }
         },
         
         updateCanBuild({ state, getters, dispatch }, id) {
@@ -4692,6 +4700,12 @@ export const store = createStore({
                 })
                 dispatch('computeCanBuild', { id:id, count:250 }).then(can => {
                     if (can != state.items[id].canBuild[8]) state.items[id].canBuild[8] = can
+                })
+            }
+            
+            if (['missionShield', 'missionEngine', 'missionAero'].includes(id)) {
+                dispatch('computeCanBuild', { id:id, count:10 }).then(can => {
+                    if (can != state.items[id].canBuild[6]) state.items[id].canBuild[6] = can
                 })
             }
         },

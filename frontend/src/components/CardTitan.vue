@@ -16,7 +16,7 @@
                         <div class="w-100 row gx-1 align-items-center justify-content-center">
                         
                             <div class="col-auto d-flex align-items-center">
-                                <img :src="require(`../assets/icons/ultrite.png`).default" width="12" height="12" :alt="$t('darkmatter')" />
+                                <img :src="require(`../assets/icons/ultrite.png`).default" width="12" height="12" :alt="$t('ultrite')" />
                                 10
                             </div>
                             
