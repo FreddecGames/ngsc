@@ -2464,28 +2464,28 @@ const base = {
     boostIce: { unlocked:true, build:{ counts:[1], costs:[{ id:'darkmatter', count:1, coeff:1.0 }] }, modOutput:{ id:'ice', mod:0.01 }, },
     boostAntimatter: { unlocked:true, build:{ counts:[1], costs:[{ id:'darkmatter', count:1, coeff:1.0 }] }, modOutput:{ id:'antimatter', mod:0.01 }, },
     /*------------------------------------------------------------------------*/
-    scienceBoostEnergy:     { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:10000000, coeff:1.1 }] }, modOutput:{ id:'energy',     mod:0.01 }, },
-    scienceBoostPlasma:     { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'plasma',     mod:0.01 }, },
-    scienceBoostMeteorite:  { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'meteorite',  mod:0.01 }, },
-    scienceBoostCarbon:     { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'carbon',     mod:0.01 }, },
-    scienceBoostScience:    { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:10000000, coeff:1.1 }] }, modOutput:{ id:'science',    mod:0.01 }, },
-    scienceBoostOil:        { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'oil',        mod:0.01 }, },
-    scienceBoostFuel:       { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'fuel',       mod:0.01 }, },
-    scienceBoostMetal:      { unlocked:true,  build:{ counts:[1], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'metal',      mod:0.01 }, },
-    scienceBoostGem:        { unlocked:true,  build:{ counts:[1], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'gem',        mod:0.01 }, },
-    scienceBoostWood:       { unlocked:true,  build:{ counts:[1], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'wood',       mod:0.01 }, },
-    scienceBoostSilicon:    { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'silicon',    mod:0.01 }, },
-    scienceBoostUranium:    { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'uranium',    mod:0.01 }, },
-    scienceBoostLava:       { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'lava',       mod:0.01 }, },
-    scienceBoostLunarite:   { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'lunarite',   mod:0.01 }, },
-    scienceBoostMethane:    { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'methane',    mod:0.01 }, },
-    scienceBoostTitanium:   { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'titanium',   mod:0.01 }, },
-    scienceBoostGold:       { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'gold',       mod:0.01 }, },
-    scienceBoostSilver:     { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'silver',     mod:0.01 }, },
-    scienceBoostHydrogen:   { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'hydrogen',   mod:0.01 }, },
-    scienceBoostHelium:     { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'helium',     mod:0.01 }, },
-    scienceBoostIce:        { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'ice',        mod:0.01 }, },
-    scienceBoostAntimatter: { unlocked:false, build:{ counts:[1], costs:[{ id:'science', count:10000000, coeff:1.1 }] }, modOutput:{ id:'antimatter', mod:0.01 }, },
+    scienceBoostEnergy:     { unlocked:false, build:{ counts:[1, 10, 100], costs:[{ id:'science', count:10000000, coeff:1.1 }] }, modOutput:{ id:'energy',     mod:0.01 }, },
+    scienceBoostPlasma:     { unlocked:false, build:{ counts:[1, 10, 100], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'plasma',     mod:0.01 }, },
+    scienceBoostMeteorite:  { unlocked:false, build:{ counts:[1, 10, 100], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'meteorite',  mod:0.01 }, },
+    scienceBoostCarbon:     { unlocked:false, build:{ counts:[1, 10, 100], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'carbon',     mod:0.01 }, },
+    scienceBoostScience:    { unlocked:false, build:{ counts:[1, 10, 100], costs:[{ id:'science', count:10000000, coeff:1.1 }] }, modOutput:{ id:'science',    mod:0.01 }, },
+    scienceBoostOil:        { unlocked:false, build:{ counts:[1, 10, 100], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'oil',        mod:0.01 }, },
+    scienceBoostFuel:       { unlocked:false, build:{ counts:[1, 10, 100], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'fuel',       mod:0.01 }, },
+    scienceBoostMetal:      { unlocked:true,  build:{ counts:[1, 10, 100], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'metal',      mod:0.01 }, },
+    scienceBoostGem:        { unlocked:true,  build:{ counts:[1, 10, 100], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'gem',        mod:0.01 }, },
+    scienceBoostWood:       { unlocked:true,  build:{ counts:[1, 10, 100], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'wood',       mod:0.01 }, },
+    scienceBoostSilicon:    { unlocked:false, build:{ counts:[1, 10, 100], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'silicon',    mod:0.01 }, },
+    scienceBoostUranium:    { unlocked:false, build:{ counts:[1, 10, 100], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'uranium',    mod:0.01 }, },
+    scienceBoostLava:       { unlocked:false, build:{ counts:[1, 10, 100], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'lava',       mod:0.01 }, },
+    scienceBoostLunarite:   { unlocked:false, build:{ counts:[1, 10, 100], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'lunarite',   mod:0.01 }, },
+    scienceBoostMethane:    { unlocked:false, build:{ counts:[1, 10, 100], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'methane',    mod:0.01 }, },
+    scienceBoostTitanium:   { unlocked:false, build:{ counts:[1, 10, 100], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'titanium',   mod:0.01 }, },
+    scienceBoostGold:       { unlocked:false, build:{ counts:[1, 10, 100], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'gold',       mod:0.01 }, },
+    scienceBoostSilver:     { unlocked:false, build:{ counts:[1, 10, 100], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'silver',     mod:0.01 }, },
+    scienceBoostHydrogen:   { unlocked:false, build:{ counts:[1, 10, 100], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'hydrogen',   mod:0.01 }, },
+    scienceBoostHelium:     { unlocked:false, build:{ counts:[1, 10, 100], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'helium',     mod:0.01 }, },
+    scienceBoostIce:        { unlocked:false, build:{ counts:[1, 10, 100], costs:[{ id:'science', count:5000,     coeff:1.1 }] }, modOutput:{ id:'ice',        mod:0.01 }, },
+    scienceBoostAntimatter: { unlocked:false, build:{ counts:[1, 10, 100], costs:[{ id:'science', count:10000000, coeff:1.1 }] }, modOutput:{ id:'antimatter', mod:0.01 }, },
     /*------------------------------------------------------------------------*/
     ulUpgdStorage: { max:1, collapses:['ulUpgdStorage'], build:{ counts:[1], costs:[{ id:'ultrite', count:21, coeff:1.0 }] },
         onLoad: function(state) {
@@ -2803,7 +2803,7 @@ export const store = createStore({
             resetIds: [],
             
             autoConversionId: null,
-            autoStorageId: null,
+            autoStorageIds: [],
             
             hidden: [],
             collapsed: [],
@@ -2818,6 +2818,7 @@ export const store = createStore({
             statsTotalStatues: 0,
             
             dmBoostCount: 1,
+            scienceBoostCount: 1,
         }
     },
     getters: {
@@ -3086,10 +3087,10 @@ export const store = createStore({
             
             if (count == 1) ret = state.items[id].canBuild[0]
             else if (count == 5) ret = state.items[id].canBuild[1]
-            else if (count == 10) ret = state.items[id].canBuild[6]
             else if (count == 25) ret = state.items[id].canBuild[2]
             else if (count == getters.getBuildMaxCount(id)) ret = state.items[id].canBuild[4]
             else if (count == getters.getBuildNextCount(id)) ret = state.items[id].canBuild[5]
+            else if (count == 10) ret = state.items[id].canBuild[6]
             else if (count == 50) ret = state.items[id].canBuild[7]
             else if (count == 100) ret = state.items[id].canBuild[3]
             else if (count == 250) ret = state.items[id].canBuild[8]
@@ -3263,9 +3264,16 @@ export const store = createStore({
         setSidebarOpen({ state }, payload) { state.sidebarOpen = payload },
         
         setAutoConversionId({ state }, payload) { state.autoConversionId = payload },
-        setAutoStorageId({ state }, payload) { state.autoStorageId = payload },
+        
+        addAutoStorageId({ state }, payload) { if (!(state.autoStorageIds.includes(payload))) state.autoStorageIds.push(payload) },
+        
+        removeAutoStorageId({ state }, payload) {
+            let index = state.autoStorageIds.indexOf(payload)
+            if (index > -1) state.autoStorageIds.splice(index, 1)
+        },
         
         setDmBoostCount({ state }, payload) { state.dmBoostCount = payload },
+        setScienceBoostCount({ state }, payload) { state.scienceBoostCount = payload },
         
         /*--------------------------------------------------------------------*/
         toggleCollapsed({ state }, payload) {
@@ -3286,7 +3294,7 @@ export const store = createStore({
             state.sidebarOpen = false
             
             state.autoConversionId = null
-            state.autoStorageId = null
+            state.autoStorageIds = []
             
             state.hidden = []
             state.collapsed = []
@@ -3955,7 +3963,8 @@ export const store = createStore({
                     state.lastUpgradeTimeMs = loadeddata.lastUpgradeTimeMs || currentTime
                     
                     if (loadeddata.autoConversionId) state.autoConversionId = loadeddata.autoConversionId
-                    if (loadeddata.autoStorageId) state.autoStorageId = loadeddata.autoStorageId
+                    if (loadeddata.autoStorageId) state.autoStorageIds.push(loadeddata.autoStorageId)
+                    if (loadeddata.autoStorageIds) state.autoStorageIds = loadeddata.autoStorageIds
                     
                     state.collapsed = loadeddata.collapsed || []
                     state.notified = loadeddata.notified || []
@@ -4045,6 +4054,8 @@ export const store = createStore({
                             let it = state.items[i]
                             if ('build' in it && 'costs' in it.build)
                                 it.build.costs.forEach(cost => { if (cost.id == item.modCost.id) cost.mod += item.count * item.modCost.mod })
+                            if ('explore' in it)
+                                it.explore.forEach(cost => { if (cost.id == item.modCost.id) cost.count += cost.count * item.modCost.mod })
                         }
                     }
                 }
@@ -4116,7 +4127,7 @@ export const store = createStore({
             }
             
             if (state.autoConversionId) saveddata.autoConversionId = state.autoConversionId
-            if (state.autoStorageId) saveddata.autoStorageId = state.autoStorageId
+            if (state.autoStorageIds) saveddata.autoStorageIds = state.autoStorageIds
             
             for (let i in state.items) {
                 let item = state.items[i]
@@ -4311,38 +4322,40 @@ export const store = createStore({
             /* Automatic storage */
             
             delay = currentTimeMs - state.lastUpgradeTimeMs
-            if (delay > 1000 && state.autoStorageId) {
+            if (delay > 1000 && state.autoStorageIds.length > 0) {
                 
                 delay /= 1000
                 state.lastUpgradeTimeMs = currentTimeMs
                 
-                item = state.items[state.autoStorageId]
-                for (i = 0; i < Math.floor(delay); i++) {
-                    
-                    can = true
-                    
-                    if (item.upgrade >= item.storage.max) can = false
-                    
-                    costs = getters.getUpgradeCosts(state.autoStorageId)
-                    costs.forEach(cost => {
-                        if (temp[cost.id].count - cost.count < 0) {
-                            can = false
-                            return
+                state.autoStorageIds.forEach(autoStorageId => {
+                    item = state.items[autoStorageId]
+                    for (i = 0; i < Math.floor(delay); i++) {
+                        
+                        can = true
+                        
+                        if (item.upgrade >= item.storage.max) can = false
+                        
+                        costs = getters.getUpgradeCosts(autoStorageId)
+                        costs.forEach(cost => {
+                            if (temp[cost.id].count - cost.count < 0) {
+                                can = false
+                                return
+                            }
+                        })
+                        
+                        let storage = getters.getItemStorage(autoStorageId)
+                        if (item.count < storage) can = false
+                        
+                        if (can) {
+                            
+                            item.upgrade += 1
+                            
+                            costs = getters.getUpgradeCosts(autoStorageId)
+                            costs.forEach(cost => { temp[cost.id].count -= cost.count })
                         }
-                    })
-                    
-                    let storage = getters.getItemStorage(state.autoStorageId)
-                    if (item.count < storage) can = false
-                    
-                    if (can) {
-                        
-                        item.upgrade += 1
-                        
-                        costs = getters.getUpgradeCosts(state.autoStorageId)
-                        costs.forEach(cost => { temp[cost.id].count -= cost.count })
+                        else return
                     }
-                    else break
-                }
+                })
             }
             
             /* Resource storage limitation */
@@ -4665,6 +4678,21 @@ export const store = createStore({
                     costs = null
                 })
             }
+            
+            let scienceBoostArray = [
+                'scienceBoostEnergy', 'scienceBoostPlasma', 'scienceBoostMeteorite', 'scienceBoostCarbon', 'scienceBoostScience',
+                'scienceBoostOil', 'scienceBoostFuel', 'scienceBoostMetal', 'scienceBoostGem', 'scienceBoostWood',
+                'scienceBoostSilicon', 'scienceBoostUranium', 'scienceBoostLava', 'scienceBoostLunarite', 'scienceBoostMethane',
+                'scienceBoostTitanium', 'scienceBoostGold', 'scienceBoostSilver', 'scienceBoostHydrogen',
+                'scienceBoostHelium', 'scienceBoostIce', 'scienceBoostAntimatter',
+            ]
+            if (scienceBoostArray.includes(id)) {
+                dispatch('computeBuildCosts', { id:id, count:10 }).then(costs => {
+                    let compare = costCompare(costs, state.items[id].costs[6])
+                    if (compare == false) { state.items[id].costs[6] = JSON.parse(JSON.stringify(costs)) }
+                    costs = null
+                })
+            }
         },
         
         updateCanBuild({ state, getters, dispatch }, id) {
@@ -4704,6 +4732,19 @@ export const store = createStore({
             }
             
             if (['missionShield', 'missionEngine', 'missionAero'].includes(id)) {
+                dispatch('computeCanBuild', { id:id, count:10 }).then(can => {
+                    if (can != state.items[id].canBuild[6]) state.items[id].canBuild[6] = can
+                })
+            }
+            
+            let scienceBoostArray = [
+                'scienceBoostEnergy', 'scienceBoostPlasma', 'scienceBoostMeteorite', 'scienceBoostCarbon', 'scienceBoostScience',
+                'scienceBoostOil', 'scienceBoostFuel', 'scienceBoostMetal', 'scienceBoostGem', 'scienceBoostWood',
+                'scienceBoostSilicon', 'scienceBoostUranium', 'scienceBoostLava', 'scienceBoostLunarite', 'scienceBoostMethane',
+                'scienceBoostTitanium', 'scienceBoostGold', 'scienceBoostSilver', 'scienceBoostHydrogen',
+                'scienceBoostHelium', 'scienceBoostIce', 'scienceBoostAntimatter',
+            ]
+            if (scienceBoostArray.includes(id)) {
                 dispatch('computeCanBuild', { id:id, count:10 }).then(can => {
                     if (can != state.items[id].canBuild[6]) state.items[id].canBuild[6] = can
                 })
@@ -4814,11 +4855,12 @@ export const store = createStore({
                 }
                 
                 if ('modCost' in item) {
-                    console.log('coucou1')
                     for (let i in state.items) {
                         let it = state.items[i]
                         if ('build' in it && 'costs' in it.build)
                             it.build.costs.forEach(cost => { if (cost.id == item.modCost.id) cost.mod += payload.count * item.modCost.mod })
+                        if ('explore' in it)
+                            it.explore.forEach(cost => { if (cost.id == item.modCost.id) cost.count += cost.count * item.modCost.mod })
                     }
                 }
                 

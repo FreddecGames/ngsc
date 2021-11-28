@@ -243,25 +243,23 @@
                     <template v-slot:col-1>
                         <div class="col">
                             <small class="me-2">{{ $t('lastestVersion') }}</small>
-                            <small class="text-light">v2.6.1 - 2021-11-23</small>
+                            <small class="text-light">v2.7.0 - 2021-11-29</small>
                             <ul class="small mt-2 mb-0">
-                                <li>FIX: resource requirements disappear</li>
-                                <li>FIX: aria-expanded attribute is reversed</li>
-                                <li>FIX: ultrite icon alt title on Titans pane</li>
+                                <li>NEW: '+1', '+10' and '+100' buttons on science boosts</li>
+                                <li>CHANGE: antimatter titan reduces exploration costs</li>
+                                <li>CHANGE: auto storage upgrade on multiple resources</li>
+                                <li>FIX: 'Next' and 'Max' build buttons</li>
                             </ul>
                         </div>
                     </template>
                     <template v-slot:col-2>
                         <div class="col">
                             <small class="me-2">{{ $t('previousVersion') }}</small>
-                            <small class="text-light">v2.6.0 - 2021-11-22</small>
+                            <small class="text-light">v2.6.1 - 2021-11-23</small>
                             <ul class="small mt-2 mb-0">
-                                <li>NEW:In raw Consumption section, see what resources that machine belongs to and link it to resource pane</li>
-                                <li>CHANGE: conversion range on resource max count percentage</li>
-                                <li>CHANGE: syson segments build buttons to +1, +10, +50, +100, +250, Max</li>
-                                <li>CHANGE: auto-storage is automatically upgrade when resource is full</li>
-                                <li>CHANGE: next and max buttons displaying and management</li>
-                                <li>FIX: double click on convert button</li>
+                                <li>FIX: resource requirements disappear</li>
+                                <li>FIX: aria-expanded attribute is reversed</li>
+                                <li>FIX: ultrite icon alt title on Titans pane</li>
                             </ul>
                         </div>
                         <div class="col">
@@ -1196,6 +1194,9 @@
                     </div>
                 </template>
                 <card id="scienceBoostsCard" name="scienceBoostsCardTitle">
+                    <template v-slot:header>
+                        <line-science-boost-count />
+                    </template>
                     <template v-slot:col-1>
                         <div class="col">
                             <div class="row row-cols-1 g-2">
@@ -1962,6 +1963,7 @@ import LineConsumption from './LineConsumption.vue'
 import LineBoostCount from './LineBoostCount.vue'
 import LineTechnology from './LineTechnology.vue'
 import LineScienceBoost from './LineScienceBoost.vue'
+import LineScienceBoostCount from './LineScienceBoostCount.vue'
 
 import PagePane from './PagePane.vue'
 import PagePaneFaction from './PagePaneFaction.vue'
@@ -2002,6 +2004,7 @@ export default {
         'line-boost-count': LineBoostCount,
         'line-technology': LineTechnology,
         'line-science-boost': LineScienceBoost,
+        'line-science-boost-count': LineScienceBoostCount,
         
         'page-pane': PagePane,
         'page-pane-faction': PagePaneFaction,

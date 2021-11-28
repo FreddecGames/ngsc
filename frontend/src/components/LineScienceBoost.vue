@@ -12,7 +12,7 @@
                 <line-cost v-if="cost" :cost="cost" />
             </div>
             <div class="col-auto">
-                <button type="button" class="btn btn-success small" :class="{ 'disabled':can != 0 && can != -5 }" @click="build({ id:itemId, count:1 })">
+                <button type="button" class="btn btn-success small" :class="{ 'disabled':can != 0 && can != -5 }" @click="build({ id:itemId, count:scienceBoostCount })">
                     <i class="fas fa-fw fa-plus-circle"></i>
                 </button>
             </div>
@@ -23,7 +23,7 @@
 <script>
 import LineCost from './LineCost.vue'
 
-import { mapGetters, mapActions } from 'vuex'
+import { mapState, mapGetters, mapActions } from 'vuex'
 
 export default {
     props: [ 'itemId', 'icon', 'name' ],
@@ -33,10 +33,12 @@ export default {
     },
     computed: {
         
+        ...mapState([ 'scienceBoostCount' ]),
+        
         ...mapGetters([ 'getItemCount', 'isUnlocked', 'getBuildCosts', 'canBuild' ]),
         
-        can: function() { return this.canBuild(this.itemId, 1) },
-        cost: function() { return this.getBuildCosts(this.itemId, 1)[0] },
+        can: function() { return this.canBuild(this.itemId, this.scienceBoostCount) },
+        cost: function() { return this.getBuildCosts(this.itemId, this.scienceBoostCount)[0] },
         count: function() { return this.getItemCount(this.itemId) },
         unlocked: function() { return this.isUnlocked(this.itemId) },
     },

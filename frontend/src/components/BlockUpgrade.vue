@@ -10,9 +10,9 @@
             
                 <div v-if="autoUnlocked" class="col-auto">
                     <div class="form-check form-switch">
-                        <input v-if="autoStorageId != itemId" class="form-check-input" type="checkbox" :id="'emcInterval-' + itemId" @click="setAutoStorageId(itemId)">
-                        <input v-if="autoStorageId == itemId" class="form-check-input" type="checkbox" :id="'emcInterval-' + itemId" checked @click="setAutoStorageId(null)">
-                        <label class="form-check-label small" :for="'emcInterval-' + itemId">{{ $t('value-automatic') }}</label>
+                        <input v-if="!autoStorage" class="form-check-input" type="checkbox" :id="'autoStorage-' + itemId" @click="addAutoStorageId(itemId)">
+                        <input v-if="autoStorage" class="form-check-input" type="checkbox" :id="'autoStorage-' + itemId" checked @click="removeAutoStorageId(itemId)">
+                        <label class="form-check-label small" :for="'autoStorage-' + itemId">{{ $t('value-automatic') }}</label>
                     </div>
                 </div>
                 
@@ -42,7 +42,7 @@ export default {
     },
     computed: {
         
-        ...mapState([ 'autoStorageId' ]),
+        ...mapState([ 'autoStorageIds' ]),
         
         ...mapGetters([ 'getUpgradeCoeff', 'getUpgradeCosts', 'getItemCount' ]),
         
@@ -50,10 +50,11 @@ export default {
         costs: function() { return this.getUpgradeCosts(this.itemId) },
         
         autoUnlocked: function() { return this.getItemCount('ulUpgdAutoStorage') >= 1 },
+        autoStorage: function() { return this.autoStorageIds.includes(this.itemId) },
     },
     methods: {
     
-        ...mapActions([ 'setAutoStorageId' ]),
+        ...mapActions([ 'addAutoStorageId', 'removeAutoStorageId' ]),
     },
 }
 </script>
