@@ -2,16 +2,16 @@
     <div class="pt-1">
         <div class="row g-2 align-items-center">
             <div class="col-auto">
-                <input type="radio" class="btn-check" id="boost-count-1" autocomplete="off" value="1" v-model="selectedCount" @click="setDmBoostCount(1)" />
-                <label class="btn btn-badge px-1" for="boost-count-1">+1</label>
+                <input type="radio" class="btn-check" id="dmBoost-count-1" value="1" v-model="selectedCount" @click="setDmBoostCount(1)" />
+                <label class="btn btn-badge px-1" for="dmBoost-count-1">+1</label>
             </div>
             <div class="col-auto">
-                <input type="radio" class="btn-check" id="boost-count-10" autocomplete="off" value="10" v-model="selectedCount" @click="setDmBoostCount(10)" />
-                <label class="btn btn-badge px-1" for="boost-count-10">+10</label>
+                <input type="radio" class="btn-check" id="dmBoost-count-10" value="10" v-model="selectedCount" @click="setDmBoostCount(10)" />
+                <label class="btn btn-badge px-1" for="dmBoost-count-10">+10</label>
             </div>
             <div class="col-auto">
-                <input type="radio" class="btn-check" id="boost-count-100" autocomplete="off" value="100" v-model="selectedCount" @click="setDmBoostCount(100)" />
-                <label class="btn btn-badge px-1" for="boost-count-100">+100</label>
+                <input type="radio" class="btn-check" id="dmBoost-count-100" value="100" v-model="selectedCount" @click="setDmBoostCount(100)" />
+                <label class="btn btn-badge px-1" for="dmBoost-count-100">+100</label>
             </div>
             <div class="col"></div>
             <div class="col-auto">
