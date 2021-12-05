@@ -243,7 +243,7 @@
                     <template v-slot:col-1>
                         <div class="col">
                             <small class="me-2">{{ $t('lastestVersion') }}</small>
-                            <small class="text-light">v2.7.1 - 2021-12-???</small>
+                            <small class="text-light">v2.7.1 - 2021-12-05</small>
                             <ul class="small mt-2 mb-0">
                                 <li>FIX: V1 import of energy T1/T2 machines</li>
                                 <li>FIX: typo on science T5 machine</li>
