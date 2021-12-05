@@ -2781,7 +2781,6 @@ export const store = createStore({
             
             locale: 'en',
             companyName: 'NG Space Company',
-            currentVersion: '2.0.0',
             
             activeTab: null,
             activePane: null,
@@ -3448,7 +3447,7 @@ export const store = createStore({
 
                 'achEnergyT1', 'achEnergyT2', 'achEnergyT3', 'achEnergyT4', 'achEnergyT5', 'achEnergyT6',
                 'achPlasmaT1', 'achPlasmaT2', 'achPlasmaT3', 'achPlasmaT4',
-                'achMeteoriteT1', 'achMeteoriteT3', 'achMeteoriteT4',
+                'achMeteoriteT1', 'achMeteoriteT2', 'achMeteoriteT3', 'achMeteoriteT4',
                 'achCarbonT1', 'achCarbonT2', 'achCarbonT3', 'achCarbonT4', 'achCarbonT5',
                 'achScienceT1', 'achScienceT2', 'achScienceT3', 'achScienceT4', 'achScienceT5',
                 'achOilT1', 'achOilT2', 'achOilT3', 'achOilT4', 'achOilT5',
@@ -3615,7 +3614,7 @@ export const store = createStore({
         
                         'achEnergyT1', 'achEnergyT2', 'achEnergyT3', 'achEnergyT4', 'achEnergyT5', 'achEnergyT6',
                         'achPlasmaT1', 'achPlasmaT2', 'achPlasmaT3', 'achPlasmaT4',
-                        'achMeteoriteT1', 'achMeteoriteT3', 'achMeteoriteT4',
+                        'achMeteoriteT1', 'achMeteoriteT2', 'achMeteoriteT3', 'achMeteoriteT4',
                         'achCarbonT1', 'achCarbonT2', 'achCarbonT3', 'achCarbonT4', 'achCarbonT5',
                         'achScienceT1', 'achScienceT2', 'achScienceT3', 'achScienceT4', 'achScienceT5',
                         'achOilT1', 'achOilT2', 'achOilT3', 'achOilT4', 'achOilT5',
@@ -3679,7 +3678,12 @@ export const store = createStore({
                         'darkmatter',
                     ]
                     
-                    ids.forEach(id => { dispatch('loadV1Item', { loadeddata:loadeddata, oldId:id, newId:id }) })
+                    ids.forEach(id => {
+                        
+                        if (id == 'energyT1') dispatch('loadV1Item', { loadeddata:loadeddata, oldId:'energyT1', newId:'energyT2' })
+                        else if (id == 'energyT2') dispatch('loadV1Item', { loadeddata:loadeddata, oldId:'energyT2', newId:'energyT1' })
+                        else dispatch('loadV1Item', { loadeddata:loadeddata, oldId:id, newId:id })
+                    })
                     
                     dispatch('loadV1Item', { loadeddata:loadeddata, oldId:'radarT1', newId:'radarT2' })
                     dispatch('loadV1Item', { loadeddata:loadeddata, oldId:'radarT2', newId:'radarT1' })

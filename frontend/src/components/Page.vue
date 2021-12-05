@@ -243,23 +243,23 @@
                     <template v-slot:col-1>
                         <div class="col">
                             <small class="me-2">{{ $t('lastestVersion') }}</small>
-                            <small class="text-light">v2.7.0 - 2021-11-29</small>
+                            <small class="text-light">v2.7.1 - 2021-12-???</small>
                             <ul class="small mt-2 mb-0">
-                                <li>NEW: '+1', '+10' and '+100' buttons on science boosts</li>
-                                <li>CHANGE: antimatter titan reduces exploration costs</li>
-                                <li>CHANGE: auto storage upgrade on multiple resources</li>
-                                <li>FIX: 'Next' and 'Max' build buttons</li>
+                                <li>FIX: V1 import of energy T1/T2 machines</li>
+                                <li>FIX: typo on science T5 machine</li>
+                                <li>FIX: meteorite T2 achievement not reset after rebirth/enlightenment</li>
                             </ul>
                         </div>
                     </template>
                     <template v-slot:col-2>
                         <div class="col">
                             <small class="me-2">{{ $t('previousVersion') }}</small>
-                            <small class="text-light">v2.6.1 - 2021-11-23</small>
+                            <small class="text-light">v2.7.0 - 2021-11-29</small>
                             <ul class="small mt-2 mb-0">
-                                <li>FIX: resource requirements disappear</li>
-                                <li>FIX: aria-expanded attribute is reversed</li>
-                                <li>FIX: ultrite icon alt title on Titans pane</li>
+                                <li>NEW: '+1', '+10' and '+100' buttons on science boosts</li>
+                                <li>CHANGE: antimatter titan reduces exploration costs</li>
+                                <li>CHANGE: auto storage upgrade on multiple resources</li>
+                                <li>FIX: 'Next' and 'Max' build buttons</li>
                             </ul>
                         </div>
                         <div class="col">
@@ -431,8 +431,8 @@
                 <card-building id="scienceT3Card" name="scienceT3" level="3" :descs="[ 'scienceT3-desc1' ]" itemId="scienceT3" btnText="button-build" />
                 <card-building id="techScienceT4Card" name="techScienceT4" :descs="[ 'techScienceT4-desc1' ]" itemId="techScienceT4" btnText="button-research" toHide="true" />
                 <card-building id="scienceT4Card" name="scienceT4" level="4" :descs="[ 'scienceT4-desc1' ]" itemId="scienceT4" btnText="button-build" />
-                <card-building id="scienceT5Card" name="scienceT5" level="4" :descs="[ 'scienceT5-desc1' ]" itemId="scienceT5" btnText="button-build" />
                 <card-building id="techScienceT5Card" name="techScienceT5" :descs="[ 'techScienceT5-desc1' ]" itemId="techScienceT5" btnText="button-research" toHide="true" />
+                <card-building id="scienceT5Card" name="scienceT5" level="5" :descs="[ 'scienceT5-desc1' ]" itemId="scienceT5" btnText="button-build" />
             </page-pane-resource>
             
             <page-pane-resource id="oilPane" name="oil" icon="oil.png" itemId="oil">
@@ -500,8 +500,8 @@
                 <card-building id="woodT3Card" name="woodT3" level="3" :descs="[ 'woodT3-desc1' ]" itemId="woodT3" btnText="button-build" />
                 <card-building id="techWoodT4Card" name="techWoodT4" :descs="[ 'techWoodT4-desc1' ]" itemId="techWoodT4" btnText="button-research" toHide="true" />
                 <card-building id="woodT4Card" name="woodT4" level="4" :descs="[ 'woodT4-desc1' ]" itemId="woodT4" btnText="button-build" />
-                <card-building id="woodT5Card" name="woodT5" level="5" :descs="[ 'woodT5-desc1' ]" itemId="woodT5" btnText="button-build" />
                 <card-building id="techWoodT5Card" name="techWoodT5" :descs="[ 'techWoodT5-desc1' ]" itemId="techWoodT5" btnText="button-research" toHide="true" />
+                <card-building id="woodT5Card" name="woodT5" level="5" :descs="[ 'woodT5-desc1' ]" itemId="woodT5" btnText="button-build" />
             </page-pane-resource>
             
             <page-pane-resource id="siliconPane" name="silicon" icon="silicon.png" itemId="silicon">
