@@ -243,23 +243,20 @@
                     <template v-slot:col-1>
                         <div class="col">
                             <small class="me-2">{{ $t('lastestVersion') }}</small>
-                            <small class="text-light">v2.7.1 - 2021-12-05</small>
+                            <small class="text-light">v2.7.2 - 2021-12-14</small>
                             <ul class="small mt-2 mb-0">
-                                <li>FIX: V1 import of energy T1/T2 machines</li>
-                                <li>FIX: typo on science T5 machine</li>
-                                <li>FIX: meteorite T2 achievement not reset after rebirth/enlightenment</li>
+                                <li>FIX: statue progress on Overlord mission</li>
                             </ul>
                         </div>
                     </template>
                     <template v-slot:col-2>
                         <div class="col">
                             <small class="me-2">{{ $t('previousVersion') }}</small>
-                            <small class="text-light">v2.7.0 - 2021-11-29</small>
+                            <small class="text-light">v2.7.1 - 2021-12-05</small>
                             <ul class="small mt-2 mb-0">
-                                <li>NEW: '+1', '+10' and '+100' buttons on science boosts</li>
-                                <li>CHANGE: antimatter titan reduces exploration costs</li>
-                                <li>CHANGE: auto storage upgrade on multiple resources</li>
-                                <li>FIX: 'Next' and 'Max' build buttons</li>
+                                <li>FIX: V1 import of energy T1/T2 machines</li>
+                                <li>FIX: typo on science T5 machine</li>
+                                <li>FIX: meteorite T2 achievement not reset after rebirth/enlightenment</li>
                             </ul>
                         </div>
                         <div class="col">
@@ -363,7 +360,7 @@
                                 <img class="me-1" :src="require(`../assets/icons/statue.png`).default" width="12" height="12" :alt="$t('statue')" />
                                 <small>150</small>
                             </div>
-                            <line-progress itemId="statue" count="150" />
+                            <line-progress :progress="statueProgress" count="150" />
                             <div class="pt-2 d-flex justify-content-end">
                                 <button-meet />
                             </div>
@@ -2043,6 +2040,8 @@ export default {
         
         canRebirth: function() { return this.canBuild('rebirth', 1) },
         canEnlighten: function() { return this.canBuild('enlighten', 1) },
+        
+        statueProgress: function() { return (100 * this.getItemCount('statue') / 150) },
     },
     methods: {
     
