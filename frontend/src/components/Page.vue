@@ -243,20 +243,18 @@
                     <template v-slot:col-1>
                         <div class="col">
                             <small class="me-2">{{ $t('lastestVersion') }}</small>
-                            <small class="text-light">v2.7.2 - 2021-12-14</small>
+                            <small class="text-light">v2.7.3 - 2021-12-29</small>
                             <ul class="small mt-2 mb-0">
-                                <li>FIX: statue progress on Overlord mission</li>
+                                <li>FIX: gain button when not enough storage</li>
                             </ul>
                         </div>
                     </template>
                     <template v-slot:col-2>
                         <div class="col">
-                            <small class="me-2">{{ $t('previousVersion') }}</small>
-                            <small class="text-light">v2.7.1 - 2021-12-05</small>
+                            <small class="me-2">{{ $t('lastestVersion') }}</small>
+                            <small class="text-light">v2.7.2 - 2021-12-14</small>
                             <ul class="small mt-2 mb-0">
-                                <li>FIX: V1 import of energy T1/T2 machines</li>
-                                <li>FIX: typo on science T5 machine</li>
-                                <li>FIX: meteorite T2 achievement not reset after rebirth/enlightenment</li>
+                                <li>FIX: statue progress on Overlord mission</li>
                             </ul>
                         </div>
                         <div class="col">
