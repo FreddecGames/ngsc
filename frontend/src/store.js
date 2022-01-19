@@ -1898,26 +1898,26 @@ const base = {
         max:1, maxBuildCount:1, collapses:['missionMercuryCard'],
         build:{ counts:[1] },
     },
-    missionVenus: {
-        max:1, maxBuildCount:1, collapses:['missionVenusCard'],
-        build:{ counts:[1], costs:[{ id:'fuel', count:100, coeff:1 }] },
-        unlocks: [
-            'methane', 'achMethane', 'scienceBoostMethane',
-            'titanium', 'achTitanium', 'scienceBoostTitanium',
-            'energyT3', 'achEnergyT3'
-        ],
-        notifs: [
-            'methanePane', 'titaniumPane',
-        ],
-    },
     missionMars: {
         max:1, maxBuildCount:1, collapses:['missionMarsCard'],
         build:{ counts:[1], costs:[{ id:'fuel', count:75, coeff:1 }] },
         unlocks: [
             'silicon', 'achSilicon', 'scienceBoostSilicon',
+            'titanium', 'achTitanium', 'scienceBoostTitanium',
         ],
         notifs: [
-            'siliconPane',
+            'siliconPane', 'titaniumPane',
+        ],
+    },
+    missionVenus: {
+        max:1, maxBuildCount:1, collapses:['missionVenusCard'],
+        build:{ counts:[1], costs:[{ id:'fuel', count:100, coeff:1 }] },
+        unlocks: [
+            'methane', 'achMethane', 'scienceBoostMethane',
+            'energyT3', 'achEnergyT3'
+        ],
+        notifs: [
+            'methanePane',
         ],
     },
     missionAsteroid: {
@@ -4486,7 +4486,7 @@ export const store = createStore({
             
             let can = 0
 
-            let costs = getters.getGainCosts(id)
+            let costs = getters.getGainCosts(id, count)
             if (costs) {
                 costs.forEach(cost => {
                     if (state.items[cost.id].count - cost.count < 0) {

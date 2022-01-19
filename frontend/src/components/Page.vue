@@ -243,18 +243,21 @@
                     <template v-slot:col-1>
                         <div class="col">
                             <small class="me-2">{{ $t('lastestVersion') }}</small>
-                            <small class="text-light">v2.7.3 - 2021-12-29</small>
+                            <small class="text-light">v2.7.4 - 2022-01-19</small>
                             <ul class="small mt-2 mb-0">
-                                <li>FIX: gain button when not enough storage</li>
+                                <li>CHANGE: Titanium is unlocked with Mars exploration to be compliant with description and data</li>
+                                <li>FIX: unlocked technologies displaying on smartphone and desktop</li>
+                                <li>FIX: gain button when not enough resource</li>
+                                <li>FIX: technologies displayed when resource is locked</li>
                             </ul>
                         </div>
                     </template>
                     <template v-slot:col-2>
                         <div class="col">
                             <small class="me-2">{{ $t('lastestVersion') }}</small>
-                            <small class="text-light">v2.7.2 - 2021-12-14</small>
+                            <small class="text-light">v2.7.3 - 2021-12-29</small>
                             <ul class="small mt-2 mb-0">
-                                <li>FIX: statue progress on Overlord mission</li>
+                                <li>FIX: gain button when not enough storage</li>
                             </ul>
                         </div>
                         <div class="col">
@@ -1227,98 +1230,98 @@
                         </div>
                     </template>
                 </card>
-                <card id="technologiesCard" name="technologiesCardTitle" body="true">
+                <card v-if="hasTechLocked" id="technologiesCard" name="technologiesCardTitle" body="true">
                     <template v-slot:body>
-                        <div class="col">
-                            <div class="row row-cols-2 gy-2 gx-3">
-                                <line-technology itemId="techPlasmaT2" level="T2" name="plasma" />
-                                <line-technology itemId="techMeteoriteT2" level="T2" name="meteorite" />
-                                <line-technology itemId="techCarbonT2" level="T2" name="carbon" />
-                                <line-technology itemId="techFuelT2" level="T2" name="fuel" />
-                                <line-technology itemId="techScienceT2" level="T2" name="science" />
-                                <line-technology itemId="techOilT2" level="T2" name="oil" />
-                                <line-technology itemId="techMetalT2" level="T2" name="metal" />
-                                <line-technology itemId="techGemT2" level="T2" name="gem" />
-                                <line-technology itemId="techWoodT2" level="T2" name="wood" />
-                                <line-technology itemId="techSiliconT2" level="T2" name="silicon" />
-                                <line-technology itemId="techUraniumT2" level="T2" name="uranium" />
-                                <line-technology itemId="techLavaT2" level="T2" name="lava" />
-                                <line-technology itemId="techLunariteT2" level="T2" name="lunarite" />
-                                <line-technology itemId="techMethaneT2" level="T2" name="methane" />
-                                <line-technology itemId="techTitaniumT2" level="T2" name="titanium" />
-                                <line-technology itemId="techGoldT2" level="T2" name="gold" />
-                                <line-technology itemId="techSilverT2" level="T2" name="silver" />
-                                <line-technology itemId="techHydrogenT2" level="T2" name="hydrogen" />
-                                <line-technology itemId="techHeliumT2" level="T2" name="helium" />
-                                <line-technology itemId="techIceT2" level="T2" name="ice" />
+                        <div v-if="hasT2TechLocked" class="col">
+                            <div class="row row-cols-1 row-cols-lg-2 gy-2 gx-3">
+                                <line-technology v-if="isUnlocked('plasma')" itemId="techPlasmaT2" level="T2" name="plasma" />
+                                <line-technology v-if="isUnlocked('meteorite')" itemId="techMeteoriteT2" level="T2" name="meteorite" />
+                                <line-technology v-if="isUnlocked('carbon')" itemId="techCarbonT2" level="T2" name="carbon" />
+                                <line-technology v-if="isUnlocked('fuel')" itemId="techFuelT2" level="T2" name="fuel" />
+                                <line-technology v-if="isUnlocked('science')" itemId="techScienceT2" level="T2" name="science" />
+                                <line-technology v-if="isUnlocked('oil')" itemId="techOilT2" level="T2" name="oil" />
+                                <line-technology v-if="isUnlocked('metal')" itemId="techMetalT2" level="T2" name="metal" />
+                                <line-technology v-if="isUnlocked('gem')" itemId="techGemT2" level="T2" name="gem" />
+                                <line-technology v-if="isUnlocked('wood')" itemId="techWoodT2" level="T2" name="wood" />
+                                <line-technology v-if="isUnlocked('silicon')" itemId="techSiliconT2" level="T2" name="silicon" />
+                                <line-technology v-if="isUnlocked('uranium')" itemId="techUraniumT2" level="T2" name="uranium" />
+                                <line-technology v-if="isUnlocked('lava')" itemId="techLavaT2" level="T2" name="lava" />
+                                <line-technology v-if="isUnlocked('lunarite')" itemId="techLunariteT2" level="T2" name="lunarite" />
+                                <line-technology v-if="isUnlocked('methane')" itemId="techMethaneT2" level="T2" name="methane" />
+                                <line-technology v-if="isUnlocked('titanium')" itemId="techTitaniumT2" level="T2" name="titanium" />
+                                <line-technology v-if="isUnlocked('gold')" itemId="techGoldT2" level="T2" name="gold" />
+                                <line-technology v-if="isUnlocked('silver')" itemId="techSilverT2" level="T2" name="silver" />
+                                <line-technology v-if="isUnlocked('hydrogen')" itemId="techHydrogenT2" level="T2" name="hydrogen" />
+                                <line-technology v-if="isUnlocked('helium')" itemId="techHeliumT2" level="T2" name="helium" />
+                                <line-technology v-if="isUnlocked('ice')" itemId="techIceT2" level="T2" name="ice" />
                             </div>
                         </div>
-                        <div class="col">
-                            <div class="row row-cols-2 gy-2 gx-3">
-                                <line-technology itemId="techPlasmaT3" level="T3" name="plasma" />
-                                <line-technology itemId="techMeteoriteT3" level="T3" name="meteorite" />
-                                <line-technology itemId="techCarbonT3" level="T3" name="carbon" />
-                                <line-technology itemId="techFuelT3" level="T3" name="fuel" />
-                                <line-technology itemId="techScienceT3" level="T3" name="science" />
-                                <line-technology itemId="techOilT3" level="T3" name="oil" />
-                                <line-technology itemId="techMetalT3" level="T3" name="metal" />
-                                <line-technology itemId="techGemT3" level="T3" name="gem" />
-                                <line-technology itemId="techWoodT3" level="T3" name="wood" />
-                                <line-technology itemId="techSiliconT3" level="T3" name="silicon" />
-                                <line-technology itemId="techUraniumT3" level="T3" name="uranium" />
-                                <line-technology itemId="techLavaT3" level="T3" name="lava" />
-                                <line-technology itemId="techLunariteT3" level="T3" name="lunarite" />
-                                <line-technology itemId="techMethaneT3" level="T3" name="methane" />
-                                <line-technology itemId="techTitaniumT3" level="T3" name="titanium" />
-                                <line-technology itemId="techGoldT3" level="T3" name="gold" />
-                                <line-technology itemId="techSilverT3" level="T3" name="silver" />
-                                <line-technology itemId="techHydrogenT3" level="T3" name="hydrogen" />
-                                <line-technology itemId="techHeliumT3" level="T3" name="helium" />
-                                <line-technology itemId="techIceT3" level="T3" name="ice" />
+                        <div v-if="hasT3TechLocked" class="col">
+                            <div class="row row-cols-1 row-cols-lg-2 gy-2 gx-3">
+                                <line-technology v-if="isUnlocked('plasma')" itemId="techPlasmaT3" level="T3" name="plasma" />
+                                <line-technology v-if="isUnlocked('meteorite')" itemId="techMeteoriteT3" level="T3" name="meteorite" />
+                                <line-technology v-if="isUnlocked('carbon')" itemId="techCarbonT3" level="T3" name="carbon" />
+                                <line-technology v-if="isUnlocked('fuel')" itemId="techFuelT3" level="T3" name="fuel" />
+                                <line-technology v-if="isUnlocked('science')" itemId="techScienceT3" level="T3" name="science" />
+                                <line-technology v-if="isUnlocked('oil')" itemId="techOilT3" level="T3" name="oil" />
+                                <line-technology v-if="isUnlocked('metal')" itemId="techMetalT3" level="T3" name="metal" />
+                                <line-technology v-if="isUnlocked('gem')" itemId="techGemT3" level="T3" name="gem" />
+                                <line-technology v-if="isUnlocked('wood')" itemId="techWoodT3" level="T3" name="wood" />
+                                <line-technology v-if="isUnlocked('silicon')" itemId="techSiliconT3" level="T3" name="silicon" />
+                                <line-technology v-if="isUnlocked('uranium')" itemId="techUraniumT3" level="T3" name="uranium" />
+                                <line-technology v-if="isUnlocked('lava')" itemId="techLavaT3" level="T3" name="lava" />
+                                <line-technology v-if="isUnlocked('lunarite')" itemId="techLunariteT3" level="T3" name="lunarite" />
+                                <line-technology v-if="isUnlocked('methane')" itemId="techMethaneT3" level="T3" name="methane" />
+                                <line-technology v-if="isUnlocked('titanium')" itemId="techTitaniumT3" level="T3" name="titanium" />
+                                <line-technology v-if="isUnlocked('gold')" itemId="techGoldT3" level="T3" name="gold" />
+                                <line-technology v-if="isUnlocked('silver')" itemId="techSilverT3" level="T3" name="silver" />
+                                <line-technology v-if="isUnlocked('hydrogen')" itemId="techHydrogenT3" level="T3" name="hydrogen" />
+                                <line-technology v-if="isUnlocked('helium')" itemId="techHeliumT3" level="T3" name="helium" />
+                                <line-technology v-if="isUnlocked('ice')" itemId="techIceT3" level="T3" name="ice" />
                             </div>
                         </div>
-                        <div class="col">
-                            <div class="row row-cols-2 gy-2 gx-3">
-                                <line-technology itemId="techPlasmaT4" level="T4" name="plasma" />
-                                <line-technology itemId="techCarbonT4" level="T4" name="carbon" />
-                                <line-technology itemId="techMeteoriteT4" level="T4" name="meteorite" />
-                                <line-technology itemId="techScienceT4" level="T4" name="science" />
-                                <line-technology itemId="techOilT4" level="T4" name="oil" />
-                                <line-technology itemId="techMetalT4" level="T4" name="metal" />
-                                <line-technology itemId="techGemT4" level="T4" name="gem" />
-                                <line-technology itemId="techWoodT4" level="T4" name="wood" />
-                                <line-technology itemId="techSiliconT4" level="T4" name="silicon" />
-                                <line-technology itemId="techUraniumT4" level="T4" name="uranium" />
-                                <line-technology itemId="techLavaT4" level="T4" name="lava" />
-                                <line-technology itemId="techLunariteT4" level="T4" name="lunarite" />
-                                <line-technology itemId="techMethaneT4" level="T4" name="methane" />
-                                <line-technology itemId="techTitaniumT4" level="T4" name="titanium" />
-                                <line-technology itemId="techGoldT4" level="T4" name="gold" />
-                                <line-technology itemId="techSilverT4" level="T4" name="silver" />
-                                <line-technology itemId="techHydrogenT4" level="T4" name="hydrogen" />
-                                <line-technology itemId="techHeliumT4" level="T4" name="helium" />
-                                <line-technology itemId="techIceT4" level="T4" name="ice" />
+                        <div v-if="hasT4TechLocked" class="col">
+                            <div class="row row-cols-1 row-cols-lg-2 gy-2 gx-3">
+                                <line-technology v-if="isUnlocked('plasma')" itemId="techPlasmaT4" level="T4" name="plasma" />
+                                <line-technology v-if="isUnlocked('meteorite')" itemId="techMeteoriteT4" level="T4" name="meteorite" />
+                                <line-technology v-if="isUnlocked('carbon')" itemId="techCarbonT4" level="T4" name="carbon" />
+                                <line-technology v-if="isUnlocked('science')" itemId="techScienceT4" level="T4" name="science" />
+                                <line-technology v-if="isUnlocked('oil')" itemId="techOilT4" level="T4" name="oil" />
+                                <line-technology v-if="isUnlocked('metal')" itemId="techMetalT4" level="T4" name="metal" />
+                                <line-technology v-if="isUnlocked('gem')" itemId="techGemT4" level="T4" name="gem" />
+                                <line-technology v-if="isUnlocked('wood')" itemId="techWoodT4" level="T4" name="wood" />
+                                <line-technology v-if="isUnlocked('silicon')" itemId="techSiliconT4" level="T4" name="silicon" />
+                                <line-technology v-if="isUnlocked('uranium')" itemId="techUraniumT4" level="T4" name="uranium" />
+                                <line-technology v-if="isUnlocked('lava')" itemId="techLavaT4" level="T4" name="lava" />
+                                <line-technology v-if="isUnlocked('lunarite')" itemId="techLunariteT4" level="T4" name="lunarite" />
+                                <line-technology v-if="isUnlocked('methane')" itemId="techMethaneT4" level="T4" name="methane" />
+                                <line-technology v-if="isUnlocked('titanium')" itemId="techTitaniumT4" level="T4" name="titanium" />
+                                <line-technology v-if="isUnlocked('gold')" itemId="techGoldT4" level="T4" name="gold" />
+                                <line-technology v-if="isUnlocked('silver')" itemId="techSilverT4" level="T4" name="silver" />
+                                <line-technology v-if="isUnlocked('hydrogen')" itemId="techHydrogenT4" level="T4" name="hydrogen" />
+                                <line-technology v-if="isUnlocked('helium')" itemId="techHeliumT4" level="T4" name="helium" />
+                                <line-technology v-if="isUnlocked('ice')" itemId="techIceT4" level="T4" name="ice" />
                             </div>
                         </div>
-                        <div class="col">
-                            <div class="row row-cols-2 gy-2 gx-3">
-                                <line-technology itemId="techCarbonT5" level="T5" name="carbon" />
-                                <line-technology itemId="techScienceT5" level="T5" name="science" />
-                                <line-technology itemId="techOilT5" level="T5" name="oil" />
-                                <line-technology itemId="techMetalT5" level="T5" name="metal" />
-                                <line-technology itemId="techGemT5" level="T5" name="gem" />
-                                <line-technology itemId="techWoodT5" level="T5" name="wood" />
-                                <line-technology itemId="techSiliconT5" level="T5" name="silicon" />
-                                <line-technology itemId="techUraniumT5" level="T5" name="uranium" />
-                                <line-technology itemId="techLavaT5" level="T5" name="lava" />
-                                <line-technology itemId="techLunariteT5" level="T5" name="lunarite" />
-                                <line-technology itemId="techMethaneT5" level="T5" name="methane" />
-                                <line-technology itemId="techTitaniumT5" level="T5" name="titanium" />
-                                <line-technology itemId="techGoldT5" level="T5" name="gold" />
-                                <line-technology itemId="techSilverT5" level="T5" name="silver" />
-                                <line-technology itemId="techHydrogenT5" level="T5" name="hydrogen" />
-                                <line-technology itemId="techHeliumT5" level="T5" name="helium" />
-                                <line-technology itemId="techIceT5" level="T5" name="ice" />
+                        <div v-if="hasT5TechLocked" class="col">
+                            <div class="row row-cols-1 row-cols-lg-2 gy-2 gx-3">
+                                <line-technology v-if="isUnlocked('carbon')" itemId="techCarbonT5" level="T5" name="carbon" />
+                                <line-technology v-if="isUnlocked('science')" itemId="techScienceT5" level="T5" name="science" />
+                                <line-technology v-if="isUnlocked('oil')" itemId="techOilT5" level="T5" name="oil" />
+                                <line-technology v-if="isUnlocked('metal')" itemId="techMetalT5" level="T5" name="metal" />
+                                <line-technology v-if="isUnlocked('gem')" itemId="techGemT5" level="T5" name="gem" />
+                                <line-technology v-if="isUnlocked('wood')" itemId="techWoodT5" level="T5" name="wood" />
+                                <line-technology v-if="isUnlocked('silicon')" itemId="techSiliconT5" level="T5" name="silicon" />
+                                <line-technology v-if="isUnlocked('uranium')" itemId="techUraniumT5" level="T5" name="uranium" />
+                                <line-technology v-if="isUnlocked('lava')" itemId="techLavaT5" level="T5" name="lava" />
+                                <line-technology v-if="isUnlocked('lunarite')" itemId="techLunariteT5" level="T5" name="lunarite" />
+                                <line-technology v-if="isUnlocked('methane')" itemId="techMethaneT5" level="T5" name="methane" />
+                                <line-technology v-if="isUnlocked('titanium')" itemId="techTitaniumT5" level="T5" name="titanium" />
+                                <line-technology v-if="isUnlocked('gold')" itemId="techGoldT5" level="T5" name="gold" />
+                                <line-technology v-if="isUnlocked('silver')" itemId="techSilverT5" level="T5" name="silver" />
+                                <line-technology v-if="isUnlocked('hydrogen')" itemId="techHydrogenT5" level="T5" name="hydrogen" />
+                                <line-technology v-if="isUnlocked('helium')" itemId="techHeliumT5" level="T5" name="helium" />
+                                <line-technology v-if="isUnlocked('ice')" itemId="techIceT5" level="T5" name="ice" />
                             </div>
                         </div>
                     </template>
@@ -2028,7 +2031,7 @@ export default {
         
         ...mapState([ 'companyName', 'autoSaveDelay', 'statsTotalRebirths', 'statsTotalEnlightens', 'statsTotalConquests', 'statsTotalStatues' ]),
         
-        ...mapGetters([ 'getRadarRange', 'getFleetStats', 'getItemCount', 'getBuildCosts', 'canBuild', 'getAchievementCount', 'getDMPotential', 'getDMAchievement', 'getDMRing', 'getDMSwarm', 'getDMSphere', 'getULPotential', 'getULSphere', 'getULConquest', 'getULStatue', 'getTimeSinceStartDate', 'getTimeSinceLastRebirth', 'getTimeSinceLastEnlighten' ]),
+        ...mapGetters([ 'isUnlocked', 'getRadarRange', 'getFleetStats', 'getItemCount', 'getBuildCosts', 'canBuild', 'getAchievementCount', 'getDMPotential', 'getDMAchievement', 'getDMRing', 'getDMSwarm', 'getDMSphere', 'getULPotential', 'getULSphere', 'getULConquest', 'getULStatue', 'getTimeSinceStartDate', 'getTimeSinceLastRebirth', 'getTimeSinceLastEnlighten' ]),
         
         ultrite: function() { return this.getItemCount('ultrite') },
         darkmatter: function() { return this.getItemCount('darkmatter') },
@@ -2040,6 +2043,75 @@ export default {
         canEnlighten: function() { return this.canBuild('enlighten', 1) },
         
         statueProgress: function() { return (100 * this.getItemCount('statue') / 150) },
+        
+        hasTechLocked: function() { 
+            let ret = false
+            let list = [
+                'techPlasmaT2', 'techMeteoriteT2', 'techCarbonT2', 'techScienceT2', 'techOilT2', 'techFuelT2', 'techMetalT2', 'techGemT2', 'techWoodT2', 'techSiliconT2', 'techUraniumT2', 'techLavaT2', 'techLunariteT2', 'techMethaneT2', 'techTitaniumT2', 'techGoldT2', 'techSilverT2', 'techHydrogenT2', 'techHeliumT2', 'techIceT2',
+                'techPlasmaT3', 'techMeteoriteT3', 'techCarbonT3', 'techScienceT3', 'techOilT3', 'techFuelT3', 'techMetalT3', 'techGemT3', 'techWoodT3', 'techSiliconT3', 'techUraniumT3', 'techLavaT3', 'techLunariteT3', 'techMethaneT3', 'techTitaniumT3', 'techGoldT3', 'techSilverT3', 'techHydrogenT3', 'techHeliumT3', 'techIceT3',
+                'techPlasmaT4', 'techMeteoriteT4', 'techCarbonT4', 'techScienceT4', 'techOilT4', 'techMetalT4', 'techGemT4', 'techWoodT4', 'techSiliconT4', 'techUraniumT4', 'techLavaT4', 'techLunariteT4', 'techMethaneT4', 'techTitaniumT4', 'techGoldT4', 'techSilverT4', 'techHydrogenT4', 'techHeliumT4', 'techIceT4',
+                'techCarbonT5', 'techScienceT5', 'techOilT5', 'techMetalT5', 'techGemT5', 'techWoodT5', 'techSiliconT5', 'techUraniumT5', 'techLavaT5', 'techLunariteT5', 'techMethaneT5', 'techTitaniumT5', 'techGoldT5', 'techSilverT5', 'techHydrogenT5', 'techHeliumT5', 'techIceT5',                
+            ]
+            for (let i = 0; i < list.length; i++) {
+                if (this.getItemCount(list[i]) < 1) {
+                    ret = true
+                    break
+                }
+            }
+            return ret
+        },
+        hasT2TechLocked: function() { 
+            let ret = false
+            let list = [
+                'techPlasmaT2', 'techMeteoriteT2', 'techCarbonT2', 'techScienceT2', 'techOilT2', 'techFuelT2', 'techMetalT2', 'techGemT2', 'techWoodT2', 'techSiliconT2', 'techUraniumT2', 'techLavaT2', 'techLunariteT2', 'techMethaneT2', 'techTitaniumT2', 'techGoldT2', 'techSilverT2', 'techHydrogenT2', 'techHeliumT2', 'techIceT2',
+            ]
+            for (let i = 0; i < list.length; i++) {
+                if (this.getItemCount(list[i]) < 1) {
+                    ret = true
+                    break
+                }
+            }
+            return ret
+        },
+        hasT3TechLocked: function() { 
+            let ret = false
+            let list = [
+                'techPlasmaT3', 'techMeteoriteT3', 'techCarbonT3', 'techScienceT3', 'techOilT3', 'techFuelT3', 'techMetalT3', 'techGemT3', 'techWoodT3', 'techSiliconT3', 'techUraniumT3', 'techLavaT3', 'techLunariteT3', 'techMethaneT3', 'techTitaniumT3', 'techGoldT3', 'techSilverT3', 'techHydrogenT3', 'techHeliumT3', 'techIceT3',
+            ]
+            for (let i = 0; i < list.length; i++) {
+                if (this.getItemCount(list[i]) < 1) {
+                    ret = true
+                    break
+                }
+            }
+            return ret
+        },
+        hasT4TechLocked: function() { 
+            let ret = false
+            let list = [
+                'techPlasmaT4', 'techMeteoriteT4', 'techCarbonT4', 'techScienceT4', 'techOilT4', 'techMetalT4', 'techGemT4', 'techWoodT4', 'techSiliconT4', 'techUraniumT4', 'techLavaT4', 'techLunariteT4', 'techMethaneT4', 'techTitaniumT4', 'techGoldT4', 'techSilverT4', 'techHydrogenT4', 'techHeliumT4', 'techIceT4',
+            ]
+            for (let i = 0; i < list.length; i++) {
+                if (this.getItemCount(list[i]) < 1) {
+                    ret = true
+                    break
+                }
+            }
+            return ret
+        },
+        hasT5TechLocked: function() { 
+            let ret = false
+            let list = [
+                'techCarbonT5', 'techScienceT5', 'techOilT5', 'techMetalT5', 'techGemT5', 'techWoodT5', 'techSiliconT5', 'techUraniumT5', 'techLavaT5', 'techLunariteT5', 'techMethaneT5', 'techTitaniumT5', 'techGoldT5', 'techSilverT5', 'techHydrogenT5', 'techHeliumT5', 'techIceT5',                
+            ]
+            for (let i = 0; i < list.length; i++) {
+                if (this.getItemCount(list[i]) < 1) {
+                    ret = true
+                    break
+                }
+            }
+            return ret
+        },
     },
     methods: {
     
