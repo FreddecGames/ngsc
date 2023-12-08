@@ -3039,7 +3039,7 @@ function klona(x) {
 
 const inlineAppConfig = {
   "nuxt": {
-    "buildId": "c73e75ed-531a-4592-b2da-214d3d64b10a"
+    "buildId": "fda4cada-1509-4834-82b0-83aff51fbbeb"
   }
 };
 
@@ -5438,72 +5438,72 @@ const assets = {
   "/_nuxt/en.f0e2a57c.js": {
     "type": "application/javascript",
     "etag": "\"1506d-HswEaKB8fTuwXLKZj2oPzyvsCts\"",
-    "mtime": "2023-12-08T08:20:31.363Z",
+    "mtime": "2023-12-08T13:11:55.990Z",
     "size": 86125,
     "path": "../public/_nuxt/en.f0e2a57c.js"
-  },
-  "/_nuxt/entry.1d6994f3.js": {
-    "type": "application/javascript",
-    "etag": "\"212286-PaYJKG8oWoPk0w/+RQFZ/s01XBA\"",
-    "mtime": "2023-12-08T08:20:31.364Z",
-    "size": 2171526,
-    "path": "../public/_nuxt/entry.1d6994f3.js"
   },
   "/_nuxt/entry.e16a13e7.css": {
     "type": "text/css; charset=utf-8",
     "etag": "\"3b3ae-WxcZ1cRsZMDAMoRs8wkCQwqKwKY\"",
-    "mtime": "2023-12-08T08:20:31.362Z",
+    "mtime": "2023-12-08T13:11:55.982Z",
     "size": 242606,
     "path": "../public/_nuxt/entry.e16a13e7.css"
+  },
+  "/_nuxt/entry.f98f5188.js": {
+    "type": "application/javascript",
+    "etag": "\"21227b-/1DLyd5QceSVPVoxnCdYle8VEpU\"",
+    "mtime": "2023-12-08T13:11:55.991Z",
+    "size": 2171515,
+    "path": "../public/_nuxt/entry.f98f5188.js"
+  },
+  "/_nuxt/error-404.18afdea6.js": {
+    "type": "application/javascript",
+    "etag": "\"1906-cXVK0NsCAbotiFu1+PpCvByTBqc\"",
+    "mtime": "2023-12-08T13:11:55.990Z",
+    "size": 6406,
+    "path": "../public/_nuxt/error-404.18afdea6.js"
   },
   "/_nuxt/error-404.7fc72018.css": {
     "type": "text/css; charset=utf-8",
     "etag": "\"e2e-iNt1cqPQ0WDudfCTZVQd31BeRGs\"",
-    "mtime": "2023-12-08T08:20:31.362Z",
+    "mtime": "2023-12-08T13:11:55.983Z",
     "size": 3630,
     "path": "../public/_nuxt/error-404.7fc72018.css"
   },
-  "/_nuxt/error-404.811a659f.js": {
+  "/_nuxt/error-500.223a18f4.js": {
     "type": "application/javascript",
-    "etag": "\"1906-k9iqiwtRmo7rLrPZWS9Helh0I/s\"",
-    "mtime": "2023-12-08T08:20:31.363Z",
-    "size": 6406,
-    "path": "../public/_nuxt/error-404.811a659f.js"
-  },
-  "/_nuxt/error-500.9cbcdf90.js": {
-    "type": "application/javascript",
-    "etag": "\"77e-7IjhRAQV94niE4xSRM17DyXO4I8\"",
-    "mtime": "2023-12-08T08:20:31.363Z",
+    "etag": "\"77e-htgIvMfXB9mdDdSGGpRxxRuJ0NQ\"",
+    "mtime": "2023-12-08T13:11:55.990Z",
     "size": 1918,
-    "path": "../public/_nuxt/error-500.9cbcdf90.js"
+    "path": "../public/_nuxt/error-500.223a18f4.js"
   },
   "/_nuxt/error-500.c5df6088.css": {
     "type": "text/css; charset=utf-8",
     "etag": "\"79e-ByRo+49BgcevWdRjJy3CMx2IA5k\"",
-    "mtime": "2023-12-08T08:20:31.363Z",
+    "mtime": "2023-12-08T13:11:55.990Z",
     "size": 1950,
     "path": "../public/_nuxt/error-500.c5df6088.css"
   },
-  "/_nuxt/vue.f36acd1f.6a450334.js": {
+  "/_nuxt/vue.f36acd1f.6a7ae286.js": {
     "type": "application/javascript",
-    "etag": "\"186-e4r1LGyzOGbbpJvR2xSHNEdleNU\"",
-    "mtime": "2023-12-08T08:20:31.362Z",
+    "etag": "\"186-mJp/EOn272UqexkPSSIAfqYko2I\"",
+    "mtime": "2023-12-08T13:11:55.989Z",
     "size": 390,
-    "path": "../public/_nuxt/vue.f36acd1f.6a450334.js"
+    "path": "../public/_nuxt/vue.f36acd1f.6a7ae286.js"
   },
   "/_nuxt/builds/latest.json": {
     "type": "application/json",
-    "etag": "\"47-WsUs9lU266zh3Dem+L/BAJhU9us\"",
-    "mtime": "2023-12-08T08:20:31.753Z",
+    "etag": "\"47-7uHDbTeKqlpVzqWPb/q81mdrSoQ\"",
+    "mtime": "2023-12-08T13:11:56.550Z",
     "size": 71,
     "path": "../public/_nuxt/builds/latest.json"
   },
-  "/_nuxt/builds/meta/c73e75ed-531a-4592-b2da-214d3d64b10a.json": {
+  "/_nuxt/builds/meta/fda4cada-1509-4834-82b0-83aff51fbbeb.json": {
     "type": "application/json",
-    "etag": "\"8b-6hJP9WcNBcipjXxCoeXEhZ00SN0\"",
-    "mtime": "2023-12-08T08:20:31.753Z",
+    "etag": "\"8b-6MUj0ONkWAlTv2cXgKgIaG1xEZM\"",
+    "mtime": "2023-12-08T13:11:56.551Z",
     "size": 139,
-    "path": "../public/_nuxt/builds/meta/c73e75ed-531a-4592-b2da-214d3d64b10a.json"
+    "path": "../public/_nuxt/builds/meta/fda4cada-1509-4834-82b0-83aff51fbbeb.json"
   }
 };
 
