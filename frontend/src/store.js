@@ -3561,6 +3561,8 @@ export const store = createStore({
                 if (!text) return console.warn('Load failed')
                 loadeddata = JSON.parse(text)
                 
+                console.log(loadeddata)
+                
                 if (loadeddata.version || loadeddata.versionNumber) {
                     
                     state.locale = loadeddata.locale || 'en'
@@ -3998,6 +4000,7 @@ export const store = createStore({
         },
         
         loadV1Item({ state }, payload) {
+            console.log(payload.loadeddata)
             if (payload.oldId in payload.loadeddata.entries) {
                 let data = payload.loadeddata.entries[payload.oldId]
                 

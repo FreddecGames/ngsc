@@ -42,28 +42,12 @@
 </template>
 
 <script>
-import FormatNumber from './FormatNumber.vue'
-
-import { mapState, mapGetters, mapActions } from 'vuex'
-
 export default {
     props: [ 'name', 'icon', 'itemId' ],
-    components: {
-        
-        'format-number': FormatNumber,
-    },
     computed: {
-        
-        ...mapState([ 'dmBoostCount' ]),
-        
-        ...mapGetters([ 'getItemCount' ]),
         
         count: function() { return this.getItemCount(this.itemId) },
         dmCount: function() { return this.getItemCount('darkmatter') },
-    },
-    methods: {
-    
-        ...mapActions([ 'boost' ]),
     },
 }
 </script>

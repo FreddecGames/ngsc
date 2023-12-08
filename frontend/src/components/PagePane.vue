@@ -56,8 +56,6 @@
 </style>
 
 <script>
-import { mapState, mapActions } from 'vuex'
-
 export default {
     props: [ 'id', 'name', 'icon' ],
     computed: {
