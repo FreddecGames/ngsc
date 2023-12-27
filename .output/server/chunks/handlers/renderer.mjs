@@ -98,7 +98,7 @@ function createServerHead(options = {}) {
 
 const unheadPlugins = [];
 
-const appHead = {"meta":[{"name":"viewport","content":"width=device-width, initial-scale=1"},{"charset":"utf-8"}],"link":[],"style":[],"script":[],"noscript":[],"title":"NG Space Company","charset":"utf-8","viewport":"width=device-width, initial-scale=1"};
+const appHead = {"meta":[{"name":"viewport","content":"width=device-width, initial-scale=1"},{"charset":"utf-8"}],"link":[],"style":[],"script":[],"noscript":[],"title":"NG Space Company","charset":"utf-8","viewport":"width=device-width, initial-scale=1","description":"Incremental space game about resource mining, interstellar exploration and system conquests."};
 
 const appRootId = "__nuxt";
 
