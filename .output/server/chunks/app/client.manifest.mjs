@@ -23,7 +23,7 @@ const client_manifest = {
     "css": [
       "error-404.7fc72018.css"
     ],
-    "file": "error-404.9e85c57b.js",
+    "file": "error-404.cb6177ea.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ],
@@ -51,7 +51,7 @@ const client_manifest = {
     "css": [
       "error-500.c5df6088.css"
     ],
-    "file": "error-500.824c4f2d.js",
+    "file": "error-500.05014020.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ],
@@ -84,7 +84,7 @@ const client_manifest = {
       "node_modules/@nuxt/ui-templates/dist/templates/error-404.vue",
       "node_modules/@nuxt/ui-templates/dist/templates/error-500.vue"
     ],
-    "file": "entry.159a7a88.js",
+    "file": "entry.4c15c3e6.js",
     "isEntry": true,
     "src": "node_modules/nuxt/dist/app/entry.js"
   },
