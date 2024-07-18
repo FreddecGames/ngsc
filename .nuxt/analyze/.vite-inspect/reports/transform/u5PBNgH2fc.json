@@ -1,0 +1,216 @@
+{
+  "resolvedId": "C:/dev/ngsc/nuxt3/node_modules/@popperjs/core/lib/utils/computeAutoPlacement.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import getVariation from \"./getVariation.js\";\nimport { variationPlacements, basePlacements, placements as allPlacements } from \"../enums.js\";\nimport detectOverflow from \"./detectOverflow.js\";\nimport getBasePlacement from \"./getBasePlacement.js\";\nexport default function computeAutoPlacement(state, options) {\n  if (options === void 0) {\n    options = {};\n  }\n\n  var _options = options,\n      placement = _options.placement,\n      boundary = _options.boundary,\n      rootBoundary = _options.rootBoundary,\n      padding = _options.padding,\n      flipVariations = _options.flipVariations,\n      _options$allowedAutoP = _options.allowedAutoPlacements,\n      allowedAutoPlacements = _options$allowedAutoP === void 0 ? allPlacements : _options$allowedAutoP;\n  var variation = getVariation(placement);\n  var placements = variation ? flipVariations ? variationPlacements : variationPlacements.filter(function (placement) {\n    return getVariation(placement) === variation;\n  }) : basePlacements;\n  var allowedPlacements = placements.filter(function (placement) {\n    return allowedAutoPlacements.indexOf(placement) >= 0;\n  });\n\n  if (allowedPlacements.length === 0) {\n    allowedPlacements = placements;\n  } // $FlowFixMe[incompatible-type]: Flow seems to have problems with two array unions...\n\n\n  var overflows = allowedPlacements.reduce(function (acc, placement) {\n    acc[placement] = detectOverflow(state, {\n      placement: placement,\n      boundary: boundary,\n      rootBoundary: rootBoundary,\n      padding: padding\n    })[getBasePlacement(placement)];\n    return acc;\n  }, {});\n  return Object.keys(overflows).sort(function (a, b) {\n    return overflows[a] - overflows[b];\n  });\n}",
+      "start": 1721307758445,
+      "end": 1721307758487,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1721307758487,
+      "end": 1721307758487,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1721307758487,
+      "end": 1721307758487,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1721307758487,
+      "end": 1721307758487,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1721307758487,
+      "end": 1721307758487,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1721307758487,
+      "end": 1721307758487,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1721307758487,
+      "end": 1721307758487,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1721307758487,
+      "end": 1721307758487,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1721307758487,
+      "end": 1721307758487,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1721307758487,
+      "end": 1721307758487,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1721307758487,
+      "end": 1721307758487,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1721307758487,
+      "end": 1721307758487,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1721307758487,
+      "end": 1721307758487,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1721307758487,
+      "end": 1721307758487,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1721307758487,
+      "end": 1721307758487,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1721307758487,
+      "end": 1721307758487,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1721307758487,
+      "end": 1721307758487,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1721307758487,
+      "end": 1721307758487,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1721307758487,
+      "end": 1721307758487,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1721307758487,
+      "end": 1721307758487,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1721307758487,
+      "end": 1721307758487,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1721307758487,
+      "end": 1721307758487,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1721307758487,
+      "end": 1721307758488,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1721307758488,
+      "end": 1721307758488,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1721307758488,
+      "end": 1721307758488,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1721307758488,
+      "end": 1721307758488,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1721307758488,
+      "end": 1721307758488,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1721307758488,
+      "end": 1721307758488,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1721307758488,
+      "end": 1721307758488,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1721307758488,
+      "end": 1721307758488,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1721307758488,
+      "end": 1721307758488,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1721307758488,
+      "end": 1721307758488,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1721307758488,
+      "end": 1721307758488,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1721307758488,
+      "end": 1721307758488,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1721307758488,
+      "end": 1721307758488,
+      "order": "normal"
+    }
+  ]
+}

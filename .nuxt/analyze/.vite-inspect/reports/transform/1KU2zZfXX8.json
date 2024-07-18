@@ -1,0 +1,220 @@
+{
+  "resolvedId": "C:/dev/ngsc/nuxt3/components/Topbar.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<script setup>\r\n            \r\n    const menuItems = [\r\n    \r\n        { paneId:'donatingPane', name:'menu-item-donating', icon:'/icons/donating.png' },\r\n        { paneId:'statsPane', name:'menu-item-stats', icon:'/icons/stats.png' },\r\n        { paneId:'optionsPane', name:'menu-item-options', icon:'/icons/options.png' },\r\n        { paneId:'aboutPane', name:'menu-item-about', icon:'/icons/about.png' },\r\n    ]\r\n\r\n    import { storeToRefs } from 'pinia'\r\n    import { useGameStore } from '~/store/game.js'\r\n    \r\n    const store = useGameStore()\r\n    \r\n    const { activePane } = storeToRefs(store)\r\n    \r\n    const { setSidebarOpen, setActivePane } = store\r\n\r\n</script>\r\n\r\n<template>\r\n    <div id=\"topbar\" class=\"row row-cols-1 g-0 align-items-center\" @mousewheel.prevent>\r\n        <div class=\"p-2\">\r\n            <div class=\"row gx-0 align-items-center flex-nowrap\">\r\n                \r\n                <div class=\"col text-truncate\">\r\n                    <div class=\"row gx-2 align-items-center\">\r\n                        \r\n                        <div class=\"col-auto position-relative\">\r\n                            <img src=\"/whiteLogo.png\" alt=\"Logo\" width=\"32\" height=\"32\" class=\"align-bottom\" />\r\n                        </div>\r\n                        \r\n                        <div class=\"col text-truncate\">\r\n                            <span class=\"h5 text-light mb-0\">{{ store.companyName }}</span>\r\n                        </div>\r\n                    \r\n                    </div>\r\n                </div>\r\n                \r\n                <div class=\"col-auto\">\r\n                    <a class=\"btn\" href=\"https://discord.gg/3UkgeeT9CV\" target=\"_blank\">\r\n                        <img src=\"/icons/discord.png\" width=\"16\" height=\"16\" alt=\"Discord\" />\r\n                        <span class=\"ms-2 d-none d-lg-inline\">Discord</span>\r\n                    </a>\r\n                </div>\r\n                \r\n                <div v-for=\"item in menuItems\" :key=\"item.id\" class=\"col-auto\">\r\n                    <button type=\"button\" class=\"btn\" :class=\"{ 'active':activePane == item.paneId }\" @click=\"setSidebarOpen(false); setActivePane(item.paneId);\">\r\n                        <img :src=\"item.icon\" width=\"16\" height=\"16\" :alt=\"item.name\" />\r\n                        <span class=\"ms-2 d-none d-lg-inline\">{{ $t(item.name) }}</span>\r\n                    </button>\r\n                </div>\r\n                \r\n            </div>\r\n        </div>\r\n    </div>\r\n</template>\r\n\r\n<style>\r\n    #topbar {\r\n        position: fixed; top: 0; right: 0; left: 0; height: 54px; z-index: 1000;\r\n        background-color: #484f5c;\r\n    }\r\n</style>\r\n",
+      "start": 1721307757326,
+      "end": 1721307757494,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1721307757494,
+      "end": 1721307757494,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1721307757494,
+      "end": 1721307757494,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1721307757494,
+      "end": 1721307757494,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1721307757494,
+      "end": 1721307757494,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1721307757494,
+      "end": 1721307757494,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1721307757494,
+      "end": 1721307757494,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1721307757494,
+      "end": 1721307757494,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1721307757494,
+      "end": 1721307757494,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { createElementVNode as _createElementVNode, unref as _unref, toDisplayString as _toDisplayString, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, normalizeClass as _normalizeClass, withModifiers as _withModifiers } from \"vue\"\nimport _imports_0 from '/whiteLogo.png'\nimport _imports_1 from '/icons/discord.png'\n\n\nconst _hoisted_1 = { class: \"p-2\" }\nconst _hoisted_2 = { class: \"row gx-0 align-items-center flex-nowrap\" }\nconst _hoisted_3 = { class: \"col text-truncate\" }\nconst _hoisted_4 = { class: \"row gx-2 align-items-center\" }\nconst _hoisted_5 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"col-auto position-relative\" }, [\n  /*#__PURE__*/_createElementVNode(\"img\", {\n    src: _imports_0,\n    alt: \"Logo\",\n    width: \"32\",\n    height: \"32\",\n    class: \"align-bottom\"\n  })\n], -1)\nconst _hoisted_6 = { class: \"col text-truncate\" }\nconst _hoisted_7 = { class: \"h5 text-light mb-0\" }\nconst _hoisted_8 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"col-auto\" }, [\n  /*#__PURE__*/_createElementVNode(\"a\", {\n    class: \"btn\",\n    href: \"https://discord.gg/3UkgeeT9CV\",\n    target: \"_blank\"\n  }, [\n    /*#__PURE__*/_createElementVNode(\"img\", {\n      src: _imports_1,\n      width: \"16\",\n      height: \"16\",\n      alt: \"Discord\"\n    }),\n    /*#__PURE__*/_createElementVNode(\"span\", { class: \"ms-2 d-none d-lg-inline\" }, \"Discord\")\n  ])\n], -1)\nconst _hoisted_9 = [\"onClick\"]\nconst _hoisted_10 = [\"src\", \"alt\"]\nconst _hoisted_11 = { class: \"ms-2 d-none d-lg-inline\" }\n\nimport { storeToRefs } from 'pinia'\r\n    import { useGameStore } from '~/store/game.js'\r\n    \r\n    \nconst _sfc_main = {\n  __name: 'Topbar',\n  setup(__props) {\n\r\n            \r\n    const menuItems = [\r\n    \r\n        { paneId:'donatingPane', name:'menu-item-donating', icon:'/icons/donating.png' },\r\n        { paneId:'statsPane', name:'menu-item-stats', icon:'/icons/stats.png' },\r\n        { paneId:'optionsPane', name:'menu-item-options', icon:'/icons/options.png' },\r\n        { paneId:'aboutPane', name:'menu-item-about', icon:'/icons/about.png' },\r\n    ]\r\n\r\n    const store = useGameStore()\r\n    \r\n    const { activePane } = storeToRefs(store)\r\n    \r\n    const { setSidebarOpen, setActivePane } = store\r\n\r\n\nreturn (_ctx, _cache) => {\n  return (_openBlock(), _createElementBlock(\"div\", {\n    id: \"topbar\",\n    class: \"row row-cols-1 g-0 align-items-center\",\n    onMousewheel: _cache[0] || (_cache[0] = _withModifiers(() => {}, [\"prevent\"]))\n  }, [\n    _createElementVNode(\"div\", _hoisted_1, [\n      _createElementVNode(\"div\", _hoisted_2, [\n        _createElementVNode(\"div\", _hoisted_3, [\n          _createElementVNode(\"div\", _hoisted_4, [\n            _hoisted_5,\n            _createElementVNode(\"div\", _hoisted_6, [\n              _createElementVNode(\"span\", _hoisted_7, _toDisplayString(_unref(store).companyName), 1)\n            ])\n          ])\n        ]),\n        _hoisted_8,\n        (_openBlock(), _createElementBlock(_Fragment, null, _renderList(menuItems, (item) => {\n          return _createElementVNode(\"div\", {\n            key: item.id,\n            class: \"col-auto\"\n          }, [\n            _createElementVNode(\"button\", {\n              type: \"button\",\n              class: _normalizeClass([\"btn\", { 'active':_unref(activePane) == item.paneId }]),\n              onClick: $event => {_unref(setSidebarOpen)(false); _unref(setActivePane)(item.paneId);}\n            }, [\n              _createElementVNode(\"img\", {\n                src: item.icon,\n                width: \"16\",\n                height: \"16\",\n                alt: item.name\n              }, null, 8, _hoisted_10),\n              _createElementVNode(\"span\", _hoisted_11, _toDisplayString(_ctx.$t(item.name)), 1)\n            ], 10, _hoisted_9)\n          ])\n        }), 64))\n      ])\n    ])\n  ], 32))\n}\n}\n\n}\n\n\nimport \"C:/dev/ngsc/nuxt3/components/Topbar.vue?vue&type=style&index=0&lang.css\"\n\nexport default _sfc_main",
+      "start": 1721307757494,
+      "end": 1721307757497,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1721307757497,
+      "end": 1721307757497,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1721307757497,
+      "end": 1721307757497,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1721307757498,
+      "end": 1721307757498,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1721307757498,
+      "end": 1721307757498,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1721307757498,
+      "end": 1721307757498,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1721307757498,
+      "end": 1721307757498,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1721307757498,
+      "end": 1721307757498,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1721307757498,
+      "end": 1721307757498,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1721307757498,
+      "end": 1721307757498,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1721307757498,
+      "end": 1721307757498,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1721307757498,
+      "end": 1721307757498,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1721307757498,
+      "end": 1721307757498,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1721307757498,
+      "end": 1721307757498,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1721307757498,
+      "end": 1721307757498,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1721307757498,
+      "end": 1721307757498,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1721307757498,
+      "end": 1721307757498,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1721307757498,
+      "end": 1721307757498,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1721307757498,
+      "end": 1721307757498,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1721307757498,
+      "end": 1721307757499,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1721307757499,
+      "end": 1721307757499,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1721307757499,
+      "end": 1721307757499,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1721307757499,
+      "end": 1721307757499,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1721307757499,
+      "end": 1721307757499,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1721307757499,
+      "end": 1721307757499,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1721307757499,
+      "end": 1721307757499,
+      "order": "normal"
+    }
+  ]
+}

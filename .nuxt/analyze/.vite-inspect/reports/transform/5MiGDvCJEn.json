@@ -1,0 +1,220 @@
+{
+  "resolvedId": "C:/dev/ngsc/nuxt3/components/ToastManualSave.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\r\n    <div id=\"toastManualSave\" class=\"toast align-items-center text-bg-success border-0\" role=\"alert\" aria-live=\"assertive\" aria-atomic=\"true\">\r\n        <div class=\"d-flex\">\r\n            <div class=\"col toast-body small\">{{ $t('toast_manualSave') }}</div>\r\n            <button type=\"button\" class=\"btn-close p-2\" data-bs-dismiss=\"toast\" :aria-label=\"$t('toast_close')\">\r\n                <span class=\"text-black\"><font-awesome-icon icon=\"fas fa-times\" /></span>\r\n            </button>\r\n        </div>\r\n    </div>\r\n</template>",
+      "start": 1721307756989,
+      "end": 1721307757152,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1721307757152,
+      "end": 1721307757152,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1721307757152,
+      "end": 1721307757152,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1721307757152,
+      "end": 1721307757152,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1721307757152,
+      "end": 1721307757152,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1721307757152,
+      "end": 1721307757152,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1721307757152,
+      "end": 1721307757152,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1721307757152,
+      "end": 1721307757152,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1721307757152,
+      "end": 1721307757152,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "const _sfc_main = {}\nimport { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = {\n  id: \"toastManualSave\",\n  class: \"toast align-items-center text-bg-success border-0\",\n  role: \"alert\",\n  \"aria-live\": \"assertive\",\n  \"aria-atomic\": \"true\"\n}\nconst _hoisted_2 = { class: \"d-flex\" }\nconst _hoisted_3 = { class: \"col toast-body small\" }\nconst _hoisted_4 = [\"aria-label\"]\nconst _hoisted_5 = { class: \"text-black\" }\n\nfunction _sfc_render(_ctx, _cache) {\n  const _component_font_awesome_icon = _resolveComponent(\"font-awesome-icon\")\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createElementVNode(\"div\", _hoisted_3, _toDisplayString(_ctx.$t('toast_manualSave')), 1),\n      _createElementVNode(\"button\", {\n        type: \"button\",\n        class: \"btn-close p-2\",\n        \"data-bs-dismiss\": \"toast\",\n        \"aria-label\": _ctx.$t('toast_close')\n      }, [\n        _createElementVNode(\"span\", _hoisted_5, [\n          _createVNode(_component_font_awesome_icon, { icon: \"fas fa-times\" })\n        ])\n      ], 8, _hoisted_4)\n    ])\n  ]))\n}\n\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render]])",
+      "start": 1721307757152,
+      "end": 1721307757153,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1721307757153,
+      "end": 1721307757153,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1721307757153,
+      "end": 1721307757153,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1721307757153,
+      "end": 1721307757153,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1721307757153,
+      "end": 1721307757153,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1721307757153,
+      "end": 1721307757153,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1721307757153,
+      "end": 1721307757153,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1721307757153,
+      "end": 1721307757153,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1721307757153,
+      "end": 1721307757153,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1721307757153,
+      "end": 1721307757153,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1721307757153,
+      "end": 1721307757153,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1721307757153,
+      "end": 1721307757153,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1721307757153,
+      "end": 1721307757153,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1721307757153,
+      "end": 1721307757153,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1721307757153,
+      "end": 1721307757153,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1721307757154,
+      "end": 1721307757154,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1721307757154,
+      "end": 1721307757154,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1721307757154,
+      "end": 1721307757154,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1721307757154,
+      "end": 1721307757154,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1721307757154,
+      "end": 1721307757154,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1721307757154,
+      "end": 1721307757154,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1721307757154,
+      "end": 1721307757154,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1721307757154,
+      "end": 1721307757154,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1721307757154,
+      "end": 1721307757154,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1721307757154,
+      "end": 1721307757154,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1721307757154,
+      "end": 1721307757154,
+      "order": "normal"
+    }
+  ]
+}

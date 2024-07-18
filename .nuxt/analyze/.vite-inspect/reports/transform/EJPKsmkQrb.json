@@ -1,0 +1,225 @@
+{
+  "resolvedId": "C:/dev/ngsc/nuxt3/plugins/fontawesome.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { library, config } from '@fortawesome/fontawesome-svg-core'\r\nimport { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'\r\nimport { fas } from '@fortawesome/free-solid-svg-icons'\r\nimport { fab } from '@fortawesome/free-brands-svg-icons'\r\n\r\nconfig.autoAddCss = false\r\n\r\nlibrary.add(fas, fab)\r\n\r\nexport default defineNuxtPlugin((nuxtApp) => {\r\n    nuxtApp.vueApp.component('font-awesome-icon', FontAwesomeIcon, {})\r\n})\r\n",
+      "start": 1721307754935,
+      "end": 1721307755088,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1721307755088,
+      "end": 1721307755088,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1721307755088,
+      "end": 1721307755088,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1721307755088,
+      "end": 1721307755089,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1721307755089,
+      "end": 1721307755089,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1721307755089,
+      "end": 1721307755089,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1721307755089,
+      "end": 1721307755089,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1721307755089,
+      "end": 1721307755089,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1721307755089,
+      "end": 1721307755089,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1721307755089,
+      "end": 1721307755089,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1721307755089,
+      "end": 1721307755089,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1721307755089,
+      "end": 1721307755089,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1721307755089,
+      "end": 1721307755089,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1721307755089,
+      "end": 1721307755089,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1721307755089,
+      "end": 1721307755089,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1721307755089,
+      "end": 1721307755089,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1721307755089,
+      "end": 1721307755089,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1721307755089,
+      "end": 1721307755089,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1721307755090,
+      "end": 1721307755090,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1721307755090,
+      "end": 1721307755090,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1721307755090,
+      "end": 1721307755090,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1721307755090,
+      "end": 1721307755090,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1721307755090,
+      "end": 1721307755090,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1721307755090,
+      "end": 1721307755090,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1721307755090,
+      "end": 1721307755090,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1721307755090,
+      "end": 1721307755090,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1721307755090,
+      "end": 1721307755090,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1721307755090,
+      "end": 1721307755090,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { defineNuxtPlugin } from '#app/nuxt';\nimport { library, config } from '@fortawesome/fontawesome-svg-core'\r\nimport { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'\r\nimport { fas } from '@fortawesome/free-solid-svg-icons'\r\nimport { fab } from '@fortawesome/free-brands-svg-icons'\r\n\r\nconfig.autoAddCss = false\r\n\r\nlibrary.add(fas, fab)\r\n\r\nexport default defineNuxtPlugin((nuxtApp) => {\r\n    nuxtApp.vueApp.component('font-awesome-icon', FontAwesomeIcon, {})\r\n})\r\n",
+      "start": 1721307755090,
+      "end": 1721307755090,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";AAAA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC/D,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzD,CAAC;AACD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1B,CAAC;AACD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtB,CAAC;AACD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC/C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvE,CAAC,CAAC,CAAC;"
+      }
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1721307755091,
+      "end": 1721307755091,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1721307755091,
+      "end": 1721307755091,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1721307755091,
+      "end": 1721307755091,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1721307755091,
+      "end": 1721307755091,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1721307755091,
+      "end": 1721307755091,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1721307755091,
+      "end": 1721307755091,
+      "order": "normal"
+    }
+  ]
+}

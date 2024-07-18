@@ -1,0 +1,221 @@
+{
+  "resolvedId": "C:/dev/ngsc/nuxt3/components/LineOutput.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<script setup>\r\n\r\n    const props = defineProps([ 'output' ])\r\n\r\n</script>\r\n\r\n<template>\r\n    <div class=\"col d-flex align-items-center justify-content-end\" :title=\"$t(output.id)\">\r\n        <img class=\"me-1\" :src=\"'/icons/' + output.id + '.png'\" width=\"14\" height=\"14\" :alt=\"$t(output.id)\" />\r\n        <small class=\"text-success\">+<format-number :value=\"output.count\" /><small class=\"opacity-50\"> /s</small></small>\r\n    </div>\r\n</template>\r\n",
+      "start": 1721307758217,
+      "end": 1721307758335,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1721307758335,
+      "end": 1721307758335,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1721307758335,
+      "end": 1721307758335,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1721307758335,
+      "end": 1721307758335,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1721307758335,
+      "end": 1721307758335,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1721307758335,
+      "end": 1721307758335,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1721307758335,
+      "end": 1721307758335,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1721307758335,
+      "end": 1721307758335,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1721307758335,
+      "end": 1721307758335,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, createTextVNode as _createTextVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = [\"title\"]\nconst _hoisted_2 = [\"src\", \"alt\"]\nconst _hoisted_3 = { class: \"text-success\" }\nconst _hoisted_4 = /*#__PURE__*/_createElementVNode(\"small\", { class: \"opacity-50\" }, \" /s\", -1)\n\n\nconst _sfc_main = {\n  __name: 'LineOutput',\n  props: [ 'output' ],\n  setup(__props) {\n\r\n\r\n    const props = __props\r\n\r\n\nreturn (_ctx, _cache) => {\n  const _component_format_number = _resolveComponent(\"format-number\")\n\n  return (_openBlock(), _createElementBlock(\"div\", {\n    class: \"col d-flex align-items-center justify-content-end\",\n    title: _ctx.$t(__props.output.id)\n  }, [\n    _createElementVNode(\"img\", {\n      class: \"me-1\",\n      src: '/icons/' + __props.output.id + '.png',\n      width: \"14\",\n      height: \"14\",\n      alt: _ctx.$t(__props.output.id)\n    }, null, 8, _hoisted_2),\n    _createElementVNode(\"small\", _hoisted_3, [\n      _createTextVNode(\"+\"),\n      _createVNode(_component_format_number, {\n        value: __props.output.count\n      }, null, 8, [\"value\"]),\n      _hoisted_4\n    ])\n  ], 8, _hoisted_1))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1721307758335,
+      "end": 1721307758337,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1721307758337,
+      "end": 1721307758337,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1721307758337,
+      "end": 1721307758337,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1721307758337,
+      "end": 1721307758337,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1721307758337,
+      "end": 1721307758337,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1721307758337,
+      "end": 1721307758337,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1721307758337,
+      "end": 1721307758337,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1721307758337,
+      "end": 1721307758337,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1721307758337,
+      "end": 1721307758337,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1721307758337,
+      "end": 1721307758337,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1721307758337,
+      "end": 1721307758337,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1721307758337,
+      "end": 1721307758337,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1721307758337,
+      "end": 1721307758337,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1721307758337,
+      "end": 1721307758337,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1721307758337,
+      "end": 1721307758337,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1721307758337,
+      "end": 1721307758337,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1721307758337,
+      "end": 1721307758337,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1721307758337,
+      "end": 1721307758337,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1721307758337,
+      "end": 1721307758337,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1721307758337,
+      "end": 1721307758337,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1721307758337,
+      "end": 1721307758337,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1721307758337,
+      "end": 1721307758337,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/dev/ngsc/nuxt3/components/FormatNumber.vue\";\nimport { createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, createTextVNode as _createTextVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = [\"title\"]\nconst _hoisted_2 = [\"src\", \"alt\"]\nconst _hoisted_3 = { class: \"text-success\" }\nconst _hoisted_4 = /*#__PURE__*/_createElementVNode(\"small\", { class: \"opacity-50\" }, \" /s\", -1)\n\n\nconst _sfc_main = {\n  __name: 'LineOutput',\n  props: [ 'output' ],\n  setup(__props) {\n\r\n\r\n    const props = __props\r\n\r\n\nreturn (_ctx, _cache) => {\n  const _component_format_number = __nuxt_component_0\n\n  return (_openBlock(), _createElementBlock(\"div\", {\n    class: \"col d-flex align-items-center justify-content-end\",\n    title: _ctx.$t(__props.output.id)\n  }, [\n    _createElementVNode(\"img\", {\n      class: \"me-1\",\n      src: '/icons/' + __props.output.id + '.png',\n      width: \"14\",\n      height: \"14\",\n      alt: _ctx.$t(__props.output.id)\n    }, null, 8, _hoisted_2),\n    _createElementVNode(\"small\", _hoisted_3, [\n      _createTextVNode(\"+\"),\n      _createVNode(_component_format_number, {\n        value: __props.output.count\n      }, null, 8, [\"value\"]),\n      _hoisted_4\n    ])\n  ], 8, _hoisted_1))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1721307758337,
+      "end": 1721307758337,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1721307758337,
+      "end": 1721307758337,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1721307758338,
+      "end": 1721307758338,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1721307758338,
+      "end": 1721307758338,
+      "order": "normal"
+    }
+  ]
+}

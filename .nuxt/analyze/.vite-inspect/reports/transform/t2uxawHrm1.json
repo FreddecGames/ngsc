@@ -1,0 +1,220 @@
+{
+  "resolvedId": "C:/dev/ngsc/nuxt3/components/SidebarPane.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<script setup>\r\n\r\n    const props = defineProps([ 'id' ])\r\n\r\n    import { storeToRefs } from 'pinia'\r\n    import { useGameStore } from '~/store/game.js'\r\n    \r\n    const store = useGameStore()\r\n    \r\n    const { activeTab } = storeToRefs(store)\r\n\r\n</script>\r\n\r\n<template>\r\n    <div class=\"h-100 tab-pane\" :class=\"{ 'active':activeTab == id }\" :id=\"id\" role=\"tabpanel\" :aria-labelledby=\"id + '-tab'\">\r\n        <div class=\"h-100 d-flex flex-column\">\r\n            \r\n            <slot />\r\n\r\n        </div>\r\n    </div>\r\n</template>\r\n",
+      "start": 1721307757542,
+      "end": 1721307757926,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1721307757926,
+      "end": 1721307757926,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1721307757926,
+      "end": 1721307757926,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1721307757926,
+      "end": 1721307757926,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1721307757926,
+      "end": 1721307757926,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1721307757926,
+      "end": 1721307757926,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1721307757926,
+      "end": 1721307757926,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1721307757926,
+      "end": 1721307757926,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1721307757927,
+      "end": 1721307757927,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, renderSlot as _renderSlot, createElementVNode as _createElementVNode, normalizeClass as _normalizeClass, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = [\"id\", \"aria-labelledby\"]\nconst _hoisted_2 = { class: \"h-100 d-flex flex-column\" }\n\nimport { storeToRefs } from 'pinia'\r\n    import { useGameStore } from '~/store/game.js'\r\n    \r\n    \nconst _sfc_main = {\n  __name: 'SidebarPane',\n  props: [ 'id' ],\n  setup(__props) {\n\r\n\r\n    const props = __props\r\n\r\n    const store = useGameStore()\r\n    \r\n    const { activeTab } = storeToRefs(store)\r\n\r\n\nreturn (_ctx, _cache) => {\n  return (_openBlock(), _createElementBlock(\"div\", {\n    class: _normalizeClass([\"h-100 tab-pane\", { 'active':_unref(activeTab) == __props.id }]),\n    id: __props.id,\n    role: \"tabpanel\",\n    \"aria-labelledby\": __props.id + '-tab'\n  }, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _renderSlot(_ctx.$slots, \"default\")\n    ])\n  ], 10, _hoisted_1))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1721307757927,
+      "end": 1721307757928,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1721307757928,
+      "end": 1721307757928,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1721307757928,
+      "end": 1721307757928,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1721307757928,
+      "end": 1721307757928,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1721307757928,
+      "end": 1721307757928,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1721307757928,
+      "end": 1721307757928,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1721307757928,
+      "end": 1721307757928,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1721307757928,
+      "end": 1721307757928,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1721307757928,
+      "end": 1721307757928,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1721307757928,
+      "end": 1721307757928,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1721307757928,
+      "end": 1721307757928,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1721307757928,
+      "end": 1721307757928,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1721307757928,
+      "end": 1721307757928,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1721307757928,
+      "end": 1721307757928,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1721307757928,
+      "end": 1721307757928,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1721307757928,
+      "end": 1721307757928,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1721307757928,
+      "end": 1721307757928,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1721307757928,
+      "end": 1721307757928,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1721307757928,
+      "end": 1721307757928,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1721307757928,
+      "end": 1721307757929,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1721307757929,
+      "end": 1721307757929,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1721307757929,
+      "end": 1721307757929,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1721307757929,
+      "end": 1721307757929,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1721307757929,
+      "end": 1721307757929,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1721307757929,
+      "end": 1721307757929,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1721307757929,
+      "end": 1721307757929,
+      "order": "normal"
+    }
+  ]
+}

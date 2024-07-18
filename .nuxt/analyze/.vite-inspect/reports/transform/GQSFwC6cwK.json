@@ -1,0 +1,216 @@
+{
+  "resolvedId": "C:/dev/ngsc/nuxt3/node_modules/@popperjs/core/lib/dom-utils/getCompositeRect.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import getBoundingClientRect from \"./getBoundingClientRect.js\";\nimport getNodeScroll from \"./getNodeScroll.js\";\nimport getNodeName from \"./getNodeName.js\";\nimport { isHTMLElement } from \"./instanceOf.js\";\nimport getWindowScrollBarX from \"./getWindowScrollBarX.js\";\nimport getDocumentElement from \"./getDocumentElement.js\";\nimport isScrollParent from \"./isScrollParent.js\";\nimport { round } from \"../utils/math.js\";\n\nfunction isElementScaled(element) {\n  var rect = element.getBoundingClientRect();\n  var scaleX = round(rect.width) / element.offsetWidth || 1;\n  var scaleY = round(rect.height) / element.offsetHeight || 1;\n  return scaleX !== 1 || scaleY !== 1;\n} // Returns the composite rect of an element relative to its offsetParent.\n// Composite means it takes into account transforms as well as layout.\n\n\nexport default function getCompositeRect(elementOrVirtualElement, offsetParent, isFixed) {\n  if (isFixed === void 0) {\n    isFixed = false;\n  }\n\n  var isOffsetParentAnElement = isHTMLElement(offsetParent);\n  var offsetParentIsScaled = isHTMLElement(offsetParent) && isElementScaled(offsetParent);\n  var documentElement = getDocumentElement(offsetParent);\n  var rect = getBoundingClientRect(elementOrVirtualElement, offsetParentIsScaled, isFixed);\n  var scroll = {\n    scrollLeft: 0,\n    scrollTop: 0\n  };\n  var offsets = {\n    x: 0,\n    y: 0\n  };\n\n  if (isOffsetParentAnElement || !isOffsetParentAnElement && !isFixed) {\n    if (getNodeName(offsetParent) !== 'body' || // https://github.com/popperjs/popper-core/issues/1078\n    isScrollParent(documentElement)) {\n      scroll = getNodeScroll(offsetParent);\n    }\n\n    if (isHTMLElement(offsetParent)) {\n      offsets = getBoundingClientRect(offsetParent, true);\n      offsets.x += offsetParent.clientLeft;\n      offsets.y += offsetParent.clientTop;\n    } else if (documentElement) {\n      offsets.x = getWindowScrollBarX(documentElement);\n    }\n  }\n\n  return {\n    x: rect.left + scroll.scrollLeft - offsets.x,\n    y: rect.top + scroll.scrollTop - offsets.y,\n    width: rect.width,\n    height: rect.height\n  };\n}",
+      "start": 1721307758366,
+      "end": 1721307758382,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1721307758382,
+      "end": 1721307758382,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1721307758382,
+      "end": 1721307758383,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1721307758383,
+      "end": 1721307758383,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1721307758383,
+      "end": 1721307758383,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1721307758383,
+      "end": 1721307758383,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1721307758383,
+      "end": 1721307758383,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1721307758383,
+      "end": 1721307758383,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1721307758383,
+      "end": 1721307758383,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1721307758383,
+      "end": 1721307758383,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1721307758383,
+      "end": 1721307758383,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1721307758383,
+      "end": 1721307758383,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1721307758383,
+      "end": 1721307758383,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1721307758383,
+      "end": 1721307758383,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1721307758383,
+      "end": 1721307758383,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1721307758383,
+      "end": 1721307758383,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1721307758383,
+      "end": 1721307758383,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1721307758383,
+      "end": 1721307758383,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1721307758383,
+      "end": 1721307758383,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1721307758383,
+      "end": 1721307758383,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1721307758383,
+      "end": 1721307758383,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1721307758383,
+      "end": 1721307758383,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1721307758383,
+      "end": 1721307758383,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1721307758383,
+      "end": 1721307758383,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1721307758383,
+      "end": 1721307758383,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1721307758383,
+      "end": 1721307758383,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1721307758383,
+      "end": 1721307758383,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1721307758383,
+      "end": 1721307758383,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1721307758383,
+      "end": 1721307758383,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1721307758383,
+      "end": 1721307758383,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1721307758384,
+      "end": 1721307758384,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1721307758384,
+      "end": 1721307758384,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1721307758384,
+      "end": 1721307758384,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1721307758384,
+      "end": 1721307758384,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1721307758384,
+      "end": 1721307758384,
+      "order": "normal"
+    }
+  ]
+}

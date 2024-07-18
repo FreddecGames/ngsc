@@ -1,0 +1,224 @@
+{
+  "resolvedId": "C:/dev/ngsc/nuxt3/assets/styles.css",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap');\r\n\r\nhtml, body, #app {\r\n    width: 100%; height: 100%;\r\n}\r\n\r\nbody {\r\n    color: #b6c2cb; font-family: 'Inter', sans-serif; font-size: .85rem;\r\n    background: #15191f;\r\n    background-size: cover; background-image: url(/bk.jpg); background-position: center; background-attachment: fixed;\r\n}\r\n\r\n::-webkit-scrollbar { width: .35rem; height: .35rem; }\r\n::-webkit-scrollbar-track { background: transparent; }\r\n::-webkit-scrollbar-thumb { background: #484f5c; border-radius: 0.35rem; }\r\n\r\n.scrollbar { overflow-y: auto; overflow-x: hidden; scrollbar-color: #484f5c; scrollbar-width: thin; }\r\n\r\n#__nuxt {\r\n    width: 100%; height: 100%;\r\n    display: flex; align-items: center; justify-content: center;\r\n}\r\n\r\n.h5, h5 { font-size: 1.125rem; }\r\n\r\n.fs-5 { font-size: 1.125rem!important; }\r\n\r\n.nav-tabs {\r\n    border-bottom: 1px solid #484f5c;\r\n}\r\n\r\n.nav-tabs .nav-link {\r\n    border-top-left-radius: .5rem;\r\n    border-top-right-radius: .5rem;\r\n}\r\n\r\n.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {\r\n    border-color: transparent;\r\n    color: #fff;\r\n}\r\n\r\n.nav-tabs .nav-link.active {\r\n    color: #6bbcff;\r\n    background-color: #484f5c;\r\n    border-color: #484f5c;\r\n}\r\n\r\n.nav-link {\r\n    width: 100%;\r\n    padding: .5rem .25rem;\r\n\tcolor: #b6c2cb;\r\n}\r\n\r\n#sidebar-tabs {\r\n    background-color: #484f5c;\r\n    border-bottom: 0;\r\n}\r\n\r\n#sidebar-tabs .nav-link {\r\n    border: 0;\r\n}\r\n\r\n#sidebar-tabs .nav-link.active {\r\n    background-color: #232a35;\r\n}\r\n\r\n#sidebar-tabs .nav-item:first-child .nav-link {\r\n\tborder-top-left-radius: 0;\r\n}\r\n\r\n#sidebar-tabs .nav-item:last-child .nav-link {\r\n\tborder-top-right-radius: 0;\r\n}\r\n\r\n.toast {\r\n    --bs-toast-padding-x: 0.75rem;\r\n    --bs-toast-padding-y: 0.5rem;\r\n    --bs-toast-max-width: auto;\r\n    --bs-toast-spacing: 0;\r\n}\r\n\r\n.toast-body {\r\n    padding: var(--bs-toast-padding-y) var(--bs-toast-padding-x);\r\n}\r\n\r\n.alert {\r\n    padding: .25rem .5rem;\r\n    margin-bottom: 0;\r\n    border-width: 0 3px 0 3px; border-radius: .5rem;\r\n    font-size: .875em;\r\n}\r\n\r\n.alert-warning {\r\n    color: #ff7600;\r\n    background-color: #4d3b24;\r\n    border-color: #ff7600;\r\n}\r\n\r\n.alert-danger {\r\n    color: #ff6d6d;\r\n    background-color: #4d2424;\r\n    border-color: #ff6d6d;\r\n}\r\n\r\n.card {\r\n    height: 100%;\r\n    background-color: #232a35;\r\n    border: 0;\r\n    color: #b6c2cb;\r\n}\r\n\r\n.card-header {\r\n    padding: .5rem .5rem;\r\n    margin-bottom: 0;\r\n    background-color: transparent;\r\n    border-bottom: 0;\r\n}\r\n\r\n.card-header:first-child {\r\n    border-radius: .5rem .5rem 0 0;\r\n}\r\n\r\n.card-toggler {\r\n    transition: transform .25s ease-out;\r\n}\r\n\r\n.collapsed .card-toggler {\r\n    transform: rotate(-90deg);\r\n}\r\n\r\n.card-body {\r\n    border-top: 1px solid #484f5c;\r\n    padding: .75rem .5rem;\r\n}\r\n\r\n.modal-content {\r\n    background-color: rgb(50, 61, 77);\r\n    border: 0;\r\n}\r\n\r\n.modal-body { padding: .5rem .5rem; }\r\n\r\n.modal-backdrop.show { opacity: .75; }\r\n\r\n.progress {\r\n    background-color: #484f5c;\r\n}\r\n\r\nbutton {\r\n    color: #b6c2cb; font-size: .85rem;\r\n    background: transparent;\r\n    border: 0;\r\n    padding: 0;\r\n}\r\n\r\nbutton:focus, button:hover {\r\n    color: #fff;\r\n    box-shadow: none !important;\r\n}\r\n\r\n.btn {\r\n    --bs-btn-active-border-color: transparent;\r\n    \r\n    display: flex; align-items: center;\r\n    color: #b6c2cb; font-size: .85rem;\r\n    padding: .5rem .5rem;\r\n    border-radius: .5rem;\r\n}\r\n\r\n.btn:focus, .btn:hover, .btn-check:focus + .btn {\r\n    color: #fff;\r\n    box-shadow: none !important;\r\n}\r\n\r\n.btn.active {\r\n    color: #fff;\r\n    background-color: #4682b4;\r\n    border-color: #4682b4;\r\n}\r\n\r\n.btn.disabled, .btn:disabled {\r\n    opacity: .5;\r\n}\r\n\r\n.btn-group .btn.disabled, .btn-group .btn:disabled {\r\n    border-color: transparent;\r\n}\r\n\r\n.btn-group .btn.active {\r\n    color: #fff;\r\n    background-color: #4682b4;\r\n    border-color: #4682b4;\r\n}\r\n\r\n.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active {\r\n    color: #fff;\r\n    background-color: #4682b4;\r\n    border-color: #4682b4;\r\n}\r\n\r\n.btn-primary, .btn-primary.disabled, .btn-primary:disabled {\r\n    color: #f5f5f5;\r\n    background-color: #484f5c;\r\n    border-color: #484f5c;\r\n}\r\n\r\n.btn-danger, .btn-danger.disabled, .btn-danger:disabled {\r\n    color: #ff6d6d;\r\n    background-color: #484f5c;\r\n    border-color: #484f5c;\r\n}\r\n\r\n.btn-success, .btn-success.disabled, .btn-success:disabled {\r\n    color: #00f500;\r\n    background-color: #484f5c;\r\n    border-color: #484f5c;\r\n}\r\n\r\n.btn-badge {\r\n    padding: .5em .5em;\r\n    color: #b6c2cb; font-size: .85em; font-weight: 400;\r\n    line-height: 1; white-space: nowrap; vertical-align: baseline;\r\n}\r\n\r\n.btn-check:active + .btn-badge,\r\n.btn-check:checked + .btn-badge {\r\n    color: #fff;\r\n    background-color: #484f5c;\r\n    border-color: #484f5c;\r\n}\r\n\r\n.btn-check + .btn:hover { color: #fff; }\r\n\r\n.btn-close {\r\n    width: auto; height: auto;\r\n    padding: 0.25rem 0.25rem; margin: 0;\r\n    color: inherit;\r\n    background: transparent;\r\n    border: 0; border-radius: var(--bs-border-radius);\r\n    opacity: 1;\r\n}\r\n\r\n.btn-close:focus {\r\n    box-shadow: none;\r\n    opacity: 1;\r\n}\r\n\r\n.form-control {\r\n    color: #b6c2cb; font-size: .85rem;\r\n    padding: .5rem .5rem;\r\n    border: 1px solid rgba(255, 255, 255, .25); border-radius: .5rem;\r\n    background-color: #484f5c;\r\n}\r\n\r\n.form-control:focus {\r\n    color: #b6c2cb;\r\n    background-color: #484f5c;\r\n    border-color: #fff;\r\n    box-shadow: none !important;\r\n}\r\n\r\n.form-control:disabled {\r\n    background-color: #484f5c;\r\n    opacity: 0.5;\r\n}\r\n\r\n.form-check {\r\n    min-height: auto;\r\n}\r\n\r\n.form-check-input {\r\n    background-color: #b6c2cb;\r\n    border-color: #b6c2cb;\r\n}\r\n\r\n.form-check-input:focus {\r\n    box-shadow: none !important;\r\n}\r\n\r\n.form-check-input:checked {\r\n    background-color: #4682b4;\r\n    border-color: #4682b4;\r\n}\r\n\r\n.form-range {\r\n    height: auto;\r\n}\r\n\r\ninput[type=\"range\"]::-webkit-slider-thumb {\r\n    height: 10px; width: 10px;    \r\n    background: #b6c2cb;\r\n}\r\n\r\ninput[type=\"range\"]::-webkit-slider-thumb:focus {\r\n    box-shadow: none !important;\r\n}\r\n\r\ninput[type=range]::-webkit-slider-runnable-track  {\r\n    height: 3px;\r\n    background-color: #5f6570;\r\n}\r\n\r\n.badge {\r\n    color: #b6c2cb; font-weight: 400;\r\n    background-color: #484f5c;\r\n}\r\n\r\nh1, h2, h3, h4, h5, h6 { margin-bottom: 0; }\r\n.h1, .h2, .h3, .h4, .h5, .h6 { margin-bottom: 0; }\r\n\r\n.border-bottom { border-bottom: 1px solid #484f5c!important; }\r\n\r\n.text-light { color: #fff!important; }\r\n.text-normal { color: #b6c2cb!important; }\r\n.text-danger { color: #ff6d6d!important; }\r\n.text-success { color: #00f500!important; }\r\n.text-steelblue { color: #6bbcff!important; }\r\n.text-timer { color: #f5f500!important; }\r\n.text-muted { color: #899097!important; }\r\n.text-donor { color: #f500f5!important; }\r\n\r\n.bg-success { background-color: #00f500!important; }\r\n.bg-timer { background-color: #f5f500!important; }",
+      "start": 1721307754935,
+      "end": 1721307755187,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1721307755187,
+      "end": 1721307755187,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1721307755187,
+      "end": 1721307755187,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1721307755187,
+      "end": 1721307755187,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1721307755187,
+      "end": 1721307755187,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "result": "@import url(\"https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap\");#app,body,html{height:100%;width:100%}body{background:#15191f;background-attachment:fixed;background-image:url(__VITE_PUBLIC_ASSET__475f8707__);background-position:50%;background-size:cover;color:#b6c2cb;font-family:Inter,sans-serif;font-size:.85rem}::-webkit-scrollbar{height:.35rem;width:.35rem}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:#484f5c;border-radius:.35rem}.scrollbar{overflow-x:hidden;overflow-y:auto;scrollbar-color:#484f5c;scrollbar-width:thin}#__nuxt{align-items:center;display:flex;height:100%;justify-content:center;width:100%}.h5,h5{font-size:1.125rem}.fs-5{font-size:1.125rem!important}.nav-tabs{border-bottom:1px solid #484f5c}.nav-tabs .nav-link{border-top-left-radius:.5rem;border-top-right-radius:.5rem}.nav-tabs .nav-link:focus,.nav-tabs .nav-link:hover{border-color:transparent;color:#fff}.nav-tabs .nav-link.active{background-color:#484f5c;border-color:#484f5c;color:#6bbcff}.nav-link{color:#b6c2cb;padding:.5rem .25rem;width:100%}#sidebar-tabs{background-color:#484f5c;border-bottom:0}#sidebar-tabs .nav-link{border:0}#sidebar-tabs .nav-link.active{background-color:#232a35}#sidebar-tabs .nav-item:first-child .nav-link{border-top-left-radius:0}#sidebar-tabs .nav-item:last-child .nav-link{border-top-right-radius:0}.toast{--bs-toast-padding-x:0.75rem;--bs-toast-padding-y:0.5rem;--bs-toast-max-width:auto;--bs-toast-spacing:0}.toast-body{padding:var(--bs-toast-padding-y) var(--bs-toast-padding-x)}.alert{border-radius:.5rem;border-width:0 3px;font-size:.875em;margin-bottom:0;padding:.25rem .5rem}.alert-warning{background-color:#4d3b24;border-color:#ff7600;color:#ff7600}.alert-danger{background-color:#4d2424;border-color:#ff6d6d;color:#ff6d6d}.card{background-color:#232a35;border:0;color:#b6c2cb;height:100%}.card-header{background-color:transparent;border-bottom:0;margin-bottom:0;padding:.5rem}.card-header:first-child{border-radius:.5rem .5rem 0 0}.card-toggler{transition:transform .25s ease-out}.collapsed .card-toggler{transform:rotate(-90deg)}.card-body{border-top:1px solid #484f5c;padding:.75rem .5rem}.modal-content{background-color:#323d4d;border:0}.modal-body{padding:.5rem}.modal-backdrop.show{opacity:.75}.progress{background-color:#484f5c}button{background:transparent;border:0;color:#b6c2cb;font-size:.85rem;padding:0}button:focus,button:hover{box-shadow:none!important;color:#fff}.btn{--bs-btn-active-border-color:transparent;align-items:center;border-radius:.5rem;color:#b6c2cb;display:flex;font-size:.85rem;padding:.5rem}.btn-check:focus+.btn,.btn:focus,.btn:hover{box-shadow:none!important;color:#fff}.btn.active{background-color:#4682b4;border-color:#4682b4;color:#fff}.btn.disabled,.btn:disabled{opacity:.5}.btn-group .btn.disabled,.btn-group .btn:disabled{border-color:transparent}.btn-group .btn.active,.btn-primary.active,.btn-primary:active,.btn-primary:focus,.btn-primary:hover{background-color:#4682b4;border-color:#4682b4;color:#fff}.btn-primary,.btn-primary.disabled,.btn-primary:disabled{background-color:#484f5c;border-color:#484f5c;color:#f5f5f5}.btn-danger,.btn-danger.disabled,.btn-danger:disabled{background-color:#484f5c;border-color:#484f5c;color:#ff6d6d}.btn-success,.btn-success.disabled,.btn-success:disabled{background-color:#484f5c;border-color:#484f5c;color:#00f500}.btn-badge{color:#b6c2cb;font-size:.85em;font-weight:400;line-height:1;padding:.5em;vertical-align:baseline;white-space:nowrap}.btn-check:active+.btn-badge,.btn-check:checked+.btn-badge{background-color:#484f5c;border-color:#484f5c;color:#fff}.btn-check+.btn:hover{color:#fff}.btn-close{background:transparent;border:0;border-radius:var(--bs-border-radius);color:inherit;height:auto;margin:0;opacity:1;padding:.25rem;width:auto}.btn-close:focus{box-shadow:none;opacity:1}.form-control{border:1px solid hsla(0,0%,100%,.25);border-radius:.5rem;font-size:.85rem;padding:.5rem}.form-control,.form-control:focus{background-color:#484f5c;color:#b6c2cb}.form-control:focus{border-color:#fff;box-shadow:none!important}.form-control:disabled{background-color:#484f5c;opacity:.5}.form-check{min-height:auto}.form-check-input{background-color:#b6c2cb;border-color:#b6c2cb}.form-check-input:focus{box-shadow:none!important}.form-check-input:checked{background-color:#4682b4;border-color:#4682b4}.form-range{height:auto}input[type=range]::-webkit-slider-thumb{background:#b6c2cb;height:10px;width:10px}input[type=range]::-webkit-slider-thumb:focus{box-shadow:none!important}input[type=range]::-webkit-slider-runnable-track{background-color:#5f6570;height:3px}.badge{background-color:#484f5c;color:#b6c2cb;font-weight:400}.h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6{margin-bottom:0}.border-bottom{border-bottom:1px solid #484f5c!important}.text-light{color:#fff!important}.text-normal{color:#b6c2cb!important}.text-danger{color:#ff6d6d!important}.text-success{color:#00f500!important}.text-steelblue{color:#6bbcff!important}.text-timer{color:#f5f500!important}.text-muted{color:#899097!important}.text-donor{color:#f500f5!important}.bg-success{background-color:#00f500!important}.bg-timer{background-color:#f5f500!important}",
+      "start": 1721307755187,
+      "end": 1721307756640,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1721307756640,
+      "end": 1721307756640,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1721307756640,
+      "end": 1721307756640,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1721307756640,
+      "end": 1721307756640,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1721307756640,
+      "end": 1721307756640,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1721307756640,
+      "end": 1721307756640,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1721307756640,
+      "end": 1721307756640,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1721307756640,
+      "end": 1721307756640,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1721307756640,
+      "end": 1721307756640,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1721307756640,
+      "end": 1721307756640,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1721307756640,
+      "end": 1721307756640,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1721307756640,
+      "end": 1721307756640,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1721307756640,
+      "end": 1721307756640,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "result": "export default ''",
+      "start": 1721307756640,
+      "end": 1721307756640,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1721307756640,
+      "end": 1721307756640,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1721307756640,
+      "end": 1721307756640,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1721307756640,
+      "end": 1721307756640,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1721307756640,
+      "end": 1721307756640,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1721307756640,
+      "end": 1721307756640,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1721307756640,
+      "end": 1721307756640,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1721307756640,
+      "end": 1721307756640,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1721307756640,
+      "end": 1721307756640,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1721307756640,
+      "end": 1721307756641,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1721307756641,
+      "end": 1721307756641,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1721307756641,
+      "end": 1721307756641,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1721307756641,
+      "end": 1721307756641,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1721307756641,
+      "end": 1721307756641,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1721307756641,
+      "end": 1721307756641,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1721307756641,
+      "end": 1721307756641,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1721307756641,
+      "end": 1721307756641,
+      "order": "normal"
+    }
+  ]
+}
