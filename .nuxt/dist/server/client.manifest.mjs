@@ -23,7 +23,7 @@ export default {
     "css": [
       "error-404.7fc72018.css"
     ],
-    "file": "error-404.63e6d658.js",
+    "file": "error-404.ac1c6f62.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ],
@@ -51,7 +51,7 @@ export default {
     "css": [
       "error-500.c5df6088.css"
     ],
-    "file": "error-500.71e3381d.js",
+    "file": "error-500.3349f906.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ],
@@ -84,7 +84,7 @@ export default {
       "node_modules/@nuxt/ui-templates/dist/templates/error-404.vue",
       "node_modules/@nuxt/ui-templates/dist/templates/error-500.vue"
     ],
-    "file": "entry.e3658d4c.js",
+    "file": "entry.9b58b313.js",
     "isEntry": true,
     "src": "node_modules/nuxt/dist/app/entry.js"
   },

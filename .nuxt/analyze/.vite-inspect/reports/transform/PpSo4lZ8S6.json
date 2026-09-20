@@ -4,63 +4,63 @@
     {
       "name": "vite:load-fallback",
       "result": "<script setup>\r\n\r\n    import { storeToRefs } from 'pinia'\r\n    import { useGameStore } from '~/store/game.js'\r\n    \r\n    const store = useGameStore()\r\n\r\n    const { offlineGains } = storeToRefs(store)\r\n    \r\n    const production = computed(() => {\r\n    \r\n        let ret = []\r\n        \r\n        let resourceIds = [\r\n            'energy', 'plasma', 'meteorite', 'carbon', 'fuel', 'antimatter',\r\n            'science', 'oil', 'metal', 'gem', 'wood', 'silicon', 'uranium', 'lava',\r\n            'lunarite', 'methane', 'titanium', 'gold', 'silver',\r\n            'hydrogen', 'helium', 'ice', 'antimatter'\r\n        ]\r\n        resourceIds.forEach(resourceId => {\r\n            \r\n            let gain = offlineGains.value.after[resourceId] - offlineGains.value.before[resourceId]\r\n            if (gain != 0) {\r\n                \r\n                let item = store.getItem(resourceId)\r\n                \r\n                ret.push({\r\n                \r\n                    id: resourceId,\r\n                    count: gain,\r\n                })\r\n            }\r\n        })\r\n        \r\n        return ret\r\n    })\r\n    \r\n    const close = function() {\r\n    \r\n        store.offlineGains = null\r\n        store.offlineModal = false\r\n    }\r\n    \r\n</script>\r\n\r\n<template>\r\n    <div id=\"modalOffline\" class=\"modal fade\">\r\n        <div class=\"modal-dialog\">\r\n            <div class=\"modal-content\">\r\n                <div v-if=\"offlineGains\" class=\"modal-body\">\r\n                    <div class=\"row row-cols-1 g-2 justify-content-center\">\r\n                        <div class=\"col-12\">\r\n                            <span class=\"fs-6 text-white\">{{ $t('modalOffline_title') }}</span>\r\n                        </div>\r\n                        <div class=\"col-12 text-center small\">\r\n                            <span class=\"text-normal\">{{ $t('modalOffline_text') }}</span>\r\n                        </div>\r\n                        <div class=\"col-12 text-center small\">\r\n                            <span class=\"text-white\">{{ $t('modalOffline_info') }} <timer-count :count=\"offlineGains.time\" /></span>\r\n                        </div>\r\n                        <div class=\"col-5\">\r\n                            <div class=\"row g-1\">\r\n                                <div v-for=\"prod in production\" :key=\"prod.id\" class=\"col-12 small\">\r\n                                    <div class=\"row gx-2 align-items-center\">\r\n                                        <div class=\"col\">\r\n                                            <img :src=\"'/icons/' + prod.id + '.png'\" width=\"16\" height=\"16\" :alt=\"prod.id\" />\r\n                                            <span class=\"ms-2\">{{ $t(prod.id) }}</span>\r\n                                        </div>\r\n                                        <div class=\"col-auto text-white\">\r\n                                            <format-number :value=\"prod.count\" />\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"col d-flex justify-content-end\">\r\n                            <button type=\"button\" class=\"btn btn-primary\" data-bs-dismiss=\"modal\" @click=\"close();\">\r\n                                {{ $t('modalOffline_close') }}\r\n                            </button>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</template>",
-      "start": 1721307757029,
-      "end": 1721307757166,
+      "start": 1789891026657,
+      "end": 1789891026933,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1721307757166,
-      "end": 1721307757166,
+      "start": 1789891026933,
+      "end": 1789891026933,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1721307757166,
-      "end": 1721307757166,
+      "start": 1789891026933,
+      "end": 1789891026933,
       "order": "pre"
     },
     {
       "name": "unplugin-vue-i18n",
-      "start": 1721307757166,
-      "end": 1721307757166,
+      "start": 1789891026933,
+      "end": 1789891026933,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1721307757166,
-      "end": 1721307757166,
+      "start": 1789891026933,
+      "end": 1789891026933,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1721307757166,
-      "end": 1721307757166,
+      "start": 1789891026933,
+      "end": 1789891026933,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1721307757166,
-      "end": 1721307757166,
+      "start": 1789891026933,
+      "end": 1789891026933,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1721307757166,
-      "end": 1721307757166,
+      "start": 1789891026933,
+      "end": 1789891026933,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1721307757166,
-      "end": 1721307757166,
+      "start": 1789891026933,
+      "end": 1789891026933,
       "order": "normal"
     },
     {
       "name": "vite:vue",
       "result": "import { unref as _unref, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, createTextVNode as _createTextVNode, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode } from \"vue\"\n\nconst _hoisted_1 = {\n  id: \"modalOffline\",\n  class: \"modal fade\"\n}\nconst _hoisted_2 = { class: \"modal-dialog\" }\nconst _hoisted_3 = { class: \"modal-content\" }\nconst _hoisted_4 = {\n  key: 0,\n  class: \"modal-body\"\n}\nconst _hoisted_5 = { class: \"row row-cols-1 g-2 justify-content-center\" }\nconst _hoisted_6 = { class: \"col-12\" }\nconst _hoisted_7 = { class: \"fs-6 text-white\" }\nconst _hoisted_8 = { class: \"col-12 text-center small\" }\nconst _hoisted_9 = { class: \"text-normal\" }\nconst _hoisted_10 = { class: \"col-12 text-center small\" }\nconst _hoisted_11 = { class: \"text-white\" }\nconst _hoisted_12 = { class: \"col-5\" }\nconst _hoisted_13 = { class: \"row g-1\" }\nconst _hoisted_14 = { class: \"row gx-2 align-items-center\" }\nconst _hoisted_15 = { class: \"col\" }\nconst _hoisted_16 = [\"src\", \"alt\"]\nconst _hoisted_17 = { class: \"ms-2\" }\nconst _hoisted_18 = { class: \"col-auto text-white\" }\nconst _hoisted_19 = { class: \"col d-flex justify-content-end\" }\n\nimport { storeToRefs } from 'pinia'\r\n    import { useGameStore } from '~/store/game.js'\r\n    \r\n    \nconst _sfc_main = {\n  __name: 'ModalOffline',\n  setup(__props) {\n\r\n\r\n    const store = useGameStore()\r\n\r\n    const { offlineGains } = storeToRefs(store)\r\n    \r\n    const production = computed(() => {\r\n    \r\n        let ret = []\r\n        \r\n        let resourceIds = [\r\n            'energy', 'plasma', 'meteorite', 'carbon', 'fuel', 'antimatter',\r\n            'science', 'oil', 'metal', 'gem', 'wood', 'silicon', 'uranium', 'lava',\r\n            'lunarite', 'methane', 'titanium', 'gold', 'silver',\r\n            'hydrogen', 'helium', 'ice', 'antimatter'\r\n        ]\r\n        resourceIds.forEach(resourceId => {\r\n            \r\n            let gain = offlineGains.value.after[resourceId] - offlineGains.value.before[resourceId]\r\n            if (gain != 0) {\r\n                \r\n                let item = store.getItem(resourceId)\r\n                \r\n                ret.push({\r\n                \r\n                    id: resourceId,\r\n                    count: gain,\r\n                })\r\n            }\r\n        })\r\n        \r\n        return ret\r\n    })\r\n    \r\n    const close = function() {\r\n    \r\n        store.offlineGains = null\r\n        store.offlineModal = false\r\n    }\r\n    \r\n\nreturn (_ctx, _cache) => {\n  const _component_timer_count = _resolveComponent(\"timer-count\")\n  const _component_format_number = _resolveComponent(\"format-number\")\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createElementVNode(\"div\", _hoisted_3, [\n        (_unref(offlineGains))\n          ? (_openBlock(), _createElementBlock(\"div\", _hoisted_4, [\n              _createElementVNode(\"div\", _hoisted_5, [\n                _createElementVNode(\"div\", _hoisted_6, [\n                  _createElementVNode(\"span\", _hoisted_7, _toDisplayString(_ctx.$t('modalOffline_title')), 1)\n                ]),\n                _createElementVNode(\"div\", _hoisted_8, [\n                  _createElementVNode(\"span\", _hoisted_9, _toDisplayString(_ctx.$t('modalOffline_text')), 1)\n                ]),\n                _createElementVNode(\"div\", _hoisted_10, [\n                  _createElementVNode(\"span\", _hoisted_11, [\n                    _createTextVNode(_toDisplayString(_ctx.$t('modalOffline_info')) + \" \", 1),\n                    _createVNode(_component_timer_count, {\n                      count: _unref(offlineGains).time\n                    }, null, 8, [\"count\"])\n                  ])\n                ]),\n                _createElementVNode(\"div\", _hoisted_12, [\n                  _createElementVNode(\"div\", _hoisted_13, [\n                    (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(production), (prod) => {\n                      return (_openBlock(), _createElementBlock(\"div\", {\n                        key: prod.id,\n                        class: \"col-12 small\"\n                      }, [\n                        _createElementVNode(\"div\", _hoisted_14, [\n                          _createElementVNode(\"div\", _hoisted_15, [\n                            _createElementVNode(\"img\", {\n                              src: '/icons/' + prod.id + '.png',\n                              width: \"16\",\n                              height: \"16\",\n                              alt: prod.id\n                            }, null, 8, _hoisted_16),\n                            _createElementVNode(\"span\", _hoisted_17, _toDisplayString(_ctx.$t(prod.id)), 1)\n                          ]),\n                          _createElementVNode(\"div\", _hoisted_18, [\n                            _createVNode(_component_format_number, {\n                              value: prod.count\n                            }, null, 8, [\"value\"])\n                          ])\n                        ])\n                      ]))\n                    }), 128))\n                  ])\n                ]),\n                _createElementVNode(\"div\", _hoisted_19, [\n                  _createElementVNode(\"button\", {\n                    type: \"button\",\n                    class: \"btn btn-primary\",\n                    \"data-bs-dismiss\": \"modal\",\n                    onClick: _cache[0] || (_cache[0] = $event => {close();})\n                  }, _toDisplayString(_ctx.$t('modalOffline_close')), 1)\n                ])\n              ])\n            ]))\n          : _createCommentVNode(\"\", true)\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
-      "start": 1721307757166,
-      "end": 1721307757171,
+      "start": 1789891026933,
+      "end": 1789891026937,
       "order": "normal",
       "sourcemaps": {
         "mappings": ""
@@ -68,117 +68,117 @@
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1721307757171,
-      "end": 1721307757171,
+      "start": 1789891026937,
+      "end": 1789891026937,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1721307757171,
-      "end": 1721307757172,
+      "start": 1789891026937,
+      "end": 1789891026937,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1721307757172,
-      "end": 1721307757172,
+      "start": 1789891026937,
+      "end": 1789891026937,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1721307757172,
-      "end": 1721307757172,
+      "start": 1789891026937,
+      "end": 1789891026937,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1721307757172,
-      "end": 1721307757172,
+      "start": 1789891026937,
+      "end": 1789891026937,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1721307757172,
-      "end": 1721307757172,
+      "start": 1789891026937,
+      "end": 1789891026937,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1721307757172,
-      "end": 1721307757172,
+      "start": 1789891026937,
+      "end": 1789891026937,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1721307757172,
-      "end": 1721307757172,
+      "start": 1789891026937,
+      "end": 1789891026937,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1721307757172,
-      "end": 1721307757172,
+      "start": 1789891026937,
+      "end": 1789891026937,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1721307757172,
-      "end": 1721307757172,
+      "start": 1789891026937,
+      "end": 1789891026937,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1721307757172,
-      "end": 1721307757172,
+      "start": 1789891026937,
+      "end": 1789891026937,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1721307757172,
-      "end": 1721307757172,
+      "start": 1789891026937,
+      "end": 1789891026937,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1721307757172,
-      "end": 1721307757172,
+      "start": 1789891026937,
+      "end": 1789891026937,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1721307757172,
-      "end": 1721307757172,
+      "start": 1789891026937,
+      "end": 1789891026937,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1721307757172,
-      "end": 1721307757172,
+      "start": 1789891026937,
+      "end": 1789891026938,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1721307757172,
-      "end": 1721307757172,
+      "start": 1789891026938,
+      "end": 1789891026938,
       "order": "post"
     },
     {
       "name": "nuxtjs:i18n-macros-transform",
-      "start": 1721307757172,
-      "end": 1721307757172,
+      "start": 1789891026938,
+      "end": 1789891026938,
       "order": "post"
     },
     {
       "name": "nuxtjs:i18n-resource",
-      "start": 1721307757172,
-      "end": 1721307757172,
+      "start": 1789891026938,
+      "end": 1789891026938,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { computed } from 'vue';\nimport { unref as _unref, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, createTextVNode as _createTextVNode, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode } from \"vue\"\n\nconst _hoisted_1 = {\n  id: \"modalOffline\",\n  class: \"modal fade\"\n}\nconst _hoisted_2 = { class: \"modal-dialog\" }\nconst _hoisted_3 = { class: \"modal-content\" }\nconst _hoisted_4 = {\n  key: 0,\n  class: \"modal-body\"\n}\nconst _hoisted_5 = { class: \"row row-cols-1 g-2 justify-content-center\" }\nconst _hoisted_6 = { class: \"col-12\" }\nconst _hoisted_7 = { class: \"fs-6 text-white\" }\nconst _hoisted_8 = { class: \"col-12 text-center small\" }\nconst _hoisted_9 = { class: \"text-normal\" }\nconst _hoisted_10 = { class: \"col-12 text-center small\" }\nconst _hoisted_11 = { class: \"text-white\" }\nconst _hoisted_12 = { class: \"col-5\" }\nconst _hoisted_13 = { class: \"row g-1\" }\nconst _hoisted_14 = { class: \"row gx-2 align-items-center\" }\nconst _hoisted_15 = { class: \"col\" }\nconst _hoisted_16 = [\"src\", \"alt\"]\nconst _hoisted_17 = { class: \"ms-2\" }\nconst _hoisted_18 = { class: \"col-auto text-white\" }\nconst _hoisted_19 = { class: \"col d-flex justify-content-end\" }\n\nimport { storeToRefs } from 'pinia'\r\n    import { useGameStore } from '~/store/game.js'\r\n    \r\n    \nconst _sfc_main = {\n  __name: 'ModalOffline',\n  setup(__props) {\n\r\n\r\n    const store = useGameStore()\r\n\r\n    const { offlineGains } = storeToRefs(store)\r\n    \r\n    const production = computed(() => {\r\n    \r\n        let ret = []\r\n        \r\n        let resourceIds = [\r\n            'energy', 'plasma', 'meteorite', 'carbon', 'fuel', 'antimatter',\r\n            'science', 'oil', 'metal', 'gem', 'wood', 'silicon', 'uranium', 'lava',\r\n            'lunarite', 'methane', 'titanium', 'gold', 'silver',\r\n            'hydrogen', 'helium', 'ice', 'antimatter'\r\n        ]\r\n        resourceIds.forEach(resourceId => {\r\n            \r\n            let gain = offlineGains.value.after[resourceId] - offlineGains.value.before[resourceId]\r\n            if (gain != 0) {\r\n                \r\n                let item = store.getItem(resourceId)\r\n                \r\n                ret.push({\r\n                \r\n                    id: resourceId,\r\n                    count: gain,\r\n                })\r\n            }\r\n        })\r\n        \r\n        return ret\r\n    })\r\n    \r\n    const close = function() {\r\n    \r\n        store.offlineGains = null\r\n        store.offlineModal = false\r\n    }\r\n    \r\n\nreturn (_ctx, _cache) => {\n  const _component_timer_count = _resolveComponent(\"timer-count\")\n  const _component_format_number = _resolveComponent(\"format-number\")\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createElementVNode(\"div\", _hoisted_3, [\n        (_unref(offlineGains))\n          ? (_openBlock(), _createElementBlock(\"div\", _hoisted_4, [\n              _createElementVNode(\"div\", _hoisted_5, [\n                _createElementVNode(\"div\", _hoisted_6, [\n                  _createElementVNode(\"span\", _hoisted_7, _toDisplayString(_ctx.$t('modalOffline_title')), 1)\n                ]),\n                _createElementVNode(\"div\", _hoisted_8, [\n                  _createElementVNode(\"span\", _hoisted_9, _toDisplayString(_ctx.$t('modalOffline_text')), 1)\n                ]),\n                _createElementVNode(\"div\", _hoisted_10, [\n                  _createElementVNode(\"span\", _hoisted_11, [\n                    _createTextVNode(_toDisplayString(_ctx.$t('modalOffline_info')) + \" \", 1),\n                    _createVNode(_component_timer_count, {\n                      count: _unref(offlineGains).time\n                    }, null, 8, [\"count\"])\n                  ])\n                ]),\n                _createElementVNode(\"div\", _hoisted_12, [\n                  _createElementVNode(\"div\", _hoisted_13, [\n                    (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(production), (prod) => {\n                      return (_openBlock(), _createElementBlock(\"div\", {\n                        key: prod.id,\n                        class: \"col-12 small\"\n                      }, [\n                        _createElementVNode(\"div\", _hoisted_14, [\n                          _createElementVNode(\"div\", _hoisted_15, [\n                            _createElementVNode(\"img\", {\n                              src: '/icons/' + prod.id + '.png',\n                              width: \"16\",\n                              height: \"16\",\n                              alt: prod.id\n                            }, null, 8, _hoisted_16),\n                            _createElementVNode(\"span\", _hoisted_17, _toDisplayString(_ctx.$t(prod.id)), 1)\n                          ]),\n                          _createElementVNode(\"div\", _hoisted_18, [\n                            _createVNode(_component_format_number, {\n                              value: prod.count\n                            }, null, 8, [\"value\"])\n                          ])\n                        ])\n                      ]))\n                    }), 128))\n                  ])\n                ]),\n                _createElementVNode(\"div\", _hoisted_19, [\n                  _createElementVNode(\"button\", {\n                    type: \"button\",\n                    class: \"btn btn-primary\",\n                    \"data-bs-dismiss\": \"modal\",\n                    onClick: _cache[0] || (_cache[0] = $event => {close();})\n                  }, _toDisplayString(_ctx.$t('modalOffline_close')), 1)\n                ])\n              ])\n            ]))\n          : _createCommentVNode(\"\", true)\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
-      "start": 1721307757172,
-      "end": 1721307757173,
+      "start": 1789891026938,
+      "end": 1789891026939,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -191,39 +191,39 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1721307757173,
-      "end": 1721307757173,
+      "start": 1789891026939,
+      "end": 1789891026939,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1721307757173,
-      "end": 1721307757173,
+      "start": 1789891026939,
+      "end": 1789891026939,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"C:/dev/ngsc/nuxt3/components/TimerCount.vue\";\nimport { default as __nuxt_component_1 } from \"C:/dev/ngsc/nuxt3/components/FormatNumber.vue\";\nimport { computed } from 'vue';\nimport { unref as _unref, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, createTextVNode as _createTextVNode, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode } from \"vue\"\n\nconst _hoisted_1 = {\n  id: \"modalOffline\",\n  class: \"modal fade\"\n}\nconst _hoisted_2 = { class: \"modal-dialog\" }\nconst _hoisted_3 = { class: \"modal-content\" }\nconst _hoisted_4 = {\n  key: 0,\n  class: \"modal-body\"\n}\nconst _hoisted_5 = { class: \"row row-cols-1 g-2 justify-content-center\" }\nconst _hoisted_6 = { class: \"col-12\" }\nconst _hoisted_7 = { class: \"fs-6 text-white\" }\nconst _hoisted_8 = { class: \"col-12 text-center small\" }\nconst _hoisted_9 = { class: \"text-normal\" }\nconst _hoisted_10 = { class: \"col-12 text-center small\" }\nconst _hoisted_11 = { class: \"text-white\" }\nconst _hoisted_12 = { class: \"col-5\" }\nconst _hoisted_13 = { class: \"row g-1\" }\nconst _hoisted_14 = { class: \"row gx-2 align-items-center\" }\nconst _hoisted_15 = { class: \"col\" }\nconst _hoisted_16 = [\"src\", \"alt\"]\nconst _hoisted_17 = { class: \"ms-2\" }\nconst _hoisted_18 = { class: \"col-auto text-white\" }\nconst _hoisted_19 = { class: \"col d-flex justify-content-end\" }\n\nimport { storeToRefs } from 'pinia'\r\n    import { useGameStore } from '~/store/game.js'\r\n    \r\n    \nconst _sfc_main = {\n  __name: 'ModalOffline',\n  setup(__props) {\n\r\n\r\n    const store = useGameStore()\r\n\r\n    const { offlineGains } = storeToRefs(store)\r\n    \r\n    const production = computed(() => {\r\n    \r\n        let ret = []\r\n        \r\n        let resourceIds = [\r\n            'energy', 'plasma', 'meteorite', 'carbon', 'fuel', 'antimatter',\r\n            'science', 'oil', 'metal', 'gem', 'wood', 'silicon', 'uranium', 'lava',\r\n            'lunarite', 'methane', 'titanium', 'gold', 'silver',\r\n            'hydrogen', 'helium', 'ice', 'antimatter'\r\n        ]\r\n        resourceIds.forEach(resourceId => {\r\n            \r\n            let gain = offlineGains.value.after[resourceId] - offlineGains.value.before[resourceId]\r\n            if (gain != 0) {\r\n                \r\n                let item = store.getItem(resourceId)\r\n                \r\n                ret.push({\r\n                \r\n                    id: resourceId,\r\n                    count: gain,\r\n                })\r\n            }\r\n        })\r\n        \r\n        return ret\r\n    })\r\n    \r\n    const close = function() {\r\n    \r\n        store.offlineGains = null\r\n        store.offlineModal = false\r\n    }\r\n    \r\n\nreturn (_ctx, _cache) => {\n  const _component_timer_count = __nuxt_component_0\n  const _component_format_number = __nuxt_component_1\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createElementVNode(\"div\", _hoisted_3, [\n        (_unref(offlineGains))\n          ? (_openBlock(), _createElementBlock(\"div\", _hoisted_4, [\n              _createElementVNode(\"div\", _hoisted_5, [\n                _createElementVNode(\"div\", _hoisted_6, [\n                  _createElementVNode(\"span\", _hoisted_7, _toDisplayString(_ctx.$t('modalOffline_title')), 1)\n                ]),\n                _createElementVNode(\"div\", _hoisted_8, [\n                  _createElementVNode(\"span\", _hoisted_9, _toDisplayString(_ctx.$t('modalOffline_text')), 1)\n                ]),\n                _createElementVNode(\"div\", _hoisted_10, [\n                  _createElementVNode(\"span\", _hoisted_11, [\n                    _createTextVNode(_toDisplayString(_ctx.$t('modalOffline_info')) + \" \", 1),\n                    _createVNode(_component_timer_count, {\n                      count: _unref(offlineGains).time\n                    }, null, 8, [\"count\"])\n                  ])\n                ]),\n                _createElementVNode(\"div\", _hoisted_12, [\n                  _createElementVNode(\"div\", _hoisted_13, [\n                    (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(production), (prod) => {\n                      return (_openBlock(), _createElementBlock(\"div\", {\n                        key: prod.id,\n                        class: \"col-12 small\"\n                      }, [\n                        _createElementVNode(\"div\", _hoisted_14, [\n                          _createElementVNode(\"div\", _hoisted_15, [\n                            _createElementVNode(\"img\", {\n                              src: '/icons/' + prod.id + '.png',\n                              width: \"16\",\n                              height: \"16\",\n                              alt: prod.id\n                            }, null, 8, _hoisted_16),\n                            _createElementVNode(\"span\", _hoisted_17, _toDisplayString(_ctx.$t(prod.id)), 1)\n                          ]),\n                          _createElementVNode(\"div\", _hoisted_18, [\n                            _createVNode(_component_format_number, {\n                              value: prod.count\n                            }, null, 8, [\"value\"])\n                          ])\n                        ])\n                      ]))\n                    }), 128))\n                  ])\n                ]),\n                _createElementVNode(\"div\", _hoisted_19, [\n                  _createElementVNode(\"button\", {\n                    type: \"button\",\n                    class: \"btn btn-primary\",\n                    \"data-bs-dismiss\": \"modal\",\n                    onClick: _cache[0] || (_cache[0] = $event => {close();})\n                  }, _toDisplayString(_ctx.$t('modalOffline_close')), 1)\n                ])\n              ])\n            ]))\n          : _createCommentVNode(\"\", true)\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
-      "start": 1721307757173,
-      "end": 1721307757174,
+      "start": 1789891026939,
+      "end": 1789891026939,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1721307757174,
-      "end": 1721307757174,
+      "start": 1789891026939,
+      "end": 1789891026939,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1721307757174,
-      "end": 1721307757174,
+      "start": 1789891026939,
+      "end": 1789891026939,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1721307757174,
-      "end": 1721307757174,
+      "start": 1789891026939,
+      "end": 1789891026939,
       "order": "normal"
     }
   ]

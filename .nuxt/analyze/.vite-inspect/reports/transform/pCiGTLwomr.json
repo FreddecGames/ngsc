@@ -4,63 +4,63 @@
     {
       "name": "vite:load-fallback",
       "result": "<script setup>\r\n\r\n    const props = defineProps([ 'name', 'icon', 'paneId', 'warning', 'notifIds' ])\r\n\r\n    import { storeToRefs } from 'pinia'\r\n    import { useGameStore } from '~/store/game.js'\r\n    \r\n    const store = useGameStore()\r\n    \r\n    const { activeTab } = storeToRefs(store)\r\n\r\n    const { setActiveTab } = store\r\n    \r\n    const notified = computed(() => {\r\n    \r\n        let result = false\r\n        \r\n        if (props.notifIds) {\r\n            for (let i = 0; i < props.notifIds.length; i++) {\r\n                let id = props.notifIds[i]\r\n                if (store.isNotified(id)) result = true\r\n            }\r\n        }\r\n        \r\n        return result\r\n    })\r\n\r\n</script>\r\n\r\n<template>\r\n    <li class=\"nav-item col\" role=\"presentation\">\r\n        <button class=\"nav-link px-0\" :class=\"{ 'active':activeTab == paneId }\" data-bs-toggle=\"tab\" :data-bs-target=\"'#' + paneId\" type=\"button\" role=\"tab\" :aria-controls=\"paneId\" @click=\"setActiveTab(paneId)\">\r\n            <div class=\"position-relative\">\r\n                <div v-if=\"notified\" class=\"small text-success\" style=\"position:absolute; top:0; right:1rem;\"><small><font-awesome-icon icon=\"fa-certificate\" /></small></div>\r\n                <span class=\"fs-6\"><font-awesome-icon :icon=\"'fa-fw fa-' + icon\" /></span>\r\n            </div>\r\n            <div class=\"position-relative\">\r\n                <small>{{ $t(name) }}</small>\r\n                <slot name=\"extra\" />\r\n            </div>\r\n        </button>\r\n    </li>\r\n</template>\r\n",
-      "start": 1721307757542,
-      "end": 1721307757899,
+      "start": 1789891027293,
+      "end": 1789891027566,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1721307757899,
-      "end": 1721307757899,
+      "start": 1789891027566,
+      "end": 1789891027566,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1721307757899,
-      "end": 1721307757899,
+      "start": 1789891027566,
+      "end": 1789891027566,
       "order": "pre"
     },
     {
       "name": "unplugin-vue-i18n",
-      "start": 1721307757899,
-      "end": 1721307757899,
+      "start": 1789891027566,
+      "end": 1789891027566,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1721307757899,
-      "end": 1721307757899,
+      "start": 1789891027566,
+      "end": 1789891027566,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1721307757899,
-      "end": 1721307757899,
+      "start": 1789891027566,
+      "end": 1789891027566,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1721307757899,
-      "end": 1721307757899,
+      "start": 1789891027566,
+      "end": 1789891027566,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1721307757899,
-      "end": 1721307757899,
+      "start": 1789891027566,
+      "end": 1789891027566,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1721307757899,
-      "end": 1721307757899,
+      "start": 1789891027566,
+      "end": 1789891027566,
       "order": "normal"
     },
     {
       "name": "vite:vue",
       "result": "import { unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, toDisplayString as _toDisplayString, renderSlot as _renderSlot, normalizeClass as _normalizeClass } from \"vue\"\n\nconst _hoisted_1 = {\n  class: \"nav-item col\",\n  role: \"presentation\"\n}\nconst _hoisted_2 = [\"data-bs-target\", \"aria-controls\"]\nconst _hoisted_3 = { class: \"position-relative\" }\nconst _hoisted_4 = {\n  key: 0,\n  class: \"small text-success\",\n  style: {\"position\":\"absolute\",\"top\":\"0\",\"right\":\"1rem\"}\n}\nconst _hoisted_5 = { class: \"fs-6\" }\nconst _hoisted_6 = { class: \"position-relative\" }\n\nimport { storeToRefs } from 'pinia'\r\n    import { useGameStore } from '~/store/game.js'\r\n    \r\n    \nconst _sfc_main = {\n  __name: 'SidebarTab',\n  props: [ 'name', 'icon', 'paneId', 'warning', 'notifIds' ],\n  setup(__props) {\n\r\n\r\n    const props = __props\r\n\r\n    const store = useGameStore()\r\n    \r\n    const { activeTab } = storeToRefs(store)\r\n\r\n    const { setActiveTab } = store\r\n    \r\n    const notified = computed(() => {\r\n    \r\n        let result = false\r\n        \r\n        if (props.notifIds) {\r\n            for (let i = 0; i < props.notifIds.length; i++) {\r\n                let id = props.notifIds[i]\r\n                if (store.isNotified(id)) result = true\r\n            }\r\n        }\r\n        \r\n        return result\r\n    })\r\n\r\n\nreturn (_ctx, _cache) => {\n  const _component_font_awesome_icon = _resolveComponent(\"font-awesome-icon\")\n\n  return (_openBlock(), _createElementBlock(\"li\", _hoisted_1, [\n    _createElementVNode(\"button\", {\n      class: _normalizeClass([\"nav-link px-0\", { 'active':_unref(activeTab) == __props.paneId }]),\n      \"data-bs-toggle\": \"tab\",\n      \"data-bs-target\": '#' + __props.paneId,\n      type: \"button\",\n      role: \"tab\",\n      \"aria-controls\": __props.paneId,\n      onClick: _cache[0] || (_cache[0] = $event => (_unref(setActiveTab)(__props.paneId)))\n    }, [\n      _createElementVNode(\"div\", _hoisted_3, [\n        (_unref(notified))\n          ? (_openBlock(), _createElementBlock(\"div\", _hoisted_4, [\n              _createElementVNode(\"small\", null, [\n                _createVNode(_component_font_awesome_icon, { icon: \"fa-certificate\" })\n              ])\n            ]))\n          : _createCommentVNode(\"\", true),\n        _createElementVNode(\"span\", _hoisted_5, [\n          _createVNode(_component_font_awesome_icon, {\n            icon: 'fa-fw fa-' + __props.icon\n          }, null, 8, [\"icon\"])\n        ])\n      ]),\n      _createElementVNode(\"div\", _hoisted_6, [\n        _createElementVNode(\"small\", null, _toDisplayString(_ctx.$t(__props.name)), 1),\n        _renderSlot(_ctx.$slots, \"extra\")\n      ])\n    ], 10, _hoisted_2)\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
-      "start": 1721307757899,
-      "end": 1721307757901,
+      "start": 1789891027566,
+      "end": 1789891027568,
       "order": "normal",
       "sourcemaps": {
         "mappings": ""
@@ -68,117 +68,117 @@
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1721307757901,
-      "end": 1721307757901,
+      "start": 1789891027568,
+      "end": 1789891027568,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1721307757901,
-      "end": 1721307757901,
+      "start": 1789891027568,
+      "end": 1789891027568,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1721307757901,
-      "end": 1721307757901,
+      "start": 1789891027568,
+      "end": 1789891027568,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1721307757902,
-      "end": 1721307757902,
+      "start": 1789891027569,
+      "end": 1789891027569,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1721307757902,
-      "end": 1721307757902,
+      "start": 1789891027569,
+      "end": 1789891027569,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1721307757902,
-      "end": 1721307757902,
+      "start": 1789891027569,
+      "end": 1789891027569,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1721307757902,
-      "end": 1721307757902,
+      "start": 1789891027569,
+      "end": 1789891027569,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1721307757902,
-      "end": 1721307757902,
+      "start": 1789891027569,
+      "end": 1789891027569,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1721307757902,
-      "end": 1721307757902,
+      "start": 1789891027569,
+      "end": 1789891027569,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1721307757902,
-      "end": 1721307757902,
+      "start": 1789891027569,
+      "end": 1789891027569,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1721307757902,
-      "end": 1721307757902,
+      "start": 1789891027569,
+      "end": 1789891027569,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1721307757902,
-      "end": 1721307757902,
+      "start": 1789891027569,
+      "end": 1789891027569,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1721307757902,
-      "end": 1721307757902,
+      "start": 1789891027569,
+      "end": 1789891027569,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1721307757902,
-      "end": 1721307757902,
+      "start": 1789891027569,
+      "end": 1789891027569,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1721307757902,
-      "end": 1721307757902,
+      "start": 1789891027569,
+      "end": 1789891027569,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1721307757902,
-      "end": 1721307757902,
+      "start": 1789891027569,
+      "end": 1789891027569,
       "order": "post"
     },
     {
       "name": "nuxtjs:i18n-macros-transform",
-      "start": 1721307757902,
-      "end": 1721307757902,
+      "start": 1789891027569,
+      "end": 1789891027569,
       "order": "post"
     },
     {
       "name": "nuxtjs:i18n-resource",
-      "start": 1721307757902,
-      "end": 1721307757902,
+      "start": 1789891027569,
+      "end": 1789891027569,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { computed } from 'vue';\nimport { unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, toDisplayString as _toDisplayString, renderSlot as _renderSlot, normalizeClass as _normalizeClass } from \"vue\"\n\nconst _hoisted_1 = {\n  class: \"nav-item col\",\n  role: \"presentation\"\n}\nconst _hoisted_2 = [\"data-bs-target\", \"aria-controls\"]\nconst _hoisted_3 = { class: \"position-relative\" }\nconst _hoisted_4 = {\n  key: 0,\n  class: \"small text-success\",\n  style: {\"position\":\"absolute\",\"top\":\"0\",\"right\":\"1rem\"}\n}\nconst _hoisted_5 = { class: \"fs-6\" }\nconst _hoisted_6 = { class: \"position-relative\" }\n\nimport { storeToRefs } from 'pinia'\r\n    import { useGameStore } from '~/store/game.js'\r\n    \r\n    \nconst _sfc_main = {\n  __name: 'SidebarTab',\n  props: [ 'name', 'icon', 'paneId', 'warning', 'notifIds' ],\n  setup(__props) {\n\r\n\r\n    const props = __props\r\n\r\n    const store = useGameStore()\r\n    \r\n    const { activeTab } = storeToRefs(store)\r\n\r\n    const { setActiveTab } = store\r\n    \r\n    const notified = computed(() => {\r\n    \r\n        let result = false\r\n        \r\n        if (props.notifIds) {\r\n            for (let i = 0; i < props.notifIds.length; i++) {\r\n                let id = props.notifIds[i]\r\n                if (store.isNotified(id)) result = true\r\n            }\r\n        }\r\n        \r\n        return result\r\n    })\r\n\r\n\nreturn (_ctx, _cache) => {\n  const _component_font_awesome_icon = _resolveComponent(\"font-awesome-icon\")\n\n  return (_openBlock(), _createElementBlock(\"li\", _hoisted_1, [\n    _createElementVNode(\"button\", {\n      class: _normalizeClass([\"nav-link px-0\", { 'active':_unref(activeTab) == __props.paneId }]),\n      \"data-bs-toggle\": \"tab\",\n      \"data-bs-target\": '#' + __props.paneId,\n      type: \"button\",\n      role: \"tab\",\n      \"aria-controls\": __props.paneId,\n      onClick: _cache[0] || (_cache[0] = $event => (_unref(setActiveTab)(__props.paneId)))\n    }, [\n      _createElementVNode(\"div\", _hoisted_3, [\n        (_unref(notified))\n          ? (_openBlock(), _createElementBlock(\"div\", _hoisted_4, [\n              _createElementVNode(\"small\", null, [\n                _createVNode(_component_font_awesome_icon, { icon: \"fa-certificate\" })\n              ])\n            ]))\n          : _createCommentVNode(\"\", true),\n        _createElementVNode(\"span\", _hoisted_5, [\n          _createVNode(_component_font_awesome_icon, {\n            icon: 'fa-fw fa-' + __props.icon\n          }, null, 8, [\"icon\"])\n        ])\n      ]),\n      _createElementVNode(\"div\", _hoisted_6, [\n        _createElementVNode(\"small\", null, _toDisplayString(_ctx.$t(__props.name)), 1),\n        _renderSlot(_ctx.$slots, \"extra\")\n      ])\n    ], 10, _hoisted_2)\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
-      "start": 1721307757902,
-      "end": 1721307757903,
+      "start": 1789891027569,
+      "end": 1789891027570,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -191,38 +191,38 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1721307757903,
-      "end": 1721307757903,
+      "start": 1789891027570,
+      "end": 1789891027570,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1721307757903,
-      "end": 1721307757903,
+      "start": 1789891027570,
+      "end": 1789891027570,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1721307757903,
-      "end": 1721307757903,
+      "start": 1789891027570,
+      "end": 1789891027570,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1721307757903,
-      "end": 1721307757903,
+      "start": 1789891027570,
+      "end": 1789891027570,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1721307757903,
-      "end": 1721307757903,
+      "start": 1789891027570,
+      "end": 1789891027570,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1721307757903,
-      "end": 1721307757903,
+      "start": 1789891027570,
+      "end": 1789891027570,
       "order": "normal"
     }
   ]

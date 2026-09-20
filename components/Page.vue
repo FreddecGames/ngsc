@@ -9,7 +9,7 @@
     
     const store = useGameStore()
     
-    const { gameVersion, getRadarRange, getDMRing, getDMSwarm, getDMSphere, getDMPotential, hasTechLocked, getTimeSinceLastEnlighten, getTimeSinceLastRebirth, statsTotalConquests, statsTotalStatues, statsTotalRebirths, statsTotalEnlightens, dmBoostCount, getDMAchievement, getULConquest, getULSphere, getULStatue, getULPotential, getULPotentialcanEnlighten, getFleetStats } = storeToRefs(store)    
+    const { isMobile, gameVersion, getRadarRange, getDMRing, getDMSwarm, getDMSphere, getDMPotential, hasTechLocked, getTimeSinceLastEnlighten, getTimeSinceLastRebirth, statsTotalConquests, statsTotalStatues, statsTotalRebirths, statsTotalEnlightens, dmBoostCount, getDMAchievement, getULConquest, getULSphere, getULStatue, getULPotential, getULPotentialcanEnlighten, getFleetStats } = storeToRefs(store)    
 
     const { canBuild, exportSave, downloadSave, rebirth, enlighten, setActivePane, setCompanyName } = store
 
@@ -81,8 +81,8 @@
 <template>
     <div id="page">
         <div class="tab-content">
-        
-            <page-pane id="donatingPane" name="menu-item-donating" icon="\icons\donating.png">
+			
+            <page-pane v-if="!isMobile" id="donatingPane" name="menu-item-donating" icon="\icons\donating.png">
                 <card id="donatingCard" name="donatingCardTitle">
                     <template v-slot:col-1>
                         <block-desc :descs="[ 'donatingCardText1', 'donatingCardText2' ]" />

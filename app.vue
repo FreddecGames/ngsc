@@ -56,6 +56,8 @@ export default {
                 //---
                 const store = useGameStore()
                 //---
+				store.isMobile = (this.isMobile == true && this.app == 'android')
+                //---
                 try {
                     //---
                     store.init()

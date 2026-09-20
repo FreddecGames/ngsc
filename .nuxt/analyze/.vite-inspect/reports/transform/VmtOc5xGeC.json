@@ -4,212 +4,212 @@
     {
       "name": "virtual",
       "result": "export { default } from \"C:/dev/ngsc/nuxt3/app.vue\";",
-      "start": 1721307755360,
-      "end": 1721307755360,
+      "start": 1789891026080,
+      "end": 1789891026080,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1721307755360,
-      "end": 1721307755360,
+      "start": 1789891026080,
+      "end": 1789891026080,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1721307755360,
-      "end": 1721307755360,
+      "start": 1789891026080,
+      "end": 1789891026080,
       "order": "pre"
     },
     {
       "name": "unplugin-vue-i18n",
-      "start": 1721307755360,
-      "end": 1721307755360,
+      "start": 1789891026080,
+      "end": 1789891026080,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1721307755360,
-      "end": 1721307755360,
+      "start": 1789891026080,
+      "end": 1789891026080,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1721307755360,
-      "end": 1721307755360,
+      "start": 1789891026081,
+      "end": 1789891026081,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1721307755360,
-      "end": 1721307755360,
+      "start": 1789891026081,
+      "end": 1789891026081,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1721307755360,
-      "end": 1721307755360,
+      "start": 1789891026081,
+      "end": 1789891026081,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1721307755363,
-      "end": 1721307755363,
+      "start": 1789891026081,
+      "end": 1789891026081,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1721307755363,
-      "end": 1721307755363,
+      "start": 1789891026081,
+      "end": 1789891026081,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1721307755363,
-      "end": 1721307755363,
+      "start": 1789891026081,
+      "end": 1789891026081,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1721307755363,
-      "end": 1721307755363,
+      "start": 1789891026081,
+      "end": 1789891026081,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1721307755363,
-      "end": 1721307755363,
+      "start": 1789891026081,
+      "end": 1789891026081,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1721307755363,
-      "end": 1721307755363,
+      "start": 1789891026082,
+      "end": 1789891026082,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1721307755363,
-      "end": 1721307755363,
+      "start": 1789891026082,
+      "end": 1789891026082,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1721307755364,
-      "end": 1721307755364,
+      "start": 1789891026082,
+      "end": 1789891026082,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1721307755364,
-      "end": 1721307755364,
+      "start": 1789891026082,
+      "end": 1789891026082,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1721307755364,
-      "end": 1721307755364,
+      "start": 1789891026083,
+      "end": 1789891026083,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1721307755364,
-      "end": 1721307755364,
+      "start": 1789891026083,
+      "end": 1789891026083,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1721307755364,
-      "end": 1721307755364,
+      "start": 1789891026083,
+      "end": 1789891026083,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1721307755364,
-      "end": 1721307755364,
+      "start": 1789891026083,
+      "end": 1789891026083,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1721307755364,
-      "end": 1721307755364,
+      "start": 1789891026085,
+      "end": 1789891026085,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1721307755364,
-      "end": 1721307755364,
+      "start": 1789891026085,
+      "end": 1789891026085,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1721307755364,
-      "end": 1721307755364,
+      "start": 1789891026085,
+      "end": 1789891026085,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1721307755364,
-      "end": 1721307755364,
+      "start": 1789891026085,
+      "end": 1789891026085,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1721307755364,
-      "end": 1721307755364,
+      "start": 1789891026085,
+      "end": 1789891026085,
       "order": "post"
     },
     {
       "name": "nuxtjs:i18n-macros-transform",
-      "start": 1721307755365,
-      "end": 1721307755365,
+      "start": 1789891026086,
+      "end": 1789891026086,
       "order": "post"
     },
     {
       "name": "nuxtjs:i18n-resource",
-      "start": 1721307755367,
-      "end": 1721307755367,
+      "start": 1789891026088,
+      "end": 1789891026088,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1721307755367,
-      "end": 1721307755367,
+      "start": 1789891026088,
+      "end": 1789891026089,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1721307755367,
-      "end": 1721307755367,
+      "start": 1789891026089,
+      "end": 1789891026089,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1721307755367,
-      "end": 1721307755367,
+      "start": 1789891026089,
+      "end": 1789891026089,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1721307755367,
-      "end": 1721307755367,
+      "start": 1789891026089,
+      "end": 1789891026089,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1721307755368,
-      "end": 1721307755368,
+      "start": 1789891026089,
+      "end": 1789891026089,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1721307755370,
-      "end": 1721307755370,
+      "start": 1789891026090,
+      "end": 1789891026090,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1721307755370,
-      "end": 1721307755370,
+      "start": 1789891026090,
+      "end": 1789891026090,
       "order": "normal"
     }
   ]

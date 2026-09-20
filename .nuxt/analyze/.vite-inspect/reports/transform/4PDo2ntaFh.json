@@ -4,63 +4,63 @@
     {
       "name": "vite:load-fallback",
       "result": "<script setup>\r\n\r\n    const props = defineProps([ 'itemId', 'level', 'name' ])\r\n    \r\n    import { useGameStore } from '~/store/game.js'\r\n    \r\n    const store = useGameStore()\r\n    \r\n    const done = computed(() => { return store.getItemCount(props.itemId) >= 1 })\r\n    const unlocked = computed(() => { return store.isUnlocked(props.itemId) })\r\n    \r\n    const cost = computed(() => { return store.getBuildCosts(props.itemId, 1)[0] })\r\n\r\n</script>\r\n\r\n<template>\r\n    <div v-if=\"unlocked && !done\" class=\"col\">\r\n        <div class=\"row align-items-center gx-2\">\r\n            <div class=\"col text-truncate\">\r\n                <span class=\"badge text-uppercase text-center me-1\">{{ $t(level) }}</span>\r\n                <span>{{ $t(name) }}</span>\r\n            </div>\r\n            <div class=\"col-4\">\r\n                <line-cost v-if=\"cost\" :cost=\"cost\" />\r\n            </div>\r\n            <div class=\"col-auto\">\r\n                <button-build :itemId=\"itemId\" count=\"1\" btnText=\"button-research\" class=\"lh-1\" />\r\n            </div>\r\n        </div>\r\n    </div>\r\n</template>\r\n",
-      "start": 1721307757949,
-      "end": 1721307758114,
+      "start": 1789891027598,
+      "end": 1789891027762,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1721307758114,
-      "end": 1721307758114,
+      "start": 1789891027762,
+      "end": 1789891027762,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1721307758114,
-      "end": 1721307758114,
+      "start": 1789891027762,
+      "end": 1789891027762,
       "order": "pre"
     },
     {
       "name": "unplugin-vue-i18n",
-      "start": 1721307758114,
-      "end": 1721307758114,
+      "start": 1789891027762,
+      "end": 1789891027762,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1721307758114,
-      "end": 1721307758114,
+      "start": 1789891027762,
+      "end": 1789891027762,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1721307758114,
-      "end": 1721307758114,
+      "start": 1789891027762,
+      "end": 1789891027762,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1721307758114,
-      "end": 1721307758114,
+      "start": 1789891027762,
+      "end": 1789891027762,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1721307758114,
-      "end": 1721307758114,
+      "start": 1789891027762,
+      "end": 1789891027762,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1721307758114,
-      "end": 1721307758114,
+      "start": 1789891027762,
+      "end": 1789891027762,
       "order": "normal"
     },
     {
       "name": "vite:vue",
       "result": "import { unref as _unref, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createVNode as _createVNode, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = {\n  key: 0,\n  class: \"col\"\n}\nconst _hoisted_2 = { class: \"row align-items-center gx-2\" }\nconst _hoisted_3 = { class: \"col text-truncate\" }\nconst _hoisted_4 = { class: \"badge text-uppercase text-center me-1\" }\nconst _hoisted_5 = { class: \"col-4\" }\nconst _hoisted_6 = { class: \"col-auto\" }\n\nimport { useGameStore } from '~/store/game.js'\r\n    \r\n    \nconst _sfc_main = {\n  __name: 'LineTechnology',\n  props: [ 'itemId', 'level', 'name' ],\n  setup(__props) {\n\r\n\r\n    const props = __props\r\n    \r\n    const store = useGameStore()\r\n    \r\n    const done = computed(() => { return store.getItemCount(props.itemId) >= 1 })\r\n    const unlocked = computed(() => { return store.isUnlocked(props.itemId) })\r\n    \r\n    const cost = computed(() => { return store.getBuildCosts(props.itemId, 1)[0] })\r\n\r\n\nreturn (_ctx, _cache) => {\n  const _component_line_cost = _resolveComponent(\"line-cost\")\n  const _component_button_build = _resolveComponent(\"button-build\")\n\n  return (_unref(unlocked) && !_unref(done))\n    ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createElementVNode(\"div\", _hoisted_2, [\n          _createElementVNode(\"div\", _hoisted_3, [\n            _createElementVNode(\"span\", _hoisted_4, _toDisplayString(_ctx.$t(__props.level)), 1),\n            _createElementVNode(\"span\", null, _toDisplayString(_ctx.$t(__props.name)), 1)\n          ]),\n          _createElementVNode(\"div\", _hoisted_5, [\n            (_unref(cost))\n              ? (_openBlock(), _createBlock(_component_line_cost, {\n                  key: 0,\n                  cost: _unref(cost)\n                }, null, 8, [\"cost\"]))\n              : _createCommentVNode(\"\", true)\n          ]),\n          _createElementVNode(\"div\", _hoisted_6, [\n            _createVNode(_component_button_build, {\n              itemId: __props.itemId,\n              count: \"1\",\n              btnText: \"button-research\",\n              class: \"lh-1\"\n            }, null, 8, [\"itemId\"])\n          ])\n        ])\n      ]))\n    : _createCommentVNode(\"\", true)\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
-      "start": 1721307758114,
-      "end": 1721307758116,
+      "start": 1789891027762,
+      "end": 1789891027763,
       "order": "normal",
       "sourcemaps": {
         "mappings": ""
@@ -68,117 +68,117 @@
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1721307758116,
-      "end": 1721307758116,
+      "start": 1789891027763,
+      "end": 1789891027763,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1721307758116,
-      "end": 1721307758116,
+      "start": 1789891027763,
+      "end": 1789891027764,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1721307758116,
-      "end": 1721307758116,
+      "start": 1789891027764,
+      "end": 1789891027764,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1721307758116,
-      "end": 1721307758116,
+      "start": 1789891027764,
+      "end": 1789891027764,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1721307758116,
-      "end": 1721307758116,
+      "start": 1789891027764,
+      "end": 1789891027764,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1721307758116,
-      "end": 1721307758116,
+      "start": 1789891027764,
+      "end": 1789891027764,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1721307758116,
-      "end": 1721307758116,
+      "start": 1789891027764,
+      "end": 1789891027764,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1721307758116,
-      "end": 1721307758116,
+      "start": 1789891027764,
+      "end": 1789891027764,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1721307758116,
-      "end": 1721307758116,
+      "start": 1789891027764,
+      "end": 1789891027764,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1721307758116,
-      "end": 1721307758116,
+      "start": 1789891027764,
+      "end": 1789891027764,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1721307758116,
-      "end": 1721307758116,
+      "start": 1789891027764,
+      "end": 1789891027764,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1721307758116,
-      "end": 1721307758116,
+      "start": 1789891027764,
+      "end": 1789891027764,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1721307758116,
-      "end": 1721307758116,
+      "start": 1789891027764,
+      "end": 1789891027764,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1721307758116,
-      "end": 1721307758116,
+      "start": 1789891027764,
+      "end": 1789891027764,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1721307758116,
-      "end": 1721307758116,
+      "start": 1789891027764,
+      "end": 1789891027764,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1721307758116,
-      "end": 1721307758116,
+      "start": 1789891027764,
+      "end": 1789891027764,
       "order": "post"
     },
     {
       "name": "nuxtjs:i18n-macros-transform",
-      "start": 1721307758116,
-      "end": 1721307758116,
+      "start": 1789891027764,
+      "end": 1789891027764,
       "order": "post"
     },
     {
       "name": "nuxtjs:i18n-resource",
-      "start": 1721307758116,
-      "end": 1721307758116,
+      "start": 1789891027764,
+      "end": 1789891027764,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { computed } from 'vue';\nimport { unref as _unref, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createVNode as _createVNode, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = {\n  key: 0,\n  class: \"col\"\n}\nconst _hoisted_2 = { class: \"row align-items-center gx-2\" }\nconst _hoisted_3 = { class: \"col text-truncate\" }\nconst _hoisted_4 = { class: \"badge text-uppercase text-center me-1\" }\nconst _hoisted_5 = { class: \"col-4\" }\nconst _hoisted_6 = { class: \"col-auto\" }\n\nimport { useGameStore } from '~/store/game.js'\r\n    \r\n    \nconst _sfc_main = {\n  __name: 'LineTechnology',\n  props: [ 'itemId', 'level', 'name' ],\n  setup(__props) {\n\r\n\r\n    const props = __props\r\n    \r\n    const store = useGameStore()\r\n    \r\n    const done = computed(() => { return store.getItemCount(props.itemId) >= 1 })\r\n    const unlocked = computed(() => { return store.isUnlocked(props.itemId) })\r\n    \r\n    const cost = computed(() => { return store.getBuildCosts(props.itemId, 1)[0] })\r\n\r\n\nreturn (_ctx, _cache) => {\n  const _component_line_cost = _resolveComponent(\"line-cost\")\n  const _component_button_build = _resolveComponent(\"button-build\")\n\n  return (_unref(unlocked) && !_unref(done))\n    ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createElementVNode(\"div\", _hoisted_2, [\n          _createElementVNode(\"div\", _hoisted_3, [\n            _createElementVNode(\"span\", _hoisted_4, _toDisplayString(_ctx.$t(__props.level)), 1),\n            _createElementVNode(\"span\", null, _toDisplayString(_ctx.$t(__props.name)), 1)\n          ]),\n          _createElementVNode(\"div\", _hoisted_5, [\n            (_unref(cost))\n              ? (_openBlock(), _createBlock(_component_line_cost, {\n                  key: 0,\n                  cost: _unref(cost)\n                }, null, 8, [\"cost\"]))\n              : _createCommentVNode(\"\", true)\n          ]),\n          _createElementVNode(\"div\", _hoisted_6, [\n            _createVNode(_component_button_build, {\n              itemId: __props.itemId,\n              count: \"1\",\n              btnText: \"button-research\",\n              class: \"lh-1\"\n            }, null, 8, [\"itemId\"])\n          ])\n        ])\n      ]))\n    : _createCommentVNode(\"\", true)\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
-      "start": 1721307758116,
-      "end": 1721307758117,
+      "start": 1789891027764,
+      "end": 1789891027765,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -191,39 +191,39 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1721307758117,
-      "end": 1721307758117,
+      "start": 1789891027765,
+      "end": 1789891027765,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1721307758117,
-      "end": 1721307758117,
+      "start": 1789891027765,
+      "end": 1789891027765,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"C:/dev/ngsc/nuxt3/components/LineCost.vue\";\nimport { default as __nuxt_component_1 } from \"C:/dev/ngsc/nuxt3/components/ButtonBuild.vue\";\nimport { computed } from 'vue';\nimport { unref as _unref, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createVNode as _createVNode, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = {\n  key: 0,\n  class: \"col\"\n}\nconst _hoisted_2 = { class: \"row align-items-center gx-2\" }\nconst _hoisted_3 = { class: \"col text-truncate\" }\nconst _hoisted_4 = { class: \"badge text-uppercase text-center me-1\" }\nconst _hoisted_5 = { class: \"col-4\" }\nconst _hoisted_6 = { class: \"col-auto\" }\n\nimport { useGameStore } from '~/store/game.js'\r\n    \r\n    \nconst _sfc_main = {\n  __name: 'LineTechnology',\n  props: [ 'itemId', 'level', 'name' ],\n  setup(__props) {\n\r\n\r\n    const props = __props\r\n    \r\n    const store = useGameStore()\r\n    \r\n    const done = computed(() => { return store.getItemCount(props.itemId) >= 1 })\r\n    const unlocked = computed(() => { return store.isUnlocked(props.itemId) })\r\n    \r\n    const cost = computed(() => { return store.getBuildCosts(props.itemId, 1)[0] })\r\n\r\n\nreturn (_ctx, _cache) => {\n  const _component_line_cost = __nuxt_component_0\n  const _component_button_build = __nuxt_component_1\n\n  return (_unref(unlocked) && !_unref(done))\n    ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createElementVNode(\"div\", _hoisted_2, [\n          _createElementVNode(\"div\", _hoisted_3, [\n            _createElementVNode(\"span\", _hoisted_4, _toDisplayString(_ctx.$t(__props.level)), 1),\n            _createElementVNode(\"span\", null, _toDisplayString(_ctx.$t(__props.name)), 1)\n          ]),\n          _createElementVNode(\"div\", _hoisted_5, [\n            (_unref(cost))\n              ? (_openBlock(), _createBlock(_component_line_cost, {\n                  key: 0,\n                  cost: _unref(cost)\n                }, null, 8, [\"cost\"]))\n              : _createCommentVNode(\"\", true)\n          ]),\n          _createElementVNode(\"div\", _hoisted_6, [\n            _createVNode(_component_button_build, {\n              itemId: __props.itemId,\n              count: \"1\",\n              btnText: \"button-research\",\n              class: \"lh-1\"\n            }, null, 8, [\"itemId\"])\n          ])\n        ])\n      ]))\n    : _createCommentVNode(\"\", true)\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
-      "start": 1721307758117,
-      "end": 1721307758117,
+      "start": 1789891027765,
+      "end": 1789891027765,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1721307758117,
-      "end": 1721307758118,
+      "start": 1789891027765,
+      "end": 1789891027765,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1721307758118,
-      "end": 1721307758118,
+      "start": 1789891027765,
+      "end": 1789891027765,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1721307758118,
-      "end": 1721307758118,
+      "start": 1789891027765,
+      "end": 1789891027765,
       "order": "normal"
     }
   ]

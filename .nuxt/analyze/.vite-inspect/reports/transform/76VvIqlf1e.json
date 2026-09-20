@@ -4,63 +4,63 @@
     {
       "name": "vite:load-fallback",
       "result": "<script setup>\r\n\r\n    const props = defineProps([ 'id', 'name', 'icon' ])\r\n\r\n    import { storeToRefs } from 'pinia'\r\n    import { useGameStore } from '~/store/game.js'\r\n    \r\n    const store = useGameStore()\r\n    \r\n    const { activePane } = storeToRefs(store)\r\n\r\n</script>\r\n\r\n<template>\r\n    <div v-if=\"activePane == id\" class=\"tab-pane active\" :id=\"id\" role=\"tabpanel\" :aria-labelledby=\"id + '-tab'\">\r\n        \r\n        <div class=\"titleBar\" @mousewheel.prevent>\r\n            <div class=\"container p-2\">\r\n                <div class=\"row gx-2 align-items-center\">\r\n                \r\n                    <div class=\"col-auto\">\r\n                        <img :src=\"icon\" width=\"19\" height=\"19\" :alt=\"name\" />\r\n                    </div>\r\n                    \r\n                    <div class=\"col text-truncate\">\r\n                        <span class=\"fs-5 text-light\" role=\"heading\">{{ $t(name) }}</span>\r\n                    </div>\r\n                    \r\n                    <slot name=\"titleBar\" />\r\n                    \r\n                </div>\r\n            </div>\r\n        </div>\r\n        \r\n        <div class=\"content scrollbar\" @mousewheel.stop>\r\n            <div class=\"container px-2 pb-2\">\r\n                <div class=\"row row-cols-1 g-2\">\r\n                \r\n                    <slot />\r\n                    \r\n                </div>\r\n            </div>\r\n        </div>\r\n        \r\n    </div>\r\n</template>\r\n\r\n<style>\r\n    .titleBar {\r\n        position: fixed; top: 54px; left: 0; z-index: 5;\r\n        width: 100%;\r\n    }\r\n    @media (min-width: 768px) { .titleBar { padding-left: 320px; } }\r\n    \r\n    .content {\r\n        position: fixed; top: 102px; bottom: 54px; left: 0; z-index: 5;\r\n        width: 100%;\r\n    }\r\n    @media (min-width: 768px) { .content { padding-left: 320px; } }\r\n    \r\n    @media (min-width: 992px) { .container { max-width: 720px; } }\r\n    @media (min-width: 1200px) { .container { max-width: 720px; } }\r\n</style>\r\n",
-      "start": 1721307757870,
-      "end": 1721307757966,
+      "start": 1789891027527,
+      "end": 1789891027611,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1721307757966,
-      "end": 1721307757966,
+      "start": 1789891027611,
+      "end": 1789891027611,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1721307757966,
-      "end": 1721307757966,
+      "start": 1789891027611,
+      "end": 1789891027611,
       "order": "pre"
     },
     {
       "name": "unplugin-vue-i18n",
-      "start": 1721307757966,
-      "end": 1721307757966,
+      "start": 1789891027611,
+      "end": 1789891027611,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1721307757966,
-      "end": 1721307757966,
+      "start": 1789891027611,
+      "end": 1789891027611,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1721307757966,
-      "end": 1721307757966,
+      "start": 1789891027611,
+      "end": 1789891027611,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1721307757966,
-      "end": 1721307757966,
+      "start": 1789891027611,
+      "end": 1789891027611,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1721307757967,
-      "end": 1721307757967,
+      "start": 1789891027611,
+      "end": 1789891027611,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1721307757967,
-      "end": 1721307757967,
+      "start": 1789891027611,
+      "end": 1789891027611,
       "order": "normal"
     },
     {
       "name": "vite:vue",
       "result": "import { unref as _unref, createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, renderSlot as _renderSlot, withModifiers as _withModifiers, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode } from \"vue\"\n\nconst _hoisted_1 = [\"id\", \"aria-labelledby\"]\nconst _hoisted_2 = { class: \"container p-2\" }\nconst _hoisted_3 = { class: \"row gx-2 align-items-center\" }\nconst _hoisted_4 = { class: \"col-auto\" }\nconst _hoisted_5 = [\"src\", \"alt\"]\nconst _hoisted_6 = { class: \"col text-truncate\" }\nconst _hoisted_7 = {\n  class: \"fs-5 text-light\",\n  role: \"heading\"\n}\nconst _hoisted_8 = { class: \"container px-2 pb-2\" }\nconst _hoisted_9 = { class: \"row row-cols-1 g-2\" }\n\nimport { storeToRefs } from 'pinia'\r\n    import { useGameStore } from '~/store/game.js'\r\n    \r\n    \nconst _sfc_main = {\n  __name: 'PagePane',\n  props: [ 'id', 'name', 'icon' ],\n  setup(__props) {\n\r\n\r\n    const props = __props\r\n\r\n    const store = useGameStore()\r\n    \r\n    const { activePane } = storeToRefs(store)\r\n\r\n\nreturn (_ctx, _cache) => {\n  return (_unref(activePane) == __props.id)\n    ? (_openBlock(), _createElementBlock(\"div\", {\n        key: 0,\n        class: \"tab-pane active\",\n        id: __props.id,\n        role: \"tabpanel\",\n        \"aria-labelledby\": __props.id + '-tab'\n      }, [\n        _createElementVNode(\"div\", {\n          class: \"titleBar\",\n          onMousewheel: _cache[0] || (_cache[0] = _withModifiers(() => {}, [\"prevent\"]))\n        }, [\n          _createElementVNode(\"div\", _hoisted_2, [\n            _createElementVNode(\"div\", _hoisted_3, [\n              _createElementVNode(\"div\", _hoisted_4, [\n                _createElementVNode(\"img\", {\n                  src: __props.icon,\n                  width: \"19\",\n                  height: \"19\",\n                  alt: __props.name\n                }, null, 8, _hoisted_5)\n              ]),\n              _createElementVNode(\"div\", _hoisted_6, [\n                _createElementVNode(\"span\", _hoisted_7, _toDisplayString(_ctx.$t(__props.name)), 1)\n              ]),\n              _renderSlot(_ctx.$slots, \"titleBar\")\n            ])\n          ])\n        ], 32),\n        _createElementVNode(\"div\", {\n          class: \"content scrollbar\",\n          onMousewheel: _cache[1] || (_cache[1] = _withModifiers(() => {}, [\"stop\"]))\n        }, [\n          _createElementVNode(\"div\", _hoisted_8, [\n            _createElementVNode(\"div\", _hoisted_9, [\n              _renderSlot(_ctx.$slots, \"default\")\n            ])\n          ])\n        ], 32)\n      ], 8, _hoisted_1))\n    : _createCommentVNode(\"\", true)\n}\n}\n\n}\n\n\nimport \"C:/dev/ngsc/nuxt3/components/PagePane.vue?vue&type=style&index=0&lang.css\"\n\nexport default _sfc_main",
-      "start": 1721307757967,
-      "end": 1721307757968,
+      "start": 1789891027611,
+      "end": 1789891027613,
       "order": "normal",
       "sourcemaps": {
         "mappings": ""
@@ -68,152 +68,152 @@
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1721307757968,
-      "end": 1721307757968,
+      "start": 1789891027613,
+      "end": 1789891027613,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1721307757968,
-      "end": 1721307757968,
+      "start": 1789891027613,
+      "end": 1789891027613,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1721307757968,
-      "end": 1721307757968,
+      "start": 1789891027613,
+      "end": 1789891027613,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1721307757969,
-      "end": 1721307757969,
+      "start": 1789891027613,
+      "end": 1789891027613,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1721307757969,
-      "end": 1721307757969,
+      "start": 1789891027613,
+      "end": 1789891027613,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1721307757969,
-      "end": 1721307757969,
+      "start": 1789891027613,
+      "end": 1789891027613,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1721307757969,
-      "end": 1721307757969,
+      "start": 1789891027613,
+      "end": 1789891027613,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1721307757969,
-      "end": 1721307757969,
+      "start": 1789891027613,
+      "end": 1789891027613,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1721307757969,
-      "end": 1721307757969,
+      "start": 1789891027613,
+      "end": 1789891027613,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1721307757969,
-      "end": 1721307757969,
+      "start": 1789891027613,
+      "end": 1789891027613,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1721307757969,
-      "end": 1721307757969,
+      "start": 1789891027613,
+      "end": 1789891027613,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1721307757969,
-      "end": 1721307757969,
+      "start": 1789891027613,
+      "end": 1789891027613,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1721307757969,
-      "end": 1721307757969,
+      "start": 1789891027613,
+      "end": 1789891027613,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1721307757969,
-      "end": 1721307757969,
+      "start": 1789891027613,
+      "end": 1789891027613,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1721307757969,
-      "end": 1721307757969,
+      "start": 1789891027613,
+      "end": 1789891027613,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1721307757969,
-      "end": 1721307757969,
+      "start": 1789891027613,
+      "end": 1789891027613,
       "order": "post"
     },
     {
       "name": "nuxtjs:i18n-macros-transform",
-      "start": 1721307757969,
-      "end": 1721307757969,
+      "start": 1789891027613,
+      "end": 1789891027614,
       "order": "post"
     },
     {
       "name": "nuxtjs:i18n-resource",
-      "start": 1721307757969,
-      "end": 1721307757969,
+      "start": 1789891027614,
+      "end": 1789891027614,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1721307757969,
-      "end": 1721307757969,
+      "start": 1789891027614,
+      "end": 1789891027614,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1721307757969,
-      "end": 1721307757970,
+      "start": 1789891027614,
+      "end": 1789891027614,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1721307757970,
-      "end": 1721307757970,
+      "start": 1789891027614,
+      "end": 1789891027614,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1721307757970,
-      "end": 1721307757970,
+      "start": 1789891027614,
+      "end": 1789891027614,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1721307757970,
-      "end": 1721307757970,
+      "start": 1789891027614,
+      "end": 1789891027614,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1721307757970,
-      "end": 1721307757970,
+      "start": 1789891027614,
+      "end": 1789891027614,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1721307757970,
-      "end": 1721307757970,
+      "start": 1789891027614,
+      "end": 1789891027614,
       "order": "normal"
     }
   ]

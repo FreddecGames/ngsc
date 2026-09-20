@@ -9,7 +9,7 @@
     const { build } = store
 
     const can = computed(() => { return store.canBuild(props.itemId, props.count) })
-
+	
 </script>
 
 <template>

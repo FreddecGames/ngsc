@@ -4,63 +4,63 @@
     {
       "name": "vite:load-fallback",
       "result": "<script setup>\r\n\r\n    const props = defineProps([ 'itemId' ])\r\n    \r\n    const percentage = ref(0)\r\n\r\n    import { storeToRefs } from 'pinia'\r\n    import { useGameStore } from '~/store/game.js'\r\n    \r\n    const store = useGameStore()\r\n    \r\n    const { autoConversionId } = storeToRefs(store)    \r\n    \r\n    const { setAutoConversionId, convert } = store\r\n    \r\n    const amount = computed(() => { return Math.floor((percentage.value / 100) * maxCount.value) })\r\n    const source = computed(() => { return store.getConversionCost(props.itemId, amount.value) })\r\n    const maxCount = computed(() => { return store.getConversionMaxCount(props.itemId) })\r\n    \r\n    const can = computed(() => { return store.canConvert(props.itemId) })\r\n    \r\n    const autoUnlocked = computed(() => { return store.getItemCount('dmUpgdAutoEmc') >= 1 })\r\n    \r\n</script>\r\n\r\n<template>\r\n    <div class=\"col\">\r\n        <div class=\"row g-2 align-items-center\">\r\n    \r\n            <div class=\"col\">\r\n                <div class=\"row g-0 small\">\r\n                    \r\n                    <div class=\"col-12\">\r\n                        <div class=\"row gx-2 align-items-center justify-content-center\">\r\n                        \r\n                            <div class=\"col-auto d-flex align-items-center\">\r\n                                <img class=\"me-1\" :src=\"'/icons/' + source.id + '.png'\" width=\"14\" height=\"14\" :alt=\"$t(source.id)\" />\r\n                                <format-number :value=\"source.count\" />\r\n                            </div>\r\n                            \r\n                            <div class=\"col-auto\">\r\n                                <font-awesome-icon icon=\"fa-fw fa-long-arrow-alt-right text-muted\" />\r\n                            </div>\r\n                            \r\n                            <div class=\"col-auto d-flex align-items-center\">\r\n                                <img class=\"me-1\" :src=\"'/icons/' + itemId + '.png'\" width=\"14\" height=\"14\" :alt=\"$t(itemId)\" />\r\n                                <format-number :value=\"amount\" />\r\n                            </div>\r\n                            \r\n                        </div>\r\n                    </div>\r\n                \r\n                    <div class=\"col-12\" style=\"position:relative; top:-5px;\">\r\n                        <input type=\"range\" class=\"form-range\" min=\"1\" max=\"100\" step=\"1\" v-model.number=\"percentage\" />\r\n                    </div>\r\n                    \r\n                </div>\r\n            </div>\r\n            <div class=\"col-auto\">\r\n                <div class=\"mb-2\">\r\n                    <button type=\"button\" class=\"btn btn-primary\" :class=\"{ 'disabled text-danger':can != 0 }\" @click=\"convert({ id:itemId, count:amount });\">\r\n                        <span v-if=\"can == 0\">{{ $t('button-convert') }}</span>\r\n                        <span v-if=\"can == -1\">{{ $t('not-enough-resource') }}</span>\r\n                        <span v-if=\"[-2, -3, -4].includes(can)\">{{ $t('error') }}</span>\r\n                        <span v-if=\"can == -5\">{{ $t('full') }}</span>\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <div v-if=\"autoUnlocked\" class=\"row g-2 align-items-start justify-content-end\">\r\n            <div class=\"col-auto\">\r\n                <div class=\"form-check form-switch small\">\r\n                    <input v-if=\"autoConversionId != itemId\" class=\"form-check-input\" type=\"checkbox\" :id=\"'emcInterval-' + itemId\" @click=\"setAutoConversionId(itemId)\">\r\n                    <input v-if=\"autoConversionId == itemId\" class=\"form-check-input\" type=\"checkbox\" :id=\"'emcInterval-' + itemId\" checked @click=\"setAutoConversionId(null)\">\r\n                    <label class=\"form-check-label \" :for=\"'emcInterval-' + itemId\"><span>{{ $t('value-emc-automatic') }}</span></label>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</template>\r\n",
-      "start": 1721307758088,
-      "end": 1721307758291,
+      "start": 1789891027740,
+      "end": 1789891027872,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1721307758291,
-      "end": 1721307758291,
+      "start": 1789891027872,
+      "end": 1789891027872,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1721307758291,
-      "end": 1721307758291,
+      "start": 1789891027872,
+      "end": 1789891027872,
       "order": "pre"
     },
     {
       "name": "unplugin-vue-i18n",
-      "start": 1721307758291,
-      "end": 1721307758291,
+      "start": 1789891027872,
+      "end": 1789891027872,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1721307758291,
-      "end": 1721307758291,
+      "start": 1789891027872,
+      "end": 1789891027872,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1721307758291,
-      "end": 1721307758291,
+      "start": 1789891027872,
+      "end": 1789891027872,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1721307758291,
-      "end": 1721307758291,
+      "start": 1789891027872,
+      "end": 1789891027872,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1721307758291,
-      "end": 1721307758291,
+      "start": 1789891027872,
+      "end": 1789891027872,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1721307758291,
-      "end": 1721307758291,
+      "start": 1789891027872,
+      "end": 1789891027872,
       "order": "normal"
     },
     {
       "name": "vite:vue",
       "result": "import { unref as _unref, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, isRef as _isRef, vModelText as _vModelText, withDirectives as _withDirectives, toDisplayString as _toDisplayString, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, normalizeClass as _normalizeClass } from \"vue\"\n\nconst _hoisted_1 = { class: \"col\" }\nconst _hoisted_2 = { class: \"row g-2 align-items-center\" }\nconst _hoisted_3 = { class: \"col\" }\nconst _hoisted_4 = { class: \"row g-0 small\" }\nconst _hoisted_5 = { class: \"col-12\" }\nconst _hoisted_6 = { class: \"row gx-2 align-items-center justify-content-center\" }\nconst _hoisted_7 = { class: \"col-auto d-flex align-items-center\" }\nconst _hoisted_8 = [\"src\", \"alt\"]\nconst _hoisted_9 = { class: \"col-auto\" }\nconst _hoisted_10 = { class: \"col-auto d-flex align-items-center\" }\nconst _hoisted_11 = [\"src\", \"alt\"]\nconst _hoisted_12 = {\n  class: \"col-12\",\n  style: {\"position\":\"relative\",\"top\":\"-5px\"}\n}\nconst _hoisted_13 = { class: \"col-auto\" }\nconst _hoisted_14 = { class: \"mb-2\" }\nconst _hoisted_15 = { key: 0 }\nconst _hoisted_16 = { key: 1 }\nconst _hoisted_17 = { key: 2 }\nconst _hoisted_18 = { key: 3 }\nconst _hoisted_19 = {\n  key: 0,\n  class: \"row g-2 align-items-start justify-content-end\"\n}\nconst _hoisted_20 = { class: \"col-auto\" }\nconst _hoisted_21 = { class: \"form-check form-switch small\" }\nconst _hoisted_22 = [\"id\"]\nconst _hoisted_23 = [\"id\"]\nconst _hoisted_24 = [\"for\"]\n\nimport { storeToRefs } from 'pinia'\r\n    import { useGameStore } from '~/store/game.js'\r\n    \r\n    \nconst _sfc_main = {\n  __name: 'BlockConvert',\n  props: [ 'itemId' ],\n  setup(__props) {\n\r\n\r\n    const props = __props\r\n    \r\n    const percentage = ref(0)\r\n\r\n    const store = useGameStore()\r\n    \r\n    const { autoConversionId } = storeToRefs(store)    \r\n    \r\n    const { setAutoConversionId, convert } = store\r\n    \r\n    const amount = computed(() => { return Math.floor((percentage.value / 100) * maxCount.value) })\r\n    const source = computed(() => { return store.getConversionCost(props.itemId, amount.value) })\r\n    const maxCount = computed(() => { return store.getConversionMaxCount(props.itemId) })\r\n    \r\n    const can = computed(() => { return store.canConvert(props.itemId) })\r\n    \r\n    const autoUnlocked = computed(() => { return store.getItemCount('dmUpgdAutoEmc') >= 1 })\r\n    \r\n\nreturn (_ctx, _cache) => {\n  const _component_format_number = _resolveComponent(\"format-number\")\n  const _component_font_awesome_icon = _resolveComponent(\"font-awesome-icon\")\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createElementVNode(\"div\", _hoisted_3, [\n        _createElementVNode(\"div\", _hoisted_4, [\n          _createElementVNode(\"div\", _hoisted_5, [\n            _createElementVNode(\"div\", _hoisted_6, [\n              _createElementVNode(\"div\", _hoisted_7, [\n                _createElementVNode(\"img\", {\n                  class: \"me-1\",\n                  src: '/icons/' + _unref(source).id + '.png',\n                  width: \"14\",\n                  height: \"14\",\n                  alt: _ctx.$t(_unref(source).id)\n                }, null, 8, _hoisted_8),\n                _createVNode(_component_format_number, {\n                  value: _unref(source).count\n                }, null, 8, [\"value\"])\n              ]),\n              _createElementVNode(\"div\", _hoisted_9, [\n                _createVNode(_component_font_awesome_icon, { icon: \"fa-fw fa-long-arrow-alt-right text-muted\" })\n              ]),\n              _createElementVNode(\"div\", _hoisted_10, [\n                _createElementVNode(\"img\", {\n                  class: \"me-1\",\n                  src: '/icons/' + __props.itemId + '.png',\n                  width: \"14\",\n                  height: \"14\",\n                  alt: _ctx.$t(__props.itemId)\n                }, null, 8, _hoisted_11),\n                _createVNode(_component_format_number, { value: _unref(amount) }, null, 8, [\"value\"])\n              ])\n            ])\n          ]),\n          _createElementVNode(\"div\", _hoisted_12, [\n            _withDirectives(_createElementVNode(\"input\", {\n              type: \"range\",\n              class: \"form-range\",\n              min: \"1\",\n              max: \"100\",\n              step: \"1\",\n              \"onUpdate:modelValue\": _cache[0] || (_cache[0] = $event => (_isRef(percentage) ? (percentage).value = $event : null))\n            }, null, 512), [\n              [\n                _vModelText,\n                _unref(percentage),\n                void 0,\n                { number: true }\n              ]\n            ])\n          ])\n        ])\n      ]),\n      _createElementVNode(\"div\", _hoisted_13, [\n        _createElementVNode(\"div\", _hoisted_14, [\n          _createElementVNode(\"button\", {\n            type: \"button\",\n            class: _normalizeClass([\"btn btn-primary\", { 'disabled text-danger':_unref(can) != 0 }]),\n            onClick: _cache[1] || (_cache[1] = $event => {_unref(convert)({ id:__props.itemId, count:_unref(amount) });})\n          }, [\n            (_unref(can) == 0)\n              ? (_openBlock(), _createElementBlock(\"span\", _hoisted_15, _toDisplayString(_ctx.$t('button-convert')), 1))\n              : _createCommentVNode(\"\", true),\n            (_unref(can) == -1)\n              ? (_openBlock(), _createElementBlock(\"span\", _hoisted_16, _toDisplayString(_ctx.$t('not-enough-resource')), 1))\n              : _createCommentVNode(\"\", true),\n            ([-2, -3, -4].includes(_unref(can)))\n              ? (_openBlock(), _createElementBlock(\"span\", _hoisted_17, _toDisplayString(_ctx.$t('error')), 1))\n              : _createCommentVNode(\"\", true),\n            (_unref(can) == -5)\n              ? (_openBlock(), _createElementBlock(\"span\", _hoisted_18, _toDisplayString(_ctx.$t('full')), 1))\n              : _createCommentVNode(\"\", true)\n          ], 2)\n        ])\n      ])\n    ]),\n    (_unref(autoUnlocked))\n      ? (_openBlock(), _createElementBlock(\"div\", _hoisted_19, [\n          _createElementVNode(\"div\", _hoisted_20, [\n            _createElementVNode(\"div\", _hoisted_21, [\n              (_unref(autoConversionId) != __props.itemId)\n                ? (_openBlock(), _createElementBlock(\"input\", {\n                    key: 0,\n                    class: \"form-check-input\",\n                    type: \"checkbox\",\n                    id: 'emcInterval-' + __props.itemId,\n                    onClick: _cache[2] || (_cache[2] = $event => (_unref(setAutoConversionId)(__props.itemId)))\n                  }, null, 8, _hoisted_22))\n                : _createCommentVNode(\"\", true),\n              (_unref(autoConversionId) == __props.itemId)\n                ? (_openBlock(), _createElementBlock(\"input\", {\n                    key: 1,\n                    class: \"form-check-input\",\n                    type: \"checkbox\",\n                    id: 'emcInterval-' + __props.itemId,\n                    checked: \"\",\n                    onClick: _cache[3] || (_cache[3] = $event => (_unref(setAutoConversionId)(null)))\n                  }, null, 8, _hoisted_23))\n                : _createCommentVNode(\"\", true),\n              _createElementVNode(\"label\", {\n                class: \"form-check-label\",\n                for: 'emcInterval-' + __props.itemId\n              }, [\n                _createElementVNode(\"span\", null, _toDisplayString(_ctx.$t('value-emc-automatic')), 1)\n              ], 8, _hoisted_24)\n            ])\n          ])\n        ]))\n      : _createCommentVNode(\"\", true)\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
-      "start": 1721307758291,
-      "end": 1721307758294,
+      "start": 1789891027872,
+      "end": 1789891027875,
       "order": "normal",
       "sourcemaps": {
         "mappings": ""
@@ -68,117 +68,117 @@
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1721307758294,
-      "end": 1721307758294,
+      "start": 1789891027875,
+      "end": 1789891027875,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1721307758294,
-      "end": 1721307758295,
+      "start": 1789891027875,
+      "end": 1789891027875,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1721307758295,
-      "end": 1721307758295,
+      "start": 1789891027875,
+      "end": 1789891027875,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1721307758295,
-      "end": 1721307758295,
+      "start": 1789891027875,
+      "end": 1789891027875,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1721307758295,
-      "end": 1721307758295,
+      "start": 1789891027875,
+      "end": 1789891027875,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1721307758295,
-      "end": 1721307758295,
+      "start": 1789891027875,
+      "end": 1789891027875,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1721307758295,
-      "end": 1721307758295,
+      "start": 1789891027875,
+      "end": 1789891027875,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1721307758295,
-      "end": 1721307758295,
+      "start": 1789891027875,
+      "end": 1789891027875,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1721307758295,
-      "end": 1721307758295,
+      "start": 1789891027875,
+      "end": 1789891027875,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1721307758295,
-      "end": 1721307758295,
+      "start": 1789891027875,
+      "end": 1789891027875,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1721307758295,
-      "end": 1721307758295,
+      "start": 1789891027875,
+      "end": 1789891027875,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1721307758295,
-      "end": 1721307758295,
+      "start": 1789891027875,
+      "end": 1789891027875,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1721307758295,
-      "end": 1721307758295,
+      "start": 1789891027875,
+      "end": 1789891027875,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1721307758295,
-      "end": 1721307758295,
+      "start": 1789891027875,
+      "end": 1789891027875,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1721307758295,
-      "end": 1721307758295,
+      "start": 1789891027875,
+      "end": 1789891027875,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1721307758295,
-      "end": 1721307758295,
+      "start": 1789891027875,
+      "end": 1789891027875,
       "order": "post"
     },
     {
       "name": "nuxtjs:i18n-macros-transform",
-      "start": 1721307758295,
-      "end": 1721307758295,
+      "start": 1789891027875,
+      "end": 1789891027875,
       "order": "post"
     },
     {
       "name": "nuxtjs:i18n-resource",
-      "start": 1721307758295,
-      "end": 1721307758295,
+      "start": 1789891027875,
+      "end": 1789891027875,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { ref, computed } from 'vue';\nimport { unref as _unref, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, isRef as _isRef, vModelText as _vModelText, withDirectives as _withDirectives, toDisplayString as _toDisplayString, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, normalizeClass as _normalizeClass } from \"vue\"\n\nconst _hoisted_1 = { class: \"col\" }\nconst _hoisted_2 = { class: \"row g-2 align-items-center\" }\nconst _hoisted_3 = { class: \"col\" }\nconst _hoisted_4 = { class: \"row g-0 small\" }\nconst _hoisted_5 = { class: \"col-12\" }\nconst _hoisted_6 = { class: \"row gx-2 align-items-center justify-content-center\" }\nconst _hoisted_7 = { class: \"col-auto d-flex align-items-center\" }\nconst _hoisted_8 = [\"src\", \"alt\"]\nconst _hoisted_9 = { class: \"col-auto\" }\nconst _hoisted_10 = { class: \"col-auto d-flex align-items-center\" }\nconst _hoisted_11 = [\"src\", \"alt\"]\nconst _hoisted_12 = {\n  class: \"col-12\",\n  style: {\"position\":\"relative\",\"top\":\"-5px\"}\n}\nconst _hoisted_13 = { class: \"col-auto\" }\nconst _hoisted_14 = { class: \"mb-2\" }\nconst _hoisted_15 = { key: 0 }\nconst _hoisted_16 = { key: 1 }\nconst _hoisted_17 = { key: 2 }\nconst _hoisted_18 = { key: 3 }\nconst _hoisted_19 = {\n  key: 0,\n  class: \"row g-2 align-items-start justify-content-end\"\n}\nconst _hoisted_20 = { class: \"col-auto\" }\nconst _hoisted_21 = { class: \"form-check form-switch small\" }\nconst _hoisted_22 = [\"id\"]\nconst _hoisted_23 = [\"id\"]\nconst _hoisted_24 = [\"for\"]\n\nimport { storeToRefs } from 'pinia'\r\n    import { useGameStore } from '~/store/game.js'\r\n    \r\n    \nconst _sfc_main = {\n  __name: 'BlockConvert',\n  props: [ 'itemId' ],\n  setup(__props) {\n\r\n\r\n    const props = __props\r\n    \r\n    const percentage = ref(0)\r\n\r\n    const store = useGameStore()\r\n    \r\n    const { autoConversionId } = storeToRefs(store)    \r\n    \r\n    const { setAutoConversionId, convert } = store\r\n    \r\n    const amount = computed(() => { return Math.floor((percentage.value / 100) * maxCount.value) })\r\n    const source = computed(() => { return store.getConversionCost(props.itemId, amount.value) })\r\n    const maxCount = computed(() => { return store.getConversionMaxCount(props.itemId) })\r\n    \r\n    const can = computed(() => { return store.canConvert(props.itemId) })\r\n    \r\n    const autoUnlocked = computed(() => { return store.getItemCount('dmUpgdAutoEmc') >= 1 })\r\n    \r\n\nreturn (_ctx, _cache) => {\n  const _component_format_number = _resolveComponent(\"format-number\")\n  const _component_font_awesome_icon = _resolveComponent(\"font-awesome-icon\")\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createElementVNode(\"div\", _hoisted_3, [\n        _createElementVNode(\"div\", _hoisted_4, [\n          _createElementVNode(\"div\", _hoisted_5, [\n            _createElementVNode(\"div\", _hoisted_6, [\n              _createElementVNode(\"div\", _hoisted_7, [\n                _createElementVNode(\"img\", {\n                  class: \"me-1\",\n                  src: '/icons/' + _unref(source).id + '.png',\n                  width: \"14\",\n                  height: \"14\",\n                  alt: _ctx.$t(_unref(source).id)\n                }, null, 8, _hoisted_8),\n                _createVNode(_component_format_number, {\n                  value: _unref(source).count\n                }, null, 8, [\"value\"])\n              ]),\n              _createElementVNode(\"div\", _hoisted_9, [\n                _createVNode(_component_font_awesome_icon, { icon: \"fa-fw fa-long-arrow-alt-right text-muted\" })\n              ]),\n              _createElementVNode(\"div\", _hoisted_10, [\n                _createElementVNode(\"img\", {\n                  class: \"me-1\",\n                  src: '/icons/' + __props.itemId + '.png',\n                  width: \"14\",\n                  height: \"14\",\n                  alt: _ctx.$t(__props.itemId)\n                }, null, 8, _hoisted_11),\n                _createVNode(_component_format_number, { value: _unref(amount) }, null, 8, [\"value\"])\n              ])\n            ])\n          ]),\n          _createElementVNode(\"div\", _hoisted_12, [\n            _withDirectives(_createElementVNode(\"input\", {\n              type: \"range\",\n              class: \"form-range\",\n              min: \"1\",\n              max: \"100\",\n              step: \"1\",\n              \"onUpdate:modelValue\": _cache[0] || (_cache[0] = $event => (_isRef(percentage) ? (percentage).value = $event : null))\n            }, null, 512), [\n              [\n                _vModelText,\n                _unref(percentage),\n                void 0,\n                { number: true }\n              ]\n            ])\n          ])\n        ])\n      ]),\n      _createElementVNode(\"div\", _hoisted_13, [\n        _createElementVNode(\"div\", _hoisted_14, [\n          _createElementVNode(\"button\", {\n            type: \"button\",\n            class: _normalizeClass([\"btn btn-primary\", { 'disabled text-danger':_unref(can) != 0 }]),\n            onClick: _cache[1] || (_cache[1] = $event => {_unref(convert)({ id:__props.itemId, count:_unref(amount) });})\n          }, [\n            (_unref(can) == 0)\n              ? (_openBlock(), _createElementBlock(\"span\", _hoisted_15, _toDisplayString(_ctx.$t('button-convert')), 1))\n              : _createCommentVNode(\"\", true),\n            (_unref(can) == -1)\n              ? (_openBlock(), _createElementBlock(\"span\", _hoisted_16, _toDisplayString(_ctx.$t('not-enough-resource')), 1))\n              : _createCommentVNode(\"\", true),\n            ([-2, -3, -4].includes(_unref(can)))\n              ? (_openBlock(), _createElementBlock(\"span\", _hoisted_17, _toDisplayString(_ctx.$t('error')), 1))\n              : _createCommentVNode(\"\", true),\n            (_unref(can) == -5)\n              ? (_openBlock(), _createElementBlock(\"span\", _hoisted_18, _toDisplayString(_ctx.$t('full')), 1))\n              : _createCommentVNode(\"\", true)\n          ], 2)\n        ])\n      ])\n    ]),\n    (_unref(autoUnlocked))\n      ? (_openBlock(), _createElementBlock(\"div\", _hoisted_19, [\n          _createElementVNode(\"div\", _hoisted_20, [\n            _createElementVNode(\"div\", _hoisted_21, [\n              (_unref(autoConversionId) != __props.itemId)\n                ? (_openBlock(), _createElementBlock(\"input\", {\n                    key: 0,\n                    class: \"form-check-input\",\n                    type: \"checkbox\",\n                    id: 'emcInterval-' + __props.itemId,\n                    onClick: _cache[2] || (_cache[2] = $event => (_unref(setAutoConversionId)(__props.itemId)))\n                  }, null, 8, _hoisted_22))\n                : _createCommentVNode(\"\", true),\n              (_unref(autoConversionId) == __props.itemId)\n                ? (_openBlock(), _createElementBlock(\"input\", {\n                    key: 1,\n                    class: \"form-check-input\",\n                    type: \"checkbox\",\n                    id: 'emcInterval-' + __props.itemId,\n                    checked: \"\",\n                    onClick: _cache[3] || (_cache[3] = $event => (_unref(setAutoConversionId)(null)))\n                  }, null, 8, _hoisted_23))\n                : _createCommentVNode(\"\", true),\n              _createElementVNode(\"label\", {\n                class: \"form-check-label\",\n                for: 'emcInterval-' + __props.itemId\n              }, [\n                _createElementVNode(\"span\", null, _toDisplayString(_ctx.$t('value-emc-automatic')), 1)\n              ], 8, _hoisted_24)\n            ])\n          ])\n        ]))\n      : _createCommentVNode(\"\", true)\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
-      "start": 1721307758295,
-      "end": 1721307758297,
+      "start": 1789891027875,
+      "end": 1789891027877,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -191,39 +191,39 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1721307758297,
-      "end": 1721307758297,
+      "start": 1789891027877,
+      "end": 1789891027877,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1721307758297,
-      "end": 1721307758297,
+      "start": 1789891027877,
+      "end": 1789891027877,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"C:/dev/ngsc/nuxt3/components/FormatNumber.vue\";\nimport { ref, computed } from 'vue';\nimport { unref as _unref, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, isRef as _isRef, vModelText as _vModelText, withDirectives as _withDirectives, toDisplayString as _toDisplayString, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, normalizeClass as _normalizeClass } from \"vue\"\n\nconst _hoisted_1 = { class: \"col\" }\nconst _hoisted_2 = { class: \"row g-2 align-items-center\" }\nconst _hoisted_3 = { class: \"col\" }\nconst _hoisted_4 = { class: \"row g-0 small\" }\nconst _hoisted_5 = { class: \"col-12\" }\nconst _hoisted_6 = { class: \"row gx-2 align-items-center justify-content-center\" }\nconst _hoisted_7 = { class: \"col-auto d-flex align-items-center\" }\nconst _hoisted_8 = [\"src\", \"alt\"]\nconst _hoisted_9 = { class: \"col-auto\" }\nconst _hoisted_10 = { class: \"col-auto d-flex align-items-center\" }\nconst _hoisted_11 = [\"src\", \"alt\"]\nconst _hoisted_12 = {\n  class: \"col-12\",\n  style: {\"position\":\"relative\",\"top\":\"-5px\"}\n}\nconst _hoisted_13 = { class: \"col-auto\" }\nconst _hoisted_14 = { class: \"mb-2\" }\nconst _hoisted_15 = { key: 0 }\nconst _hoisted_16 = { key: 1 }\nconst _hoisted_17 = { key: 2 }\nconst _hoisted_18 = { key: 3 }\nconst _hoisted_19 = {\n  key: 0,\n  class: \"row g-2 align-items-start justify-content-end\"\n}\nconst _hoisted_20 = { class: \"col-auto\" }\nconst _hoisted_21 = { class: \"form-check form-switch small\" }\nconst _hoisted_22 = [\"id\"]\nconst _hoisted_23 = [\"id\"]\nconst _hoisted_24 = [\"for\"]\n\nimport { storeToRefs } from 'pinia'\r\n    import { useGameStore } from '~/store/game.js'\r\n    \r\n    \nconst _sfc_main = {\n  __name: 'BlockConvert',\n  props: [ 'itemId' ],\n  setup(__props) {\n\r\n\r\n    const props = __props\r\n    \r\n    const percentage = ref(0)\r\n\r\n    const store = useGameStore()\r\n    \r\n    const { autoConversionId } = storeToRefs(store)    \r\n    \r\n    const { setAutoConversionId, convert } = store\r\n    \r\n    const amount = computed(() => { return Math.floor((percentage.value / 100) * maxCount.value) })\r\n    const source = computed(() => { return store.getConversionCost(props.itemId, amount.value) })\r\n    const maxCount = computed(() => { return store.getConversionMaxCount(props.itemId) })\r\n    \r\n    const can = computed(() => { return store.canConvert(props.itemId) })\r\n    \r\n    const autoUnlocked = computed(() => { return store.getItemCount('dmUpgdAutoEmc') >= 1 })\r\n    \r\n\nreturn (_ctx, _cache) => {\n  const _component_format_number = __nuxt_component_0\n  const _component_font_awesome_icon = _resolveComponent(\"font-awesome-icon\")\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createElementVNode(\"div\", _hoisted_3, [\n        _createElementVNode(\"div\", _hoisted_4, [\n          _createElementVNode(\"div\", _hoisted_5, [\n            _createElementVNode(\"div\", _hoisted_6, [\n              _createElementVNode(\"div\", _hoisted_7, [\n                _createElementVNode(\"img\", {\n                  class: \"me-1\",\n                  src: '/icons/' + _unref(source).id + '.png',\n                  width: \"14\",\n                  height: \"14\",\n                  alt: _ctx.$t(_unref(source).id)\n                }, null, 8, _hoisted_8),\n                _createVNode(_component_format_number, {\n                  value: _unref(source).count\n                }, null, 8, [\"value\"])\n              ]),\n              _createElementVNode(\"div\", _hoisted_9, [\n                _createVNode(_component_font_awesome_icon, { icon: \"fa-fw fa-long-arrow-alt-right text-muted\" })\n              ]),\n              _createElementVNode(\"div\", _hoisted_10, [\n                _createElementVNode(\"img\", {\n                  class: \"me-1\",\n                  src: '/icons/' + __props.itemId + '.png',\n                  width: \"14\",\n                  height: \"14\",\n                  alt: _ctx.$t(__props.itemId)\n                }, null, 8, _hoisted_11),\n                _createVNode(_component_format_number, { value: _unref(amount) }, null, 8, [\"value\"])\n              ])\n            ])\n          ]),\n          _createElementVNode(\"div\", _hoisted_12, [\n            _withDirectives(_createElementVNode(\"input\", {\n              type: \"range\",\n              class: \"form-range\",\n              min: \"1\",\n              max: \"100\",\n              step: \"1\",\n              \"onUpdate:modelValue\": _cache[0] || (_cache[0] = $event => (_isRef(percentage) ? (percentage).value = $event : null))\n            }, null, 512), [\n              [\n                _vModelText,\n                _unref(percentage),\n                void 0,\n                { number: true }\n              ]\n            ])\n          ])\n        ])\n      ]),\n      _createElementVNode(\"div\", _hoisted_13, [\n        _createElementVNode(\"div\", _hoisted_14, [\n          _createElementVNode(\"button\", {\n            type: \"button\",\n            class: _normalizeClass([\"btn btn-primary\", { 'disabled text-danger':_unref(can) != 0 }]),\n            onClick: _cache[1] || (_cache[1] = $event => {_unref(convert)({ id:__props.itemId, count:_unref(amount) });})\n          }, [\n            (_unref(can) == 0)\n              ? (_openBlock(), _createElementBlock(\"span\", _hoisted_15, _toDisplayString(_ctx.$t('button-convert')), 1))\n              : _createCommentVNode(\"\", true),\n            (_unref(can) == -1)\n              ? (_openBlock(), _createElementBlock(\"span\", _hoisted_16, _toDisplayString(_ctx.$t('not-enough-resource')), 1))\n              : _createCommentVNode(\"\", true),\n            ([-2, -3, -4].includes(_unref(can)))\n              ? (_openBlock(), _createElementBlock(\"span\", _hoisted_17, _toDisplayString(_ctx.$t('error')), 1))\n              : _createCommentVNode(\"\", true),\n            (_unref(can) == -5)\n              ? (_openBlock(), _createElementBlock(\"span\", _hoisted_18, _toDisplayString(_ctx.$t('full')), 1))\n              : _createCommentVNode(\"\", true)\n          ], 2)\n        ])\n      ])\n    ]),\n    (_unref(autoUnlocked))\n      ? (_openBlock(), _createElementBlock(\"div\", _hoisted_19, [\n          _createElementVNode(\"div\", _hoisted_20, [\n            _createElementVNode(\"div\", _hoisted_21, [\n              (_unref(autoConversionId) != __props.itemId)\n                ? (_openBlock(), _createElementBlock(\"input\", {\n                    key: 0,\n                    class: \"form-check-input\",\n                    type: \"checkbox\",\n                    id: 'emcInterval-' + __props.itemId,\n                    onClick: _cache[2] || (_cache[2] = $event => (_unref(setAutoConversionId)(__props.itemId)))\n                  }, null, 8, _hoisted_22))\n                : _createCommentVNode(\"\", true),\n              (_unref(autoConversionId) == __props.itemId)\n                ? (_openBlock(), _createElementBlock(\"input\", {\n                    key: 1,\n                    class: \"form-check-input\",\n                    type: \"checkbox\",\n                    id: 'emcInterval-' + __props.itemId,\n                    checked: \"\",\n                    onClick: _cache[3] || (_cache[3] = $event => (_unref(setAutoConversionId)(null)))\n                  }, null, 8, _hoisted_23))\n                : _createCommentVNode(\"\", true),\n              _createElementVNode(\"label\", {\n                class: \"form-check-label\",\n                for: 'emcInterval-' + __props.itemId\n              }, [\n                _createElementVNode(\"span\", null, _toDisplayString(_ctx.$t('value-emc-automatic')), 1)\n              ], 8, _hoisted_24)\n            ])\n          ])\n        ]))\n      : _createCommentVNode(\"\", true)\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
-      "start": 1721307758297,
-      "end": 1721307758297,
+      "start": 1789891027877,
+      "end": 1789891027877,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1721307758297,
-      "end": 1721307758297,
+      "start": 1789891027877,
+      "end": 1789891027877,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1721307758297,
-      "end": 1721307758297,
+      "start": 1789891027877,
+      "end": 1789891027878,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1721307758297,
-      "end": 1721307758297,
+      "start": 1789891027878,
+      "end": 1789891027878,
       "order": "normal"
     }
   ]

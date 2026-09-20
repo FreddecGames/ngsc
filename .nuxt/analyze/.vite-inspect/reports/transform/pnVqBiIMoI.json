@@ -4,63 +4,63 @@
     {
       "name": "vite:load-fallback",
       "result": "<script setup>\r\n\r\n    const props = defineProps([ 'itemId' ])\r\n\r\n    import { useGameStore } from '~/store/game.js'\r\n    \r\n    const store = useGameStore()\r\n    \r\n    const { statue } = store\r\n\r\n    const can = computed(() => { return store.canStatue(props.itemId) })\r\n\r\n</script>\r\n\r\n<template>\r\n    <button type=\"button\" class=\"btn btn-primary d-flex align-items-center\" :class=\"{ 'disabled text-danger':can != 0 }\" @click=\"statue(itemId)\">\r\n        <img class=\"me-1\" src=\"/icons/statue.png\" width=\"12\" height=\"12\" :alt=\"$t('statue')\" />\r\n        <span v-if=\"can == 0\">{{ $t('button-build') }}</span>\r\n        <span v-if=\"can == -1\">{{ $t('not-enough-resource') }}</span>\r\n        <span v-if=\"[-2, -3, -4].includes(can)\">{{ $t('error') }}</span>\r\n    </button>\r\n</template>\r\n",
-      "start": 1721307758311,
-      "end": 1721307758349,
+      "start": 1789891027891,
+      "end": 1789891027963,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1721307758349,
-      "end": 1721307758349,
+      "start": 1789891027963,
+      "end": 1789891027963,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1721307758349,
-      "end": 1721307758349,
+      "start": 1789891027963,
+      "end": 1789891027963,
       "order": "pre"
     },
     {
       "name": "unplugin-vue-i18n",
-      "start": 1721307758349,
-      "end": 1721307758349,
+      "start": 1789891027963,
+      "end": 1789891027963,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1721307758349,
-      "end": 1721307758349,
+      "start": 1789891027963,
+      "end": 1789891027963,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1721307758349,
-      "end": 1721307758349,
+      "start": 1789891027963,
+      "end": 1789891027963,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1721307758349,
-      "end": 1721307758349,
+      "start": 1789891027963,
+      "end": 1789891027963,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1721307758349,
-      "end": 1721307758349,
+      "start": 1789891027963,
+      "end": 1789891027963,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1721307758349,
-      "end": 1721307758349,
+      "start": 1789891027963,
+      "end": 1789891027963,
       "order": "normal"
     },
     {
       "name": "vite:vue",
       "result": "import { unref as _unref, createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, normalizeClass as _normalizeClass } from \"vue\"\nimport _imports_0 from '/icons/statue.png'\n\n\nconst _hoisted_1 = [\"alt\"]\nconst _hoisted_2 = { key: 0 }\nconst _hoisted_3 = { key: 1 }\nconst _hoisted_4 = { key: 2 }\n\nimport { useGameStore } from '~/store/game.js'\r\n    \r\n    \nconst _sfc_main = {\n  __name: 'ButtonStatue',\n  props: [ 'itemId' ],\n  setup(__props) {\n\r\n\r\n    const props = __props\r\n\r\n    const store = useGameStore()\r\n    \r\n    const { statue } = store\r\n\r\n    const can = computed(() => { return store.canStatue(props.itemId) })\r\n\r\n\nreturn (_ctx, _cache) => {\n  return (_openBlock(), _createElementBlock(\"button\", {\n    type: \"button\",\n    class: _normalizeClass([\"btn btn-primary d-flex align-items-center\", { 'disabled text-danger':_unref(can) != 0 }]),\n    onClick: _cache[0] || (_cache[0] = $event => (_unref(statue)(__props.itemId)))\n  }, [\n    _createElementVNode(\"img\", {\n      class: \"me-1\",\n      src: _imports_0,\n      width: \"12\",\n      height: \"12\",\n      alt: _ctx.$t('statue')\n    }, null, 8, _hoisted_1),\n    (_unref(can) == 0)\n      ? (_openBlock(), _createElementBlock(\"span\", _hoisted_2, _toDisplayString(_ctx.$t('button-build')), 1))\n      : _createCommentVNode(\"\", true),\n    (_unref(can) == -1)\n      ? (_openBlock(), _createElementBlock(\"span\", _hoisted_3, _toDisplayString(_ctx.$t('not-enough-resource')), 1))\n      : _createCommentVNode(\"\", true),\n    ([-2, -3, -4].includes(_unref(can)))\n      ? (_openBlock(), _createElementBlock(\"span\", _hoisted_4, _toDisplayString(_ctx.$t('error')), 1))\n      : _createCommentVNode(\"\", true)\n  ], 2))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
-      "start": 1721307758349,
-      "end": 1721307758351,
+      "start": 1789891027963,
+      "end": 1789891027964,
       "order": "normal",
       "sourcemaps": {
         "mappings": ""
@@ -68,117 +68,117 @@
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1721307758351,
-      "end": 1721307758351,
+      "start": 1789891027964,
+      "end": 1789891027964,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1721307758351,
-      "end": 1721307758351,
+      "start": 1789891027964,
+      "end": 1789891027964,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1721307758351,
-      "end": 1721307758351,
+      "start": 1789891027964,
+      "end": 1789891027964,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1721307758351,
-      "end": 1721307758351,
+      "start": 1789891027964,
+      "end": 1789891027964,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1721307758351,
-      "end": 1721307758351,
+      "start": 1789891027964,
+      "end": 1789891027964,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1721307758351,
-      "end": 1721307758351,
+      "start": 1789891027964,
+      "end": 1789891027964,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1721307758351,
-      "end": 1721307758351,
+      "start": 1789891027964,
+      "end": 1789891027964,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1721307758351,
-      "end": 1721307758351,
+      "start": 1789891027964,
+      "end": 1789891027964,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1721307758351,
-      "end": 1721307758351,
+      "start": 1789891027965,
+      "end": 1789891027965,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1721307758351,
-      "end": 1721307758351,
+      "start": 1789891027965,
+      "end": 1789891027965,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1721307758351,
-      "end": 1721307758351,
+      "start": 1789891027965,
+      "end": 1789891027965,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1721307758351,
-      "end": 1721307758351,
+      "start": 1789891027965,
+      "end": 1789891027965,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1721307758351,
-      "end": 1721307758351,
+      "start": 1789891027965,
+      "end": 1789891027965,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1721307758351,
-      "end": 1721307758351,
+      "start": 1789891027965,
+      "end": 1789891027965,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1721307758351,
-      "end": 1721307758351,
+      "start": 1789891027965,
+      "end": 1789891027965,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1721307758351,
-      "end": 1721307758351,
+      "start": 1789891027965,
+      "end": 1789891027965,
       "order": "post"
     },
     {
       "name": "nuxtjs:i18n-macros-transform",
-      "start": 1721307758351,
-      "end": 1721307758351,
+      "start": 1789891027965,
+      "end": 1789891027965,
       "order": "post"
     },
     {
       "name": "nuxtjs:i18n-resource",
-      "start": 1721307758351,
-      "end": 1721307758351,
+      "start": 1789891027965,
+      "end": 1789891027965,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { computed } from 'vue';\nimport { unref as _unref, createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, normalizeClass as _normalizeClass } from \"vue\"\nimport _imports_0 from '/icons/statue.png'\n\n\nconst _hoisted_1 = [\"alt\"]\nconst _hoisted_2 = { key: 0 }\nconst _hoisted_3 = { key: 1 }\nconst _hoisted_4 = { key: 2 }\n\nimport { useGameStore } from '~/store/game.js'\r\n    \r\n    \nconst _sfc_main = {\n  __name: 'ButtonStatue',\n  props: [ 'itemId' ],\n  setup(__props) {\n\r\n\r\n    const props = __props\r\n\r\n    const store = useGameStore()\r\n    \r\n    const { statue } = store\r\n\r\n    const can = computed(() => { return store.canStatue(props.itemId) })\r\n\r\n\nreturn (_ctx, _cache) => {\n  return (_openBlock(), _createElementBlock(\"button\", {\n    type: \"button\",\n    class: _normalizeClass([\"btn btn-primary d-flex align-items-center\", { 'disabled text-danger':_unref(can) != 0 }]),\n    onClick: _cache[0] || (_cache[0] = $event => (_unref(statue)(__props.itemId)))\n  }, [\n    _createElementVNode(\"img\", {\n      class: \"me-1\",\n      src: _imports_0,\n      width: \"12\",\n      height: \"12\",\n      alt: _ctx.$t('statue')\n    }, null, 8, _hoisted_1),\n    (_unref(can) == 0)\n      ? (_openBlock(), _createElementBlock(\"span\", _hoisted_2, _toDisplayString(_ctx.$t('button-build')), 1))\n      : _createCommentVNode(\"\", true),\n    (_unref(can) == -1)\n      ? (_openBlock(), _createElementBlock(\"span\", _hoisted_3, _toDisplayString(_ctx.$t('not-enough-resource')), 1))\n      : _createCommentVNode(\"\", true),\n    ([-2, -3, -4].includes(_unref(can)))\n      ? (_openBlock(), _createElementBlock(\"span\", _hoisted_4, _toDisplayString(_ctx.$t('error')), 1))\n      : _createCommentVNode(\"\", true)\n  ], 2))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
-      "start": 1721307758351,
-      "end": 1721307758352,
+      "start": 1789891027965,
+      "end": 1789891027965,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -191,38 +191,38 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1721307758352,
-      "end": 1721307758352,
+      "start": 1789891027965,
+      "end": 1789891027965,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1721307758352,
-      "end": 1721307758352,
+      "start": 1789891027965,
+      "end": 1789891027965,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1721307758352,
-      "end": 1721307758352,
+      "start": 1789891027965,
+      "end": 1789891027965,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1721307758352,
-      "end": 1721307758352,
+      "start": 1789891027965,
+      "end": 1789891027965,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1721307758352,
-      "end": 1721307758352,
+      "start": 1789891027965,
+      "end": 1789891027965,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1721307758352,
-      "end": 1721307758352,
+      "start": 1789891027965,
+      "end": 1789891027965,
       "order": "normal"
     }
   ]

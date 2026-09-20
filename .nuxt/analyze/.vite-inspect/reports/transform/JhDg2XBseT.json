@@ -4,63 +4,63 @@
     {
       "name": "vite:load-fallback",
       "result": "<script setup>\r\n\r\n    const props = defineProps([ 'id', 'icon', 'name', 'body' ])\r\n\r\n    import { useGameStore } from '~/store/game.js'\r\n    \r\n    const store = useGameStore()\r\n\r\n    const collapsed = computed(() => { return store.collapsed.includes(props.id) })\r\n\r\n</script>\r\n\r\n<template>\r\n    <div class=\"col\">\r\n        <div class=\"card\">\r\n        \r\n            <div class=\"card-header\">\r\n                <div class=\"row g-2 align-items-center\">\r\n                \r\n                    <div class=\"col text-truncate\">\r\n                        <button class=\"w-100 text-truncate text-start d-flex align-items-center small\" :class=\"{ 'collapsed':collapsed }\" @click=\"store.toggleCollapsed(id)\">\r\n                            <span class=\"text-steelblue card-toggler me-2\"><font-awesome-icon icon=\"fa-fw fa-chevron-down\" /></span>\r\n                            <span v-if=\"icon\" class=\"me-2\"><img :src=\"icon\" width=\"16\" height=\"16\" /></span>\r\n                            <span class=\"text-truncate text-uppercase text-steelblue\">{{ $t(name) }}</span>\r\n                        </button>\r\n                    </div>\r\n                    \r\n                    <slot name=\"header\" />\r\n                    \r\n                </div>\r\n            </div>\r\n            \r\n            <div :id=\"id\" class=\"collapse\" :class=\"{ 'show':!collapsed }\">\r\n                <div class=\"card-body\">\r\n                    <div class=\"row gy-2 gx-3\">\r\n                    \r\n                        <div v-if=\"body\" class=\"col-12\">\r\n                            <div class=\"row row-cols-1 g-2\">\r\n                                <slot name=\"body\" />\r\n                            </div>\r\n                        </div>\r\n                        \r\n                        <div v-if=\"!body\" class=\"col-12 col-lg-6\">\r\n                            <div class=\"row row-cols-1 g-2\">\r\n                                <slot name=\"col-1\" />\r\n                            </div>\r\n                        </div>\r\n                        \r\n                        <div v-if=\"!body\" class=\"col-12 col-lg-6\">\r\n                            <div class=\"row row-cols-1 g-2 justify-content-end\">\r\n                                <slot name=\"col-2\" />\r\n                            </div>\r\n                        </div>\r\n                        \r\n                    </div>\r\n                </div>\r\n            </div>\r\n            \r\n        </div>\r\n    </div>\r\n</template>\r\n\r\n",
-      "start": 1721307757868,
-      "end": 1721307757959,
+      "start": 1789891027526,
+      "end": 1789891027605,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1721307757959,
-      "end": 1721307757959,
+      "start": 1789891027605,
+      "end": 1789891027605,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1721307757959,
-      "end": 1721307757959,
+      "start": 1789891027605,
+      "end": 1789891027605,
       "order": "pre"
     },
     {
       "name": "unplugin-vue-i18n",
-      "start": 1721307757960,
-      "end": 1721307757960,
+      "start": 1789891027605,
+      "end": 1789891027605,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1721307757960,
-      "end": 1721307757960,
+      "start": 1789891027605,
+      "end": 1789891027605,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1721307757960,
-      "end": 1721307757960,
+      "start": 1789891027605,
+      "end": 1789891027605,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1721307757960,
-      "end": 1721307757960,
+      "start": 1789891027605,
+      "end": 1789891027605,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1721307757960,
-      "end": 1721307757960,
+      "start": 1789891027605,
+      "end": 1789891027605,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1721307757960,
-      "end": 1721307757960,
+      "start": 1789891027605,
+      "end": 1789891027605,
       "order": "normal"
     },
     {
       "name": "vite:vue",
       "result": "import { unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, toDisplayString as _toDisplayString, normalizeClass as _normalizeClass, renderSlot as _renderSlot } from \"vue\"\n\nconst _hoisted_1 = { class: \"col\" }\nconst _hoisted_2 = { class: \"card\" }\nconst _hoisted_3 = { class: \"card-header\" }\nconst _hoisted_4 = { class: \"row g-2 align-items-center\" }\nconst _hoisted_5 = { class: \"col text-truncate\" }\nconst _hoisted_6 = { class: \"text-steelblue card-toggler me-2\" }\nconst _hoisted_7 = {\n  key: 0,\n  class: \"me-2\"\n}\nconst _hoisted_8 = [\"src\"]\nconst _hoisted_9 = { class: \"text-truncate text-uppercase text-steelblue\" }\nconst _hoisted_10 = [\"id\"]\nconst _hoisted_11 = { class: \"card-body\" }\nconst _hoisted_12 = { class: \"row gy-2 gx-3\" }\nconst _hoisted_13 = {\n  key: 0,\n  class: \"col-12\"\n}\nconst _hoisted_14 = { class: \"row row-cols-1 g-2\" }\nconst _hoisted_15 = {\n  key: 1,\n  class: \"col-12 col-lg-6\"\n}\nconst _hoisted_16 = { class: \"row row-cols-1 g-2\" }\nconst _hoisted_17 = {\n  key: 2,\n  class: \"col-12 col-lg-6\"\n}\nconst _hoisted_18 = { class: \"row row-cols-1 g-2 justify-content-end\" }\n\nimport { useGameStore } from '~/store/game.js'\r\n    \r\n    \nconst _sfc_main = {\n  __name: 'Card',\n  props: [ 'id', 'icon', 'name', 'body' ],\n  setup(__props) {\n\r\n\r\n    const props = __props\r\n\r\n    const store = useGameStore()\r\n\r\n    const collapsed = computed(() => { return store.collapsed.includes(props.id) })\r\n\r\n\nreturn (_ctx, _cache) => {\n  const _component_font_awesome_icon = _resolveComponent(\"font-awesome-icon\")\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createElementVNode(\"div\", _hoisted_3, [\n        _createElementVNode(\"div\", _hoisted_4, [\n          _createElementVNode(\"div\", _hoisted_5, [\n            _createElementVNode(\"button\", {\n              class: _normalizeClass([\"w-100 text-truncate text-start d-flex align-items-center small\", { 'collapsed':_unref(collapsed) }]),\n              onClick: _cache[0] || (_cache[0] = $event => (_unref(store).toggleCollapsed(__props.id)))\n            }, [\n              _createElementVNode(\"span\", _hoisted_6, [\n                _createVNode(_component_font_awesome_icon, { icon: \"fa-fw fa-chevron-down\" })\n              ]),\n              (__props.icon)\n                ? (_openBlock(), _createElementBlock(\"span\", _hoisted_7, [\n                    _createElementVNode(\"img\", {\n                      src: __props.icon,\n                      width: \"16\",\n                      height: \"16\"\n                    }, null, 8, _hoisted_8)\n                  ]))\n                : _createCommentVNode(\"\", true),\n              _createElementVNode(\"span\", _hoisted_9, _toDisplayString(_ctx.$t(__props.name)), 1)\n            ], 2)\n          ]),\n          _renderSlot(_ctx.$slots, \"header\")\n        ])\n      ]),\n      _createElementVNode(\"div\", {\n        id: __props.id,\n        class: _normalizeClass([\"collapse\", { 'show':!_unref(collapsed) }])\n      }, [\n        _createElementVNode(\"div\", _hoisted_11, [\n          _createElementVNode(\"div\", _hoisted_12, [\n            (__props.body)\n              ? (_openBlock(), _createElementBlock(\"div\", _hoisted_13, [\n                  _createElementVNode(\"div\", _hoisted_14, [\n                    _renderSlot(_ctx.$slots, \"body\")\n                  ])\n                ]))\n              : _createCommentVNode(\"\", true),\n            (!__props.body)\n              ? (_openBlock(), _createElementBlock(\"div\", _hoisted_15, [\n                  _createElementVNode(\"div\", _hoisted_16, [\n                    _renderSlot(_ctx.$slots, \"col-1\")\n                  ])\n                ]))\n              : _createCommentVNode(\"\", true),\n            (!__props.body)\n              ? (_openBlock(), _createElementBlock(\"div\", _hoisted_17, [\n                  _createElementVNode(\"div\", _hoisted_18, [\n                    _renderSlot(_ctx.$slots, \"col-2\")\n                  ])\n                ]))\n              : _createCommentVNode(\"\", true)\n          ])\n        ])\n      ], 10, _hoisted_10)\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
-      "start": 1721307757960,
-      "end": 1721307757962,
+      "start": 1789891027605,
+      "end": 1789891027607,
       "order": "normal",
       "sourcemaps": {
         "mappings": ""
@@ -68,117 +68,117 @@
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1721307757962,
-      "end": 1721307757962,
+      "start": 1789891027607,
+      "end": 1789891027607,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1721307757962,
-      "end": 1721307757962,
+      "start": 1789891027607,
+      "end": 1789891027607,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1721307757962,
-      "end": 1721307757962,
+      "start": 1789891027607,
+      "end": 1789891027607,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1721307757962,
-      "end": 1721307757962,
+      "start": 1789891027608,
+      "end": 1789891027608,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1721307757962,
-      "end": 1721307757962,
+      "start": 1789891027608,
+      "end": 1789891027608,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1721307757962,
-      "end": 1721307757962,
+      "start": 1789891027608,
+      "end": 1789891027608,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1721307757962,
-      "end": 1721307757962,
+      "start": 1789891027608,
+      "end": 1789891027608,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1721307757962,
-      "end": 1721307757962,
+      "start": 1789891027608,
+      "end": 1789891027608,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1721307757962,
-      "end": 1721307757962,
+      "start": 1789891027608,
+      "end": 1789891027608,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1721307757962,
-      "end": 1721307757962,
+      "start": 1789891027608,
+      "end": 1789891027608,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1721307757962,
-      "end": 1721307757962,
+      "start": 1789891027608,
+      "end": 1789891027608,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1721307757962,
-      "end": 1721307757962,
+      "start": 1789891027608,
+      "end": 1789891027608,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1721307757962,
-      "end": 1721307757962,
+      "start": 1789891027608,
+      "end": 1789891027608,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1721307757962,
-      "end": 1721307757962,
+      "start": 1789891027608,
+      "end": 1789891027608,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1721307757962,
-      "end": 1721307757962,
+      "start": 1789891027608,
+      "end": 1789891027608,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1721307757962,
-      "end": 1721307757962,
+      "start": 1789891027608,
+      "end": 1789891027608,
       "order": "post"
     },
     {
       "name": "nuxtjs:i18n-macros-transform",
-      "start": 1721307757962,
-      "end": 1721307757962,
+      "start": 1789891027608,
+      "end": 1789891027608,
       "order": "post"
     },
     {
       "name": "nuxtjs:i18n-resource",
-      "start": 1721307757962,
-      "end": 1721307757962,
+      "start": 1789891027608,
+      "end": 1789891027608,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { computed } from 'vue';\nimport { unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, toDisplayString as _toDisplayString, normalizeClass as _normalizeClass, renderSlot as _renderSlot } from \"vue\"\n\nconst _hoisted_1 = { class: \"col\" }\nconst _hoisted_2 = { class: \"card\" }\nconst _hoisted_3 = { class: \"card-header\" }\nconst _hoisted_4 = { class: \"row g-2 align-items-center\" }\nconst _hoisted_5 = { class: \"col text-truncate\" }\nconst _hoisted_6 = { class: \"text-steelblue card-toggler me-2\" }\nconst _hoisted_7 = {\n  key: 0,\n  class: \"me-2\"\n}\nconst _hoisted_8 = [\"src\"]\nconst _hoisted_9 = { class: \"text-truncate text-uppercase text-steelblue\" }\nconst _hoisted_10 = [\"id\"]\nconst _hoisted_11 = { class: \"card-body\" }\nconst _hoisted_12 = { class: \"row gy-2 gx-3\" }\nconst _hoisted_13 = {\n  key: 0,\n  class: \"col-12\"\n}\nconst _hoisted_14 = { class: \"row row-cols-1 g-2\" }\nconst _hoisted_15 = {\n  key: 1,\n  class: \"col-12 col-lg-6\"\n}\nconst _hoisted_16 = { class: \"row row-cols-1 g-2\" }\nconst _hoisted_17 = {\n  key: 2,\n  class: \"col-12 col-lg-6\"\n}\nconst _hoisted_18 = { class: \"row row-cols-1 g-2 justify-content-end\" }\n\nimport { useGameStore } from '~/store/game.js'\r\n    \r\n    \nconst _sfc_main = {\n  __name: 'Card',\n  props: [ 'id', 'icon', 'name', 'body' ],\n  setup(__props) {\n\r\n\r\n    const props = __props\r\n\r\n    const store = useGameStore()\r\n\r\n    const collapsed = computed(() => { return store.collapsed.includes(props.id) })\r\n\r\n\nreturn (_ctx, _cache) => {\n  const _component_font_awesome_icon = _resolveComponent(\"font-awesome-icon\")\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createElementVNode(\"div\", _hoisted_3, [\n        _createElementVNode(\"div\", _hoisted_4, [\n          _createElementVNode(\"div\", _hoisted_5, [\n            _createElementVNode(\"button\", {\n              class: _normalizeClass([\"w-100 text-truncate text-start d-flex align-items-center small\", { 'collapsed':_unref(collapsed) }]),\n              onClick: _cache[0] || (_cache[0] = $event => (_unref(store).toggleCollapsed(__props.id)))\n            }, [\n              _createElementVNode(\"span\", _hoisted_6, [\n                _createVNode(_component_font_awesome_icon, { icon: \"fa-fw fa-chevron-down\" })\n              ]),\n              (__props.icon)\n                ? (_openBlock(), _createElementBlock(\"span\", _hoisted_7, [\n                    _createElementVNode(\"img\", {\n                      src: __props.icon,\n                      width: \"16\",\n                      height: \"16\"\n                    }, null, 8, _hoisted_8)\n                  ]))\n                : _createCommentVNode(\"\", true),\n              _createElementVNode(\"span\", _hoisted_9, _toDisplayString(_ctx.$t(__props.name)), 1)\n            ], 2)\n          ]),\n          _renderSlot(_ctx.$slots, \"header\")\n        ])\n      ]),\n      _createElementVNode(\"div\", {\n        id: __props.id,\n        class: _normalizeClass([\"collapse\", { 'show':!_unref(collapsed) }])\n      }, [\n        _createElementVNode(\"div\", _hoisted_11, [\n          _createElementVNode(\"div\", _hoisted_12, [\n            (__props.body)\n              ? (_openBlock(), _createElementBlock(\"div\", _hoisted_13, [\n                  _createElementVNode(\"div\", _hoisted_14, [\n                    _renderSlot(_ctx.$slots, \"body\")\n                  ])\n                ]))\n              : _createCommentVNode(\"\", true),\n            (!__props.body)\n              ? (_openBlock(), _createElementBlock(\"div\", _hoisted_15, [\n                  _createElementVNode(\"div\", _hoisted_16, [\n                    _renderSlot(_ctx.$slots, \"col-1\")\n                  ])\n                ]))\n              : _createCommentVNode(\"\", true),\n            (!__props.body)\n              ? (_openBlock(), _createElementBlock(\"div\", _hoisted_17, [\n                  _createElementVNode(\"div\", _hoisted_18, [\n                    _renderSlot(_ctx.$slots, \"col-2\")\n                  ])\n                ]))\n              : _createCommentVNode(\"\", true)\n          ])\n        ])\n      ], 10, _hoisted_10)\n    ])\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
-      "start": 1721307757962,
-      "end": 1721307757963,
+      "start": 1789891027608,
+      "end": 1789891027609,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -191,38 +191,38 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1721307757963,
-      "end": 1721307757963,
+      "start": 1789891027609,
+      "end": 1789891027609,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1721307757963,
-      "end": 1721307757963,
+      "start": 1789891027609,
+      "end": 1789891027609,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1721307757963,
-      "end": 1721307757964,
+      "start": 1789891027609,
+      "end": 1789891027609,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1721307757964,
-      "end": 1721307757964,
+      "start": 1789891027609,
+      "end": 1789891027609,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1721307757964,
-      "end": 1721307757964,
+      "start": 1789891027609,
+      "end": 1789891027609,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1721307757964,
-      "end": 1721307757964,
+      "start": 1789891027609,
+      "end": 1789891027609,
       "order": "normal"
     }
   ]

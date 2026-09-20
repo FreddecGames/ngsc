@@ -4,63 +4,63 @@
     {
       "name": "vite:load-fallback",
       "result": "<script setup>\r\n\r\n    const props = defineProps([ 'itemId', 'count', 'btnText' ])\r\n\r\n    import { useGameStore } from '~/store/game.js'\r\n    \r\n    const store = useGameStore()\r\n    \r\n    const can = computed(() => { return store.canBuildDysonPart(props.itemId, props.count) })\r\n\r\n    const onBuild = function() { store.buildDysonPart({ id:props.itemId, count:props.count }) }\r\n        \r\n</script>\r\n\r\n<template>\r\n    <button type=\"button\" class=\"btn btn-primary\" :class=\"{ 'disabled text-danger':can != 0 }\" @click=\"onBuild()\">\r\n        <span>{{ $t(btnText) }}</span>\r\n    </button>\r\n</template>\r\n",
-      "start": 1721307757974,
-      "end": 1721307758157,
+      "start": 1789891027621,
+      "end": 1789891027793,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1721307758157,
-      "end": 1721307758157,
+      "start": 1789891027793,
+      "end": 1789891027793,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1721307758157,
-      "end": 1721307758157,
+      "start": 1789891027793,
+      "end": 1789891027793,
       "order": "pre"
     },
     {
       "name": "unplugin-vue-i18n",
-      "start": 1721307758157,
-      "end": 1721307758157,
+      "start": 1789891027793,
+      "end": 1789891027793,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1721307758157,
-      "end": 1721307758157,
+      "start": 1789891027793,
+      "end": 1789891027793,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1721307758157,
-      "end": 1721307758157,
+      "start": 1789891027793,
+      "end": 1789891027793,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1721307758157,
-      "end": 1721307758157,
+      "start": 1789891027793,
+      "end": 1789891027793,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1721307758157,
-      "end": 1721307758157,
+      "start": 1789891027793,
+      "end": 1789891027793,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1721307758157,
-      "end": 1721307758157,
+      "start": 1789891027793,
+      "end": 1789891027793,
       "order": "normal"
     },
     {
       "name": "vite:vue",
       "result": "import { unref as _unref, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, normalizeClass as _normalizeClass, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nimport { useGameStore } from '~/store/game.js'\r\n    \r\n    \nconst _sfc_main = {\n  __name: 'ButtonBuildSegment',\n  props: [ 'itemId', 'count', 'btnText' ],\n  setup(__props) {\n\r\n\r\n    const props = __props\r\n\r\n    const store = useGameStore()\r\n    \r\n    const can = computed(() => { return store.canBuildDysonPart(props.itemId, props.count) })\r\n\r\n    const onBuild = function() { store.buildDysonPart({ id:props.itemId, count:props.count }) }\r\n        \r\n\nreturn (_ctx, _cache) => {\n  return (_openBlock(), _createElementBlock(\"button\", {\n    type: \"button\",\n    class: _normalizeClass([\"btn btn-primary\", { 'disabled text-danger':_unref(can) != 0 }]),\n    onClick: _cache[0] || (_cache[0] = $event => (onBuild()))\n  }, [\n    _createElementVNode(\"span\", null, _toDisplayString(_ctx.$t(__props.btnText)), 1)\n  ], 2))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
-      "start": 1721307758157,
-      "end": 1721307758159,
+      "start": 1789891027793,
+      "end": 1789891027794,
       "order": "normal",
       "sourcemaps": {
         "mappings": ""
@@ -68,117 +68,117 @@
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1721307758159,
-      "end": 1721307758159,
+      "start": 1789891027794,
+      "end": 1789891027794,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1721307758159,
-      "end": 1721307758159,
+      "start": 1789891027794,
+      "end": 1789891027794,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1721307758159,
-      "end": 1721307758159,
+      "start": 1789891027794,
+      "end": 1789891027794,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1721307758159,
-      "end": 1721307758159,
+      "start": 1789891027794,
+      "end": 1789891027794,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1721307758159,
-      "end": 1721307758159,
+      "start": 1789891027794,
+      "end": 1789891027794,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1721307758159,
-      "end": 1721307758159,
+      "start": 1789891027794,
+      "end": 1789891027794,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1721307758159,
-      "end": 1721307758159,
+      "start": 1789891027794,
+      "end": 1789891027794,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1721307758159,
-      "end": 1721307758159,
+      "start": 1789891027794,
+      "end": 1789891027794,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1721307758159,
-      "end": 1721307758159,
+      "start": 1789891027794,
+      "end": 1789891027794,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1721307758159,
-      "end": 1721307758159,
+      "start": 1789891027794,
+      "end": 1789891027794,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1721307758159,
-      "end": 1721307758159,
+      "start": 1789891027794,
+      "end": 1789891027794,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1721307758159,
-      "end": 1721307758159,
+      "start": 1789891027794,
+      "end": 1789891027794,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1721307758159,
-      "end": 1721307758159,
+      "start": 1789891027794,
+      "end": 1789891027794,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1721307758159,
-      "end": 1721307758159,
+      "start": 1789891027794,
+      "end": 1789891027794,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1721307758159,
-      "end": 1721307758159,
+      "start": 1789891027794,
+      "end": 1789891027794,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1721307758159,
-      "end": 1721307758159,
+      "start": 1789891027794,
+      "end": 1789891027794,
       "order": "post"
     },
     {
       "name": "nuxtjs:i18n-macros-transform",
-      "start": 1721307758159,
-      "end": 1721307758159,
+      "start": 1789891027794,
+      "end": 1789891027795,
       "order": "post"
     },
     {
       "name": "nuxtjs:i18n-resource",
-      "start": 1721307758159,
-      "end": 1721307758159,
+      "start": 1789891027795,
+      "end": 1789891027795,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { computed } from 'vue';\nimport { unref as _unref, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, normalizeClass as _normalizeClass, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nimport { useGameStore } from '~/store/game.js'\r\n    \r\n    \nconst _sfc_main = {\n  __name: 'ButtonBuildSegment',\n  props: [ 'itemId', 'count', 'btnText' ],\n  setup(__props) {\n\r\n\r\n    const props = __props\r\n\r\n    const store = useGameStore()\r\n    \r\n    const can = computed(() => { return store.canBuildDysonPart(props.itemId, props.count) })\r\n\r\n    const onBuild = function() { store.buildDysonPart({ id:props.itemId, count:props.count }) }\r\n        \r\n\nreturn (_ctx, _cache) => {\n  return (_openBlock(), _createElementBlock(\"button\", {\n    type: \"button\",\n    class: _normalizeClass([\"btn btn-primary\", { 'disabled text-danger':_unref(can) != 0 }]),\n    onClick: _cache[0] || (_cache[0] = $event => (onBuild()))\n  }, [\n    _createElementVNode(\"span\", null, _toDisplayString(_ctx.$t(__props.btnText)), 1)\n  ], 2))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
-      "start": 1721307758159,
-      "end": 1721307758160,
+      "start": 1789891027795,
+      "end": 1789891027795,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -191,38 +191,38 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1721307758160,
-      "end": 1721307758160,
+      "start": 1789891027795,
+      "end": 1789891027795,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1721307758160,
-      "end": 1721307758160,
+      "start": 1789891027795,
+      "end": 1789891027795,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1721307758160,
-      "end": 1721307758160,
+      "start": 1789891027795,
+      "end": 1789891027795,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1721307758160,
-      "end": 1721307758160,
+      "start": 1789891027795,
+      "end": 1789891027795,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1721307758160,
-      "end": 1721307758160,
+      "start": 1789891027795,
+      "end": 1789891027795,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1721307758160,
-      "end": 1721307758160,
+      "start": 1789891027795,
+      "end": 1789891027795,
       "order": "normal"
     }
   ]

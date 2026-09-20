@@ -2,7 +2,6 @@
             
     const menuItems = [
     
-        { paneId:'donatingPane', name:'menu-item-donating', icon:'/icons/donating.png' },
         { paneId:'statsPane', name:'menu-item-stats', icon:'/icons/stats.png' },
         { paneId:'optionsPane', name:'menu-item-options', icon:'/icons/options.png' },
         { paneId:'aboutPane', name:'menu-item-about', icon:'/icons/about.png' },
@@ -13,7 +12,7 @@
     
     const store = useGameStore()
     
-    const { activePane } = storeToRefs(store)
+    const { isMobile, activePane } = storeToRefs(store)
     
     const { setSidebarOpen, setActivePane } = store
 
@@ -45,6 +44,13 @@
                     </a>
                 </div>
                 
+                <div v-if="!isMobile" class="col-auto">
+                    <button type="button" class="btn" :class="{ 'active':activePane == 'donatingPane' }" @click="setSidebarOpen(false); setActivePane('donatingPane');">
+                        <img src="/icons/donating.png" width="16" height="16" :alt="menu-item-donating" />
+                        <span class="ms-2 d-none d-lg-inline">{{ $t('menu-item-donating') }}</span>
+                    </button>
+                </div>
+				
                 <div v-for="item in menuItems" :key="item.id" class="col-auto">
                     <button type="button" class="btn" :class="{ 'active':activePane == item.paneId }" @click="setSidebarOpen(false); setActivePane(item.paneId);">
                         <img :src="item.icon" width="16" height="16" :alt="item.name" />

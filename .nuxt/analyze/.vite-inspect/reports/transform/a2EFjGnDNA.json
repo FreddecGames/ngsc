@@ -4,63 +4,63 @@
     {
       "name": "vite:load-fallback",
       "result": "<script setup>\r\n\r\n    const props = defineProps([ 'id', 'name', 'icon', 'itemId' ])\r\n\r\n    import { useGameStore } from '~/store/game.js'\r\n    \r\n    const store = useGameStore()\r\n    \r\n    const { upgrade } = store\r\n    \r\n    const can = computed(() => { return store.canUpgrade(props.itemId, 1) })\r\n    const unlocked = computed(() => { return store.isUnlocked(props.itemId) })\r\n    const storegable = computed(() => { return store.isStoregable(props.itemId) })\r\n    const storageUnlocked = computed(() => { return store.getItemCount('missionStorage') >= 1 })\r\n    \r\n    const rawProduction = computed(() => { return store.getRawProduction(props.itemId) })\r\n    const rawConsumption = computed(() => { return store.getRawConsumption(props.itemId) })\r\n\r\n</script>\r\n\r\n<template>\r\n    <div v-if=\"unlocked\" class=\"col-12\">\r\n        <card :id=\"id\" :name=\"name\" :icon=\"icon\">\r\n            <template v-slot:header>\r\n                <div v-if=\"rawConsumption > rawProduction\" class=\"col-auto text-end small\">\r\n                    <span class=\"text-danger\"><font-awesome-icon icon=\"fa-fw fa-exclamation-triangle\" /></span>\r\n                </div>\r\n                <div class=\"col-auto text-end small\">\r\n                    <item-count :itemId=\"itemId\" />\r\n                    <small v-if=\"storageUnlocked && storegable\" class=\"text-normal ms-1\">/<item-storage :itemId=\"itemId\" /></small>\r\n                </div>\r\n                <div v-if=\"storageUnlocked && storegable\" class=\"col-auto\">\r\n                    <button type=\"button\" class=\"btn btn-primary lh-1\" :class=\"{ 'disabled':can != 0 }\" @click=\"upgrade({ id:itemId, count:1 })\">\r\n                        <small><font-awesome-icon icon=\"fa-fw fa-arrow-alt-circle-up\" /></small>\r\n                    </button>\r\n                </div>\r\n            </template>\r\n            <template v-slot:col-1>\r\n                <div class=\"col\">\r\n                    <div class=\"row row-cols-1 g-2\">\r\n                        <div class=\"col mt-0\">\r\n                            <div class=\"row gx-2 py-2 small\">\r\n                                <div class=\"col\"><span class=\"text-light\">{{ $t('rawConsumption') }}</span></div>\r\n                                <div class=\"col-auto\">\r\n                                    <span :class=\"{ 'text-warning':rawConsumption != 0 }\"><span v-if=\"rawConsumption > 0\">-</span><format-number :value=\"rawConsumption\" /></span>\r\n                                    <small class=\"text-normal ms-1\">/s</small>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                        <div v-if=\"rawConsumption != 0\" class=\"col scrollbar\" style=\"max-height:200px; overflow-x: hidden;\">\r\n                            <div class=\"row row-cols-1 g-2\">\r\n                                <div v-if=\"rawConsumption > rawProduction\" class=\"col-12\">\r\n                                    <div class=\"alert alert-danger text-center\">\r\n                                        <span class=\"me-2\"><font-awesome-icon icon=\"fas fa-fw fa-exclamation-triangle\" /></span>\r\n                                        <span>{{ $t('consumptionAlert') }}</span>\r\n                                    </div>\r\n                                </div>\r\n                                <slot name=\"consumers\" />\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </template>\r\n            <template v-slot:col-2>\r\n                <div class=\"col\">\r\n                    <div class=\"row row-cols-1 g-2\">\r\n                        <div class=\"col mt-0\">\r\n                            <div class=\"row gx-2 py-2 small\">\r\n                                <div class=\"col\"><span class=\"text-light\">{{ $t('rawProduction') }}</span></div>\r\n                                <div class=\"col-auto\">\r\n                                    <span class=\"text-success\">+<format-number :value=\"rawProduction\" /></span>\r\n                                    <small class=\"text-normal ms-1\">/s</small>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"col scrollbar\" style=\"max-height:200px; overflow-x: hidden;\">\r\n                            <div class=\"row row-cols-1 g-2\">\r\n                                <slot name=\"producers\" />\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </template>\r\n        </card>\r\n    </div>\r\n</template>\r\n",
-      "start": 1721307757913,
-      "end": 1721307758043,
+      "start": 1789891027559,
+      "end": 1789891027728,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1721307758043,
-      "end": 1721307758043,
+      "start": 1789891027728,
+      "end": 1789891027728,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1721307758043,
-      "end": 1721307758043,
+      "start": 1789891027728,
+      "end": 1789891027728,
       "order": "pre"
     },
     {
       "name": "unplugin-vue-i18n",
-      "start": 1721307758043,
-      "end": 1721307758043,
+      "start": 1789891027728,
+      "end": 1789891027728,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1721307758043,
-      "end": 1721307758043,
+      "start": 1789891027728,
+      "end": 1789891027728,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1721307758043,
-      "end": 1721307758043,
+      "start": 1789891027728,
+      "end": 1789891027728,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1721307758043,
-      "end": 1721307758043,
+      "start": 1789891027728,
+      "end": 1789891027728,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1721307758043,
-      "end": 1721307758043,
+      "start": 1789891027728,
+      "end": 1789891027728,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1721307758043,
-      "end": 1721307758043,
+      "start": 1789891027728,
+      "end": 1789891027728,
       "order": "normal"
     },
     {
       "name": "vite:vue",
       "result": "import { unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, createTextVNode as _createTextVNode, normalizeClass as _normalizeClass, toDisplayString as _toDisplayString, renderSlot as _renderSlot, withCtx as _withCtx } from \"vue\"\n\nconst _hoisted_1 = {\n  key: 0,\n  class: \"col-12\"\n}\nconst _hoisted_2 = {\n  key: 0,\n  class: \"col-auto text-end small\"\n}\nconst _hoisted_3 = { class: \"text-danger\" }\nconst _hoisted_4 = { class: \"col-auto text-end small\" }\nconst _hoisted_5 = {\n  key: 0,\n  class: \"text-normal ms-1\"\n}\nconst _hoisted_6 = {\n  key: 1,\n  class: \"col-auto\"\n}\nconst _hoisted_7 = { class: \"col\" }\nconst _hoisted_8 = { class: \"row row-cols-1 g-2\" }\nconst _hoisted_9 = { class: \"col mt-0\" }\nconst _hoisted_10 = { class: \"row gx-2 py-2 small\" }\nconst _hoisted_11 = { class: \"col\" }\nconst _hoisted_12 = { class: \"text-light\" }\nconst _hoisted_13 = { class: \"col-auto\" }\nconst _hoisted_14 = { key: 0 }\nconst _hoisted_15 = /*#__PURE__*/_createElementVNode(\"small\", { class: \"text-normal ms-1\" }, \"/s\", -1)\nconst _hoisted_16 = {\n  key: 0,\n  class: \"col scrollbar\",\n  style: {\"max-height\":\"200px\",\"overflow-x\":\"hidden\"}\n}\nconst _hoisted_17 = { class: \"row row-cols-1 g-2\" }\nconst _hoisted_18 = {\n  key: 0,\n  class: \"col-12\"\n}\nconst _hoisted_19 = { class: \"alert alert-danger text-center\" }\nconst _hoisted_20 = { class: \"me-2\" }\nconst _hoisted_21 = { class: \"col\" }\nconst _hoisted_22 = { class: \"row row-cols-1 g-2\" }\nconst _hoisted_23 = { class: \"col mt-0\" }\nconst _hoisted_24 = { class: \"row gx-2 py-2 small\" }\nconst _hoisted_25 = { class: \"col\" }\nconst _hoisted_26 = { class: \"text-light\" }\nconst _hoisted_27 = { class: \"col-auto\" }\nconst _hoisted_28 = { class: \"text-success\" }\nconst _hoisted_29 = /*#__PURE__*/_createElementVNode(\"small\", { class: \"text-normal ms-1\" }, \"/s\", -1)\nconst _hoisted_30 = {\n  class: \"col scrollbar\",\n  style: {\"max-height\":\"200px\",\"overflow-x\":\"hidden\"}\n}\nconst _hoisted_31 = { class: \"row row-cols-1 g-2\" }\n\nimport { useGameStore } from '~/store/game.js'\r\n    \r\n    \nconst _sfc_main = {\n  __name: 'CardProduction',\n  props: [ 'id', 'name', 'icon', 'itemId' ],\n  setup(__props) {\n\r\n\r\n    const props = __props\r\n\r\n    const store = useGameStore()\r\n    \r\n    const { upgrade } = store\r\n    \r\n    const can = computed(() => { return store.canUpgrade(props.itemId, 1) })\r\n    const unlocked = computed(() => { return store.isUnlocked(props.itemId) })\r\n    const storegable = computed(() => { return store.isStoregable(props.itemId) })\r\n    const storageUnlocked = computed(() => { return store.getItemCount('missionStorage') >= 1 })\r\n    \r\n    const rawProduction = computed(() => { return store.getRawProduction(props.itemId) })\r\n    const rawConsumption = computed(() => { return store.getRawConsumption(props.itemId) })\r\n\r\n\nreturn (_ctx, _cache) => {\n  const _component_font_awesome_icon = _resolveComponent(\"font-awesome-icon\")\n  const _component_item_count = _resolveComponent(\"item-count\")\n  const _component_item_storage = _resolveComponent(\"item-storage\")\n  const _component_format_number = _resolveComponent(\"format-number\")\n  const _component_card = _resolveComponent(\"card\")\n\n  return (_unref(unlocked))\n    ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createVNode(_component_card, {\n          id: __props.id,\n          name: __props.name,\n          icon: __props.icon\n        }, {\n          header: _withCtx(() => [\n            (_unref(rawConsumption) > _unref(rawProduction))\n              ? (_openBlock(), _createElementBlock(\"div\", _hoisted_2, [\n                  _createElementVNode(\"span\", _hoisted_3, [\n                    _createVNode(_component_font_awesome_icon, { icon: \"fa-fw fa-exclamation-triangle\" })\n                  ])\n                ]))\n              : _createCommentVNode(\"\", true),\n            _createElementVNode(\"div\", _hoisted_4, [\n              _createVNode(_component_item_count, { itemId: __props.itemId }, null, 8, [\"itemId\"]),\n              (_unref(storageUnlocked) && _unref(storegable))\n                ? (_openBlock(), _createElementBlock(\"small\", _hoisted_5, [\n                    _createTextVNode(\"/\"),\n                    _createVNode(_component_item_storage, { itemId: __props.itemId }, null, 8, [\"itemId\"])\n                  ]))\n                : _createCommentVNode(\"\", true)\n            ]),\n            (_unref(storageUnlocked) && _unref(storegable))\n              ? (_openBlock(), _createElementBlock(\"div\", _hoisted_6, [\n                  _createElementVNode(\"button\", {\n                    type: \"button\",\n                    class: _normalizeClass([\"btn btn-primary lh-1\", { 'disabled':_unref(can) != 0 }]),\n                    onClick: _cache[0] || (_cache[0] = $event => (_unref(upgrade)({ id:__props.itemId, count:1 })))\n                  }, [\n                    _createElementVNode(\"small\", null, [\n                      _createVNode(_component_font_awesome_icon, { icon: \"fa-fw fa-arrow-alt-circle-up\" })\n                    ])\n                  ], 2)\n                ]))\n              : _createCommentVNode(\"\", true)\n          ]),\n          \"col-1\": _withCtx(() => [\n            _createElementVNode(\"div\", _hoisted_7, [\n              _createElementVNode(\"div\", _hoisted_8, [\n                _createElementVNode(\"div\", _hoisted_9, [\n                  _createElementVNode(\"div\", _hoisted_10, [\n                    _createElementVNode(\"div\", _hoisted_11, [\n                      _createElementVNode(\"span\", _hoisted_12, _toDisplayString(_ctx.$t('rawConsumption')), 1)\n                    ]),\n                    _createElementVNode(\"div\", _hoisted_13, [\n                      _createElementVNode(\"span\", {\n                        class: _normalizeClass({ 'text-warning':_unref(rawConsumption) != 0 })\n                      }, [\n                        (_unref(rawConsumption) > 0)\n                          ? (_openBlock(), _createElementBlock(\"span\", _hoisted_14, \"-\"))\n                          : _createCommentVNode(\"\", true),\n                        _createVNode(_component_format_number, { value: _unref(rawConsumption) }, null, 8, [\"value\"])\n                      ], 2),\n                      _hoisted_15\n                    ])\n                  ])\n                ]),\n                (_unref(rawConsumption) != 0)\n                  ? (_openBlock(), _createElementBlock(\"div\", _hoisted_16, [\n                      _createElementVNode(\"div\", _hoisted_17, [\n                        (_unref(rawConsumption) > _unref(rawProduction))\n                          ? (_openBlock(), _createElementBlock(\"div\", _hoisted_18, [\n                              _createElementVNode(\"div\", _hoisted_19, [\n                                _createElementVNode(\"span\", _hoisted_20, [\n                                  _createVNode(_component_font_awesome_icon, { icon: \"fas fa-fw fa-exclamation-triangle\" })\n                                ]),\n                                _createElementVNode(\"span\", null, _toDisplayString(_ctx.$t('consumptionAlert')), 1)\n                              ])\n                            ]))\n                          : _createCommentVNode(\"\", true),\n                        _renderSlot(_ctx.$slots, \"consumers\")\n                      ])\n                    ]))\n                  : _createCommentVNode(\"\", true)\n              ])\n            ])\n          ]),\n          \"col-2\": _withCtx(() => [\n            _createElementVNode(\"div\", _hoisted_21, [\n              _createElementVNode(\"div\", _hoisted_22, [\n                _createElementVNode(\"div\", _hoisted_23, [\n                  _createElementVNode(\"div\", _hoisted_24, [\n                    _createElementVNode(\"div\", _hoisted_25, [\n                      _createElementVNode(\"span\", _hoisted_26, _toDisplayString(_ctx.$t('rawProduction')), 1)\n                    ]),\n                    _createElementVNode(\"div\", _hoisted_27, [\n                      _createElementVNode(\"span\", _hoisted_28, [\n                        _createTextVNode(\"+\"),\n                        _createVNode(_component_format_number, { value: _unref(rawProduction) }, null, 8, [\"value\"])\n                      ]),\n                      _hoisted_29\n                    ])\n                  ])\n                ]),\n                _createElementVNode(\"div\", _hoisted_30, [\n                  _createElementVNode(\"div\", _hoisted_31, [\n                    _renderSlot(_ctx.$slots, \"producers\")\n                  ])\n                ])\n              ])\n            ])\n          ]),\n          _: 3\n        }, 8, [\"id\", \"name\", \"icon\"])\n      ]))\n    : _createCommentVNode(\"\", true)\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
-      "start": 1721307758043,
-      "end": 1721307758047,
+      "start": 1789891027728,
+      "end": 1789891027731,
       "order": "normal",
       "sourcemaps": {
         "mappings": ""
@@ -68,117 +68,117 @@
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1721307758047,
-      "end": 1721307758047,
+      "start": 1789891027731,
+      "end": 1789891027731,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1721307758047,
-      "end": 1721307758047,
+      "start": 1789891027731,
+      "end": 1789891027731,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1721307758047,
-      "end": 1721307758047,
+      "start": 1789891027731,
+      "end": 1789891027731,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1721307758047,
-      "end": 1721307758047,
+      "start": 1789891027731,
+      "end": 1789891027731,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1721307758047,
-      "end": 1721307758047,
+      "start": 1789891027731,
+      "end": 1789891027731,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1721307758047,
-      "end": 1721307758047,
+      "start": 1789891027731,
+      "end": 1789891027731,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1721307758047,
-      "end": 1721307758047,
+      "start": 1789891027731,
+      "end": 1789891027731,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1721307758047,
-      "end": 1721307758047,
+      "start": 1789891027731,
+      "end": 1789891027731,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1721307758047,
-      "end": 1721307758047,
+      "start": 1789891027732,
+      "end": 1789891027732,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1721307758047,
-      "end": 1721307758047,
+      "start": 1789891027732,
+      "end": 1789891027732,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1721307758047,
-      "end": 1721307758047,
+      "start": 1789891027732,
+      "end": 1789891027732,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1721307758047,
-      "end": 1721307758047,
+      "start": 1789891027732,
+      "end": 1789891027732,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1721307758047,
-      "end": 1721307758047,
+      "start": 1789891027732,
+      "end": 1789891027732,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1721307758047,
-      "end": 1721307758047,
+      "start": 1789891027732,
+      "end": 1789891027732,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1721307758047,
-      "end": 1721307758047,
+      "start": 1789891027732,
+      "end": 1789891027732,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1721307758047,
-      "end": 1721307758047,
+      "start": 1789891027732,
+      "end": 1789891027732,
       "order": "post"
     },
     {
       "name": "nuxtjs:i18n-macros-transform",
-      "start": 1721307758047,
-      "end": 1721307758047,
+      "start": 1789891027732,
+      "end": 1789891027732,
       "order": "post"
     },
     {
       "name": "nuxtjs:i18n-resource",
-      "start": 1721307758047,
-      "end": 1721307758047,
+      "start": 1789891027732,
+      "end": 1789891027732,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { computed } from 'vue';\nimport { unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, createTextVNode as _createTextVNode, normalizeClass as _normalizeClass, toDisplayString as _toDisplayString, renderSlot as _renderSlot, withCtx as _withCtx } from \"vue\"\n\nconst _hoisted_1 = {\n  key: 0,\n  class: \"col-12\"\n}\nconst _hoisted_2 = {\n  key: 0,\n  class: \"col-auto text-end small\"\n}\nconst _hoisted_3 = { class: \"text-danger\" }\nconst _hoisted_4 = { class: \"col-auto text-end small\" }\nconst _hoisted_5 = {\n  key: 0,\n  class: \"text-normal ms-1\"\n}\nconst _hoisted_6 = {\n  key: 1,\n  class: \"col-auto\"\n}\nconst _hoisted_7 = { class: \"col\" }\nconst _hoisted_8 = { class: \"row row-cols-1 g-2\" }\nconst _hoisted_9 = { class: \"col mt-0\" }\nconst _hoisted_10 = { class: \"row gx-2 py-2 small\" }\nconst _hoisted_11 = { class: \"col\" }\nconst _hoisted_12 = { class: \"text-light\" }\nconst _hoisted_13 = { class: \"col-auto\" }\nconst _hoisted_14 = { key: 0 }\nconst _hoisted_15 = /*#__PURE__*/_createElementVNode(\"small\", { class: \"text-normal ms-1\" }, \"/s\", -1)\nconst _hoisted_16 = {\n  key: 0,\n  class: \"col scrollbar\",\n  style: {\"max-height\":\"200px\",\"overflow-x\":\"hidden\"}\n}\nconst _hoisted_17 = { class: \"row row-cols-1 g-2\" }\nconst _hoisted_18 = {\n  key: 0,\n  class: \"col-12\"\n}\nconst _hoisted_19 = { class: \"alert alert-danger text-center\" }\nconst _hoisted_20 = { class: \"me-2\" }\nconst _hoisted_21 = { class: \"col\" }\nconst _hoisted_22 = { class: \"row row-cols-1 g-2\" }\nconst _hoisted_23 = { class: \"col mt-0\" }\nconst _hoisted_24 = { class: \"row gx-2 py-2 small\" }\nconst _hoisted_25 = { class: \"col\" }\nconst _hoisted_26 = { class: \"text-light\" }\nconst _hoisted_27 = { class: \"col-auto\" }\nconst _hoisted_28 = { class: \"text-success\" }\nconst _hoisted_29 = /*#__PURE__*/_createElementVNode(\"small\", { class: \"text-normal ms-1\" }, \"/s\", -1)\nconst _hoisted_30 = {\n  class: \"col scrollbar\",\n  style: {\"max-height\":\"200px\",\"overflow-x\":\"hidden\"}\n}\nconst _hoisted_31 = { class: \"row row-cols-1 g-2\" }\n\nimport { useGameStore } from '~/store/game.js'\r\n    \r\n    \nconst _sfc_main = {\n  __name: 'CardProduction',\n  props: [ 'id', 'name', 'icon', 'itemId' ],\n  setup(__props) {\n\r\n\r\n    const props = __props\r\n\r\n    const store = useGameStore()\r\n    \r\n    const { upgrade } = store\r\n    \r\n    const can = computed(() => { return store.canUpgrade(props.itemId, 1) })\r\n    const unlocked = computed(() => { return store.isUnlocked(props.itemId) })\r\n    const storegable = computed(() => { return store.isStoregable(props.itemId) })\r\n    const storageUnlocked = computed(() => { return store.getItemCount('missionStorage') >= 1 })\r\n    \r\n    const rawProduction = computed(() => { return store.getRawProduction(props.itemId) })\r\n    const rawConsumption = computed(() => { return store.getRawConsumption(props.itemId) })\r\n\r\n\nreturn (_ctx, _cache) => {\n  const _component_font_awesome_icon = _resolveComponent(\"font-awesome-icon\")\n  const _component_item_count = _resolveComponent(\"item-count\")\n  const _component_item_storage = _resolveComponent(\"item-storage\")\n  const _component_format_number = _resolveComponent(\"format-number\")\n  const _component_card = _resolveComponent(\"card\")\n\n  return (_unref(unlocked))\n    ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createVNode(_component_card, {\n          id: __props.id,\n          name: __props.name,\n          icon: __props.icon\n        }, {\n          header: _withCtx(() => [\n            (_unref(rawConsumption) > _unref(rawProduction))\n              ? (_openBlock(), _createElementBlock(\"div\", _hoisted_2, [\n                  _createElementVNode(\"span\", _hoisted_3, [\n                    _createVNode(_component_font_awesome_icon, { icon: \"fa-fw fa-exclamation-triangle\" })\n                  ])\n                ]))\n              : _createCommentVNode(\"\", true),\n            _createElementVNode(\"div\", _hoisted_4, [\n              _createVNode(_component_item_count, { itemId: __props.itemId }, null, 8, [\"itemId\"]),\n              (_unref(storageUnlocked) && _unref(storegable))\n                ? (_openBlock(), _createElementBlock(\"small\", _hoisted_5, [\n                    _createTextVNode(\"/\"),\n                    _createVNode(_component_item_storage, { itemId: __props.itemId }, null, 8, [\"itemId\"])\n                  ]))\n                : _createCommentVNode(\"\", true)\n            ]),\n            (_unref(storageUnlocked) && _unref(storegable))\n              ? (_openBlock(), _createElementBlock(\"div\", _hoisted_6, [\n                  _createElementVNode(\"button\", {\n                    type: \"button\",\n                    class: _normalizeClass([\"btn btn-primary lh-1\", { 'disabled':_unref(can) != 0 }]),\n                    onClick: _cache[0] || (_cache[0] = $event => (_unref(upgrade)({ id:__props.itemId, count:1 })))\n                  }, [\n                    _createElementVNode(\"small\", null, [\n                      _createVNode(_component_font_awesome_icon, { icon: \"fa-fw fa-arrow-alt-circle-up\" })\n                    ])\n                  ], 2)\n                ]))\n              : _createCommentVNode(\"\", true)\n          ]),\n          \"col-1\": _withCtx(() => [\n            _createElementVNode(\"div\", _hoisted_7, [\n              _createElementVNode(\"div\", _hoisted_8, [\n                _createElementVNode(\"div\", _hoisted_9, [\n                  _createElementVNode(\"div\", _hoisted_10, [\n                    _createElementVNode(\"div\", _hoisted_11, [\n                      _createElementVNode(\"span\", _hoisted_12, _toDisplayString(_ctx.$t('rawConsumption')), 1)\n                    ]),\n                    _createElementVNode(\"div\", _hoisted_13, [\n                      _createElementVNode(\"span\", {\n                        class: _normalizeClass({ 'text-warning':_unref(rawConsumption) != 0 })\n                      }, [\n                        (_unref(rawConsumption) > 0)\n                          ? (_openBlock(), _createElementBlock(\"span\", _hoisted_14, \"-\"))\n                          : _createCommentVNode(\"\", true),\n                        _createVNode(_component_format_number, { value: _unref(rawConsumption) }, null, 8, [\"value\"])\n                      ], 2),\n                      _hoisted_15\n                    ])\n                  ])\n                ]),\n                (_unref(rawConsumption) != 0)\n                  ? (_openBlock(), _createElementBlock(\"div\", _hoisted_16, [\n                      _createElementVNode(\"div\", _hoisted_17, [\n                        (_unref(rawConsumption) > _unref(rawProduction))\n                          ? (_openBlock(), _createElementBlock(\"div\", _hoisted_18, [\n                              _createElementVNode(\"div\", _hoisted_19, [\n                                _createElementVNode(\"span\", _hoisted_20, [\n                                  _createVNode(_component_font_awesome_icon, { icon: \"fas fa-fw fa-exclamation-triangle\" })\n                                ]),\n                                _createElementVNode(\"span\", null, _toDisplayString(_ctx.$t('consumptionAlert')), 1)\n                              ])\n                            ]))\n                          : _createCommentVNode(\"\", true),\n                        _renderSlot(_ctx.$slots, \"consumers\")\n                      ])\n                    ]))\n                  : _createCommentVNode(\"\", true)\n              ])\n            ])\n          ]),\n          \"col-2\": _withCtx(() => [\n            _createElementVNode(\"div\", _hoisted_21, [\n              _createElementVNode(\"div\", _hoisted_22, [\n                _createElementVNode(\"div\", _hoisted_23, [\n                  _createElementVNode(\"div\", _hoisted_24, [\n                    _createElementVNode(\"div\", _hoisted_25, [\n                      _createElementVNode(\"span\", _hoisted_26, _toDisplayString(_ctx.$t('rawProduction')), 1)\n                    ]),\n                    _createElementVNode(\"div\", _hoisted_27, [\n                      _createElementVNode(\"span\", _hoisted_28, [\n                        _createTextVNode(\"+\"),\n                        _createVNode(_component_format_number, { value: _unref(rawProduction) }, null, 8, [\"value\"])\n                      ]),\n                      _hoisted_29\n                    ])\n                  ])\n                ]),\n                _createElementVNode(\"div\", _hoisted_30, [\n                  _createElementVNode(\"div\", _hoisted_31, [\n                    _renderSlot(_ctx.$slots, \"producers\")\n                  ])\n                ])\n              ])\n            ])\n          ]),\n          _: 3\n        }, 8, [\"id\", \"name\", \"icon\"])\n      ]))\n    : _createCommentVNode(\"\", true)\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
-      "start": 1721307758047,
-      "end": 1721307758052,
+      "start": 1789891027732,
+      "end": 1789891027734,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -191,39 +191,39 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1721307758052,
-      "end": 1721307758052,
+      "start": 1789891027734,
+      "end": 1789891027734,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1721307758052,
-      "end": 1721307758052,
+      "start": 1789891027734,
+      "end": 1789891027734,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"C:/dev/ngsc/nuxt3/components/ItemCount.vue\";\nimport { default as __nuxt_component_1 } from \"C:/dev/ngsc/nuxt3/components/ItemStorage.vue\";\nimport { default as __nuxt_component_2 } from \"C:/dev/ngsc/nuxt3/components/FormatNumber.vue\";\nimport { default as __nuxt_component_3 } from \"C:/dev/ngsc/nuxt3/components/Card.vue\";\nimport { computed } from 'vue';\nimport { unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, createTextVNode as _createTextVNode, normalizeClass as _normalizeClass, toDisplayString as _toDisplayString, renderSlot as _renderSlot, withCtx as _withCtx } from \"vue\"\n\nconst _hoisted_1 = {\n  key: 0,\n  class: \"col-12\"\n}\nconst _hoisted_2 = {\n  key: 0,\n  class: \"col-auto text-end small\"\n}\nconst _hoisted_3 = { class: \"text-danger\" }\nconst _hoisted_4 = { class: \"col-auto text-end small\" }\nconst _hoisted_5 = {\n  key: 0,\n  class: \"text-normal ms-1\"\n}\nconst _hoisted_6 = {\n  key: 1,\n  class: \"col-auto\"\n}\nconst _hoisted_7 = { class: \"col\" }\nconst _hoisted_8 = { class: \"row row-cols-1 g-2\" }\nconst _hoisted_9 = { class: \"col mt-0\" }\nconst _hoisted_10 = { class: \"row gx-2 py-2 small\" }\nconst _hoisted_11 = { class: \"col\" }\nconst _hoisted_12 = { class: \"text-light\" }\nconst _hoisted_13 = { class: \"col-auto\" }\nconst _hoisted_14 = { key: 0 }\nconst _hoisted_15 = /*#__PURE__*/_createElementVNode(\"small\", { class: \"text-normal ms-1\" }, \"/s\", -1)\nconst _hoisted_16 = {\n  key: 0,\n  class: \"col scrollbar\",\n  style: {\"max-height\":\"200px\",\"overflow-x\":\"hidden\"}\n}\nconst _hoisted_17 = { class: \"row row-cols-1 g-2\" }\nconst _hoisted_18 = {\n  key: 0,\n  class: \"col-12\"\n}\nconst _hoisted_19 = { class: \"alert alert-danger text-center\" }\nconst _hoisted_20 = { class: \"me-2\" }\nconst _hoisted_21 = { class: \"col\" }\nconst _hoisted_22 = { class: \"row row-cols-1 g-2\" }\nconst _hoisted_23 = { class: \"col mt-0\" }\nconst _hoisted_24 = { class: \"row gx-2 py-2 small\" }\nconst _hoisted_25 = { class: \"col\" }\nconst _hoisted_26 = { class: \"text-light\" }\nconst _hoisted_27 = { class: \"col-auto\" }\nconst _hoisted_28 = { class: \"text-success\" }\nconst _hoisted_29 = /*#__PURE__*/_createElementVNode(\"small\", { class: \"text-normal ms-1\" }, \"/s\", -1)\nconst _hoisted_30 = {\n  class: \"col scrollbar\",\n  style: {\"max-height\":\"200px\",\"overflow-x\":\"hidden\"}\n}\nconst _hoisted_31 = { class: \"row row-cols-1 g-2\" }\n\nimport { useGameStore } from '~/store/game.js'\r\n    \r\n    \nconst _sfc_main = {\n  __name: 'CardProduction',\n  props: [ 'id', 'name', 'icon', 'itemId' ],\n  setup(__props) {\n\r\n\r\n    const props = __props\r\n\r\n    const store = useGameStore()\r\n    \r\n    const { upgrade } = store\r\n    \r\n    const can = computed(() => { return store.canUpgrade(props.itemId, 1) })\r\n    const unlocked = computed(() => { return store.isUnlocked(props.itemId) })\r\n    const storegable = computed(() => { return store.isStoregable(props.itemId) })\r\n    const storageUnlocked = computed(() => { return store.getItemCount('missionStorage') >= 1 })\r\n    \r\n    const rawProduction = computed(() => { return store.getRawProduction(props.itemId) })\r\n    const rawConsumption = computed(() => { return store.getRawConsumption(props.itemId) })\r\n\r\n\nreturn (_ctx, _cache) => {\n  const _component_font_awesome_icon = _resolveComponent(\"font-awesome-icon\")\n  const _component_item_count = __nuxt_component_0\n  const _component_item_storage = __nuxt_component_1\n  const _component_format_number = __nuxt_component_2\n  const _component_card = __nuxt_component_3\n\n  return (_unref(unlocked))\n    ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createVNode(_component_card, {\n          id: __props.id,\n          name: __props.name,\n          icon: __props.icon\n        }, {\n          header: _withCtx(() => [\n            (_unref(rawConsumption) > _unref(rawProduction))\n              ? (_openBlock(), _createElementBlock(\"div\", _hoisted_2, [\n                  _createElementVNode(\"span\", _hoisted_3, [\n                    _createVNode(_component_font_awesome_icon, { icon: \"fa-fw fa-exclamation-triangle\" })\n                  ])\n                ]))\n              : _createCommentVNode(\"\", true),\n            _createElementVNode(\"div\", _hoisted_4, [\n              _createVNode(_component_item_count, { itemId: __props.itemId }, null, 8, [\"itemId\"]),\n              (_unref(storageUnlocked) && _unref(storegable))\n                ? (_openBlock(), _createElementBlock(\"small\", _hoisted_5, [\n                    _createTextVNode(\"/\"),\n                    _createVNode(_component_item_storage, { itemId: __props.itemId }, null, 8, [\"itemId\"])\n                  ]))\n                : _createCommentVNode(\"\", true)\n            ]),\n            (_unref(storageUnlocked) && _unref(storegable))\n              ? (_openBlock(), _createElementBlock(\"div\", _hoisted_6, [\n                  _createElementVNode(\"button\", {\n                    type: \"button\",\n                    class: _normalizeClass([\"btn btn-primary lh-1\", { 'disabled':_unref(can) != 0 }]),\n                    onClick: _cache[0] || (_cache[0] = $event => (_unref(upgrade)({ id:__props.itemId, count:1 })))\n                  }, [\n                    _createElementVNode(\"small\", null, [\n                      _createVNode(_component_font_awesome_icon, { icon: \"fa-fw fa-arrow-alt-circle-up\" })\n                    ])\n                  ], 2)\n                ]))\n              : _createCommentVNode(\"\", true)\n          ]),\n          \"col-1\": _withCtx(() => [\n            _createElementVNode(\"div\", _hoisted_7, [\n              _createElementVNode(\"div\", _hoisted_8, [\n                _createElementVNode(\"div\", _hoisted_9, [\n                  _createElementVNode(\"div\", _hoisted_10, [\n                    _createElementVNode(\"div\", _hoisted_11, [\n                      _createElementVNode(\"span\", _hoisted_12, _toDisplayString(_ctx.$t('rawConsumption')), 1)\n                    ]),\n                    _createElementVNode(\"div\", _hoisted_13, [\n                      _createElementVNode(\"span\", {\n                        class: _normalizeClass({ 'text-warning':_unref(rawConsumption) != 0 })\n                      }, [\n                        (_unref(rawConsumption) > 0)\n                          ? (_openBlock(), _createElementBlock(\"span\", _hoisted_14, \"-\"))\n                          : _createCommentVNode(\"\", true),\n                        _createVNode(_component_format_number, { value: _unref(rawConsumption) }, null, 8, [\"value\"])\n                      ], 2),\n                      _hoisted_15\n                    ])\n                  ])\n                ]),\n                (_unref(rawConsumption) != 0)\n                  ? (_openBlock(), _createElementBlock(\"div\", _hoisted_16, [\n                      _createElementVNode(\"div\", _hoisted_17, [\n                        (_unref(rawConsumption) > _unref(rawProduction))\n                          ? (_openBlock(), _createElementBlock(\"div\", _hoisted_18, [\n                              _createElementVNode(\"div\", _hoisted_19, [\n                                _createElementVNode(\"span\", _hoisted_20, [\n                                  _createVNode(_component_font_awesome_icon, { icon: \"fas fa-fw fa-exclamation-triangle\" })\n                                ]),\n                                _createElementVNode(\"span\", null, _toDisplayString(_ctx.$t('consumptionAlert')), 1)\n                              ])\n                            ]))\n                          : _createCommentVNode(\"\", true),\n                        _renderSlot(_ctx.$slots, \"consumers\")\n                      ])\n                    ]))\n                  : _createCommentVNode(\"\", true)\n              ])\n            ])\n          ]),\n          \"col-2\": _withCtx(() => [\n            _createElementVNode(\"div\", _hoisted_21, [\n              _createElementVNode(\"div\", _hoisted_22, [\n                _createElementVNode(\"div\", _hoisted_23, [\n                  _createElementVNode(\"div\", _hoisted_24, [\n                    _createElementVNode(\"div\", _hoisted_25, [\n                      _createElementVNode(\"span\", _hoisted_26, _toDisplayString(_ctx.$t('rawProduction')), 1)\n                    ]),\n                    _createElementVNode(\"div\", _hoisted_27, [\n                      _createElementVNode(\"span\", _hoisted_28, [\n                        _createTextVNode(\"+\"),\n                        _createVNode(_component_format_number, { value: _unref(rawProduction) }, null, 8, [\"value\"])\n                      ]),\n                      _hoisted_29\n                    ])\n                  ])\n                ]),\n                _createElementVNode(\"div\", _hoisted_30, [\n                  _createElementVNode(\"div\", _hoisted_31, [\n                    _renderSlot(_ctx.$slots, \"producers\")\n                  ])\n                ])\n              ])\n            ])\n          ]),\n          _: 3\n        }, 8, [\"id\", \"name\", \"icon\"])\n      ]))\n    : _createCommentVNode(\"\", true)\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
-      "start": 1721307758052,
-      "end": 1721307758052,
+      "start": 1789891027734,
+      "end": 1789891027734,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1721307758052,
-      "end": 1721307758052,
+      "start": 1789891027734,
+      "end": 1789891027734,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1721307758052,
-      "end": 1721307758053,
+      "start": 1789891027734,
+      "end": 1789891027734,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1721307758053,
-      "end": 1721307758053,
+      "start": 1789891027734,
+      "end": 1789891027734,
       "order": "normal"
     }
   ]

@@ -4,214 +4,214 @@
     {
       "name": "vite:load-fallback",
       "result": "import { parse, icon, config, text } from '@fortawesome/fontawesome-svg-core';\nimport { h, defineComponent, computed, watch } from 'vue';\n\nfunction ownKeys(object, enumerableOnly) {\n  var keys = Object.keys(object);\n  if (Object.getOwnPropertySymbols) {\n    var symbols = Object.getOwnPropertySymbols(object);\n    enumerableOnly && (symbols = symbols.filter(function (sym) {\n      return Object.getOwnPropertyDescriptor(object, sym).enumerable;\n    })), keys.push.apply(keys, symbols);\n  }\n  return keys;\n}\nfunction _objectSpread2(target) {\n  for (var i = 1; i < arguments.length; i++) {\n    var source = null != arguments[i] ? arguments[i] : {};\n    i % 2 ? ownKeys(Object(source), !0).forEach(function (key) {\n      _defineProperty(target, key, source[key]);\n    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) {\n      Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));\n    });\n  }\n  return target;\n}\nfunction _typeof(obj) {\n  \"@babel/helpers - typeof\";\n\n  return _typeof = \"function\" == typeof Symbol && \"symbol\" == typeof Symbol.iterator ? function (obj) {\n    return typeof obj;\n  } : function (obj) {\n    return obj && \"function\" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? \"symbol\" : typeof obj;\n  }, _typeof(obj);\n}\nfunction _defineProperty(obj, key, value) {\n  key = _toPropertyKey(key);\n  if (key in obj) {\n    Object.defineProperty(obj, key, {\n      value: value,\n      enumerable: true,\n      configurable: true,\n      writable: true\n    });\n  } else {\n    obj[key] = value;\n  }\n  return obj;\n}\nfunction _objectWithoutPropertiesLoose(source, excluded) {\n  if (source == null) return {};\n  var target = {};\n  var sourceKeys = Object.keys(source);\n  var key, i;\n  for (i = 0; i < sourceKeys.length; i++) {\n    key = sourceKeys[i];\n    if (excluded.indexOf(key) >= 0) continue;\n    target[key] = source[key];\n  }\n  return target;\n}\nfunction _objectWithoutProperties(source, excluded) {\n  if (source == null) return {};\n  var target = _objectWithoutPropertiesLoose(source, excluded);\n  var key, i;\n  if (Object.getOwnPropertySymbols) {\n    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);\n    for (i = 0; i < sourceSymbolKeys.length; i++) {\n      key = sourceSymbolKeys[i];\n      if (excluded.indexOf(key) >= 0) continue;\n      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;\n      target[key] = source[key];\n    }\n  }\n  return target;\n}\nfunction _toConsumableArray(arr) {\n  return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();\n}\nfunction _arrayWithoutHoles(arr) {\n  if (Array.isArray(arr)) return _arrayLikeToArray(arr);\n}\nfunction _iterableToArray(iter) {\n  if (typeof Symbol !== \"undefined\" && iter[Symbol.iterator] != null || iter[\"@@iterator\"] != null) return Array.from(iter);\n}\nfunction _unsupportedIterableToArray(o, minLen) {\n  if (!o) return;\n  if (typeof o === \"string\") return _arrayLikeToArray(o, minLen);\n  var n = Object.prototype.toString.call(o).slice(8, -1);\n  if (n === \"Object\" && o.constructor) n = o.constructor.name;\n  if (n === \"Map\" || n === \"Set\") return Array.from(o);\n  if (n === \"Arguments\" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);\n}\nfunction _arrayLikeToArray(arr, len) {\n  if (len == null || len > arr.length) len = arr.length;\n  for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];\n  return arr2;\n}\nfunction _nonIterableSpread() {\n  throw new TypeError(\"Invalid attempt to spread non-iterable instance.\\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.\");\n}\nfunction _toPrimitive(input, hint) {\n  if (typeof input !== \"object\" || input === null) return input;\n  var prim = input[Symbol.toPrimitive];\n  if (prim !== undefined) {\n    var res = prim.call(input, hint || \"default\");\n    if (typeof res !== \"object\") return res;\n    throw new TypeError(\"@@toPrimitive must return a primitive value.\");\n  }\n  return (hint === \"string\" ? String : Number)(input);\n}\nfunction _toPropertyKey(arg) {\n  var key = _toPrimitive(arg, \"string\");\n  return typeof key === \"symbol\" ? key : String(key);\n}\n\nvar commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};\n\nvar humps$1 = {exports: {}};\n\n(function (module) {\n(function(global) {\n\n\t  var _processKeys = function(convert, obj, options) {\n\t    if(!_isObject(obj) || _isDate(obj) || _isRegExp(obj) || _isBoolean(obj) || _isFunction(obj)) {\n\t      return obj;\n\t    }\n\n\t    var output,\n\t        i = 0,\n\t        l = 0;\n\n\t    if(_isArray(obj)) {\n\t      output = [];\n\t      for(l=obj.length; i<l; i++) {\n\t        output.push(_processKeys(convert, obj[i], options));\n\t      }\n\t    }\n\t    else {\n\t      output = {};\n\t      for(var key in obj) {\n\t        if(Object.prototype.hasOwnProperty.call(obj, key)) {\n\t          output[convert(key, options)] = _processKeys(convert, obj[key], options);\n\t        }\n\t      }\n\t    }\n\t    return output;\n\t  };\n\n\t  // String conversion methods\n\n\t  var separateWords = function(string, options) {\n\t    options = options || {};\n\t    var separator = options.separator || '_';\n\t    var split = options.split || /(?=[A-Z])/;\n\n\t    return string.split(split).join(separator);\n\t  };\n\n\t  var camelize = function(string) {\n\t    if (_isNumerical(string)) {\n\t      return string;\n\t    }\n\t    string = string.replace(/[\\-_\\s]+(.)?/g, function(match, chr) {\n\t      return chr ? chr.toUpperCase() : '';\n\t    });\n\t    // Ensure 1st char is always lowercase\n\t    return string.substr(0, 1).toLowerCase() + string.substr(1);\n\t  };\n\n\t  var pascalize = function(string) {\n\t    var camelized = camelize(string);\n\t    // Ensure 1st char is always uppercase\n\t    return camelized.substr(0, 1).toUpperCase() + camelized.substr(1);\n\t  };\n\n\t  var decamelize = function(string, options) {\n\t    return separateWords(string, options).toLowerCase();\n\t  };\n\n\t  // Utilities\n\t  // Taken from Underscore.js\n\n\t  var toString = Object.prototype.toString;\n\n\t  var _isFunction = function(obj) {\n\t    return typeof(obj) === 'function';\n\t  };\n\t  var _isObject = function(obj) {\n\t    return obj === Object(obj);\n\t  };\n\t  var _isArray = function(obj) {\n\t    return toString.call(obj) == '[object Array]';\n\t  };\n\t  var _isDate = function(obj) {\n\t    return toString.call(obj) == '[object Date]';\n\t  };\n\t  var _isRegExp = function(obj) {\n\t    return toString.call(obj) == '[object RegExp]';\n\t  };\n\t  var _isBoolean = function(obj) {\n\t    return toString.call(obj) == '[object Boolean]';\n\t  };\n\n\t  // Performant way to determine if obj coerces to a number\n\t  var _isNumerical = function(obj) {\n\t    obj = obj - 0;\n\t    return obj === obj;\n\t  };\n\n\t  // Sets up function which handles processing keys\n\t  // allowing the convert function to be modified by a callback\n\t  var _processor = function(convert, options) {\n\t    var callback = options && 'process' in options ? options.process : options;\n\n\t    if(typeof(callback) !== 'function') {\n\t      return convert;\n\t    }\n\n\t    return function(string, options) {\n\t      return callback(string, convert, options);\n\t    }\n\t  };\n\n\t  var humps = {\n\t    camelize: camelize,\n\t    decamelize: decamelize,\n\t    pascalize: pascalize,\n\t    depascalize: decamelize,\n\t    camelizeKeys: function(object, options) {\n\t      return _processKeys(_processor(camelize, options), object);\n\t    },\n\t    decamelizeKeys: function(object, options) {\n\t      return _processKeys(_processor(decamelize, options), object, options);\n\t    },\n\t    pascalizeKeys: function(object, options) {\n\t      return _processKeys(_processor(pascalize, options), object);\n\t    },\n\t    depascalizeKeys: function () {\n\t      return this.decamelizeKeys.apply(this, arguments);\n\t    }\n\t  };\n\n\t  if (module.exports) {\n\t    module.exports = humps;\n\t  } else {\n\t    global.humps = humps;\n\t  }\n\n\t})(commonjsGlobal);\n} (humps$1));\n\nvar humps = humps$1.exports;\n\nvar _excluded = [\"class\", \"style\"];\n\n/**\n * Converts a CSS style into a plain Javascript object.\n * @param {String} style The style to converts into a plain Javascript object.\n * @returns {Object}\n */\nfunction styleToObject(style) {\n  return style.split(';').map(function (s) {\n    return s.trim();\n  }).filter(function (s) {\n    return s;\n  }).reduce(function (output, pair) {\n    var idx = pair.indexOf(':');\n    var prop = humps.camelize(pair.slice(0, idx));\n    var value = pair.slice(idx + 1).trim();\n    output[prop] = value;\n    return output;\n  }, {});\n}\n\n/**\n * Converts a CSS class list into a plain Javascript object.\n * @param {Array<String>} classes The class list to convert.\n * @returns {Object}\n */\nfunction classToObject(classes) {\n  return classes.split(/\\s+/).reduce(function (output, className) {\n    output[className] = true;\n    return output;\n  }, {});\n}\n\n/**\n * Converts a FontAwesome abstract element of an icon into a Vue VNode.\n * @param {AbstractElement | String} abstractElement The element to convert.\n * @param {Object} props The user-defined props.\n * @param {Object} attrs The user-defined native HTML attributes.\n * @returns {VNode}\n */\nfunction convert(abstractElement) {\n  var props = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};\n  var attrs = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};\n  // If the abstract element is a string, we'll just return a string render function\n  if (typeof abstractElement === 'string') {\n    return abstractElement;\n  }\n\n  // Converting abstract element children into Vue VNodes\n  var children = (abstractElement.children || []).map(function (child) {\n    return convert(child);\n  });\n\n  // Converting abstract element attributes into valid Vue format\n  var mixins = Object.keys(abstractElement.attributes || {}).reduce(function (mixins, key) {\n    var value = abstractElement.attributes[key];\n    switch (key) {\n      case 'class':\n        mixins.class = classToObject(value);\n        break;\n      case 'style':\n        mixins.style = styleToObject(value);\n        break;\n      default:\n        mixins.attrs[key] = value;\n    }\n    return mixins;\n  }, {\n    attrs: {},\n    class: {},\n    style: {}\n  });\n\n  // Now, we'll return the VNode\n  attrs.class;\n    var _attrs$style = attrs.style,\n    aStyle = _attrs$style === void 0 ? {} : _attrs$style,\n    otherAttrs = _objectWithoutProperties(attrs, _excluded);\n  return h(abstractElement.tag, _objectSpread2(_objectSpread2(_objectSpread2({}, props), {}, {\n    class: mixins.class,\n    style: _objectSpread2(_objectSpread2({}, mixins.style), aStyle)\n  }, mixins.attrs), otherAttrs), children);\n}\n\nvar PRODUCTION = false;\ntry {\n  PRODUCTION = process.env.NODE_ENV === 'production';\n} catch (e) {}\nfunction log () {\n  if (!PRODUCTION && console && typeof console.error === 'function') {\n    var _console;\n    (_console = console).error.apply(_console, arguments);\n  }\n}\n\nfunction objectWithKey(key, value) {\n  return Array.isArray(value) && value.length > 0 || !Array.isArray(value) && value ? _defineProperty({}, key, value) : {};\n}\nfunction classList(props) {\n  var _classes;\n  var classes = (_classes = {\n    'fa-spin': props.spin,\n    'fa-pulse': props.pulse,\n    'fa-fw': props.fixedWidth,\n    'fa-border': props.border,\n    'fa-li': props.listItem,\n    'fa-inverse': props.inverse,\n    'fa-flip': props.flip === true,\n    'fa-flip-horizontal': props.flip === 'horizontal' || props.flip === 'both',\n    'fa-flip-vertical': props.flip === 'vertical' || props.flip === 'both'\n  }, _defineProperty(_classes, \"fa-\".concat(props.size), props.size !== null), _defineProperty(_classes, \"fa-rotate-\".concat(props.rotation), props.rotation !== null), _defineProperty(_classes, \"fa-pull-\".concat(props.pull), props.pull !== null), _defineProperty(_classes, 'fa-swap-opacity', props.swapOpacity), _defineProperty(_classes, 'fa-bounce', props.bounce), _defineProperty(_classes, 'fa-shake', props.shake), _defineProperty(_classes, 'fa-beat', props.beat), _defineProperty(_classes, 'fa-fade', props.fade), _defineProperty(_classes, 'fa-beat-fade', props.beatFade), _defineProperty(_classes, 'fa-flash', props.flash), _defineProperty(_classes, 'fa-spin-pulse', props.spinPulse), _defineProperty(_classes, 'fa-spin-reverse', props.spinReverse), _classes);\n  return Object.keys(classes).map(function (key) {\n    return classes[key] ? key : null;\n  }).filter(function (key) {\n    return key;\n  });\n}\n\nfunction normalizeIconArgs(icon) {\n  if (icon && _typeof(icon) === 'object' && icon.prefix && icon.iconName && icon.icon) {\n    return icon;\n  }\n  if (parse.icon) {\n    return parse.icon(icon);\n  }\n  if (icon === null) {\n    return null;\n  }\n  if (_typeof(icon) === 'object' && icon.prefix && icon.iconName) {\n    return icon;\n  }\n  if (Array.isArray(icon) && icon.length === 2) {\n    return {\n      prefix: icon[0],\n      iconName: icon[1]\n    };\n  }\n  if (typeof icon === 'string') {\n    return {\n      prefix: 'fas',\n      iconName: icon\n    };\n  }\n}\nvar FontAwesomeIcon = defineComponent({\n  name: 'FontAwesomeIcon',\n  props: {\n    border: {\n      type: Boolean,\n      default: false\n    },\n    fixedWidth: {\n      type: Boolean,\n      default: false\n    },\n    flip: {\n      type: [Boolean, String],\n      default: false,\n      validator: function validator(value) {\n        return [true, false, 'horizontal', 'vertical', 'both'].indexOf(value) > -1;\n      }\n    },\n    icon: {\n      type: [Object, Array, String],\n      required: true\n    },\n    mask: {\n      type: [Object, Array, String],\n      default: null\n    },\n    maskId: {\n      type: String,\n      default: null\n    },\n    listItem: {\n      type: Boolean,\n      default: false\n    },\n    pull: {\n      type: String,\n      default: null,\n      validator: function validator(value) {\n        return ['right', 'left'].indexOf(value) > -1;\n      }\n    },\n    pulse: {\n      type: Boolean,\n      default: false\n    },\n    rotation: {\n      type: [String, Number],\n      default: null,\n      validator: function validator(value) {\n        return [90, 180, 270].indexOf(Number.parseInt(value, 10)) > -1;\n      }\n    },\n    swapOpacity: {\n      type: Boolean,\n      default: false\n    },\n    size: {\n      type: String,\n      default: null,\n      validator: function validator(value) {\n        return ['2xs', 'xs', 'sm', 'lg', 'xl', '2xl', '1x', '2x', '3x', '4x', '5x', '6x', '7x', '8x', '9x', '10x'].indexOf(value) > -1;\n      }\n    },\n    spin: {\n      type: Boolean,\n      default: false\n    },\n    transform: {\n      type: [String, Object],\n      default: null\n    },\n    symbol: {\n      type: [Boolean, String],\n      default: false\n    },\n    title: {\n      type: String,\n      default: null\n    },\n    titleId: {\n      type: String,\n      default: null\n    },\n    inverse: {\n      type: Boolean,\n      default: false\n    },\n    bounce: {\n      type: Boolean,\n      default: false\n    },\n    shake: {\n      type: Boolean,\n      default: false\n    },\n    beat: {\n      type: Boolean,\n      default: false\n    },\n    fade: {\n      type: Boolean,\n      default: false\n    },\n    beatFade: {\n      type: Boolean,\n      default: false\n    },\n    flash: {\n      type: Boolean,\n      default: false\n    },\n    spinPulse: {\n      type: Boolean,\n      default: false\n    },\n    spinReverse: {\n      type: Boolean,\n      default: false\n    }\n  },\n  setup: function setup(props, _ref) {\n    var attrs = _ref.attrs;\n    var icon$1 = computed(function () {\n      return normalizeIconArgs(props.icon);\n    });\n    var classes = computed(function () {\n      return objectWithKey('classes', classList(props));\n    });\n    var transform = computed(function () {\n      return objectWithKey('transform', typeof props.transform === 'string' ? parse.transform(props.transform) : props.transform);\n    });\n    var mask = computed(function () {\n      return objectWithKey('mask', normalizeIconArgs(props.mask));\n    });\n    var renderedIcon = computed(function () {\n      return icon(icon$1.value, _objectSpread2(_objectSpread2(_objectSpread2(_objectSpread2({}, classes.value), transform.value), mask.value), {}, {\n        symbol: props.symbol,\n        title: props.title,\n        titleId: props.titleId,\n        maskId: props.maskId\n      }));\n    });\n    watch(renderedIcon, function (value) {\n      if (!value) {\n        return log('Could not find one or more icon(s)', icon$1.value, mask.value);\n      }\n    }, {\n      immediate: true\n    });\n    var vnode = computed(function () {\n      return renderedIcon.value ? convert(renderedIcon.value.abstract[0], {}, attrs) : null;\n    });\n    return function () {\n      return vnode.value;\n    };\n  }\n});\n\nvar FontAwesomeLayers = defineComponent({\n  name: 'FontAwesomeLayers',\n  props: {\n    fixedWidth: {\n      type: Boolean,\n      default: false\n    }\n  },\n  setup: function setup(props, _ref) {\n    var slots = _ref.slots;\n    var familyPrefix = config.familyPrefix;\n    var className = computed(function () {\n      return [\"\".concat(familyPrefix, \"-layers\")].concat(_toConsumableArray(props.fixedWidth ? [\"\".concat(familyPrefix, \"-fw\")] : []));\n    });\n    return function () {\n      return h('div', {\n        class: className.value\n      }, slots.default ? slots.default() : []);\n    };\n  }\n});\n\nvar FontAwesomeLayersText = defineComponent({\n  name: 'FontAwesomeLayersText',\n  props: {\n    value: {\n      type: [String, Number],\n      default: ''\n    },\n    transform: {\n      type: [String, Object],\n      default: null\n    },\n    counter: {\n      type: Boolean,\n      default: false\n    },\n    position: {\n      type: String,\n      default: null,\n      validator: function validator(value) {\n        return ['bottom-left', 'bottom-right', 'top-left', 'top-right'].indexOf(value) > -1;\n      }\n    }\n  },\n  setup: function setup(props, _ref) {\n    var attrs = _ref.attrs;\n    var familyPrefix = config.familyPrefix;\n    var classes = computed(function () {\n      return objectWithKey('classes', [].concat(_toConsumableArray(props.counter ? [\"\".concat(familyPrefix, \"-layers-counter\")] : []), _toConsumableArray(props.position ? [\"\".concat(familyPrefix, \"-layers-\").concat(props.position)] : [])));\n    });\n    var transform = computed(function () {\n      return objectWithKey('transform', typeof props.transform === 'string' ? parse.transform(props.transform) : props.transform);\n    });\n    var abstractElement = computed(function () {\n      var _text = text(props.value.toString(), _objectSpread2(_objectSpread2({}, transform.value), classes.value)),\n        abstract = _text.abstract;\n      if (props.counter) {\n        abstract[0].attributes.class = abstract[0].attributes.class.replace('fa-layers-text', '');\n      }\n      return abstract[0];\n    });\n    var vnode = computed(function () {\n      return convert(abstractElement.value, {}, attrs);\n    });\n    return function () {\n      return vnode.value;\n    };\n  }\n});\n\nexport { FontAwesomeIcon, FontAwesomeLayers, FontAwesomeLayersText };\n",
-      "start": 1721307755188,
-      "end": 1721307755433,
+      "start": 1789891025980,
+      "end": 1789891026320,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1721307755433,
-      "end": 1721307755433,
+      "start": 1789891026320,
+      "end": 1789891026320,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1721307755433,
-      "end": 1721307755433,
+      "start": 1789891026320,
+      "end": 1789891026320,
       "order": "pre"
     },
     {
       "name": "unplugin-vue-i18n",
-      "start": 1721307755433,
-      "end": 1721307755433,
+      "start": 1789891026320,
+      "end": 1789891026320,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1721307755433,
-      "end": 1721307755433,
+      "start": 1789891026320,
+      "end": 1789891026320,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1721307755433,
-      "end": 1721307755433,
+      "start": 1789891026320,
+      "end": 1789891026320,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1721307755433,
-      "end": 1721307755433,
+      "start": 1789891026320,
+      "end": 1789891026320,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1721307755433,
-      "end": 1721307755433,
+      "start": 1789891026320,
+      "end": 1789891026320,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1721307755433,
-      "end": 1721307755433,
+      "start": 1789891026320,
+      "end": 1789891026320,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1721307755433,
-      "end": 1721307755433,
+      "start": 1789891026320,
+      "end": 1789891026320,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1721307755433,
-      "end": 1721307755433,
+      "start": 1789891026320,
+      "end": 1789891026320,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1721307755433,
-      "end": 1721307755433,
+      "start": 1789891026320,
+      "end": 1789891026320,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1721307755433,
-      "end": 1721307755433,
+      "start": 1789891026320,
+      "end": 1789891026320,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1721307755434,
-      "end": 1721307755434,
+      "start": 1789891026320,
+      "end": 1789891026320,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1721307755434,
-      "end": 1721307755434,
+      "start": 1789891026320,
+      "end": 1789891026320,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1721307755434,
-      "end": 1721307755434,
+      "start": 1789891026320,
+      "end": 1789891026320,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1721307755434,
-      "end": 1721307755434,
+      "start": 1789891026320,
+      "end": 1789891026320,
       "order": "normal"
     },
     {
       "name": "vite:define",
       "result": "import { parse, icon, config, text } from '@fortawesome/fontawesome-svg-core';\nimport { h, defineComponent, computed, watch } from 'vue';\n\nfunction ownKeys(object, enumerableOnly) {\n  var keys = Object.keys(object);\n  if (Object.getOwnPropertySymbols) {\n    var symbols = Object.getOwnPropertySymbols(object);\n    enumerableOnly && (symbols = symbols.filter(function (sym) {\n      return Object.getOwnPropertyDescriptor(object, sym).enumerable;\n    })), keys.push.apply(keys, symbols);\n  }\n  return keys;\n}\nfunction _objectSpread2(target) {\n  for (var i = 1; i < arguments.length; i++) {\n    var source = null != arguments[i] ? arguments[i] : {};\n    i % 2 ? ownKeys(Object(source), !0).forEach(function (key) {\n      _defineProperty(target, key, source[key]);\n    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) {\n      Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));\n    });\n  }\n  return target;\n}\nfunction _typeof(obj) {\n  \"@babel/helpers - typeof\";\n\n  return _typeof = \"function\" == typeof Symbol && \"symbol\" == typeof Symbol.iterator ? function (obj) {\n    return typeof obj;\n  } : function (obj) {\n    return obj && \"function\" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? \"symbol\" : typeof obj;\n  }, _typeof(obj);\n}\nfunction _defineProperty(obj, key, value) {\n  key = _toPropertyKey(key);\n  if (key in obj) {\n    Object.defineProperty(obj, key, {\n      value: value,\n      enumerable: true,\n      configurable: true,\n      writable: true\n    });\n  } else {\n    obj[key] = value;\n  }\n  return obj;\n}\nfunction _objectWithoutPropertiesLoose(source, excluded) {\n  if (source == null) return {};\n  var target = {};\n  var sourceKeys = Object.keys(source);\n  var key, i;\n  for (i = 0; i < sourceKeys.length; i++) {\n    key = sourceKeys[i];\n    if (excluded.indexOf(key) >= 0) continue;\n    target[key] = source[key];\n  }\n  return target;\n}\nfunction _objectWithoutProperties(source, excluded) {\n  if (source == null) return {};\n  var target = _objectWithoutPropertiesLoose(source, excluded);\n  var key, i;\n  if (Object.getOwnPropertySymbols) {\n    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);\n    for (i = 0; i < sourceSymbolKeys.length; i++) {\n      key = sourceSymbolKeys[i];\n      if (excluded.indexOf(key) >= 0) continue;\n      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;\n      target[key] = source[key];\n    }\n  }\n  return target;\n}\nfunction _toConsumableArray(arr) {\n  return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();\n}\nfunction _arrayWithoutHoles(arr) {\n  if (Array.isArray(arr)) return _arrayLikeToArray(arr);\n}\nfunction _iterableToArray(iter) {\n  if (typeof Symbol !== \"undefined\" && iter[Symbol.iterator] != null || iter[\"@@iterator\"] != null) return Array.from(iter);\n}\nfunction _unsupportedIterableToArray(o, minLen) {\n  if (!o) return;\n  if (typeof o === \"string\") return _arrayLikeToArray(o, minLen);\n  var n = Object.prototype.toString.call(o).slice(8, -1);\n  if (n === \"Object\" && o.constructor) n = o.constructor.name;\n  if (n === \"Map\" || n === \"Set\") return Array.from(o);\n  if (n === \"Arguments\" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);\n}\nfunction _arrayLikeToArray(arr, len) {\n  if (len == null || len > arr.length) len = arr.length;\n  for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];\n  return arr2;\n}\nfunction _nonIterableSpread() {\n  throw new TypeError(\"Invalid attempt to spread non-iterable instance.\\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.\");\n}\nfunction _toPrimitive(input, hint) {\n  if (typeof input !== \"object\" || input === null) return input;\n  var prim = input[Symbol.toPrimitive];\n  if (prim !== undefined) {\n    var res = prim.call(input, hint || \"default\");\n    if (typeof res !== \"object\") return res;\n    throw new TypeError(\"@@toPrimitive must return a primitive value.\");\n  }\n  return (hint === \"string\" ? String : Number)(input);\n}\nfunction _toPropertyKey(arg) {\n  var key = _toPrimitive(arg, \"string\");\n  return typeof key === \"symbol\" ? key : String(key);\n}\n\nvar commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};\n\nvar humps$1 = {exports: {}};\n\n(function (module) {\n(function(global) {\n\n\t  var _processKeys = function(convert, obj, options) {\n\t    if(!_isObject(obj) || _isDate(obj) || _isRegExp(obj) || _isBoolean(obj) || _isFunction(obj)) {\n\t      return obj;\n\t    }\n\n\t    var output,\n\t        i = 0,\n\t        l = 0;\n\n\t    if(_isArray(obj)) {\n\t      output = [];\n\t      for(l=obj.length; i<l; i++) {\n\t        output.push(_processKeys(convert, obj[i], options));\n\t      }\n\t    }\n\t    else {\n\t      output = {};\n\t      for(var key in obj) {\n\t        if(Object.prototype.hasOwnProperty.call(obj, key)) {\n\t          output[convert(key, options)] = _processKeys(convert, obj[key], options);\n\t        }\n\t      }\n\t    }\n\t    return output;\n\t  };\n\n\t  // String conversion methods\n\n\t  var separateWords = function(string, options) {\n\t    options = options || {};\n\t    var separator = options.separator || '_';\n\t    var split = options.split || /(?=[A-Z])/;\n\n\t    return string.split(split).join(separator);\n\t  };\n\n\t  var camelize = function(string) {\n\t    if (_isNumerical(string)) {\n\t      return string;\n\t    }\n\t    string = string.replace(/[\\-_\\s]+(.)?/g, function(match, chr) {\n\t      return chr ? chr.toUpperCase() : '';\n\t    });\n\t    // Ensure 1st char is always lowercase\n\t    return string.substr(0, 1).toLowerCase() + string.substr(1);\n\t  };\n\n\t  var pascalize = function(string) {\n\t    var camelized = camelize(string);\n\t    // Ensure 1st char is always uppercase\n\t    return camelized.substr(0, 1).toUpperCase() + camelized.substr(1);\n\t  };\n\n\t  var decamelize = function(string, options) {\n\t    return separateWords(string, options).toLowerCase();\n\t  };\n\n\t  // Utilities\n\t  // Taken from Underscore.js\n\n\t  var toString = Object.prototype.toString;\n\n\t  var _isFunction = function(obj) {\n\t    return typeof(obj) === 'function';\n\t  };\n\t  var _isObject = function(obj) {\n\t    return obj === Object(obj);\n\t  };\n\t  var _isArray = function(obj) {\n\t    return toString.call(obj) == '[object Array]';\n\t  };\n\t  var _isDate = function(obj) {\n\t    return toString.call(obj) == '[object Date]';\n\t  };\n\t  var _isRegExp = function(obj) {\n\t    return toString.call(obj) == '[object RegExp]';\n\t  };\n\t  var _isBoolean = function(obj) {\n\t    return toString.call(obj) == '[object Boolean]';\n\t  };\n\n\t  // Performant way to determine if obj coerces to a number\n\t  var _isNumerical = function(obj) {\n\t    obj = obj - 0;\n\t    return obj === obj;\n\t  };\n\n\t  // Sets up function which handles processing keys\n\t  // allowing the convert function to be modified by a callback\n\t  var _processor = function(convert, options) {\n\t    var callback = options && 'process' in options ? options.process : options;\n\n\t    if(typeof(callback) !== 'function') {\n\t      return convert;\n\t    }\n\n\t    return function(string, options) {\n\t      return callback(string, convert, options);\n\t    }\n\t  };\n\n\t  var humps = {\n\t    camelize: camelize,\n\t    decamelize: decamelize,\n\t    pascalize: pascalize,\n\t    depascalize: decamelize,\n\t    camelizeKeys: function(object, options) {\n\t      return _processKeys(_processor(camelize, options), object);\n\t    },\n\t    decamelizeKeys: function(object, options) {\n\t      return _processKeys(_processor(decamelize, options), object, options);\n\t    },\n\t    pascalizeKeys: function(object, options) {\n\t      return _processKeys(_processor(pascalize, options), object);\n\t    },\n\t    depascalizeKeys: function () {\n\t      return this.decamelizeKeys.apply(this, arguments);\n\t    }\n\t  };\n\n\t  if (module.exports) {\n\t    module.exports = humps;\n\t  } else {\n\t    global.humps = humps;\n\t  }\n\n\t})(commonjsGlobal);\n} (humps$1));\n\nvar humps = humps$1.exports;\n\nvar _excluded = [\"class\", \"style\"];\n\n/**\n * Converts a CSS style into a plain Javascript object.\n * @param {String} style The style to converts into a plain Javascript object.\n * @returns {Object}\n */\nfunction styleToObject(style) {\n  return style.split(';').map(function (s) {\n    return s.trim();\n  }).filter(function (s) {\n    return s;\n  }).reduce(function (output, pair) {\n    var idx = pair.indexOf(':');\n    var prop = humps.camelize(pair.slice(0, idx));\n    var value = pair.slice(idx + 1).trim();\n    output[prop] = value;\n    return output;\n  }, {});\n}\n\n/**\n * Converts a CSS class list into a plain Javascript object.\n * @param {Array<String>} classes The class list to convert.\n * @returns {Object}\n */\nfunction classToObject(classes) {\n  return classes.split(/\\s+/).reduce(function (output, className) {\n    output[className] = true;\n    return output;\n  }, {});\n}\n\n/**\n * Converts a FontAwesome abstract element of an icon into a Vue VNode.\n * @param {AbstractElement | String} abstractElement The element to convert.\n * @param {Object} props The user-defined props.\n * @param {Object} attrs The user-defined native HTML attributes.\n * @returns {VNode}\n */\nfunction convert(abstractElement) {\n  var props = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};\n  var attrs = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};\n  // If the abstract element is a string, we'll just return a string render function\n  if (typeof abstractElement === 'string') {\n    return abstractElement;\n  }\n\n  // Converting abstract element children into Vue VNodes\n  var children = (abstractElement.children || []).map(function (child) {\n    return convert(child);\n  });\n\n  // Converting abstract element attributes into valid Vue format\n  var mixins = Object.keys(abstractElement.attributes || {}).reduce(function (mixins, key) {\n    var value = abstractElement.attributes[key];\n    switch (key) {\n      case 'class':\n        mixins.class = classToObject(value);\n        break;\n      case 'style':\n        mixins.style = styleToObject(value);\n        break;\n      default:\n        mixins.attrs[key] = value;\n    }\n    return mixins;\n  }, {\n    attrs: {},\n    class: {},\n    style: {}\n  });\n\n  // Now, we'll return the VNode\n  attrs.class;\n    var _attrs$style = attrs.style,\n    aStyle = _attrs$style === void 0 ? {} : _attrs$style,\n    otherAttrs = _objectWithoutProperties(attrs, _excluded);\n  return h(abstractElement.tag, _objectSpread2(_objectSpread2(_objectSpread2({}, props), {}, {\n    class: mixins.class,\n    style: _objectSpread2(_objectSpread2({}, mixins.style), aStyle)\n  }, mixins.attrs), otherAttrs), children);\n}\n\nvar PRODUCTION = false;\ntry {\n  PRODUCTION = \"production\" === 'production';\n} catch (e) {}\nfunction log () {\n  if (!PRODUCTION && console && typeof console.error === 'function') {\n    var _console;\n    (_console = console).error.apply(_console, arguments);\n  }\n}\n\nfunction objectWithKey(key, value) {\n  return Array.isArray(value) && value.length > 0 || !Array.isArray(value) && value ? _defineProperty({}, key, value) : {};\n}\nfunction classList(props) {\n  var _classes;\n  var classes = (_classes = {\n    'fa-spin': props.spin,\n    'fa-pulse': props.pulse,\n    'fa-fw': props.fixedWidth,\n    'fa-border': props.border,\n    'fa-li': props.listItem,\n    'fa-inverse': props.inverse,\n    'fa-flip': props.flip === true,\n    'fa-flip-horizontal': props.flip === 'horizontal' || props.flip === 'both',\n    'fa-flip-vertical': props.flip === 'vertical' || props.flip === 'both'\n  }, _defineProperty(_classes, \"fa-\".concat(props.size), props.size !== null), _defineProperty(_classes, \"fa-rotate-\".concat(props.rotation), props.rotation !== null), _defineProperty(_classes, \"fa-pull-\".concat(props.pull), props.pull !== null), _defineProperty(_classes, 'fa-swap-opacity', props.swapOpacity), _defineProperty(_classes, 'fa-bounce', props.bounce), _defineProperty(_classes, 'fa-shake', props.shake), _defineProperty(_classes, 'fa-beat', props.beat), _defineProperty(_classes, 'fa-fade', props.fade), _defineProperty(_classes, 'fa-beat-fade', props.beatFade), _defineProperty(_classes, 'fa-flash', props.flash), _defineProperty(_classes, 'fa-spin-pulse', props.spinPulse), _defineProperty(_classes, 'fa-spin-reverse', props.spinReverse), _classes);\n  return Object.keys(classes).map(function (key) {\n    return classes[key] ? key : null;\n  }).filter(function (key) {\n    return key;\n  });\n}\n\nfunction normalizeIconArgs(icon) {\n  if (icon && _typeof(icon) === 'object' && icon.prefix && icon.iconName && icon.icon) {\n    return icon;\n  }\n  if (parse.icon) {\n    return parse.icon(icon);\n  }\n  if (icon === null) {\n    return null;\n  }\n  if (_typeof(icon) === 'object' && icon.prefix && icon.iconName) {\n    return icon;\n  }\n  if (Array.isArray(icon) && icon.length === 2) {\n    return {\n      prefix: icon[0],\n      iconName: icon[1]\n    };\n  }\n  if (typeof icon === 'string') {\n    return {\n      prefix: 'fas',\n      iconName: icon\n    };\n  }\n}\nvar FontAwesomeIcon = defineComponent({\n  name: 'FontAwesomeIcon',\n  props: {\n    border: {\n      type: Boolean,\n      default: false\n    },\n    fixedWidth: {\n      type: Boolean,\n      default: false\n    },\n    flip: {\n      type: [Boolean, String],\n      default: false,\n      validator: function validator(value) {\n        return [true, false, 'horizontal', 'vertical', 'both'].indexOf(value) > -1;\n      }\n    },\n    icon: {\n      type: [Object, Array, String],\n      required: true\n    },\n    mask: {\n      type: [Object, Array, String],\n      default: null\n    },\n    maskId: {\n      type: String,\n      default: null\n    },\n    listItem: {\n      type: Boolean,\n      default: false\n    },\n    pull: {\n      type: String,\n      default: null,\n      validator: function validator(value) {\n        return ['right', 'left'].indexOf(value) > -1;\n      }\n    },\n    pulse: {\n      type: Boolean,\n      default: false\n    },\n    rotation: {\n      type: [String, Number],\n      default: null,\n      validator: function validator(value) {\n        return [90, 180, 270].indexOf(Number.parseInt(value, 10)) > -1;\n      }\n    },\n    swapOpacity: {\n      type: Boolean,\n      default: false\n    },\n    size: {\n      type: String,\n      default: null,\n      validator: function validator(value) {\n        return ['2xs', 'xs', 'sm', 'lg', 'xl', '2xl', '1x', '2x', '3x', '4x', '5x', '6x', '7x', '8x', '9x', '10x'].indexOf(value) > -1;\n      }\n    },\n    spin: {\n      type: Boolean,\n      default: false\n    },\n    transform: {\n      type: [String, Object],\n      default: null\n    },\n    symbol: {\n      type: [Boolean, String],\n      default: false\n    },\n    title: {\n      type: String,\n      default: null\n    },\n    titleId: {\n      type: String,\n      default: null\n    },\n    inverse: {\n      type: Boolean,\n      default: false\n    },\n    bounce: {\n      type: Boolean,\n      default: false\n    },\n    shake: {\n      type: Boolean,\n      default: false\n    },\n    beat: {\n      type: Boolean,\n      default: false\n    },\n    fade: {\n      type: Boolean,\n      default: false\n    },\n    beatFade: {\n      type: Boolean,\n      default: false\n    },\n    flash: {\n      type: Boolean,\n      default: false\n    },\n    spinPulse: {\n      type: Boolean,\n      default: false\n    },\n    spinReverse: {\n      type: Boolean,\n      default: false\n    }\n  },\n  setup: function setup(props, _ref) {\n    var attrs = _ref.attrs;\n    var icon$1 = computed(function () {\n      return normalizeIconArgs(props.icon);\n    });\n    var classes = computed(function () {\n      return objectWithKey('classes', classList(props));\n    });\n    var transform = computed(function () {\n      return objectWithKey('transform', typeof props.transform === 'string' ? parse.transform(props.transform) : props.transform);\n    });\n    var mask = computed(function () {\n      return objectWithKey('mask', normalizeIconArgs(props.mask));\n    });\n    var renderedIcon = computed(function () {\n      return icon(icon$1.value, _objectSpread2(_objectSpread2(_objectSpread2(_objectSpread2({}, classes.value), transform.value), mask.value), {}, {\n        symbol: props.symbol,\n        title: props.title,\n        titleId: props.titleId,\n        maskId: props.maskId\n      }));\n    });\n    watch(renderedIcon, function (value) {\n      if (!value) {\n        return log('Could not find one or more icon(s)', icon$1.value, mask.value);\n      }\n    }, {\n      immediate: true\n    });\n    var vnode = computed(function () {\n      return renderedIcon.value ? convert(renderedIcon.value.abstract[0], {}, attrs) : null;\n    });\n    return function () {\n      return vnode.value;\n    };\n  }\n});\n\nvar FontAwesomeLayers = defineComponent({\n  name: 'FontAwesomeLayers',\n  props: {\n    fixedWidth: {\n      type: Boolean,\n      default: false\n    }\n  },\n  setup: function setup(props, _ref) {\n    var slots = _ref.slots;\n    var familyPrefix = config.familyPrefix;\n    var className = computed(function () {\n      return [\"\".concat(familyPrefix, \"-layers\")].concat(_toConsumableArray(props.fixedWidth ? [\"\".concat(familyPrefix, \"-fw\")] : []));\n    });\n    return function () {\n      return h('div', {\n        class: className.value\n      }, slots.default ? slots.default() : []);\n    };\n  }\n});\n\nvar FontAwesomeLayersText = defineComponent({\n  name: 'FontAwesomeLayersText',\n  props: {\n    value: {\n      type: [String, Number],\n      default: ''\n    },\n    transform: {\n      type: [String, Object],\n      default: null\n    },\n    counter: {\n      type: Boolean,\n      default: false\n    },\n    position: {\n      type: String,\n      default: null,\n      validator: function validator(value) {\n        return ['bottom-left', 'bottom-right', 'top-left', 'top-right'].indexOf(value) > -1;\n      }\n    }\n  },\n  setup: function setup(props, _ref) {\n    var attrs = _ref.attrs;\n    var familyPrefix = config.familyPrefix;\n    var classes = computed(function () {\n      return objectWithKey('classes', [].concat(_toConsumableArray(props.counter ? [\"\".concat(familyPrefix, \"-layers-counter\")] : []), _toConsumableArray(props.position ? [\"\".concat(familyPrefix, \"-layers-\").concat(props.position)] : [])));\n    });\n    var transform = computed(function () {\n      return objectWithKey('transform', typeof props.transform === 'string' ? parse.transform(props.transform) : props.transform);\n    });\n    var abstractElement = computed(function () {\n      var _text = text(props.value.toString(), _objectSpread2(_objectSpread2({}, transform.value), classes.value)),\n        abstract = _text.abstract;\n      if (props.counter) {\n        abstract[0].attributes.class = abstract[0].attributes.class.replace('fa-layers-text', '');\n      }\n      return abstract[0];\n    });\n    var vnode = computed(function () {\n      return convert(abstractElement.value, {}, attrs);\n    });\n    return function () {\n      return vnode.value;\n    };\n  }\n});\n\nexport { FontAwesomeIcon, FontAwesomeLayers, FontAwesomeLayersText };\n",
-      "start": 1721307755434,
-      "end": 1721307755434,
+      "start": 1789891026320,
+      "end": 1789891026321,
       "order": "normal",
       "sourcemaps": null
     },
     {
       "name": "vite:css-post",
-      "start": 1721307755434,
-      "end": 1721307755434,
+      "start": 1789891026321,
+      "end": 1789891026321,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1721307755434,
-      "end": 1721307755434,
+      "start": 1789891026321,
+      "end": 1789891026321,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1721307755434,
-      "end": 1721307755434,
+      "start": 1789891026321,
+      "end": 1789891026321,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1721307755434,
-      "end": 1721307755434,
+      "start": 1789891026321,
+      "end": 1789891026321,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1721307755434,
-      "end": 1721307755437,
+      "start": 1789891026321,
+      "end": 1789891026323,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1721307755438,
-      "end": 1721307755438,
+      "start": 1789891026323,
+      "end": 1789891026323,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1721307755438,
-      "end": 1721307755438,
+      "start": 1789891026323,
+      "end": 1789891026323,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1721307755438,
-      "end": 1721307755438,
+      "start": 1789891026323,
+      "end": 1789891026323,
       "order": "post"
     },
     {
       "name": "nuxtjs:i18n-macros-transform",
-      "start": 1721307755438,
-      "end": 1721307755438,
+      "start": 1789891026323,
+      "end": 1789891026323,
       "order": "post"
     },
     {
       "name": "nuxtjs:i18n-resource",
-      "start": 1721307755438,
-      "end": 1721307755438,
+      "start": 1789891026323,
+      "end": 1789891026323,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1721307755438,
-      "end": 1721307755438,
+      "start": 1789891026323,
+      "end": 1789891026323,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1721307755438,
-      "end": 1721307755438,
+      "start": 1789891026323,
+      "end": 1789891026323,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1721307755438,
-      "end": 1721307755438,
+      "start": 1789891026323,
+      "end": 1789891026323,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1721307755438,
-      "end": 1721307755438,
+      "start": 1789891026323,
+      "end": 1789891026323,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1721307755438,
-      "end": 1721307755438,
+      "start": 1789891026323,
+      "end": 1789891026323,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1721307755438,
-      "end": 1721307755438,
+      "start": 1789891026323,
+      "end": 1789891026323,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1721307755438,
-      "end": 1721307755438,
+      "start": 1789891026323,
+      "end": 1789891026323,
       "order": "normal"
     }
   ]

@@ -4,63 +4,63 @@
     {
       "name": "vite:load-fallback",
       "result": "<script setup>\r\n\r\n    const props = defineProps([ 'id', 'descs', 'itemId' ])\r\n\r\n</script>\r\n\r\n<template>\r\n    <card :id=\"id\" name=\"card-title-gain\">\r\n        <template v-slot:col-1>\r\n        \r\n            <block-desc :descs=\"descs\" />\r\n        \r\n        </template>\r\n        <template v-slot:col-2>\r\n        \r\n            <block-gain :itemId=\"itemId\" />\r\n\r\n        </template>\r\n    </card>\r\n</template>\r\n",
-      "start": 1721307757893,
-      "end": 1721307758005,
+      "start": 1789891027548,
+      "end": 1789891027681,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1721307758005,
-      "end": 1721307758005,
+      "start": 1789891027681,
+      "end": 1789891027681,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1721307758005,
-      "end": 1721307758005,
+      "start": 1789891027681,
+      "end": 1789891027681,
       "order": "pre"
     },
     {
       "name": "unplugin-vue-i18n",
-      "start": 1721307758005,
-      "end": 1721307758005,
+      "start": 1789891027681,
+      "end": 1789891027681,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1721307758005,
-      "end": 1721307758005,
+      "start": 1789891027681,
+      "end": 1789891027681,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1721307758005,
-      "end": 1721307758005,
+      "start": 1789891027681,
+      "end": 1789891027681,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1721307758005,
-      "end": 1721307758005,
+      "start": 1789891027681,
+      "end": 1789891027681,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1721307758005,
-      "end": 1721307758005,
+      "start": 1789891027681,
+      "end": 1789891027681,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1721307758006,
-      "end": 1721307758006,
+      "start": 1789891027681,
+      "end": 1789891027681,
       "order": "normal"
     },
     {
       "name": "vite:vue",
       "result": "import { resolveComponent as _resolveComponent, createVNode as _createVNode, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock } from \"vue\"\n\n\nconst _sfc_main = {\n  __name: 'CardGain',\n  props: [ 'id', 'descs', 'itemId' ],\n  setup(__props) {\n\r\n\r\n    const props = __props\r\n\r\n\nreturn (_ctx, _cache) => {\n  const _component_block_desc = _resolveComponent(\"block-desc\")\n  const _component_block_gain = _resolveComponent(\"block-gain\")\n  const _component_card = _resolveComponent(\"card\")\n\n  return (_openBlock(), _createBlock(_component_card, {\n    id: __props.id,\n    name: \"card-title-gain\"\n  }, {\n    \"col-1\": _withCtx(() => [\n      _createVNode(_component_block_desc, { descs: __props.descs }, null, 8, [\"descs\"])\n    ]),\n    \"col-2\": _withCtx(() => [\n      _createVNode(_component_block_gain, { itemId: __props.itemId }, null, 8, [\"itemId\"])\n    ]),\n    _: 1\n  }, 8, [\"id\"]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
-      "start": 1721307758006,
-      "end": 1721307758007,
+      "start": 1789891027681,
+      "end": 1789891027682,
       "order": "normal",
       "sourcemaps": {
         "mappings": ""
@@ -68,153 +68,153 @@
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1721307758007,
-      "end": 1721307758007,
+      "start": 1789891027682,
+      "end": 1789891027682,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1721307758007,
-      "end": 1721307758007,
+      "start": 1789891027682,
+      "end": 1789891027682,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1721307758007,
-      "end": 1721307758008,
+      "start": 1789891027683,
+      "end": 1789891027684,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1721307758009,
-      "end": 1721307758009,
+      "start": 1789891027684,
+      "end": 1789891027685,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1721307758009,
-      "end": 1721307758009,
+      "start": 1789891027685,
+      "end": 1789891027685,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1721307758009,
-      "end": 1721307758009,
+      "start": 1789891027685,
+      "end": 1789891027685,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1721307758009,
-      "end": 1721307758009,
+      "start": 1789891027685,
+      "end": 1789891027685,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1721307758009,
-      "end": 1721307758010,
+      "start": 1789891027685,
+      "end": 1789891027685,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1721307758010,
-      "end": 1721307758010,
+      "start": 1789891027685,
+      "end": 1789891027685,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1721307758010,
-      "end": 1721307758010,
+      "start": 1789891027685,
+      "end": 1789891027685,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1721307758010,
-      "end": 1721307758010,
+      "start": 1789891027685,
+      "end": 1789891027685,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1721307758010,
-      "end": 1721307758010,
+      "start": 1789891027685,
+      "end": 1789891027685,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1721307758010,
-      "end": 1721307758010,
+      "start": 1789891027685,
+      "end": 1789891027685,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1721307758010,
-      "end": 1721307758010,
+      "start": 1789891027685,
+      "end": 1789891027685,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1721307758010,
-      "end": 1721307758010,
+      "start": 1789891027685,
+      "end": 1789891027685,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1721307758010,
-      "end": 1721307758010,
+      "start": 1789891027685,
+      "end": 1789891027685,
       "order": "post"
     },
     {
       "name": "nuxtjs:i18n-macros-transform",
-      "start": 1721307758010,
-      "end": 1721307758011,
+      "start": 1789891027685,
+      "end": 1789891027686,
       "order": "post"
     },
     {
       "name": "nuxtjs:i18n-resource",
-      "start": 1721307758011,
-      "end": 1721307758011,
+      "start": 1789891027686,
+      "end": 1789891027686,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1721307758011,
-      "end": 1721307758011,
+      "start": 1789891027686,
+      "end": 1789891027686,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1721307758011,
-      "end": 1721307758011,
+      "start": 1789891027686,
+      "end": 1789891027686,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1721307758011,
-      "end": 1721307758011,
+      "start": 1789891027686,
+      "end": 1789891027686,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"C:/dev/ngsc/nuxt3/components/BlockDesc.vue\";\nimport { default as __nuxt_component_1 } from \"C:/dev/ngsc/nuxt3/components/BlockGain.vue\";\nimport { default as __nuxt_component_2 } from \"C:/dev/ngsc/nuxt3/components/Card.vue\";\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock } from \"vue\"\n\n\nconst _sfc_main = {\n  __name: 'CardGain',\n  props: [ 'id', 'descs', 'itemId' ],\n  setup(__props) {\n\r\n\r\n    const props = __props\r\n\r\n\nreturn (_ctx, _cache) => {\n  const _component_block_desc = __nuxt_component_0\n  const _component_block_gain = __nuxt_component_1\n  const _component_card = __nuxt_component_2\n\n  return (_openBlock(), _createBlock(_component_card, {\n    id: __props.id,\n    name: \"card-title-gain\"\n  }, {\n    \"col-1\": _withCtx(() => [\n      _createVNode(_component_block_desc, { descs: __props.descs }, null, 8, [\"descs\"])\n    ]),\n    \"col-2\": _withCtx(() => [\n      _createVNode(_component_block_gain, { itemId: __props.itemId }, null, 8, [\"itemId\"])\n    ]),\n    _: 1\n  }, 8, [\"id\"]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
-      "start": 1721307758011,
-      "end": 1721307758012,
+      "start": 1789891027686,
+      "end": 1789891027686,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1721307758012,
-      "end": 1721307758012,
+      "start": 1789891027686,
+      "end": 1789891027686,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1721307758012,
-      "end": 1721307758012,
+      "start": 1789891027686,
+      "end": 1789891027686,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1721307758012,
-      "end": 1721307758013,
+      "start": 1789891027686,
+      "end": 1789891027686,
       "order": "normal"
     }
   ]

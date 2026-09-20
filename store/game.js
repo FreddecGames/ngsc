@@ -2534,7 +2534,8 @@ export const useGameStore = defineStore({
         locale: 'en',
         paused: false,
         companyName: 'NG Space Company',
-        gameVersion: '2.8.27',
+        gameVersion: '2.8.28',
+		isMobile: false,
         //---
         activeTab: 'missionsPane',
         activePane: 'earthPane',

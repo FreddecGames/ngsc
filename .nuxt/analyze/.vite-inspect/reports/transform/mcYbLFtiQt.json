@@ -4,63 +4,63 @@
     {
       "name": "vite:load-fallback",
       "result": "<script setup>\r\n\r\n    const props = defineProps([ 'name', 'icon', 'paneId', 'itemId' ])\r\n\r\n    import { storeToRefs } from 'pinia'\r\n    import { useGameStore } from '~/store/game.js'\r\n    \r\n    const store = useGameStore()\r\n    \r\n    const { activePane } = storeToRefs(store)    \r\n    \r\n    const { upgrade } = store\r\n    \r\n    const can = computed(() => store.canUpgrade(props.itemId, 1))\r\n    const unlocked = computed(() => store.isUnlocked(props.itemId))\r\n    const upgradable = computed(() => store.isUpgradable(props.itemId))\r\n    const storegable = computed(() => store.isStoregable(props.itemId))\r\n    const storageUnlocked = computed(() => store.getItemCount('missionStorage') >= 1)\r\n\r\n</script>\r\n\r\n<template>\r\n    <sidebar-item v-if=\"unlocked\" :name=\"name\" :icon=\"icon\" :paneId=\"paneId\">\r\n        <template v-slot:extra>\r\n            \r\n            <div class=\"col-auto text-end small\">\r\n                <item-prod :itemId=\"itemId\" />\r\n            </div>\r\n            \r\n            <div class=\"col-auto text-end small\" style=\"width:90px;\">\r\n                <item-count :itemId=\"itemId\" />\r\n            </div>\r\n            \r\n        </template>\r\n        <template v-if=\"storageUnlocked\" v-slot:buttons>\r\n        \r\n            <button v-if=\"upgradable\" type=\"button\" class=\"btn small\" :class=\"{ 'active':activePane == paneId, 'disabled text-muted':can != 0 }\" @click=\"upgrade({ id:itemId, count:1 })\">\r\n                <font-awesome-icon icon=\"fas fa-fw fa-arrow-alt-circle-up\" />\r\n            </button>\r\n            \r\n            <button v-if=\"!upgradable\" class=\"btn small disabled\" :class=\"{ 'active':activePane == paneId }\" style=\"width:35px\"></button>\r\n\r\n        </template>\r\n    </sidebar-item>\r\n</template>\r\n",
-      "start": 1721307757542,
-      "end": 1721307757931,
+      "start": 1789891027295,
+      "end": 1789891027576,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1721307757931,
-      "end": 1721307757931,
+      "start": 1789891027576,
+      "end": 1789891027576,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1721307757931,
-      "end": 1721307757931,
+      "start": 1789891027577,
+      "end": 1789891027577,
       "order": "pre"
     },
     {
       "name": "unplugin-vue-i18n",
-      "start": 1721307757931,
-      "end": 1721307757931,
+      "start": 1789891027577,
+      "end": 1789891027577,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1721307757931,
-      "end": 1721307757931,
+      "start": 1789891027577,
+      "end": 1789891027577,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1721307757931,
-      "end": 1721307757931,
+      "start": 1789891027577,
+      "end": 1789891027577,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1721307757931,
-      "end": 1721307757931,
+      "start": 1789891027577,
+      "end": 1789891027577,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1721307757931,
-      "end": 1721307757931,
+      "start": 1789891027577,
+      "end": 1789891027577,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1721307757931,
-      "end": 1721307757931,
+      "start": 1789891027577,
+      "end": 1789891027577,
       "order": "normal"
     },
     {
       "name": "vite:vue",
       "result": "import { unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, normalizeClass as _normalizeClass, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, withCtx as _withCtx, createSlots as _createSlots, createBlock as _createBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"col-auto text-end small\" }\nconst _hoisted_2 = {\n  class: \"col-auto text-end small\",\n  style: {\"width\":\"90px\"}\n}\n\nimport { storeToRefs } from 'pinia'\r\n    import { useGameStore } from '~/store/game.js'\r\n    \r\n    \nconst _sfc_main = {\n  __name: 'SidebarItemResource',\n  props: [ 'name', 'icon', 'paneId', 'itemId' ],\n  setup(__props) {\n\r\n\r\n    const props = __props\r\n\r\n    const store = useGameStore()\r\n    \r\n    const { activePane } = storeToRefs(store)    \r\n    \r\n    const { upgrade } = store\r\n    \r\n    const can = computed(() => store.canUpgrade(props.itemId, 1))\r\n    const unlocked = computed(() => store.isUnlocked(props.itemId))\r\n    const upgradable = computed(() => store.isUpgradable(props.itemId))\r\n    const storegable = computed(() => store.isStoregable(props.itemId))\r\n    const storageUnlocked = computed(() => store.getItemCount('missionStorage') >= 1)\r\n\r\n\nreturn (_ctx, _cache) => {\n  const _component_item_prod = _resolveComponent(\"item-prod\")\n  const _component_item_count = _resolveComponent(\"item-count\")\n  const _component_font_awesome_icon = _resolveComponent(\"font-awesome-icon\")\n  const _component_sidebar_item = _resolveComponent(\"sidebar-item\")\n\n  return (_unref(unlocked))\n    ? (_openBlock(), _createBlock(_component_sidebar_item, {\n        key: 0,\n        name: __props.name,\n        icon: __props.icon,\n        paneId: __props.paneId\n      }, _createSlots({\n        extra: _withCtx(() => [\n          _createElementVNode(\"div\", _hoisted_1, [\n            _createVNode(_component_item_prod, { itemId: __props.itemId }, null, 8, [\"itemId\"])\n          ]),\n          _createElementVNode(\"div\", _hoisted_2, [\n            _createVNode(_component_item_count, { itemId: __props.itemId }, null, 8, [\"itemId\"])\n          ])\n        ]),\n        _: 2\n      }, [\n        (_unref(storageUnlocked))\n          ? {\n              name: \"buttons\",\n              fn: _withCtx(() => [\n                (_unref(upgradable))\n                  ? (_openBlock(), _createElementBlock(\"button\", {\n                      key: 0,\n                      type: \"button\",\n                      class: _normalizeClass([\"btn small\", { 'active':_unref(activePane) == __props.paneId, 'disabled text-muted':_unref(can) != 0 }]),\n                      onClick: _cache[0] || (_cache[0] = $event => (_unref(upgrade)({ id:__props.itemId, count:1 })))\n                    }, [\n                      _createVNode(_component_font_awesome_icon, { icon: \"fas fa-fw fa-arrow-alt-circle-up\" })\n                    ], 2))\n                  : _createCommentVNode(\"\", true),\n                (!_unref(upgradable))\n                  ? (_openBlock(), _createElementBlock(\"button\", {\n                      key: 1,\n                      class: _normalizeClass([\"btn small disabled\", { 'active':_unref(activePane) == __props.paneId }]),\n                      style: {\"width\":\"35px\"}\n                    }, null, 2))\n                  : _createCommentVNode(\"\", true)\n              ]),\n              key: \"0\"\n            }\n          : undefined\n      ]), 1032, [\"name\", \"icon\", \"paneId\"]))\n    : _createCommentVNode(\"\", true)\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
-      "start": 1721307757931,
-      "end": 1721307757934,
+      "start": 1789891027577,
+      "end": 1789891027579,
       "order": "normal",
       "sourcemaps": {
         "mappings": ""
@@ -68,117 +68,117 @@
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1721307757934,
-      "end": 1721307757934,
+      "start": 1789891027579,
+      "end": 1789891027579,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1721307757934,
-      "end": 1721307757934,
+      "start": 1789891027579,
+      "end": 1789891027579,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1721307757934,
-      "end": 1721307757934,
+      "start": 1789891027579,
+      "end": 1789891027579,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1721307757934,
-      "end": 1721307757934,
+      "start": 1789891027579,
+      "end": 1789891027579,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1721307757934,
-      "end": 1721307757934,
+      "start": 1789891027579,
+      "end": 1789891027579,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1721307757934,
-      "end": 1721307757934,
+      "start": 1789891027579,
+      "end": 1789891027579,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1721307757934,
-      "end": 1721307757934,
+      "start": 1789891027579,
+      "end": 1789891027579,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1721307757934,
-      "end": 1721307757934,
+      "start": 1789891027579,
+      "end": 1789891027579,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1721307757934,
-      "end": 1721307757934,
+      "start": 1789891027579,
+      "end": 1789891027579,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1721307757934,
-      "end": 1721307757934,
+      "start": 1789891027579,
+      "end": 1789891027579,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1721307757934,
-      "end": 1721307757934,
+      "start": 1789891027579,
+      "end": 1789891027579,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1721307757934,
-      "end": 1721307757934,
+      "start": 1789891027579,
+      "end": 1789891027579,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1721307757934,
-      "end": 1721307757934,
+      "start": 1789891027579,
+      "end": 1789891027579,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1721307757934,
-      "end": 1721307757934,
+      "start": 1789891027579,
+      "end": 1789891027579,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1721307757934,
-      "end": 1721307757934,
+      "start": 1789891027579,
+      "end": 1789891027579,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1721307757934,
-      "end": 1721307757934,
+      "start": 1789891027579,
+      "end": 1789891027579,
       "order": "post"
     },
     {
       "name": "nuxtjs:i18n-macros-transform",
-      "start": 1721307757934,
-      "end": 1721307757934,
+      "start": 1789891027579,
+      "end": 1789891027579,
       "order": "post"
     },
     {
       "name": "nuxtjs:i18n-resource",
-      "start": 1721307757934,
-      "end": 1721307757934,
+      "start": 1789891027579,
+      "end": 1789891027579,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { computed } from 'vue';\nimport { unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, normalizeClass as _normalizeClass, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, withCtx as _withCtx, createSlots as _createSlots, createBlock as _createBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"col-auto text-end small\" }\nconst _hoisted_2 = {\n  class: \"col-auto text-end small\",\n  style: {\"width\":\"90px\"}\n}\n\nimport { storeToRefs } from 'pinia'\r\n    import { useGameStore } from '~/store/game.js'\r\n    \r\n    \nconst _sfc_main = {\n  __name: 'SidebarItemResource',\n  props: [ 'name', 'icon', 'paneId', 'itemId' ],\n  setup(__props) {\n\r\n\r\n    const props = __props\r\n\r\n    const store = useGameStore()\r\n    \r\n    const { activePane } = storeToRefs(store)    \r\n    \r\n    const { upgrade } = store\r\n    \r\n    const can = computed(() => store.canUpgrade(props.itemId, 1))\r\n    const unlocked = computed(() => store.isUnlocked(props.itemId))\r\n    const upgradable = computed(() => store.isUpgradable(props.itemId))\r\n    const storegable = computed(() => store.isStoregable(props.itemId))\r\n    const storageUnlocked = computed(() => store.getItemCount('missionStorage') >= 1)\r\n\r\n\nreturn (_ctx, _cache) => {\n  const _component_item_prod = _resolveComponent(\"item-prod\")\n  const _component_item_count = _resolveComponent(\"item-count\")\n  const _component_font_awesome_icon = _resolveComponent(\"font-awesome-icon\")\n  const _component_sidebar_item = _resolveComponent(\"sidebar-item\")\n\n  return (_unref(unlocked))\n    ? (_openBlock(), _createBlock(_component_sidebar_item, {\n        key: 0,\n        name: __props.name,\n        icon: __props.icon,\n        paneId: __props.paneId\n      }, _createSlots({\n        extra: _withCtx(() => [\n          _createElementVNode(\"div\", _hoisted_1, [\n            _createVNode(_component_item_prod, { itemId: __props.itemId }, null, 8, [\"itemId\"])\n          ]),\n          _createElementVNode(\"div\", _hoisted_2, [\n            _createVNode(_component_item_count, { itemId: __props.itemId }, null, 8, [\"itemId\"])\n          ])\n        ]),\n        _: 2\n      }, [\n        (_unref(storageUnlocked))\n          ? {\n              name: \"buttons\",\n              fn: _withCtx(() => [\n                (_unref(upgradable))\n                  ? (_openBlock(), _createElementBlock(\"button\", {\n                      key: 0,\n                      type: \"button\",\n                      class: _normalizeClass([\"btn small\", { 'active':_unref(activePane) == __props.paneId, 'disabled text-muted':_unref(can) != 0 }]),\n                      onClick: _cache[0] || (_cache[0] = $event => (_unref(upgrade)({ id:__props.itemId, count:1 })))\n                    }, [\n                      _createVNode(_component_font_awesome_icon, { icon: \"fas fa-fw fa-arrow-alt-circle-up\" })\n                    ], 2))\n                  : _createCommentVNode(\"\", true),\n                (!_unref(upgradable))\n                  ? (_openBlock(), _createElementBlock(\"button\", {\n                      key: 1,\n                      class: _normalizeClass([\"btn small disabled\", { 'active':_unref(activePane) == __props.paneId }]),\n                      style: {\"width\":\"35px\"}\n                    }, null, 2))\n                  : _createCommentVNode(\"\", true)\n              ]),\n              key: \"0\"\n            }\n          : undefined\n      ]), 1032, [\"name\", \"icon\", \"paneId\"]))\n    : _createCommentVNode(\"\", true)\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
-      "start": 1721307757934,
-      "end": 1721307757935,
+      "start": 1789891027579,
+      "end": 1789891027580,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -191,39 +191,39 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1721307757935,
-      "end": 1721307757935,
+      "start": 1789891027580,
+      "end": 1789891027580,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1721307757935,
-      "end": 1721307757935,
+      "start": 1789891027580,
+      "end": 1789891027580,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"C:/dev/ngsc/nuxt3/components/ItemProd.vue\";\nimport { default as __nuxt_component_1 } from \"C:/dev/ngsc/nuxt3/components/ItemCount.vue\";\nimport { default as __nuxt_component_2 } from \"C:/dev/ngsc/nuxt3/components/SidebarItem.vue\";\nimport { computed } from 'vue';\nimport { unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, normalizeClass as _normalizeClass, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, withCtx as _withCtx, createSlots as _createSlots, createBlock as _createBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"col-auto text-end small\" }\nconst _hoisted_2 = {\n  class: \"col-auto text-end small\",\n  style: {\"width\":\"90px\"}\n}\n\nimport { storeToRefs } from 'pinia'\r\n    import { useGameStore } from '~/store/game.js'\r\n    \r\n    \nconst _sfc_main = {\n  __name: 'SidebarItemResource',\n  props: [ 'name', 'icon', 'paneId', 'itemId' ],\n  setup(__props) {\n\r\n\r\n    const props = __props\r\n\r\n    const store = useGameStore()\r\n    \r\n    const { activePane } = storeToRefs(store)    \r\n    \r\n    const { upgrade } = store\r\n    \r\n    const can = computed(() => store.canUpgrade(props.itemId, 1))\r\n    const unlocked = computed(() => store.isUnlocked(props.itemId))\r\n    const upgradable = computed(() => store.isUpgradable(props.itemId))\r\n    const storegable = computed(() => store.isStoregable(props.itemId))\r\n    const storageUnlocked = computed(() => store.getItemCount('missionStorage') >= 1)\r\n\r\n\nreturn (_ctx, _cache) => {\n  const _component_item_prod = __nuxt_component_0\n  const _component_item_count = __nuxt_component_1\n  const _component_font_awesome_icon = _resolveComponent(\"font-awesome-icon\")\n  const _component_sidebar_item = __nuxt_component_2\n\n  return (_unref(unlocked))\n    ? (_openBlock(), _createBlock(_component_sidebar_item, {\n        key: 0,\n        name: __props.name,\n        icon: __props.icon,\n        paneId: __props.paneId\n      }, _createSlots({\n        extra: _withCtx(() => [\n          _createElementVNode(\"div\", _hoisted_1, [\n            _createVNode(_component_item_prod, { itemId: __props.itemId }, null, 8, [\"itemId\"])\n          ]),\n          _createElementVNode(\"div\", _hoisted_2, [\n            _createVNode(_component_item_count, { itemId: __props.itemId }, null, 8, [\"itemId\"])\n          ])\n        ]),\n        _: 2\n      }, [\n        (_unref(storageUnlocked))\n          ? {\n              name: \"buttons\",\n              fn: _withCtx(() => [\n                (_unref(upgradable))\n                  ? (_openBlock(), _createElementBlock(\"button\", {\n                      key: 0,\n                      type: \"button\",\n                      class: _normalizeClass([\"btn small\", { 'active':_unref(activePane) == __props.paneId, 'disabled text-muted':_unref(can) != 0 }]),\n                      onClick: _cache[0] || (_cache[0] = $event => (_unref(upgrade)({ id:__props.itemId, count:1 })))\n                    }, [\n                      _createVNode(_component_font_awesome_icon, { icon: \"fas fa-fw fa-arrow-alt-circle-up\" })\n                    ], 2))\n                  : _createCommentVNode(\"\", true),\n                (!_unref(upgradable))\n                  ? (_openBlock(), _createElementBlock(\"button\", {\n                      key: 1,\n                      class: _normalizeClass([\"btn small disabled\", { 'active':_unref(activePane) == __props.paneId }]),\n                      style: {\"width\":\"35px\"}\n                    }, null, 2))\n                  : _createCommentVNode(\"\", true)\n              ]),\n              key: \"0\"\n            }\n          : undefined\n      ]), 1032, [\"name\", \"icon\", \"paneId\"]))\n    : _createCommentVNode(\"\", true)\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
-      "start": 1721307757935,
-      "end": 1721307757935,
+      "start": 1789891027580,
+      "end": 1789891027581,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1721307757936,
-      "end": 1721307757936,
+      "start": 1789891027581,
+      "end": 1789891027581,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1721307757936,
-      "end": 1721307757936,
+      "start": 1789891027581,
+      "end": 1789891027581,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1721307757936,
-      "end": 1721307757936,
+      "start": 1789891027581,
+      "end": 1789891027581,
       "order": "normal"
     }
   ]

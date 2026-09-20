@@ -4,63 +4,63 @@
     {
       "name": "vite:load-fallback",
       "result": "<script setup>\r\n\r\n    const props = defineProps([ 'id', 'name', 'icon', 'itemId' ])\r\n    \r\n    import { useGameStore } from '~/store/game.js'\r\n    \r\n    const store = useGameStore()\r\n    \r\n    const storegable = computed(() => { return store.isStoregable(props.itemId) })\r\n    const storageUnlocked = computed(() => { return store.getItemCount('missionStorage') >= 1 })\r\n    \r\n</script>\r\n\r\n<template>\r\n    <page-pane :id=\"id\" :name=\"name\" :icon=\"icon\">\r\n        \r\n        <template v-slot:titleBar>\r\n            <div class=\"col-auto\">\r\n                <div class=\"row g-2 align-items-center justify-content-end\">\r\n                    <div class=\"col-auto\">\r\n                        <div class=\"card\">\r\n                            <div class=\"card-body small text-end flex-nowrap text-end p-2 border-0\">\r\n                                <item-count :itemId=\"itemId\" />\r\n                                <small v-if=\"storageUnlocked && storegable\" class=\"text-normal ms-1\">/<item-storage :itemId=\"itemId\" /></small>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"col-auto\">\r\n                        <div class=\"card card-body small text-end p-2 border-0\">\r\n                            <item-prod :itemId=\"itemId\" />\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </template>\r\n        \r\n        <slot />\r\n        \r\n    </page-pane>\r\n</template>\r\n",
-      "start": 1721307757880,
-      "end": 1721307758065,
+      "start": 1789891027547,
+      "end": 1789891027663,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1721307758065,
-      "end": 1721307758065,
+      "start": 1789891027663,
+      "end": 1789891027663,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1721307758065,
-      "end": 1721307758065,
+      "start": 1789891027663,
+      "end": 1789891027663,
       "order": "pre"
     },
     {
       "name": "unplugin-vue-i18n",
-      "start": 1721307758065,
-      "end": 1721307758065,
+      "start": 1789891027663,
+      "end": 1789891027663,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1721307758065,
-      "end": 1721307758065,
+      "start": 1789891027663,
+      "end": 1789891027663,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1721307758065,
-      "end": 1721307758065,
+      "start": 1789891027663,
+      "end": 1789891027663,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1721307758065,
-      "end": 1721307758065,
+      "start": 1789891027663,
+      "end": 1789891027663,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1721307758065,
-      "end": 1721307758065,
+      "start": 1789891027663,
+      "end": 1789891027663,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1721307758065,
-      "end": 1721307758065,
+      "start": 1789891027663,
+      "end": 1789891027663,
       "order": "normal"
     },
     {
       "name": "vite:vue",
       "result": "import { resolveComponent as _resolveComponent, createVNode as _createVNode, unref as _unref, createTextVNode as _createTextVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, createElementVNode as _createElementVNode, renderSlot as _renderSlot, withCtx as _withCtx, createBlock as _createBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"col-auto\" }\nconst _hoisted_2 = { class: \"row g-2 align-items-center justify-content-end\" }\nconst _hoisted_3 = { class: \"col-auto\" }\nconst _hoisted_4 = { class: \"card\" }\nconst _hoisted_5 = { class: \"card-body small text-end flex-nowrap text-end p-2 border-0\" }\nconst _hoisted_6 = {\n  key: 0,\n  class: \"text-normal ms-1\"\n}\nconst _hoisted_7 = { class: \"col-auto\" }\nconst _hoisted_8 = { class: \"card card-body small text-end p-2 border-0\" }\n\nimport { useGameStore } from '~/store/game.js'\r\n    \r\n    \nconst _sfc_main = {\n  __name: 'PagePaneResource',\n  props: [ 'id', 'name', 'icon', 'itemId' ],\n  setup(__props) {\n\r\n\r\n    const props = __props\r\n    \r\n    const store = useGameStore()\r\n    \r\n    const storegable = computed(() => { return store.isStoregable(props.itemId) })\r\n    const storageUnlocked = computed(() => { return store.getItemCount('missionStorage') >= 1 })\r\n    \r\n\nreturn (_ctx, _cache) => {\n  const _component_item_count = _resolveComponent(\"item-count\")\n  const _component_item_storage = _resolveComponent(\"item-storage\")\n  const _component_item_prod = _resolveComponent(\"item-prod\")\n  const _component_page_pane = _resolveComponent(\"page-pane\")\n\n  return (_openBlock(), _createBlock(_component_page_pane, {\n    id: __props.id,\n    name: __props.name,\n    icon: __props.icon\n  }, {\n    titleBar: _withCtx(() => [\n      _createElementVNode(\"div\", _hoisted_1, [\n        _createElementVNode(\"div\", _hoisted_2, [\n          _createElementVNode(\"div\", _hoisted_3, [\n            _createElementVNode(\"div\", _hoisted_4, [\n              _createElementVNode(\"div\", _hoisted_5, [\n                _createVNode(_component_item_count, { itemId: __props.itemId }, null, 8, [\"itemId\"]),\n                (_unref(storageUnlocked) && _unref(storegable))\n                  ? (_openBlock(), _createElementBlock(\"small\", _hoisted_6, [\n                      _createTextVNode(\"/\"),\n                      _createVNode(_component_item_storage, { itemId: __props.itemId }, null, 8, [\"itemId\"])\n                    ]))\n                  : _createCommentVNode(\"\", true)\n              ])\n            ])\n          ]),\n          _createElementVNode(\"div\", _hoisted_7, [\n            _createElementVNode(\"div\", _hoisted_8, [\n              _createVNode(_component_item_prod, { itemId: __props.itemId }, null, 8, [\"itemId\"])\n            ])\n          ])\n        ])\n      ])\n    ]),\n    default: _withCtx(() => [\n      _renderSlot(_ctx.$slots, \"default\")\n    ]),\n    _: 3\n  }, 8, [\"id\", \"name\", \"icon\"]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
-      "start": 1721307758065,
-      "end": 1721307758067,
+      "start": 1789891027663,
+      "end": 1789891027665,
       "order": "normal",
       "sourcemaps": {
         "mappings": ""
@@ -68,117 +68,117 @@
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1721307758067,
-      "end": 1721307758067,
+      "start": 1789891027665,
+      "end": 1789891027665,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1721307758067,
-      "end": 1721307758067,
+      "start": 1789891027665,
+      "end": 1789891027665,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1721307758067,
-      "end": 1721307758067,
+      "start": 1789891027665,
+      "end": 1789891027667,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1721307758067,
-      "end": 1721307758067,
+      "start": 1789891027667,
+      "end": 1789891027667,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1721307758067,
-      "end": 1721307758067,
+      "start": 1789891027667,
+      "end": 1789891027667,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1721307758067,
-      "end": 1721307758067,
+      "start": 1789891027667,
+      "end": 1789891027668,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1721307758067,
-      "end": 1721307758067,
+      "start": 1789891027668,
+      "end": 1789891027668,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1721307758067,
-      "end": 1721307758067,
+      "start": 1789891027668,
+      "end": 1789891027668,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1721307758067,
-      "end": 1721307758067,
+      "start": 1789891027668,
+      "end": 1789891027668,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1721307758067,
-      "end": 1721307758067,
+      "start": 1789891027668,
+      "end": 1789891027668,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1721307758067,
-      "end": 1721307758067,
+      "start": 1789891027668,
+      "end": 1789891027668,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1721307758067,
-      "end": 1721307758067,
+      "start": 1789891027668,
+      "end": 1789891027668,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1721307758067,
-      "end": 1721307758067,
+      "start": 1789891027668,
+      "end": 1789891027668,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1721307758067,
-      "end": 1721307758067,
+      "start": 1789891027668,
+      "end": 1789891027668,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1721307758067,
-      "end": 1721307758067,
+      "start": 1789891027669,
+      "end": 1789891027669,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1721307758067,
-      "end": 1721307758067,
+      "start": 1789891027669,
+      "end": 1789891027669,
       "order": "post"
     },
     {
       "name": "nuxtjs:i18n-macros-transform",
-      "start": 1721307758067,
-      "end": 1721307758067,
+      "start": 1789891027669,
+      "end": 1789891027669,
       "order": "post"
     },
     {
       "name": "nuxtjs:i18n-resource",
-      "start": 1721307758067,
-      "end": 1721307758067,
+      "start": 1789891027669,
+      "end": 1789891027669,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { computed } from 'vue';\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, unref as _unref, createTextVNode as _createTextVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, createElementVNode as _createElementVNode, renderSlot as _renderSlot, withCtx as _withCtx, createBlock as _createBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"col-auto\" }\nconst _hoisted_2 = { class: \"row g-2 align-items-center justify-content-end\" }\nconst _hoisted_3 = { class: \"col-auto\" }\nconst _hoisted_4 = { class: \"card\" }\nconst _hoisted_5 = { class: \"card-body small text-end flex-nowrap text-end p-2 border-0\" }\nconst _hoisted_6 = {\n  key: 0,\n  class: \"text-normal ms-1\"\n}\nconst _hoisted_7 = { class: \"col-auto\" }\nconst _hoisted_8 = { class: \"card card-body small text-end p-2 border-0\" }\n\nimport { useGameStore } from '~/store/game.js'\r\n    \r\n    \nconst _sfc_main = {\n  __name: 'PagePaneResource',\n  props: [ 'id', 'name', 'icon', 'itemId' ],\n  setup(__props) {\n\r\n\r\n    const props = __props\r\n    \r\n    const store = useGameStore()\r\n    \r\n    const storegable = computed(() => { return store.isStoregable(props.itemId) })\r\n    const storageUnlocked = computed(() => { return store.getItemCount('missionStorage') >= 1 })\r\n    \r\n\nreturn (_ctx, _cache) => {\n  const _component_item_count = _resolveComponent(\"item-count\")\n  const _component_item_storage = _resolveComponent(\"item-storage\")\n  const _component_item_prod = _resolveComponent(\"item-prod\")\n  const _component_page_pane = _resolveComponent(\"page-pane\")\n\n  return (_openBlock(), _createBlock(_component_page_pane, {\n    id: __props.id,\n    name: __props.name,\n    icon: __props.icon\n  }, {\n    titleBar: _withCtx(() => [\n      _createElementVNode(\"div\", _hoisted_1, [\n        _createElementVNode(\"div\", _hoisted_2, [\n          _createElementVNode(\"div\", _hoisted_3, [\n            _createElementVNode(\"div\", _hoisted_4, [\n              _createElementVNode(\"div\", _hoisted_5, [\n                _createVNode(_component_item_count, { itemId: __props.itemId }, null, 8, [\"itemId\"]),\n                (_unref(storageUnlocked) && _unref(storegable))\n                  ? (_openBlock(), _createElementBlock(\"small\", _hoisted_6, [\n                      _createTextVNode(\"/\"),\n                      _createVNode(_component_item_storage, { itemId: __props.itemId }, null, 8, [\"itemId\"])\n                    ]))\n                  : _createCommentVNode(\"\", true)\n              ])\n            ])\n          ]),\n          _createElementVNode(\"div\", _hoisted_7, [\n            _createElementVNode(\"div\", _hoisted_8, [\n              _createVNode(_component_item_prod, { itemId: __props.itemId }, null, 8, [\"itemId\"])\n            ])\n          ])\n        ])\n      ])\n    ]),\n    default: _withCtx(() => [\n      _renderSlot(_ctx.$slots, \"default\")\n    ]),\n    _: 3\n  }, 8, [\"id\", \"name\", \"icon\"]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
-      "start": 1721307758067,
-      "end": 1721307758068,
+      "start": 1789891027669,
+      "end": 1789891027670,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -191,39 +191,39 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1721307758068,
-      "end": 1721307758068,
+      "start": 1789891027670,
+      "end": 1789891027670,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1721307758068,
-      "end": 1721307758068,
+      "start": 1789891027670,
+      "end": 1789891027670,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"C:/dev/ngsc/nuxt3/components/ItemCount.vue\";\nimport { default as __nuxt_component_1 } from \"C:/dev/ngsc/nuxt3/components/ItemStorage.vue\";\nimport { default as __nuxt_component_2 } from \"C:/dev/ngsc/nuxt3/components/ItemProd.vue\";\nimport { default as __nuxt_component_3 } from \"C:/dev/ngsc/nuxt3/components/PagePane.vue\";\nimport { computed } from 'vue';\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, unref as _unref, createTextVNode as _createTextVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, createElementVNode as _createElementVNode, renderSlot as _renderSlot, withCtx as _withCtx, createBlock as _createBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"col-auto\" }\nconst _hoisted_2 = { class: \"row g-2 align-items-center justify-content-end\" }\nconst _hoisted_3 = { class: \"col-auto\" }\nconst _hoisted_4 = { class: \"card\" }\nconst _hoisted_5 = { class: \"card-body small text-end flex-nowrap text-end p-2 border-0\" }\nconst _hoisted_6 = {\n  key: 0,\n  class: \"text-normal ms-1\"\n}\nconst _hoisted_7 = { class: \"col-auto\" }\nconst _hoisted_8 = { class: \"card card-body small text-end p-2 border-0\" }\n\nimport { useGameStore } from '~/store/game.js'\r\n    \r\n    \nconst _sfc_main = {\n  __name: 'PagePaneResource',\n  props: [ 'id', 'name', 'icon', 'itemId' ],\n  setup(__props) {\n\r\n\r\n    const props = __props\r\n    \r\n    const store = useGameStore()\r\n    \r\n    const storegable = computed(() => { return store.isStoregable(props.itemId) })\r\n    const storageUnlocked = computed(() => { return store.getItemCount('missionStorage') >= 1 })\r\n    \r\n\nreturn (_ctx, _cache) => {\n  const _component_item_count = __nuxt_component_0\n  const _component_item_storage = __nuxt_component_1\n  const _component_item_prod = __nuxt_component_2\n  const _component_page_pane = __nuxt_component_3\n\n  return (_openBlock(), _createBlock(_component_page_pane, {\n    id: __props.id,\n    name: __props.name,\n    icon: __props.icon\n  }, {\n    titleBar: _withCtx(() => [\n      _createElementVNode(\"div\", _hoisted_1, [\n        _createElementVNode(\"div\", _hoisted_2, [\n          _createElementVNode(\"div\", _hoisted_3, [\n            _createElementVNode(\"div\", _hoisted_4, [\n              _createElementVNode(\"div\", _hoisted_5, [\n                _createVNode(_component_item_count, { itemId: __props.itemId }, null, 8, [\"itemId\"]),\n                (_unref(storageUnlocked) && _unref(storegable))\n                  ? (_openBlock(), _createElementBlock(\"small\", _hoisted_6, [\n                      _createTextVNode(\"/\"),\n                      _createVNode(_component_item_storage, { itemId: __props.itemId }, null, 8, [\"itemId\"])\n                    ]))\n                  : _createCommentVNode(\"\", true)\n              ])\n            ])\n          ]),\n          _createElementVNode(\"div\", _hoisted_7, [\n            _createElementVNode(\"div\", _hoisted_8, [\n              _createVNode(_component_item_prod, { itemId: __props.itemId }, null, 8, [\"itemId\"])\n            ])\n          ])\n        ])\n      ])\n    ]),\n    default: _withCtx(() => [\n      _renderSlot(_ctx.$slots, \"default\")\n    ]),\n    _: 3\n  }, 8, [\"id\", \"name\", \"icon\"]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
-      "start": 1721307758068,
-      "end": 1721307758068,
+      "start": 1789891027670,
+      "end": 1789891027670,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1721307758068,
-      "end": 1721307758068,
+      "start": 1789891027671,
+      "end": 1789891027671,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1721307758068,
-      "end": 1721307758068,
+      "start": 1789891027671,
+      "end": 1789891027671,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1721307758068,
-      "end": 1721307758068,
+      "start": 1789891027671,
+      "end": 1789891027671,
       "order": "normal"
     }
   ]

@@ -4,63 +4,63 @@
     {
       "name": "vite:load-fallback",
       "result": "<script setup>\r\n\r\n    const props = defineProps([ 'input' ])\r\n    \r\n    import { useGameStore } from '~/store/game.js'\r\n    \r\n    const store = useGameStore()\r\n    \r\n    const prod = computed(() => { return store.getItemProd(props.input.id) })\r\n\r\n</script>\r\n\r\n<template>\r\n    <div class=\"col-auto d-flex align-items-center justify-content-end flex-wrap\" :title=\"$t(input.id)\">\r\n        <img class=\"me-1\" :src=\"'/icons/' + input.id + '.png'\" width=\"14\" height=\"14\" :alt=\"$t(input.id)\" />\r\n        <small :class=\"{ 'text-warning':input.count <= prod, 'text-danger':input.count > prod }\">-<format-number :value=\"input.count\" /><small class=\"opacity-50\"> /s</small></small>\r\n        <span v-if=\"input.count > prod\" class=\"ms-1 text-danger\"><font-awesome-icon icon=\"fa-fw fa-exclamation-triangle\" /></span>\r\n    </div>\r\n</template>\r\n",
-      "start": 1721307758217,
-      "end": 1721307758326,
+      "start": 1789891027848,
+      "end": 1789891027948,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1721307758326,
-      "end": 1721307758326,
+      "start": 1789891027948,
+      "end": 1789891027948,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1721307758326,
-      "end": 1721307758326,
+      "start": 1789891027948,
+      "end": 1789891027948,
       "order": "pre"
     },
     {
       "name": "unplugin-vue-i18n",
-      "start": 1721307758326,
-      "end": 1721307758326,
+      "start": 1789891027948,
+      "end": 1789891027948,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1721307758326,
-      "end": 1721307758326,
+      "start": 1789891027948,
+      "end": 1789891027948,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1721307758326,
-      "end": 1721307758326,
+      "start": 1789891027948,
+      "end": 1789891027948,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1721307758326,
-      "end": 1721307758326,
+      "start": 1789891027948,
+      "end": 1789891027948,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1721307758326,
-      "end": 1721307758326,
+      "start": 1789891027948,
+      "end": 1789891027948,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1721307758326,
-      "end": 1721307758326,
+      "start": 1789891027948,
+      "end": 1789891027948,
       "order": "normal"
     },
     {
       "name": "vite:vue",
       "result": "import { createElementVNode as _createElementVNode, unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, createTextVNode as _createTextVNode, normalizeClass as _normalizeClass, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode } from \"vue\"\n\nconst _hoisted_1 = [\"title\"]\nconst _hoisted_2 = [\"src\", \"alt\"]\nconst _hoisted_3 = /*#__PURE__*/_createElementVNode(\"small\", { class: \"opacity-50\" }, \" /s\", -1)\nconst _hoisted_4 = {\n  key: 0,\n  class: \"ms-1 text-danger\"\n}\n\nimport { useGameStore } from '~/store/game.js'\r\n    \r\n    \nconst _sfc_main = {\n  __name: 'LineInput',\n  props: [ 'input' ],\n  setup(__props) {\n\r\n\r\n    const props = __props\r\n    \r\n    const store = useGameStore()\r\n    \r\n    const prod = computed(() => { return store.getItemProd(props.input.id) })\r\n\r\n\nreturn (_ctx, _cache) => {\n  const _component_format_number = _resolveComponent(\"format-number\")\n  const _component_font_awesome_icon = _resolveComponent(\"font-awesome-icon\")\n\n  return (_openBlock(), _createElementBlock(\"div\", {\n    class: \"col-auto d-flex align-items-center justify-content-end flex-wrap\",\n    title: _ctx.$t(__props.input.id)\n  }, [\n    _createElementVNode(\"img\", {\n      class: \"me-1\",\n      src: '/icons/' + __props.input.id + '.png',\n      width: \"14\",\n      height: \"14\",\n      alt: _ctx.$t(__props.input.id)\n    }, null, 8, _hoisted_2),\n    _createElementVNode(\"small\", {\n      class: _normalizeClass({ 'text-warning':__props.input.count <= _unref(prod), 'text-danger':__props.input.count > _unref(prod) })\n    }, [\n      _createTextVNode(\"-\"),\n      _createVNode(_component_format_number, {\n        value: __props.input.count\n      }, null, 8, [\"value\"]),\n      _hoisted_3\n    ], 2),\n    (__props.input.count > _unref(prod))\n      ? (_openBlock(), _createElementBlock(\"span\", _hoisted_4, [\n          _createVNode(_component_font_awesome_icon, { icon: \"fa-fw fa-exclamation-triangle\" })\n        ]))\n      : _createCommentVNode(\"\", true)\n  ], 8, _hoisted_1))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
-      "start": 1721307758326,
-      "end": 1721307758328,
+      "start": 1789891027948,
+      "end": 1789891027949,
       "order": "normal",
       "sourcemaps": {
         "mappings": ""
@@ -68,117 +68,117 @@
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1721307758328,
-      "end": 1721307758328,
+      "start": 1789891027949,
+      "end": 1789891027949,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1721307758328,
-      "end": 1721307758328,
+      "start": 1789891027949,
+      "end": 1789891027949,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1721307758328,
-      "end": 1721307758328,
+      "start": 1789891027949,
+      "end": 1789891027949,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1721307758328,
-      "end": 1721307758328,
+      "start": 1789891027949,
+      "end": 1789891027949,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1721307758328,
-      "end": 1721307758328,
+      "start": 1789891027949,
+      "end": 1789891027949,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1721307758328,
-      "end": 1721307758328,
+      "start": 1789891027949,
+      "end": 1789891027949,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1721307758328,
-      "end": 1721307758328,
+      "start": 1789891027949,
+      "end": 1789891027949,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1721307758328,
-      "end": 1721307758328,
+      "start": 1789891027949,
+      "end": 1789891027949,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1721307758328,
-      "end": 1721307758328,
+      "start": 1789891027949,
+      "end": 1789891027949,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1721307758328,
-      "end": 1721307758328,
+      "start": 1789891027949,
+      "end": 1789891027949,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1721307758328,
-      "end": 1721307758328,
+      "start": 1789891027949,
+      "end": 1789891027949,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1721307758328,
-      "end": 1721307758328,
+      "start": 1789891027949,
+      "end": 1789891027949,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1721307758328,
-      "end": 1721307758328,
+      "start": 1789891027949,
+      "end": 1789891027949,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1721307758328,
-      "end": 1721307758328,
+      "start": 1789891027949,
+      "end": 1789891027949,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1721307758328,
-      "end": 1721307758328,
+      "start": 1789891027949,
+      "end": 1789891027949,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1721307758328,
-      "end": 1721307758328,
+      "start": 1789891027949,
+      "end": 1789891027949,
       "order": "post"
     },
     {
       "name": "nuxtjs:i18n-macros-transform",
-      "start": 1721307758328,
-      "end": 1721307758328,
+      "start": 1789891027949,
+      "end": 1789891027949,
       "order": "post"
     },
     {
       "name": "nuxtjs:i18n-resource",
-      "start": 1721307758328,
-      "end": 1721307758328,
+      "start": 1789891027949,
+      "end": 1789891027949,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { computed } from 'vue';\nimport { createElementVNode as _createElementVNode, unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, createTextVNode as _createTextVNode, normalizeClass as _normalizeClass, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode } from \"vue\"\n\nconst _hoisted_1 = [\"title\"]\nconst _hoisted_2 = [\"src\", \"alt\"]\nconst _hoisted_3 = /*#__PURE__*/_createElementVNode(\"small\", { class: \"opacity-50\" }, \" /s\", -1)\nconst _hoisted_4 = {\n  key: 0,\n  class: \"ms-1 text-danger\"\n}\n\nimport { useGameStore } from '~/store/game.js'\r\n    \r\n    \nconst _sfc_main = {\n  __name: 'LineInput',\n  props: [ 'input' ],\n  setup(__props) {\n\r\n\r\n    const props = __props\r\n    \r\n    const store = useGameStore()\r\n    \r\n    const prod = computed(() => { return store.getItemProd(props.input.id) })\r\n\r\n\nreturn (_ctx, _cache) => {\n  const _component_format_number = _resolveComponent(\"format-number\")\n  const _component_font_awesome_icon = _resolveComponent(\"font-awesome-icon\")\n\n  return (_openBlock(), _createElementBlock(\"div\", {\n    class: \"col-auto d-flex align-items-center justify-content-end flex-wrap\",\n    title: _ctx.$t(__props.input.id)\n  }, [\n    _createElementVNode(\"img\", {\n      class: \"me-1\",\n      src: '/icons/' + __props.input.id + '.png',\n      width: \"14\",\n      height: \"14\",\n      alt: _ctx.$t(__props.input.id)\n    }, null, 8, _hoisted_2),\n    _createElementVNode(\"small\", {\n      class: _normalizeClass({ 'text-warning':__props.input.count <= _unref(prod), 'text-danger':__props.input.count > _unref(prod) })\n    }, [\n      _createTextVNode(\"-\"),\n      _createVNode(_component_format_number, {\n        value: __props.input.count\n      }, null, 8, [\"value\"]),\n      _hoisted_3\n    ], 2),\n    (__props.input.count > _unref(prod))\n      ? (_openBlock(), _createElementBlock(\"span\", _hoisted_4, [\n          _createVNode(_component_font_awesome_icon, { icon: \"fa-fw fa-exclamation-triangle\" })\n        ]))\n      : _createCommentVNode(\"\", true)\n  ], 8, _hoisted_1))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
-      "start": 1721307758328,
-      "end": 1721307758329,
+      "start": 1789891027949,
+      "end": 1789891027950,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -191,39 +191,39 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1721307758329,
-      "end": 1721307758329,
+      "start": 1789891027950,
+      "end": 1789891027950,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1721307758329,
-      "end": 1721307758329,
+      "start": 1789891027950,
+      "end": 1789891027950,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"C:/dev/ngsc/nuxt3/components/FormatNumber.vue\";\nimport { computed } from 'vue';\nimport { createElementVNode as _createElementVNode, unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, createTextVNode as _createTextVNode, normalizeClass as _normalizeClass, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode } from \"vue\"\n\nconst _hoisted_1 = [\"title\"]\nconst _hoisted_2 = [\"src\", \"alt\"]\nconst _hoisted_3 = /*#__PURE__*/_createElementVNode(\"small\", { class: \"opacity-50\" }, \" /s\", -1)\nconst _hoisted_4 = {\n  key: 0,\n  class: \"ms-1 text-danger\"\n}\n\nimport { useGameStore } from '~/store/game.js'\r\n    \r\n    \nconst _sfc_main = {\n  __name: 'LineInput',\n  props: [ 'input' ],\n  setup(__props) {\n\r\n\r\n    const props = __props\r\n    \r\n    const store = useGameStore()\r\n    \r\n    const prod = computed(() => { return store.getItemProd(props.input.id) })\r\n\r\n\nreturn (_ctx, _cache) => {\n  const _component_format_number = __nuxt_component_0\n  const _component_font_awesome_icon = _resolveComponent(\"font-awesome-icon\")\n\n  return (_openBlock(), _createElementBlock(\"div\", {\n    class: \"col-auto d-flex align-items-center justify-content-end flex-wrap\",\n    title: _ctx.$t(__props.input.id)\n  }, [\n    _createElementVNode(\"img\", {\n      class: \"me-1\",\n      src: '/icons/' + __props.input.id + '.png',\n      width: \"14\",\n      height: \"14\",\n      alt: _ctx.$t(__props.input.id)\n    }, null, 8, _hoisted_2),\n    _createElementVNode(\"small\", {\n      class: _normalizeClass({ 'text-warning':__props.input.count <= _unref(prod), 'text-danger':__props.input.count > _unref(prod) })\n    }, [\n      _createTextVNode(\"-\"),\n      _createVNode(_component_format_number, {\n        value: __props.input.count\n      }, null, 8, [\"value\"]),\n      _hoisted_3\n    ], 2),\n    (__props.input.count > _unref(prod))\n      ? (_openBlock(), _createElementBlock(\"span\", _hoisted_4, [\n          _createVNode(_component_font_awesome_icon, { icon: \"fa-fw fa-exclamation-triangle\" })\n        ]))\n      : _createCommentVNode(\"\", true)\n  ], 8, _hoisted_1))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
-      "start": 1721307758329,
-      "end": 1721307758329,
+      "start": 1789891027950,
+      "end": 1789891027950,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1721307758329,
-      "end": 1721307758329,
+      "start": 1789891027950,
+      "end": 1789891027950,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1721307758329,
-      "end": 1721307758329,
+      "start": 1789891027950,
+      "end": 1789891027950,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1721307758329,
-      "end": 1721307758329,
+      "start": 1789891027950,
+      "end": 1789891027950,
       "order": "normal"
     }
   ]

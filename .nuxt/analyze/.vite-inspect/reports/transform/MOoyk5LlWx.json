@@ -4,99 +4,99 @@
     {
       "name": "vite:load-fallback",
       "result": "import { useNuxtApp } from \"../nuxt.js\";\nimport { useRouter } from \"./router.js\";\nexport const preloadComponents = async (components) => {\n  if (import.meta.server) {\n    return;\n  }\n  const nuxtApp = useNuxtApp();\n  components = Array.isArray(components) ? components : [components];\n  await Promise.all(components.map((name) => _loadAsyncComponent(nuxtApp.vueApp._context.components[name])));\n};\nexport const prefetchComponents = (components) => {\n  return preloadComponents(components);\n};\nfunction _loadAsyncComponent(component) {\n  if (component?.__asyncLoader && !component.__asyncResolved) {\n    return component.__asyncLoader();\n  }\n}\nexport async function preloadRouteComponents(to, router = useRouter()) {\n  if (import.meta.server) {\n    return;\n  }\n  const { path, matched } = router.resolve(to);\n  if (!matched.length) {\n    return;\n  }\n  if (!router._routePreloaded) {\n    router._routePreloaded = /* @__PURE__ */ new Set();\n  }\n  if (router._routePreloaded.has(path)) {\n    return;\n  }\n  const promises = router._preloadPromises = router._preloadPromises || [];\n  if (promises.length > 4) {\n    return Promise.all(promises).then(() => preloadRouteComponents(to, router));\n  }\n  router._routePreloaded.add(path);\n  const components = matched.map((component) => component.components?.default).filter((component) => typeof component === \"function\");\n  for (const component of components) {\n    const promise = Promise.resolve(component()).catch(() => {\n    }).finally(() => promises.splice(promises.indexOf(promise)));\n    promises.push(promise);\n  }\n  await Promise.all(promises);\n}\n",
-      "start": 1721307757102,
-      "end": 1721307757307,
+      "start": 1789891026917,
+      "end": 1789891027146,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1721307757307,
-      "end": 1721307757307,
+      "start": 1789891027146,
+      "end": 1789891027146,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1721307757308,
-      "end": 1721307757308,
+      "start": 1789891027146,
+      "end": 1789891027146,
       "order": "pre"
     },
     {
       "name": "unplugin-vue-i18n",
-      "start": 1721307757308,
-      "end": 1721307757308,
+      "start": 1789891027146,
+      "end": 1789891027146,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1721307757308,
-      "end": 1721307757308,
+      "start": 1789891027146,
+      "end": 1789891027146,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1721307757308,
-      "end": 1721307757308,
+      "start": 1789891027146,
+      "end": 1789891027146,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1721307757308,
-      "end": 1721307757308,
+      "start": 1789891027146,
+      "end": 1789891027146,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1721307757308,
-      "end": 1721307757308,
+      "start": 1789891027146,
+      "end": 1789891027146,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1721307757308,
-      "end": 1721307757308,
+      "start": 1789891027146,
+      "end": 1789891027146,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1721307757308,
-      "end": 1721307757308,
+      "start": 1789891027146,
+      "end": 1789891027146,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1721307757308,
-      "end": 1721307757308,
+      "start": 1789891027146,
+      "end": 1789891027146,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1721307757308,
-      "end": 1721307757308,
+      "start": 1789891027146,
+      "end": 1789891027146,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1721307757308,
-      "end": 1721307757308,
+      "start": 1789891027146,
+      "end": 1789891027146,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1721307757308,
-      "end": 1721307757308,
+      "start": 1789891027146,
+      "end": 1789891027146,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1721307757308,
-      "end": 1721307757308,
+      "start": 1789891027146,
+      "end": 1789891027147,
       "order": "normal"
     },
     {
       "name": "replace",
       "result": "import { useNuxtApp } from \"../nuxt.js\";\nimport { useRouter } from \"./router.js\";\nexport const preloadComponents = async (components) => {\n  if (false) {\n    return;\n  }\n  const nuxtApp = useNuxtApp();\n  components = Array.isArray(components) ? components : [components];\n  await Promise.all(components.map((name) => _loadAsyncComponent(nuxtApp.vueApp._context.components[name])));\n};\nexport const prefetchComponents = (components) => {\n  return preloadComponents(components);\n};\nfunction _loadAsyncComponent(component) {\n  if (component?.__asyncLoader && !component.__asyncResolved) {\n    return component.__asyncLoader();\n  }\n}\nexport async function preloadRouteComponents(to, router = useRouter()) {\n  if (false) {\n    return;\n  }\n  const { path, matched } = router.resolve(to);\n  if (!matched.length) {\n    return;\n  }\n  if (!router._routePreloaded) {\n    router._routePreloaded = /* @__PURE__ */ new Set();\n  }\n  if (router._routePreloaded.has(path)) {\n    return;\n  }\n  const promises = router._preloadPromises = router._preloadPromises || [];\n  if (promises.length > 4) {\n    return Promise.all(promises).then(() => preloadRouteComponents(to, router));\n  }\n  router._routePreloaded.add(path);\n  const components = matched.map((component) => component.components?.default).filter((component) => typeof component === \"function\");\n  for (const component of components) {\n    const promise = Promise.resolve(component()).catch(() => {\n    }).finally(() => promises.splice(promises.indexOf(promise)));\n    promises.push(promise);\n  }\n  await Promise.all(promises);\n}\n",
-      "start": 1721307757308,
-      "end": 1721307757309,
+      "start": 1789891027147,
+      "end": 1789891027147,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -109,116 +109,116 @@
     },
     {
       "name": "ssr-styles",
-      "start": 1721307757309,
-      "end": 1721307757309,
+      "start": 1789891027147,
+      "end": 1789891027147,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1721307757309,
-      "end": 1721307757309,
+      "start": 1789891027147,
+      "end": 1789891027147,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1721307757309,
-      "end": 1721307757309,
+      "start": 1789891027147,
+      "end": 1789891027147,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1721307757309,
-      "end": 1721307757309,
+      "start": 1789891027147,
+      "end": 1789891027147,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1721307757309,
-      "end": 1721307757309,
+      "start": 1789891027147,
+      "end": 1789891027147,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1721307757309,
-      "end": 1721307757309,
+      "start": 1789891027147,
+      "end": 1789891027147,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1721307757309,
-      "end": 1721307757310,
+      "start": 1789891027147,
+      "end": 1789891027147,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1721307757313,
-      "end": 1721307757313,
+      "start": 1789891027147,
+      "end": 1789891027147,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1721307757314,
-      "end": 1721307757314,
+      "start": 1789891027147,
+      "end": 1789891027147,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1721307757314,
-      "end": 1721307757314,
+      "start": 1789891027147,
+      "end": 1789891027147,
       "order": "post"
     },
     {
       "name": "nuxtjs:i18n-macros-transform",
-      "start": 1721307757315,
-      "end": 1721307757315,
+      "start": 1789891027147,
+      "end": 1789891027147,
       "order": "post"
     },
     {
       "name": "nuxtjs:i18n-resource",
-      "start": 1721307757315,
-      "end": 1721307757315,
+      "start": 1789891027147,
+      "end": 1789891027147,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1721307757315,
-      "end": 1721307757315,
+      "start": 1789891027147,
+      "end": 1789891027147,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1721307757315,
-      "end": 1721307757315,
+      "start": 1789891027147,
+      "end": 1789891027147,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1721307757315,
-      "end": 1721307757315,
+      "start": 1789891027147,
+      "end": 1789891027147,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1721307757316,
-      "end": 1721307757316,
+      "start": 1789891027147,
+      "end": 1789891027147,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1721307757317,
-      "end": 1721307757317,
+      "start": 1789891027147,
+      "end": 1789891027147,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1721307757317,
-      "end": 1721307757317,
+      "start": 1789891027147,
+      "end": 1789891027147,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1721307757317,
-      "end": 1721307757317,
+      "start": 1789891027147,
+      "end": 1789891027147,
       "order": "normal"
     }
   ]

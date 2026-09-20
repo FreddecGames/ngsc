@@ -4,63 +4,63 @@
     {
       "name": "vite:load-fallback",
       "result": "<script setup>\r\n\r\n    const props = defineProps([ 'id', 'name', 'icon', 'faction', 'descs1', 'descs2' ])\r\n\r\n    import { useGameStore } from '~/store/game.js'\r\n    \r\n    const store = useGameStore()\r\n\r\n    const stars = computed(() => { return store.getStarCount(props.faction) })\r\n    const conquered = computed(() => { return store.getConqueredStarCount(props.faction) })\r\n    const statues = computed(() => { return store.getStatueStarCount(props.faction) })\r\n\r\n</script>\r\n\r\n<template>\r\n    <page-pane :id=\"id\" :name=\"name\" :icon=\"icon\">\r\n        \r\n        <template v-slot:titleBar>\r\n        \r\n            <div class=\"col-auto text-end\">\r\n                <div class=\"card\">\r\n                    <div class=\"card-body small text-end p-2 border-0\">\r\n                        <img class=\"me-2\" src=\"/icons/conquest.png\" width=\"14\" height=\"14\" :alt=\"$t('statue')\" />\r\n                        <span class=\"text-light\">{{ conquered }}</span>\r\n                        <small class=\"text-normal ms-1\">/{{ stars }}</small>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            \r\n            <div class=\"col-auto text-end\">\r\n                <div class=\"card\">\r\n                    <div class=\"card-body small text-end p-2 border-0\">\r\n                        <img class=\"me-2\" src=\"/icons/statue.png\" width=\"14\" height=\"14\" :alt=\"$t('statue')\" />\r\n                        <span class=\"text-light\">{{ statues }}</span>\r\n                        <small class=\"text-normal ms-1\">/{{ stars }}</small>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n        </template>\r\n        \r\n        <card id=\"carnelianDescCard\" name=\"description\">\r\n            <template v-slot:col-1>\r\n                <block-desc :descs=\"descs1\" />\r\n            </template>\r\n            <template v-slot:col-2>\r\n                <block-desc :descs=\"descs2\" />\r\n            </template>\r\n        </card>\r\n        \r\n        <slot />\r\n        \r\n    </page-pane>\r\n</template>\r\n",
-      "start": 1721307757968,
-      "end": 1721307758148,
+      "start": 1789891027613,
+      "end": 1789891027785,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1721307758148,
-      "end": 1721307758148,
+      "start": 1789891027785,
+      "end": 1789891027785,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1721307758148,
-      "end": 1721307758148,
+      "start": 1789891027785,
+      "end": 1789891027785,
       "order": "pre"
     },
     {
       "name": "unplugin-vue-i18n",
-      "start": 1721307758148,
-      "end": 1721307758148,
+      "start": 1789891027785,
+      "end": 1789891027785,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1721307758148,
-      "end": 1721307758148,
+      "start": 1789891027785,
+      "end": 1789891027786,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1721307758148,
-      "end": 1721307758148,
+      "start": 1789891027786,
+      "end": 1789891027786,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1721307758148,
-      "end": 1721307758148,
+      "start": 1789891027786,
+      "end": 1789891027786,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1721307758148,
-      "end": 1721307758148,
+      "start": 1789891027786,
+      "end": 1789891027786,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1721307758148,
-      "end": 1721307758148,
+      "start": 1789891027786,
+      "end": 1789891027786,
       "order": "normal"
     },
     {
       "name": "vite:vue",
       "result": "import { createElementVNode as _createElementVNode, unref as _unref, toDisplayString as _toDisplayString, resolveComponent as _resolveComponent, createVNode as _createVNode, withCtx as _withCtx, renderSlot as _renderSlot, openBlock as _openBlock, createBlock as _createBlock } from \"vue\"\nimport _imports_0 from '/icons/conquest.png'\nimport _imports_1 from '/icons/statue.png'\n\n\nconst _hoisted_1 = { class: \"col-auto text-end\" }\nconst _hoisted_2 = { class: \"card\" }\nconst _hoisted_3 = { class: \"card-body small text-end p-2 border-0\" }\nconst _hoisted_4 = [\"alt\"]\nconst _hoisted_5 = { class: \"text-light\" }\nconst _hoisted_6 = { class: \"text-normal ms-1\" }\nconst _hoisted_7 = { class: \"col-auto text-end\" }\nconst _hoisted_8 = { class: \"card\" }\nconst _hoisted_9 = { class: \"card-body small text-end p-2 border-0\" }\nconst _hoisted_10 = [\"alt\"]\nconst _hoisted_11 = { class: \"text-light\" }\nconst _hoisted_12 = { class: \"text-normal ms-1\" }\n\nimport { useGameStore } from '~/store/game.js'\r\n    \r\n    \nconst _sfc_main = {\n  __name: 'PagePaneFaction',\n  props: [ 'id', 'name', 'icon', 'faction', 'descs1', 'descs2' ],\n  setup(__props) {\n\r\n\r\n    const props = __props\r\n\r\n    const store = useGameStore()\r\n\r\n    const stars = computed(() => { return store.getStarCount(props.faction) })\r\n    const conquered = computed(() => { return store.getConqueredStarCount(props.faction) })\r\n    const statues = computed(() => { return store.getStatueStarCount(props.faction) })\r\n\r\n\nreturn (_ctx, _cache) => {\n  const _component_block_desc = _resolveComponent(\"block-desc\")\n  const _component_card = _resolveComponent(\"card\")\n  const _component_page_pane = _resolveComponent(\"page-pane\")\n\n  return (_openBlock(), _createBlock(_component_page_pane, {\n    id: __props.id,\n    name: __props.name,\n    icon: __props.icon\n  }, {\n    titleBar: _withCtx(() => [\n      _createElementVNode(\"div\", _hoisted_1, [\n        _createElementVNode(\"div\", _hoisted_2, [\n          _createElementVNode(\"div\", _hoisted_3, [\n            _createElementVNode(\"img\", {\n              class: \"me-2\",\n              src: _imports_0,\n              width: \"14\",\n              height: \"14\",\n              alt: _ctx.$t('statue')\n            }, null, 8, _hoisted_4),\n            _createElementVNode(\"span\", _hoisted_5, _toDisplayString(_unref(conquered)), 1),\n            _createElementVNode(\"small\", _hoisted_6, \"/\" + _toDisplayString(_unref(stars)), 1)\n          ])\n        ])\n      ]),\n      _createElementVNode(\"div\", _hoisted_7, [\n        _createElementVNode(\"div\", _hoisted_8, [\n          _createElementVNode(\"div\", _hoisted_9, [\n            _createElementVNode(\"img\", {\n              class: \"me-2\",\n              src: _imports_1,\n              width: \"14\",\n              height: \"14\",\n              alt: _ctx.$t('statue')\n            }, null, 8, _hoisted_10),\n            _createElementVNode(\"span\", _hoisted_11, _toDisplayString(_unref(statues)), 1),\n            _createElementVNode(\"small\", _hoisted_12, \"/\" + _toDisplayString(_unref(stars)), 1)\n          ])\n        ])\n      ])\n    ]),\n    default: _withCtx(() => [\n      _createVNode(_component_card, {\n        id: \"carnelianDescCard\",\n        name: \"description\"\n      }, {\n        \"col-1\": _withCtx(() => [\n          _createVNode(_component_block_desc, { descs: __props.descs1 }, null, 8, [\"descs\"])\n        ]),\n        \"col-2\": _withCtx(() => [\n          _createVNode(_component_block_desc, { descs: __props.descs2 }, null, 8, [\"descs\"])\n        ]),\n        _: 1\n      }),\n      _renderSlot(_ctx.$slots, \"default\")\n    ]),\n    _: 3\n  }, 8, [\"id\", \"name\", \"icon\"]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
-      "start": 1721307758148,
-      "end": 1721307758150,
+      "start": 1789891027786,
+      "end": 1789891027787,
       "order": "normal",
       "sourcemaps": {
         "mappings": ""
@@ -68,117 +68,117 @@
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1721307758150,
-      "end": 1721307758150,
+      "start": 1789891027787,
+      "end": 1789891027787,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1721307758150,
-      "end": 1721307758150,
+      "start": 1789891027787,
+      "end": 1789891027787,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1721307758150,
-      "end": 1721307758150,
+      "start": 1789891027787,
+      "end": 1789891027787,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1721307758150,
-      "end": 1721307758150,
+      "start": 1789891027787,
+      "end": 1789891027787,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1721307758150,
-      "end": 1721307758151,
+      "start": 1789891027787,
+      "end": 1789891027787,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1721307758151,
-      "end": 1721307758151,
+      "start": 1789891027787,
+      "end": 1789891027788,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1721307758151,
-      "end": 1721307758151,
+      "start": 1789891027788,
+      "end": 1789891027788,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1721307758151,
-      "end": 1721307758151,
+      "start": 1789891027788,
+      "end": 1789891027788,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1721307758151,
-      "end": 1721307758151,
+      "start": 1789891027788,
+      "end": 1789891027788,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1721307758151,
-      "end": 1721307758151,
+      "start": 1789891027788,
+      "end": 1789891027788,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1721307758151,
-      "end": 1721307758151,
+      "start": 1789891027788,
+      "end": 1789891027788,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1721307758151,
-      "end": 1721307758151,
+      "start": 1789891027788,
+      "end": 1789891027788,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1721307758151,
-      "end": 1721307758151,
+      "start": 1789891027788,
+      "end": 1789891027788,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1721307758151,
-      "end": 1721307758151,
+      "start": 1789891027788,
+      "end": 1789891027788,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1721307758151,
-      "end": 1721307758151,
+      "start": 1789891027788,
+      "end": 1789891027788,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1721307758151,
-      "end": 1721307758151,
+      "start": 1789891027788,
+      "end": 1789891027788,
       "order": "post"
     },
     {
       "name": "nuxtjs:i18n-macros-transform",
-      "start": 1721307758151,
-      "end": 1721307758151,
+      "start": 1789891027788,
+      "end": 1789891027788,
       "order": "post"
     },
     {
       "name": "nuxtjs:i18n-resource",
-      "start": 1721307758151,
-      "end": 1721307758151,
+      "start": 1789891027788,
+      "end": 1789891027788,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { computed } from 'vue';\nimport { createElementVNode as _createElementVNode, unref as _unref, toDisplayString as _toDisplayString, resolveComponent as _resolveComponent, createVNode as _createVNode, withCtx as _withCtx, renderSlot as _renderSlot, openBlock as _openBlock, createBlock as _createBlock } from \"vue\"\nimport _imports_0 from '/icons/conquest.png'\nimport _imports_1 from '/icons/statue.png'\n\n\nconst _hoisted_1 = { class: \"col-auto text-end\" }\nconst _hoisted_2 = { class: \"card\" }\nconst _hoisted_3 = { class: \"card-body small text-end p-2 border-0\" }\nconst _hoisted_4 = [\"alt\"]\nconst _hoisted_5 = { class: \"text-light\" }\nconst _hoisted_6 = { class: \"text-normal ms-1\" }\nconst _hoisted_7 = { class: \"col-auto text-end\" }\nconst _hoisted_8 = { class: \"card\" }\nconst _hoisted_9 = { class: \"card-body small text-end p-2 border-0\" }\nconst _hoisted_10 = [\"alt\"]\nconst _hoisted_11 = { class: \"text-light\" }\nconst _hoisted_12 = { class: \"text-normal ms-1\" }\n\nimport { useGameStore } from '~/store/game.js'\r\n    \r\n    \nconst _sfc_main = {\n  __name: 'PagePaneFaction',\n  props: [ 'id', 'name', 'icon', 'faction', 'descs1', 'descs2' ],\n  setup(__props) {\n\r\n\r\n    const props = __props\r\n\r\n    const store = useGameStore()\r\n\r\n    const stars = computed(() => { return store.getStarCount(props.faction) })\r\n    const conquered = computed(() => { return store.getConqueredStarCount(props.faction) })\r\n    const statues = computed(() => { return store.getStatueStarCount(props.faction) })\r\n\r\n\nreturn (_ctx, _cache) => {\n  const _component_block_desc = _resolveComponent(\"block-desc\")\n  const _component_card = _resolveComponent(\"card\")\n  const _component_page_pane = _resolveComponent(\"page-pane\")\n\n  return (_openBlock(), _createBlock(_component_page_pane, {\n    id: __props.id,\n    name: __props.name,\n    icon: __props.icon\n  }, {\n    titleBar: _withCtx(() => [\n      _createElementVNode(\"div\", _hoisted_1, [\n        _createElementVNode(\"div\", _hoisted_2, [\n          _createElementVNode(\"div\", _hoisted_3, [\n            _createElementVNode(\"img\", {\n              class: \"me-2\",\n              src: _imports_0,\n              width: \"14\",\n              height: \"14\",\n              alt: _ctx.$t('statue')\n            }, null, 8, _hoisted_4),\n            _createElementVNode(\"span\", _hoisted_5, _toDisplayString(_unref(conquered)), 1),\n            _createElementVNode(\"small\", _hoisted_6, \"/\" + _toDisplayString(_unref(stars)), 1)\n          ])\n        ])\n      ]),\n      _createElementVNode(\"div\", _hoisted_7, [\n        _createElementVNode(\"div\", _hoisted_8, [\n          _createElementVNode(\"div\", _hoisted_9, [\n            _createElementVNode(\"img\", {\n              class: \"me-2\",\n              src: _imports_1,\n              width: \"14\",\n              height: \"14\",\n              alt: _ctx.$t('statue')\n            }, null, 8, _hoisted_10),\n            _createElementVNode(\"span\", _hoisted_11, _toDisplayString(_unref(statues)), 1),\n            _createElementVNode(\"small\", _hoisted_12, \"/\" + _toDisplayString(_unref(stars)), 1)\n          ])\n        ])\n      ])\n    ]),\n    default: _withCtx(() => [\n      _createVNode(_component_card, {\n        id: \"carnelianDescCard\",\n        name: \"description\"\n      }, {\n        \"col-1\": _withCtx(() => [\n          _createVNode(_component_block_desc, { descs: __props.descs1 }, null, 8, [\"descs\"])\n        ]),\n        \"col-2\": _withCtx(() => [\n          _createVNode(_component_block_desc, { descs: __props.descs2 }, null, 8, [\"descs\"])\n        ]),\n        _: 1\n      }),\n      _renderSlot(_ctx.$slots, \"default\")\n    ]),\n    _: 3\n  }, 8, [\"id\", \"name\", \"icon\"]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
-      "start": 1721307758151,
-      "end": 1721307758152,
+      "start": 1789891027788,
+      "end": 1789891027789,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -191,39 +191,39 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1721307758152,
-      "end": 1721307758152,
+      "start": 1789891027789,
+      "end": 1789891027789,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1721307758152,
-      "end": 1721307758152,
+      "start": 1789891027789,
+      "end": 1789891027789,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"C:/dev/ngsc/nuxt3/components/BlockDesc.vue\";\nimport { default as __nuxt_component_1 } from \"C:/dev/ngsc/nuxt3/components/Card.vue\";\nimport { default as __nuxt_component_2 } from \"C:/dev/ngsc/nuxt3/components/PagePane.vue\";\nimport { computed } from 'vue';\nimport { createElementVNode as _createElementVNode, unref as _unref, toDisplayString as _toDisplayString, resolveComponent as _resolveComponent, createVNode as _createVNode, withCtx as _withCtx, renderSlot as _renderSlot, openBlock as _openBlock, createBlock as _createBlock } from \"vue\"\nimport _imports_0 from '/icons/conquest.png'\nimport _imports_1 from '/icons/statue.png'\n\n\nconst _hoisted_1 = { class: \"col-auto text-end\" }\nconst _hoisted_2 = { class: \"card\" }\nconst _hoisted_3 = { class: \"card-body small text-end p-2 border-0\" }\nconst _hoisted_4 = [\"alt\"]\nconst _hoisted_5 = { class: \"text-light\" }\nconst _hoisted_6 = { class: \"text-normal ms-1\" }\nconst _hoisted_7 = { class: \"col-auto text-end\" }\nconst _hoisted_8 = { class: \"card\" }\nconst _hoisted_9 = { class: \"card-body small text-end p-2 border-0\" }\nconst _hoisted_10 = [\"alt\"]\nconst _hoisted_11 = { class: \"text-light\" }\nconst _hoisted_12 = { class: \"text-normal ms-1\" }\n\nimport { useGameStore } from '~/store/game.js'\r\n    \r\n    \nconst _sfc_main = {\n  __name: 'PagePaneFaction',\n  props: [ 'id', 'name', 'icon', 'faction', 'descs1', 'descs2' ],\n  setup(__props) {\n\r\n\r\n    const props = __props\r\n\r\n    const store = useGameStore()\r\n\r\n    const stars = computed(() => { return store.getStarCount(props.faction) })\r\n    const conquered = computed(() => { return store.getConqueredStarCount(props.faction) })\r\n    const statues = computed(() => { return store.getStatueStarCount(props.faction) })\r\n\r\n\nreturn (_ctx, _cache) => {\n  const _component_block_desc = __nuxt_component_0\n  const _component_card = __nuxt_component_1\n  const _component_page_pane = __nuxt_component_2\n\n  return (_openBlock(), _createBlock(_component_page_pane, {\n    id: __props.id,\n    name: __props.name,\n    icon: __props.icon\n  }, {\n    titleBar: _withCtx(() => [\n      _createElementVNode(\"div\", _hoisted_1, [\n        _createElementVNode(\"div\", _hoisted_2, [\n          _createElementVNode(\"div\", _hoisted_3, [\n            _createElementVNode(\"img\", {\n              class: \"me-2\",\n              src: _imports_0,\n              width: \"14\",\n              height: \"14\",\n              alt: _ctx.$t('statue')\n            }, null, 8, _hoisted_4),\n            _createElementVNode(\"span\", _hoisted_5, _toDisplayString(_unref(conquered)), 1),\n            _createElementVNode(\"small\", _hoisted_6, \"/\" + _toDisplayString(_unref(stars)), 1)\n          ])\n        ])\n      ]),\n      _createElementVNode(\"div\", _hoisted_7, [\n        _createElementVNode(\"div\", _hoisted_8, [\n          _createElementVNode(\"div\", _hoisted_9, [\n            _createElementVNode(\"img\", {\n              class: \"me-2\",\n              src: _imports_1,\n              width: \"14\",\n              height: \"14\",\n              alt: _ctx.$t('statue')\n            }, null, 8, _hoisted_10),\n            _createElementVNode(\"span\", _hoisted_11, _toDisplayString(_unref(statues)), 1),\n            _createElementVNode(\"small\", _hoisted_12, \"/\" + _toDisplayString(_unref(stars)), 1)\n          ])\n        ])\n      ])\n    ]),\n    default: _withCtx(() => [\n      _createVNode(_component_card, {\n        id: \"carnelianDescCard\",\n        name: \"description\"\n      }, {\n        \"col-1\": _withCtx(() => [\n          _createVNode(_component_block_desc, { descs: __props.descs1 }, null, 8, [\"descs\"])\n        ]),\n        \"col-2\": _withCtx(() => [\n          _createVNode(_component_block_desc, { descs: __props.descs2 }, null, 8, [\"descs\"])\n        ]),\n        _: 1\n      }),\n      _renderSlot(_ctx.$slots, \"default\")\n    ]),\n    _: 3\n  }, 8, [\"id\", \"name\", \"icon\"]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
-      "start": 1721307758152,
-      "end": 1721307758152,
+      "start": 1789891027789,
+      "end": 1789891027789,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1721307758152,
-      "end": 1721307758152,
+      "start": 1789891027789,
+      "end": 1789891027789,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1721307758152,
-      "end": 1721307758152,
+      "start": 1789891027789,
+      "end": 1789891027789,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1721307758152,
-      "end": 1721307758153,
+      "start": 1789891027789,
+      "end": 1789891027789,
       "order": "normal"
     }
   ]

@@ -4,63 +4,63 @@
     {
       "name": "vite:load-fallback",
       "result": "<script setup>\r\n    \r\n    import LZString from 'lz-string'\r\n    \r\n    import { storeToRefs } from 'pinia'\r\n    import { useGameStore } from '~/store/game.js'\r\n    \r\n    const store = useGameStore()\r\n    \r\n    const { sidebarOpen, paused } = storeToRefs(store)\r\n    \r\n    const { setSidebarOpen, pause, resume } = store\r\n\r\n    const toggleSidebar = function() {\r\n    \r\n        if (sidebarOpen.value == true) setSidebarOpen(false)\r\n        else setSidebarOpen(true)\r\n    }\r\n\r\n    const save = function() {\r\n    \r\n        let savedData = store.getSavedData\r\n\r\n        let text = JSON.stringify(savedData)\r\n        let compressed = LZString.compressToBase64(text)\r\n        localStorage.setItem('ngsc', compressed)\r\n        \r\n        store.showToast('toastManualSave')\r\n    }\r\n\r\n</script>\r\n\r\n<template>\r\n    <div id=\"bottombar\" class=\"row row-cols-1 g-0 align-items-center\" @mousewheel.prevent>\r\n        <div class=\"p-2\">\r\n            <div class=\"row gx-2 align-items-center flex-nowrap\">\r\n                \r\n                <div class=\"col\">\r\n                    <button class=\"d-sm-none btn btn-primary\" @click=\"toggleSidebar();\">\r\n                        <font-awesome-icon icon=\"fa-fw fa-bars\" fixed-width />\r\n                    </button>\r\n                </div>\r\n                \r\n                <div class=\"col-auto\">\r\n                    <button v-if=\"paused\" class=\"btn btn-danger\" @click=\"resume();\">\r\n                        <font-awesome-icon icon=\"fa-fw fa-play\" fixed-width />\r\n                        <span class=\"d-none d-sm-inline ms-2\">{{ $t('resume') }}</span>\r\n                    </button>\r\n                    <button v-else class=\"btn btn-primary\" @click=\"pause();\">\r\n                        <font-awesome-icon icon=\"fa-fw fa-pause\" fixed-width />\r\n                        <span class=\"d-none d-sm-inline ms-2\">{{ $t('pause') }}</span>\r\n                    </button>\r\n                </div>\r\n                \r\n                <div class=\"col-auto\">\r\n                    <button class=\"btn btn-primary\" @click=\"save();\">\r\n                        <font-awesome-icon icon=\"fa-fw fa-save\" fixed-width />\r\n                        <span class=\"d-none d-sm-inline ms-2\">{{ $t('manual-save') }}</span>\r\n                    </button>\r\n                </div>\r\n                \r\n            </div>\r\n        </div>\r\n    </div>\r\n</template>\r\n\r\n<style>\r\n    #bottombar {\r\n        position: fixed; bottom: 0; right: 0; left: 0; height: 54px; z-index: 1000;\r\n        background-color: #232a35;\r\n        border-top: 1px solid #484f5c;\r\n    }\r\n</style>\r\n",
-      "start": 1721307757343,
-      "end": 1721307757847,
+      "start": 1789891027129,
+      "end": 1789891027305,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1721307757847,
-      "end": 1721307757847,
+      "start": 1789891027305,
+      "end": 1789891027305,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1721307757847,
-      "end": 1721307757847,
+      "start": 1789891027306,
+      "end": 1789891027306,
       "order": "pre"
     },
     {
       "name": "unplugin-vue-i18n",
-      "start": 1721307757847,
-      "end": 1721307757847,
+      "start": 1789891027306,
+      "end": 1789891027306,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1721307757847,
-      "end": 1721307757847,
+      "start": 1789891027306,
+      "end": 1789891027306,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1721307757847,
-      "end": 1721307757847,
+      "start": 1789891027306,
+      "end": 1789891027306,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1721307757847,
-      "end": 1721307757847,
+      "start": 1789891027306,
+      "end": 1789891027306,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1721307757847,
-      "end": 1721307757847,
+      "start": 1789891027306,
+      "end": 1789891027306,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1721307757847,
-      "end": 1721307757847,
+      "start": 1789891027306,
+      "end": 1789891027306,
       "order": "normal"
     },
     {
       "name": "vite:vue",
       "result": "import { resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, unref as _unref, toDisplayString as _toDisplayString, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, withModifiers as _withModifiers } from \"vue\"\n\nconst _hoisted_1 = { class: \"p-2\" }\nconst _hoisted_2 = { class: \"row gx-2 align-items-center flex-nowrap\" }\nconst _hoisted_3 = { class: \"col\" }\nconst _hoisted_4 = { class: \"col-auto\" }\nconst _hoisted_5 = { class: \"d-none d-sm-inline ms-2\" }\nconst _hoisted_6 = { class: \"d-none d-sm-inline ms-2\" }\nconst _hoisted_7 = { class: \"col-auto\" }\nconst _hoisted_8 = { class: \"d-none d-sm-inline ms-2\" }\n\nimport LZString from 'lz-string'\r\n    \r\n    import { storeToRefs } from 'pinia'\r\n    import { useGameStore } from '~/store/game.js'\r\n    \r\n    \nconst _sfc_main = {\n  __name: 'Bottombar',\n  setup(__props) {\n\r\n    \r\n    const store = useGameStore()\r\n    \r\n    const { sidebarOpen, paused } = storeToRefs(store)\r\n    \r\n    const { setSidebarOpen, pause, resume } = store\r\n\r\n    const toggleSidebar = function() {\r\n    \r\n        if (sidebarOpen.value == true) setSidebarOpen(false)\r\n        else setSidebarOpen(true)\r\n    }\r\n\r\n    const save = function() {\r\n    \r\n        let savedData = store.getSavedData\r\n\r\n        let text = JSON.stringify(savedData)\r\n        let compressed = LZString.compressToBase64(text)\r\n        localStorage.setItem('ngsc', compressed)\r\n        \r\n        store.showToast('toastManualSave')\r\n    }\r\n\r\n\nreturn (_ctx, _cache) => {\n  const _component_font_awesome_icon = _resolveComponent(\"font-awesome-icon\")\n\n  return (_openBlock(), _createElementBlock(\"div\", {\n    id: \"bottombar\",\n    class: \"row row-cols-1 g-0 align-items-center\",\n    onMousewheel: _cache[4] || (_cache[4] = _withModifiers(() => {}, [\"prevent\"]))\n  }, [\n    _createElementVNode(\"div\", _hoisted_1, [\n      _createElementVNode(\"div\", _hoisted_2, [\n        _createElementVNode(\"div\", _hoisted_3, [\n          _createElementVNode(\"button\", {\n            class: \"d-sm-none btn btn-primary\",\n            onClick: _cache[0] || (_cache[0] = $event => {toggleSidebar();})\n          }, [\n            _createVNode(_component_font_awesome_icon, {\n              icon: \"fa-fw fa-bars\",\n              \"fixed-width\": \"\"\n            })\n          ])\n        ]),\n        _createElementVNode(\"div\", _hoisted_4, [\n          (_unref(paused))\n            ? (_openBlock(), _createElementBlock(\"button\", {\n                key: 0,\n                class: \"btn btn-danger\",\n                onClick: _cache[1] || (_cache[1] = $event => {_unref(resume)();})\n              }, [\n                _createVNode(_component_font_awesome_icon, {\n                  icon: \"fa-fw fa-play\",\n                  \"fixed-width\": \"\"\n                }),\n                _createElementVNode(\"span\", _hoisted_5, _toDisplayString(_ctx.$t('resume')), 1)\n              ]))\n            : (_openBlock(), _createElementBlock(\"button\", {\n                key: 1,\n                class: \"btn btn-primary\",\n                onClick: _cache[2] || (_cache[2] = $event => {_unref(pause)();})\n              }, [\n                _createVNode(_component_font_awesome_icon, {\n                  icon: \"fa-fw fa-pause\",\n                  \"fixed-width\": \"\"\n                }),\n                _createElementVNode(\"span\", _hoisted_6, _toDisplayString(_ctx.$t('pause')), 1)\n              ]))\n        ]),\n        _createElementVNode(\"div\", _hoisted_7, [\n          _createElementVNode(\"button\", {\n            class: \"btn btn-primary\",\n            onClick: _cache[3] || (_cache[3] = $event => {save();})\n          }, [\n            _createVNode(_component_font_awesome_icon, {\n              icon: \"fa-fw fa-save\",\n              \"fixed-width\": \"\"\n            }),\n            _createElementVNode(\"span\", _hoisted_8, _toDisplayString(_ctx.$t('manual-save')), 1)\n          ])\n        ])\n      ])\n    ])\n  ], 32))\n}\n}\n\n}\n\n\nimport \"C:/dev/ngsc/nuxt3/components/Bottombar.vue?vue&type=style&index=0&lang.css\"\n\nexport default _sfc_main",
-      "start": 1721307757847,
-      "end": 1721307757850,
+      "start": 1789891027306,
+      "end": 1789891027309,
       "order": "normal",
       "sourcemaps": {
         "mappings": ""
@@ -68,152 +68,152 @@
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1721307757850,
-      "end": 1721307757850,
+      "start": 1789891027309,
+      "end": 1789891027309,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1721307757850,
-      "end": 1721307757850,
+      "start": 1789891027309,
+      "end": 1789891027309,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1721307757850,
-      "end": 1721307757850,
+      "start": 1789891027309,
+      "end": 1789891027311,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1721307757850,
-      "end": 1721307757850,
+      "start": 1789891027311,
+      "end": 1789891027312,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1721307757851,
-      "end": 1721307757851,
+      "start": 1789891027312,
+      "end": 1789891027312,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1721307757851,
-      "end": 1721307757851,
+      "start": 1789891027312,
+      "end": 1789891027312,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1721307757851,
-      "end": 1721307757851,
+      "start": 1789891027312,
+      "end": 1789891027312,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1721307757851,
-      "end": 1721307757851,
+      "start": 1789891027312,
+      "end": 1789891027312,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1721307757851,
-      "end": 1721307757851,
+      "start": 1789891027312,
+      "end": 1789891027312,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1721307757851,
-      "end": 1721307757851,
+      "start": 1789891027312,
+      "end": 1789891027312,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1721307757851,
-      "end": 1721307757851,
+      "start": 1789891027313,
+      "end": 1789891027313,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1721307757851,
-      "end": 1721307757851,
+      "start": 1789891027313,
+      "end": 1789891027313,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1721307757851,
-      "end": 1721307757851,
+      "start": 1789891027313,
+      "end": 1789891027313,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1721307757851,
-      "end": 1721307757851,
+      "start": 1789891027313,
+      "end": 1789891027313,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1721307757851,
-      "end": 1721307757851,
+      "start": 1789891027313,
+      "end": 1789891027313,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1721307757851,
-      "end": 1721307757851,
+      "start": 1789891027313,
+      "end": 1789891027313,
       "order": "post"
     },
     {
       "name": "nuxtjs:i18n-macros-transform",
-      "start": 1721307757851,
-      "end": 1721307757851,
+      "start": 1789891027313,
+      "end": 1789891027313,
       "order": "post"
     },
     {
       "name": "nuxtjs:i18n-resource",
-      "start": 1721307757851,
-      "end": 1721307757851,
+      "start": 1789891027313,
+      "end": 1789891027313,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1721307757851,
-      "end": 1721307757852,
+      "start": 1789891027313,
+      "end": 1789891027314,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1721307757852,
-      "end": 1721307757852,
+      "start": 1789891027314,
+      "end": 1789891027314,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1721307757852,
-      "end": 1721307757852,
+      "start": 1789891027314,
+      "end": 1789891027314,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1721307757852,
-      "end": 1721307757852,
+      "start": 1789891027314,
+      "end": 1789891027314,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1721307757852,
-      "end": 1721307757852,
+      "start": 1789891027314,
+      "end": 1789891027314,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1721307757852,
-      "end": 1721307757852,
+      "start": 1789891027314,
+      "end": 1789891027314,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1721307757852,
-      "end": 1721307757852,
+      "start": 1789891027314,
+      "end": 1789891027314,
       "order": "normal"
     }
   ]

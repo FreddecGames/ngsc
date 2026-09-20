@@ -4,99 +4,99 @@
     {
       "name": "vite:load-fallback",
       "result": "import { computed, reactive, toValue } from \"vue\";\nimport { hash } from \"ohash\";\nimport { useRequestFetch } from \"./ssr.js\";\nimport { useAsyncData } from \"./asyncData.js\";\nimport { fetchDefaults } from \"#build/nuxt.config.mjs\";\nexport function useFetch(request, arg1, arg2) {\n  const [opts = {}, autoKey] = typeof arg1 === \"string\" ? [{}, arg1] : [arg1, arg2];\n  const _request = computed(() => {\n    let r = request;\n    if (typeof r === \"function\") {\n      r = r();\n    }\n    return toValue(r);\n  });\n  const _key = opts.key || hash([autoKey, typeof _request.value === \"string\" ? _request.value : \"\", ...generateOptionSegments(opts)]);\n  if (!_key || typeof _key !== \"string\") {\n    throw new TypeError(\"[nuxt] [useFetch] key must be a string: \" + _key);\n  }\n  if (!request) {\n    throw new Error(\"[nuxt] [useFetch] request is missing.\");\n  }\n  const key = _key === autoKey ? \"$f\" + _key : _key;\n  if (!opts.baseURL && typeof _request.value === \"string\" && _request.value.startsWith(\"//\")) {\n    throw new Error('[nuxt] [useFetch] the request URL must not start with \"//\".');\n  }\n  const {\n    server,\n    lazy,\n    default: defaultFn,\n    transform,\n    pick,\n    watch,\n    immediate,\n    getCachedData,\n    deep,\n    ...fetchOptions\n  } = opts;\n  const _fetchOptions = reactive({\n    ...fetchDefaults,\n    ...fetchOptions,\n    cache: typeof opts.cache === \"boolean\" ? void 0 : opts.cache\n  });\n  const _asyncDataOptions = {\n    server,\n    lazy,\n    default: defaultFn,\n    transform,\n    pick,\n    immediate,\n    getCachedData,\n    deep,\n    watch: watch === false ? [] : [_fetchOptions, _request, ...watch || []]\n  };\n  let controller;\n  const asyncData = useAsyncData(key, () => {\n    controller?.abort?.();\n    controller = typeof AbortController !== \"undefined\" ? new AbortController() : {};\n    const timeoutLength = toValue(opts.timeout);\n    if (timeoutLength) {\n      setTimeout(() => controller.abort(), timeoutLength);\n    }\n    let _$fetch = opts.$fetch || globalThis.$fetch;\n    if (import.meta.server && !opts.$fetch) {\n      const isLocalFetch = typeof _request.value === \"string\" && _request.value.startsWith(\"/\") && (!toValue(opts.baseURL) || toValue(opts.baseURL).startsWith(\"/\"));\n      if (isLocalFetch) {\n        _$fetch = useRequestFetch();\n      }\n    }\n    return _$fetch(_request.value, { signal: controller.signal, ..._fetchOptions });\n  }, _asyncDataOptions);\n  return asyncData;\n}\nexport function useLazyFetch(request, arg1, arg2) {\n  const [opts, autoKey] = typeof arg1 === \"string\" ? [{}, arg1] : [arg1, arg2];\n  return useFetch(\n    request,\n    {\n      ...opts,\n      lazy: true\n    },\n    // @ts-expect-error we pass an extra argument with the resolved auto-key to prevent another from being injected\n    autoKey\n  );\n}\nfunction generateOptionSegments(opts) {\n  const segments = [\n    toValue(opts.method)?.toUpperCase() || \"GET\",\n    toValue(opts.baseURL)\n  ];\n  for (const _obj of [opts.params || opts.query]) {\n    const obj = toValue(_obj);\n    if (!obj) {\n      continue;\n    }\n    const unwrapped = {};\n    const iterator = Array.isArray(obj) ? obj : Object.entries(obj);\n    for (const [key, value] of iterator) {\n      unwrapped[toValue(key)] = toValue(value);\n    }\n    segments.push(unwrapped);\n  }\n  return segments;\n}\n",
-      "start": 1721307757083,
-      "end": 1721307757287,
+      "start": 1789891026907,
+      "end": 1789891027129,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1721307757287,
-      "end": 1721307757287,
+      "start": 1789891027129,
+      "end": 1789891027129,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1721307757287,
-      "end": 1721307757287,
+      "start": 1789891027129,
+      "end": 1789891027129,
       "order": "pre"
     },
     {
       "name": "unplugin-vue-i18n",
-      "start": 1721307757287,
-      "end": 1721307757287,
+      "start": 1789891027129,
+      "end": 1789891027129,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1721307757287,
-      "end": 1721307757287,
+      "start": 1789891027129,
+      "end": 1789891027129,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1721307757287,
-      "end": 1721307757287,
+      "start": 1789891027129,
+      "end": 1789891027129,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1721307757287,
-      "end": 1721307757287,
+      "start": 1789891027129,
+      "end": 1789891027129,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1721307757287,
-      "end": 1721307757287,
+      "start": 1789891027129,
+      "end": 1789891027129,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1721307757287,
-      "end": 1721307757287,
+      "start": 1789891027129,
+      "end": 1789891027129,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1721307757287,
-      "end": 1721307757287,
+      "start": 1789891027129,
+      "end": 1789891027129,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1721307757287,
-      "end": 1721307757287,
+      "start": 1789891027129,
+      "end": 1789891027129,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1721307757287,
-      "end": 1721307757287,
+      "start": 1789891027129,
+      "end": 1789891027129,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1721307757287,
-      "end": 1721307757287,
+      "start": 1789891027129,
+      "end": 1789891027129,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1721307757287,
-      "end": 1721307757287,
+      "start": 1789891027129,
+      "end": 1789891027129,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1721307757287,
-      "end": 1721307757287,
+      "start": 1789891027129,
+      "end": 1789891027129,
       "order": "normal"
     },
     {
       "name": "replace",
       "result": "import { computed, reactive, toValue } from \"vue\";\nimport { hash } from \"ohash\";\nimport { useRequestFetch } from \"./ssr.js\";\nimport { useAsyncData } from \"./asyncData.js\";\nimport { fetchDefaults } from \"#build/nuxt.config.mjs\";\nexport function useFetch(request, arg1, arg2) {\n  const [opts = {}, autoKey] = typeof arg1 === \"string\" ? [{}, arg1] : [arg1, arg2];\n  const _request = computed(() => {\n    let r = request;\n    if (typeof r === \"function\") {\n      r = r();\n    }\n    return toValue(r);\n  });\n  const _key = opts.key || hash([autoKey, typeof _request.value === \"string\" ? _request.value : \"\", ...generateOptionSegments(opts)]);\n  if (!_key || typeof _key !== \"string\") {\n    throw new TypeError(\"[nuxt] [useFetch] key must be a string: \" + _key);\n  }\n  if (!request) {\n    throw new Error(\"[nuxt] [useFetch] request is missing.\");\n  }\n  const key = _key === autoKey ? \"$f\" + _key : _key;\n  if (!opts.baseURL && typeof _request.value === \"string\" && _request.value.startsWith(\"//\")) {\n    throw new Error('[nuxt] [useFetch] the request URL must not start with \"//\".');\n  }\n  const {\n    server,\n    lazy,\n    default: defaultFn,\n    transform,\n    pick,\n    watch,\n    immediate,\n    getCachedData,\n    deep,\n    ...fetchOptions\n  } = opts;\n  const _fetchOptions = reactive({\n    ...fetchDefaults,\n    ...fetchOptions,\n    cache: typeof opts.cache === \"boolean\" ? void 0 : opts.cache\n  });\n  const _asyncDataOptions = {\n    server,\n    lazy,\n    default: defaultFn,\n    transform,\n    pick,\n    immediate,\n    getCachedData,\n    deep,\n    watch: watch === false ? [] : [_fetchOptions, _request, ...watch || []]\n  };\n  let controller;\n  const asyncData = useAsyncData(key, () => {\n    controller?.abort?.();\n    controller = typeof AbortController !== \"undefined\" ? new AbortController() : {};\n    const timeoutLength = toValue(opts.timeout);\n    if (timeoutLength) {\n      setTimeout(() => controller.abort(), timeoutLength);\n    }\n    let _$fetch = opts.$fetch || globalThis.$fetch;\n    if (false && !opts.$fetch) {\n      const isLocalFetch = typeof _request.value === \"string\" && _request.value.startsWith(\"/\") && (!toValue(opts.baseURL) || toValue(opts.baseURL).startsWith(\"/\"));\n      if (isLocalFetch) {\n        _$fetch = useRequestFetch();\n      }\n    }\n    return _$fetch(_request.value, { signal: controller.signal, ..._fetchOptions });\n  }, _asyncDataOptions);\n  return asyncData;\n}\nexport function useLazyFetch(request, arg1, arg2) {\n  const [opts, autoKey] = typeof arg1 === \"string\" ? [{}, arg1] : [arg1, arg2];\n  return useFetch(\n    request,\n    {\n      ...opts,\n      lazy: true\n    },\n    // @ts-expect-error we pass an extra argument with the resolved auto-key to prevent another from being injected\n    autoKey\n  );\n}\nfunction generateOptionSegments(opts) {\n  const segments = [\n    toValue(opts.method)?.toUpperCase() || \"GET\",\n    toValue(opts.baseURL)\n  ];\n  for (const _obj of [opts.params || opts.query]) {\n    const obj = toValue(_obj);\n    if (!obj) {\n      continue;\n    }\n    const unwrapped = {};\n    const iterator = Array.isArray(obj) ? obj : Object.entries(obj);\n    for (const [key, value] of iterator) {\n      unwrapped[toValue(key)] = toValue(value);\n    }\n    segments.push(unwrapped);\n  }\n  return segments;\n}\n",
-      "start": 1721307757287,
-      "end": 1721307757288,
+      "start": 1789891027129,
+      "end": 1789891027130,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -109,116 +109,116 @@
     },
     {
       "name": "ssr-styles",
-      "start": 1721307757288,
-      "end": 1721307757288,
+      "start": 1789891027130,
+      "end": 1789891027130,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1721307757288,
-      "end": 1721307757288,
+      "start": 1789891027130,
+      "end": 1789891027130,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1721307757288,
-      "end": 1721307757288,
+      "start": 1789891027130,
+      "end": 1789891027130,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1721307757288,
-      "end": 1721307757288,
+      "start": 1789891027130,
+      "end": 1789891027130,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1721307757288,
-      "end": 1721307757288,
+      "start": 1789891027130,
+      "end": 1789891027130,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1721307757288,
-      "end": 1721307757288,
+      "start": 1789891027130,
+      "end": 1789891027130,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1721307757288,
-      "end": 1721307757288,
+      "start": 1789891027130,
+      "end": 1789891027130,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1721307757288,
-      "end": 1721307757288,
+      "start": 1789891027130,
+      "end": 1789891027130,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1721307757288,
-      "end": 1721307757288,
+      "start": 1789891027130,
+      "end": 1789891027130,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1721307757288,
-      "end": 1721307757288,
+      "start": 1789891027130,
+      "end": 1789891027130,
       "order": "post"
     },
     {
       "name": "nuxtjs:i18n-macros-transform",
-      "start": 1721307757288,
-      "end": 1721307757288,
+      "start": 1789891027130,
+      "end": 1789891027130,
       "order": "post"
     },
     {
       "name": "nuxtjs:i18n-resource",
-      "start": 1721307757288,
-      "end": 1721307757288,
+      "start": 1789891027130,
+      "end": 1789891027130,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1721307757288,
-      "end": 1721307757288,
+      "start": 1789891027130,
+      "end": 1789891027130,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1721307757288,
-      "end": 1721307757288,
+      "start": 1789891027130,
+      "end": 1789891027130,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1721307757288,
-      "end": 1721307757288,
+      "start": 1789891027130,
+      "end": 1789891027130,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1721307757289,
-      "end": 1721307757289,
+      "start": 1789891027130,
+      "end": 1789891027130,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1721307757289,
-      "end": 1721307757289,
+      "start": 1789891027130,
+      "end": 1789891027130,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1721307757289,
-      "end": 1721307757289,
+      "start": 1789891027130,
+      "end": 1789891027130,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1721307757289,
-      "end": 1721307757289,
+      "start": 1789891027130,
+      "end": 1789891027130,
       "order": "normal"
     }
   ]

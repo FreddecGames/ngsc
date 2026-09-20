@@ -4,63 +4,63 @@
     {
       "name": "vite:load-fallback",
       "result": "<script setup>\r\n\r\n    const props = defineProps([ 'itemId' ])\r\n\r\n    import { useGameStore } from '~/store/game.js'\r\n    \r\n    const store = useGameStore()\r\n\r\n    const count = computed(() => { return store.getItemStorage(props.itemId).toPrecision(4) })\r\n\r\n</script>\r\n\r\n<template>\r\n    <format-number :value=\"count\" />\r\n</template>\r\n",
-      "start": 1721307758080,
-      "end": 1721307758302,
+      "start": 1789891027724,
+      "end": 1789891027855,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1721307758302,
-      "end": 1721307758302,
+      "start": 1789891027855,
+      "end": 1789891027855,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1721307758302,
-      "end": 1721307758302,
+      "start": 1789891027855,
+      "end": 1789891027855,
       "order": "pre"
     },
     {
       "name": "unplugin-vue-i18n",
-      "start": 1721307758302,
-      "end": 1721307758302,
+      "start": 1789891027855,
+      "end": 1789891027855,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1721307758302,
-      "end": 1721307758302,
+      "start": 1789891027855,
+      "end": 1789891027855,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1721307758302,
-      "end": 1721307758302,
+      "start": 1789891027855,
+      "end": 1789891027855,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1721307758302,
-      "end": 1721307758302,
+      "start": 1789891027855,
+      "end": 1789891027855,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1721307758302,
-      "end": 1721307758302,
+      "start": 1789891027855,
+      "end": 1789891027855,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1721307758302,
-      "end": 1721307758302,
+      "start": 1789891027855,
+      "end": 1789891027855,
       "order": "normal"
     },
     {
       "name": "vite:vue",
       "result": "import { unref as _unref, resolveComponent as _resolveComponent, openBlock as _openBlock, createBlock as _createBlock } from \"vue\"\n\nimport { useGameStore } from '~/store/game.js'\r\n    \r\n    \nconst _sfc_main = {\n  __name: 'ItemStorage',\n  props: [ 'itemId' ],\n  setup(__props) {\n\r\n\r\n    const props = __props\r\n\r\n    const store = useGameStore()\r\n\r\n    const count = computed(() => { return store.getItemStorage(props.itemId).toPrecision(4) })\r\n\r\n\nreturn (_ctx, _cache) => {\n  const _component_format_number = _resolveComponent(\"format-number\")\n\n  return (_openBlock(), _createBlock(_component_format_number, { value: _unref(count) }, null, 8, [\"value\"]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
-      "start": 1721307758302,
-      "end": 1721307758303,
+      "start": 1789891027855,
+      "end": 1789891027856,
       "order": "normal",
       "sourcemaps": {
         "mappings": ""
@@ -68,117 +68,117 @@
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1721307758303,
-      "end": 1721307758303,
+      "start": 1789891027856,
+      "end": 1789891027856,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1721307758303,
-      "end": 1721307758303,
+      "start": 1789891027856,
+      "end": 1789891027856,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1721307758303,
-      "end": 1721307758303,
+      "start": 1789891027856,
+      "end": 1789891027856,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1721307758303,
-      "end": 1721307758303,
+      "start": 1789891027856,
+      "end": 1789891027856,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1721307758303,
-      "end": 1721307758303,
+      "start": 1789891027856,
+      "end": 1789891027856,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1721307758303,
-      "end": 1721307758303,
+      "start": 1789891027856,
+      "end": 1789891027856,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1721307758303,
-      "end": 1721307758303,
+      "start": 1789891027856,
+      "end": 1789891027856,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1721307758303,
-      "end": 1721307758303,
+      "start": 1789891027856,
+      "end": 1789891027856,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1721307758303,
-      "end": 1721307758303,
+      "start": 1789891027856,
+      "end": 1789891027856,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1721307758303,
-      "end": 1721307758303,
+      "start": 1789891027856,
+      "end": 1789891027856,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1721307758303,
-      "end": 1721307758303,
+      "start": 1789891027856,
+      "end": 1789891027856,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1721307758303,
-      "end": 1721307758303,
+      "start": 1789891027856,
+      "end": 1789891027856,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1721307758303,
-      "end": 1721307758303,
+      "start": 1789891027856,
+      "end": 1789891027856,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1721307758303,
-      "end": 1721307758303,
+      "start": 1789891027856,
+      "end": 1789891027856,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1721307758303,
-      "end": 1721307758303,
+      "start": 1789891027856,
+      "end": 1789891027856,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1721307758303,
-      "end": 1721307758303,
+      "start": 1789891027856,
+      "end": 1789891027856,
       "order": "post"
     },
     {
       "name": "nuxtjs:i18n-macros-transform",
-      "start": 1721307758303,
-      "end": 1721307758303,
+      "start": 1789891027856,
+      "end": 1789891027857,
       "order": "post"
     },
     {
       "name": "nuxtjs:i18n-resource",
-      "start": 1721307758303,
-      "end": 1721307758303,
+      "start": 1789891027857,
+      "end": 1789891027857,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { computed } from 'vue';\nimport { unref as _unref, resolveComponent as _resolveComponent, openBlock as _openBlock, createBlock as _createBlock } from \"vue\"\n\nimport { useGameStore } from '~/store/game.js'\r\n    \r\n    \nconst _sfc_main = {\n  __name: 'ItemStorage',\n  props: [ 'itemId' ],\n  setup(__props) {\n\r\n\r\n    const props = __props\r\n\r\n    const store = useGameStore()\r\n\r\n    const count = computed(() => { return store.getItemStorage(props.itemId).toPrecision(4) })\r\n\r\n\nreturn (_ctx, _cache) => {\n  const _component_format_number = _resolveComponent(\"format-number\")\n\n  return (_openBlock(), _createBlock(_component_format_number, { value: _unref(count) }, null, 8, [\"value\"]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
-      "start": 1721307758303,
-      "end": 1721307758304,
+      "start": 1789891027857,
+      "end": 1789891027857,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -191,39 +191,39 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1721307758304,
-      "end": 1721307758304,
+      "start": 1789891027857,
+      "end": 1789891027857,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1721307758304,
-      "end": 1721307758304,
+      "start": 1789891027857,
+      "end": 1789891027857,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"C:/dev/ngsc/nuxt3/components/FormatNumber.vue\";\nimport { computed } from 'vue';\nimport { unref as _unref, resolveComponent as _resolveComponent, openBlock as _openBlock, createBlock as _createBlock } from \"vue\"\n\nimport { useGameStore } from '~/store/game.js'\r\n    \r\n    \nconst _sfc_main = {\n  __name: 'ItemStorage',\n  props: [ 'itemId' ],\n  setup(__props) {\n\r\n\r\n    const props = __props\r\n\r\n    const store = useGameStore()\r\n\r\n    const count = computed(() => { return store.getItemStorage(props.itemId).toPrecision(4) })\r\n\r\n\nreturn (_ctx, _cache) => {\n  const _component_format_number = __nuxt_component_0\n\n  return (_openBlock(), _createBlock(_component_format_number, { value: _unref(count) }, null, 8, [\"value\"]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
-      "start": 1721307758304,
-      "end": 1721307758304,
+      "start": 1789891027857,
+      "end": 1789891027857,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1721307758304,
-      "end": 1721307758304,
+      "start": 1789891027857,
+      "end": 1789891027857,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1721307758304,
-      "end": 1721307758304,
+      "start": 1789891027857,
+      "end": 1789891027857,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1721307758304,
-      "end": 1721307758304,
+      "start": 1789891027857,
+      "end": 1789891027857,
       "order": "normal"
     }
   ]

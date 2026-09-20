@@ -48,7 +48,7 @@
   {
     "transform": {
       "invokeCount": 1,
-      "totalTime": 0
+      "totalTime": 1
     },
     "resolveId": {
       "invokeCount": 0,
@@ -212,7 +212,7 @@
   {
     "transform": {
       "invokeCount": 2,
-      "totalTime": 0
+      "totalTime": 2
     },
     "resolveId": {
       "invokeCount": 0,
@@ -224,7 +224,7 @@
   {
     "transform": {
       "invokeCount": 2,
-      "totalTime": 2
+      "totalTime": 0
     },
     "resolveId": {
       "invokeCount": 0,
@@ -347,7 +347,7 @@
   {
     "transform": {
       "invokeCount": 1,
-      "totalTime": 1
+      "totalTime": 0
     },
     "resolveId": {
       "invokeCount": 0,

@@ -4,63 +4,63 @@
     {
       "name": "vite:load-fallback",
       "result": "<script setup>\r\n\r\n    const props = defineProps([ 'name', 'icon', 'paneId', 'unlockerIds' ])\r\n\r\n    import { storeToRefs } from 'pinia'\r\n    import { useGameStore } from '~/store/game.js'\r\n    \r\n    const store = useGameStore()\r\n    \r\n    const { activePane } = storeToRefs(store)\r\n\r\n    const { setSidebarOpen, setActivePane, unNotified } = store\r\n\r\n    const unlocked = computed(() => {\r\n    \r\n        let result = false\r\n        \r\n        if (props.unlockerIds) {\r\n            for (let i = 0; i < props.unlockerIds.length; i++) {\r\n                let id = props.unlockerIds[i]\r\n                if (store.isUnlocked(id)) result = true\r\n            }\r\n        }\r\n        else result = true\r\n        \r\n        return result\r\n    })\r\n    \r\n    const notified = computed(() => store.isNotified(props.paneId))\r\n\r\n</script>\r\n\r\n<template>\r\n    <div v-if=\"unlocked\" class=\"col\">\r\n        <div class=\"btn-group w-100 position-relative\">\r\n            \r\n            <div v-if=\"notified\" class=\"position-absolute top-0 left-0 small\" style=\"z-index: 1;\">\r\n                <small class=\"text-success\"><font-awesome-icon icon=\"fa-certificate\" /></small>\r\n            </div>\r\n            \r\n            <button type=\"button\" class=\"btn pe-0 w-100\" :class=\"{ 'active':activePane == paneId }\" data-bs-toggle=\"tab\" :data-bs-target=\"'#' + paneId\" role=\"tab\" :aria-controls=\"paneId\" @click=\"setSidebarOpen(false); setActivePane(paneId); unNotified(paneId);\">\r\n                <div class=\"w-100 row g-2 align-items-center\">\r\n                \r\n                    <div class=\"col-auto lh-1\">\r\n                        <img :src=\"icon\" width=\"16\" height=\"16\" :alt=\"name\" />\r\n                    </div>\r\n                    \r\n                    <div class=\"col text-start text-truncate\">\r\n                        <span class=\"text-truncate\">{{ $t(name) }}</span>\r\n                    </div>\r\n                    \r\n                    <slot name=\"extra\" />\r\n                    \r\n                </div>\r\n            </button>\r\n            \r\n            <slot name=\"buttons\" />\r\n            \r\n        </div>\r\n    </div>\r\n</template>\r\n",
-      "start": 1721307757661,
-      "end": 1721307757939,
+      "start": 1789891027299,
+      "end": 1789891027584,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1721307757939,
-      "end": 1721307757939,
+      "start": 1789891027584,
+      "end": 1789891027584,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1721307757939,
-      "end": 1721307757939,
+      "start": 1789891027584,
+      "end": 1789891027584,
       "order": "pre"
     },
     {
       "name": "unplugin-vue-i18n",
-      "start": 1721307757939,
-      "end": 1721307757939,
+      "start": 1789891027584,
+      "end": 1789891027584,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1721307757939,
-      "end": 1721307757939,
+      "start": 1789891027584,
+      "end": 1789891027584,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1721307757940,
-      "end": 1721307757940,
+      "start": 1789891027584,
+      "end": 1789891027584,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1721307757940,
-      "end": 1721307757940,
+      "start": 1789891027584,
+      "end": 1789891027584,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1721307757940,
-      "end": 1721307757940,
+      "start": 1789891027584,
+      "end": 1789891027584,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1721307757940,
-      "end": 1721307757940,
+      "start": 1789891027584,
+      "end": 1789891027584,
       "order": "normal"
     },
     {
       "name": "vite:vue",
       "result": "import { unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, toDisplayString as _toDisplayString, renderSlot as _renderSlot, normalizeClass as _normalizeClass } from \"vue\"\n\nconst _hoisted_1 = {\n  key: 0,\n  class: \"col\"\n}\nconst _hoisted_2 = { class: \"btn-group w-100 position-relative\" }\nconst _hoisted_3 = {\n  key: 0,\n  class: \"position-absolute top-0 left-0 small\",\n  style: {\"z-index\":\"1\"}\n}\nconst _hoisted_4 = { class: \"text-success\" }\nconst _hoisted_5 = [\"data-bs-target\", \"aria-controls\"]\nconst _hoisted_6 = { class: \"w-100 row g-2 align-items-center\" }\nconst _hoisted_7 = { class: \"col-auto lh-1\" }\nconst _hoisted_8 = [\"src\", \"alt\"]\nconst _hoisted_9 = { class: \"col text-start text-truncate\" }\nconst _hoisted_10 = { class: \"text-truncate\" }\n\nimport { storeToRefs } from 'pinia'\r\n    import { useGameStore } from '~/store/game.js'\r\n    \r\n    \nconst _sfc_main = {\n  __name: 'SidebarItem',\n  props: [ 'name', 'icon', 'paneId', 'unlockerIds' ],\n  setup(__props) {\n\r\n\r\n    const props = __props\r\n\r\n    const store = useGameStore()\r\n    \r\n    const { activePane } = storeToRefs(store)\r\n\r\n    const { setSidebarOpen, setActivePane, unNotified } = store\r\n\r\n    const unlocked = computed(() => {\r\n    \r\n        let result = false\r\n        \r\n        if (props.unlockerIds) {\r\n            for (let i = 0; i < props.unlockerIds.length; i++) {\r\n                let id = props.unlockerIds[i]\r\n                if (store.isUnlocked(id)) result = true\r\n            }\r\n        }\r\n        else result = true\r\n        \r\n        return result\r\n    })\r\n    \r\n    const notified = computed(() => store.isNotified(props.paneId))\r\n\r\n\nreturn (_ctx, _cache) => {\n  const _component_font_awesome_icon = _resolveComponent(\"font-awesome-icon\")\n\n  return (_unref(unlocked))\n    ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createElementVNode(\"div\", _hoisted_2, [\n          (_unref(notified))\n            ? (_openBlock(), _createElementBlock(\"div\", _hoisted_3, [\n                _createElementVNode(\"small\", _hoisted_4, [\n                  _createVNode(_component_font_awesome_icon, { icon: \"fa-certificate\" })\n                ])\n              ]))\n            : _createCommentVNode(\"\", true),\n          _createElementVNode(\"button\", {\n            type: \"button\",\n            class: _normalizeClass([\"btn pe-0 w-100\", { 'active':_unref(activePane) == __props.paneId }]),\n            \"data-bs-toggle\": \"tab\",\n            \"data-bs-target\": '#' + __props.paneId,\n            role: \"tab\",\n            \"aria-controls\": __props.paneId,\n            onClick: _cache[0] || (_cache[0] = $event => {_unref(setSidebarOpen)(false); _unref(setActivePane)(__props.paneId); _unref(unNotified)(__props.paneId);})\n          }, [\n            _createElementVNode(\"div\", _hoisted_6, [\n              _createElementVNode(\"div\", _hoisted_7, [\n                _createElementVNode(\"img\", {\n                  src: __props.icon,\n                  width: \"16\",\n                  height: \"16\",\n                  alt: __props.name\n                }, null, 8, _hoisted_8)\n              ]),\n              _createElementVNode(\"div\", _hoisted_9, [\n                _createElementVNode(\"span\", _hoisted_10, _toDisplayString(_ctx.$t(__props.name)), 1)\n              ]),\n              _renderSlot(_ctx.$slots, \"extra\")\n            ])\n          ], 10, _hoisted_5),\n          _renderSlot(_ctx.$slots, \"buttons\")\n        ])\n      ]))\n    : _createCommentVNode(\"\", true)\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
-      "start": 1721307757940,
-      "end": 1721307757942,
+      "start": 1789891027584,
+      "end": 1789891027586,
       "order": "normal",
       "sourcemaps": {
         "mappings": ""
@@ -68,117 +68,117 @@
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1721307757942,
-      "end": 1721307757942,
+      "start": 1789891027586,
+      "end": 1789891027586,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1721307757942,
-      "end": 1721307757942,
+      "start": 1789891027586,
+      "end": 1789891027586,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1721307757942,
-      "end": 1721307757942,
+      "start": 1789891027586,
+      "end": 1789891027586,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1721307757942,
-      "end": 1721307757942,
+      "start": 1789891027586,
+      "end": 1789891027586,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1721307757942,
-      "end": 1721307757942,
+      "start": 1789891027586,
+      "end": 1789891027586,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1721307757942,
-      "end": 1721307757942,
+      "start": 1789891027586,
+      "end": 1789891027587,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1721307757942,
-      "end": 1721307757942,
+      "start": 1789891027587,
+      "end": 1789891027587,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1721307757942,
-      "end": 1721307757942,
+      "start": 1789891027587,
+      "end": 1789891027587,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1721307757942,
-      "end": 1721307757942,
+      "start": 1789891027587,
+      "end": 1789891027587,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1721307757942,
-      "end": 1721307757942,
+      "start": 1789891027587,
+      "end": 1789891027587,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1721307757942,
-      "end": 1721307757942,
+      "start": 1789891027587,
+      "end": 1789891027587,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1721307757942,
-      "end": 1721307757942,
+      "start": 1789891027587,
+      "end": 1789891027587,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1721307757942,
-      "end": 1721307757942,
+      "start": 1789891027587,
+      "end": 1789891027587,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1721307757942,
-      "end": 1721307757942,
+      "start": 1789891027587,
+      "end": 1789891027587,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1721307757942,
-      "end": 1721307757942,
+      "start": 1789891027587,
+      "end": 1789891027587,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1721307757942,
-      "end": 1721307757943,
+      "start": 1789891027587,
+      "end": 1789891027587,
       "order": "post"
     },
     {
       "name": "nuxtjs:i18n-macros-transform",
-      "start": 1721307757943,
-      "end": 1721307757943,
+      "start": 1789891027587,
+      "end": 1789891027587,
       "order": "post"
     },
     {
       "name": "nuxtjs:i18n-resource",
-      "start": 1721307757943,
-      "end": 1721307757943,
+      "start": 1789891027587,
+      "end": 1789891027587,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { computed } from 'vue';\nimport { unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, toDisplayString as _toDisplayString, renderSlot as _renderSlot, normalizeClass as _normalizeClass } from \"vue\"\n\nconst _hoisted_1 = {\n  key: 0,\n  class: \"col\"\n}\nconst _hoisted_2 = { class: \"btn-group w-100 position-relative\" }\nconst _hoisted_3 = {\n  key: 0,\n  class: \"position-absolute top-0 left-0 small\",\n  style: {\"z-index\":\"1\"}\n}\nconst _hoisted_4 = { class: \"text-success\" }\nconst _hoisted_5 = [\"data-bs-target\", \"aria-controls\"]\nconst _hoisted_6 = { class: \"w-100 row g-2 align-items-center\" }\nconst _hoisted_7 = { class: \"col-auto lh-1\" }\nconst _hoisted_8 = [\"src\", \"alt\"]\nconst _hoisted_9 = { class: \"col text-start text-truncate\" }\nconst _hoisted_10 = { class: \"text-truncate\" }\n\nimport { storeToRefs } from 'pinia'\r\n    import { useGameStore } from '~/store/game.js'\r\n    \r\n    \nconst _sfc_main = {\n  __name: 'SidebarItem',\n  props: [ 'name', 'icon', 'paneId', 'unlockerIds' ],\n  setup(__props) {\n\r\n\r\n    const props = __props\r\n\r\n    const store = useGameStore()\r\n    \r\n    const { activePane } = storeToRefs(store)\r\n\r\n    const { setSidebarOpen, setActivePane, unNotified } = store\r\n\r\n    const unlocked = computed(() => {\r\n    \r\n        let result = false\r\n        \r\n        if (props.unlockerIds) {\r\n            for (let i = 0; i < props.unlockerIds.length; i++) {\r\n                let id = props.unlockerIds[i]\r\n                if (store.isUnlocked(id)) result = true\r\n            }\r\n        }\r\n        else result = true\r\n        \r\n        return result\r\n    })\r\n    \r\n    const notified = computed(() => store.isNotified(props.paneId))\r\n\r\n\nreturn (_ctx, _cache) => {\n  const _component_font_awesome_icon = _resolveComponent(\"font-awesome-icon\")\n\n  return (_unref(unlocked))\n    ? (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createElementVNode(\"div\", _hoisted_2, [\n          (_unref(notified))\n            ? (_openBlock(), _createElementBlock(\"div\", _hoisted_3, [\n                _createElementVNode(\"small\", _hoisted_4, [\n                  _createVNode(_component_font_awesome_icon, { icon: \"fa-certificate\" })\n                ])\n              ]))\n            : _createCommentVNode(\"\", true),\n          _createElementVNode(\"button\", {\n            type: \"button\",\n            class: _normalizeClass([\"btn pe-0 w-100\", { 'active':_unref(activePane) == __props.paneId }]),\n            \"data-bs-toggle\": \"tab\",\n            \"data-bs-target\": '#' + __props.paneId,\n            role: \"tab\",\n            \"aria-controls\": __props.paneId,\n            onClick: _cache[0] || (_cache[0] = $event => {_unref(setSidebarOpen)(false); _unref(setActivePane)(__props.paneId); _unref(unNotified)(__props.paneId);})\n          }, [\n            _createElementVNode(\"div\", _hoisted_6, [\n              _createElementVNode(\"div\", _hoisted_7, [\n                _createElementVNode(\"img\", {\n                  src: __props.icon,\n                  width: \"16\",\n                  height: \"16\",\n                  alt: __props.name\n                }, null, 8, _hoisted_8)\n              ]),\n              _createElementVNode(\"div\", _hoisted_9, [\n                _createElementVNode(\"span\", _hoisted_10, _toDisplayString(_ctx.$t(__props.name)), 1)\n              ]),\n              _renderSlot(_ctx.$slots, \"extra\")\n            ])\n          ], 10, _hoisted_5),\n          _renderSlot(_ctx.$slots, \"buttons\")\n        ])\n      ]))\n    : _createCommentVNode(\"\", true)\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
-      "start": 1721307757943,
-      "end": 1721307757944,
+      "start": 1789891027587,
+      "end": 1789891027588,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -191,38 +191,38 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1721307757944,
-      "end": 1721307757944,
+      "start": 1789891027588,
+      "end": 1789891027588,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1721307757944,
-      "end": 1721307757944,
+      "start": 1789891027588,
+      "end": 1789891027588,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1721307757944,
-      "end": 1721307757944,
+      "start": 1789891027588,
+      "end": 1789891027588,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1721307757944,
-      "end": 1721307757944,
+      "start": 1789891027588,
+      "end": 1789891027588,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1721307757944,
-      "end": 1721307757944,
+      "start": 1789891027588,
+      "end": 1789891027588,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1721307757944,
-      "end": 1721307757944,
+      "start": 1789891027588,
+      "end": 1789891027588,
       "order": "normal"
     }
   ]

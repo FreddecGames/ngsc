@@ -4,214 +4,214 @@
     {
       "name": "vite:load-fallback",
       "result": "// @ts-nocheck\n\n\nexport const localeCodes = [\n  \"en\"\n]\n\nexport const localeMessages = { \n  \"en\": [\n      { key: \"../locales/en.json\", load: () => import(\"../locales/en.json\" /* webpackChunkName: \"locale_C_58_C_58_dev_ngsc_nuxt3_locales_en_json\" */), cache: true },\n  ],\n}\n\nexport const resolveNuxtI18nOptions = async (context) => {\n  const nuxtI18nOptions = {\n  \"experimental\": {\n    \"jsTsFormatResource\": false\n  },\n  \"bundle\": {\n    \"compositionOnly\": true,\n    \"runtimeOnly\": false,\n    \"fullInstall\": true,\n    \"dropMessageCompiler\": false\n  },\n  \"compilation\": {\n    \"jit\": true,\n    \"strictMessage\": true,\n    \"escapeHtml\": false\n  },\n  \"customBlocks\": {\n    \"defaultSFCLang\": \"json\",\n    \"globalSFCScope\": false\n  },\n  \"vueI18n\": \"\",\n  \"locales\": [\n    {\n      \"code\": \"en\",\n      \"files\": [\n        \"locales/en.json\"\n      ]\n    }\n  ],\n  \"defaultLocale\": \"en\",\n  \"defaultDirection\": \"ltr\",\n  \"routesNameSeparator\": \"___\",\n  \"trailingSlash\": false,\n  \"defaultLocaleRouteNameSuffix\": \"default\",\n  \"strategy\": \"prefix_except_default\",\n  \"lazy\": true,\n  \"langDir\": \"locales\",\n  \"rootRedirect\": null,\n  \"detectBrowserLanguage\": {\n    \"alwaysRedirect\": false,\n    \"cookieCrossOrigin\": false,\n    \"cookieDomain\": null,\n    \"cookieKey\": \"i18n_redirected\",\n    \"cookieSecure\": false,\n    \"fallbackLocale\": \"\",\n    \"redirectOn\": \"root\",\n    \"useCookie\": true\n  },\n  \"differentDomains\": false,\n  \"baseUrl\": \"\",\n  \"dynamicRouteParams\": false,\n  \"customRoutes\": \"page\",\n  \"pages\": {},\n  \"skipSettingLocaleOnNavigate\": false,\n  \"types\": \"composition\",\n  \"debug\": false,\n  \"parallelPlugin\": false,\n  \"legacy\": false,\n  \"fallbackLocale\": \"en\",\n  \"i18nModules\": []\n}\n  \n  const vueI18nConfigLoader = async loader => {\n    const config = await loader().then(r => r.default || r)\n    if (typeof config === 'object') return config\n    if (typeof config === 'function') return await config()\n    return {}\n  }\n\n  const deepCopy = (src, des, predicate) => {\n    for (const key in src) {\n      if (typeof src[key] === 'object') {\n        if (!(typeof des[key] === 'object')) des[key] = {}\n        deepCopy(src[key], des[key], predicate)\n      } else {\n        if (predicate) {\n          if (predicate(src[key], des[key])) {\n            des[key] = src[key]\n          }\n        } else {\n          des[key] = src[key]\n        }\n      }\n    }\n  }\n  \n  const mergeVueI18nConfigs = async (loader) => {\n    const layerConfig = await vueI18nConfigLoader(loader)\n    const cfg = layerConfig || {}\n    \n    for (const [k, v] of Object.entries(cfg)) {\n      if(nuxtI18nOptions.vueI18n?.[k] === undefined || typeof nuxtI18nOptions.vueI18n?.[k] !== 'object') {\n        nuxtI18nOptions.vueI18n[k] = v\n      } else {\n        deepCopy(v, nuxtI18nOptions.vueI18n[k])\n      }\n    }\n  }\n\n  nuxtI18nOptions.vueI18n = { messages: {} }\n  \n    \n  return nuxtI18nOptions\n}\n\nexport const nuxtI18nOptionsDefault = {\n  \"experimental\": {\n    \"jsTsFormatResource\": false\n  },\n  \"bundle\": {\n    \"compositionOnly\": true,\n    \"runtimeOnly\": false,\n    \"fullInstall\": true,\n    \"dropMessageCompiler\": false\n  },\n  \"compilation\": {\n    \"jit\": true,\n    \"strictMessage\": true,\n    \"escapeHtml\": false\n  },\n  \"customBlocks\": {\n    \"defaultSFCLang\": \"json\",\n    \"globalSFCScope\": false\n  },\n  \"vueI18n\": \"\",\n  \"locales\": [],\n  \"defaultLocale\": \"\",\n  \"defaultDirection\": \"ltr\",\n  \"routesNameSeparator\": \"___\",\n  \"trailingSlash\": false,\n  \"defaultLocaleRouteNameSuffix\": \"default\",\n  \"strategy\": \"prefix_except_default\",\n  \"lazy\": false,\n  \"langDir\": null,\n  \"rootRedirect\": null,\n  \"detectBrowserLanguage\": {\n    \"alwaysRedirect\": false,\n    \"cookieCrossOrigin\": false,\n    \"cookieDomain\": null,\n    \"cookieKey\": \"i18n_redirected\",\n    \"cookieSecure\": false,\n    \"fallbackLocale\": \"\",\n    \"redirectOn\": \"root\",\n    \"useCookie\": true\n  },\n  \"differentDomains\": false,\n  \"baseUrl\": \"\",\n  \"dynamicRouteParams\": false,\n  \"customRoutes\": \"page\",\n  \"pages\": {},\n  \"skipSettingLocaleOnNavigate\": false,\n  \"types\": \"composition\",\n  \"debug\": false,\n  \"parallelPlugin\": false\n}\n\nexport const nuxtI18nInternalOptions = {\n  \"__normalizedLocales\": [\n    {\n      \"code\": \"en\",\n      \"files\": [\n        {\n          \"path\": \"locales/en.json\"\n        }\n      ]\n    }\n  ]\n}\n \nexport const NUXT_I18N_MODULE_ID = \"@nuxtjs/i18n\"\nexport const parallelPlugin = false\nexport const isSSG = false\n",
-      "start": 1721307755262,
-      "end": 1721307755484,
+      "start": 1789891025967,
+      "end": 1789891026314,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1721307755484,
-      "end": 1721307755484,
+      "start": 1789891026314,
+      "end": 1789891026314,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1721307755484,
-      "end": 1721307755484,
+      "start": 1789891026314,
+      "end": 1789891026314,
       "order": "pre"
     },
     {
       "name": "unplugin-vue-i18n",
-      "start": 1721307755484,
-      "end": 1721307755484,
+      "start": 1789891026314,
+      "end": 1789891026314,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1721307755484,
-      "end": 1721307755484,
+      "start": 1789891026314,
+      "end": 1789891026314,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1721307755484,
-      "end": 1721307755484,
+      "start": 1789891026314,
+      "end": 1789891026314,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1721307755484,
-      "end": 1721307755484,
+      "start": 1789891026314,
+      "end": 1789891026314,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1721307755484,
-      "end": 1721307755484,
+      "start": 1789891026314,
+      "end": 1789891026314,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1721307755484,
-      "end": 1721307755484,
+      "start": 1789891026314,
+      "end": 1789891026314,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1721307755484,
-      "end": 1721307755484,
+      "start": 1789891026314,
+      "end": 1789891026314,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1721307755484,
-      "end": 1721307755484,
+      "start": 1789891026315,
+      "end": 1789891026315,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1721307755484,
-      "end": 1721307755484,
+      "start": 1789891026315,
+      "end": 1789891026315,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1721307755484,
-      "end": 1721307755484,
+      "start": 1789891026315,
+      "end": 1789891026315,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1721307755484,
-      "end": 1721307755484,
+      "start": 1789891026315,
+      "end": 1789891026315,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1721307755484,
-      "end": 1721307755484,
+      "start": 1789891026315,
+      "end": 1789891026315,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1721307755484,
-      "end": 1721307755484,
+      "start": 1789891026315,
+      "end": 1789891026315,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1721307755484,
-      "end": 1721307755484,
+      "start": 1789891026315,
+      "end": 1789891026315,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1721307755484,
-      "end": 1721307755484,
+      "start": 1789891026315,
+      "end": 1789891026315,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1721307755484,
-      "end": 1721307755484,
+      "start": 1789891026315,
+      "end": 1789891026315,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1721307755485,
-      "end": 1721307755485,
+      "start": 1789891026315,
+      "end": 1789891026315,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1721307755485,
-      "end": 1721307755485,
+      "start": 1789891026315,
+      "end": 1789891026315,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1721307755485,
-      "end": 1721307755485,
+      "start": 1789891026315,
+      "end": 1789891026315,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1721307755485,
-      "end": 1721307755485,
+      "start": 1789891026315,
+      "end": 1789891026315,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1721307755485,
-      "end": 1721307755485,
+      "start": 1789891026315,
+      "end": 1789891026315,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1721307755485,
-      "end": 1721307755485,
+      "start": 1789891026315,
+      "end": 1789891026315,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1721307755485,
-      "end": 1721307755485,
+      "start": 1789891026315,
+      "end": 1789891026315,
       "order": "post"
     },
     {
       "name": "nuxtjs:i18n-macros-transform",
-      "start": 1721307755485,
-      "end": 1721307755485,
+      "start": 1789891026315,
+      "end": 1789891026315,
       "order": "post"
     },
     {
       "name": "nuxtjs:i18n-resource",
-      "start": 1721307755485,
-      "end": 1721307755485,
+      "start": 1789891026315,
+      "end": 1789891026315,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1721307755485,
-      "end": 1721307755486,
+      "start": 1789891026315,
+      "end": 1789891026316,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1721307755486,
-      "end": 1721307755486,
+      "start": 1789891026316,
+      "end": 1789891026316,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1721307755486,
-      "end": 1721307755486,
+      "start": 1789891026316,
+      "end": 1789891026316,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1721307755486,
-      "end": 1721307755486,
+      "start": 1789891026316,
+      "end": 1789891026316,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1721307755486,
-      "end": 1721307755486,
+      "start": 1789891026316,
+      "end": 1789891026316,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
       "result": "import { __vitePreload } from \"\u0000vite/preload-helper\";// @ts-nocheck\n\n\nexport const localeCodes = [\n  \"en\"\n]\n\nexport const localeMessages = { \n  \"en\": [\n      { key: \"../locales/en.json\", load: () => __vitePreload(() => import(\"../locales/en.json\" /* webpackChunkName: \"locale_C_58_C_58_dev_ngsc_nuxt3_locales_en_json\" */),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url), cache: true },\n  ],\n}\n\nexport const resolveNuxtI18nOptions = async (context) => {\n  const nuxtI18nOptions = {\n  \"experimental\": {\n    \"jsTsFormatResource\": false\n  },\n  \"bundle\": {\n    \"compositionOnly\": true,\n    \"runtimeOnly\": false,\n    \"fullInstall\": true,\n    \"dropMessageCompiler\": false\n  },\n  \"compilation\": {\n    \"jit\": true,\n    \"strictMessage\": true,\n    \"escapeHtml\": false\n  },\n  \"customBlocks\": {\n    \"defaultSFCLang\": \"json\",\n    \"globalSFCScope\": false\n  },\n  \"vueI18n\": \"\",\n  \"locales\": [\n    {\n      \"code\": \"en\",\n      \"files\": [\n        \"locales/en.json\"\n      ]\n    }\n  ],\n  \"defaultLocale\": \"en\",\n  \"defaultDirection\": \"ltr\",\n  \"routesNameSeparator\": \"___\",\n  \"trailingSlash\": false,\n  \"defaultLocaleRouteNameSuffix\": \"default\",\n  \"strategy\": \"prefix_except_default\",\n  \"lazy\": true,\n  \"langDir\": \"locales\",\n  \"rootRedirect\": null,\n  \"detectBrowserLanguage\": {\n    \"alwaysRedirect\": false,\n    \"cookieCrossOrigin\": false,\n    \"cookieDomain\": null,\n    \"cookieKey\": \"i18n_redirected\",\n    \"cookieSecure\": false,\n    \"fallbackLocale\": \"\",\n    \"redirectOn\": \"root\",\n    \"useCookie\": true\n  },\n  \"differentDomains\": false,\n  \"baseUrl\": \"\",\n  \"dynamicRouteParams\": false,\n  \"customRoutes\": \"page\",\n  \"pages\": {},\n  \"skipSettingLocaleOnNavigate\": false,\n  \"types\": \"composition\",\n  \"debug\": false,\n  \"parallelPlugin\": false,\n  \"legacy\": false,\n  \"fallbackLocale\": \"en\",\n  \"i18nModules\": []\n}\n  \n  const vueI18nConfigLoader = async loader => {\n    const config = await loader().then(r => r.default || r)\n    if (typeof config === 'object') return config\n    if (typeof config === 'function') return await config()\n    return {}\n  }\n\n  const deepCopy = (src, des, predicate) => {\n    for (const key in src) {\n      if (typeof src[key] === 'object') {\n        if (!(typeof des[key] === 'object')) des[key] = {}\n        deepCopy(src[key], des[key], predicate)\n      } else {\n        if (predicate) {\n          if (predicate(src[key], des[key])) {\n            des[key] = src[key]\n          }\n        } else {\n          des[key] = src[key]\n        }\n      }\n    }\n  }\n  \n  const mergeVueI18nConfigs = async (loader) => {\n    const layerConfig = await vueI18nConfigLoader(loader)\n    const cfg = layerConfig || {}\n    \n    for (const [k, v] of Object.entries(cfg)) {\n      if(nuxtI18nOptions.vueI18n?.[k] === undefined || typeof nuxtI18nOptions.vueI18n?.[k] !== 'object') {\n        nuxtI18nOptions.vueI18n[k] = v\n      } else {\n        deepCopy(v, nuxtI18nOptions.vueI18n[k])\n      }\n    }\n  }\n\n  nuxtI18nOptions.vueI18n = { messages: {} }\n  \n    \n  return nuxtI18nOptions\n}\n\nexport const nuxtI18nOptionsDefault = {\n  \"experimental\": {\n    \"jsTsFormatResource\": false\n  },\n  \"bundle\": {\n    \"compositionOnly\": true,\n    \"runtimeOnly\": false,\n    \"fullInstall\": true,\n    \"dropMessageCompiler\": false\n  },\n  \"compilation\": {\n    \"jit\": true,\n    \"strictMessage\": true,\n    \"escapeHtml\": false\n  },\n  \"customBlocks\": {\n    \"defaultSFCLang\": \"json\",\n    \"globalSFCScope\": false\n  },\n  \"vueI18n\": \"\",\n  \"locales\": [],\n  \"defaultLocale\": \"\",\n  \"defaultDirection\": \"ltr\",\n  \"routesNameSeparator\": \"___\",\n  \"trailingSlash\": false,\n  \"defaultLocaleRouteNameSuffix\": \"default\",\n  \"strategy\": \"prefix_except_default\",\n  \"lazy\": false,\n  \"langDir\": null,\n  \"rootRedirect\": null,\n  \"detectBrowserLanguage\": {\n    \"alwaysRedirect\": false,\n    \"cookieCrossOrigin\": false,\n    \"cookieDomain\": null,\n    \"cookieKey\": \"i18n_redirected\",\n    \"cookieSecure\": false,\n    \"fallbackLocale\": \"\",\n    \"redirectOn\": \"root\",\n    \"useCookie\": true\n  },\n  \"differentDomains\": false,\n  \"baseUrl\": \"\",\n  \"dynamicRouteParams\": false,\n  \"customRoutes\": \"page\",\n  \"pages\": {},\n  \"skipSettingLocaleOnNavigate\": false,\n  \"types\": \"composition\",\n  \"debug\": false,\n  \"parallelPlugin\": false\n}\n\nexport const nuxtI18nInternalOptions = {\n  \"__normalizedLocales\": [\n    {\n      \"code\": \"en\",\n      \"files\": [\n        {\n          \"path\": \"locales/en.json\"\n        }\n      ]\n    }\n  ]\n}\n \nexport const NUXT_I18N_MODULE_ID = \"@nuxtjs/i18n\"\nexport const parallelPlugin = false\nexport const isSSG = false\n",
-      "start": 1721307755486,
-      "end": 1721307755486,
+      "start": 1789891026316,
+      "end": 1789891026316,
       "order": "normal",
       "sourcemaps": null
     },
     {
       "name": "vite:reporter",
-      "start": 1721307755486,
-      "end": 1721307755486,
+      "start": 1789891026316,
+      "end": 1789891026316,
       "order": "normal"
     }
   ]

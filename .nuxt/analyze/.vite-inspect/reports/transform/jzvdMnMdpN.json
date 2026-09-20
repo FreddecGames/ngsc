@@ -4,63 +4,63 @@
     {
       "name": "vite:load-fallback",
       "result": "<script setup>\r\n\r\n    const props = defineProps([ 'count' ])\r\n    \r\n    const value = computed(() => {\r\n        \r\n        let val = props.count\r\n        \r\n        if (val > 0 && val < 1) val = Math.floor(val * 1000) + ' ms'\r\n        else if (val > 0 && val < (3600 * 24 * 2)) {\r\n        \r\n            let h = Math.floor(val / 3600)\r\n            if (h < 10) { h = '0' + h }\r\n            \r\n            let m = Math.floor(Math.floor(val / 60) % 60)\r\n            if (m < 10) { m = '0' + m }\r\n            \r\n            let s = Math.floor(val % 60)\r\n            if (s < 10) { s = '0' + s }\r\n            \r\n            val = h + ':' + m + ':' + s\r\n        }\r\n        else if (val > 0) val = -3\r\n        \r\n        return val\r\n    })\r\n        \r\n</script>\r\n\r\n<template>\r\n    <span v-if=\"value == -3\" class=\"text-warning\">> 48h</span>\r\n    <span v-if=\"value == -2\">---</span>\r\n    <span v-if=\"value == -1\">---</span>\r\n    <span v-if=\"value == 0\" class=\"text-success\"><font-awesome-icon icon=\"fa-fw fa-check\" /></span>\r\n    <span v-if=\"value != -3 && value != -2 && value != -1 && value != 0\" class=\"text-timer\">{{ value }}</span>\r\n</template>\r\n",
-      "start": 1721307757359,
-      "end": 1721307757855,
+      "start": 1789891027143,
+      "end": 1789891027297,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1721307757855,
-      "end": 1721307757855,
+      "start": 1789891027297,
+      "end": 1789891027297,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1721307757855,
-      "end": 1721307757855,
+      "start": 1789891027297,
+      "end": 1789891027297,
       "order": "pre"
     },
     {
       "name": "unplugin-vue-i18n",
-      "start": 1721307757855,
-      "end": 1721307757855,
+      "start": 1789891027297,
+      "end": 1789891027297,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1721307757855,
-      "end": 1721307757855,
+      "start": 1789891027297,
+      "end": 1789891027297,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1721307757855,
-      "end": 1721307757855,
+      "start": 1789891027297,
+      "end": 1789891027297,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1721307757855,
-      "end": 1721307757855,
+      "start": 1789891027297,
+      "end": 1789891027297,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1721307757855,
-      "end": 1721307757855,
+      "start": 1789891027297,
+      "end": 1789891027297,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1721307757855,
-      "end": 1721307757855,
+      "start": 1789891027297,
+      "end": 1789891027297,
       "order": "normal"
     },
     {
       "name": "vite:vue",
       "result": "import { unref as _unref, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, toDisplayString as _toDisplayString, Fragment as _Fragment } from \"vue\"\n\nconst _hoisted_1 = {\n  key: 0,\n  class: \"text-warning\"\n}\nconst _hoisted_2 = { key: 1 }\nconst _hoisted_3 = { key: 2 }\nconst _hoisted_4 = {\n  key: 3,\n  class: \"text-success\"\n}\nconst _hoisted_5 = {\n  key: 4,\n  class: \"text-timer\"\n}\n\n\nconst _sfc_main = {\n  __name: 'TimerCount',\n  props: [ 'count' ],\n  setup(__props) {\n\r\n\r\n    const props = __props\r\n    \r\n    const value = computed(() => {\r\n        \r\n        let val = props.count\r\n        \r\n        if (val > 0 && val < 1) val = Math.floor(val * 1000) + ' ms'\r\n        else if (val > 0 && val < (3600 * 24 * 2)) {\r\n        \r\n            let h = Math.floor(val / 3600)\r\n            if (h < 10) { h = '0' + h }\r\n            \r\n            let m = Math.floor(Math.floor(val / 60) % 60)\r\n            if (m < 10) { m = '0' + m }\r\n            \r\n            let s = Math.floor(val % 60)\r\n            if (s < 10) { s = '0' + s }\r\n            \r\n            val = h + ':' + m + ':' + s\r\n        }\r\n        else if (val > 0) val = -3\r\n        \r\n        return val\r\n    })\r\n        \r\n\nreturn (_ctx, _cache) => {\n  const _component_font_awesome_icon = _resolveComponent(\"font-awesome-icon\")\n\n  return (_openBlock(), _createElementBlock(_Fragment, null, [\n    (_unref(value) == -3)\n      ? (_openBlock(), _createElementBlock(\"span\", _hoisted_1, \"> 48h\"))\n      : _createCommentVNode(\"\", true),\n    (_unref(value) == -2)\n      ? (_openBlock(), _createElementBlock(\"span\", _hoisted_2, \"---\"))\n      : _createCommentVNode(\"\", true),\n    (_unref(value) == -1)\n      ? (_openBlock(), _createElementBlock(\"span\", _hoisted_3, \"---\"))\n      : _createCommentVNode(\"\", true),\n    (_unref(value) == 0)\n      ? (_openBlock(), _createElementBlock(\"span\", _hoisted_4, [\n          _createVNode(_component_font_awesome_icon, { icon: \"fa-fw fa-check\" })\n        ]))\n      : _createCommentVNode(\"\", true),\n    (_unref(value) != -3 && _unref(value) != -2 && _unref(value) != -1 && _unref(value) != 0)\n      ? (_openBlock(), _createElementBlock(\"span\", _hoisted_5, _toDisplayString(_unref(value)), 1))\n      : _createCommentVNode(\"\", true)\n  ], 64))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
-      "start": 1721307757855,
-      "end": 1721307757858,
+      "start": 1789891027297,
+      "end": 1789891027299,
       "order": "normal",
       "sourcemaps": {
         "mappings": ""
@@ -68,117 +68,117 @@
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1721307757858,
-      "end": 1721307757858,
+      "start": 1789891027299,
+      "end": 1789891027299,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1721307757858,
-      "end": 1721307757858,
+      "start": 1789891027299,
+      "end": 1789891027299,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1721307757858,
-      "end": 1721307757860,
+      "start": 1789891027299,
+      "end": 1789891027299,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1721307757860,
-      "end": 1721307757861,
+      "start": 1789891027299,
+      "end": 1789891027299,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1721307757861,
-      "end": 1721307757861,
+      "start": 1789891027299,
+      "end": 1789891027299,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1721307757861,
-      "end": 1721307757861,
+      "start": 1789891027299,
+      "end": 1789891027299,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1721307757861,
-      "end": 1721307757861,
+      "start": 1789891027299,
+      "end": 1789891027299,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1721307757861,
-      "end": 1721307757861,
+      "start": 1789891027299,
+      "end": 1789891027299,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1721307757862,
-      "end": 1721307757862,
+      "start": 1789891027299,
+      "end": 1789891027299,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1721307757862,
-      "end": 1721307757862,
+      "start": 1789891027299,
+      "end": 1789891027299,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1721307757862,
-      "end": 1721307757862,
+      "start": 1789891027299,
+      "end": 1789891027299,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1721307757862,
-      "end": 1721307757862,
+      "start": 1789891027299,
+      "end": 1789891027299,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1721307757862,
-      "end": 1721307757862,
+      "start": 1789891027299,
+      "end": 1789891027299,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1721307757862,
-      "end": 1721307757862,
+      "start": 1789891027299,
+      "end": 1789891027299,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1721307757862,
-      "end": 1721307757862,
+      "start": 1789891027300,
+      "end": 1789891027300,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1721307757862,
-      "end": 1721307757862,
+      "start": 1789891027300,
+      "end": 1789891027300,
       "order": "post"
     },
     {
       "name": "nuxtjs:i18n-macros-transform",
-      "start": 1721307757862,
-      "end": 1721307757862,
+      "start": 1789891027300,
+      "end": 1789891027300,
       "order": "post"
     },
     {
       "name": "nuxtjs:i18n-resource",
-      "start": 1721307757862,
-      "end": 1721307757862,
+      "start": 1789891027300,
+      "end": 1789891027300,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { computed } from 'vue';\nimport { unref as _unref, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, toDisplayString as _toDisplayString, Fragment as _Fragment } from \"vue\"\n\nconst _hoisted_1 = {\n  key: 0,\n  class: \"text-warning\"\n}\nconst _hoisted_2 = { key: 1 }\nconst _hoisted_3 = { key: 2 }\nconst _hoisted_4 = {\n  key: 3,\n  class: \"text-success\"\n}\nconst _hoisted_5 = {\n  key: 4,\n  class: \"text-timer\"\n}\n\n\nconst _sfc_main = {\n  __name: 'TimerCount',\n  props: [ 'count' ],\n  setup(__props) {\n\r\n\r\n    const props = __props\r\n    \r\n    const value = computed(() => {\r\n        \r\n        let val = props.count\r\n        \r\n        if (val > 0 && val < 1) val = Math.floor(val * 1000) + ' ms'\r\n        else if (val > 0 && val < (3600 * 24 * 2)) {\r\n        \r\n            let h = Math.floor(val / 3600)\r\n            if (h < 10) { h = '0' + h }\r\n            \r\n            let m = Math.floor(Math.floor(val / 60) % 60)\r\n            if (m < 10) { m = '0' + m }\r\n            \r\n            let s = Math.floor(val % 60)\r\n            if (s < 10) { s = '0' + s }\r\n            \r\n            val = h + ':' + m + ':' + s\r\n        }\r\n        else if (val > 0) val = -3\r\n        \r\n        return val\r\n    })\r\n        \r\n\nreturn (_ctx, _cache) => {\n  const _component_font_awesome_icon = _resolveComponent(\"font-awesome-icon\")\n\n  return (_openBlock(), _createElementBlock(_Fragment, null, [\n    (_unref(value) == -3)\n      ? (_openBlock(), _createElementBlock(\"span\", _hoisted_1, \"> 48h\"))\n      : _createCommentVNode(\"\", true),\n    (_unref(value) == -2)\n      ? (_openBlock(), _createElementBlock(\"span\", _hoisted_2, \"---\"))\n      : _createCommentVNode(\"\", true),\n    (_unref(value) == -1)\n      ? (_openBlock(), _createElementBlock(\"span\", _hoisted_3, \"---\"))\n      : _createCommentVNode(\"\", true),\n    (_unref(value) == 0)\n      ? (_openBlock(), _createElementBlock(\"span\", _hoisted_4, [\n          _createVNode(_component_font_awesome_icon, { icon: \"fa-fw fa-check\" })\n        ]))\n      : _createCommentVNode(\"\", true),\n    (_unref(value) != -3 && _unref(value) != -2 && _unref(value) != -1 && _unref(value) != 0)\n      ? (_openBlock(), _createElementBlock(\"span\", _hoisted_5, _toDisplayString(_unref(value)), 1))\n      : _createCommentVNode(\"\", true)\n  ], 64))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
-      "start": 1721307757862,
-      "end": 1721307757863,
+      "start": 1789891027300,
+      "end": 1789891027300,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -191,38 +191,38 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1721307757863,
-      "end": 1721307757863,
+      "start": 1789891027300,
+      "end": 1789891027300,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1721307757863,
-      "end": 1721307757863,
+      "start": 1789891027300,
+      "end": 1789891027300,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1721307757863,
-      "end": 1721307757864,
+      "start": 1789891027300,
+      "end": 1789891027301,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1721307757864,
-      "end": 1721307757864,
+      "start": 1789891027301,
+      "end": 1789891027301,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1721307757864,
-      "end": 1721307757864,
+      "start": 1789891027301,
+      "end": 1789891027301,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1721307757864,
-      "end": 1721307757864,
+      "start": 1789891027301,
+      "end": 1789891027301,
       "order": "normal"
     }
   ]

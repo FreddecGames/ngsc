@@ -4,63 +4,63 @@
     {
       "name": "vite:load-fallback",
       "result": "<template>\r\n    <div id=\"game\">\r\n        <topbar />\r\n        <sidebar />\r\n        <page />\r\n        <bottombar />\r\n    </div>\r\n</template>\r\n\r\n<style>\r\n    #game {\r\n        width: 100%; min-height: 100%;\r\n    }\r\n</style>\r\n",
-      "start": 1721307756860,
-      "end": 1721307757124,
+      "start": 1789891026600,
+      "end": 1789891026898,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1721307757124,
-      "end": 1721307757125,
+      "start": 1789891026898,
+      "end": 1789891026898,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1721307757125,
-      "end": 1721307757125,
+      "start": 1789891026898,
+      "end": 1789891026898,
       "order": "pre"
     },
     {
       "name": "unplugin-vue-i18n",
-      "start": 1721307757125,
-      "end": 1721307757125,
+      "start": 1789891026898,
+      "end": 1789891026898,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1721307757125,
-      "end": 1721307757125,
+      "start": 1789891026898,
+      "end": 1789891026898,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1721307757125,
-      "end": 1721307757125,
+      "start": 1789891026898,
+      "end": 1789891026898,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1721307757125,
-      "end": 1721307757125,
+      "start": 1789891026898,
+      "end": 1789891026898,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1721307757125,
-      "end": 1721307757125,
+      "start": 1789891026898,
+      "end": 1789891026898,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1721307757125,
-      "end": 1721307757125,
+      "start": 1789891026898,
+      "end": 1789891026898,
       "order": "normal"
     },
     {
       "name": "vite:vue",
       "result": "const _sfc_main = {}\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { id: \"game\" }\n\nfunction _sfc_render(_ctx, _cache) {\n  const _component_topbar = _resolveComponent(\"topbar\")\n  const _component_sidebar = _resolveComponent(\"sidebar\")\n  const _component_page = _resolveComponent(\"page\")\n  const _component_bottombar = _resolveComponent(\"bottombar\")\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createVNode(_component_topbar),\n    _createVNode(_component_sidebar),\n    _createVNode(_component_page),\n    _createVNode(_component_bottombar)\n  ]))\n}\n\nimport \"C:/dev/ngsc/nuxt3/components/ScreenGame.vue?vue&type=style&index=0&lang.css\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render]])",
-      "start": 1721307757125,
-      "end": 1721307757126,
+      "start": 1789891026898,
+      "end": 1789891026899,
       "order": "normal",
       "sourcemaps": {
         "mappings": ""
@@ -68,153 +68,153 @@
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1721307757126,
-      "end": 1721307757126,
+      "start": 1789891026899,
+      "end": 1789891026899,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1721307757126,
-      "end": 1721307757126,
+      "start": 1789891026899,
+      "end": 1789891026899,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1721307757126,
-      "end": 1721307757126,
+      "start": 1789891026899,
+      "end": 1789891026899,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1721307757126,
-      "end": 1721307757126,
+      "start": 1789891026899,
+      "end": 1789891026899,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1721307757126,
-      "end": 1721307757126,
+      "start": 1789891026899,
+      "end": 1789891026899,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1721307757126,
-      "end": 1721307757126,
+      "start": 1789891026899,
+      "end": 1789891026899,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1721307757126,
-      "end": 1721307757126,
+      "start": 1789891026899,
+      "end": 1789891026899,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1721307757126,
-      "end": 1721307757126,
+      "start": 1789891026899,
+      "end": 1789891026899,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1721307757126,
-      "end": 1721307757126,
+      "start": 1789891026899,
+      "end": 1789891026899,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1721307757126,
-      "end": 1721307757126,
+      "start": 1789891026899,
+      "end": 1789891026899,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1721307757126,
-      "end": 1721307757126,
+      "start": 1789891026899,
+      "end": 1789891026899,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1721307757126,
-      "end": 1721307757126,
+      "start": 1789891026899,
+      "end": 1789891026899,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1721307757126,
-      "end": 1721307757126,
+      "start": 1789891026899,
+      "end": 1789891026899,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1721307757126,
-      "end": 1721307757126,
+      "start": 1789891026899,
+      "end": 1789891026899,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1721307757126,
-      "end": 1721307757126,
+      "start": 1789891026900,
+      "end": 1789891026900,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1721307757126,
-      "end": 1721307757126,
+      "start": 1789891026900,
+      "end": 1789891026900,
       "order": "post"
     },
     {
       "name": "nuxtjs:i18n-macros-transform",
-      "start": 1721307757126,
-      "end": 1721307757126,
+      "start": 1789891026900,
+      "end": 1789891026900,
       "order": "post"
     },
     {
       "name": "nuxtjs:i18n-resource",
-      "start": 1721307757126,
-      "end": 1721307757126,
+      "start": 1789891026900,
+      "end": 1789891026900,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1721307757126,
-      "end": 1721307757126,
+      "start": 1789891026900,
+      "end": 1789891026900,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1721307757127,
-      "end": 1721307757127,
+      "start": 1789891026900,
+      "end": 1789891026900,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1721307757127,
-      "end": 1721307757127,
+      "start": 1789891026900,
+      "end": 1789891026900,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"C:/dev/ngsc/nuxt3/components/Topbar.vue\";\nimport { default as __nuxt_component_1 } from \"C:/dev/ngsc/nuxt3/components/Sidebar.vue\";\nimport { default as __nuxt_component_2 } from \"C:/dev/ngsc/nuxt3/components/Page.vue\";\nimport { default as __nuxt_component_3 } from \"C:/dev/ngsc/nuxt3/components/Bottombar.vue\";\nconst _sfc_main = {}\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { id: \"game\" }\n\nfunction _sfc_render(_ctx, _cache) {\n  const _component_topbar = __nuxt_component_0\n  const _component_sidebar = __nuxt_component_1\n  const _component_page = __nuxt_component_2\n  const _component_bottombar = __nuxt_component_3\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createVNode(_component_topbar),\n    _createVNode(_component_sidebar),\n    _createVNode(_component_page),\n    _createVNode(_component_bottombar)\n  ]))\n}\n\nimport \"C:/dev/ngsc/nuxt3/components/ScreenGame.vue?vue&type=style&index=0&lang.css\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render]])",
-      "start": 1721307757127,
-      "end": 1721307757127,
+      "start": 1789891026900,
+      "end": 1789891026900,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1721307757127,
-      "end": 1721307757127,
+      "start": 1789891026900,
+      "end": 1789891026900,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1721307757127,
-      "end": 1721307757127,
+      "start": 1789891026900,
+      "end": 1789891026900,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1721307757127,
-      "end": 1721307757127,
+      "start": 1789891026900,
+      "end": 1789891026900,
       "order": "normal"
     }
   ]

@@ -4,63 +4,63 @@
     {
       "name": "vite:load-fallback",
       "result": "<script setup>\r\n            \r\n    const confirmReset = ref(false)\r\n\r\n    import { storeToRefs } from 'pinia'\r\n    import { useGameStore } from '~/store/game.js'\r\n    \r\n    const store = useGameStore()\r\n    \r\n    const { getLocalData } = storeToRefs(store)\r\n    \r\n    const { exportSave, downloadSave } = store\r\n    \r\n    const reset = function() {\r\n    \r\n        store.resetInProgress = true\r\n\r\n        localStorage.removeItem('ngsc')\r\n        \r\n        window.location.reload()\r\n    }\r\n    \r\n</script>\r\n\r\n<template>\r\n    <div id=\"error\">\r\n\t\t<div class=\"col-12\">\r\n            <div class=\"px-3 my-3\">\r\n                <div class=\"card\">\r\n                    <div class=\"card-body text-center border-0\">\r\n                        <div class=\"row g-3 justify-content-center\">\r\n                            <div class=\"col-12 text-center\">\r\n                                <img src=\"/whiteLogo.png\" alt=\"Logo\" width=\"64\" height=\"64\" class=\"d-inline-block align-text-top\">\r\n                                <h5 class=\"text-light\">NG Space Company</h5>\r\n                            </div>\r\n                            <div class=\"col-12 text-center text-danger h6\">{{ $t('errorText1') }}</div>\r\n                            <div class=\"col-12 text-center small\">{{ $t('errorText2') }}</div>\r\n                            <div class=\"col-5 col-lg-3 text-center\">\r\n                                <a href=\"https://discord.gg/ZXrggavUpv\" target=\"_blank\" class=\"w-100 btn btn-primary justify-content-center\">\r\n                                    <img src=\"/icons/discord.png\" width=\"16\" height=\"16\" alt=\"Discord\" />\r\n                                    <span class=\"ms-2\">Discord</span>\r\n                                </a>\r\n                            </div>\r\n                            <div class=\"col-12 text-center\">\r\n                                <textarea spellcheck=\"false\" rows=\"3\" class=\"form-control\" disabled readonly>{{ getLocalData }}</textarea>\r\n                            </div>\r\n                            <div class=\"col-6 col-lg-4\">\r\n                                <button type=\"button\" class=\"w-100 btn btn-primary justify-content-center\" @click=\"exportSave()\">\r\n                                    {{ $t('button-export') }}\r\n                                </button>\r\n                            </div>\r\n                            <div class=\"col-6 col-lg-4\">\r\n                                <button type=\"button\" class=\"w-100 btn btn btn-primary justify-content-center\" @click=\"downloadSave()\">\r\n                                    {{ $t('button-download') }}\r\n                                </button>\r\n                            </div>\r\n                            <div class=\"col-12 text-center\">\r\n                                <span class=\"text-normal small\">{{ $t('errorText3') }}</span>\r\n                            </div>\r\n                            <div class=\"col-5 col-lg-3\">\r\n                                <button v-if=\"!confirmReset\" class=\"w-100 btn btn-danger justify-content-center\" @click=\"confirmReset = true\">\r\n                                    {{ $t('button-reset') }}\r\n                                </button>\r\n                                <button v-if=\"confirmReset\" class=\"w-100 btn btn-danger justify-content-center\" @click=\"reset()\">\r\n                                    {{ $t('button-reset') }}\r\n                                </button>\r\n                            </div>\r\n                            <div v-if=\"confirmReset\" class=\"col-12 small\">\r\n                                <span class=\"text-danger\">{{ $t('reset-confirm') }}</span>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\t\t</div>\r\n    </div>\r\n</template>\r\n\r\n<style>\r\n    #error {\r\n        width: 100%; height: 100%; padding: 1rem 0; max-width:512px;\r\n        display: flex; flex-direction: column; align-items: center; justify-content: center;\r\n    }    \r\n</style>\r\n",
-      "start": 1721307756861,
-      "end": 1721307757105,
+      "start": 1789891026608,
+      "end": 1789891026902,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1721307757105,
-      "end": 1721307757105,
+      "start": 1789891026902,
+      "end": 1789891026902,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1721307757105,
-      "end": 1721307757105,
+      "start": 1789891026902,
+      "end": 1789891026902,
       "order": "pre"
     },
     {
       "name": "unplugin-vue-i18n",
-      "start": 1721307757105,
-      "end": 1721307757105,
+      "start": 1789891026902,
+      "end": 1789891026902,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1721307757105,
-      "end": 1721307757105,
+      "start": 1789891026902,
+      "end": 1789891026902,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1721307757105,
-      "end": 1721307757105,
+      "start": 1789891026902,
+      "end": 1789891026902,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1721307757105,
-      "end": 1721307757105,
+      "start": 1789891026902,
+      "end": 1789891026902,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1721307757105,
-      "end": 1721307757105,
+      "start": 1789891026902,
+      "end": 1789891026902,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1721307757105,
-      "end": 1721307757105,
+      "start": 1789891026902,
+      "end": 1789891026902,
       "order": "normal"
     },
     {
       "name": "vite:vue",
       "result": "import { createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, unref as _unref, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode } from \"vue\"\nimport _imports_0 from '/whiteLogo.png'\nimport _imports_1 from '/icons/discord.png'\n\n\nconst _hoisted_1 = { id: \"error\" }\nconst _hoisted_2 = { class: \"col-12\" }\nconst _hoisted_3 = { class: \"px-3 my-3\" }\nconst _hoisted_4 = { class: \"card\" }\nconst _hoisted_5 = { class: \"card-body text-center border-0\" }\nconst _hoisted_6 = { class: \"row g-3 justify-content-center\" }\nconst _hoisted_7 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"col-12 text-center\" }, [\n  /*#__PURE__*/_createElementVNode(\"img\", {\n    src: _imports_0,\n    alt: \"Logo\",\n    width: \"64\",\n    height: \"64\",\n    class: \"d-inline-block align-text-top\"\n  }),\n  /*#__PURE__*/_createElementVNode(\"h5\", { class: \"text-light\" }, \"NG Space Company\")\n], -1)\nconst _hoisted_8 = { class: \"col-12 text-center text-danger h6\" }\nconst _hoisted_9 = { class: \"col-12 text-center small\" }\nconst _hoisted_10 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"col-5 col-lg-3 text-center\" }, [\n  /*#__PURE__*/_createElementVNode(\"a\", {\n    href: \"https://discord.gg/ZXrggavUpv\",\n    target: \"_blank\",\n    class: \"w-100 btn btn-primary justify-content-center\"\n  }, [\n    /*#__PURE__*/_createElementVNode(\"img\", {\n      src: _imports_1,\n      width: \"16\",\n      height: \"16\",\n      alt: \"Discord\"\n    }),\n    /*#__PURE__*/_createElementVNode(\"span\", { class: \"ms-2\" }, \"Discord\")\n  ])\n], -1)\nconst _hoisted_11 = { class: \"col-12 text-center\" }\nconst _hoisted_12 = {\n  spellcheck: \"false\",\n  rows: \"3\",\n  class: \"form-control\",\n  disabled: \"\",\n  readonly: \"\"\n}\nconst _hoisted_13 = { class: \"col-6 col-lg-4\" }\nconst _hoisted_14 = { class: \"col-6 col-lg-4\" }\nconst _hoisted_15 = { class: \"col-12 text-center\" }\nconst _hoisted_16 = { class: \"text-normal small\" }\nconst _hoisted_17 = { class: \"col-5 col-lg-3\" }\nconst _hoisted_18 = {\n  key: 0,\n  class: \"col-12 small\"\n}\nconst _hoisted_19 = { class: \"text-danger\" }\n\nimport { storeToRefs } from 'pinia'\r\n    import { useGameStore } from '~/store/game.js'\r\n    \r\n    \nconst _sfc_main = {\n  __name: 'ScreenError',\n  setup(__props) {\n\r\n            \r\n    const confirmReset = ref(false)\r\n\r\n    const store = useGameStore()\r\n    \r\n    const { getLocalData } = storeToRefs(store)\r\n    \r\n    const { exportSave, downloadSave } = store\r\n    \r\n    const reset = function() {\r\n    \r\n        store.resetInProgress = true\r\n\r\n        localStorage.removeItem('ngsc')\r\n        \r\n        window.location.reload()\r\n    }\r\n    \r\n\nreturn (_ctx, _cache) => {\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createElementVNode(\"div\", _hoisted_3, [\n        _createElementVNode(\"div\", _hoisted_4, [\n          _createElementVNode(\"div\", _hoisted_5, [\n            _createElementVNode(\"div\", _hoisted_6, [\n              _hoisted_7,\n              _createElementVNode(\"div\", _hoisted_8, _toDisplayString(_ctx.$t('errorText1')), 1),\n              _createElementVNode(\"div\", _hoisted_9, _toDisplayString(_ctx.$t('errorText2')), 1),\n              _hoisted_10,\n              _createElementVNode(\"div\", _hoisted_11, [\n                _createElementVNode(\"textarea\", _hoisted_12, _toDisplayString(_unref(getLocalData)), 1)\n              ]),\n              _createElementVNode(\"div\", _hoisted_13, [\n                _createElementVNode(\"button\", {\n                  type: \"button\",\n                  class: \"w-100 btn btn-primary justify-content-center\",\n                  onClick: _cache[0] || (_cache[0] = $event => (_unref(exportSave)()))\n                }, _toDisplayString(_ctx.$t('button-export')), 1)\n              ]),\n              _createElementVNode(\"div\", _hoisted_14, [\n                _createElementVNode(\"button\", {\n                  type: \"button\",\n                  class: \"w-100 btn btn btn-primary justify-content-center\",\n                  onClick: _cache[1] || (_cache[1] = $event => (_unref(downloadSave)()))\n                }, _toDisplayString(_ctx.$t('button-download')), 1)\n              ]),\n              _createElementVNode(\"div\", _hoisted_15, [\n                _createElementVNode(\"span\", _hoisted_16, _toDisplayString(_ctx.$t('errorText3')), 1)\n              ]),\n              _createElementVNode(\"div\", _hoisted_17, [\n                (!_unref(confirmReset))\n                  ? (_openBlock(), _createElementBlock(\"button\", {\n                      key: 0,\n                      class: \"w-100 btn btn-danger justify-content-center\",\n                      onClick: _cache[2] || (_cache[2] = $event => (confirmReset.value = true))\n                    }, _toDisplayString(_ctx.$t('button-reset')), 1))\n                  : _createCommentVNode(\"\", true),\n                (_unref(confirmReset))\n                  ? (_openBlock(), _createElementBlock(\"button\", {\n                      key: 1,\n                      class: \"w-100 btn btn-danger justify-content-center\",\n                      onClick: _cache[3] || (_cache[3] = $event => (reset()))\n                    }, _toDisplayString(_ctx.$t('button-reset')), 1))\n                  : _createCommentVNode(\"\", true)\n              ]),\n              (_unref(confirmReset))\n                ? (_openBlock(), _createElementBlock(\"div\", _hoisted_18, [\n                    _createElementVNode(\"span\", _hoisted_19, _toDisplayString(_ctx.$t('reset-confirm')), 1)\n                  ]))\n                : _createCommentVNode(\"\", true)\n            ])\n          ])\n        ])\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\nimport \"C:/dev/ngsc/nuxt3/components/ScreenError.vue?vue&type=style&index=0&lang.css\"\n\nexport default _sfc_main",
-      "start": 1721307757105,
-      "end": 1721307757113,
+      "start": 1789891026902,
+      "end": 1789891026907,
       "order": "normal",
       "sourcemaps": {
         "mappings": ""
@@ -68,117 +68,117 @@
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1721307757113,
-      "end": 1721307757113,
+      "start": 1789891026907,
+      "end": 1789891026907,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1721307757113,
-      "end": 1721307757113,
+      "start": 1789891026907,
+      "end": 1789891026907,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1721307757113,
-      "end": 1721307757113,
+      "start": 1789891026907,
+      "end": 1789891026907,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1721307757113,
-      "end": 1721307757113,
+      "start": 1789891026907,
+      "end": 1789891026907,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1721307757113,
-      "end": 1721307757113,
+      "start": 1789891026907,
+      "end": 1789891026907,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1721307757113,
-      "end": 1721307757113,
+      "start": 1789891026907,
+      "end": 1789891026907,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1721307757113,
-      "end": 1721307757113,
+      "start": 1789891026907,
+      "end": 1789891026907,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1721307757113,
-      "end": 1721307757113,
+      "start": 1789891026907,
+      "end": 1789891026907,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1721307757113,
-      "end": 1721307757113,
+      "start": 1789891026907,
+      "end": 1789891026907,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1721307757113,
-      "end": 1721307757113,
+      "start": 1789891026907,
+      "end": 1789891026907,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1721307757113,
-      "end": 1721307757113,
+      "start": 1789891026907,
+      "end": 1789891026907,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1721307757113,
-      "end": 1721307757113,
+      "start": 1789891026907,
+      "end": 1789891026907,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1721307757113,
-      "end": 1721307757113,
+      "start": 1789891026907,
+      "end": 1789891026907,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1721307757113,
-      "end": 1721307757113,
+      "start": 1789891026907,
+      "end": 1789891026907,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1721307757113,
-      "end": 1721307757113,
+      "start": 1789891026907,
+      "end": 1789891026907,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1721307757113,
-      "end": 1721307757113,
+      "start": 1789891026907,
+      "end": 1789891026907,
       "order": "post"
     },
     {
       "name": "nuxtjs:i18n-macros-transform",
-      "start": 1721307757113,
-      "end": 1721307757113,
+      "start": 1789891026907,
+      "end": 1789891026907,
       "order": "post"
     },
     {
       "name": "nuxtjs:i18n-resource",
-      "start": 1721307757113,
-      "end": 1721307757113,
+      "start": 1789891026907,
+      "end": 1789891026907,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { ref } from 'vue';\nimport { createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, unref as _unref, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode } from \"vue\"\nimport _imports_0 from '/whiteLogo.png'\nimport _imports_1 from '/icons/discord.png'\n\n\nconst _hoisted_1 = { id: \"error\" }\nconst _hoisted_2 = { class: \"col-12\" }\nconst _hoisted_3 = { class: \"px-3 my-3\" }\nconst _hoisted_4 = { class: \"card\" }\nconst _hoisted_5 = { class: \"card-body text-center border-0\" }\nconst _hoisted_6 = { class: \"row g-3 justify-content-center\" }\nconst _hoisted_7 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"col-12 text-center\" }, [\n  /*#__PURE__*/_createElementVNode(\"img\", {\n    src: _imports_0,\n    alt: \"Logo\",\n    width: \"64\",\n    height: \"64\",\n    class: \"d-inline-block align-text-top\"\n  }),\n  /*#__PURE__*/_createElementVNode(\"h5\", { class: \"text-light\" }, \"NG Space Company\")\n], -1)\nconst _hoisted_8 = { class: \"col-12 text-center text-danger h6\" }\nconst _hoisted_9 = { class: \"col-12 text-center small\" }\nconst _hoisted_10 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"col-5 col-lg-3 text-center\" }, [\n  /*#__PURE__*/_createElementVNode(\"a\", {\n    href: \"https://discord.gg/ZXrggavUpv\",\n    target: \"_blank\",\n    class: \"w-100 btn btn-primary justify-content-center\"\n  }, [\n    /*#__PURE__*/_createElementVNode(\"img\", {\n      src: _imports_1,\n      width: \"16\",\n      height: \"16\",\n      alt: \"Discord\"\n    }),\n    /*#__PURE__*/_createElementVNode(\"span\", { class: \"ms-2\" }, \"Discord\")\n  ])\n], -1)\nconst _hoisted_11 = { class: \"col-12 text-center\" }\nconst _hoisted_12 = {\n  spellcheck: \"false\",\n  rows: \"3\",\n  class: \"form-control\",\n  disabled: \"\",\n  readonly: \"\"\n}\nconst _hoisted_13 = { class: \"col-6 col-lg-4\" }\nconst _hoisted_14 = { class: \"col-6 col-lg-4\" }\nconst _hoisted_15 = { class: \"col-12 text-center\" }\nconst _hoisted_16 = { class: \"text-normal small\" }\nconst _hoisted_17 = { class: \"col-5 col-lg-3\" }\nconst _hoisted_18 = {\n  key: 0,\n  class: \"col-12 small\"\n}\nconst _hoisted_19 = { class: \"text-danger\" }\n\nimport { storeToRefs } from 'pinia'\r\n    import { useGameStore } from '~/store/game.js'\r\n    \r\n    \nconst _sfc_main = {\n  __name: 'ScreenError',\n  setup(__props) {\n\r\n            \r\n    const confirmReset = ref(false)\r\n\r\n    const store = useGameStore()\r\n    \r\n    const { getLocalData } = storeToRefs(store)\r\n    \r\n    const { exportSave, downloadSave } = store\r\n    \r\n    const reset = function() {\r\n    \r\n        store.resetInProgress = true\r\n\r\n        localStorage.removeItem('ngsc')\r\n        \r\n        window.location.reload()\r\n    }\r\n    \r\n\nreturn (_ctx, _cache) => {\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createElementVNode(\"div\", _hoisted_3, [\n        _createElementVNode(\"div\", _hoisted_4, [\n          _createElementVNode(\"div\", _hoisted_5, [\n            _createElementVNode(\"div\", _hoisted_6, [\n              _hoisted_7,\n              _createElementVNode(\"div\", _hoisted_8, _toDisplayString(_ctx.$t('errorText1')), 1),\n              _createElementVNode(\"div\", _hoisted_9, _toDisplayString(_ctx.$t('errorText2')), 1),\n              _hoisted_10,\n              _createElementVNode(\"div\", _hoisted_11, [\n                _createElementVNode(\"textarea\", _hoisted_12, _toDisplayString(_unref(getLocalData)), 1)\n              ]),\n              _createElementVNode(\"div\", _hoisted_13, [\n                _createElementVNode(\"button\", {\n                  type: \"button\",\n                  class: \"w-100 btn btn-primary justify-content-center\",\n                  onClick: _cache[0] || (_cache[0] = $event => (_unref(exportSave)()))\n                }, _toDisplayString(_ctx.$t('button-export')), 1)\n              ]),\n              _createElementVNode(\"div\", _hoisted_14, [\n                _createElementVNode(\"button\", {\n                  type: \"button\",\n                  class: \"w-100 btn btn btn-primary justify-content-center\",\n                  onClick: _cache[1] || (_cache[1] = $event => (_unref(downloadSave)()))\n                }, _toDisplayString(_ctx.$t('button-download')), 1)\n              ]),\n              _createElementVNode(\"div\", _hoisted_15, [\n                _createElementVNode(\"span\", _hoisted_16, _toDisplayString(_ctx.$t('errorText3')), 1)\n              ]),\n              _createElementVNode(\"div\", _hoisted_17, [\n                (!_unref(confirmReset))\n                  ? (_openBlock(), _createElementBlock(\"button\", {\n                      key: 0,\n                      class: \"w-100 btn btn-danger justify-content-center\",\n                      onClick: _cache[2] || (_cache[2] = $event => (confirmReset.value = true))\n                    }, _toDisplayString(_ctx.$t('button-reset')), 1))\n                  : _createCommentVNode(\"\", true),\n                (_unref(confirmReset))\n                  ? (_openBlock(), _createElementBlock(\"button\", {\n                      key: 1,\n                      class: \"w-100 btn btn-danger justify-content-center\",\n                      onClick: _cache[3] || (_cache[3] = $event => (reset()))\n                    }, _toDisplayString(_ctx.$t('button-reset')), 1))\n                  : _createCommentVNode(\"\", true)\n              ]),\n              (_unref(confirmReset))\n                ? (_openBlock(), _createElementBlock(\"div\", _hoisted_18, [\n                    _createElementVNode(\"span\", _hoisted_19, _toDisplayString(_ctx.$t('reset-confirm')), 1)\n                  ]))\n                : _createCommentVNode(\"\", true)\n            ])\n          ])\n        ])\n      ])\n    ])\n  ]))\n}\n}\n\n}\n\n\nimport \"C:/dev/ngsc/nuxt3/components/ScreenError.vue?vue&type=style&index=0&lang.css\"\n\nexport default _sfc_main",
-      "start": 1721307757113,
-      "end": 1721307757120,
+      "start": 1789891026907,
+      "end": 1789891026909,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -191,38 +191,38 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1721307757120,
-      "end": 1721307757120,
+      "start": 1789891026909,
+      "end": 1789891026909,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1721307757120,
-      "end": 1721307757120,
+      "start": 1789891026909,
+      "end": 1789891026909,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1721307757120,
-      "end": 1721307757120,
+      "start": 1789891026909,
+      "end": 1789891026909,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1721307757120,
-      "end": 1721307757120,
+      "start": 1789891026909,
+      "end": 1789891026909,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1721307757120,
-      "end": 1721307757120,
+      "start": 1789891026909,
+      "end": 1789891026909,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1721307757120,
-      "end": 1721307757120,
+      "start": 1789891026909,
+      "end": 1789891026909,
       "order": "normal"
     }
   ]
